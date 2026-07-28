@@ -1,0 +1,377 @@
+{
+  "date": "20260719-20260728",
+  "date_label": "2026-07-19 ~ 2026-07-28",
+  "generated_at": "2026-07-28 03:23:22 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2607.17213v1",
+      "route": "20260719-20260728/2607.17213v1-retriever-composing-closed-loop-asynchronous-robot-programs",
+      "title": "Retriever: Composing Closed-Loop Asynchronous Robot Programs",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "异步机器人智能体架构，包含规划与控制",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.17331v1",
+      "route": "20260719-20260728/2607.17331v1-agentic-erp-multi-agent-large-language-model-architecture-for-autonomous-enterprise-resource-planning",
+      "title": "Agentic ERP: Multi-Agent Large Language Model Architecture for Autonomous Enterprise Resource Planning",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向ERP的多代理LLM架构",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.18359v1",
+      "route": "20260719-20260728/2607.18359v1-decentralized-multi-agent-reinforcement-learning-for-resilient-critical-infrastructures",
+      "title": "Decentralized Multi-agent Reinforcement Learning for Resilient Critical Infrastructures",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向关键基础设施的分散式多智能体强化学习",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.18548v1",
+      "route": "20260719-20260728/2607.18548v1-engineering-trustworthy-agentic-ai-for-critical-systems",
+      "title": "Engineering Trustworthy Agentic AI for Critical Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "可信代理AI系统综述",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.18554v1",
+      "route": "20260719-20260728/2607.18554v1-scalable-policy-optimization-for-networked-multi-agent-reinforcement-learning-with-continuous-state-action-spaces",
+      "title": "Scalable Policy Optimization for Networked Multi-Agent Reinforcement Learning with Continuous State-Action Spaces",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向连续空间的多智能体强化学习算法",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.19117v1",
+      "route": "20260719-20260728/2607.19117v1-comparative-study-of-multi-agent-actor-critic-algorithms-in-parameterized-action-reinforcement-learning",
+      "title": "Comparative Study of Multi-Agent Actor-Critic Algorithms in Parameterized Action Reinforcement Learning",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多代理演员-评论家算法比较研究",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.19555v1",
+      "route": "20260719-20260728/2607.19555v1-chmas-a-coupled-hierarchical-framework-for-multi-agent-reinforcement-learning",
+      "title": "CHMAS: A Coupled Hierarchical Framework for Multi-Agent Reinforcement Learning",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多层次多智能体强化学习框架",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.19809v1",
+      "route": "20260719-20260728/2607.19809v1-dreamer-cpc-message-learning-with-world-models-for-decentralized-multi-agent-reinforcement-learning",
+      "title": "Dreamer-CPC: Message Learning with World Models for Decentralized Multi-agent Reinforcement Learning",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向去中心化MARL的消息学习",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.19985v1",
+      "route": "20260719-20260728/2607.19985v1-coordinating-from-memory-graph-structured-experience-reuse-for-multi-agent-adaptation-in-dynamic-manufacturing",
+      "title": "Coordinating from Memory: Graph-Structured Experience Reuse for Multi-Agent Adaptation in Dynamic Manufacturing",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "图结构经验复用实现多代理协调",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.21824v1",
+      "route": "20260719-20260728/2607.21824v1-protocol-level-attacks-on-agentic-commerce-platforms-a-cross-platform-taxonomy-aip-bench-and-unified-defense",
+      "title": "Protocol-Level Attacks on Agentic Commerce Platforms: A Cross-Platform Taxonomy, AIP-Bench, and Unified Defense",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "智能体商业平台上的协议级攻击",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.21876v1",
+      "route": "20260719-20260728/2607.21876v1-variance-reduced-q-learning-over-static-and-time-varying-networks",
+      "title": "Variance-Reduced Q-Learning over Static and Time-Varying Networks",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向多智能体RL的高效通信分散式Q学习",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.22109v1",
+      "route": "20260719-20260728/2607.22109v1-predictive-lightweight-marl-for-resilient-coverage-in-sparse-signaling-aerial-networks",
+      "title": "Predictive Lightweight MARL for Resilient Coverage in Sparse-Signaling Aerial Networks",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体强化学习用于无人机群弹性覆盖",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.17038v1",
+      "route": "20260719-20260728/2607.17038v1-reward-driven-llm-agent-workflows-synthesizing-pomdp-routing-and-self-correction-for-autonomous-decision-making",
+      "title": "Reward-Driven LLM Agent Workflows: Synthesizing POMDP Routing and Self-Correction for Autonomous Decision-Making",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "LLM智能体中的POMDP路由与自纠正自主决策",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.17527v1",
+      "route": "20260719-20260728/2607.17527v1-sidekick-designing-communication-for-effective-multitasking-with-computer-use-agents",
+      "title": "Sidekick: Designing Communication for Effective Multitasking with Computer Use Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "为智能体设计多模态通信反馈",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.17560v1",
+      "route": "20260719-20260728/2607.17560v1-reinforcement-learning-from-algorithms-to-foundation-models",
+      "title": "Reinforcement Learning: From Algorithms To Foundation Models",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "博弈中的多智能体强化学习",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.17914v1",
+      "route": "20260719-20260728/2607.17914v1-value-aware-prediction-for-robust-multi-agent-coordination-under-communication-loss",
+      "title": "Value-Aware Prediction for Robust Multi-Agent Coordination Under Communication Loss",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "通信丢失下鲁棒协调",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.17082v1",
+      "route": "20260719-20260728/2607.17082v1-otapstructure-aware-optimal-transport-for-evaluating-planning-and-execution-in-agent-trajectories",
+      "title": "Otap:Structure-Aware Optimal Transport for Evaluating Planning and Execution in Agent Trajectories",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "通过最优传输评估智能体轨迹中的规划与执行",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.17149v1",
+      "route": "20260719-20260728/2607.17149v1-a-diagnostic-framework-for-ai-agent-behavior",
+      "title": "A Diagnostic Framework for AI Agent Behavior",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "AI智能体行为诊断框架",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.17299v1",
+      "route": "20260719-20260728/2607.17299v1-war-workload-aware-rollouts-for-synchronous-agentic-reinforcement-learning",
+      "title": "WAR: Workload-Aware Rollouts for Synchronous Agentic Reinforcement Learning",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向智能体强化学习的工作负载感知rollout加速",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.17311v1",
+      "route": "20260719-20260728/2607.17311v1-the-optimization-trilemma-efficiency-comfort-and-fairness-in-decentralized-multi-agent-coordination",
+      "title": "The Optimization Trilemma: Efficiency, Comfort and Fairness in Decentralized Multi-agent Coordination",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "去中心化多智能体协调",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.17225v1",
+      "route": "20260719-20260728/2607.17225v1-specifying-the-delegated-autonomy-boundary-requirements-engineering-for-agentic-ai",
+      "title": "Specifying the Delegated-Autonomy Boundary: Requirements Engineering for Agentic AI",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "代理自主权边界的需求工程",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.17347v1",
+      "route": "20260719-20260728/2607.17347v1-adapting-embedding-models-for-agent-capability-retrieval",
+      "title": "Adapting Embedding Models for Agent Capability Retrieval",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "适应嵌入模型以在智能体市场中检索智能体能力",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    },
+    {
+      "paper_id": "2607.17535v1",
+      "route": "20260719-20260728/2607.17535v1-salience-induction-against-multi-hop-rag-agents-threat-and-defense",
+      "title": "Salience Induction against Multi-Hop RAG Agents: Threat and Defense",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "发现显著性诱导攻击可重定向多跳RAG代理的推理",
+      "first_seen_at": "2026-07-28 03:23:22 UTC",
+      "updated_at": "2026-07-28 03:23:22 UTC"
+    }
+  ]
+}
