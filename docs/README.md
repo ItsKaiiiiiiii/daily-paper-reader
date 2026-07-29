@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-07-19 ~ 2026-07-28</span>
+      <span class="dpr-home-dashboard-kicker">2026-07-29</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 23 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 22 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>12</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>11</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-07-28 03:23:22 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-07-29 21:48:08 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,9 +62,9 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日精读12篇，聚焦异步机器人程序合成与自主ERP系统，两篇获9.0高分。</p>
-<p>最值得关注方向：机器人闭环异步编程（Retriever）与多智能体ERP（Agentic ERP），均展现强自主决策能力。</p>
-<p>建议优先精读这两篇，了解LLM在自动化与资源规划中的前沿实践。</p>
+<p>今日22篇论文聚焦自主代理与自动驾驶，精读两篇9分研究：科学导航评估与无信号路口协调。</p>
+<p>最值得关注：SciExplore揭示自主代理在科学信息整合中的能力，Compact Latent Coordination为无信号路口车辆协同提供紧凑化方案。</p>
+<p>建议优先精读两篇高分论文，再速读自主代理行为量表与6G通信挑战，以全面把握AI代理前沿。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -73,12 +73,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">12 篇</strong>
+    <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Retriever: Composing Closed-Loop Asynchronous Robot Programs">Retriever: Composing Closed-Loop Asynchronous Robot Programs</span></li><li><span class="dpr-home-dashboard-paper-title" title="Agentic ERP: Multi-Agent Large Language Model Architecture for Autonomous Enterprise Resource Planning">Agentic ERP: Multi-Agent Large Language Model Architecture for Autonomous Enterprise Resource Planning</span></li><li><span class="dpr-home-dashboard-paper-title" title="Decentralized Multi-agent Reinforcement Learning for Resilient Critical Infrastructures">Decentralized Multi-agent Reinforcement Learning for Resilient Critical Infrastructures</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="SciExplore: Evaluating Autonomous Agents from Scientific Navigation to Information Integration">SciExplore: Evaluating Autonomous Agents from Scientific Navigation to Information Integration</span></li><li><span class="dpr-home-dashboard-paper-title" title="Compact Latent Coordination for Autonomous Vehicles at Unsignalized Intersections">Compact Latent Coordination for Autonomous Vehicles at Unsignalized Intersections</span></li><li><span class="dpr-home-dashboard-paper-title" title="Commitment To Cooperation With Self-Negotiated Contracts">Commitment To Cooperation With Self-Negotiated Contracts</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>12</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -89,7 +89,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Reward-Driven LLM Agent Workflows: Synthesizing POMDP Routing and Self-Correction for Autonomous Decision-Making">Reward-Driven LLM Agent Workflows: Synthesizing POMDP Routing and Self-Correction for Autonomous Decision-Making</span></li><li><span class="dpr-home-dashboard-paper-title" title="Sidekick: Designing Communication for Effective Multitasking with Computer Use Agents">Sidekick: Designing Communication for Effective Multitasking with Computer Use Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Reinforcement Learning: From Algorithms To Foundation Models">Reinforcement Learning: From Algorithms To Foundation Models</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="The Autonomous Agency Scale: A Behavioral Framework for Measuring Self-Directed Behavior in AI Systems">The Autonomous Agency Scale: A Behavioral Framework for Measuring Self-Directed Behavior in AI Systems</span></li><li><span class="dpr-home-dashboard-paper-title" title="Towards Agentic Agent-based Models: Feasibility, Performance, and Statistical Model Checking">Towards Agentic Agent-based Models: Feasibility, Performance, and Statistical Model Checking</span></li><li><span class="dpr-home-dashboard-paper-title" title="AI Agent Communications in AI-Native 6G Network: Status, Challenges and Opportunities">AI Agent Communications in AI-Native 6G Network: Status, Challenges and Opportunities</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>

@@ -1,0 +1,361 @@
+{
+  "date": "20260729",
+  "date_label": "",
+  "generated_at": "2026-07-29 21:48:08 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2607.20926v1",
+      "route": "202607/29/2607.20926v1-sciexplore-evaluating-autonomous-agents-from-scientific-navigation-to-information-integration",
+      "title": "SciExplore: Evaluating Autonomous Agents from Scientific Navigation to Information Integration",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "评估科学探索中自主智能体信息检索与推理的基准",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.21488v1",
+      "route": "202607/29/2607.21488v1-compact-latent-coordination-for-autonomous-vehicles-at-unsignalized-intersections",
+      "title": "Compact Latent Coordination for Autonomous Vehicles at Unsignalized Intersections",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "无信号交叉口自动驾驶车辆分层次MARL协调架构",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.22750v1",
+      "route": "202607/29/2607.22750v1-commitment-to-cooperation-with-self-negotiated-contracts",
+      "title": "Commitment To Cooperation With Self-Negotiated Contracts",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体场景下基于合同的LLM智能体合作",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.23792v1",
+      "route": "202607/29/2607.23792v1-gnn-based-multi-agent-control-of-traffic-shockwaves-in-sparse-vehicular-ad-hoc-networks",
+      "title": "GNN-based Multi-Agent Control of Traffic Shockwaves in Sparse Vehicular Ad-hoc Networks",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "提出了结合图神经网络的分散式多智能体强化学习框架用于交通激波控制",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.23884v1",
+      "route": "202607/29/2607.23884v1-a-comparative-study-of-mcp-and-a2a-for-inter-agent-coordination-in-llm-based-systems",
+      "title": "A Comparative Study of MCP and A2A for Inter-Agent Coordination in LLM-Based Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "比较了两种智能体间协调协议MCP和A2A",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.24850v1",
+      "route": "202607/29/2607.24850v1-searchart-training-long-horizon-search-agent-with-scalable-synthetic-and-verified-task",
+      "title": "SearchArt: Training Long-Horizon Search Agent with Scalable Synthetic and Verified Task",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "自主搜索代理规划与训练",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.25082v1",
+      "route": "202607/29/2607.25082v1-plato-pointer-learner-for-agent-and-task-openness",
+      "title": "PLATO: Pointer Learner for Agent and Task Openness",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "基于指针网络的多智能体强化学习处理开放系统 - MARL进展",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.25090v1",
+      "route": "202607/29/2607.25090v1-matryoshka-agent-unfolding-sub-agents-for-long-horizon-machine-learning-engineering",
+      "title": "Matryoshka Agent: Unfolding Sub-Agents for Long-Horizon Machine Learning Engineering",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向长地平线任务的层次化自主代理架构",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.25255v1",
+      "route": "202607/29/2607.25255v1-safeflow-semantic-information-flow-control-for-blocking-malicious-propagation-in-multi-agent-systems",
+      "title": "SafeFlow: Semantic Information-Flow Control for Blocking Malicious Propagation in Multi-Agent Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体系统协调与安全",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.25316v1",
+      "route": "202607/29/2607.25316v1-mr-tgn-a-meta-role-temporal-graph-network-for-team-level-intent-prediction-in-multi-agent-systems",
+      "title": "MR-TGN: A Meta-Role Temporal Graph Network for Team-Level Intent Prediction in Multi-Agent Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体系统协调与意图预测",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.25656v1",
+      "route": "202607/29/2607.25656v1-orchbench-evaluating-multi-agent-orchestration-plans-in-isolation-via-deterministic-simulation",
+      "title": "OrchBench: Evaluating Multi-Agent Orchestration Plans in Isolation via Deterministic Simulation",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "隔离评估多智能体编排计划的基准",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.17947v1",
+      "route": "202607/29/2607.17947v1-the-autonomous-agency-scale-a-behavioral-framework-for-measuring-self-directed-behavior-in-ai-systems",
+      "title": "The Autonomous Agency Scale: A Behavioral Framework for Measuring Self-Directed Behavior in AI Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "从七个维度测量自主代理行为的框架",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.17948v1",
+      "route": "202607/29/2607.17948v1-towards-agentic-agent-based-models-feasibility-performance-and-statistical-model-checking",
+      "title": "Towards Agentic Agent-based Models: Feasibility, Performance, and Statistical Model Checking",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "将基于LLM的智能体能力集成到基于智能体的模型中",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.18138v1",
+      "route": "202607/29/2607.18138v1-ai-agent-communications-in-ai-native-6g-network-status-challenges-and-opportunities",
+      "title": "AI Agent Communications in AI-Native 6G Network: Status, Challenges and Opportunities",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "综述AI智能体在6G网络中的通信协议",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.18597v2",
+      "route": "202607/29/2607.18597v2-a-self-evolving-default-action-for-cooperative-tasks-with-continuous-action-space",
+      "title": "A Self-Evolving Default Action for Cooperative Tasks with Continuous Action Space",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向连续动作的多智能体强化学习反事实信用分配",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.19837v1",
+      "route": "202607/29/2607.19837v1-know-your-agent-reconnaissance-driven-pentesting-of-ai-agents",
+      "title": "Know Your Agent: Reconnaissance-Driven Pentesting of AI Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "AI代理安全渗透测试与侦察",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.19913v1",
+      "route": "202607/29/2607.19913v1-janus-foreseeing-latent-risk-for-long-horizon-agent-safety",
+      "title": "JANUS: Foreseeing Latent Risk for Long-Horizon Agent Safety",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向长时域智能体决策的风险预见框架",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.20668v1",
+      "route": "202607/29/2607.20668v1-from-agent-failures-to-text-policies-what-works-and-what-breaks",
+      "title": "From Agent Failures to Text Policies: What Works and What Breaks",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "智能体从失败中学习决策与策略",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.21210v1",
+      "route": "202607/29/2607.21210v1-explainable-belief-harmonization-under-dynamic-epistemic-partitions",
+      "title": "Explainable Belief Harmonization under Dynamic Epistemic Partitions",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "提出了动态认知变化下多智能体信念协调的形式化框架",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.18816v1",
+      "route": "202607/29/2607.18816v1-agenttrails-towards-trust-and-reuse-for-agentic-tasks",
+      "title": "AgentTrails: Towards Trust and Reuse for Agentic Tasks",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "LLM代理任务溯源系统 - 辅助设计与重用",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.19297v1",
+      "route": "202607/29/2607.19297v1-graph-based-agentic-ai-with-langgraph-workflow-pathways-for-long-running-stateful-business-processes",
+      "title": "Graph-Based Agentic AI with LangGraph: Workflow Pathways for Long-Running Stateful Business Processes",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "面向业务流程的基于图的代理架构模式",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    },
+    {
+      "paper_id": "2607.21495v1",
+      "route": "202607/29/2607.21495v1-toward-continuous-assurance-for-the-democratization-of-ai-agent-creation-in-industry",
+      "title": "Toward Continuous Assurance for the Democratization of AI Agent Creation in Industry",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "民主化AI代理创建的持续保证 - 代理应用",
+      "first_seen_at": "2026-07-29 21:48:08 UTC",
+      "updated_at": "2026-07-29 21:48:08 UTC"
+    }
+  ]
+}
