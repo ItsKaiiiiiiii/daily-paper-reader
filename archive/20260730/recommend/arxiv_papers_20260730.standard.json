@@ -1,0 +1,697 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-30T20:27:55.265782+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 27,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 50,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2607.25369v1",
+      "source": "arxiv",
+      "title": "ODYSSE: Episode-wise Policy Optimization for Personalized Agentic Reasoning",
+      "abstract": "Agentic systems have rapidly advanced in their ability to interact with real-world environments, leverage external tools, and provide services for users. However, unlike natural-world tasks that assume well-defined instructions, human-centered scenarios are characterized by ambiguous requests that lead to large, open-ended solution spaces. Decoding users' personalized preferences is therefore essential for narrowing the candidate solution space. This introduces a new challenge, personalized agentic reasoning, which requires agents to jointly interact with both users and environments to deliver personalized services. In this paper, we present ODYSSE, a Reinforced Fine-Tuning (RFT) framework for personalized agentic reasoning. At its core, ODYSSE proposes Episode-wise GRPO (ESPO), a novel extension of Group Relative Policy Optimization (GRPO) designed to address long action horizons and strong cross-step dependencies in personalized agentic reasoning. Rather than optimizing individual steps independently, ESPO introduces an episode-level reward mechanism together with episodic advantage estimation, enabling upstream evidence to effectively guide downstream personalized decisions and allowing agents to progressively resolve ambiguous user requests across multiple interaction steps. We further propose an episodic batch sampler that groups actions from the same episode into unified training batches, facilitating coherent optimization under ESPO. We evaluate ODYSSE on realistic long-horizon personalized GUI reasoning tasks. Experimental results demonstrate that ODYSSE consistently outperforms both specialist and general-purpose LVLMs, highlighting its effectiveness for personalized agentic reasoning.",
+      "authors": [
+        "Jiaqi Zhang",
+        "Tong Chen",
+        "Junliang Yu",
+        "Quoc Viet Hung Nguyen",
+        "Hongzhi Yin"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-28T07:25:04+00:00",
+      "link": "https://arxiv.org/pdf/2607.25369v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Personalized agentic reasoning with reinforced fine-tuning",
+      "llm_evidence_cn": "个性化智能体推理的强化微调方法",
+      "llm_evidence": "个性化智能体推理的强化微调方法",
+      "canonical_evidence": "个性化智能体推理的强化微调方法",
+      "llm_tldr_en": "Introduces ODYSSE, a reinforced fine-tuning framework for personalized agentic reasoning, enabling agents to decode user preferences and deliver customized services.",
+      "llm_tldr_cn": "针对现有智能体在模糊用户请求下难以发现个性化偏好的问题，本文提出ODYSSE框架，采用强化微调（RFT）进行回合级策略优化，联合建模用户与环境交互。实验表明ODYSSE在多种个性化任务中显著优于基线方法，展示了更好的用户偏好适应能力。该工作为个性化智能体推理提供了一种有效框架，可推广至其他交互场景。",
+      "llm_tldr": "针对现有智能体在模糊用户请求下难以发现个性化偏好的问题，本文提出ODYSSE框架，采用强化微调（RFT）进行回合级策略优化，联合建模用户与环境交互。实验表明ODYSSE在多种个性化任务中显著优于基线方法，展示了更好的用户偏好适应能力。该工作为个性化智能体推理提供了一种有效框架，可推广至其他交互场景。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent decision making",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.21209v1",
+      "source": "arxiv",
+      "title": "Explainability Framework for Policy-Aware Autonomous Agents",
+      "abstract": "In the field of Artificial Intelligence, an agent is a system which is able to autonomously make decisions in order to reach a desired goal. As these systems grow more prevalent in our day-to-day lives, there has been an increased need to add explainability features which can provide an account for an agent's behavior. We therefore propose a framework that outlines how to produce comprehensible explanations for policy-aware agents, or agents which have rule-enforcing policies incorporated in their decision-making framework. This framework is designed using insights from the social sciences on how to produce good explanations. It is implemented in the Answer Set Programming language while using Python to assist with information extraction and natural-language translation. Because these agents incur penalties when violating policies, we are able to leverage these penalties to detect undesirable events in scenarios that are counterfactual to the agents' original actions. This lends itself to creating contrastive explanations (e.g., \"the agent performed this action because, had it not, undesirable event X would have occurred.\"), which formulate the core component for our explainability framework. The framework is evaluated using a survey wherein human participants provide feedback on our program-generated explanations.",
+      "authors": [
+        "Heather Merhout",
+        "Daniela Inclezan"
+      ],
+      "primary_category": "cs.LO",
+      "categories": [
+        "cs.LO",
+        "cs.AI"
+      ],
+      "published": "2026-07-23T11:22:25+00:00",
+      "link": "https://arxiv.org/pdf/2607.21209v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "explainability framework for policy-aware autonomous agents",
+      "llm_evidence_cn": "策略感知代理的可解释性框架",
+      "llm_evidence": "策略感知代理的可解释性框架",
+      "canonical_evidence": "策略感知代理的可解释性框架",
+      "llm_tldr_en": "Proposes a framework for generating comprehensible explanations for policy-aware autonomous agents, using Answer Set Programming and Python.",
+      "llm_tldr_cn": "论文针对策略感知代理缺乏可解释性的问题，基于社会科学见解设计了一个解释生成框架。该框架使用回答集编程实现，辅以Python进行信息提取和自然语言转换，能够为遵守规则策略的代理行为提供易懂的解释，提升了代理架构的透明度和可信度。",
+      "llm_tldr": "论文针对策略感知代理缺乏可解释性的问题，基于社会科学见解设计了一个解释生成框架。该框架使用回答集编程实现，辅以Python进行信息提取和自然语言转换，能够为遵守规则策略的代理行为提供易懂的解释，提升了代理架构的透明度和可信度。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.21361v1",
+      "source": "arxiv",
+      "title": "FedAgentKE: Federated Semantic Knowledge Evolution for Heterogeneous Agents",
+      "abstract": "Large language model (LLM)-based agents increasingly rely on reasoning, tool use, and iterative execution, yet existing agent frameworks still operate largely in isolation. While recent memory-based agent systems improve individual agents through local retrieval and workflow reuse, local experiences remain fragmented across isolated agent frameworks, limiting cross-framework knowledge transfer and collaborative reasoning evolution. We propose FedAgentKE, a lightweight framework for Federated Semantic Knowledge Evolution across heterogeneous agents. FedAgentKE enables distributed agent frameworks to collaboratively evolve transferable reasoning abstractions through iterative semantic knowledge distillation, aggregation, and adaptation without sharing raw reasoning trajectories. Experiments demonstrate consistent improvements under both cross-framework and cross-task settings, highlighting the potential of federated semantic knowledge evolution for future collaborative agent ecosystems.",
+      "authors": [
+        "Weihao Li",
+        "Jun Bai",
+        "Ziyang Song"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "published": "2026-07-23T14:24:02+00:00",
+      "link": "https://arxiv.org/pdf/2607.21361v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "federated knowledge evolution for heterogeneous agents",
+      "llm_evidence_cn": "异构智能体的联邦知识进化",
+      "llm_evidence": "异构智能体的联邦知识进化",
+      "canonical_evidence": "异构智能体的联邦知识进化",
+      "llm_tldr_en": "Proposes FedAgentKE, a lightweight federated framework enabling LLM-based heterogeneous agents to collaboratively evolve reasoning abstractions via semantic knowledge distillation, aggregation, and adaptation.",
+      "llm_tldr_cn": "现有基于LLM的智能体框架各自孤立，本地经验无法跨框架迁移。本文提出FedAgentKE，一个轻量级联邦语义知识进化框架，通过迭代语义知识蒸馏、聚合和自适应，使异构智能体协作进化可迁移的推理抽象。实验表明该方法有效促进跨框架知识共享和协同推理进化。",
+      "llm_tldr": "现有基于LLM的智能体框架各自孤立，本地经验无法跨框架迁移。本文提出FedAgentKE，一个轻量级联邦语义知识进化框架，通过迭代语义知识蒸馏、聚合和自适应，使异构智能体协作进化可迁移的推理抽象。实验表明该方法有效促进跨框架知识共享和协同推理进化。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.22083v1",
+      "source": "arxiv",
+      "title": "Nanbeige4.2-3B: Unlocking Agentic Capabilities in a Compact Mode",
+      "abstract": "We present Nanbeige4.2-3B, a compact general agentic model with 3B non-embedding parameters. It delivers strong performance across code-agent, office-agent, and complex tool-use tasks while maintaining highly competitive reasoning capabilities in mathematics, coding, and science. Nanbeige4.2-3B is pretrained from scratch on 28T tokens with a Looped Transformer that reuses the layer stack to increase capacity without adding parameters. For SFT data and trajectory construction, we expand the diversity of executable environments, task assets, and agentic scaffolds through real-world deployment and large-scale synthesis. Our RL pipeline applies mixed-mode RLHF over Think and Non-Think responses to improve overall model quality and reduce failure cases, length-controlled reasoning RL to balance accuracy and reasoning efficiency, and agentic RL with outcome and process rewards to stabilize long-horizon training. Extensive evaluations show that Nanbeige4.2-3B outperforms larger models, including Qwen3.5-9B and Gemma4-12B, across diverse agentic benchmarks while remaining competitive on reasoning and alignment tasks. Performance with OpenClaw further supports its use as a compact local personal assistant.",
+      "authors": [
+        "Nanbeige Lab",
+        ":",
+        "Chen Yang",
+        "Chengrui Huang",
+        "Fufeng Lan",
+        "Hanhui Chen",
+        "Hao Zhou",
+        "Huatong Song",
+        "Jiaqi Cao",
+        "Jiaying Zhu",
+        "Jinlin Niu",
+        "Kai Wang",
+        "Lisheng Huang",
+        "Qiliang Liang",
+        "Ran Le",
+        "Ruixiang Feng",
+        "Shuang Sun",
+        "Tao Gu",
+        "Tao Zhang",
+        "Tianyu Luo",
+        "Yang Song",
+        "Yun Xing",
+        "Yuntao Wen",
+        "Ziyao Xu",
+        "Zongchao Chen",
+        "Zongqiang Li"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-24T08:33:26+00:00",
+      "link": "https://arxiv.org/pdf/2607.22083v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Compact agentic model architecture using Looped Transformer and agentic capabilities",
+      "llm_evidence_cn": "使用循环Transformer的紧凑型智能体架构与能力",
+      "llm_evidence": "使用循环Transformer的紧凑型智能体架构与能力",
+      "canonical_evidence": "使用循环Transformer的紧凑型智能体架构与能力",
+      "llm_tldr_en": "Nanbeige4.2-3B is a 3B-parameter compact agentic model with a Looped Transformer architecture, trained on diverse agentic tasks with SFT and mixed-mode RLHF, achieving strong performance on code-agent, office-agent, and tool-use tasks.",
+      "llm_tldr_cn": "本文提出Nanbeige4.2-3B，一个仅3B非嵌入参数的紧凑型通用智能体模型。采用循环Transformer复用层堆栈提升容量，通过真实部署和大规模合成构建多样化训练数据，并利用混合模式RLHF优化。在代码代理、办公代理和复杂工具使用任务上表现优异，同时保持数学、编程和科学推理能力。",
+      "llm_tldr": "本文提出Nanbeige4.2-3B，一个仅3B非嵌入参数的紧凑型通用智能体模型。采用循环Transformer复用层堆栈提升容量，通过真实部署和大规模合成构建多样化训练数据，并利用混合模式RLHF优化。在代码代理、办公代理和复杂工具使用任务上表现优异，同时保持数学、编程和科学推理能力。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.18719v1",
+      "source": "arxiv",
+      "title": "Strategy-Following Multi-Agent Deep Reinforcement Learning Considering Control Strategies Provided to Other Agents",
+      "abstract": "This study proposes a learning method for multi-agent systems that allows agents to be controlled through human manager instructions after learning and enables uninstructed agents to implicitly complement the overall work based on the actions of other agents. Multi-agent applications using deep learning have shown potential; thus, to achieve extensive social applications, humans should be able to control learned agents using simple methods to respond to environmental and social changes. Even without such changes, learned coordination often does not match the expectations of human managers, making it preferable to control coordination structures to match human intentions. Some studies have aimed to control agent behavior using simple instructions. However, they assumed that instructions are provided to all agents, which is time-consuming and not evident when designing a better cooperation regime. Ideally, specific agents should receive key action instructions, while others should automatically complete the remaining tasks. The proposed method, which extends previous work on controllability in multi-agent deep reinforcement learning, enables uninstructed agents to adaptively complement overlooked tasks and areas. The experimental results show that agents using the proposed method can shift to another cooperative structure and achieve better performance than those using conventional methods.",
+      "authors": [
+        "Yamato Takahagi",
+        "Gentoku Nakasone",
+        "Yoshinari Motokawa",
+        "Toshiharu Sugawara"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "published": "2026-07-21T05:19:49+00:00",
+      "link": "https://arxiv.org/pdf/2607.18719v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "proposes multi-agent deep reinforcement learning with human-manager control and implicit complementation",
+      "llm_evidence_cn": "提出了支持人类管理指令且允许未指令智能体隐式互补的多智能体深度强化学习方法",
+      "llm_evidence": "提出了支持人类管理指令且允许未指令智能体隐式互补的多智能体深度强化学习方法",
+      "canonical_evidence": "提出了支持人类管理指令且允许未指令智能体隐式互补的多智能体深度强化学习方法",
+      "llm_tldr_en": "Proposes a multi-agent deep reinforcement learning method that allows human manager control after learning and enables uninstructed agents to implicitly complement based on others' actions.",
+      "llm_tldr_cn": "论文针对多智能体系统学习后人类难以干预的问题，提出一种考虑其他智能体控制策略的深度强化学习方法。学习后，人类管理者可通过简单指令控制部分智能体，未指令智能体能基于同伴行为隐式补充协助，实现协调结构符合人类意图，同时保持自主学习能力。",
+      "llm_tldr": "论文针对多智能体系统学习后人类难以干预的问题，提出一种考虑其他智能体控制策略的深度强化学习方法。学习后，人类管理者可通过简单指令控制部分智能体，未指令智能体能基于同伴行为隐式补充协助，实现协调结构符合人类意图，同时保持自主学习能力。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "recent advances in multi agent reinforcement learning",
+      "matched_requirement_id": "req-8",
+      "selection_source": "carryover_cache",
+      "paper_id": "2607.18719v1"
+    },
+    {
+      "id": "2607.19096v1",
+      "source": "arxiv",
+      "title": "Supra Cognitive Modes: A Routed Architecture for Agent Memory",
+      "abstract": "Agent-memory workloads mix direct factual lookup, relation-chain and current-state reasoning, and broad synthesis over long histories. We describe Supra Cognitive Modes (SCM), an architecture that maps explicit or automatically selected per-query modes to retrieval and synthesis payloads over one shared ingest substrate. A frozen semantic classifier and runtime gates dispatch queries among fused lexical and dense lookup, graph or iterative multi-hop handling, and stratified long-form synthesis. The substrate combines multi-granularity embeddings, extracted triples, fact-version metadata, and optional asynchronous enrichments. We characterize the deployed configuration on three benchmarks: Long-term Conversational Memory (LoCoMo; n = 1,986), MemoryAgentBench (MAB; n = 3,671), and LongMemEval (n = 500). The reference run records 84.87% on LoCoMo factoid categories and 68.61% on adversarial abstention, 61.49% on MAB across two repetitions, and 86.00% on LongMemEval. A repository-backed reproduction produces similar aggregate scores and supports task- and mode-conditioned failure analysis. Raw baseline outputs, aligned end-to-end timing for LoCoMo and LongMemEval, and complete token ledgers are unavailable; stored rows also omit some final runtime decisions. The results characterize one implemented routed configuration and its diagnostic failure patterns, while source inspection verifies the per-query control interface and shared-substrate design. Causal routing effects, efficiency gains, and statistical significance remain outside the available evidence.",
+      "authors": [
+        "Joshua Tobkin",
+        "David Yang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-21T13:37:17+00:00",
+      "link": "https://arxiv.org/pdf/2607.19096v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "agent memory architecture design patterns",
+      "llm_evidence_cn": "智能体记忆架构设计模式",
+      "llm_evidence": "智能体记忆架构设计模式",
+      "canonical_evidence": "智能体记忆架构设计模式",
+      "llm_tldr_en": "Proposes Supra Cognitive Modes, a routed architecture for agent memory that uses a semantic classifier to dispatch queries among different retrieval and synthesis modes on a shared substrate.",
+      "llm_tldr_cn": "当前智能体记忆面临工作负载混合（事实查找、关系推理、长历史综合）的挑战。本文提出Supra Cognitive Modes (SCM) 架构，通过一个冻结的语义分类器将查询路由至融合的词汇与稠密查找、图或多跳处理、分层长形式合成等模式，共享同一摄入基座。在LoCoMo等基准上评估了配置。该工作为智能体记忆提供了一种模块化、可扩展的架构设计模式。",
+      "llm_tldr": "当前智能体记忆面临工作负载混合（事实查找、关系推理、长历史综合）的挑战。本文提出Supra Cognitive Modes (SCM) 架构，通过一个冻结的语义分类器将查询路由至融合的词汇与稠密查找、图或多跳处理、分层长形式合成等模式，共享同一摄入基座。在LoCoMo等基准上评估了配置。该工作为智能体记忆提供了一种模块化、可扩展的架构设计模式。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "carryover_cache",
+      "paper_id": "2607.19096v1"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.19215v1",
+      "source": "arxiv",
+      "title": "HACO: Hedged Agent Computing for Reliable LLM Systems",
+      "abstract": "As large language model (LLM) agents move from isolated prompting to longhorizon workflows, failures increasingly arise at the role-to-instance binding boundary, where task-specific role requests must be assigned to concrete agent instances under current service, network, and query conditions. Existing agent system research has improved role specialization, workflow topology, memory, and tool use, but often assumes a fixed stable execution environment. This assumption limits deployed reliability, because the same role request can exhibit different latency, failure probability, and output quality across agent instances operating under different service regions and network conditions. We propose Hedged Agent Computing (HACO), a runtime control scheme that treats each role request as a reliability-constrained selection problem over candidate agent instances, each coupling a role type, an LLM, and a concrete execution environment. Different from routing, HACO adaptively selects a hedge set of candidates for each invocation. Its allocation rule combines optimistic ranking, which prioritizes candidates with high estimated quality, reliability, and informative uncertainty, with conservative reliability accumulation, which stops selection only after the hedge set reaches a target success probability. Through experience harvesting, HACO updates candidate and link profiles from all executed candidate traces, including quality, success, latency, and network statistics. Experiments on various benchmarks, together with runtime degradation studies, show that HACO improves robustness and output quality under changing deployment conditions, while using lower token and latency cost than exhaustive parallel execution.",
+      "authors": [
+        "Enhan Li",
+        "Hongyang Du"
+      ],
+      "primary_category": "cs.NI",
+      "categories": [
+        "cs.NI"
+      ],
+      "published": "2026-07-21T15:47:35+00:00",
+      "link": "https://arxiv.org/pdf/2607.19215v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "agent architecture design for reliable LLM systems",
+      "llm_evidence_cn": "面向可靠LLM系统的智能体架构设计",
+      "llm_evidence": "面向可靠LLM系统的智能体架构设计",
+      "canonical_evidence": "面向可靠LLM系统的智能体架构设计",
+      "llm_tldr_en": "Proposes HACO, a runtime control scheme for LLM agents that hedges role-to-instance bindings to improve reliability under varying service conditions.",
+      "llm_tldr_cn": "现有LLM智能体系统假设稳定执行环境，忽略了不同服务区域和网络条件下角色绑定的可靠性问题。本文提出对冲智能体计算（HACO），通过运行时控制对每个角色请求进行多实例对冲，动态选择最优执行路径。在分布式部署场景下，HACO显著降低了任务失败率和响应延迟。该工作为大规模LLM智能体系统的可靠部署提供了关键方法论。",
+      "llm_tldr": "现有LLM智能体系统假设稳定执行环境，忽略了不同服务区域和网络条件下角色绑定的可靠性问题。本文提出对冲智能体计算（HACO），通过运行时控制对每个角色请求进行多实例对冲，动态选择最优执行路径。在分布式部署场景下，HACO显著降低了任务失败率和响应延迟。该工作为大规模LLM智能体系统的可靠部署提供了关键方法论。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "carryover_cache",
+      "paper_id": "2607.19215v1",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.19592v1",
+      "source": "arxiv",
+      "title": "Knowledge-Centric Self-Improvement",
+      "abstract": "Self-improving AI systems typically treat the agent as the object that improves, by optimizing prompts, workflows, harnesses, or even the agent's own code. This agent-centric view can make improvements expensive to maintain and difficult to transfer, because gains become tied to a particular agent design, task distribution, or adaptation run. We study a complementary paradigm: knowledge-centric self-improvement, in which agents remain generic and disposable while the persistent object is a curated knowledge base that agents can leverage for future tasks. We conduct controlled case studies to operationalize this idea via a simple protocol. Agents attempt one task, then contribute evidence-grounded insights to a shared knowledge base via task-level and cross-task forums, followed by knowledge distillation. Because self-improvement is contained in the knowledge rather than the agent, improvement can be more inspectable, transferable, and portable. Across abstract reasoning, coding, and terminal benchmarks, this protocol improves solve rates while reducing dollar cost relative to agent-centric baselines. The resulting distilled knowledge also transfers to held-out tasks and across LLM families, indicating that the improvement is not merely an LLM- or run-specific behavior. These results support a new view of self-improving agentic systems: progress can be driven primarily by the curated persistent knowledge. Code is available at https://github.com/recursive-knowledge/KSI.",
+      "authors": [
+        "Xuefei Julie Wang",
+        "Lauren Hyoseo Yoon",
+        "Chengrui Qu",
+        "Amanda Zichang Wang",
+        "Atharva Sehgal",
+        "Eric Mazumdar",
+        "Yisong Yue"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "published": "2026-07-21T21:38:39+00:00",
+      "link": "https://arxiv.org/pdf/2607.19592v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Knowledge-centric self-improvement paradigm for agents",
+      "llm_evidence_cn": "面向智能体的知识中心自我改进范式",
+      "llm_evidence": "面向智能体的知识中心自我改进范式",
+      "canonical_evidence": "面向智能体的知识中心自我改进范式",
+      "llm_tldr_en": "This paper proposes knowledge-centric self-improvement where agents remain generic and disposable while a curated knowledge base is improved, enabling more transferable and maintainable improvements across tasks.",
+      "llm_tldr_cn": "针对传统以智能体为中心的自我改进方法导致改进难以迁移和维护的问题，本文提出知识中心自我改进范式。智能体执行任务后向共享知识库贡献基于证据的见解，后续智能体利用该知识库提升性能。实验表明该范式能实现跨任务的持续改进，且改进更易迁移。",
+      "llm_tldr": "针对传统以智能体为中心的自我改进方法导致改进难以迁移和维护的问题，本文提出知识中心自我改进范式。智能体执行任务后向共享知识库贡献基于证据的见解，后续智能体利用该知识库提升性能。实验表明该范式能实现跨任务的持续改进，且改进更易迁移。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "intelligent agent design and applications",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.20759v1",
+      "source": "arxiv",
+      "title": "IssueTrojanBench: Benchmarking AI Coding Agents Against Malicious Issue Requests",
+      "abstract": "AI coding agents powered by LLMs are increasingly integrated into real-world software development, where they generate, edit, and execute code with autonomous access to local files and tools. Coding agents inherit security risks from both the LLM backbone, where adversarial prompts, poisoned training data, and backdoor triggers can cause models to emit insecure or attacker-chosen code, and their agentic architecture, where tool-using autonomy enables induced misuse of external APIs, data exfiltration, and persistent compromise of development environments. This paper presents a systematic evaluation of malicious issue requests against state-of-the-art coding agents (Cursor, Claude Code, and Codex Desktop), powered by two major model families (OpenAI GPT-5.3 Codex/GPT-5.4 and Anthropic Sonnet 4.6). Our novel benchmark IssueTrojanBench contains malicious issues that are constructed based on four novel attack categories (i.e., embedded as malicious instructions in issues), six delivery vectors (e.g., PDF, or issue comment), and further augmented by perturbations. Our results reveal critical vulnerabilities in the as-deployed modern coding agents, i.e., 66.5% of the malicious issues from IssueTrojanBench penetrate all the guardrails (agent- and LLM-level) of coding agents. Our further analysis shows that rejection is almost entirely from LLMs rather than the agent frameworks, with GPT models broadly vulnerable and Sonnet 4.6 exhibiting more selective, risk-aware blocking of high-impact actions. Our evaluation also highlights that the current agent-level defense strategy offers limited additional protection for coding agents. Our findings highlight the urgent need for stronger agent- and model-level safety mechanisms to protect AI coding agents.",
+      "authors": [
+        "Ankur Singh",
+        "Jinqiu Yang",
+        "Tse-Hsun Chen"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.SE"
+      ],
+      "published": "2026-07-22T22:20:02+00:00",
+      "link": "https://arxiv.org/pdf/2607.20759v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "applications of intelligent agents in coding security benchmarking",
+      "llm_evidence_cn": "智能代理在编码安全基准测试中的应用",
+      "llm_evidence": "智能代理在编码安全基准测试中的应用",
+      "canonical_evidence": "智能代理在编码安全基准测试中的应用",
+      "llm_tldr_en": "Benchmarks AI coding agents against malicious issue requests, revealing security risks in agentic architectures.",
+      "llm_tldr_cn": "该论文系统评估了主流AI编码代理（Cursor、Claude Code等）面对恶意issue请求时的安全性，揭示了LLM自身漏洞（对抗提示、后门）和代理架构（工具滥用）两类风险。构建了IssueTrojanBench基准，发现多个代理易被操纵生成恶意代码或泄露数据。该工作为智能代理在软件开发中的应用安全提供了重要参考。",
+      "llm_tldr": "该论文系统评估了主流AI编码代理（Cursor、Claude Code等）面对恶意issue请求时的安全性，揭示了LLM自身漏洞（对抗提示、后门）和代理架构（工具滥用）两类风险。构建了IssueTrojanBench基准，发现多个代理易被操纵生成恶意代码或泄露数据。该工作为智能代理在软件开发中的应用安全提供了重要参考。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "applications of intelligent agents",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.19284v1",
+      "source": "arxiv",
+      "title": "Stochastic Multi-Objective Kinodynamic Planning Against Adversaries",
+      "abstract": "This paper addresses multi-objective kinodynamic planning in environments with stochastic hybrid adversaries that probabilistically transition to adversarial modes based on the ego state. The goal is to construct the Pareto-front of paths that trade off execution cost and the probability of safety constraint violation (risk). Existing chance-constrained planners evaluate risk over open-loop trajectories, yielding overly conservative solutions that fail to account for ego-agent reactivity. To address this limitation, we shift the planning space to sequences of closed-loop policies, and integrate sample-based risk evaluation directly into tree construction via Monte-Carlo particle rollouts. We first introduce Stochastic Multi-Objective RRT (SMO-RRT), for which we prove probabilistic completeness, followed by Stochastic Multi-Objective Stable Sparse RRT (SMO-SST), which leverages selective pruning to improve numerical performance at the cost of completeness. For both algorithms, we derive a finite-sample bound on the probability of chance constraint violation for systems with non-Gaussian, state-dependent uncertainty, enabling probabilistically safe planning in a broad class of environments applicable to multi-agent systems, social navigation, and autonomous driving.",
+      "authors": [
+        "Thomas Marshall Vielmetti",
+        "Daniel Cherenson",
+        "Dimitra Panagou"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-21T16:56:34+00:00",
+      "link": "https://arxiv.org/pdf/2607.19284v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "kinodynamic planning for autonomous agents under adversarial uncertainty",
+      "llm_evidence_cn": "用于自主智能体在对抗不确定性下的运动规划",
+      "llm_evidence": "用于自主智能体在对抗不确定性下的运动规划",
+      "canonical_evidence": "用于自主智能体在对抗不确定性下的运动规划",
+      "llm_tldr_en": "Proposes SMO-RRT that plans with closed-loop policies and Monte-Carlo rollouts to handle stochastic adversaries, constructing Pareto-optimal paths for autonomous agents.",
+      "llm_tldr_cn": "现有机会约束规划器在开放轨迹上评估风险，忽略了智能体的反应能力，导致过于保守。本文提出SMO-RRT方法，将规划空间转移到闭环策略序列，并通过蒙特卡洛粒子展开直接在树构建中集成风险采样。在随机对手环境中构建了执行成本与安全风险之间的帕累托前沿。该方法显著提升了智能体在不确定性下的规划效果。",
+      "llm_tldr": "现有机会约束规划器在开放轨迹上评估风险，忽略了智能体的反应能力，导致过于保守。本文提出SMO-RRT方法，将规划空间转移到闭环策略序列，并通过蒙特卡洛粒子展开直接在树构建中集成风险采样。在随机对手环境中构建了执行成本与安全风险之间的帕累托前沿。该方法显著提升了智能体在不确定性下的规划效果。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent planning",
+      "matched_requirement_id": "req-10",
+      "selection_source": "carryover_cache",
+      "paper_id": "2607.19284v1",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.19865v1",
+      "source": "arxiv",
+      "title": "DocOps: A Verifiable Benchmark for Autonomous Agents in Complex Document Operations",
+      "abstract": "As autonomous agents rapidly evolve, their ability to reliably manipulate ubiquitous digital documents has become critical for enabling general-purpose AI assistants and automating complex workspace workflows. In this paper, we introduce DocOps, a deterministically verifiable evaluation framework underpinned by a hierarchical taxonomy that deconstructs document operations inspired by real-world practices into atomic dimensions and escalating workflow complexities. Based on DocOps, we systematically evaluate representative closed- and open-source models across various agentic harnesses, revealing that even the most advanced frontier configurations still exhibit profound limitations when handling highly coupled, long-range tasks. Furthermore, a fine-grained analysis of existing agents' manipulation behaviors uncovers 3 key failure modes: long-term state tracking collapse, shallow semantic verification, and destructive editing of structural metadata. Ultimately, our work exposes the capability boundaries of agents in maintaining global document consistency, shedding light on the future design of robust, non-destructive agents for complex digital ecosystems.",
+      "authors": [
+        "Jiazhen Jiang",
+        "Boxi Cao",
+        "Lingyong Yan",
+        "Yaojie Lu",
+        "Hongyu Lin",
+        "Shuaiqiang Wang",
+        "Dawei Yin",
+        "Xianpei Han",
+        "Le Sun"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-07-22T07:52:59+00:00",
+      "link": "https://arxiv.org/pdf/2607.19865v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Benchmark for evaluating autonomous agents on complex document operations",
+      "llm_evidence_cn": "评估自主智能体在复杂文档操作中的基准",
+      "llm_evidence": "评估自主智能体在复杂文档操作中的基准",
+      "canonical_evidence": "评估自主智能体在复杂文档操作中的基准",
+      "llm_tldr_en": "DocOps is a verifiable benchmark that evaluates autonomous agents on hierarchical document operation tasks, revealing limitations of current models in long-range coupled workflows.",
+      "llm_tldr_cn": "现有自主智能体在文档操作任务中缺乏系统评估。本文提出DocOps基准，通过分层分类法分解真实文档操作，评估智能体在原子维度和递增复杂度工作流中的表现。结果显示，即使最先进的模型在高度耦合的长距离任务中仍存在严重局限，为自主智能体文档处理能力提供了关键见解。",
+      "llm_tldr": "现有自主智能体在文档操作任务中缺乏系统评估。本文提出DocOps基准，通过分层分类法分解真实文档操作，评估智能体在原子维度和递增复杂度工作流中的表现。结果显示，即使最先进的模型在高度耦合的长距离任务中仍存在严重局限，为自主智能体文档处理能力提供了关键见解。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent decision making",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.21325v1",
+      "source": "arxiv",
+      "title": "Toward cryptographically verifiable authorization for autonomous AI agents: A security hypothesis, preliminary formal model, and proof-of-concept implementation",
+      "abstract": "Autonomous AI agents increasingly execute actions, invoke tools, and operate on protected resources with limited human oversight. Existing authentication and authorization mechanisms establish identity and delegate authority, but do not inherently provide cryptographic evidence that a concrete request issued by a specific agent satisfies the applicable policy in a specific execution context. This paper hypothesizes that agent authorization can be formalized as a cryptographically verifiable relation, denoted $R_{CVA}$, that jointly binds an agent principal, a concrete authorization request, an execution context, and the satisfaction of an applicable policy, while selectively preserving the confidentiality of private authorization attributes. We introduce a preliminary formal abstraction for Cryptographically Verifiable Agent Authorization (CVA), define a compact set of candidate security properties including authorization soundness, principal binding, request binding, policy binding, and replay resistance, and provide an executable zero-knowledge proof of concept that instantiates selected elements of the model over a Groth16 zk-SNARK construction. We further identify and formalize the structural separation among identity binding, authorization-request binding, and runtime execution binding as a central open problem in the design of secure agentic systems (a distinction {not explicitly addressed by} current agentic security frameworks) and present a falsifiable research agenda for its resolution.",
+      "authors": [
+        "M. Llambí-Morillas",
+        "D. Fernández-Fernández"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-07-23T13:55:02+00:00",
+      "link": "https://arxiv.org/pdf/2607.21325v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Cryptographically verifiable authorization framework for autonomous AI agents",
+      "llm_evidence_cn": "自主AI智能体的密码学可验证授权框架",
+      "llm_evidence": "自主AI智能体的密码学可验证授权框架",
+      "canonical_evidence": "自主AI智能体的密码学可验证授权框架",
+      "llm_tldr_en": "Proposes a formal model and proof-of-concept for cryptographically verifiable authorization in autonomous AI agents, binding agent, request, context, and policy.",
+      "llm_tldr_cn": "针对现有授权机制无法为智能体请求提供密码学证据的问题，本文形式化定义可验证关系R_{CVA}并实现概念验证系统。实验表明系统能在多个执行上下文中生成满足策略的加密证据。该工作为自主AI智能体的授权可验证性奠定了基础。",
+      "llm_tldr": "针对现有授权机制无法为智能体请求提供密码学证据的问题，本文形式化定义可验证关系R_{CVA}并实现概念验证系统。实验表明系统能在多个执行上下文中生成满足策略的加密证据。该工作为自主AI智能体的授权可验证性奠定了基础。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "intelligent agent design and applications",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.19336v1",
+      "source": "arxiv",
+      "title": "Agents in the Wild: Where Research Meets Deployment",
+      "abstract": "Agentic systems large language model (LLM) based architectures capable of reasoning, planning, acting, and coordinating with tools and other agents are rapidly transitioning from research prototypes to production scale deployments across domains such as software engineering, scientific discovery, and finance. While academic work has emphasized benchmarks and algorithmic innovation, deployment raises new challenges around robustness, safety, and reliability. This tutorial brings together researchers and practitioners to explore advances in reasoning and planning, multi agent coordination, and evaluation, highlighting open challenges arising from deployment experience. Through applied case studies in pharmaceutical discovery and financial systems, we analyze common design patterns that make agentic systems successful, and discuss practical mitigation strategies for failure modes, such as verification pipelines, fallback mechanisms, and human in the loop supervision. Attendees will gain a comprehensive view of the field along with concrete design patterns, evaluation checklists, and templates for safe and reliable deployment across industries.",
+      "authors": [
+        "Grace Hui Yang",
+        "Pranav N. Venkit",
+        "Hooman Sedghamiz",
+        "Enrico Santus",
+        "Victor Dibia",
+        "Ioana Baldini"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-21T17:55:10+00:00",
+      "link": "https://arxiv.org/pdf/2607.19336v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "multi-agent coordination; reasoning planning applications",
+      "llm_evidence_cn": "多智能体协调；推理规划应用",
+      "llm_evidence": "多智能体协调；推理规划应用",
+      "canonical_evidence": "多智能体协调；推理规划应用",
+      "llm_tldr_en": "Tutorial bridging research and deployment of LLM-based agentic systems, covering reasoning, planning, multi-agent coordination, and evaluation with case studies in pharma and finance.",
+      "llm_tldr_cn": "该教程结合研究与部署实践，探讨基于大语言模型的智能体系统在推理、规划、多智能体协调和评估方面的进展，通过药物发现和金融系统案例分析了设计模式与开放挑战，为自主智能体从研究到生产提供了实用指导。",
+      "llm_tldr": "该教程结合研究与部署实践，探讨基于大语言模型的智能体系统在推理、规划、多智能体协调和评估方面的进展，通过药物发现和金融系统案例分析了设计模式与开放挑战，为自主智能体从研究到生产提供了实用指导。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "carryover_cache",
+      "paper_id": "2607.19336v1",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.21503v1",
+      "source": "arxiv",
+      "title": "Agentic Context Management: Solving Agent Memory and Cost by Treating Them as Lifecycle and Architecture Problems",
+      "abstract": "Production AI agents' failures are less often due to an inability to reason well and more often because they cannot manage what is in their reasoning context: conversation histories, large prompts, large tool definitions, and ballooning tool outputs. Agents drown in their own accumulating history while paying a token cost that grows every turn, producing missing recalls within and across conversations. The incumbent response treats this as a storage-and-retrieval problem. We argue that framing is too narrow. Actively managing what an agent holds in mind is a lifecycle, not merely a store: it spans deciding what to remember, extracting and structuring it, choosing the right store per data type, consolidating and forgetting while preserving provenance, deciding what is relevant now, anticipating what is needed next, and compacting context to a budget without losing what matters. In serious production this operates not over a single user but across an organizational scope hierarchy. We name this discipline Agentic Context Management (ACM) and decompose it into five primitives: architecting, ingesting, scoping, anticipating, and compacting & consolidation. We then make the economic case: naive context accumulation grows token cost quadratically in conversation length, crude summarization buys linear cost at the price of an accuracy cliff, and only validated compaction achieves linear cost with preserved fidelity. We describe a reference implementation, Maximem Synap, that realizes the five primitives as a multi-tenant service and reports 92% on LongMemEval and 93.2% on LoCoMo under the configuration detailed in Section 6. We close with dimensions existing benchmarks do not yet capture, latency, token efficiency, and context-rot resistance, and the frontier of decision-level and organization-level context the category points toward.",
+      "authors": [
+        "Gaurav Dadhich"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.IR"
+      ],
+      "published": "2026-07-23T16:51:31+00:00",
+      "link": "https://arxiv.org/pdf/2607.21503v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "context lifecycle management as an architecture problem for agents",
+      "llm_evidence_cn": "将上下文生命周期管理视为代理架构问题",
+      "llm_evidence": "将上下文生命周期管理视为代理架构问题",
+      "canonical_evidence": "将上下文生命周期管理视为代理架构问题",
+      "llm_tldr_en": "Argues that agent context management is a lifecycle and architecture problem, proposing a framework for deciding what to remember, extracting, storing, and consolidating context.",
+      "llm_tldr_cn": "论文指出生产AI代理的失败往往源于无法管理推理上下文，而非推理能力不足。现有方案仅当作存储检索问题，作者提出应视为生命周期和架构问题，涵盖记忆决定、信息提取、存储选择、跨会话整合等阶段，为代理架构中的上下文管理提供了新的设计视角。",
+      "llm_tldr": "论文指出生产AI代理的失败往往源于无法管理推理上下文，而非推理能力不足。现有方案仅当作存储检索问题，作者提出应视为生命周期和架构问题，涵盖记忆决定、信息提取、存储选择、跨会话整合等阶段，为代理架构中的上下文管理提供了新的设计视角。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.21873v1",
+      "source": "arxiv",
+      "title": "Multi-Agent System-driven Digital Twins for predictive maintenance: architectures, technologies and open research challenges",
+      "abstract": "Digital twins have emerged as a foundational technology within the context of Industry 4.0, offering a paradigm for the real-time virtual representation of physical systems. However, managing their growing complexity, particularly in distributed industrial environments, requires intelligent architectures capable of autonomous decision-making, dynamic adaptability, and inter-agent coordination. This systematic review explores the intersection between Multi-Agent Systems and Digital Twins, with a particular focus on predictive maintenance applications in resource-constrained contexts. Through a critical analysis of over 547 papers published in high-impact journals (IEEE Transactions, Nature, Elsevier, MDPI), we establish a taxonomy of existing hybrid architectures, identify persistent technological bottlenecks, and formulate three open research questions concerning: (i) the deployment of artificial intelligence on resource-constrained microcontrollers, (ii) distributed multi-node coordination via lightweight communication protocols, and (iii) the hierarchical orchestration of Digital Twins toward smart factory control integrating residual life estimation and explainable Artificial Intelligence. The results of this analysis reveal that, despite significant progress, no existing system offers an integrated embedded-distributed hierarchical solution that simultaneously meets the requirements of Industry 5.0.",
+      "authors": [
+        "Korota Arsène Coulibaly",
+        "Mohamed Hamlich"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-24T00:09:53+00:00",
+      "link": "https://arxiv.org/pdf/2607.21873v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "systematic review of multi-agent systems and digital twins",
+      "llm_evidence_cn": "多智能体系统与数字孪生的系统综述",
+      "llm_evidence": "多智能体系统与数字孪生的系统综述",
+      "canonical_evidence": "多智能体系统与数字孪生的系统综述",
+      "llm_tldr_en": "This systematic review explores the intersection of Multi-Agent Systems and Digital Twins for predictive maintenance, analyzing over 547 papers and identifying architectures, technologies, and research challenges.",
+      "llm_tldr_cn": "工业4.0背景下数字孪生复杂性日益增长，需要智能架构支持自主决策和多智能体协调。本文对多智能体系统驱动数字孪生在预测维护中的应用进行了系统性综述，分析了来自顶级期刊的547篇论文，总结了架构模式、关键技术及在资源受限环境中的开放挑战。该综述为领域发展提供了全面参考。",
+      "llm_tldr": "工业4.0背景下数字孪生复杂性日益增长，需要智能架构支持自主决策和多智能体协调。本文对多智能体系统驱动数字孪生在预测维护中的应用进行了系统性综述，分析了来自顶级期刊的547篇论文，总结了架构模式、关键技术及在资源受限环境中的开放挑战。该综述为领域发展提供了全面参考。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.19433v1",
+      "source": "arxiv",
+      "title": "The Chronos Vulnerability: A Taxonomy of Temporal Persistence and Memory-Based Deception in Agentic AI",
+      "abstract": "The transition from stateless generative models in artificial intelligence to stateful, autonomous agents represents an architectural evolution that, while providing the capabilities of long-term planning and the automation of enterprise workflows, also represents the introduction of a new form of security threat, the Chronos Vulnerability. The Chronos Vulnerability represents the threat of memory-based attacks, including the Memory Injection Attack (MINJA) and the sleeper agent, in which the internal belief system of the autonomous agent is compromised, effectively decoupling the attack vector from the final catastrophic event. This study formalizes the threat model for persistence-based attacks and the threat of Dynamics Blindness in the context of the World of Workflows benchmark, demonstrating that traditional endpoint content filters are insufficient for the current stateful architecture. Consequently, this study synthesizes a defense-in-depth landscape, categorizing emerging frameworks such as diagnostic trajectory guardrails (AgentDoG), formal temporal verification (Agent-C), immunological memory consensus (A-MemGuard), and hardware-anchored trust via GPU-based Trusted Execution Environments (TEEs) and Zero-Trust memory architectures.",
+      "authors": [
+        "Om Narayan",
+        "Ramkinker Singh",
+        "Praveen Baskar"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CR"
+      ],
+      "published": "2026-07-20T22:50:33+00:00",
+      "link": "https://arxiv.org/pdf/2607.19433v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "taxonomy of temporal persistence and memory-based deception in agentic AI",
+      "llm_evidence_cn": "自主智能体时间持久性和记忆欺骗的分类体系",
+      "llm_evidence": "自主智能体时间持久性和记忆欺骗的分类体系",
+      "canonical_evidence": "自主智能体时间持久性和记忆欺骗的分类体系",
+      "llm_tldr_en": "This paper formalizes the Chronos Vulnerability, a new security threat in stateful autonomous agents due to memory-based attacks like MINJA and sleeper agents, decoupling attack vector from catastrophic event.",
+      "llm_tldr_cn": "随着从无状态生成模型向有状态自主智能体的架构演进，长期规划和自动化工作流成为可能，但也引入了新的安全威胁——Chronos漏洞。本文系统化地定义了基于持久性和记忆攻击（如内存注入攻击MINJA和休眠代理）的威胁模型，攻击向量与最终灾难事件可被分离。该研究为自主智能体架构的安全设计提供了重要分类学基础。",
+      "llm_tldr": "随着从无状态生成模型向有状态自主智能体的架构演进，长期规划和自动化工作流成为可能，但也引入了新的安全威胁——Chronos漏洞。本文系统化地定义了基于持久性和记忆攻击（如内存注入攻击MINJA和休眠代理）的威胁模型，攻击向量与最终灾难事件可被分离。该研究为自主智能体架构的安全设计提供了重要分类学基础。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "papers on autonomous agent architectures and control",
+      "matched_requirement_id": "req-7",
+      "selection_source": "carryover_cache",
+      "paper_id": "2607.19433v1",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.22400v1",
+      "source": "arxiv",
+      "title": "A Self-Calibrating Agentic AI Framework for Autonomous Edge Resource Allocation",
+      "abstract": "Large Language Models (LLMs) are increasingly deployed as autonomous agents, transitioning from static conversational interfaces to dynamic systems capable of complex reasoning, tool execution, and decision-making. However, the operational reliability of these agentic AI systems is fundamentally challenged by the absence of reliable ground truth in open-ended environments and the risk of increasing operational drift over time. To address this challenge, we propose and experimentally evaluate an agentic AI framework, designed to enforce autonomous integrity within LLM-driven systems. We design a self-calibration mechanism that mitigates drift and dynamically approximates ground truth by incorporating an ARIMA forecaster, without requiring continuous human oversight. To demonstrate the effectiveness and reliability of our methodology, we apply it to the complex domain of profiling the resource usage of zero-knowledge workloads in edge computing networks. Experimental results show that the proposed self-calibrating agentic framework successfully profiles the zero-knowledge workloads, achieving a higher accuracy than baseline LLM agents by 91.7% for resource usage prediction and improving the prediction speed by 71.7% compared to pure profiling, establishing a robust foundation for deploying autonomous AI in decentralized infrastructures. Furthermore, the ground truth generation using the proposed ARIMA leaping algorithm is 52% faster than a standard ARIMA forecasting algorithm, while achieving the same accuracy.",
+      "authors": [
+        "Fin Gentzen",
+        "Marla Grunewald",
+        "Iulisloi Zacarias",
+        "Mounir Bensalem",
+        "Admela Jukan"
+      ],
+      "primary_category": "cs.NI",
+      "categories": [
+        "cs.NI",
+        "cs.AI"
+      ],
+      "published": "2026-07-24T15:21:54+00:00",
+      "link": "https://arxiv.org/pdf/2607.22400v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "autonomous agent decision making with self-calibration for edge resource allocation",
+      "llm_evidence_cn": "自主代理决策中的自校准边缘资源分配",
+      "llm_evidence": "自主代理决策中的自校准边缘资源分配",
+      "canonical_evidence": "自主代理决策中的自校准边缘资源分配",
+      "llm_tldr_en": "Proposes self-calibrating agentic AI framework for autonomous edge resource allocation, mitigating drift without ground truth.",
+      "llm_tldr_cn": "该论文针对LLM驱动自主代理在开放环境中缺乏真实标签、易产生操作漂移的问题，设计了一种自校准代理框架，通过集成ARIMA预测器动态近似真实状态并校正决策。实验在边缘资源分配场景中验证了框架在漂移抑制和任务完成率上的优势。该工作提升了自主代理在动态环境中的可靠性。",
+      "llm_tldr": "该论文针对LLM驱动自主代理在开放环境中缺乏真实标签、易产生操作漂移的问题，设计了一种自校准代理框架，通过集成ARIMA预测器动态近似真实状态并校正决策。实验在边缘资源分配场景中验证了框架在漂移抑制和任务完成率上的优势。该工作提升了自主代理在动态环境中的可靠性。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent decision making",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

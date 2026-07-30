@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-07-29</span>
+      <span class="dpr-home-dashboard-kicker">2026-07-30</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 22 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 17 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>11</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>6</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-07-29 21:48:08 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-07-30 20:37:05 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,9 +62,7 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日22篇论文聚焦自主代理与自动驾驶，精读两篇9分研究：科学导航评估与无信号路口协调。</p>
-<p>最值得关注：SciExplore揭示自主代理在科学信息整合中的能力，Compact Latent Coordination为无信号路口车辆协同提供紧凑化方案。</p>
-<p>建议优先精读两篇高分论文，再速读自主代理行为量表与6G通信挑战，以全面把握AI代理前沿。</p>
+<p>今日精读6篇，重点关注个性化智能体推理策略优化与强化学习控制策略。最值得看ODYSSE（9分）的智能推理策略优化和HACO（8分）的可靠LLM对冲计算。建议优先阅读精读列表中的两篇高分文章，深入理解智能体在复杂场景下的决策与泛化能力。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -73,12 +71,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">11 篇</strong>
+    <strong class="dpr-home-dashboard-count">6 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="SciExplore: Evaluating Autonomous Agents from Scientific Navigation to Information Integration">SciExplore: Evaluating Autonomous Agents from Scientific Navigation to Information Integration</span></li><li><span class="dpr-home-dashboard-paper-title" title="Compact Latent Coordination for Autonomous Vehicles at Unsignalized Intersections">Compact Latent Coordination for Autonomous Vehicles at Unsignalized Intersections</span></li><li><span class="dpr-home-dashboard-paper-title" title="Commitment To Cooperation With Self-Negotiated Contracts">Commitment To Cooperation With Self-Negotiated Contracts</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="ODYSSE: Episode-wise Policy Optimization for Personalized Agentic Reasoning">ODYSSE: Episode-wise Policy Optimization for Personalized Agentic Reasoning</span></li><li><span class="dpr-home-dashboard-paper-title" title="Strategy-Following Multi-Agent Deep Reinforcement Learning Considering Control Strategies Provided to Other Agents">Strategy-Following Multi-Agent Deep Reinforcement Learning Considering Control Strategies Provided to Other Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Supra Cognitive Modes: A Routed Architecture for Agent Memory">Supra Cognitive Modes: A Routed Architecture for Agent Memory</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>6</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -89,7 +87,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="The Autonomous Agency Scale: A Behavioral Framework for Measuring Self-Directed Behavior in AI Systems">The Autonomous Agency Scale: A Behavioral Framework for Measuring Self-Directed Behavior in AI Systems</span></li><li><span class="dpr-home-dashboard-paper-title" title="Towards Agentic Agent-based Models: Feasibility, Performance, and Statistical Model Checking">Towards Agentic Agent-based Models: Feasibility, Performance, and Statistical Model Checking</span></li><li><span class="dpr-home-dashboard-paper-title" title="AI Agent Communications in AI-Native 6G Network: Status, Challenges and Opportunities">AI Agent Communications in AI-Native 6G Network: Status, Challenges and Opportunities</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="HACO: Hedged Agent Computing for Reliable LLM Systems">HACO: Hedged Agent Computing for Reliable LLM Systems</span></li><li><span class="dpr-home-dashboard-paper-title" title="Stochastic Multi-Objective Kinodynamic Planning Against Adversaries">Stochastic Multi-Objective Kinodynamic Planning Against Adversaries</span></li><li><span class="dpr-home-dashboard-paper-title" title="Agents in the Wild: Where Research Meets Deployment">Agents in the Wild: Where Research Meets Deployment</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>

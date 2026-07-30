@@ -1,0 +1,281 @@
+{
+  "date": "20260730",
+  "date_label": "",
+  "generated_at": "2026-07-30 20:37:05 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2607.25369v1",
+      "route": "202607/30/2607.25369v1-odysse-episode-wise-policy-optimization-for-personalized-agentic-reasoning",
+      "title": "ODYSSE: Episode-wise Policy Optimization for Personalized Agentic Reasoning",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "个性化智能体推理的强化微调方法",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    },
+    {
+      "paper_id": "2607.18719v1",
+      "route": "202607/30/2607.18719v1-strategy-following-multi-agent-deep-reinforcement-learning-considering-control-strategies-provided-to-other-agents",
+      "title": "Strategy-Following Multi-Agent Deep Reinforcement Learning Considering Control Strategies Provided to Other Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "提出了支持人类管理指令且允许未指令智能体隐式互补的多智能体深度强化学习方法",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    },
+    {
+      "paper_id": "2607.19096v1",
+      "route": "202607/30/2607.19096v1-supra-cognitive-modes-a-routed-architecture-for-agent-memory",
+      "title": "Supra Cognitive Modes: A Routed Architecture for Agent Memory",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "智能体记忆架构设计模式",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    },
+    {
+      "paper_id": "2607.19215v1",
+      "route": "202607/30/2607.19215v1-haco-hedged-agent-computing-for-reliable-llm-systems",
+      "title": "HACO: Hedged Agent Computing for Reliable LLM Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向可靠LLM系统的智能体架构设计",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    },
+    {
+      "paper_id": "2607.19284v1",
+      "route": "202607/30/2607.19284v1-stochastic-multi-objective-kinodynamic-planning-against-adversaries",
+      "title": "Stochastic Multi-Objective Kinodynamic Planning Against Adversaries",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "用于自主智能体在对抗不确定性下的运动规划",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    },
+    {
+      "paper_id": "2607.19336v1",
+      "route": "202607/30/2607.19336v1-agents-in-the-wild-where-research-meets-deployment",
+      "title": "Agents in the Wild: Where Research Meets Deployment",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "多智能体协调；推理规划应用",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    },
+    {
+      "paper_id": "2607.19433v1",
+      "route": "202607/30/2607.19433v1-the-chronos-vulnerability-a-taxonomy-of-temporal-persistence-and-memory-based-deception-in-agentic-ai",
+      "title": "The Chronos Vulnerability: A Taxonomy of Temporal Persistence and Memory-Based Deception in Agentic AI",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "自主智能体时间持久性和记忆欺骗的分类体系",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    },
+    {
+      "paper_id": "2607.21209v1",
+      "route": "202607/30/2607.21209v1-explainability-framework-for-policy-aware-autonomous-agents",
+      "title": "Explainability Framework for Policy-Aware Autonomous Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "策略感知代理的可解释性框架",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    },
+    {
+      "paper_id": "2607.21361v1",
+      "route": "202607/30/2607.21361v1-fedagentke-federated-semantic-knowledge-evolution-for-heterogeneous-agents",
+      "title": "FedAgentKE: Federated Semantic Knowledge Evolution for Heterogeneous Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "异构智能体的联邦知识进化",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    },
+    {
+      "paper_id": "2607.22083v1",
+      "route": "202607/30/2607.22083v1-nanbeige42-3b-unlocking-agentic-capabilities-in-a-compact-mode",
+      "title": "Nanbeige4.2-3B: Unlocking Agentic Capabilities in a Compact Mode",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "使用循环Transformer的紧凑型智能体架构与能力",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    },
+    {
+      "paper_id": "2607.19592v1",
+      "route": "202607/30/2607.19592v1-knowledge-centric-self-improvement",
+      "title": "Knowledge-Centric Self-Improvement",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向智能体的知识中心自我改进范式",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    },
+    {
+      "paper_id": "2607.19865v1",
+      "route": "202607/30/2607.19865v1-docops-a-verifiable-benchmark-for-autonomous-agents-in-complex-document-operations",
+      "title": "DocOps: A Verifiable Benchmark for Autonomous Agents in Complex Document Operations",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "评估自主智能体在复杂文档操作中的基准",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    },
+    {
+      "paper_id": "2607.21503v1",
+      "route": "202607/30/2607.21503v1-agentic-context-management-solving-agent-memory-and-cost-by-treating-them-as-lifecycle-and-architecture-problems",
+      "title": "Agentic Context Management: Solving Agent Memory and Cost by Treating Them as Lifecycle and Architecture Problems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "将上下文生命周期管理视为代理架构问题",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    },
+    {
+      "paper_id": "2607.22400v1",
+      "route": "202607/30/2607.22400v1-a-self-calibrating-agentic-ai-framework-for-autonomous-edge-resource-allocation",
+      "title": "A Self-Calibrating Agentic AI Framework for Autonomous Edge Resource Allocation",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "自主代理决策中的自校准边缘资源分配",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    },
+    {
+      "paper_id": "2607.20759v1",
+      "route": "202607/30/2607.20759v1-issuetrojanbench-benchmarking-ai-coding-agents-against-malicious-issue-requests",
+      "title": "IssueTrojanBench: Benchmarking AI Coding Agents Against Malicious Issue Requests",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "智能代理在编码安全基准测试中的应用",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    },
+    {
+      "paper_id": "2607.21325v1",
+      "route": "202607/30/2607.21325v1-toward-cryptographically-verifiable-authorization-for-autonomous-ai-agents-a-security-hypothesis-preliminary-formal-model-and-proof-of-concept-implementation",
+      "title": "Toward cryptographically verifiable authorization for autonomous AI agents: A security hypothesis, preliminary formal model, and proof-of-concept implementation",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "自主AI智能体的密码学可验证授权框架",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    },
+    {
+      "paper_id": "2607.21873v1",
+      "route": "202607/30/2607.21873v1-multi-agent-system-driven-digital-twins-for-predictive-maintenance-architectures-technologies-and-open-research-challenges",
+      "title": "Multi-Agent System-driven Digital Twins for predictive maintenance: architectures, technologies and open research challenges",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "多智能体系统与数字孪生的系统综述",
+      "first_seen_at": "2026-07-30 20:37:05 UTC",
+      "updated_at": "2026-07-30 20:37:05 UTC"
+    }
+  ]
+}
