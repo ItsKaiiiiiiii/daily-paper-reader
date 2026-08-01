@@ -1,0 +1,489 @@
+{
+  "date": "20260801",
+  "date_label": "",
+  "generated_at": "2026-08-01 21:02:48 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2607.22119v1",
+      "route": "202608/01/2607.22119v1-one-hand-watches-the-other-dynamic-multi-agent-cooperation-for-sample-efficient-bimanual-manipulation-in-dynamic-environments",
+      "title": "One Hand Watches The Other: Dynamic Multi-Agent Cooperation for Sample-Efficient Bimanual Manipulation in Dynamic Environments",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "用于双臂操作的多智能体动态协作策略",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.23678v1",
+      "route": "202608/01/2607.23678v1-focus-is-all-you-need-adaptive-goal-aware-attention-orchestration-for-multi-agent-graph-systems",
+      "title": "Focus Is All You Need: Adaptive Goal-aware Attention Orchestration for Multi-Agent Graph Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向多智能体图系统的注意力编排",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.23734v1",
+      "route": "202608/01/2607.23734v1-truav-distributed-multi-agent-reinforcement-learning-for-trajectory-planning-and-routing-enhancement-in-uav-aided-iot-enabled-vanets",
+      "title": "TRUAV: Distributed Multi-Agent Reinforcement Learning for Trajectory Planning and Routing Enhancement in UAV-Aided IoT-Enabled VANETs",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向UAV轨迹规划与路由的分布式多智能体强化学习框架",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.23942v1",
+      "route": "202608/01/2607.23942v1-from-cognitive-architectures-to-language-agents-a-mechanism-level-review-of-lineage-convergence-and-migration-gaps",
+      "title": "From Cognitive Architectures to Language Agents: A Mechanism-Level Review of Lineage, Convergence, and Migration Gaps",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "机制级综述智能体架构与语言智能体运行时",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.24162v2",
+      "route": "202608/01/2607.24162v2-agent-uct-upper-confidence-bounds-applied-to-trees-for-agentic-workflow-optimization-with-cost-awareness",
+      "title": "Agent-UCT: Upper Confidence Bounds Applied to Trees for Agentic Workflow Optimization with Cost-Awareness",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "通过成本感知树搜索优化智能体工作流组件选择",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.24280v1",
+      "route": "202608/01/2607.24280v1-from-proprietary-to-open-source-bridging-the-distribution-gap-via-multi-agent-protocol-distillation-in-agentic-search",
+      "title": "From Proprietary to Open-Source: Bridging the Distribution Gap via Multi-Agent Protocol Distillation in Agentic Search",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "智能体搜索中的多智能体协议蒸馏用于协调",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.25415v1",
+      "route": "202608/01/2607.25415v1-a-control-system-a-dataset-and-a-recipe-for-making-frozen-llm-agents-learn-a-domain",
+      "title": "A Control System, a Dataset, and a Recipe for Making Frozen LLM Agents Learn a Domain",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "针对冻结LLM智能体在操作空间上学习RL策略的控制系统",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.25877v1",
+      "route": "202608/01/2607.25877v1-runtime-uncertainty-monitoring-for-llm-based-multi-agent-systems-using-bayesian-networks",
+      "title": "Runtime Uncertainty Monitoring for LLM-Based Multi-Agent Systems Using Bayesian Networks",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "带中央枢纽和贝叶斯网络不确定性传播的多智能体框架",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.26120v1",
+      "route": "202608/01/2607.26120v1-even-more-deception-objective-misalignment-in-mixed-motive-llm-multi-agent-systems",
+      "title": "Even More Deception: Objective Misalignment in Mixed-Motive LLM Multi-Agent Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向多智能体系统中目标错位与欺骗的评估框架",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.26148v1",
+      "route": "202608/01/2607.26148v1-embodied-agents-take-control-minimal-interface-zero-shot-agents-rival-industrial-scale-policies-in-vision-and-language-navigation",
+      "title": "Embodied Agents Take Control: Minimal-Interface Zero-Shot Agents Rival Industrial-Scale Policies in Vision-and-Language Navigation",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "视觉语言导航中的最简接口智能体具身控制",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.26212v1",
+      "route": "202608/01/2607.26212v1-multi-agent-debate-strategies-survey-taxonomy-and-challenges",
+      "title": "Multi-Agent Debate Strategies: Survey, Taxonomy, and Challenges",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体辩论交互与协议机制的分类体系",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.27177v1",
+      "route": "202608/01/2607.27177v1-partner-capability-estimation-for-task-agnostic-adaptation-in-ad-hoc-teamwork",
+      "title": "Partner Capability Estimation for Task-Agnostic Adaptation in Ad-Hoc Teamwork",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向临时团队协作的能力估计方法",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.27599v1",
+      "route": "202608/01/2607.27599v1-world-action-planner-generalizable-decision-making-with-action-conditioned-world-models",
+      "title": "World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "基于动作条件世界模型进行智能体规划与泛化",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.27877v1",
+      "route": "202608/01/2607.27877v1-an-empirical-study-of-coordination-mode-as-the-first-class-citizen-in-from-scratch-multi-agent-coding",
+      "title": "An Empirical Study of Coordination Mode as the First-Class Citizen in From-Scratch Multi-Agent Coding",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "针对多智能体协作拓扑与协调模式的实证研究与基准",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.27942v1",
+      "route": "202608/01/2607.27942v1-scaling-llm-driven-multi-agent-systems-design-principles-and-architectural-scalability-analysis",
+      "title": "Scaling LLM-Driven Multi-Agent Systems: Design Principles and Architectural Scalability Analysis",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "提炼可扩展多智能体架构设计原则",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.27958v1",
+      "route": "202608/01/2607.27958v1--mem-an-online-reliability-memory-for-llm-based-multi-agent-systems",
+      "title": "$Σ$-Mem: An Online Reliability Memory for LLM-based Multi-Agent Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体系统中的在线可靠性记忆用于信任建模",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.27967v1",
+      "route": "202608/01/2607.27967v1-mars-ra-rank-aggregation-for-credit-assignment-via-multimodal-comparisons-in-embodied-multi-agent-cooperation",
+      "title": "MARS-RA: Rank Aggregation for Credit Assignment via Multimodal Comparisons in Embodied Multi-Agent Cooperation",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向合作式多智能体强化学习的排序聚合信用分配",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.28408v1",
+      "route": "202608/01/2607.28408v1-on-policy-and-off-policy-learning-for-large-action-spaces",
+      "title": "On-Policy and Off-Policy Learning for Large Action Spaces",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "研究在大动作空间中上下文赌博机场景下智能体策略学习",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.28527v1",
+      "route": "202608/01/2607.28527v1-manta-multi-agent-network-topology-adaptation-for-self-evolving-multi-agent-systems",
+      "title": "MANTA: Multi-Agent Network Topology Adaptation for Self-Evolving Multi-Agent Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体网络拓扑自适应以实现在通信结构上的自我进化",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.19595v1",
+      "route": "202608/01/2607.19595v1-twin-agent-context-residual-compression-for-privilege-separated-agents",
+      "title": "Twin Agent: Context Residual Compression for Privilege Separated Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "智能体架构设计模式；特权分离",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.19739v1",
+      "route": "202608/01/2607.19739v1-personalized-recommendation-tool-learning-via-autonomous-language-agents",
+      "title": "Personalized Recommendation Tool Learning via Autonomous Language Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "基于LLM的推荐智能体架构",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.19774v1",
+      "route": "202608/01/2607.19774v1-defer-to-plan-adaptive-multi-agent-fusion-for-end-to-end-v2x-driving",
+      "title": "Defer to Plan: Adaptive Multi-Agent Fusion for End-to-End V2X Driving",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "自适应多智能体融合用于V2X驾驶协调",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.21268v1",
+      "route": "202608/01/2607.21268v1-pai-econ-claude-a-gated-human-in-the-loop-multi-agent-architecture-for-ai-assisted-economic-theory-development",
+      "title": "pAI-Econ-claude: A Gated Human-in-the-Loop Multi-Agent Architecture for AI-Assisted Economic Theory Development",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "用于科学协作的门控人在回路多智能体架构",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.22319v1",
+      "route": "202608/01/2607.22319v1-towards-trustworthy-and-cost-efficient-data-integration-from-nave-rag-to-agentic-rag",
+      "title": "Towards Trustworthy and Cost-Efficient Data Integration: From Naïve RAG to Agentic RAG",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向可信数据集的智能体RAG",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.22465v2",
+      "route": "202608/01/2607.22465v2-trace-router-task-consistent-and-adaptive-online-routing-for-agentic-ai",
+      "title": "TRACE-ROUTER: Task-Consistent and Adaptive Online Routing for Agentic AI",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向长程智能体工作流的任务一致在线路由框架",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.22525v1",
+      "route": "202608/01/2607.22525v1-explainable-reinforcement-learning-for-assisting-air-traffic-controllers",
+      "title": "Explainable Reinforcement Learning for assisting Air Traffic Controllers",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "在安全关键的空中交通管制中应用强化学习可解释性以支持人机协作",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.23263v1",
+      "route": "202608/01/2607.23263v1-seekjudge-a-practical-reward-framework-for-reinforcement-learning-in-computer-use-agents",
+      "title": "SeekJudge: A Practical Reward Framework for Reinforcement Learning in Computer-Use Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "四个专责智能体通过Seek-Analyze循环协作评判轨迹",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.22368v1",
+      "route": "202608/01/2607.22368v1-do-agent-benchmarks-measure-capability-protocol-validity-in-the-age-of-agentic-ai",
+      "title": "Do Agent Benchmarks Measure Capability? Protocol Validity in the Age of Agentic AI",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "审计智能体基准的协议有效性以支撑能力结论",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.23147v1",
+      "route": "202608/01/2607.23147v1-false-prophets-on-the-security-of-world-models-in-agentic-systems",
+      "title": "False Prophets: On the Security of World Models in Agentic Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "分析智能体系统中世界模型的安全漏洞与控制风险",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    },
+    {
+      "paper_id": "2607.26300v1",
+      "route": "202608/01/2607.26300v1-agentgui-an-interface-for-observing-and-steering-long-running-ai-agents",
+      "title": "AgentGUI: An Interface for Observing and Steering Long-Running AI Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "用于观察和操控长时运行AI智能体的图形界面",
+      "first_seen_at": "2026-08-01 21:02:48 UTC",
+      "updated_at": "2026-08-01 21:02:48 UTC"
+    }
+  ]
+}

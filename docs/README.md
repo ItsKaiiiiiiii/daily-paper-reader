@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-07-30</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-01</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 17 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 30 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>6</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>19</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-07-30 20:37:05 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-01 21:02:48 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,7 +62,7 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日精读6篇，重点关注个性化智能体推理策略优化与强化学习控制策略。最值得看ODYSSE（9分）的智能推理策略优化和HACO（8分）的可靠LLM对冲计算。建议优先阅读精读列表中的两篇高分文章，深入理解智能体在复杂场景下的决策与泛化能力。</p>
+<p>今日精读30篇论文，其中19篇精读、11篇速读，重点关注多智能体协作与操作任务。最值得看的是《One Hand Watches The Other》与《Focus Is All You Need》，分别涉及双臂动态操作和注意力编排，均获9.0高分。建议优先精读这两篇，并结合速读列表中的V2X驾驶与个性化工具学习扩展视野。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -71,12 +71,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">6 篇</strong>
+    <strong class="dpr-home-dashboard-count">19 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="ODYSSE: Episode-wise Policy Optimization for Personalized Agentic Reasoning">ODYSSE: Episode-wise Policy Optimization for Personalized Agentic Reasoning</span></li><li><span class="dpr-home-dashboard-paper-title" title="Strategy-Following Multi-Agent Deep Reinforcement Learning Considering Control Strategies Provided to Other Agents">Strategy-Following Multi-Agent Deep Reinforcement Learning Considering Control Strategies Provided to Other Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Supra Cognitive Modes: A Routed Architecture for Agent Memory">Supra Cognitive Modes: A Routed Architecture for Agent Memory</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="One Hand Watches The Other: Dynamic Multi-Agent Cooperation for Sample-Efficient Bimanual Manipulation in Dynamic Environments">One Hand Watches The Other: Dynamic Multi-Agent Cooperation for Sample-Efficient Bimanual Manipulation in Dynamic Environments</span></li><li><span class="dpr-home-dashboard-paper-title" title="Focus Is All You Need: Adaptive Goal-aware Attention Orchestration for Multi-Agent Graph Systems">Focus Is All You Need: Adaptive Goal-aware Attention Orchestration for Multi-Agent Graph Systems</span></li><li><span class="dpr-home-dashboard-paper-title" title="TRUAV: Distributed Multi-Agent Reinforcement Learning for Trajectory Planning and Routing Enhancement in UAV-Aided IoT-Enabled VANETs">TRUAV: Distributed Multi-Agent Reinforcement Learning for Trajectory Planning and Routing Enhancement in UAV-Aided IoT-Enabled VANETs</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>6</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>19</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -87,7 +87,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="HACO: Hedged Agent Computing for Reliable LLM Systems">HACO: Hedged Agent Computing for Reliable LLM Systems</span></li><li><span class="dpr-home-dashboard-paper-title" title="Stochastic Multi-Objective Kinodynamic Planning Against Adversaries">Stochastic Multi-Objective Kinodynamic Planning Against Adversaries</span></li><li><span class="dpr-home-dashboard-paper-title" title="Agents in the Wild: Where Research Meets Deployment">Agents in the Wild: Where Research Meets Deployment</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Twin Agent: Context Residual Compression for Privilege Separated Agents">Twin Agent: Context Residual Compression for Privilege Separated Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Personalized Recommendation Tool Learning via Autonomous Language Agents">Personalized Recommendation Tool Learning via Autonomous Language Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Defer to Plan: Adaptive Multi-Agent Fusion for End-to-End V2X Driving">Defer to Plan: Adaptive Multi-Agent Fusion for End-to-End V2X Driving</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>
