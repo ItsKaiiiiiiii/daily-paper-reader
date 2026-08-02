@@ -1,0 +1,377 @@
+{
+  "date": "20260802",
+  "date_label": "",
+  "generated_at": "2026-08-02 20:56:56 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2607.22999v1",
+      "route": "202608/02/2607.22999v1-wcm-world-cognition-model-for-generalizable-human-robot-interaction",
+      "title": "WCM: World-Cognition Model for Generalizable Human-Robot Interaction",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "具身智能体架构，分离感知、推理、控制与记忆",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.23124v1",
+      "route": "202608/02/2607.23124v1-agentomnia-scaling-agentic-models-for-full-scenario-applications",
+      "title": "AgentOmnia: Scaling Agentic Models for Full-Scenario Applications",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "跨应用场景的智能体模型规模化设计",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.23605v1",
+      "route": "202608/02/2607.23605v1-hybrid-advantage-estimation-with-unified-critic-for-vlm-agentic-reinforcement-learning",
+      "title": "Hybrid Advantage Estimation with Unified Critic for VLM Agentic Reinforcement Learning",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向视觉语言智能体多轮决策的强化学习方法",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.24167v1",
+      "route": "202608/02/2607.24167v1-falsifiable-commitment-planning-for-self-correcting-web-agents",
+      "title": "Falsifiable Commitment Planning for Self-Correcting Web Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向自修正Web智能体的可证伪承诺规划",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.25408v1",
+      "route": "202608/02/2607.25408v1-context-assembly-as-the-controlled-variable-a-control-theoretic-view-of-harness-policies-for-frozen-llm-agents",
+      "title": "Context Assembly as the Controlled Variable: A Control-Theoretic View of Harness Policies for Frozen LLM Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向LLM智能体控制策略的控制论视角",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.25754v1",
+      "route": "202608/02/2607.25754v1-cooperative-multi-uav-navigation-in-complex-environments-via-systematic-multi-agent-deep-reinforcement-learning",
+      "title": "Cooperative Multi-UAV Navigation in Complex Environments via Systematic Multi-Agent Deep Reinforcement Learning",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "系统性多智能体深度强化学习无人机导航",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.25825v1",
+      "route": "202608/02/2607.25825v1-chill-harness-counterfactual-harness-learning-for-efficient-reasoning-in-long-horizon-agents",
+      "title": "CHILL-Harness: Counterfactual Harness Learning for Efficient Reasoning in Long-Horizon Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "将智能体框架系统中的自适应编排建模为因果学习，提出反事实框架学习，直接面向智能体架构与控制。",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.26784v1",
+      "route": "202608/02/2607.26784v1-skillrise-agentic-reinforcement-learning-for-cross-task-skill-evolution",
+      "title": "SkillRise: Agentic Reinforcement Learning for Cross-Task Skill Evolution",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向跨任务决策的智能体强化学习",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.27973v1",
+      "route": "202608/02/2607.27973v1-tapo-transition-aware-policy-optimization-for-llm-agents",
+      "title": "TAPO: Transition-Aware Policy Optimization for LLM Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向LLM智能体决策的转移感知策略优化",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.27994v1",
+      "route": "202608/02/2607.27994v1-skimix-multi-agent-harness-time-scaling-with-skill-mixture-for-dynamic-harness-engineering",
+      "title": "SKIMIX: Multi-Agent Harness-Time Scaling with Skill Mixture for Dynamic Harness Engineering",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向动态编排工程的技能混合多智能体框架",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.28147v1",
+      "route": "202608/02/2607.28147v1-agent-harness-distillation-inference-time-harness-extraction-and-exploitation-in-autonomous-multi-agent-systems",
+      "title": "Agent Harness Distillation: Inference-Time Harness Extraction and Exploitation in Autonomous Multi-Agent Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "自主多智能体系统中推理时框架协调推理与动作，研究框架提取与利用，直接关联多智能体协调。",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.28430v1",
+      "route": "202608/02/2607.28430v1-agentradio-passive-awareness-for-long-horizon-multi-agent-collaboration",
+      "title": "AgentRadio: Passive Awareness for Long-Horizon Multi-Agent Collaboration",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向长时程多智能体协作的被动感知机制",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.22014v1",
+      "route": "202608/02/2607.22014v1-zero-shot-mission-level-evaluation-for-aerial-mllm-agents",
+      "title": "Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向空中MLLM智能体的零样本任务级规划导航评测基准",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.22157v1",
+      "route": "202608/02/2607.22157v1-learning-on-the-job-continual-learning-from-deployment-feedback-for-frozen-weights-agents",
+      "title": "Learning on the Job: Continual Learning from Deployment Feedback for Frozen-Weights Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "冻结权重代理从部署反馈提炼的自然语言规则中持续学习",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.22917v1",
+      "route": "202608/02/2607.22917v1-agent-team-work-zone-an-automated-persistent-workspace-for-long-lived-coding-agent-teams",
+      "title": "Agent Team Work Zone: An Automated, Persistent Workspace for Long-Lived Coding Agent Teams",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "为长期运行的编程智能体团队提供持久化工作区",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.23336v1",
+      "route": "202608/02/2607.23336v1-constitutional-governance-for-societies-of-ai-agents-in-the-built-environment-a-research-agenda",
+      "title": "Constitutional governance for societies of AI agents in the built environment: a research agenda",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "AI智能体社会、协商式智能体、策略交互与协调",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.23617v1",
+      "route": "202608/02/2607.23617v1-optimal-reward-shaping-autonomous-car-parking-case-study",
+      "title": "Optimal Reward Shaping: Autonomous Car Parking Case Study",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向自动驾驶泊车智能体强化学习控制的奖励塑形",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.23930v1",
+      "route": "202608/02/2607.23930v1-bridging-reinforcement-learning-and-optimal-control-via-feasible-action-mapping",
+      "title": "Bridging Reinforcement Learning and Optimal Control via Feasible Action Mapping",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "基于可行动作映射的强化学习智能体控制",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.24112v1",
+      "route": "202608/02/2607.24112v1-scaling-gui-agents-with-visual-state-transitions",
+      "title": "Scaling GUI Agents with Visual State Transitions",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "通过视觉状态转换预训练扩展GUI智能体能力，是智能体在界面自动化中的应用。",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.24416v1",
+      "route": "202608/02/2607.24416v1-decentralised-consensus-learning-networks-sme-rotation-without-centralised-reward",
+      "title": "Decentralised Consensus Learning Networks: SME Rotation Without Centralised Reward",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "无中心奖励的去中心化共识多智能体学习",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.22948v1",
+      "route": "202608/02/2607.22948v1-building-ai-that-works-esnets-pragmatic-approach-to-ai-driven-operational-excellence",
+      "title": "Building AI That Works: ESnet's Pragmatic Approach to AI-Driven Operational Excellence",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "用于网络运维的智能体AI系统（ORBIT）",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.23438v1",
+      "route": "202608/02/2607.23438v1-separating-capability-from-permission-a-governance-framework-for-agentic-ai-autonomy-levels",
+      "title": "Separating Capability from Permission: A Governance Framework for Agentic AI Autonomy Levels",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "定义了智能体自主决策与控制的等级框架",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    },
+    {
+      "paper_id": "2607.23586v1",
+      "route": "202608/02/2607.23586v1-are-you-still-the-agent-i-authorized-earned-authority-under-a-fixed-ceiling-for-evolving-agents",
+      "title": "Are You Still the Agent I Authorized? Earned Authority under a Fixed Ceiling for Evolving Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "演化智能体的授权与治理",
+      "first_seen_at": "2026-08-02 20:56:56 UTC",
+      "updated_at": "2026-08-02 20:56:56 UTC"
+    }
+  ]
+}

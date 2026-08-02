@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-01</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-02</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 30 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 23 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>19</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>12</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-01 21:02:48 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-02 20:56:56 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,7 +62,9 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日精读30篇论文，其中19篇精读、11篇速读，重点关注多智能体协作与操作任务。最值得看的是《One Hand Watches The Other》与《Focus Is All You Need》，分别涉及双臂动态操作和注意力编排，均获9.0高分。建议优先精读这两篇，并结合速读列表中的V2X驾驶与个性化工具学习扩展视野。</p>
+<p>今日精读12篇、速读11篇，共23篇论文；其中人机交互世界认知模型WCM与全场景智能体AgentOmnia均获9.0高分。</p>
+<p>最值得关注：通用人机交互认知框架与规模化智能体应用，另速读中零样本空中任务评估、持续学习型智能体、长驻编码智能体团队也达8.0。</p>
+<p>建议普通读者优先精读WCM和AgentOmnia，再按兴趣浏览速读列表中偏向机器人评估与团队协作的方向。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -71,12 +73,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">19 篇</strong>
+    <strong class="dpr-home-dashboard-count">12 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="One Hand Watches The Other: Dynamic Multi-Agent Cooperation for Sample-Efficient Bimanual Manipulation in Dynamic Environments">One Hand Watches The Other: Dynamic Multi-Agent Cooperation for Sample-Efficient Bimanual Manipulation in Dynamic Environments</span></li><li><span class="dpr-home-dashboard-paper-title" title="Focus Is All You Need: Adaptive Goal-aware Attention Orchestration for Multi-Agent Graph Systems">Focus Is All You Need: Adaptive Goal-aware Attention Orchestration for Multi-Agent Graph Systems</span></li><li><span class="dpr-home-dashboard-paper-title" title="TRUAV: Distributed Multi-Agent Reinforcement Learning for Trajectory Planning and Routing Enhancement in UAV-Aided IoT-Enabled VANETs">TRUAV: Distributed Multi-Agent Reinforcement Learning for Trajectory Planning and Routing Enhancement in UAV-Aided IoT-Enabled VANETs</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="WCM: World-Cognition Model for Generalizable Human-Robot Interaction">WCM: World-Cognition Model for Generalizable Human-Robot Interaction</span></li><li><span class="dpr-home-dashboard-paper-title" title="AgentOmnia: Scaling Agentic Models for Full-Scenario Applications">AgentOmnia: Scaling Agentic Models for Full-Scenario Applications</span></li><li><span class="dpr-home-dashboard-paper-title" title="Hybrid Advantage Estimation with Unified Critic for VLM Agentic Reinforcement Learning">Hybrid Advantage Estimation with Unified Critic for VLM Agentic Reinforcement Learning</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>19</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>12</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -87,7 +89,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Twin Agent: Context Residual Compression for Privilege Separated Agents">Twin Agent: Context Residual Compression for Privilege Separated Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Personalized Recommendation Tool Learning via Autonomous Language Agents">Personalized Recommendation Tool Learning via Autonomous Language Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Defer to Plan: Adaptive Multi-Agent Fusion for End-to-End V2X Driving">Defer to Plan: Adaptive Multi-Agent Fusion for End-to-End V2X Driving</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents">Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Learning on the Job: Continual Learning from Deployment Feedback for Frozen-Weights Agents">Learning on the Job: Continual Learning from Deployment Feedback for Frozen-Weights Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Agent Team Work Zone: An Automated, Persistent Workspace for Long-Lived Coding Agent Teams">Agent Team Work Zone: An Automated, Persistent Workspace for Long-Lived Coding Agent Teams</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>

@@ -1,0 +1,964 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-02T20:40:08.574410+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 33,
+    "deep_cap": 6,
+    "deep_selected": 12,
+    "quick_candidates": 40,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2607.22999v1",
+      "source": "arxiv",
+      "title": "WCM: World-Cognition Model for Generalizable Human-Robot Interaction",
+      "abstract": "Language agents can now interact fluently with users in software, but robots still struggle to bring comparable interaction to physical tasks. Current robot-control paradigms, including vision-language-action policies and world-model-based planners, are mainly optimized for instruction execution, leaving users with little visibility into why an action is chosen and few mechanisms to redirect, correct, or teach the robot through interaction. To solve this problem, we present the World-Cognition Model (WCM), a human-centered embodied agent built on the SLAK architecture (Sensing, Logic, Action, and Knowledge) and an asynchronous runtime. SLAK separates perception, reasoning, control, and memory, while the runtime allows reasoning, dialogue, and execution to proceed concurrently. WCM further introduces a human-in-the-loop teaching mode that enables users to interactively teach the robot difficult or long-horizon tasks. Teaching episodes and autonomous task rollouts are refined into chain-of-thought supervision to continually improve the model. WCM achieves a 73.8% average success rate across nine real-world human-robot interaction tasks, including tasks held out from CoT fine-tuning and a long-horizon task learned through teaching.",
+      "authors": [
+        "Yuzhen Chen",
+        "KC Zhou"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.HC",
+        "cs.LG"
+      ],
+      "published": "2026-07-25T02:27:16+00:00",
+      "link": "https://arxiv.org/pdf/2607.22999v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "embodied agent architecture with separated perception, reasoning, control, memory",
+      "llm_evidence_cn": "具身智能体架构，分离感知、推理、控制与记忆",
+      "llm_evidence": "具身智能体架构，分离感知、推理、控制与记忆",
+      "canonical_evidence": "具身智能体架构，分离感知、推理、控制与记忆",
+      "llm_tldr_en": "World-Cognition Model (WCM) introduces the SLAK architecture and asynchronous runtime, separating perception, reasoning, control, and memory to make embodied agents explainable and redirectable in human-robot interaction.",
+      "llm_tldr_cn": "语言智能体在软件中交互流畅，但机器人难以在物理任务中提供同等交互体验。当前控制范式主要优化指令执行，用户无法了解动作原因，也难以纠正或教导机器人。本文提出世界认知模型WCM，一种以人为中心的具身智能体，基于SLAK架构（感知、逻辑、动作、知识）和异步运行时。SLAK分离感知、推理、控制与记忆，运行时支持推理、对话与执行并行，从而允许用户重定向和指导机器人。该工作为可交互、可教导的具身智能体设计了新架构范式。",
+      "llm_tldr": "语言智能体在软件中交互流畅，但机器人难以在物理任务中提供同等交互体验。当前控制范式主要优化指令执行，用户无法了解动作原因，也难以纠正或教导机器人。本文提出世界认知模型WCM，一种以人为中心的具身智能体，基于SLAK架构（感知、逻辑、动作、知识）和异步运行时。SLAK分离感知、推理、控制与记忆，运行时支持推理、对话与执行并行，从而允许用户重定向和指导机器人。该工作为可交互、可教导的具身智能体设计了新架构范式。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.23124v1",
+      "source": "arxiv",
+      "title": "AgentOmnia: Scaling Agentic Models for Full-Scenario Applications",
+      "abstract": "Large language model agents have advanced rapidly, yet progress remains fragmented across domains, capabilities, task difficulty, and interaction settings. We frame this as full-scenario agentic scaling and present AgentOmnia, a framework coordinating task-space definition, data synthesis, post-training, evaluation, and improvement across To-Consumer (ToC), To-Business (ToB), and To-Employee (ToE) applications. An extensible Domain x Capability x Atomic Difficulty taxonomy aligns these stages and enables fine-grained diagnosis with OmniaBench. AgentOmnia combines bidirectional environment-task synthesis with tool-dependency, program-structured, and solver-based pipelines, constructing 5,018 stateful environments with 255,375 tools and 52,361 tasks. Programs, solvers, and verifiers provide correctness signals, while supervised fine-tuning, online agentic reinforcement learning, and a rollback curriculum support post-training. Evaluation failures translate into Product Requirement Documents (PRDs) for targeted self-evolution. Starting from Qwen3-30B-A3B-Thinking-2507, AgentOmnia raises the pass rate on the OmniaBench challenging subset from 9.16% to 37.11% and the macro-average across OmniaBench, $τ^2$-Bench, DeepPlanning, and VitaBench from 22.86% to 41.69%. Under a unified protocol,it leads the evaluated agentic post-trained baselines on OmniaBench and retains the highest four-benchmark macro-average. It also surpasses Qwen3-235B-A22B-Thinking-2507 on all four benchmarks and exceeds Qwen3.5-35B-A3B on the macro-average. Gains span three application splits, ten capability dimensions, eight atomic-difficulty factors, and 76 of 90 level-1 domains, indicating broad rather than category-specific improvement. A one-round study provides initial evidence for PRD-guided self-evolution, motivating validation at larger scales and in industrial settings.",
+      "authors": [
+        "Hao Jiang",
+        "Gangtao Xin",
+        "Yingdi Huang",
+        "Guojie Zhu",
+        "Jiangshan Zhang",
+        "Xinyuan Lin",
+        "Yunkun Xu",
+        "Chengyu Shen",
+        "Wenlong Fei",
+        "Jiawei Li",
+        "Yujie Fu",
+        "Sichen Kang",
+        "Tingyu Xie",
+        "Yedi Hu",
+        "Jingren Zhang",
+        "Hongcheng Gao",
+        "Jianshu Zeng",
+        "Chong Chen",
+        "Chang Guo",
+        "Chao Feng",
+        "Feng Wang",
+        "Fulin Lin",
+        "Jinchao Ma",
+        "Lang Mei",
+        "Li Huang",
+        "Liyan Liu",
+        "Qing He",
+        "Shuting Tao",
+        "Siyu Mo",
+        "Xiangnan Chen",
+        "Xiaohan Yu",
+        "Xiaoyang Li",
+        "Yanheng Hou",
+        "Yanyu Wu",
+        "Zhihan Yang",
+        "Wentao Zhang",
+        "Yang Gao",
+        "Zhao Cao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-25T09:58:24+00:00",
+      "link": "https://arxiv.org/pdf/2607.23124v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "large-scale agentic model design across application scenarios",
+      "llm_evidence_cn": "跨应用场景的智能体模型规模化设计",
+      "llm_evidence": "跨应用场景的智能体模型规模化设计",
+      "canonical_evidence": "跨应用场景的智能体模型规模化设计",
+      "llm_tldr_en": "AgentOmnia coordinates task-space definition, data synthesis, post-training, evaluation, and improvement for full-scenario agentic scaling, using a Domain x Capability x Difficulty taxonomy and building 5,018 environments and 52,361 tasks.",
+      "llm_tldr_cn": "大型语言模型智能体的发展在领域、能力、难度与交互方式上碎片化。AgentOmnia 提出全场景智能体规模化框架，通过“领域×能力×难度”分类体系、双向环境-任务合成与多管道数据生成，构建了5018个有状态环境和52361个任务，并提供OmniaBench进行细粒度诊断。该框架统一了从任务空间定义到后训练与评估的流程，推动了智能体跨场景应用。",
+      "llm_tldr": "大型语言模型智能体的发展在领域、能力、难度与交互方式上碎片化。AgentOmnia 提出全场景智能体规模化框架，通过“领域×能力×难度”分类体系、双向环境-任务合成与多管道数据生成，构建了5018个有状态环境和52361个任务，并提供OmniaBench进行细粒度诊断。该框架统一了从任务空间定义到后训练与评估的流程，推动了智能体跨场景应用。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "intelligent agent design and applications",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.23605v1",
+      "source": "arxiv",
+      "title": "Hybrid Advantage Estimation with Unified Critic for VLM Agentic Reinforcement Learning",
+      "abstract": "Large Vision-Language Models (VLMs) now act as agents in interactive environments, where success requires coherent reasoning and decision-making across turns. Although end-to-end training in agentic environments can improve such multi-turn decision-making abilities, current methods mainly rely on either token-wise optimization over concatenated token trajectories or turn-wise optimization with uniform within-turn credit. In this work, we establish theoretical formulations for the two levels of optimization and derive a hybrid advantage that serves both objectives. Furthermore, with an appropriate choice of discount factor and learning target, we prove that a unified critic model can estimate values for both turn-wise and token-wise. As such, we propose HyGAE, an actor-critic framework that jointly optimizes token- and turn-level objectives with the hybrid advantage and unified critic. We conduct extensive evaluations of HyGAE across five multi-turn decision-making environments, where it achieves an average success rate of 91% and a significant improvement of 10% over other methods. Furthermore, we provide an in-depth analysis showing that the exact analytic form of the hybrid advantage and return is crucial for optimization. Project Page: https://wx-zhang.github.io/hygae-web/.",
+      "authors": [
+        "Wenxuan Zhang",
+        "Yuhui Wang",
+        "Donggang Jia",
+        "Xiaoqian Shen",
+        "Jian Ding",
+        "Ivan Viola",
+        "Jürgen Schmidhuber",
+        "Mohamed Elhoseiny"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-26T11:16:59+00:00",
+      "link": "https://arxiv.org/pdf/2607.23605v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "RL for VLM agent decision-making across turns",
+      "llm_evidence_cn": "面向视觉语言智能体多轮决策的强化学习方法",
+      "llm_evidence": "面向视觉语言智能体多轮决策的强化学习方法",
+      "canonical_evidence": "面向视觉语言智能体多轮决策的强化学习方法",
+      "llm_tldr_en": "Hybrid Advantage Estimation with Unified Critic formulates token-wise and turn-wise optimization for VLM agents, deriving a hybrid advantage and proving a unified critic can estimate values for both levels, improving multi-turn decision-making.",
+      "llm_tldr_cn": "大型视觉语言模型作为智能体在交互环境中需要跨轮次连贯推理和决策，但现有端到端训练只能采用逐token或逐turn的优化方式，无法兼顾两者。本文建立了两层优化的理论公式，推导出同时服务两种目标的混合优势估计。进一步证明在合适的折扣因子和学习目标下，统一评论者模型可以同时估计逐turn和逐token价值。该研究为多轮智能体决策的强化学习训练提供了统一而高效的理论支撑。",
+      "llm_tldr": "大型视觉语言模型作为智能体在交互环境中需要跨轮次连贯推理和决策，但现有端到端训练只能采用逐token或逐turn的优化方式，无法兼顾两者。本文建立了两层优化的理论公式，推导出同时服务两种目标的混合优势估计。进一步证明在合适的折扣因子和学习目标下，统一评论者模型可以同时估计逐turn和逐token价值。该研究为多轮智能体决策的强化学习训练提供了统一而高效的理论支撑。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent decision making",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.24167v1",
+      "source": "arxiv",
+      "title": "Falsifiable Commitment Planning for Self-Correcting Web Agents",
+      "abstract": "Long-horizon web agents often go off track before final failure: a trajectory can remain locally plausible even after the current state, reused skill, or plan assumption no longer supports the user instruction. Existing agents can plan, reflect, or reuse experience, but their plans rarely specify the evidence under which an active step should still be trusted. We propose FCPAgent, a falsifiable commitment planning framework for robust long-horizon web agents. FCPAgent represents each plan step as a Falsifiable Commitment Unit (FCU): a subgoal grounded in a reusable skill, together with confirming evidence, falsifying evidence, and a confidence score. Execution is organized as a plan-test-repair loop. The hybrid commitment testing module checks candidate actions before they modify the browser and checks observations after execution; for efficiency, it combines lightweight evidence matching with LLM-based diagnostic verification. When evidence falsifies a commitment, scope-aware repair localizes the contradiction to the execution, skill, or planning level and revises the smallest adequate part. On WebArena, FCPAgent achieves a 13.8% relative improvement in average success over the strongest baseline, with especially large gains on long-horizon tasks.",
+      "authors": [
+        "Guangyi Liu",
+        "Huan Zhao",
+        "Quanming Yao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-27T08:48:01+00:00",
+      "link": "https://arxiv.org/pdf/2607.24167v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Falsifiable commitment planning for self-correcting long-horizon web agents",
+      "llm_evidence_cn": "面向自修正Web智能体的可证伪承诺规划",
+      "llm_evidence": "面向自修正Web智能体的可证伪承诺规划",
+      "canonical_evidence": "面向自修正Web智能体的可证伪承诺规划",
+      "llm_tldr_en": "FCPAgent introduces falsifiable commitment units to specify evidence for trusting each plan step, organized in a plan-test-repair loop, improving robustness of long-horizon web agents.",
+      "llm_tldr_cn": "针对长程Web智能体在失败前轨迹仍局部合理、现有规划难以识别当前状态或技能是否仍可信的问题，本文提出FCPAgent可证伪承诺规划框架。每个计划步骤被表示为可证伪承诺单元（FCU），包含子目标、确认证据、否定证据和置信度，并通过计划-测试-修复循环执行。混合承诺测试模块可主动检验候选动作。实验表明该方法能显著提升长程Web任务的成功率和鲁棒性。该工作为自主智能体规划提供了可验证的自我修正范式。",
+      "llm_tldr": "针对长程Web智能体在失败前轨迹仍局部合理、现有规划难以识别当前状态或技能是否仍可信的问题，本文提出FCPAgent可证伪承诺规划框架。每个计划步骤被表示为可证伪承诺单元（FCU），包含子目标、确认证据、否定证据和置信度，并通过计划-测试-修复循环执行。混合承诺测试模块可主动检验候选动作。实验表明该方法能显著提升长程Web任务的成功率和鲁棒性。该工作为自主智能体规划提供了可验证的自我修正范式。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent planning",
+      "matched_requirement_id": "req-10",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.25408v1",
+      "source": "arxiv",
+      "title": "Context Assembly as the Controlled Variable: A Control-Theoretic View of Harness Policies for Frozen LLM Agents",
+      "abstract": "A growing body of 2026 work applies control theory to LLM agents: Lyapunov-certified stability for tool-mediated controllers (Prinos et al., \"Stable Agentic Control\", 2026), sample-complexity bounds for sparse policies over massive discrete tool universes (Majumdar, \"Sparse Agentic Control\", 2026), and regulatory-control decompositions of multi-agent systems into auditable feedback loops (Nogueira and Skogestad, 2026). We do not claim to introduce control theory to LLM agents -- that ship has sailed. Our narrower claim is about what the controlled variable is. Prior work controls tool selection, inter-agent message routing, or the agent's raw action stream. We instead treat context assembly itself -- which prompt template, which few-shot demonstrations, how much retrieved context, how many planning/verification passes -- as the controlled variable, learned online by a contextual bandit or REINFORCE policy sitting outside a frozen model. This paper develops the formal decomposition (inner frozen policy $π_θ$, outer context policy $π_φ$), gives a stability argument for the online controller in the sense used by Zhang et al. (2026) (non-decreasing expected reward under bounded policy change), and reports an uncertainty-calibration analysis of the controller's own confidence against realized task outcomes. The applied counterpart to this paper instantiates the same controller across three domains and two model providers and releases the dataset, trajectory logs, and a deployment recipe; here we focus on the formal framing and the stability/uncertainty evidence a control-theoretic claim requires.",
+      "authors": [
+        "Debjyoti Paul"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-28T08:07:06+00:00",
+      "link": "https://arxiv.org/pdf/2607.25408v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "control-theoretic view of harness policies for LLM agents",
+      "llm_evidence_cn": "面向LLM智能体控制策略的控制论视角",
+      "llm_evidence": "面向LLM智能体控制策略的控制论视角",
+      "canonical_evidence": "面向LLM智能体控制策略的控制论视角",
+      "llm_tldr_en": "Proposes viewing context assembly, not tool selection or action streams, as the controlled variable in control-theoretic LLM agent policies, offering a new abstraction for harness design.",
+      "llm_tldr_cn": "该论文在现有将控制论应用于LLM智能体的工作基础上，提出一个新的主张：控制变量应是上下文组装本身，而非工具选择、智能体间消息路由或原始动作流。通过将上下文组装视为受控变量，可为冻结LLM的智能体控制策略提供统一的控制论分析框架。这一视角有助于设计和审计更稳定的智能体控制回路，属于自主智能体架构与控制的重要理论进展。",
+      "llm_tldr": "该论文在现有将控制论应用于LLM智能体的工作基础上，提出一个新的主张：控制变量应是上下文组装本身，而非工具选择、智能体间消息路由或原始动作流。通过将上下文组装视为受控变量，可为冻结LLM的智能体控制策略提供统一的控制论分析框架。这一视角有助于设计和审计更稳定的智能体控制回路，属于自主智能体架构与控制的重要理论进展。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "papers on autonomous agent architectures and control",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.25754v1",
+      "source": "arxiv",
+      "title": "Cooperative Multi-UAV Navigation in Complex Environments via Systematic Multi-Agent Deep Reinforcement Learning",
+      "abstract": "Cooperative navigation of multi-agent UAVs in complex environments faces key challenges including local optima traps, sparse rewards, learning imbalance among agents, and insufficient cross-scenario generalisation. This paper proposes a multi-agent deep reinforcement learning framework that addresses these issues through coordinated exploration, demonstration exploitation, safe curriculum scheduling, and structure-aware generalisation. First, a perception mechanism combining memory of visited states, directional novelty estimates, and penalty backpropagation enables agents to proactively detect and escape local optima. Second, a hierarchical collaborative demonstration buffer with tiered behaviour cloning manages trajectories by degree of team collaboration and applies differential supervision to the actor network, improving demonstration utilisation under sparse collaborative signals. Third, a safety-aware dual-condition curriculum scheduling mechanism reviews mastered scenarios through back-testing and experience pre-filling during training, suppressing catastrophic forgetting while ensuring both task performance and flight safety. For generalisation, local geometric features computed from sensor readings are abstracted into a domain parameter, through which a structure-aware gating network and mixture-of-experts mechanism condition the policy on local structural patterns rather than scenario-specific coordinates, enabling cross-scenario transfer without exposure to the target environment. The framework is further validated under mixed static-dynamic obstacle settings, showing robust adaptability to dynamic disturbances. Simulation results confirm strong performance in collaboration success rate, navigation robustness, zero-shot cross-scenario generalisation, and dynamic environment adaptability.",
+      "authors": [
+        "Yu Su",
+        "Nabil Aouf"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-28T14:16:11+00:00",
+      "link": "https://arxiv.org/pdf/2607.25754v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "systematic multi-agent deep reinforcement learning for UAV navigation",
+      "llm_evidence_cn": "系统性多智能体深度强化学习无人机导航",
+      "llm_evidence": "系统性多智能体深度强化学习无人机导航",
+      "canonical_evidence": "系统性多智能体深度强化学习无人机导航",
+      "llm_tldr_en": "A systematic multi-agent deep reinforcement learning framework with coordinated exploration, demonstration exploitation, safe curriculum, and structure-aware generalization addresses local optima and sparse rewards in cooperative UAV navigation.",
+      "llm_tldr_cn": "多无人机协同导航面临局部最优、稀疏奖励、智能体学习失衡与跨场景泛化不足等挑战。本文提出系统性多智能体深度强化学习框架，利用状态记忆与方向性新颖度估计帮助智能体逃出局部最优，利用层级演示缓冲与行为克隆提升学习效率，并通过安全课程学习与结构感知泛化增强鲁棒性。实验表明该框架在复杂环境中显著提升协同导航成功率与泛化性能。",
+      "llm_tldr": "多无人机协同导航面临局部最优、稀疏奖励、智能体学习失衡与跨场景泛化不足等挑战。本文提出系统性多智能体深度强化学习框架，利用状态记忆与方向性新颖度估计帮助智能体逃出局部最优，利用层级演示缓冲与行为克隆提升学习效率，并通过安全课程学习与结构感知泛化增强鲁棒性。实验表明该框架在复杂环境中显著提升协同导航成功率与泛化性能。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "recent advances in multi agent reinforcement learning",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.25825v1",
+      "source": "arxiv",
+      "title": "CHILL-Harness: Counterfactual Harness Learning for Efficient Reasoning in Long-Horizon Agents",
+      "abstract": "Agent harnesses have become the operational infrastructure of modern large language model agents, coordinating context, tools, verification, and execution control to translate latent model capability into reliable long-horizon behavior. However, reliable long-horizon behavior requires harness control to adapt to task demands, execution environments, and evolving execution states, whereas current harnesses predominantly rely on hand-crafted or globally fixed policies; this mismatch manifests as unnecessary computational overhead and, in adverse cases, reduced task success. To address this limitation, we formulate the task of enabling adaptive orchestration in harness systems as a causal learning problem and propose Counterfactual Harness Intervention Learning for Long-Horizon Agents (CHILL-Harness). CHILL-Harness intervenes at the orchestration layer to enable advantage-guided workflow adaptation, thereby improving reasoning and execution efficiency while preserving task performance. Specifically, we develop causal intervention effect learning as the effect-estimation component of CHILL-Harness to estimate intervention-relative workflow advantage from confidence-weighted execution evidence and identify advantageous workflow adaptations. We further introduce advantage-realizing causal orchestration as its realization component to adaptively allocate counterfactual reasoning and realize only workflow adjustments supported by sufficient expected advantage. Finally, we incorporate a success-preserving objective and advantage-margin authorization constraints into CHILL-Harness to promote reliable adaptation. Extensive experiments on heterogeneous long-horizon tasks spanning information seeking, software engineering, and terminal interaction show that CHILL-Harness consistently preserves or improves task success while substantially reducing token consumption and execution time.",
+      "authors": [
+        "Jiarun Fu",
+        "Lizhong Ding",
+        "Sida Chen",
+        "Honglei Xin",
+        "Chunhui Zhang",
+        "Pengqi Li",
+        "Qiuning Wei",
+        "Ye Yuan",
+        "Guoren Wang"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "published": "2026-07-28T15:06:00+00:00",
+      "link": "https://arxiv.org/pdf/2607.25825v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Formulates adaptive orchestration in agent harness systems as causal learning, proposing counterfactual harness learning for long-horizon LLM agents; directly addresses agent architecture and control.",
+      "llm_evidence_cn": "将智能体框架系统中的自适应编排建模为因果学习，提出反事实框架学习，直接面向智能体架构与控制。",
+      "llm_evidence": "将智能体框架系统中的自适应编排建模为因果学习，提出反事实框架学习，直接面向智能体架构与控制。",
+      "canonical_evidence": "将智能体框架系统中的自适应编排建模为因果学习，提出反事实框架学习，直接面向智能体架构与控制。",
+      "llm_tldr_en": "Addresses hand-crafted fixed harness policies in long-horizon LLM agents by formulating adaptive orchestration as causal learning and proposing counterfactual harness learning for efficient reasoning and reduced overhead.",
+      "llm_tldr_cn": "现代LLM智能体的可靠长时程行为依赖智能体框架协调上下文、工具、验证与执行控制，但当前框架多依赖手工设计或固定策略，难以适应任务和环境演变。本文将自适应编排视为因果学习问题，提出反事实框架学习（CHILL-Harness），使框架能够依据任务需求和执行状态动态调整，从而降低计算开销并提升任务成功率。实验表明该方法在长时程推理任务上更高效、更可靠。",
+      "llm_tldr": "现代LLM智能体的可靠长时程行为依赖智能体框架协调上下文、工具、验证与执行控制，但当前框架多依赖手工设计或固定策略，难以适应任务和环境演变。本文将自适应编排视为因果学习问题，提出反事实框架学习（CHILL-Harness），使框架能够依据任务需求和执行状态动态调整，从而降低计算开销并提升任务成功率。实验表明该方法在长时程推理任务上更高效、更可靠。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "papers on autonomous agent architectures and control",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.26784v1",
+      "source": "arxiv",
+      "title": "SkillRise: Agentic Reinforcement Learning for Cross-Task Skill Evolution",
+      "abstract": "Large language model agents often encounter related yet distinct tasks that share reusable solution patterns. Yet standard agentic reinforcement learning treats tasks as independent episodes, while existing approaches to skill learning either focus on repeated attempts of one task or use pipelines with multiple stages that entangle extraction, retrieval, and execution. We introduce SkillRise, a unified reinforcement learning framework for learning skills across tasks. SkillRise organizes related instances into progressively challenging sequences and uses a single policy to alternate between task solving and curating an evolving skill document passed directly to the next task. Decoupled credit assignment across tasks supervises solving with the current task outcome and curation with discounted downstream outcomes. Experiments on ALFWorld, WebShop, and ScienceWorld show that SkillRise achieves the strongest Pass@1 performance among the compared methods, with gains over the strongest baseline ranging from 2.3 to 8.5 percentage points. Although trained across distinct tasks, its learned curation policy remains effective for repeated attempts on the same task. Further analysis reveals scaling at test time across tasks: performance improves with longer sequences of related tasks even when each task is attempted only once. This trend suggests that SkillRise reuses transferable skills across tasks rather than benefiting from repeated sampling of the same task. SkillRise further retains strong performance while substantially reducing the runtime overhead of skill learning pipelines with multiple stages. Together, these results provide a simple and efficient training paradigm for LLM agents to extract, refine, and reuse transferable skills across tasks.",
+      "authors": [
+        "Zhiyuan Yao",
+        "Yuxin Chen",
+        "Zhengxi Lu",
+        "Zishan Xu",
+        "Yueqing Sun",
+        "Yifu Guo",
+        "Yuquan Lu",
+        "Zhengzhou Cai",
+        "Kangning Zhang",
+        "Zhuowen Han",
+        "Zi-Han Wang",
+        "Ziang Ye",
+        "Qi Gu",
+        "Xunliang Cai",
+        "Weiwen Liu",
+        "Yongliang Shen"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-07-29T11:26:33+00:00",
+      "link": "https://arxiv.org/pdf/2607.26784v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "agentic reinforcement learning for cross-task decision making",
+      "llm_evidence_cn": "面向跨任务决策的智能体强化学习",
+      "llm_evidence": "面向跨任务决策的智能体强化学习",
+      "canonical_evidence": "面向跨任务决策的智能体强化学习",
+      "llm_tldr_en": "SkillRise is a unified reinforcement learning framework for LLM agents to learn reusable skills across related tasks, alternating task solving with evolving skill-document curation and using decoupled credit assignment for effective cross-task learning.",
+      "llm_tldr_cn": "标准智能体强化学习将每个任务独立看待，难以在相关任务间复用技能。SkillRise 将相关实例组织为递进难度序列，用单一策略交替进行任务求解与技能文档更新，并采用解耦的跨任务信用分配。实验表明该方法能显著提升跨任务技能演化效率与最终性能。该框架为智能体跨任务学习提供了统一解决方案。",
+      "llm_tldr": "标准智能体强化学习将每个任务独立看待，难以在相关任务间复用技能。SkillRise 将相关实例组织为递进难度序列，用单一策略交替进行任务求解与技能文档更新，并采用解耦的跨任务信用分配。实验表明该方法能显著提升跨任务技能演化效率与最终性能。该框架为智能体跨任务学习提供了统一解决方案。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent decision making",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.27973v1",
+      "source": "arxiv",
+      "title": "TAPO: Transition-Aware Policy Optimization for LLM Agents",
+      "abstract": "Recently, Reinforcement Learning (RL) has emerged as a crucial paradigm for the post-training of Large Language Model (LLM) agents. However, existing methods predominantly rely on sparse task rewards for policy optimization, failing to fully exploit another class of inherently dense supervisory signals naturally present during online interaction: environmental feedback following action execution. Recent theoretical studies suggest that generalization in multi-step, goal-oriented tasks hinges on predictive knowledge of environmental consequences. Inspired by this, we propose TAPO: Transition-Aware Policy Optimization for LLM Agents, a unified training framework that alternates between policy optimization and transition supervision. Beyond standard RL updates, TAPO repurposes rollout data to apply action-conditioned next-observation prediction supervision on a shared backbone model. This approach enhances the model's sensitivity to environmental transition dynamics and action consequences while concurrently optimizing the policy. It serves as a computationally lightweight, plug-and-play enhancement module for existing agent RL algorithms, requiring no additional expert data, extra sampling costs, or inference-time overhead. We conduct systematic experiments on WebShop and ALFWorld, integrating foundation models of various scales with different policy optimization algorithms. Empirical results demonstrate that TAPO consistently improves task performance over pure policy optimization baselines.",
+      "authors": [
+        "Cong Li",
+        "Peixi Peng",
+        "Yisen Zhao",
+        "Xinyu Hu",
+        "Shudong Liu",
+        "Zhan Su",
+        "Zhuojian Li"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-07-30T10:17:55+00:00",
+      "link": "https://arxiv.org/pdf/2607.27973v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "transition-aware RL for LLM agent decision-making",
+      "llm_evidence_cn": "面向LLM智能体决策的转移感知策略优化",
+      "llm_evidence": "面向LLM智能体决策的转移感知策略优化",
+      "canonical_evidence": "面向LLM智能体决策的转移感知策略优化",
+      "llm_tldr_en": "TAPO alternates policy optimization and transition supervision, exploiting environmental feedback after action execution as dense supervision to improve generalization in multi-step goal-oriented LLM agent tasks.",
+      "llm_tldr_cn": "强化学习已成为LLM智能体后训练的重要范式，但现有方法大多依赖稀疏任务奖励，未充分利用在线交互中动作执行后的环境反馈这类密集监督信号。本文提出TAPO统一训练框架，在标准RL更新之外交替进行策略优化与转移监督，利用环境后果的预测知识提升多步目标任务的泛化能力。该工作为LLM智能体在线交互中的密集监督利用提供了有效方案，有助于推动智能体决策能力的提升。",
+      "llm_tldr": "强化学习已成为LLM智能体后训练的重要范式，但现有方法大多依赖稀疏任务奖励，未充分利用在线交互中动作执行后的环境反馈这类密集监督信号。本文提出TAPO统一训练框架，在标准RL更新之外交替进行策略优化与转移监督，利用环境后果的预测知识提升多步目标任务的泛化能力。该工作为LLM智能体在线交互中的密集监督利用提供了有效方案，有助于推动智能体决策能力的提升。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent decision making",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.27994v1",
+      "source": "arxiv",
+      "title": "SKIMIX: Multi-Agent Harness-Time Scaling with Skill Mixture for Dynamic Harness Engineering",
+      "abstract": "AI agents increasingly rely on large skill libraries, but selecting, combining, and maintaining skills remains difficult. We propose SKIMIX, a multi-agent framework in which agents with different skill portfolios collaborate through iterative refinement. SKIMIX combines embedding-based skill retrieval, submodular anti-dilution routing, and adaptive skill evolution. Across six reasoning benchmarks, multi-agent collaboration substantially improves open-ended mathematical reasoning but offers limited or negative gains on multiple-choice tasks. Agent-count scaling is non-monotonic, and most improvements arise during the first refinement round. These results show that task characteristics determine whether skill-level ensembles help and provide practical guidance for scalable agent design.",
+      "authors": [
+        "Jia Luo"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-30T10:40:58+00:00",
+      "link": "https://arxiv.org/pdf/2607.27994v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "multi-agent framework with skill mixture for dynamic harness engineering",
+      "llm_evidence_cn": "面向动态编排工程的技能混合多智能体框架",
+      "llm_evidence": "面向动态编排工程的技能混合多智能体框架",
+      "canonical_evidence": "面向动态编排工程的技能混合多智能体框架",
+      "llm_tldr_en": "Proposes SKIMIX, a multi-agent framework combining embedding retrieval, submodular routing, and adaptive skill evolution; collaboration improves open-ended math reasoning but not multiple-choice tasks.",
+      "llm_tldr_cn": "AI智能体越发依赖庞大的技能库，但技能的选择、组合与维护十分困难。SKIMIX提出多智能体框架，通过嵌入检索、子模路由和自适应技能进化实现不同技能组合的智能体迭代协作。在六个推理基准上，多智能体协作显著改善开放式数学推理，但对多项选择题增益有限甚至为负，且智能体数量扩展非单调。结果表明任务特征决定技能层集成的收益。",
+      "llm_tldr": "AI智能体越发依赖庞大的技能库，但技能的选择、组合与维护十分困难。SKIMIX提出多智能体框架，通过嵌入检索、子模路由和自适应技能进化实现不同技能组合的智能体迭代协作。在六个推理基准上，多智能体协作显著改善开放式数学推理，但对多项选择题增益有限甚至为负，且智能体数量扩展非单调。结果表明任务特征决定技能层集成的收益。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.28147v1",
+      "source": "arxiv",
+      "title": "Agent Harness Distillation: Inference-Time Harness Extraction and Exploitation in Autonomous Multi-Agent Systems",
+      "abstract": "Autonomous multi-agent systems (AMAS) built on large language models (LLMs), such as Hermes, increasingly rely on inference-time harnesses to coordinate reasoning and action. Constructing these harnesses requires substantial engineering effort and computational resources, as they are iteratively optimized over a combinatorial search space while co-evolving with the underlying LLM. Inference-time harnesses therefore constitute valuable intellectual property (IP). Although prior work has investigated IP leakage in static multi-agent systems with pre-configured architectures, it remains unclear whether similar risks arise in AMAS, where harness behavior emerges dynamically during inference. To address this gap, we introduce Agent Harness Distillation (AHD), a framework for studying the security risks arising from inference-time harness extraction in AMAS. We formalize harness extraction as a new security problem and develop an evaluation framework for quantifying such risks. AHD extracts inference-time harness capabilities from a target agent through black-box interactions and consists of two stages. In the pre-distillation stage, AHD infers inference-time harness behaviors from the responses of the target agent and constructs an initial harness. In the post-distillation stage, AHD iteratively refines the initial harness to align with the behavioral patterns of the target agent. Experiments on real-world AMAS across multiple backbone LLMs demonstrate the effectiveness of AHD and reveal substantial IP leakage risks. We further propose a deception-based defense that reduces harness extraction effectiveness while preserving the utility of the protected agent. Our findings uncover a previously underexplored security threat to AMAS.",
+      "authors": [
+        "Yu Cui",
+        "Wuli Yang",
+        "Yirui Shi",
+        "Junhao Xia",
+        "Hui Jiang",
+        "Lei Gao",
+        "Chenfu Bao"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR"
+      ],
+      "published": "2026-07-30T12:54:25+00:00",
+      "link": "https://arxiv.org/pdf/2607.28147v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Autonomous multi-agent systems, harnesses coordinate reasoning and action, IP leakage extraction; directly relevant to multi-agent coordination.",
+      "llm_evidence_cn": "自主多智能体系统中推理时框架协调推理与动作，研究框架提取与利用，直接关联多智能体协调。",
+      "llm_evidence": "自主多智能体系统中推理时框架协调推理与动作，研究框架提取与利用，直接关联多智能体协调。",
+      "canonical_evidence": "自主多智能体系统中推理时框架协调推理与动作，研究框架提取与利用，直接关联多智能体协调。",
+      "llm_tldr_en": "Investigates IP leakage of inference-time harnesses that coordinate reasoning and action in autonomous multi-agent LLM systems, showing risks emerge dynamically and can be extracted and exploited.",
+      "llm_tldr_cn": "自主多智能体系统（AMAS）依赖推理时提示框架来协调推理与动作，这些框架的构建成本高昂且与语言模型共同演化，因而构成宝贵知识产权。现有研究多关注静态多智能体系统的IP泄露，对动态涌现框架行为的风险尚不清楚。本文针对这一空白，提出推理时框架提取与利用方法，揭示AMAS中动态涌现的框架同样面临知识产权泄露风险，并通过提取利用实验证实了该风险，为后续防范提供分析基础。",
+      "llm_tldr": "自主多智能体系统（AMAS）依赖推理时提示框架来协调推理与动作，这些框架的构建成本高昂且与语言模型共同演化，因而构成宝贵知识产权。现有研究多关注静态多智能体系统的IP泄露，对动态涌现框架行为的风险尚不清楚。本文针对这一空白，提出推理时框架提取与利用方法，揭示AMAS中动态涌现的框架同样面临知识产权泄露风险，并通过提取利用实验证实了该风险，为后续防范提供分析基础。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.28430v1",
+      "source": "arxiv",
+      "title": "AgentRadio: Passive Awareness for Long-Horizon Multi-Agent Collaboration",
+      "abstract": "Understanding large codebases is a long-horizon task for Large Language Model (LLM) agents: answering a single question can require building and running the software, tracing execution across files, and synthesizing evidence over tens of minutes. On SWE-Atlas QnA, a benchmark of long-horizon questions over production repositories, a single Claude Code agent (Opus 4.6) resolves only 32.3% of tasks. Dividing the work among agents with clean contexts mitigates this limitation. However, the subtasks of code comprehension are interdependent. One agent's findings can rewrite another's task, so agents must coordinate during execution, not only at phase boundaries. Existing multi-agent systems support such exchange only between phases, through staged handoffs or synchronized rounds. Communication and work remain mutually exclusive. A discovery made mid-execution cannot be shared until the next boundary. We present AgentRadio, an asynchronous message-passing layer that equips coding-agent harnesses with three primitives: threads, messages, and waiting for mentions. The last runs as a background task, surfacing teammates' messages without interrupting foreground work, so each agent remains passively aware of its peers and folds new findings into its ongoing task. Under a five-phase protocol of division of labor and negotiation, four agents organized by AgentRadio resolve 62.1% of tasks, 29.8 points above a single agent and above Claude Code with the newer Opus 4.8 (57.2%). Rubric-level analysis shows the gain growing with task difficulty, consistent with mid-course correction as the underlying mechanism. Our code is available at https://github.com/Coral-Protocol/AgentRadio.",
+      "authors": [
+        "Xinxing Ren",
+        "Qianbo Zang",
+        "Ziyan Wang",
+        "Caelum Forder",
+        "Suman Deb",
+        "Peter Carroll",
+        "Zekun Guo"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "published": "2026-07-30T16:07:32+00:00",
+      "link": "https://arxiv.org/pdf/2607.28430v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "passive awareness for long-horizon multi-agent collaboration",
+      "llm_evidence_cn": "面向长时程多智能体协作的被动感知机制",
+      "llm_evidence": "面向长时程多智能体协作的被动感知机制",
+      "canonical_evidence": "面向长时程多智能体协作的被动感知机制",
+      "llm_tldr_en": "Introduces passive awareness for long-horizon multi-agent collaboration, enabling agents to coordinate during execution on interdependent code comprehension subtasks, improving task resolution over single-agent baselines.",
+      "llm_tldr_cn": "该论文针对长时程代码理解任务中单个LLM智能体成功率低、而多智能体子任务相互依赖的问题，提出被动感知机制AgentRadio，让智能体在执行过程中持续感知彼此进展并动态调整协作，而非仅在阶段边界交接。在SWE-Atlas QnA基准上，其显著提升了多智能体协作解决长时程问题的成功率。该方法展示了执行期实时协调对于复杂代码理解任务的重要性。",
+      "llm_tldr": "该论文针对长时程代码理解任务中单个LLM智能体成功率低、而多智能体子任务相互依赖的问题，提出被动感知机制AgentRadio，让智能体在执行过程中持续感知彼此进展并动态调整协作，而非仅在阶段边界交接。在SWE-Atlas QnA基准上，其显著提升了多智能体协作解决长时程问题的成功率。该方法展示了执行期实时协调对于复杂代码理解任务的重要性。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.22014v1",
+      "source": "arxiv",
+      "title": "Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents",
+      "abstract": "Multimodal Large Language Models (MLLMs) are emerging as core reasoning modules for embodied agents, yet it remains unclear how well general-purpose models can solve long-horizon embodied tasks from a single high-level instruction. We introduce MissionBench, a benchmark for mission-level evaluation of MLLMs in aerial 3D environments. It comprises 120 missions across five simulated 3D environments and four task families. Agents must autonomously plan, navigate, and report outcomes using only egocentric observations and its action history, without aerial-specific fine-tuning. Across 22 open- and closed-source MLLMs, the strongest model succeeds on fewer than 35% of missions compared to 84.4% human performance, highlighting the difficulty of multi-step embodied tasks. Despite large variations between model families, we observe gains from scaling, indicating that larger general-purpose models possess stronger zero-shot embodied capabilities. Our analysis shows that mission-level competence requires coordinating multiple capabilities beyond spatial perception, including multi-step planning and adaptive reasoning. This motivates closed-loop evaluation and highlights both the promise and risk of scaling-driven improvements for embodied AI.",
+      "authors": [
+        "Suman Navaratnarajah",
+        "Taehyoung Kim",
+        "Jona Ruthardt",
+        "Ishaan Bhimwal",
+        "Ryousuke Yamada",
+        "Yannik Blei",
+        "Wolfram Burgard",
+        "Yuki M Asano"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-07-24T06:22:50+00:00",
+      "link": "https://arxiv.org/pdf/2607.22014v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "benchmark for zero-shot mission-level evaluation of aerial MLLM agents with planning and navigation",
+      "llm_evidence_cn": "面向空中MLLM智能体的零样本任务级规划导航评测基准",
+      "llm_evidence": "面向空中MLLM智能体的零样本任务级规划导航评测基准",
+      "canonical_evidence": "面向空中MLLM智能体的零样本任务级规划导航评测基准",
+      "llm_tldr_en": "Introduces MissionBench, a benchmark of 120 aerial missions across five 3D environments, showing MLLM agents succeed on fewer than 35% of missions vs 84.4% human, highlighting difficulty of autonomous planning.",
+      "llm_tldr_cn": "论文构建MissionBench基准，包含5个模拟3D环境、4类任务家族共120个任务，用于零样本评测多模态大语言模型智能体的高层指令规划与导航能力。对22个开源和闭源MLLM的评测显示，最强模型任务成功率不足35%，而人类可达84.4%。这揭示了多步骤具身智能体中自主规划的难度，为空中智能体研究提供评测基础。",
+      "llm_tldr": "论文构建MissionBench基准，包含5个模拟3D环境、4类任务家族共120个任务，用于零样本评测多模态大语言模型智能体的高层指令规划与导航能力。对22个开源和闭源MLLM的评测显示，最强模型任务成功率不足35%，而人类可达84.4%。这揭示了多步骤具身智能体中自主规划的难度，为空中智能体研究提供评测基础。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent planning",
+      "matched_requirement_id": "req-10",
+      "selection_source": "carryover_cache",
+      "paper_id": "2607.22014v1",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.23617v1",
+      "source": "arxiv",
+      "title": "Optimal Reward Shaping: Autonomous Car Parking Case Study",
+      "abstract": "Designing effective reward functions for model-free reinforcement learning under non-holonomic constraints remains a persistent challenge, often resulting in severe local minima such as policy paralysis or over-conservative hazard avoidance. In this work, we present a parameterized reward shaping framework featuring coverage-gated alignment feedback, drive-direction switch regularization, and an aligned episode termination mechanism evaluated on an autonomous parallel parking task. Crucially, we show that environmental reward parameters and algorithmic hyperparameters are deeply co-dependent, requiring joint meta-optimization to achieve stable convergence. By employing surrogate-based Bayesian optimization, our co-optimized Deep Q-Network (DQN) agent resolves characteristic control failure modes, significantly outperforming uncalibrated baselines across both success rate and trajectory smoothness.",
+      "authors": [
+        "Emre Özkaya",
+        "Nicolas R. Gauger"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "math.OC"
+      ],
+      "published": "2026-07-26T11:49:23+00:00",
+      "link": "https://arxiv.org/pdf/2607.23617v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "reward shaping for reinforcement learning control of autonomous parking agent",
+      "llm_evidence_cn": "面向自动驾驶泊车智能体强化学习控制的奖励塑形",
+      "llm_evidence": "面向自动驾驶泊车智能体强化学习控制的奖励塑形",
+      "canonical_evidence": "面向自动驾驶泊车智能体强化学习控制的奖励塑形",
+      "llm_tldr_en": "Presents a parameterized reward shaping framework with coverage-gated feedback and joint Bayesian meta-optimization of reward and hyperparameters, enabling stable DQN parking agents.",
+      "llm_tldr_cn": "非完整约束下的模型无关强化学习面临奖励设计难题，易陷入策略瘫痪或过度规避。本文提出覆盖门控对齐反馈、换向正则化和对齐终止机制的参数化奖励塑形框架，并在自动泊车任务上验证。结果表明环境奖励参数与算法超参数深度耦合，需用代理贝叶斯优化联合元优化，协整的DQN智能体才能稳定收敛并应对特征化挑战。",
+      "llm_tldr": "非完整约束下的模型无关强化学习面临奖励设计难题，易陷入策略瘫痪或过度规避。本文提出覆盖门控对齐反馈、换向正则化和对齐终止机制的参数化奖励塑形框架，并在自动泊车任务上验证。结果表明环境奖励参数与算法超参数深度耦合，需用代理贝叶斯优化联合元优化，协整的DQN智能体才能稳定收敛并应对特征化挑战。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "papers on autonomous agent architectures and control",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.22948v1",
+      "source": "arxiv",
+      "title": "Building AI That Works: ESnet's Pragmatic Approach to AI-Driven Operational Excellence",
+      "abstract": "The ORBIT (Operations Responses and Business Intelligence Toolkit) project was initiated to assess agentic AI for the upcoming ESnet 7 initiative and to address persistent operational pain points in the Network Operations Center (NOC) workflow. ESnet operators experience slow retrieval from siloed data sources, incidents described in lengthy and difficult-to-parse tickets, and context loss across shift handoffs. These challenges increase cognitive load and prolong incident resolution times. ORBIT therefore targets routine automation, cross-source synthesis, and actionable insights delivered directly within operators' existing tooling.   ORBIT is an agentic AI system integrated into ServiceNow, ESnet's primary incident management platform. The design uses a modular, layered architecture comprising a centralized reasoning hub, tool access via MCPs for ESnet data sources, a semantic search layer, and an operator-facing chat interface. To manage the complexity and stochasticity of the AI toolchain, ORBIT follows industry best practices by structuring task logic as versioned, tested \"skills\" that guide the system in performing bounded responsibilities. This improves reliability and predictability compared to fully unconstrained agent behavior.   Key results show that ORBIT successfully delivered all six initial tasks, and the architecture enabled rapid development of two additional tasks proposed by NOC engineers. We observed strong organic adoption of general-purpose infrastructure components, especially the chat interface and LiteLLM model gateway, including high request volumes from outside the project. Experiments with skills indicate that this approach can reduce task completion steps while eliminating observed error modes.",
+      "authors": [
+        "Bin Dong",
+        "Sukhada Gholba",
+        "Brooklin Gore",
+        "Shawn Kwang",
+        "David Mitchell",
+        "Samuel Oehlert",
+        "Garrett Stewart",
+        "Brendan White",
+        "Luke Baker",
+        "Ed Balas",
+        "Britt Gathright",
+        "Chin Guok",
+        "Jon-Paul Heron",
+        "John MacAuley",
+        "Scott Richmond",
+        "Chris Robb",
+        "Chris Tracy",
+        "Kesheng Wu"
+      ],
+      "primary_category": "cs.NI",
+      "categories": [
+        "cs.NI",
+        "cs.AI"
+      ],
+      "published": "2026-07-24T23:20:59+00:00",
+      "link": "https://arxiv.org/pdf/2607.22948v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Agentic AI system for network operations",
+      "llm_evidence_cn": "用于网络运维的智能体AI系统（ORBIT）",
+      "llm_evidence": "用于网络运维的智能体AI系统（ORBIT）",
+      "canonical_evidence": "用于网络运维的智能体AI系统（ORBIT）",
+      "llm_tldr_en": "Describes ORBIT, an agentic AI system integrated into ServiceNow for ESnet operations, targeting slow siloed retrieval, verbose tickets, and shift context loss via routine automation, cross-source synthesis, and actionable insights in the NOC workflow.",
+      "llm_tldr_cn": "论文介绍了ORBIT项目，这是ESnet为应对网络运营中心痛点而构建的智能体AI系统。它集成在ServiceNow中，针对数据检索慢、工单难以解析、换班上下文丢失等问题，实现日常自动化、跨源综合分析和可操作洞察。该工作展示了智能体AI在真实网络运维场景中的落地价值。",
+      "llm_tldr": "论文介绍了ORBIT项目，这是ESnet为应对网络运营中心痛点而构建的智能体AI系统。它集成在ServiceNow中，针对数据检索慢、工单难以解析、换班上下文丢失等问题，实现日常自动化、跨源综合分析和可操作洞察。该工作展示了智能体AI在真实网络运维场景中的落地价值。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "applications of intelligent agents",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.22157v1",
+      "source": "arxiv",
+      "title": "Learning on the Job: Continual Learning from Deployment Feedback for Frozen-Weights Agents",
+      "abstract": "AI agents encounter learning opportunities in every episode they run, and discard nearly all of them: the underlying models are frozen at deployment, so an agent that resolves a difficult request today starts from zero when it recurs tomorrow. Yet ordinary operation already produces feedback, in the form of outcome verdicts and after-the-fact corrections. We show that this feedback is a sufficient signal for continual learning when the frozen model is paired with an external memory that distils each episode into retrievable natural-language rules. On the banking domain of $τ$-bench, against a static-RAG control retrieving over the complete policy corpus, learning from the one-bit outcome verdict lifts single-trial success to 1.6$\\times$ the baseline, and learning from corrections to 2.6$\\times$, converting 22 of the 84 tasks the baseline never solves. The result spans the deployment spectrum, measured on Mistral Large, an open-weights model that organisations with data sovereignty requirements can self-host, and replicated on a frontier model, Claude Sonnet 5. The accumulated memory also transfers: each model, reading the store built by the other, rises above its own no-memory baseline. The harness, protocol, and data are released.",
+      "authors": [
+        "Valentin Tablan",
+        "Scott Taylor",
+        "Kristoffer Bernhem"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-24T10:01:00+00:00",
+      "link": "https://arxiv.org/pdf/2607.22157v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Frozen-weight AI agents continually learn from natural-language rules distilled from deployment feedback",
+      "llm_evidence_cn": "冻结权重代理从部署反馈提炼的自然语言规则中持续学习",
+      "llm_evidence": "冻结权重代理从部署反馈提炼的自然语言规则中持续学习",
+      "canonical_evidence": "冻结权重代理从部署反馈提炼的自然语言规则中持续学习",
+      "llm_tldr_en": "This paper shows that AI agents with frozen weights can continually learn from one-bit outcome verdicts and corrections by distilling episodes into retrievable natural-language rules in external memory, improving single-trial success 1.6x over static-RAG control.",
+      "llm_tldr_cn": "针对部署后的AI代理模型冻结、无法利用每集经验的问题，提出将每次执行结果与修正反馈提炼成可检索的自然语言规则存储于外部记忆的方法。在τ-bench银行领域，相比检索完整政策语料的静态RAG基线，仅用一个比特结果标签进行持续学习即可将单次成功率提升1.6倍，表明外部记忆与规则蒸馏能让冻结模型在工作中持续进步。",
+      "llm_tldr": "针对部署后的AI代理模型冻结、无法利用每集经验的问题，提出将每次执行结果与修正反馈提炼成可检索的自然语言规则存储于外部记忆的方法。在τ-bench银行领域，相比检索完整政策语料的静态RAG基线，仅用一个比特结果标签进行持续学习即可将单次成功率提升1.6倍，表明外部记忆与规则蒸馏能让冻结模型在工作中持续进步。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "intelligent agent design and applications",
+      "matched_requirement_id": "req-3",
+      "selection_source": "carryover_cache",
+      "paper_id": "2607.22157v1",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.23930v1",
+      "source": "arxiv",
+      "title": "Bridging Reinforcement Learning and Optimal Control via Feasible Action Mapping",
+      "abstract": "Operating constrained dynamical systems requires controllers to efficiently solve complex tasks while enforcing recursive feasibility and safety constraints. To address these competing requirements, we present Feasible Action for Optimal Control (FAOC), a novel control framework integrating Reinforcement Learning (RL) and Optimal Control (OC). The key contribution is a computationally efficient, optimization-based mapping algorithm that transforms the RL agent's action from a static abstract set into a state-dependent feasible parameter set of the Optimal Control Problem (OCP), guaranteeing strict satisfaction of the dynamical system's constraints. Thus, FAOC effectively combines the predictable safety of OC with the flexibility of RL. In contrast to prior work, the abstract action space of the RL agent does not require expert or heuristic design, and the OCP formulation is not compromised by the inability of RL to guarantee feasibility. We apply our approach to real-time motion planning for robot table tennis, which encapsulates these challenges. Via simulated experiments, we show that FAOC outperforms state-of-the-art baselines in both sample efficiency and closed-loop performance.",
+      "authors": [
+        "Stefan Richter",
+        "Alberto Giammarino",
+        "Guillem Torrente",
+        "Sam Blakeman",
+        "Peter Dürr"
+      ],
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY",
+        "cs.RO"
+      ],
+      "published": "2026-07-27T02:01:14+00:00",
+      "link": "https://arxiv.org/pdf/2607.23930v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "RL agent control with feasible action mapping",
+      "llm_evidence_cn": "基于可行动作映射的强化学习智能体控制",
+      "llm_evidence": "基于可行动作映射的强化学习智能体控制",
+      "canonical_evidence": "基于可行动作映射的强化学习智能体控制",
+      "llm_tldr_en": "FAOC combines reinforcement learning and optimal control by mapping abstract RL actions into state-dependent feasible OCP parameters, ensuring strict constraint satisfaction and recursive feasibility while preserving RL flexibility.",
+      "llm_tldr_cn": "约束动态系统控制需要在满足安全约束的同时高效决策。FAOC 提出一个计算高效的优化映射算法，将RL智能体的抽象动作转换为最优控制问题的状态相关可行参数，从而严格保证动力学约束的满足。该方法在保证递归可行性的同时保留了RL的灵活性，为约束控制中的智能体设计提供了新思路。",
+      "llm_tldr": "约束动态系统控制需要在满足安全约束的同时高效决策。FAOC 提出一个计算高效的优化映射算法，将RL智能体的抽象动作转换为最优控制问题的状态相关可行参数，从而严格保证动力学约束的满足。该方法在保证递归可行性的同时保留了RL的灵活性，为约束控制中的智能体设计提供了新思路。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "papers on autonomous agent architectures and control",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.23438v1",
+      "source": "arxiv",
+      "title": "Separating Capability from Permission: A Governance Framework for Agentic AI Autonomy Levels",
+      "abstract": "As AI systems increasingly exhibit agentic behavior, discussions of autonomy often conflate what systems are technically capable of doing with what they should be permitted to do in practice. This paper introduces a governance framework that explicitly separates Allowed Autonomy Levels (AAL), which define the degree of autonomy an AI agent is authorized to exercise given risk, oversight, and accountability considerations, from Autonomous Capability Levels (ACL), which characterize an agent's inherent technical abilities. We present a structured set of autonomy levels spanning reactive execution, decision support, supervised action, goal-directed autonomy, and delegated operational authority, and describe how control, reversibility, and accountability change as autonomy increases. To operationalize this framework, we propose a risk-aware decision process for assigning allowed autonomy, analyze how risk and accountability evolve across autonomy levels, and demonstrate its application through a deployed enterprise data engineering agent, illustrating how a system assessed at a high capability level can be deliberately constrained to a lower allowed autonomy based on risk, reversibility, and organizational readiness. By distinguishing authorization from capability, this work provides practical guidance for the design, deployment, and governance of Agentic AI systems.",
+      "authors": [
+        "Haining Zheng",
+        "Qian Dong",
+        "Rodolfo K. Depena",
+        "Jonathan D. Bhatia",
+        "Feng Xiao",
+        "Peng Xu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CY",
+        "cs.MA"
+      ],
+      "published": "2026-07-26T03:32:13+00:00",
+      "link": "https://arxiv.org/pdf/2607.23438v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "defines autonomy levels for agentic decision-making and control",
+      "llm_evidence_cn": "定义了智能体自主决策与控制的等级框架",
+      "llm_evidence": "定义了智能体自主决策与控制的等级框架",
+      "canonical_evidence": "定义了智能体自主决策与控制的等级框架",
+      "llm_tldr_en": "This governance framework separates Allowed Autonomy Levels from Autonomous Capability Levels, defining a structured set of autonomy levels from reactive execution to delegated operational authority for agentic AI.",
+      "llm_tldr_cn": "当前关于AI自主性的讨论常混淆技术能力与实际授权，缺乏清晰的治理框架。本文提出将允许自主等级与能力自主等级分离的结构化治理框架，涵盖从响应式执行、决策支持、监督执行、目标导向自主到委托运营权的多级自主。该框架还讨论了控制、可逆性和问责约束。它为智能体自主性的安全治理和责任界定提供了制度化基础。",
+      "llm_tldr": "当前关于AI自主性的讨论常混淆技术能力与实际授权，缺乏清晰的治理框架。本文提出将允许自主等级与能力自主等级分离的结构化治理框架，涵盖从响应式执行、决策支持、监督执行、目标导向自主到委托运营权的多级自主。该框架还讨论了控制、可逆性和问责约束。它为智能体自主性的安全治理和责任界定提供了制度化基础。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent decision making",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.22917v1",
+      "source": "arxiv",
+      "title": "Agent Team Work Zone: An Automated, Persistent Workspace for Long-Lived Coding Agent Teams",
+      "abstract": "Large Language Model (LLM) agents have significantly improved coding and programming workflows. Claude Code, in particular, is one of the most powerful LLM coding agents and is capable of conducting complex coding tasks. However, several drawbacks can undermine long-term agentic workflows. (1) Irrecoverable agent teams: The Agent Teams feature is powerful, but the working state accumulated by each teammate is lost and cannot be resumed once the process stops, for example, when a terminal is closed. (2) Compaction erodes working detail: Compaction condenses the conversation into a summary, causing an agent's working details to become vague. (3) Agentic \"technical debt\": Over time, a user's decisions and the agents' operations become trapped in compacted old chats, making the project increasingly difficult to maintain and review. (4) Heavy prompt writing: Assigning or handing off tasks requires users to repeatedly write long prompts to achieve the expected agentic performance. We propose ATWZ (Agent Team Work Zone), a filesystem-based operations layer built around Claude Code's native Agent Teams that addresses these problems. Its central design principle is to treat each agent and teammate as a human employee and preserve their important working state in files stored in a dedicated directory called a \"workstation,\" together with the skills, hooks, and scripts that use and maintain these files. With ATWZ, an agent team can periodically back up its working state, allowing an agent's knowledge to be recovered after compaction. After a process ends, the team can be restored with a single command. These features also substantially mitigate the agentic \"technical debt\" described above. Moreover, within ATWZ, agent \"employees\" can send documents to one another, greatly reducing the effort required to write prompts.",
+      "authors": [
+        "Shouren Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "published": "2026-07-24T21:11:18+00:00",
+      "link": "https://arxiv.org/pdf/2607.22917v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Persistent workspace for long-lived coding agent teams",
+      "llm_evidence_cn": "为长期运行的编程智能体团队提供持久化工作区",
+      "llm_evidence": "为长期运行的编程智能体团队提供持久化工作区",
+      "canonical_evidence": "为长期运行的编程智能体团队提供持久化工作区",
+      "llm_tldr_en": "Agent Team Work Zone provides an automated persistent workspace that saves and resumes the working state of each LLM coding agent, preventing loss on stop, preserving detail lost to compaction, and reducing agentic technical debt over long-lived team workflows.",
+      "llm_tldr_cn": "论文针对长期运行的编程智能体团队中工作状态易丢失、压缩导致细节模糊以及智能体技术债累积等问题，提出自动化的持久工作区Agent Team Work Zone。该方法使得团队工作可恢复、细节更清晰，并减少长期协作中的技术债。文章聚焦于提升LLM编程智能体团队的可持续性和可恢复性，对实际工程应用有直接帮助。",
+      "llm_tldr": "论文针对长期运行的编程智能体团队中工作状态易丢失、压缩导致细节模糊以及智能体技术债累积等问题，提出自动化的持久工作区Agent Team Work Zone。该方法使得团队工作可恢复、细节更清晰，并减少长期协作中的技术债。文章聚焦于提升LLM编程智能体团队的可持续性和可恢复性，对实际工程应用有直接帮助。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.24112v1",
+      "source": "arxiv",
+      "title": "Scaling GUI Agents with Visual State Transitions",
+      "abstract": "We introduce State Transition Pretraining (STP) as a new scaling axis for GUI agents. During the STP stage, we continually pretrain a unified multimodal model on visual state transitions by jointly optimizing inverse dynamics (predicting actions from state changes) and forward dynamics (predicting next states from current states and actions). This optimization equips the model with better action-grounded visual representations and an internal world model of GUI dynamics. When subsequently fine-tuned on trajectories with task instructions, our STP-trained models consistently outperform baselines trained solely via direct trajectory fine-tuning across agent benchmarks in both desktop and mobile GUI scenarios (AgentNetBench, AndroidControl, and GUIOdyssey). Further empirical studies show that joint dynamics optimization yields stable improvements over single-objective training, and downstream performance scales steadily with the volume of transition data.",
+      "authors": [
+        "Xiangyan Liu",
+        "Kaixin Li",
+        "Haonan Wang",
+        "Biao Wu",
+        "Meng Fang",
+        "Longxu Dou",
+        "Chao Du",
+        "Michael Qizhe Shieh",
+        "Tianyu Pang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-27T07:54:08+00:00",
+      "link": "https://arxiv.org/pdf/2607.24112v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Scaling GUI agents with visual state transition pretraining; application of intelligent agents to GUI automation tasks.",
+      "llm_evidence_cn": "通过视觉状态转换预训练扩展GUI智能体能力，是智能体在界面自动化中的应用。",
+      "llm_evidence": "通过视觉状态转换预训练扩展GUI智能体能力，是智能体在界面自动化中的应用。",
+      "canonical_evidence": "通过视觉状态转换预训练扩展GUI智能体能力，是智能体在界面自动化中的应用。",
+      "llm_tldr_en": "Introduces State Transition Pretraining (STP) for GUI agents by jointly optimizing inverse and forward dynamics, improving action-grounded representations and world models, leading to consistent gains across desktop and mobile GUI benchmarks.",
+      "llm_tldr_cn": "GUI智能体需要从界面状态变化中学习动作，现有直接轨迹微调缺乏对界面动态的深层理解。该文提出状态转换预训练（STP），在连续预训练阶段联合优化逆动力学（由状态变化预测动作）和前向动力学（由当前状态和动作预测下一状态），使模型获得更好的动作接地表示和GUI世界模型。在下游微调后，STP模型在多个桌面与移动端GUI基准上一致超过基线，展示了一种可扩展的GUI智能体提升方式。",
+      "llm_tldr": "GUI智能体需要从界面状态变化中学习动作，现有直接轨迹微调缺乏对界面动态的深层理解。该文提出状态转换预训练（STP），在连续预训练阶段联合优化逆动力学（由状态变化预测动作）和前向动力学（由当前状态和动作预测下一状态），使模型获得更好的动作接地表示和GUI世界模型。在下游微调后，STP模型在多个桌面与移动端GUI基准上一致超过基线，展示了一种可扩展的GUI智能体提升方式。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "applications of intelligent agents",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.23586v1",
+      "source": "arxiv",
+      "title": "Are You Still the Agent I Authorized? Earned Authority under a Fixed Ceiling for Evolving Agents",
+      "abstract": "Long-lived AI agents increasingly evolve after deployment by retaining experience, acquiring skills and tools, revising workflows, delegating work, and moving across task phases. This improves adaptation but creates a distinct authorization problem. Tool-enabled agents can turn model errors and prompt injections into consequential external actions; when evolution occurs under a live grant, the subject exercising that authority or the context in which it acts may no longer match what the user evaluated. Evolution can change both the effects reachable under an old grant and the authority required by the task, which may rise, fall, or become incomparable. Existing tool policies constrain actions but do not determine when a grant survives this change.   We formulate authorization continuity: when does an existing grant remain valid, how may active authority change, and what boundary must never move? Our state-bound model fixes a transition envelope and an immutable effect ceiling at grant time. The envelope determines whether the grant survives a mutation; below the ceiling, authority may contract freely and expand only under specified evidence conditions. We distinguish requested from realized effects and prove that, under complete mediation, sound effect abstraction, attenuating delegation, and monitor integrity, mutation cannot amplify protected effects beyond the user-issued ceiling. Agent-produced evidence may allocate authority below the ceiling but cannot raise it. Finally, we map six mutation classes to their authorization consequences.",
+      "authors": [
+        "Zhaoxi Zhang",
+        "Xiaomei Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CR"
+      ],
+      "published": "2026-07-26T10:29:20+00:00",
+      "link": "https://arxiv.org/pdf/2607.23586v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "authorization and governance of evolving intelligent agents",
+      "llm_evidence_cn": "演化智能体的授权与治理",
+      "llm_evidence": "演化智能体的授权与治理",
+      "canonical_evidence": "演化智能体的授权与治理",
+      "llm_tldr_en": "Analyzes how long-lived evolving agents change the authority required and reachable effects under a fixed grant, showing existing tool policies cannot decide when authorization fails.",
+      "llm_tldr_cn": "长期部署的AI智能体会通过积累经验、获取技能和修改流程而演化，这带来授权错配问题。本文在固定授权上限内分析演化对智能体权限的影响，发现旧授权可达效果和任务所需权限可能上升、下降或不可比较。现有工具策略不能决定授权何时失效，该研究为长期演化智能体的授权治理提供了形式化基础。",
+      "llm_tldr": "长期部署的AI智能体会通过积累经验、获取技能和修改流程而演化，这带来授权错配问题。本文在固定授权上限内分析演化对智能体权限的影响，发现旧授权可达效果和任务所需权限可能上升、下降或不可比较。现有工具策略不能决定授权何时失效，该研究为长期演化智能体的授权治理提供了形式化基础。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "intelligent agent design and applications",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.23336v1",
+      "source": "arxiv",
+      "title": "Constitutional governance for societies of AI agents in the built environment: a research agenda",
+      "abstract": "The built environment is on the cusp of populating itself with autonomous artificial agents. AI systems that advise, control and coordinate are being deployed across retrofit, operation and mobility faster than their collective behaviour is studied. The dominant framing treats each agent as a tool operating on a passive building, governance reduced to single-agent safety, which is inadequate. A building, a street, or a city is more accurately modelled as a society of negotiating agents: occupants, owners, operators, regulators, and the artificial agents increasingly acting on their behalf. Their interactions are strategic, their information asymmetric, and the outcomes that matter are properties of the whole. The paper proposes a research agenda for constitutional multi-agent governance of the built environment, organised around three problems: mechanism design for retrofit under deep uncertainty, treating public subsidy as a mechanism component; physics-informed verification of agents in building operations; and antifragile coordination for urban infrastructure under shocks. Drawing on three decades of multi-agent systems research, the paper sets out conceptual foundations, works one governance event through in detail, identifies twelve open problems, and outlines what the agenda requires in data, computation, disciplinary integration and governance.",
+      "authors": [
+        "Ali Ghoroghi"
+      ],
+      "primary_category": "cs.CY",
+      "categories": [
+        "cs.CY"
+      ],
+      "published": "2026-07-25T19:18:48+00:00",
+      "link": "https://arxiv.org/pdf/2607.23336v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "societies of AI agents, negotiating agents, strategic interactions and coordination",
+      "llm_evidence_cn": "AI智能体社会、协商式智能体、策略交互与协调",
+      "llm_evidence": "AI智能体社会、协商式智能体、策略交互与协调",
+      "canonical_evidence": "AI智能体社会、协商式智能体、策略交互与协调",
+      "llm_tldr_en": "Position paper arguing built environments should be modelled as societies of negotiating AI agents; proposes a constitutional governance research agenda for multi-agent coordination.",
+      "llm_tldr_cn": "论文指出建筑环境即将布满自主AI智能体，现有单一智能体安全治理范式不足；主张将建筑、街道、城市建模为由居住者、运营者、监管者及AI代理组成的协商智能体社会。文章关注主体间的策略性互动、信息不对称以及整体涌现属性，提出面向这类多智能体系统的宪法式治理研究议程。该工作为多智能体协调与治理研究提供了新的问题框架和方向指引。",
+      "llm_tldr": "论文指出建筑环境即将布满自主AI智能体，现有单一智能体安全治理范式不足；主张将建筑、街道、城市建模为由居住者、运营者、监管者及AI代理组成的协商智能体社会。文章关注主体间的策略性互动、信息不对称以及整体涌现属性，提出面向这类多智能体系统的宪法式治理研究议程。该工作为多智能体协调与治理研究提供了新的问题框架和方向指引。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.24416v1",
+      "source": "arxiv",
+      "title": "Decentralised Consensus Learning Networks: SME Rotation Without Centralised Reward",
+      "abstract": "Centralised reward signals dominate modern AI learning systems, but they impose a single external definition of correct or valuable knowledge. We present a decentralised, consensus-based multi-agent learning framework in which expertise emerges through peer validation rather than prescribed reward. Agents update beliefs via weighted social consensus, while trust is allocated according to competence inferred from peer consistency instead of ground truth. Subject-matter expert (SME) status is assigned dynamically as a top-percentile competence rank rather than a fixed label.   We evaluate the framework across 84 simulation runs spanning 30 to 10,000 agents, multiple graph topologies, sparse large-scale networks, scalar and vector belief representations, dimensionality sweeps (D=1-500), multi-seed robustness tests, and parameter sensitivity analyses. Phase 1 shows that SME rotation is robust, persistent, topology-invariant, and scale-invariant: 90-100% of agents attain SME status, with most expertise turnover occurring after belief convergence and increasing with network size. Phases 2 and 3 show that vector beliefs introduce heterogeneous convergence with cascade dynamics and reveal five distinct dynamical regimes as belief dimensionality increases. At high dimensionality (D=150-200), the network reaches stable partial consensus while expertise becomes increasingly concentrated in a single agent. ETA sensitivity analysis demonstrates that this concentration is driven by belief dimensionality rather than stochastic noise. We interpret this behaviour as an emergent property of decentralised learning: in complex high-dimensional consensus spaces, the agent most consistently aligned with the collective belief naturally emerges as the recognised expert.",
+      "authors": [
+        "Florin Neagu"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "published": "2026-07-27T13:30:06+00:00",
+      "link": "https://arxiv.org/pdf/2607.24416v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Decentralised consensus learning without central reward",
+      "llm_evidence_cn": "无中心奖励的去中心化共识多智能体学习",
+      "llm_evidence": "无中心奖励的去中心化共识多智能体学习",
+      "canonical_evidence": "无中心奖励的去中心化共识多智能体学习",
+      "llm_tldr_en": "Presents a decentralised consensus-based multi-agent learning framework where expertise emerges from peer validation; agents update beliefs via weighted social consensus with trust allocated by peer consistency, evaluated on 84 simulations up to 10,000 agents.",
+      "llm_tldr_cn": "论文挑战了以集中式奖励为核心的学习范式，提出去中心化共识学习网络。智能体通过加权社会共识和同伴一致性推断能力来更新信念，而无需外部奖励。在84次仿真（涵盖30到10000个智能体、多种图拓扑和稀疏大网络）中验证了该方法的可扩展性。该框架为多智能体协作学习提供了一种无中心化奖励的新路径。",
+      "llm_tldr": "论文挑战了以集中式奖励为核心的学习范式，提出去中心化共识学习网络。智能体通过加权社会共识和同伴一致性推断能力来更新信念，而无需外部奖励。在84次仿真（涵盖30到10000个智能体、多种图拓扑和稀疏大网络）中验证了该方法的可扩展性。该框架为多智能体协作学习提供了一种无中心化奖励的新路径。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
