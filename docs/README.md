@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-02</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-03</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 23 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 17 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>12</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>6</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-02 20:56:56 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-03 21:16:01 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,9 +62,7 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日精读12篇、速读11篇，共23篇论文；其中人机交互世界认知模型WCM与全场景智能体AgentOmnia均获9.0高分。</p>
-<p>最值得关注：通用人机交互认知框架与规模化智能体应用，另速读中零样本空中任务评估、持续学习型智能体、长驻编码智能体团队也达8.0。</p>
-<p>建议普通读者优先精读WCM和AgentOmnia，再按兴趣浏览速读列表中偏向机器人评估与团队协作的方向。</p>
+<p>今日聚焦边缘LLM代理的校准推理与不确定性延迟，以及带时空/拓扑约束的多智能体规划两项高分精读。速读亮点包括真实场景多步工具使用基准E-Bench和语言引导机器人策略合成。建议普通读者优先关注“边缘端智能体如何在不确定时主动求援”与“多智能体协同规划”这两个落地性强的方向。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -73,12 +71,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">12 篇</strong>
+    <strong class="dpr-home-dashboard-count">6 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="WCM: World-Cognition Model for Generalizable Human-Robot Interaction">WCM: World-Cognition Model for Generalizable Human-Robot Interaction</span></li><li><span class="dpr-home-dashboard-paper-title" title="AgentOmnia: Scaling Agentic Models for Full-Scenario Applications">AgentOmnia: Scaling Agentic Models for Full-Scenario Applications</span></li><li><span class="dpr-home-dashboard-paper-title" title="Hybrid Advantage Estimation with Unified Critic for VLM Agentic Reinforcement Learning">Hybrid Advantage Estimation with Unified Critic for VLM Agentic Reinforcement Learning</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Think Short, Defer Smart, Act, and Repeat: Calibrated Reasoning and Uncertainty-Aware Deferral for Edge LLM Agents">Think Short, Defer Smart, Act, and Repeat: Calibrated Reasoning and Uncertainty-Aware Deferral for Edge LLM Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Multi-Agent Planning with Spatio-Temporal and Topological Constraints using STL-GO">Multi-Agent Planning with Spatio-Temporal and Topological Constraints using STL-GO</span></li><li><span class="dpr-home-dashboard-paper-title" title="Code Is the Body: Agent-Owned Software Bodies for Recursive Evolution and Descent">Code Is the Body: Agent-Owned Software Bodies for Recursive Evolution and Descent</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>12</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>6</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -89,7 +87,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents">Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Learning on the Job: Continual Learning from Deployment Feedback for Frozen-Weights Agents">Learning on the Job: Continual Learning from Deployment Feedback for Frozen-Weights Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Agent Team Work Zone: An Automated, Persistent Workspace for Long-Lived Coding Agent Teams">Agent Team Work Zone: An Automated, Persistent Workspace for Long-Lived Coding Agent Teams</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="E-Bench: Benchmarking Multi-Step Tool-Use Agents in Real-World Product Scenarios">E-Bench: Benchmarking Multi-Step Tool-Use Agents in Real-World Product Scenarios</span></li><li><span class="dpr-home-dashboard-paper-title" title="A Few Words Go a Long Way: Language Guided Robot Policy Synthesis">A Few Words Go a Long Way: Language Guided Robot Policy Synthesis</span></li><li><span class="dpr-home-dashboard-paper-title" title="ACM: Agentic Context Management for Long Horizon Tasks">ACM: Agentic Context Management for Long Horizon Tasks</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>
