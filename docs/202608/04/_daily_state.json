@@ -1,0 +1,329 @@
+{
+  "date": "20260804",
+  "date_label": "",
+  "generated_at": "2026-08-04 21:04:42 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2608.00106v1",
+      "route": "202608/04/2608.00106v1-learning-compositional-meta-routing-for-agentic-workflows-an-executable-benchmark",
+      "title": "Learning Compositional Meta-Routing for Agentic Workflows: An Executable Benchmark",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "智能体工作流路由是对执行操作的自动决策。",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2608.00155v1",
+      "route": "202608/04/2608.00155v1-agentstream-how-well-do-self-evolving-llm-agents-perform-under-streaming-tasks",
+      "title": "AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向自进化LLM智能体的流式任务评测框架",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2608.00368v1",
+      "route": "202608/04/2608.00368v1-agent-native-task-oriented-communication-with-joint-token-compression-coding-and-modulation",
+      "title": "Agent-Native Task-Oriented Communication with Joint Token Compression Coding and Modulation",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向智能体的令牌通信协议与调制编码联合设计",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2608.00648v1",
+      "route": "202608/04/2608.00648v1-mdgam-based-cooperative-task-scheduling-for-communication-constrained-distributed-multi-agent-systems",
+      "title": "MDGAM-Based Cooperative Task Scheduling for Communication-Constrained Distributed Multi-Agent Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "分布式多智能体系统的协作任务调度与通信感知协调",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2608.00832v1",
+      "route": "202608/04/2608.00832v1-advplan-bench-adversarial-evaluation-of-structured-plan-generation-agents",
+      "title": "AdvPlan-Bench: Adversarial Evaluation of Structured Plan-Generation Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向结构化规划生成智能体的对抗评估，考虑对手存在时的计划质量",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2608.01425v1",
+      "route": "202608/04/2608.01425v1-training-small-llms-as-spatial-multi-agent-policies",
+      "title": "Training Small LLMs as Spatial Multi-Agent Policies",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体强化学习训练小型LLM策略，结合选项框架与符号规划器",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2608.01456v1",
+      "route": "202608/04/2608.01456v1-long-horizon-embodied-decision-making-via-multimodal-memory-compression",
+      "title": "Long-Horizon Embodied Decision-Making via Multimodal Memory Compression",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向长时程具身决策与人类偏好对齐的基准",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2608.01463v1",
+      "route": "202608/04/2608.01463v1-where-reasoning-diverges-localized-multi-agent-debate",
+      "title": "Where Reasoning Diverges: Localized Multi-Agent Debate",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "提出局部化多智能体辩论协议，让智能体仅就分歧片段进行通信，属于多智能体通信与协调方法。",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2608.01636v1",
+      "route": "202608/04/2608.01636v1-a-forward-inverse-dynamic-game-framework-for-enhanced-multi-agent-trajectory-planning",
+      "title": "A Forward-Inverse Dynamic Game Framework for Enhanced Multi-Agent Trajectory Planning",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "基于前向-逆向动态博弈的多智能体轨迹规划",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2607.24625v1",
+      "route": "202608/04/2607.24625v1-agentic-permissions-policy-algebra-for-taint-confinement-in-llm-agents",
+      "title": "Agentic Permissions Policy Algebra for Taint Confinement in LLM Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向自主LLM智能体污点隔离的权限策略代数",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2607.25207v1",
+      "route": "202608/04/2607.25207v1-a-unified-algorithmic-framework-for-hybrid-reinforcement-learning-in-tabular-mdps-with-shifted-transition-dynamics",
+      "title": "A Unified Algorithmic Framework for Hybrid Reinforcement Learning in Tabular MDPs with Shifted Transition Dynamics",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "统一的强化学习框架，结合在线与离线数据训练智能体策略",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2607.26836v1",
+      "route": "202608/04/2607.26836v1-before-agents-speak-pre-hoc-failure-risk-inference-in-multi-agent-systems",
+      "title": "Before Agents Speak: Pre-hoc Failure Risk Inference in Multi-Agent Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向多智能体通信与协作的预置失败风险推断",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2607.27267v1",
+      "route": "202608/04/2607.27267v1-fava-formal-authorization-for-verified-agents-with-evidence-backed-permission-graphs",
+      "title": "FAVA: Formal Authorization for Verified Agents with Evidence-Backed Permission Graphs",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "基于证据权限图的正式授权框架，用于可验证代理",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2607.25132v1",
+      "route": "202608/04/2607.25132v1-interpretable-gohr-agents-via-sparse-autoencoders",
+      "title": "Interpretable GOHR Agents via Sparse Autoencoders",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "使用稀疏自编码器理解智能体内在表示",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2607.25891v1",
+      "route": "202608/04/2607.25891v1-messier-a-high-resolution-corpus-for-cross-benchmark-agent-evaluation",
+      "title": "Messier: A High-Resolution Corpus for Cross-Benchmark Agent Evaluation",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向跨基准智能体评估的统一高分辨率语料库，支撑智能体设计",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2608.00677v1",
+      "route": "202608/04/2608.00677v1-openart-scaling-agent-red-teaming-via-open-ended-environment-evolution",
+      "title": "OpenART: Scaling Agent Red Teaming via Open-Ended Environment Evolution",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "属于智能体核心主题；为长周期有状态环境中的AI智能体红队测试提供可扩展开放竞技场",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2608.00747v1",
+      "route": "202608/04/2608.00747v1-when-prompts-control-robots-prompt-injection-attacks-in-multi-agent-robotic-systems",
+      "title": "When Prompts Control Robots: Prompt Injection Attacks in Multi-Agent Robotic Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "LLM多智能体机器人系统的规划与控制，提示注入攻击导致不安全决策",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2607.28037v1",
+      "route": "202608/04/2607.28037v1-clawtrack-towards-trace-level-evaluation-and-improvement-of-real-world-autonomous-agents",
+      "title": "ClawTrack: Towards Trace-Level Evaluation and Improvement of Real-World Autonomous Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "提供轨迹级评测，从目标对齐、效率、信息利用和结果验证四个维度逐轮评估自主智能体推理",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2607.29069v1",
+      "route": "202608/04/2607.29069v1-rethinking-ai-cloud-infrastructure-for-agentic-serving-systems-with-the-aries-experimentation-framework",
+      "title": "Rethinking AI Cloud Infrastructure for Agentic Serving Systems with the Aries Experimentation Framework",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "面向智能体服务系统的实验框架，与自主智能体架构相关",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    },
+    {
+      "paper_id": "2608.00101v1",
+      "route": "202608/04/2608.00101v1-agentic-coding-in-the-wild-characterizing-github-copilot-traces-at-production-scale",
+      "title": "Agentic Coding in the Wild: Characterizing GitHub Copilot Traces at Production Scale",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "对AI编码智能体的大规模特征分析，属于智能体应用研究",
+      "first_seen_at": "2026-08-04 21:04:42 UTC",
+      "updated_at": "2026-08-04 21:04:42 UTC"
+    }
+  ]
+}

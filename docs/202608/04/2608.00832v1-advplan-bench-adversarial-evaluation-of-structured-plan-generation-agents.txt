@@ -1,0 +1,235 @@
+Title: AdvPlan-Bench: Adversarial Evaluation of Structured Plan-Generation Agents
+
+URL Source: https://arxiv.org/pdf/2608.00832v1
+
+Published Time: Tue, 04 Aug 2026 00:52:05 GMT
+
+Number of Pages: 8
+
+Markdown Content:
+# AdvPlan-Bench: Adversarial Evaluation of Structured Plan-Generation Agents 
+
+## arXiv Submission Alina Kapanova 1, Arun Kanhai 2, Natan Vidra 3, Spurthi Setty 4
+
+> 1
+
+Anote AI, Cornell University 
+
+> 2
+
+Anote AI, CUNY 
+
+> 3
+
+Anote AI 
+
+> 4
+
+Stevens Institute of Technology ak2765@cornell.edu, arun.kanhai55@qmail.cuny.edu, nvidra@anote.ai, ssetty2@stevens.edu 
+
+Abstract 
+
+Structured plan-generation agents are often evaluated as if a plan has quality in isolation, yet many realistic planning tasks require asking how a candidate behaves when another agent can search for responses. We introduce AdvPlan-Bench, an of-fline benchmark for adversarial evaluation of structured plan-generation agents. The contribution is a general evaluation object: a typed plan, an adversarial response set, selector di-agnostics, and traceable candidate-frontier metrics. AdvPlan-Bench represents plans as typed action chains with optional branches, assigns synthetic quality scores, compares oppos-ing plans with BLUE-vs-RED advantage and Nash-gap diag-nostics, and evaluates qualitative constraint coherence with a transparent heuristic rubric. In 150 synthetic scenarios span-ning five planning templates, a sampled best-response policy that draws eight response candidates reduces BLUE advantage from .518 to .486 and BLUE win rate from .900 to .820 relative to a single-sample response. An offline LLM-policy contract baseline reaches .496 BLUE advantage and .700 BLUE win rate, while a two-stage multi-agent council obtains .509 BLUE advantage and .813 BLUE win rate. A three-rater rubric-sensitivity study over 600 rating records yields .978 inter-rater agreement. AdvPlan-Bench is not an operational planner and provides no evidence about real-world decision quality; it is a reproducible benchmark artifact for studying adversarial plan evaluation, response-budget sensitivity, candidate frontiers, and multi-agent critique-and-revision traces. 
+
+Code and artifacts are available at https://github.com/ anote-ai/Research-COAGeneration. 
+
+## 1 Introduction 
+
+Plan-generation agents are commonly evaluated on whether they produce plausible final answers, valid tool traces, or ex-ecutable action sequences. In adversarial settings, however, a candidate plan is not meaningful in isolation. Its apparent strength depends on how a responder searches, which con-straints are emphasized, whether the candidate set contains meaningful alternatives, and whether critique-and-revision changes the selected plan. Structured response planning is a compact testbed for this broader problem: the artifact is in-spectable, the opponent matters, and a single scalar success metric can hide important tradeoffs. We present AdvPlan-Bench, an offline benchmark for ad-versarial evaluation of structured plan-generation agents. The AI contribution is methodological: AdvPlan-Bench turns a generated plan, an adversarial response distribution, and a multi-candidate frontier into a reproducible evaluation ob-ject. The current benchmark is intentionally small and syn-thetic. It is designed to make assumptions inspectable before moving to richer simulations, expert scoring, or live model-backed generation. The benchmark is organized around a gap in current agent evaluation. Many agent benchmarks ask whether an agent completes a task, invokes the right tool, or reaches a final answer. Adversarial plan generation instead requires compar-ing sets of possible plans under response search. A generated plan can be syntactically valid and high scoring in isolation, yet brittle once a responder samples plausible counter-plans. AdvPlan-Bench therefore evaluates not just final plan qual-ity, but also response-budget sensitivity, candidate-frontier structure, constraint-coherence diagnostics, and trace-level explanations of why an option was selected. The paper makes three contributions: 
+
+• a formal adversarial plan-generation setup in which a structured candidate is evaluated against sampled re-sponse sets rather than a fixed answer key; 
+
+• a reproducible offline benchmark with typed plan traces, BLUE/RED policy comparison, constraint-coherence di-agnostics, response-budget curves, candidate diversity, and Pareto-frontier analysis; and 
+
+• empirical evidence over 150 scenarios that sampled adver-sarial response, an offline LLM-policy contract baseline, and multi-agent council generation change win-rate and plan-quality conclusions, plus a rubric-sensitivity check and a benchmark-development finding showing that sce-nario framing was a silent no-op until wired into generated content. The scope boundary is central. AdvPlan-Bench studies typed synthetic plan artifacts and synthetic evaluation sig-nals. It does not implement an operational decision architec-ture, does not use real operational data, and should not be used for real-world planning decisions. 
+
+## 2 Related Work 
+
+Benchmark design. General-purpose evaluation efforts such as BIG-bench (BIG-bench authors 2023) and HELM (Liang et al. 2023) established the importance of arXiv:2608.00832v1 [cs.LG] 1 Aug 2026 broad, transparent, and reproducible measurement. They pri-marily evaluate model behavior over collections of tasks and metrics. AdvPlan-Bench follows the same reproducibility principle but targets a narrower object: adversarial plan gen-eration in which the input, candidate set, opponent response set, and selection trace are all part of the benchmark instance. 
+
+Self-play. AlphaZero (Silver et al. 2018), AlphaS-tar (Vinyals et al. 2019), and Pluribus (Brown and Sand-holm 2019) demonstrate the value of self-play in adversar-ial games. CICERO extends strategic self-play into natural-language negotiation (Bakhtin et al. 2022). AdvPlan-Bench uses self-play as an evaluation mechanism, not as a training algorithm. 
+
+Adversarial decision models. Simplified competitive sim-ulations and strategic analysis motivate lightweight adversar-ial abstractions (Lanchester 1916; Schelling 1960). AdvPlan-Bench’s simulator check is deliberately stylized and is re-ported only as a secondary diagnostic. The qualitative rubric is used only as a transparent constraint-coherence proxy and is not a substitute for expert assessment. 
+
+Agent evaluation. ReAct (Yao et al. 2023b) motivates evaluating reasoning and action together, while Agent-Bench (Liu et al. 2024) evaluates agents across interactive settings. ALFWorld connects abstract textual reasoning to embodied action (Shridhar et al. 2021), and WebArena evalu-ates autonomous agents in realistic web environments (Zhou et al. 2024). SWE-bench grounds evaluation in executable software tasks (Jimenez et al. 2024); τ -bench and Tool-Sandbox evaluate stateful tool-using agents in domain and conversational environments (Yao et al. 2024; Lu et al. 2025). AgentDiagnose argues that trajectory-level diagno-sis is needed to expose failures hidden by final success (Ou et al. 2025). AdvPlan-Bench contributes a narrower artifact: paired evaluation of structured plan-generation policies un-der adversarial response, with traces and candidate-set met-rics oriented toward plan comparison rather than tool execu-tion alone. 
+
+Planning and tool orchestration. ACPBench generates action-change planning tasks with provably checkable an-swers (Kokel et al. 2025), and PlanningArena evaluates plan-ning and tool learning across multiple dimensions (Zheng et al. 2025). Toolformer and ToolLLM study API/tool use by language models (Schick et al. 2023; Qin et al. 2024), while LLMCompiler and SPIRAL study function-call plan-ning and reflective symbolic search (Kim et al. 2024; Zhang et al. 2026). Tree of Thoughts explores multiple reasoning paths before committing to an answer (Yao et al. 2023a), and Self-Refine and Reflexion show that feedback-driven revi-sion can improve agent outputs at test time (Madaan et al. 2023; Shinn et al. 2023). These works motivate executable or structured evaluation of agent plans. AdvPlan-Bench differs by making the adversarial response itself part of the evalu-ation unit: a generated plan is judged against a responding plan and a candidate frontier, not only against a static answer key. 
+
+How AdvPlan-Bench extends these projects. The main improvement over broad benchmark suites such as BIG-bench and HELM is not scale, but evaluation granularity: AdvPlan-Bench treats each instance as a structured adver-sarial trace rather than a prompt-response pair. Compared with WebArena, ALFWorld, SWE-bench, τ -bench, and Tool-Sandbox, our benchmark shifts the target from task comple-tion or tool correctness to robust option generation under an adaptive opponent. Compared with Tree of Thoughts, Self-Refine, Reflexion, and SPIRAL, the revision loop is not evaluated only by final-answer success; it is tied to ex-plicit RED-team pressure, proposal diversity, revised diver-sity, robustness margin, and pressure reduction. This creates a complementary benchmark setting for agentic planning re-search: systems can be compared on whether they generate diverse, inspectable, adversarially stress-tested plans rather than merely plausible reasoning traces. 
+
+Novelty boundary. The benchmark is not a new self-play learning algorithm, combat model, or general-purpose plan-ner. Its novelty is the controlled combination of five elements that are usually evaluated separately: structured plan arti-facts, adversarial best-response sampling, multi-agent pro-posal and critique, heuristic constraint-aware diagnostics, and reproducible trace-level evaluation of candidate sets. The matched single-sample versus sampled-response comparison isolates the effect of adversarial candidate generation, while the framing no-op analysis demonstrates why benchmark variables must be tied to generated content before claims about sensitivity or robustness are meaningful. 
+
+## 3 Problem Formulation 
+
+Let s ∈ S be a synthetic scenario. A BLUE policy πB pro-duces a structured plan cB ∈ C ; a RED policy πR produces responses conditioned on s and optionally cB . The bench-mark computes a utility-like advantage signal U (cB , c R, s ), a constraint-inspired diagnostic vector D(c, s ), and candidate-set properties such as diversity and Pareto-frontier size. In the single-response setting, RED samples one cR. In the sampled best-response setting, RED samples CR = {c1
+
+> R
+
+, . . . , c kR} and selects the response with highest adversarial score. The cen-tral evaluation question is whether the apparent quality of cB
+
+is stable as the response policy becomes more adversarial. This differs from static planning benchmarks that compare a generated plan to a fixed answer key. Here, the evaluation object is the tuple (s, c B , C R, U, D ): a scenario, a structured plan, an adversarial response distribution, and inspectable traces that explain why a candidate was selected. For multi-agent plan generation, BLUE proposer agents produce B0 = {b1, . . . , b m} and RED-team agents produce response sets R0 
+
+> i
+
+for each bi. The adjudicator first computes: 
+
+S(bi) = αQ (bi) + βD (bi) + γV (bi, B ) − ρP (bi, R i), (1) where Q is rescaled quality, D is constraint alignment, V
+
+is candidate diversity, and P is adversarial pressure. The top 
+
+h = 2 candidates enter a deliberation round. Each is revised with a mitigation action conditioned on the strongest RED critique, producing B1. Final selection is: Table 1: AdvPlan-Bench benchmark axes and recorded diag-nostics.        
+
+> Axis Diagnostics Representation typed actions, chains, branches, tool-call slots Plan structure path optionality, vertex parsimony, worldline com-pletion Robustness response-budget curve, BLUE advantage, win rate Frontier action diversity, quality spread, Pareto count Constraint rubric score, quality regret, structural gain Traceability per-scenario rows, council traces, run metadata
+
+b⋆ = arg max  
+
+> b∈B0∪B1
+
+S(b). (2) We additionally report the robustness margin M =
+
+S(b⋆) − max b∈B0 S(b), pressure reduction ∆P =¯Pshortlist −P (b⋆, R ⋆), and the rate at which the final selected plan comes from the revised set. This makes the benchmark a small multi-agent game over proposal, response, critique, repair, and selection, not only a pairwise score over fixed plans. 
+
+## 4 Benchmark 
+
+Benchmark Axes 
+
+AdvPlan-Bench is defined by six benchmark axes rather than by one aggregate score. First, representation validity asks whether a policy emits typed plan objects with actions, chains, branches, force labels, and objectives that down-stream evaluators can inspect. Second, plan structure asks whether the synthetic plan contains optional paths, parsi-monious event structure, and participant worldlines. Third, 
+
+adversarial robustness asks how BLUE quality changes as RED response budget increases. Fourth, frontier qual-ity asks whether candidate sets contain diverse and Pareto-nondominated alternatives rather than redundant samples. Fifth, constraint-sensitive selection asks whether a selector can trade synthetic quality against qualitative structure. Sixth, 
+
+trace reproducibility asks whether every table can be regen-erated from per-scenario artifacts. 
+
+Representation 
+
+A structured plan contains an objective, role assignment, domain tag, action chain, optional conditional branch, and optional tool calls. Actions have categories, targets, priori-ties, and metadata. AdvPlan-Bench uses action chains and conditional branches as a lightweight graph surrogate: chain edges encode temporal order and branches encode mutu-ally exclusive implementation paths such as route choices, proceed-or-withdraw decisions, or support-package alterna-tives. Each plan receives a synthetic quality score 
+
+q = wee − wcc − wr r, (3) where e is effectiveness, c is cost, r is risk, and default weights are we = .5, wc = .3, and wr = .2. This is a benchmark metric, not asset-effect matching. Table 2: Adversarial structured-plan evaluation protocol.                      
+
+> Input: scenario s, BLUE policy πB, RED policy πR, response budget k
+> 1. Generate BLUE candidate cB←πB(s).2. Sample RED candidates CR={c1
+> R, . . . , c kR}from πR(s, c B).3. Score pairs with advantage U(cB, c iR, s )and diagnostics D(ciR, s ).4. Select RED best response; compute diversity, frontier, and trace metrics. 5. Return ranked plan pair and inspectable adversarial-evaluation trace.
+
+Structured-Plan Diagnostics 
+
+The motivating planning literature emphasizes that good candidate plans should be feasible, resource-aware, parsi-monious, complete in participant worldlines, and explicit about consequences of action. AdvPlan-Bench operational-izes a subset as transparent software diagnostics. Path op-tionality O is the fraction of chain steps containing condi-tional branches. Vertex parsimony PV is the ratio of unique 
+
+(asset, action, category ) event signatures to total event sig-natures. Worldline completion W is the fraction of assets whose actions include both a start-state proxy, such as tran-sit, deploy, marshal, prepare, assess, scan, or recon, and an end-state proxy, such as return, withdraw, hold, evade, relo-cate, continue, support, or mitigation. These diagnostics are intentionally conservative proxies. In the current run, seed BLUE plans have path optionality .099, vertex parsimony .571, and worldline completion .000, while selected council plans have path optionality .000, ver-tex parsimony .500, and worldline completion .207. The low worldline score is a useful benchmark finding: the current synthetic generator creates plausible action chains but rarely models full participant disposition from initial circumstances to final state. The metric therefore identifies a concrete future improvement rather than silently rewarding incomplete plan structure. 
+
+Pairwise Metrics 
+
+Given BLUE and RED plans, the BLUE-vs-RED advantage score is 
+
+Advantage = ( qblue − qred + 2) /4. (4) We also report Nash-gap distance after rescaling quality scores to [0 , 1] payoffs. The gap indicates imbalance in the paired exchange, not convergence to an equilibrium. 
+
+Constraint and Wargame Diagnostics 
+
+The heuristic constraint-coherence score aggregates objec-tive clarity, information preparation, resource balance, sus-tainment, risk mitigation, and tempo or sequencing. The sim-ulator diagnostic is a stylized competitive simulation in which each side’s effective power depends on raw asset capability, synthetic quality, and constraint-coherence score. 
+
+Baselines and Controls 
+
+The benchmark includes deliberately simple baselines. The single-sample RED policy estimates how a plan looks un-der shallow opposition. The quality-greedy best-of-k pol-icy measures sensitivity to adversarial search budget. The constraint-aware policy controls for the possibility that high synthetic quality is not the same as a coherent plan. The offline LLM-policy baseline uses the same JSON schema and parser as a live model-backed policy, but a determinis-tic local completion client replaces the external model for reproducibility. The council policy then changes the BLUE generator itself by adding proposal, critique, repair, and ad-judication. These baselines are calibration points that make later live LLM-backed or learned policies comparable under the same trace schema. 
+
+Technical Implementation 
+
+The implementation separates scenario construction, policy generation, and evaluation into typed modules. Scenarios are Pydantic objects containing assets, role labels, terrain meta-data, and seed plans. Policies share a common interface, so the evaluator can swap a single-sample baseline, sampled best response, constraint-aware selector, offline LLM-policy responder, or multi-agent council without changing the ex-periment driver. This modularity is important for benchmark-ing because a live LLM policy can replace the offline com-pletion client while preserving identical scenarios, response budgets, metrics, and CSV schemas. The two-stage council is implemented as an explicit generate–stress-test–revise–adjudicate loop. Five BLUE pro-poser roles create role-specialized plan variants. For each BLUE candidate, a RED policy samples multiple responses and the highest-pressure response becomes the critique sig-nal. The adjudicator scores candidates using quality, con-straint proxy, diversity, and adversarial pressure; the top two candidates are then revised with mitigation actions keyed to RED pressure category and evaluated again. The run writes both first-round and revised candidates to trace files, mak-ing it possible to distinguish a genuine repair effect from a scoring artifact. 
+
+## 5 Evaluation 
+
+Protocol 
+
+We generate 150 scenarios from 30 seeds and five synthetic planning templates: urban stability, maritime interdiction, multi-domain coordination, air-defense suppression, and hu-manitarian evacuation. These templates are not operational cases; they are structured stressors for evaluating resource coordination, sequencing, protection, logistics, information flow, and adversarial response. For each scenario, the first BLUE seed plan is fixed. RED responds with a single ran-dom best response, a quality-greedy best-of-eight response, a constraint-aware best-of-eight response, or an offline LLM-policy response produced through the same JSON schema used by the live LLM wrapper. We add three experimen-tal conditions beyond the aggregate policy comparison: a response-budget sweep over k ∈ { 1, 2, 4, 8, 16 }, a scenario-template slice over the five planning templates, and com-ponent diagnostics that separate response search, selector objective, LLM-contract behavior, and council revision. We report percentile-bootstrap 95% intervals over scenarios. Table 3: RED response policies over 150 scenarios.                     
+
+> Metric Single Quality Constraint LLM-pol. BLUE advantage .518 .486 .489 .496 Nash gap .198 .260 .255 .241 RED constraint .730 .731 .758 1.000 BLUE win rate .900 .820 .807 .700
+
+Table 4: Response-budget condition for quality-greedy RED.                                
+
+> Budget k124816 BLUE advantage .518 .503 .492 .486 .480 RED quality .163 .221 .265 .288 .313 Candidate diversity .000 .654 .688 .681 .672 Quality spread .000 .112 .201 .255 .304 Pareto count 1.00 1.50 1.88 2.17 2.39
+
+Results 
+
+Table 3 shows that sampled best-response produces a stronger RED opponent. BLUE advantage falls from .518 to .486, and BLUE simulator win rate falls from .900 to .820. The constraint-aware selector produces a similar adversarial ef-fect (.489 advantage, .807 BLUE win rate) while exposing a different selection objective. The offline LLM-policy re-sponder is not a live model result; it is a reproducible con-tract test for the LLM wrapper. It produces highly structured responses, which raises RED constraint coherence to 1.000 and lowers BLUE win rate to .700. The candidate set also contains nontrivial variation. Across sampled RED candidates, mean action-type diversity is .681, mean quality-score spread is .255, and an average of 2.17 of 8 candidates are Pareto-optimal on the quality and constraint-alignment frontier. The constraint-aware selector changes the chosen response in 54% of scenarios, incurring .036 quality regret while gaining .099 structural alignment. Table 4 expands the response-budget condition: BLUE ad-vantage drops monotonically from .518 at k = 1 to .480 at 
+
+k = 16 , while RED quality rises from .163 to .313 and the candidate frontier grows from 1.00 to 2.39 Pareto-optimal responses. Diversity appears once k > 1 and then saturates, which suggests that the main marginal effect of larger bud-gets is finding stronger and more frontier-extreme responses rather than simply increasing action-type variety. Table 5 reports the same policy comparison by scenario template. The adversarial-response effect is present in all five templates: k = 8 reduces BLUE advantage relative to single-sample RED for air-defense, maritime, mixed, urban, and humanitarian scenarios. The simulator diagnostic is less uniform. Maritime, urban, and humanitarian scenarios re-main easy for BLUE under this simplified simulator, while mixed and air-defense scenarios are more sensitive to adver-sarial response and council selection. This heterogeneity is useful as an experimental condition because it reveals where the current benchmark is stress-testing policies and where the synthetic simulator is saturated. Table 6 evaluates the two-stage multi-agent council. The council changes BLUE generation rather than only changing Table 5: Scenario-template condition. Each row contains 30 scenarios.                               
+
+> Template Single k=8 LLM Win k=8 Council win Air defense .518 .485 .493 .667 .667 Maritime .521 .487 .496 1.000 1.000 Mixed .529 .496 .505 .467 .433 Urban .523 .486 .498 .967 .967 Humanitarian .496 .475 .488 1.000 1.000
+
+Table 6: Multi-agent council over 150 scenarios.           
+
+> Metric Value BLUE advantage .509 [.507, .512] BLUE win rate .813 Council diversity .570 [.527, .618] Revised diversity .630 [.600, .661] Consensus gap .011 [.009, .013] Adversarial pressure .617 [.612, .622] Robustness margin .012 [.010, .014] Pressure reduction .003 [-.002, .008] Revised selected rate .753
+
+RED response selection: five proposer agents generate role-specialized BLUE candidates, RED-team agents respond to each candidate, an adjudicator shortlists two candidates, and a revision operator adds mitigation actions keyed to the strongest RED critique before final selection. The selected council plans achieve .509 BLUE advantage and .813 BLUE win rate, partially recovering performance lost under stronger RED response search. The final plan comes from the revised set in 75.3% of scenarios, revised-candidate diversity is .630, and the positive robustness margin indicates that the selected plan usually improves over the best unrevised first-round option. Pressure reduction is small and uncertain, so the cur-rent algorithm should be interpreted as a repair-and-selection baseline rather than a strong robust-optimization method. 
+
+Rubric Sensitivity 
+
+We add a small rubric-sensitivity study using three indepen-dent deterministic validators representing constraint, logis-tics, and adversarial-review emphases. They rate 600 plan records: seed BLUE, sampled RED, offline LLM-policy RED, and selected council BLUE for every scenario. Mean pairwise agreement is .978 [.977, .978], and mean absolute deviation from the base heuristic rubric is .011 [.011, .011]. This is not expert human validation, but it tests whether the reported rubric is brittle to small, role-specific scoring per-turbations. 
+
+Scenario-Framing Finding 
+
+The original benchmark stored scenario framing as metadata but did not use it when generating plan objectives or action content. A framing-sensitivity test therefore returned exactly zero change. We patched the generator so framing modifies objective text and, under BLUE-favorable framing, can add one action category affecting coordination balance. Across Table 7: Component analyses from existing traces. These are not new learned-policy ablations; they isolate how re-sponse budget, selector objective, LLM-contract behavior, and council revision affect the reported evaluation object.                 
+
+> Component Observed effect Response search BLUE advantage drops .518 →.480 from k=1to k= 16
+> Constraint selector changes 54% of selected RED responses; .036 quality regret, .099 structural gain LLM contract produces four-action structured responses; BLUE win rate drops to .700 Council revision final plan comes from revised set in 75.3%; re-vised diversity .630 Template slice sampled-response win rate ranges from .467 to 1.000 across templates
+
+the expanded corpus, the measured framing-sensitivity delta becomes .066 [.049, .086]. We treat this as a benchmark-development finding, not a realistic estimate of framing ef-fects. 
+
+Policy and Corpus Additions 
+
+The expanded artifact adds two pieces of algorithmic struc-ture. First, response policies are explicit classes with a com-mon interface, which lets the benchmark compare single-sample, quality-greedy, and constraint-aware response be-havior without changing the evaluator. Second, the scenario corpus now includes cases designed to stress different dimen-sions of synthetic plan generation: air-defense suppression, where timing and cross-domain coordination matter, and hu-manitarian evacuation, where protection, sustainment, and information actions dominate. These additions are still syn-thetic, but they make the benchmark less dependent on one narrow template and expose whether a response policy is simply exploiting the quality score or changing the qualita-tive structure of selected plans. The third addition is the multi-agent council algorithm. Its proposer roles emphasize movement, information, cy-ber, sustainment, and protection. Each role perturbs the seed plan with a role-specific action, then RED-team sampling approximates the best adversarial response to that candi-date. The top two candidates are revised using a deter-ministic critique-to-mitigation map: direct pressure triggers dispersion and hardening, cyber pressure triggers out-of-band communications, logistics pressure triggers redundant supply routing, information-gathering pressure triggers de-ception and counter-reconnaissance, and public-information pressure triggers a communication cell. This creates a richer experimental object: the system can be evaluated on proposal diversity, revised diversity, adjudicator confidence, robust-ness margin, and robustness to per-candidate RED pressure. 
+
+Selection Objectives 
+
+The response policies expose a small but important distinc-tion between adversarial search and adversarial selection. Let 
+
+CR be the sampled RED candidate set. The quality-greedy response selects cQR = arg max 
+
+> c∈CR
+
+q(c), (5) where q(c) is the synthetic quality score. The constraint-aware response selects 
+
+cDR = arg max 
+
+> c∈CR
+
+λ q(c) + 1 2 + (1 − λ)D(c), (6) where D(c) is the constraint-inspired alignment score and 
+
+λ = .7 in the reported run. We then compute two diagnostic quantities: 
+
+∆q = q(cQR ) − q(cDR ), ∆D = D(cDR ) − D(cQR ). (7) The first is quality regret from not choosing the quality maximum. The second is structural gain from choosing the composite response. These diagnostics make the candidate frontier interpretable: if ∆q is small and ∆D is positive, the candidate set contains a response that is nearly as strong by the synthetic quality score but better structured by the constraint proxy. This is why the constraint-aware result is more informative than simply adding another aggregate win rate. 
+
+Artifact Schema 
+
+The experiment writes per-scenario rows, bootstrap sum-maries, response-budget curves, terrain-family summaries, and run metadata. This schema is intentionally simple. It lets a reviewer reproduce every table in the paper, inspect whether one scenario family dominates the result, and rerun the same analysis with a future learned policy. The bench-mark therefore contributes not only a particular result, but also a reusable evaluation object: scenarios, candidate sets, selected responses, and diagnostics under a fixed reporting interface. The new council trace file records selected BLUE and RED IDs, selected advantage, BLUE/RED constraint alignment, council diversity, revised diversity, consensus gap, adversar-ial pressure, robustness margin, pressure reduction, number of initial and revised BLUE candidates, selected round, and wargame outcome. This is important for reproducibility be-cause a multi-agent algorithm can appear strong for several different reasons: it may generate more diverse BLUE op-tions, repair weak candidates, select higher-quality options, avoid high-pressure RED responses, or simply exploit a scor-ing artifact. The trace schema makes those explanations sep-arable. 
+
+Trace Example 
+
+One trace illustrates the evaluation object. In scenario 
+
+urban-100 , the single-response RED baseline yields BLUE advantage .551. When RED samples eight candidates, BLUE advantage falls to .492; the candidate set has action-type diversity .827 and three Pareto-optimal responses. The constraint-aware selector changes the RED response for this scenario, gaining .135 structural alignment at .003 quality regret. The council trace then records selected BLUE and RED candidate IDs, selected advantage .504, council diver-sity .890, revised diversity .667, and the round from which the selected BLUE plan was chosen. The example is small, but it shows why the artifact is not just a final score: a re-viewer can inspect response search, selector tradeoffs, and council repair behavior for the same scenario. 
+
+## 6 Discussion 
+
+The results support three narrow claims. First, evaluating against a sampled adversarial response can change the appar-ent strength of a generated plan. Second, sampled candidate sets can contain meaningful diversity and Pareto alternatives, which is useful when an agent should surface options rather than one selected answer. Third, transparent benchmark arti-facts expose silent implementation failures, as shown by the framing no-op. From an AAAI perspective, the most important claim is methodological rather than operational. AdvPlan-Bench introduces a small but explicit evaluation object: a struc-tured plan, an adversarial response distribution, and a multi-candidate frontier. This object is distinct from final-answer agent benchmarks, static planning benchmarks, and pure self-play games. It lets researchers ask whether a generation pol-icy remains strong when the opponent is sampled more ag-gressively, whether the selected plan sacrifices qualitative planning features, how response-budget curves change ap-parent robustness, and whether benchmark controls actually perturb the generated artifact. The novelty is therefore not a new operational simulator, a trained game-playing policy, or an operational planner. It is a benchmark formulation for structured plan-generating agents in which the unit of evaluation is a structured plan un-der adversarial response sampling and multi-agent proposal, critique, repair, and adjudication. By making response bud-get, candidate diversity, revised diversity, constraint-inspired diagnostics, council consensus, adversarial pressure, robust-ness margin, pressure reduction, and scenario-control sen-sitivity observable, AdvPlan-Bench turns adversarial plan generation into a reproducible object of algorithmic study rather than an opaque demonstration of plausible plan text. The benchmark is preliminary. The policies are random-sampling policies, deterministic council heuristics, and an offline LLM-policy contract test rather than trained planners or live model calls. The scenario corpus is larger than the ini-tial draft but still templated. The constraint rubric is heuris-tic, although the role-perturbed sensitivity check suggests that aggregate conclusions are not driven by a single exact weighting. The wargame check is a simplified diagnostic. These constraints make AdvPlan-Bench more appropriate as an evaluation artifact and research scaffold than as evidence of operational decision quality. 
+
+## 7 Threats to Validity and Ethics 
+
+AdvPlan-Bench uses synthetic scenarios only. It contains no classified data, proprietary data, human-subject data, real intelligence, live planner input, or deployed decision-system integration. It performs no external action. The main internal-validity risk is metric misspecification: synthetic quality, constraint heuristics, and stylized simulator outcomes may not match expert judgment. The main external-validity risk is scenario simplicity: 150 templated cases cannot represent real operational planning. The main construct-validity risk is that the present artifact evaluates typed synthetic traces rather than real deployed planning behavior. Future work would re-quire expert validation, data governance, access controls, human review, and strict limits on autonomous use before any high-stakes application. The current metrics should not be interpreted as domain correctness or operational usefulness. They are inspectable benchmark signals intended to support reproducible re-search. 
+
+## 8 Conclusion 
+
+AdvPlan-Bench is a self-play benchmark for adversarial eval-uation of structured plan-generation agents. It shows that sampled best-response produces a tougher synthetic oppo-nent, that an offline LLM-policy interface can be evaluated under the same trace schema, that candidate sets contain diverse options, and that transparent evaluation can reveal benchmark-design failures. The next step is to add expert validation, evaluate live LLM-backed and learned policies, and add broader planning templates beyond the current syn-thetic scenario families. 
+
+## Ethical Statement 
+
+This work uses only synthetic data and offline code. It is not an operational planning system and should not be used for real-world planning. Any future deployment-oriented work would require expert review, institutional governance, and safeguards appropriate to high-impact applications. 
+
+## References 
+
+Bakhtin, A.; Brown, N.; Dinan, E.; Farina, G.; Flaherty, C.; Fried, D.; Goff, A.; Gray, J.; Hu, H.; Jacob, A. P.; et al. 2022. Human-level play in the game of Diplomacy by com-bining language models with strategic reasoning. Science ,378(6624): 1067–1074. BIG-bench authors. 2023. Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models. Transactions on Machine Learning Research .Brown, N.; and Sandholm, T. 2019. Superhuman AI for multiplayer poker. Science , 365(6456): 885–890. Jimenez, C. E.; Yang, J.; Wettig, A.; Yao, S.; Pei, K.; Press, O.; and Narasimhan, K. 2024. SWE-bench: Can Language Models Resolve Real-World GitHub Issues? In International Conference on Learning Representations .Kim, S.; Moon, S.; Tabrizi, R.; Lee, N.; Mahoney, M. W.; Keutzer, K.; and Gholami, A. 2024. An LLM Compiler for Parallel Function Calling. In Proceedings of the 41st Inter-national Conference on Machine Learning , volume 235 of 
+
+Proceedings of Machine Learning Research , 24370–24391. Kokel, H.; Katz, M.; Srinivas, K.; and Sohrabi, S. 2025. ACP-Bench: Reasoning About Action, Change, and Planning. Pro-ceedings of the AAAI Conference on Artificial Intelligence ,39(25): 26559–26568. Lanchester, F. W. 1916. Aircraft in Warfare: The Dawn of the Fourth Arm. Liang, P.; Bommasani, R.; Lee, T.; Tsipras, D.; Soylu, D.; Ya-sunaga, M.; Zhang, Y.; Narayanan, D.; Wu, Y.; Kumar, A.; Newman, B.; Yuan, B.; Yan, B.; Zhang, C.; Cosgrove, C.; Manning, C. D.; Re, C.; Acosta-Navas, D.; Hudson, D. A.; Zelikman, E.; Durmus, E.; Ladhak, F.; Rong, F.; Ren, H.; Yao, H.; Wang, J.; Santhanam, K.; Orr, L.; Zheng, L.; Yuk-sekgonul, M.; Suzgun, M.; Kim, N.; Guha, N.; Chatterji, N. S.; Khattab, O.; Henderson, P.; Huang, Q.; Chi, R. A.; Xie, S. M.; Santurkar, S.; Ganguli, S.; Hashimoto, T.; Icard, T.; Zhang, T.; Chaudhary, V.; Wang, W.; Li, X.; Mai, Y.; Zhang, Y.; and Koreeda, Y. 2023. Holistic Evaluation of Language Models. Transactions on Machine Learning Research .Liu, X.; Yu, H.; Zhang, H.; Xu, Y.; Lei, X.; Lai, H.; Gu, Y.; Ding, H.; Men, K.; Yang, K.; et al. 2024. AgentBench: Evaluating LLMs as Agents. In International Conference on Learning Representations .Lu, J.; Holleis, T.; Zhang, Y.; Aumayer, B.; Nan, F.; Bai, H.; Ma, S.; Ma, S.; Li, M.; Yin, G.; Wang, Z.; and Pang, R. 2025. ToolSandbox: A Stateful, Conversational, Interactive Evaluation Benchmark for LLM Tool Use Capabilities. In 
+
+Findings of the Association for Computational Linguistics: NAACL 2025 , 1160–1183. Association for Computational Linguistics. Madaan, A.; Tandon, N.; Gupta, P.; Hallinan, S.; Gao, L.; Wiegreffe, S.; Alon, U.; Dziri, N.; Prabhumoye, S.; Yang, Y.; Gupta, S.; Majumder, B. P.; Hermann, K.; Welleck, S.; Yazdanbakhsh, A.; and Clark, P. 2023. Self-Refine: Itera-tive Refinement with Self-Feedback. In Advances in Neural Information Processing Systems , volume 36. Ou, T.; Guo, W.; Gandhi, A.; Neubig, G.; and Yue, X. 2025. AgentDiagnose: An Open Toolkit for Diagnosing LLM Agent Trajectories. In Proceedings of the 2025 Confer-ence on Empirical Methods in Natural Language Processing: System Demonstrations , 207–215. Association for Compu-tational Linguistics. Qin, Y.; Liang, S.; Ye, Y.; Zhu, K.; Yan, L.; Lu, Y.; Lin, Y.; Cong, X.; Tang, X.; Qian, B.; et al. 2024. ToolLLM: Facili-tating Large Language Models to Master 16000+ Real-world APIs. In International Conference on Learning Representa-tions .Schelling, T. C. 1960. The Strategy of Conflict . Cambridge, MA: Harvard University Press. Schick, T.; Dwivedi-Yu, J.; Dessi, R.; Raileanu, R.; Lomeli, M.; Hambro, E.; Zettlemoyer, L.; Cancedda, N.; and Scialom, T. 2023. Toolformer: Language Models Can Teach Them-selves to Use Tools. In Advances in Neural Information Processing Systems , volume 36. Shinn, N.; Cassano, F.; Gopinath, A.; Narasimhan, K.; and Yao, S. 2023. Reflexion: Language Agents with Verbal Re-inforcement Learning. In Advances in Neural Information Processing Systems , volume 36. Shridhar, M.; Yuan, X.; Côté, M.-A.; Bisk, Y.; Trischler, A.; and Hausknecht, M. 2021. ALFWorld: Aligning Text and Embodied Environments for Interactive Learning. In 
+
+International Conference on Learning Representations .Silver, D.; Hubert, T.; Schrittwieser, J.; Antonoglou, I.; Lai, M.; Guez, A.; Lanctot, M.; Sifre, L.; Kumaran, D.; Graepel, T.; Lillicrap, T.; Simonyan, K.; and Hassabis, D. 2018. Ageneral reinforcement learning algorithm that masters chess, shogi, and Go through self-play. Science , 362(6419): 1140– 1144. Vinyals, O.; Babuschkin, I.; Czarnecki, W. M.; Mathieu, M.; Dudzik, A.; Chung, J.; Choi, D. H.; Powell, R.; Ewalds, T.; Georgiev, P.; et al. 2019. Grandmaster level in StarCraft II us-ing multi-agent reinforcement learning. Nature , 575(7782): 350–354. Yao, S.; Shinn, N.; Razavi, P.; and Narasimhan, K. 2024. tau-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains. arXiv preprint arXiv:2406.12045 .Yao, S.; Yu, D.; Zhao, J.; Shafran, I.; Griffiths, T. L.; Cao, Y.; and Narasimhan, K. 2023a. Tree of Thoughts: Deliberate Problem Solving with Large Language Models. In Advances in Neural Information Processing Systems , volume 36. Yao, S.; Zhao, J.; Yu, D.; Du, N.; Shafran, I.; Narasimhan, K.; and Cao, Y. 2023b. ReAct: Synergizing Reasoning and Acting in Language Models. In International Conference on Learning Representations .Zhang, Y.; Ganapavarapu, G.; Jayaraman, S.; Agrawal, B.; Patel, D.; and Fokoue, A. 2026. SPIRAL: Symbolic LLM Planning via Grounded and Reflective Search. Proceedings of the AAAI Conference on Artificial Intelligence , 40(43): 36527–36535. Zheng, Z.; Cui, T.; Xie, C.; Pan, J.; Chen, Q.; and He, L. 2025. PlanningArena: A Modular Benchmark for Multidi-mensional Evaluation of Planning and Tool Learning. In 
+
+Proceedings of the 63rd Annual Meeting of the Associa-tion for Computational Linguistics (Volume 1: Long Papers) ,31047–31086. Association for Computational Linguistics. Zhou, S.; Xu, F. F.; Zhu, H.; Zhou, X.; Lo, R.; Sridhar, A.; Cheng, X.; Ou, T.; Bisk, Y.; Fried, D.; Alon, U.; and Neu-big, G. 2024. WebArena: A Realistic Web Environment for Building Autonomous Agents. In International Conference on Learning Representations .
