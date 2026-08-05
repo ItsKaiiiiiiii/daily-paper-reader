@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-04</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-05</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 20 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 24 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>9</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>13</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-04 21:04:42 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-05 22:04:09 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,7 +62,9 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日精选20篇AI论文，精读9篇、速读11篇，重点聚焦Agentic工作流与自进化LLM。最值得关注两篇9.0分精读：可执行基准下的组合元路由，以及流式任务中自进化智能体的表现评估。建议优先精读这两篇，再结合速读中的权限安全与多智能体风险推断，深入理解智能体工作流设计与动态适应能力。</p>
+<p>今日聚焦24篇AI前沿论文，精读13篇、速读11篇，重点覆盖多智能体系统安全与内容发现。</p>
+<p>最值得关注两篇满分精读：一是揭示多智能体LLM管道中对抗攻击的结构性漏洞，二是提出HIERA分层多智能体相关性评估方法，均达9.0/10。</p>
+<p>建议优先研读这两篇精读论文，并顺带浏览8.0分的开放安全基准与轨迹图错误诊断，把握智能体稳健性与诊断方向。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -71,12 +73,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">9 篇</strong>
+    <strong class="dpr-home-dashboard-count">13 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Learning Compositional Meta-Routing for Agentic Workflows: An Executable Benchmark">Learning Compositional Meta-Routing for Agentic Workflows: An Executable Benchmark</span></li><li><span class="dpr-home-dashboard-paper-title" title="AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?">AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?</span></li><li><span class="dpr-home-dashboard-paper-title" title="Agent-Native Task-Oriented Communication with Joint Token Compression Coding and Modulation">Agent-Native Task-Oriented Communication with Joint Token Compression Coding and Modulation</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Adversarial Attacks in Multi-Agent LLM Pipelines: Unveiling Structural Vulnerabilities in Agentic AI Architectures">Adversarial Attacks in Multi-Agent LLM Pipelines: Unveiling Structural Vulnerabilities in Agentic AI Architectures</span></li><li><span class="dpr-home-dashboard-paper-title" title="HIERA: Hierarchical Multi-Agent Relevance Assessment for Content Discovery Systems">HIERA: Hierarchical Multi-Agent Relevance Assessment for Content Discovery Systems</span></li><li><span class="dpr-home-dashboard-paper-title" title="PROGRESS: Coverage-guided RL to Train Search-augmented LLM Agent">PROGRESS: Coverage-guided RL to Train Search-augmented LLM Agent</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>9</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>13</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -87,7 +89,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Agentic Permissions Policy Algebra for Taint Confinement in LLM Agents">Agentic Permissions Policy Algebra for Taint Confinement in LLM Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="A Unified Algorithmic Framework for Hybrid Reinforcement Learning in Tabular MDPs with Shifted Transition Dynamics">A Unified Algorithmic Framework for Hybrid Reinforcement Learning in Tabular MDPs with Shifted Transition Dynamics</span></li><li><span class="dpr-home-dashboard-paper-title" title="Before Agents Speak: Pre-hoc Failure Risk Inference in Multi-Agent Systems">Before Agents Speak: Pre-hoc Failure Risk Inference in Multi-Agent Systems</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Open Security Benchmark: Towards Autonomous Enterprise Cyber Defense">Open Security Benchmark: Towards Autonomous Enterprise Cyber Defense</span></li><li><span class="dpr-home-dashboard-paper-title" title="Leveraging Trajectory Graphs for Pre-Execution Error Diagnosis in Agentic LLM Systems">Leveraging Trajectory Graphs for Pre-Execution Error Diagnosis in Agentic LLM Systems</span></li><li><span class="dpr-home-dashboard-paper-title" title="Corrigible Assistance in One Round: Pragmatic-Pedagogic Best Response">Corrigible Assistance in One Round: Pragmatic-Pedagogic Best Response</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>

@@ -1,0 +1,393 @@
+{
+  "date": "20260805",
+  "date_label": "",
+  "generated_at": "2026-08-05 22:04:09 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2608.00718v1",
+      "route": "202608/05/2608.00718v1-adversarial-attacks-in-multi-agent-llm-pipelines-unveiling-structural-vulnerabilities-in-agentic-ai-architectures",
+      "title": "Adversarial Attacks in Multi-Agent LLM Pipelines: Unveiling Structural Vulnerabilities in Agentic AI Architectures",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体架构的结构性脆弱性",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2608.00785v1",
+      "route": "202608/05/2608.00785v1-hiera-hierarchical-multi-agent-relevance-assessment-for-content-discovery-systems",
+      "title": "HIERA: Hierarchical Multi-Agent Relevance Assessment for Content Discovery Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "提出分层多智能体相关性评估框架，多个专职智能体协作",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2608.00969v1",
+      "route": "202608/05/2608.00969v1-progress-coverage-guided-rl-to-train-search-augmented-llm-agent",
+      "title": "PROGRESS: Coverage-guided RL to Train Search-augmented LLM Agent",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向搜索增强LLM智能体的覆盖引导强化学习",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2608.01128v1",
+      "route": "202608/05/2608.01128v1-ma-head-net-adaptive-rule-guided-multi-agent-drl-for-aoi-minimization-in-uav-assisted-emergency-networks",
+      "title": "MA-HEAD-Net: Adaptive Rule-Guided Multi-Agent DRL for AoI Minimization in UAV-Assisted Emergency Networks",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "提出自适应规则引导的多智能体深度强化学习方法，优化信息年龄",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2608.01366v2",
+      "route": "202608/05/2608.01366v2-asking-questions-the-right-way-a-multi-agent-conversational-system-for-prompt-formulation-in-complex-task-resolution",
+      "title": "Asking Questions the Right Way: A Multi-Agent Conversational System for Prompt Formulation in Complex Task Resolution",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体对话式提示生成系统",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2608.02005v1",
+      "route": "202608/05/2608.02005v1-evolving-in-the-agent-jungle-via-history-informed-opponent-awareness",
+      "title": "Evolving in the Agent Jungle via History-Informed Opponent Awareness",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "动态多智能体环境中的对手感知策略适应",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2608.02291v1",
+      "route": "202608/05/2608.02291v1-shared-prefixes-better-credit-adaptive-routing-for-multi-agent-reasoning",
+      "title": "Shared Prefixes, Better Credit: Adaptive Routing for Multi-Agent Reasoning",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向多智能体推理协调的信用分配与自适应路由",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2608.02650v1",
+      "route": "202608/05/2608.02650v1-hyperagent-planning-and-acting-over-tool-schema-hypergraphs-for-tool-use-llm-agents",
+      "title": "HyperAgent: Planning and Acting over Tool-Schema Hypergraphs for Tool-Use LLM Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向工具使用智能体的工具-模式超图规划与执行",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2608.03214v1",
+      "route": "202608/05/2608.03214v1-the-agent-operating-system-aos-a-reference-operating-architecture-for-distributed-agentic-systems",
+      "title": "The Agent Operating System (AOS): A Reference Operating Architecture for Distributed Agentic Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "提出分布式智能体系统的参考运行架构，覆盖意图治理与协调",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2608.03223v1",
+      "route": "202608/05/2608.03223v1-agentic-reinforcement-learning-with-self-distilled-reward-shaping",
+      "title": "Agentic Reinforcement Learning with Self-Distilled Reward Shaping",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "提出ADRS奖励塑形方法，直接提升自主智能体的决策能力",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2608.03502v1",
+      "route": "202608/05/2608.03502v1-hybrid-llm-augmented-reinforcement-learning-agents-for-complex-sequential-decision-tasks",
+      "title": "Hybrid LLM-Augmented Reinforcement Learning Agents for Complex Sequential Decision Tasks",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向复杂顺序决策任务的混合LLM与RL智能体",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2608.03833v1",
+      "route": "202608/05/2608.03833v1-history-matters-meta-policy-delegation-with-heterogeneous-multi-agent-reinforcement-learning",
+      "title": "History Matters: Meta-policy Delegation with Heterogeneous Multi-agent Reinforcement Learning",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "异构多智能体强化学习与任务委托",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2608.03924v1",
+      "route": "202608/05/2608.03924v1-eta-a-new-agentic-paradigm-for-embodied-tasks",
+      "title": "ETA: A New Agentic Paradigm for Embodied Tasks",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向具身任务的规划-工具式新智能体范式",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2607.27288v1",
+      "route": "202608/05/2607.27288v1-open-security-benchmark-towards-autonomous-enterprise-cyber-defense",
+      "title": "Open Security Benchmark: Towards Autonomous Enterprise Cyber Defense",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向自主智能体驱动的企业网络防御的基准测试",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2607.27443v1",
+      "route": "202608/05/2607.27443v1-leveraging-trajectory-graphs-for-pre-execution-error-diagnosis-in-agentic-llm-systems",
+      "title": "Leveraging Trajectory Graphs for Pre-Execution Error Diagnosis in Agentic LLM Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "基于轨迹图预执行错误诊断的智能体设计方法",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2607.27508v1",
+      "route": "202608/05/2607.27508v1-corrigible-assistance-in-one-round-pragmatic-pedagogic-best-response",
+      "title": "Corrigible Assistance in One Round: Pragmatic-Pedagogic Best Response",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "非对称信息下辅助博弈中的规划与决策",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2607.27881v1",
+      "route": "202608/05/2607.27881v1-robobridge-a-modular-framework-for-bridging-policies-to-robust-real-world-robotic-agents",
+      "title": "RoboBRIDGE: A Modular Framework for Bridging Policies to Robust Real-World Robotic Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "将视觉-语言-动作模型转化为稳健机器人的模块化框架",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2607.25890v1",
+      "route": "202608/05/2607.25890v1-distributing-security-controls-through-harness-engineering",
+      "title": "Distributing Security Controls Through Harness Engineering",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "通过harness工程向AI编程智能体分发安全控制",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2607.28033v1",
+      "route": "202608/05/2607.28033v1-dataclaweval-a-benchmark-for-data-engineering-agents-in-real-industrial-harness",
+      "title": "DataClawEval: A Benchmark for Data Engineering Agents in Real Industrial Harness",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "为真实数据工程场景中的自主智能体提供评测基准",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2607.29175v1",
+      "route": "202608/05/2607.29175v1-execution-first-synthetic-tool-use-trace-generation-for-llm-agents",
+      "title": "Execution-First Synthetic Tool-Use Trace Generation for LLM Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向工具型LLM智能体的执行优先合成轨迹生成",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2608.00175v1",
+      "route": "202608/05/2608.00175v1-inference-time-policy-alignment-for-fair-reinforcement-learning",
+      "title": "Inference-Time Policy Alignment for Fair Reinforcement Learning",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向公平强化学习智能体的推理时策略对齐",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2607.25914v1",
+      "route": "202608/05/2607.25914v1-toward-standardized-cross-vendor-agent-tool-trust-management-in-autonomous-networks",
+      "title": "Toward Standardized Cross-Vendor Agent Tool Trust Management in Autonomous Networks",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "提出面向自主网络跨厂商智能体工具信任管理的3GPP NRM信息模型",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2608.00202v1",
+      "route": "202608/05/2608.00202v1-from-monoliths-to-swarms-a-study-of-attack-surface-evolution-in-the-transition-to-multi-agent-web-systems",
+      "title": "From Monoliths to Swarms: A Study of Attack Surface Evolution in the Transition to Multi-Agent Web Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "多智能体Web系统攻击面分类与测试平台",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    },
+    {
+      "paper_id": "2608.01001v1",
+      "route": "202608/05/2608.01001v1-from-ai-technical-debt-to-agentic-technical-debt-a-systematic-mapping-of-root-causes-and-manifestations-in-agentic-ai-systems",
+      "title": "From AI Technical Debt to Agentic Technical Debt: A Systematic Mapping of Root Causes and Manifestations in Agentic AI Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "对智能体AI系统技术债根因与表现的系统性映射",
+      "first_seen_at": "2026-08-05 22:04:09 UTC",
+      "updated_at": "2026-08-05 22:04:09 UTC"
+    }
+  ]
+}
