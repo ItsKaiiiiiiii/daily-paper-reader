@@ -1,0 +1,377 @@
+{
+  "date": "20260807",
+  "date_label": "",
+  "generated_at": "2026-08-07 02:17:55 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2608.00458v1",
+      "route": "202608/07/2608.00458v1-bandmas-causality-inspired-semantic-packet-scheduling-for-bandwidth-efficient-multi-agent-collaboration",
+      "title": "BANDMAS: Causality-Inspired Semantic Packet Scheduling for Bandwidth-Efficient Multi-Agent Collaboration",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体通信与消息调度优化",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2608.00613v1",
+      "route": "202608/07/2608.00613v1-from-failures-to-supervision-dynamicenvplan-for-robust-long-horizon-embodied-planning",
+      "title": "From Failures to Supervision: DynamicEnvPlan for Robust Long-Horizon Embodied Planning",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向动态环境偏差的长时序具身规划",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2608.01189v1",
+      "route": "202608/07/2608.01189v1-made-belief-driven-dual-agent-coordination-for-autonomous-model-deployment",
+      "title": "MADE: Belief-Driven Dual-Agent Coordination for Autonomous Model Deployment",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "双智能体协调系统",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2608.01341v1",
+      "route": "202608/07/2608.01341v1-402pilot-an-x402-decision-layer-for-autonomous-agent-micropayments",
+      "title": "402Pilot: An x402 Decision Layer for Autonomous Agent Micropayments",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向自主智能体微支付的买方决策层",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2608.01918v1",
+      "route": "202608/07/2608.01918v1-harnesscompass-guiding-automatic-harness-evolution-toward-generalizable-and-effective-agent-harnesses",
+      "title": "HarnessCompass: Guiding Automatic Harness Evolution toward Generalizable and Effective Agent Harnesses",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "自动演化通用高效智能体控制框架",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2608.02101v1",
+      "route": "202608/07/2608.02101v1-cross-domain-hybrid-opd-for-generalizable-search-agents",
+      "title": "Cross-Domain Hybrid OPD for Generalizable Search Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "结合智能体强化学习的自主搜索智能体训练框架",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2608.03239v1",
+      "route": "202608/07/2608.03239v1-relational-priors-as-convergence-pressure-in-llm-based-multi-agent-systems",
+      "title": "Relational Priors as Convergence Pressure in LLM-Based Multi-Agent Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "研究LLM多智能体系统中的关系先验对协调与收敛的影响",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2608.04309v1",
+      "route": "202608/07/2608.04309v1-structured-llm-reasoning-for-zero-shot-human--robot-coordination-under-hidden-goals",
+      "title": "Structured LLM Reasoning for Zero-Shot Human--Robot Coordination Under Hidden Goals",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "自主智能体决策、推理与规划",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2608.04588v1",
+      "route": "202608/07/2608.04588v1-easy-towards-efficient-llm-based-agentic-system",
+      "title": "EASy: Towards Efficient LLM-Based Agentic System",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "基于强化学习的高效多智能体协调",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2608.04634v1",
+      "route": "202608/07/2608.04634v1-helenahierarchical-sparse-coordination-over-a-union-of-complementary-topologies-for-mas",
+      "title": "HELENA:Hierarchical Sparse Coordination over a Union of Complementary Topologies for MAS",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体系统协调拓扑优化",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2608.04905v1",
+      "route": "202608/07/2608.04905v1-primal3-pathfinding-via-reinforcement-and-imitation-multi-agent-learning---leveraging-lacam3",
+      "title": "PRIMAL3: Pathfinding via Reinforcement and Imitation Multi-Agent Learning - Leveraging LaCAM3",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向路径规划的多智能体强化学习与拓扑感知通信",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2608.05013v1",
+      "route": "202608/07/2608.05013v1-onedayagent-towards-a-long-horizon-harness-for-autonomous-agents",
+      "title": "OneDayAgent: Towards a Long-Horizon Harness for Autonomous Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向自主代理长时序规划与执行的框架",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2607.28822v1",
+      "route": "202608/07/2607.28822v1-agentic-artificial-intelligence-for-power-systems-strategies-to-identify-and-close-capability-gaps",
+      "title": "Agentic Artificial Intelligence for Power Systems: Strategies to Identify and Close Capability Gaps",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "将智能体AI应用于电力系统规划与接入流程。",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2607.28990v1",
+      "route": "202608/07/2607.28990v1-scaling-scientific-discovery-environments-for-turn-level-agentic-rl",
+      "title": "Scaling Scientific Discovery Environments for Turn-Level Agentic RL",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "用于科学发现环境中自主决策的回合级智能体强化学习。",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2607.29055v1",
+      "route": "202608/07/2607.29055v1-autonomous-repair-for-multi-agent-systems-via-monte-carlo-tree-search",
+      "title": "Autonomous Repair for Multi-Agent Systems via Monte-Carlo Tree Search",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "基于搜索的多智能体系统自主修复框架",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2607.29254v1",
+      "route": "202608/07/2607.29254v1-tool-specifications-matter-uncovering-and-mitigating-safety-risks-in-ai-agents",
+      "title": "Tool Specifications Matter: Uncovering and Mitigating Safety Risks in AI Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "AI智能体工具规格导致的安全风险及缓解",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2607.28573v1",
+      "route": "202608/07/2607.28573v1-rethinking-inference-time-scaling-in-local-computer-use-agents-failure-modes-and-compute-tradeoffs",
+      "title": "Rethinking Inference-Time Scaling in Local Computer-Use Agents: Failure Modes and Compute Tradeoffs",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向本地自主计算机代理的推理时扩展系统研究",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2608.00677v1",
+      "route": "202608/07/2608.00677v1-openart-scaling-agent-red-teaming-via-open-ended-environment-evolution",
+      "title": "OpenART: Scaling Agent Red Teaming via Open-Ended Environment Evolution",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向持久环境AI智能体的规模化红队测试与评估",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2608.00805v1",
+      "route": "202608/07/2608.00805v1-agentslabench-evaluating-and-benchmarking-agentic-systems-under-resource-constraints",
+      "title": "AgentSLABench: Evaluating and Benchmarking Agentic Systems Under Resource Constraints",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "资源感知的自主AI智能体评估基准",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2608.00937v1",
+      "route": "202608/07/2608.00937v1-neuro-symbolic-participation-governance-for-verifiable-ai-agents-in-open-digital-twin-ecosystems",
+      "title": "Neuro-Symbolic Participation Governance for Verifiable AI Agents in Open Digital Twin Ecosystems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向开放数字孪生生态的多智能体治理与验证框架",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2607.29405v1",
+      "route": "202608/07/2607.29405v1-beyond-component-testing-validating-agentic-ai-systems",
+      "title": "Beyond Component Testing: Validating Agentic AI Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "智能体AI系统的验证与保障",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2608.00625v1",
+      "route": "202608/07/2608.00625v1-learning-based-motion-planning-for-dynamic-environments-from-foundational-algorithms-to-emerging-paradigms",
+      "title": "Learning-Based Motion Planning for Dynamic Environments: From Foundational Algorithms to Emerging Paradigms",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "面向自主代理规划的学习型运动规划综述",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    },
+    {
+      "paper_id": "2608.03272v1",
+      "route": "202608/07/2608.03272v1-attacking-and-defending-multi-agent-collaborative-filtering-systems-through-connectivity",
+      "title": "Attacking and Defending Multi-Agent Collaborative Filtering Systems Through Connectivity",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "协同过滤中自主LLM代理之间的协调与连通性",
+      "first_seen_at": "2026-08-07 02:17:55 UTC",
+      "updated_at": "2026-08-07 02:17:55 UTC"
+    }
+  ]
+}

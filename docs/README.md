@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-05</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-07</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 24 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 23 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>13</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>12</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-05 22:04:09 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-07 02:17:55 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,9 +62,9 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日聚焦24篇AI前沿论文，精读13篇、速读11篇，重点覆盖多智能体系统安全与内容发现。</p>
-<p>最值得关注两篇满分精读：一是揭示多智能体LLM管道中对抗攻击的结构性漏洞，二是提出HIERA分层多智能体相关性评估方法，均达9.0/10。</p>
-<p>建议优先研读这两篇精读论文，并顺带浏览8.0分的开放安全基准与轨迹图错误诊断，把握智能体稳健性与诊断方向。</p>
+<p>今日23篇论文入库，精读12篇，聚焦多智能体协作与具身规划。</p>
+<p>最值得看：BANDMAS用因果语义调度提升带宽效率，DynamicEnvPlan以失败监督增强长程规划鲁棒性。</p>
+<p>建议优先精读这两篇，并延伸关注Agentic RL与MCTS自治修复方向。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -73,12 +73,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">13 篇</strong>
+    <strong class="dpr-home-dashboard-count">12 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Adversarial Attacks in Multi-Agent LLM Pipelines: Unveiling Structural Vulnerabilities in Agentic AI Architectures">Adversarial Attacks in Multi-Agent LLM Pipelines: Unveiling Structural Vulnerabilities in Agentic AI Architectures</span></li><li><span class="dpr-home-dashboard-paper-title" title="HIERA: Hierarchical Multi-Agent Relevance Assessment for Content Discovery Systems">HIERA: Hierarchical Multi-Agent Relevance Assessment for Content Discovery Systems</span></li><li><span class="dpr-home-dashboard-paper-title" title="PROGRESS: Coverage-guided RL to Train Search-augmented LLM Agent">PROGRESS: Coverage-guided RL to Train Search-augmented LLM Agent</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="BANDMAS: Causality-Inspired Semantic Packet Scheduling for Bandwidth-Efficient Multi-Agent Collaboration">BANDMAS: Causality-Inspired Semantic Packet Scheduling for Bandwidth-Efficient Multi-Agent Collaboration</span></li><li><span class="dpr-home-dashboard-paper-title" title="From Failures to Supervision: DynamicEnvPlan for Robust Long-Horizon Embodied Planning">From Failures to Supervision: DynamicEnvPlan for Robust Long-Horizon Embodied Planning</span></li><li><span class="dpr-home-dashboard-paper-title" title="MADE: Belief-Driven Dual-Agent Coordination for Autonomous Model Deployment">MADE: Belief-Driven Dual-Agent Coordination for Autonomous Model Deployment</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>13</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>12</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -89,7 +89,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Open Security Benchmark: Towards Autonomous Enterprise Cyber Defense">Open Security Benchmark: Towards Autonomous Enterprise Cyber Defense</span></li><li><span class="dpr-home-dashboard-paper-title" title="Leveraging Trajectory Graphs for Pre-Execution Error Diagnosis in Agentic LLM Systems">Leveraging Trajectory Graphs for Pre-Execution Error Diagnosis in Agentic LLM Systems</span></li><li><span class="dpr-home-dashboard-paper-title" title="Corrigible Assistance in One Round: Pragmatic-Pedagogic Best Response">Corrigible Assistance in One Round: Pragmatic-Pedagogic Best Response</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Agentic Artificial Intelligence for Power Systems: Strategies to Identify and Close Capability Gaps">Agentic Artificial Intelligence for Power Systems: Strategies to Identify and Close Capability Gaps</span></li><li><span class="dpr-home-dashboard-paper-title" title="Scaling Scientific Discovery Environments for Turn-Level Agentic RL">Scaling Scientific Discovery Environments for Turn-Level Agentic RL</span></li><li><span class="dpr-home-dashboard-paper-title" title="Autonomous Repair for Multi-Agent Systems via Monte-Carlo Tree Search">Autonomous Repair for Multi-Agent Systems via Monte-Carlo Tree Search</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>
