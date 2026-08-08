@@ -1,0 +1,694 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-08T20:52:09.567041+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 26,
+    "deep_cap": 6,
+    "deep_selected": 7,
+    "quick_candidates": 32,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2608.01189v1",
+      "source": "arxiv",
+      "title": "MADE: Belief-Driven Dual-Agent Coordination for Autonomous Model Deployment",
+      "abstract": "LLM-based agents now have strong general capabilities. However, they still struggle with domain-specific tasks, motivating the integration of external tools to broaden their capabilities. The open-source community offers a vast array of AI models typically released as heterogeneous research artifacts, whereas transforming them into ready-to-call APIs is costly and labor-intensive. Automated model deployment is therefore essential for bridging the gap between model resources and tool usability, yet it remains a long-horizon, multi-stage task that has not been sufficiently explored. To tackle this challenge, we introduce Model Automated Deployment Engine (MADE), a dual-agent coordination system. Specifically, given a model resource, MADE iteratively constructs and validates the deployment artifacts, updates its deployment belief based on execution feedback, and revisits invalid upstream artifacts until the model is successfully served as a ready-to-call API that can then be used by other agents. We further introduce M2ABench, a benchmark for the task of transforming Models to ready-to-call APIs. M2ABench comprises 122 real-world models with standardized test cases for evaluation. Experimental results demonstrate that MADE achieves a deployment success rate of 68.85%, outperforming SWE-agent and OpenHands by 13.93 and 44.26 percentage points, respectively. Our code and dataset are publicly available at https://github.com/HITDiSC/MADE.",
+      "authors": [
+        "Yicheng Liu",
+        "Bolin Zhang",
+        "Weiran Liu",
+        "Yakun Zhang",
+        "Yangqin Jiang",
+        "Zhiying Tu",
+        "Dianhui Chu"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE"
+      ],
+      "published": "2026-08-02T12:14:43+00:00",
+      "link": "https://arxiv.org/pdf/2608.01189v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "dual-agent coordination for autonomous deployment",
+      "llm_evidence_cn": "双智能体协调实现自主模型部署",
+      "llm_evidence": "双智能体协调实现自主模型部署",
+      "canonical_evidence": "双智能体协调实现自主模型部署",
+      "llm_tldr_en": "Introduces MADE, a belief-driven dual-agent coordination system for autonomous model deployment, reducing cost and manual effort in converting heterogeneous AI models into usable APIs.",
+      "llm_tldr_cn": "将开源AI模型转化为可用API成本高昂，自主模型部署是长程多阶段任务。论文提出MADE双智能体协调系统，基于信念驱动机制，使两个智能体迭代协作完成模型资源到API的自动部署。该系统有效降低了部署成本，展示了多智能体协作在复杂工程任务中的潜力。",
+      "llm_tldr": "将开源AI模型转化为可用API成本高昂，自主模型部署是长程多阶段任务。论文提出MADE双智能体协调系统，基于信念驱动机制，使两个智能体迭代协作完成模型资源到API的自动部署。该系统有效降低了部署成本，展示了多智能体协作在复杂工程任务中的潜力。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.01341v1",
+      "source": "arxiv",
+      "title": "402Pilot: An x402 Decision Layer for Autonomous Agent Micropayments",
+      "abstract": "Programmable-payment protocols such as x402 enable per-request micropayments, but they do not determine which payable service an autonomous agent should buy under a finite wallet. We formulate this buyer-side problem as agent-native payment decision-making: contextual provider selection under wallet pressure, chosen-only paid feedback, and changing market conditions. We propose 402Pilot, a protocol-agnostic buyer-side decision layer between autonomous agents and payment execution that implements purchasing policies for selecting among payable providers. We instantiate it with PA-DCT, a payment-aware discounted contextual Thompson-sampling policy that adapts purchasing decisions under wallet pressure while learning from post-payment feedback. To evaluate buyer-side payment policies, we introduce 402Pilot-Bench, a frozen-replay benchmark spanning 823 tasks, five heterogeneous provider pipelines, and three market regimes, each evaluated over 30 paired seeds. PA-DCT achieves the strongest fixed-wallet adaptive trade-off among non-oracle policies: it maintains competitive service quality while spending only 39 to 43 percent of the wallet and reallocates spending as market conditions change. It attains the best non-oracle PA-gap/T under the price shock and the best mean and worst-case ranks across the nine scenario-metric combinations of quality, ROI, and PA-gap/T. Comparisons with learning baselines and component ablations further support the effectiveness and design of the proposed decision policy. These results suggest that programmable payment must be complemented by buyer-side decision-making capable of learning service value and adapting purchasing decisions accordingly.",
+      "authors": [
+        "Yin Li",
+        "Yanbo He",
+        "Boo-Ho Yang",
+        "Rav Lawana",
+        "Ziyue Li",
+        "Wei Zeng",
+        "Jing Tang",
+        "Fugee Tsung"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-02T16:04:57+00:00",
+      "link": "https://arxiv.org/pdf/2608.01341v1",
+      "tags": [
+        "keyword:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "agent-native payment decision-making under wallet pressure",
+      "llm_evidence_cn": "钱包压力下的智能体原生支付决策",
+      "llm_evidence": "钱包压力下的智能体原生支付决策",
+      "canonical_evidence": "钱包压力下的智能体原生支付决策",
+      "llm_tldr_en": "Formulates agent-native payment decision-making and proposes 402Pilot, a protocol-agnostic buyer-side decision layer with PA-DCT Thompson sampling policy for autonomous agent micropayments.",
+      "llm_tldr_cn": "针对自主智能体在有限钱包下如何选择可付费服务的问题，本文将其形式化为智能体原生支付决策：需要考虑钱包压力、仅付费反馈和动态市场条件。为此提出协议无关的买方决策层402Pilot，并实现支付感知的折扣上下文汤普森采样策略PA-DCT。实验验证该策略能在钱包压力下持续学习并优化购买决策，为自主智能体的支付决策提供了新框架。",
+      "llm_tldr": "针对自主智能体在有限钱包下如何选择可付费服务的问题，本文将其形式化为智能体原生支付决策：需要考虑钱包压力、仅付费反馈和动态市场条件。为此提出协议无关的买方决策层402Pilot，并实现支付感知的折扣上下文汤普森采样策略PA-DCT。实验验证该策略能在钱包压力下持续学习并优化购买决策，为自主智能体的支付决策提供了新框架。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent decision making",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.03735v1",
+      "source": "arxiv",
+      "title": "An Actionable Diagnosis of Multilingual, Multi-Agent Planning Failures",
+      "abstract": "Multilingual multi-agent systems exhibit substantial degradation beyond English, yet prior work rarely identifies how task-critical information is lost when user requests are converted into executable plans. We study the planner in a multi-agent system as the request-to-action interface and derive an actionable taxonomy of planning-grounding failures from failed real-world task executions. LLM-based analysis shows that these failures constitute an increasing share of unsuccessful executions as language-resource availability declines, with the strongest effects in low-resource languages. To test whether the taxonomy supports mitigation, we introduce TART, Taxonomy-Guided Actionable Representation, that makes the taxonomy's key aspects explicit to the planner and downstream sub-agents. Across multiple languages, three LLM backbones, two datasets, and two agentic configurations, TART consistently improves performance. On multilingual GAIA, it raises a state-of-the-art system's accuracy by 5.6 percentage points averaged across eleven languages spanning low- to high-resource settings.",
+      "authors": [
+        "Vikas Pahuja",
+        "Jonathan Brokman",
+        "Omer Hofman",
+        "Tamir Nizri",
+        "Daniel Vishna",
+        "Seraphina Goldfarb-Tarrant",
+        "Kelly Marchisio",
+        "Hisashi Kojima",
+        "Roman Vainshtein"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.CL"
+      ],
+      "published": "2026-08-04T14:29:14+00:00",
+      "link": "https://arxiv.org/pdf/2608.03735v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Diagnoses planning failures in multi-agent systems and introduces a taxonomy-guided representation for mitigation",
+      "llm_evidence_cn": "诊断多智能体系统规划失败，提出基于分类树的缓解表示",
+      "llm_evidence": "诊断多智能体系统规划失败，提出基于分类树的缓解表示",
+      "canonical_evidence": "诊断多智能体系统规划失败，提出基于分类树的缓解表示",
+      "llm_tldr_en": "This paper studies the planner in multi-agent systems as the request-to-action interface, derives a taxonomy of planning-grounding failures, and introduces TART, a taxonomy-guided representation to improve planning in low-resource languages.",
+      "llm_tldr_cn": "多语言多智能体系统在英语以外的语言中性能显著下降，但很少揭示任务关键信息如何在用户请求转化为可执行计划时丢失。本文将多智能体系统中的规划器视为请求-动作接口，从真实失败执行中归纳出规划落地失败的分类体系。基于LLM的分析显示，随着语言资源减少，此类失败占比上升。为验证分类体系的有效性，提出了分类引导的可操作表示TART，将关键失败因素显式注入规划器以支持缓解。",
+      "llm_tldr": "多语言多智能体系统在英语以外的语言中性能显著下降，但很少揭示任务关键信息如何在用户请求转化为可执行计划时丢失。本文将多智能体系统中的规划器视为请求-动作接口，从真实失败执行中归纳出规划落地失败的分类体系。基于LLM的分析显示，随着语言资源减少，此类失败占比上升。为验证分类体系的有效性，提出了分类引导的可操作表示TART，将关键失败因素显式注入规划器以支持缓解。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent planning",
+      "matched_requirement_id": "req-10",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.04588v1",
+      "source": "arxiv",
+      "title": "EASy: Towards Efficient LLM-Based Agentic System",
+      "abstract": "Agentic systems have emerged as a promising paradigm for solving complex tasks by coordinating specialized LLM-based agents. However, most existing systems primarily optimize task success while giving limited consideration to execution efficiency under practical constraints such as executor capability and computational cost. Existing router-based methods have limited ability to reason over rich, evolving task contexts, multi-step dependencies, and intermediate execution feedback, and often generalize poorly to unseen executors. We propose EASy, a trainable agentic framework that jointly optimizes task performance and computational efficiency through reinforcement learning. EASy equips an LLM-based orchestrator with explicit knowledge of the capability and cost profiles of heterogeneous executors, enabling context-sensitive coordination beyond performance-only routing. It further introduces a milestone-plan-act workflow that decomposes complex tasks into manageable milestones, constructs dependency-aware execution graphs, assigns suitable executors, and parallelizes independent steps while adapting subsequent decisions to intermediate outcomes. To train the orchestrator, we develop a tree-structured rollout procedure that explores alternative milestone decompositions and execution plans, together with multi-component rewards that capture task correctness, execution efficiency, and trajectory completeness. Extensive experiments on mathematical reasoning, embodied decision-making, and deep research benchmarks show that EASy consistently achieves stronger performance-efficiency trade-offs than strong agentic baselines.",
+      "authors": [
+        "Junnan Liu",
+        "Linhao Luo",
+        "Thuy-Trang Vu",
+        "Gholamreza Haffari"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-08-05T08:50:36+00:00",
+      "link": "https://arxiv.org/pdf/2608.04588v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Efficient coordination of LLM-based agents",
+      "llm_evidence_cn": "LLM智能体的高效协调",
+      "llm_evidence": "LLM智能体的高效协调",
+      "canonical_evidence": "LLM智能体的高效协调",
+      "llm_tldr_en": "Proposes EASy, a trainable RL-based agentic framework that jointly optimizes task performance and computational efficiency by giving the orchestrator knowledge of executor capability and cost profiles.",
+      "llm_tldr_cn": "现有智能体系统大多只优化任务成功率而忽视执行效率和成本，路由器方法对动态任务上下文和多步依赖推理能力不足。本文提出EASy，通过强化学习联合优化任务性能与计算效率，让LLM编排器显式感知各执行器的能力与成本画像。实验表明EASy能有效平衡性能与开销，并在未见执行器上表现更好泛化，推动实用LLM智能体系统的设计。",
+      "llm_tldr": "现有智能体系统大多只优化任务成功率而忽视执行效率和成本，路由器方法对动态任务上下文和多步依赖推理能力不足。本文提出EASy，通过强化学习联合优化任务性能与计算效率，让LLM编排器显式感知各执行器的能力与成本画像。实验表明EASy能有效平衡性能与开销，并在未见执行器上表现更好泛化，推动实用LLM智能体系统的设计。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.05479v1",
+      "source": "arxiv",
+      "title": "AI-Farol: Co-Evolutionary Dynamics in a Multi-Agent Two-Sided Learning Framework",
+      "abstract": "The El Farol Bar game is a classical model of coordination under uncertainty that traditionally treats the venue as a passive constraint. In this work, we reconceptualize the problem by modeling the bar as a strategic player endowed with AI-driven learning capabilities. We extend the original framework in two principal directions: first, by introducing partial observability, whereby agents observe only subsets of past attendees; and second, by transforming the bar from a passive capacity threshold into an active mechanism designer that adjusts pricing policies to balance revenue, utilization, and sustainability constraints. Agents employ AI-based learning to form beliefs and adapt attendance strategies under incomplete information, while the bar applies policy learning to optimize dynamic pricing. The resulting two-sided learning system frames coordination as a co-evolutionary process between boundedly rational agents and an adaptive institution, offering insights into congestion management, resource allocation, and mechanism design in complex adaptive systems.",
+      "authors": [
+        "Iosif Polenakis",
+        "Kalliopi Kastampolidou",
+        "Theodore Andronikos"
+      ],
+      "primary_category": "cs.GT",
+      "categories": [
+        "cs.GT"
+      ],
+      "published": "2026-08-05T23:55:49+00:00",
+      "link": "https://arxiv.org/pdf/2608.05479v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Multi-agent coordination in a two-sided learning framework",
+      "llm_evidence_cn": "双边学习框架中的多智能体协调",
+      "llm_evidence": "双边学习框架中的多智能体协调",
+      "canonical_evidence": "双边学习框架中的多智能体协调",
+      "llm_tldr_en": "Extends the El Farol Bar game by modeling the bar as a strategic AI learner and adding partial observability, creating a co-evolutionary multi-agent learning framework.",
+      "llm_tldr_cn": "El Farol酒吧问题是协调不确定性的经典模型，传统上将场所视为被动约束。本文将酒吧建模为具备AI学习能力的战略玩家，并引入部分可观测性（代理仅看到部分历史）和动态定价机制。代理在信息不完全下学习信念并调整策略，酒吧则通过调节定价平衡收益、利用率和可持续性，形成双向学习的共演化多智能体框架，为复杂协调问题提供新视角。",
+      "llm_tldr": "El Farol酒吧问题是协调不确定性的经典模型，传统上将场所视为被动约束。本文将酒吧建模为具备AI学习能力的战略玩家，并引入部分可观测性（代理仅看到部分历史）和动态定价机制。代理在信息不完全下学习信念并调整策略，酒吧则通过调节定价平衡收益、利用率和可持续性，形成双向学习的共演化多智能体框架，为复杂协调问题提供新视角。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.05791v1",
+      "source": "arxiv",
+      "title": "A Two-Tier Perspective on Inference-Time Parallelism in Multi-Agent LLM Systems",
+      "abstract": "Large language model (LLM)-driven multi-agent systems typically require multiple model invocations and complex coordination during inference, and their execution strategies directly affect system accuracy, latency, and computational cost. Parallel execution provides a means to improve inference-time efficiency. From the perspective of inference-time execution, this paper models parallelism in multi-agent systems as two distinct levels of decision processes: Replica Parallelism, which explores multiple complete solution paths at the task level, and Structural Parallelism, which enables concurrent execution within a single solution path through task decomposition. However, the roles of different forms of parallelism and their interrelationships still lack systematic study in terms of unified organization and coordination. We therefore propose TIPEX, a controllable execution framework that unifies these two levels of parallelism and coordinates their roles within the inference process under a unified execution semantics while supporting systematic combinations and analyses of different parallel strategies and parameter configurations. Systematic experiments on the GAIA benchmark demonstrate that inference-time parallelism can significantly improve accuracy and reduce end-to-end latency at the cost of increased token consumption. Further analysis shows that Replica and Structural Parallelism exhibit complementary effects across task complexities, with tasks of intermediate difficulty benefiting most from their coordination, while overly aggressive parallel strategies do not necessarily yield better performance.",
+      "authors": [
+        "Zihan Xu",
+        "Haolin Tian",
+        "Hai Jiang"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "published": "2026-08-06T09:26:24+00:00",
+      "link": "https://arxiv.org/pdf/2608.05791v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Parallelism and coordination in multi-agent LLM systems",
+      "llm_evidence_cn": "多智能体LLM系统中的并行与协调",
+      "llm_evidence": "多智能体LLM系统中的并行与协调",
+      "canonical_evidence": "多智能体LLM系统中的并行与协调",
+      "llm_tldr_en": "Presents a two-tier perspective on inference-time parallelism in multi-agent LLM systems, distinguishing Replica Parallelism and Structural Parallelism, and analyzing their roles in accuracy, latency, and cost.",
+      "llm_tldr_cn": "多智能体LLM系统在推理时需要多次调用模型并协调各智能体，执行策略直接影响准确率、延迟和计算成本。本文从推理时间执行的角度，将并行建模为副本并行和结构并行两个层次：副本并行探索多条完整解路径，结构并行通过任务分解实现单条路径内并发。该双层次视角有助于理解不同并行形式的作用及相互关系，为高效多智能体系统的设计提供指导。",
+      "llm_tldr": "多智能体LLM系统在推理时需要多次调用模型并协调各智能体，执行策略直接影响准确率、延迟和计算成本。本文从推理时间执行的角度，将并行建模为副本并行和结构并行两个层次：副本并行探索多条完整解路径，结构并行通过任务分解实现单条路径内并发。该双层次视角有助于理解不同并行形式的作用及相互关系，为高效多智能体系统的设计提供指导。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.05956v1",
+      "source": "arxiv",
+      "title": "Certifying Collective Reasoning in Multi-Agent Systems via Koopman Spectral Analysis",
+      "abstract": "Orchestrated collectives of large language model (LLM) agents that debate and vote are an emerging form of computational intelligence: the intelligent behaviour resides in the \\emph{interaction}, not in any single agent. They improve task accuracy, yet remain black boxes at the system level: there is no principled test of convergence, no bound on the rounds needed, and no faithful account of what drove a decision. This paper develops a novel framework based on Koopman operator theory and validates its theoretical guarantees on multi-agent consensus dynamics. Treating the collective as one nonlinear dynamical system on a communication graph, we read its essential behaviour off the spectrum of its Koopman transfer operator, an exact linear representation of the nonlinear dynamics estimated from interaction traces. The spectrum yields three machine-checkable certificates: the sub-dominant eigenvalue $λ_2$ fixes the intrinsic timescale of reasoning and yields a convergence deadline computable \\emph{before} the debate runs; its eigenvector names the coherent factions the collective reasons in, and $|λ_2|$ certifies when that explanation is valid; and the leading spectral coordinates form a compressed, auditable message basis. On an attention-consensus model, the deadline tracks observed convergence with log--log correlation $0.93$ and bounds it in 96\\% of 24 configurations; attribution is exact whenever the spectrum certifies metastability; eight of 32 coordinates preserve the decision at 99.7\\% fidelity; and a certificate learned from 15 debates held on 60/60 held-out debates. The study runs in minutes on a CPU, making spectral certification a practical layer for trustworthy collective reasoning.",
+      "authors": [
+        "Nuzhat Khan",
+        "Indrakshi Dey"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "eess.SY"
+      ],
+      "published": "2026-08-06T12:30:27+00:00",
+      "link": "https://arxiv.org/pdf/2608.05956v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "multi-agent LLM collective reasoning certification on communication graph",
+      "llm_evidence_cn": "通信图上多智能体LLM集体推理的认证",
+      "llm_evidence": "通信图上多智能体LLM集体推理的认证",
+      "canonical_evidence": "通信图上多智能体LLM集体推理的认证",
+      "llm_tldr_en": "Applies Koopman operator theory to certify multi-agent LLM collectives, reading convergence and decision drivers from the spectrum of a transfer operator over the communication graph.",
+      "llm_tldr_cn": "由LLM智能体组成的辩论投票集体虽然能提升任务准确率，但在系统层面仍然是黑盒，缺乏收敛性检验和轮次上界。本文基于Koopman算子理论，把集体视为通信图上的非线性动力系统，通过其传输算子谱读出关键行为，从而在理论上保证多智能体共识动态的可验证性。实验验证了该方法对共识过程的收敛与决策归因的有效性。这为多智能体系统的可认证集体推理提供了新的系统级分析框架。",
+      "llm_tldr": "由LLM智能体组成的辩论投票集体虽然能提升任务准确率，但在系统层面仍然是黑盒，缺乏收敛性检验和轮次上界。本文基于Koopman算子理论，把集体视为通信图上的非线性动力系统，通过其传输算子谱读出关键行为，从而在理论上保证多智能体共识动态的可验证性。实验验证了该方法对共识过程的收敛与决策归因的有效性。这为多智能体系统的可认证集体推理提供了新的系统级分析框架。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2608.00783v1",
+      "source": "arxiv",
+      "title": "Safety Invariants for Agents Orchestrating Irreversible State Transitions: A Four-Dimensional Formalism Evaluated on Public Ledgers",
+      "abstract": "Autonomous agents are increasingly asked to produce irreversible effects on external systems - transferring funds, writing to durable storage, actuating hardware. Existing agent frameworks (ReAct, Reflexion, MCP) optimize task success on benchmarks and give little attention to the safety of irreversible side-effects. We formalize one such setting, movement of value across public ledgers, as state transitions in a four-dimensional space indexed by (wallet, chain, address, protocol), and use that formalism to state and prove a guarantee we call execution fidelity: under a fault model admitting planner mis-mapping, ambiguous outcomes, retries, at-least-once delivery, and delegated non-human callers, a session's realized effect on the ledger is either nothing at all or exactly the transition that was rendered to the user, exactly once. The theorem deliberately does not claim that the rendered transition matches the user's intent - no runtime layer can decide that - but it confines that unbounded question to a single predicate over a finite object, which is what makes a preview a sufficient control rather than a formality. Seven safety invariants, derived from the fidelity condition rather than enumerated from experience, discharge the guarantee. Empirically, on a controlled N=60 adversarial suite the stack lifts pass rate by ~74 percentage points over a naive-ReAct baseline on two write-aggressive backing models, but by only ~3 points on a write-cautious one - evidence that single-model evaluations of agent safety stacks are close to unfalsifiable. The system is deployed; 108 production write operations across 8 chains back the failure taxonomy. Although the evaluation setting is public ledgers, the formalism and invariants apply to any probabilistic agent acting on irreversible external state.",
+      "authors": [
+        "Zhaoming Yin"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR"
+      ],
+      "published": "2026-08-01T17:29:42+00:00",
+      "link": "https://arxiv.org/pdf/2608.00783v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Formal safety invariants and execution fidelity for autonomous agents controlling irreversible state transitions",
+      "llm_evidence_cn": "面向不可逆状态转换的自主智能体安全不变量与执行保真度",
+      "llm_evidence": "面向不可逆状态转换的自主智能体安全不变量与执行保真度",
+      "canonical_evidence": "面向不可逆状态转换的自主智能体安全不变量与执行保真度",
+      "llm_tldr_en": "Proposes a four-dimensional formalism to prove execution fidelity for agents performing irreversible operations, addressing safety issues neglected by existing agent frameworks such as ReAct and MCP.",
+      "llm_tldr_cn": "现有智能体框架（如ReAct、Reflexion、MCP）只优化基准任务成功率，忽视不可逆副作用的安全风险。作者将公开账本上的价值转移形式化为四维状态转换，并提出执行保真度保证。在包含规划器误映射、重试和至少一次投递等故障模型下证明该性质。为智能体安全控制提供了理论支撑。",
+      "llm_tldr": "现有智能体框架（如ReAct、Reflexion、MCP）只优化基准任务成功率，忽视不可逆副作用的安全风险。作者将公开账本上的价值转移形式化为四维状态转换，并提出执行保真度保证。在包含规划器误映射、重试和至少一次投递等故障模型下证明该性质。为智能体安全控制提供了理论支撑。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "papers on autonomous agent architectures and control",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.00339v1",
+      "source": "arxiv",
+      "title": "Bayesian and Motivated Reasoning in AI Agents",
+      "abstract": "AI agents increasingly perform open-ended tasks in settings where their conclusions can guide consequential decisions. We provide evidence that AI agents draw different conclusions from identical numerical data when the substantive framing changes. We demonstrate this behavior in high-stakes domains in medicine, election forensics, and geopolitical forecasting by holding the evidence fixed while changing the scenario in which the evidence appears. Across twelve agent-domain comparisons, agents' conclusions are strongly influenced by their prior beliefs. They are more likely to reach an affirmative conclusion when it is framed around a proposition they already regard as likely, while the reverse holds when the framing conflicts with their prior. The framing also changes how some agents work: they search more extensively, choose different analytical specifications, and evaluate the same evidence differently. These results identify a particular risk of delegating decision-making to AI agents, as their decisions may depend on prior beliefs that are neither specified in the task nor visible in the decision record.",
+      "authors": [
+        "Eddie Yang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-31T23:02:58+00:00",
+      "link": "https://arxiv.org/pdf/2608.00339v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Examines how framing and prior beliefs affect AI agents' conclusions from identical evidence, directly relevant to agent decision making",
+      "llm_evidence_cn": "研究框架与先验信念如何影响AI智能体从相同证据得出结论，直接关联智能体决策",
+      "llm_evidence": "研究框架与先验信念如何影响AI智能体从相同证据得出结论，直接关联智能体决策",
+      "canonical_evidence": "研究框架与先验信念如何影响AI智能体从相同证据得出结论，直接关联智能体决策",
+      "llm_tldr_en": "Shows AI agents draw different conclusions from identical data depending on framing, with motivated reasoning across medicine, election forensics, and geopolitical forecasting.",
+      "llm_tldr_cn": "AI智能体越来越多地在开放任务中做出可影响重大决策的结论，但其推理可能受动机偏差影响。通过在医学、选举取证和地缘政治预测等高风险领域固定证据、改变场景框架，本文证明相同数值数据会让智能体得出不同结论。十二组智能体-领域比较显示，智能体的结论强烈受其先验信念影响：当结论符合其先前倾向时更易得到肯定回答，反之则更可能被否定。该发现对自主智能体在高风险场景中的可靠决策具有重要意义。",
+      "llm_tldr": "AI智能体越来越多地在开放任务中做出可影响重大决策的结论，但其推理可能受动机偏差影响。通过在医学、选举取证和地缘政治预测等高风险领域固定证据、改变场景框架，本文证明相同数值数据会让智能体得出不同结论。十二组智能体-领域比较显示，智能体的结论强烈受其先验信念影响：当结论符合其先前倾向时更易得到肯定回答，反之则更可能被否定。该发现对自主智能体在高风险场景中的可靠决策具有重要意义。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent decision making",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.00966v1",
+      "source": "arxiv",
+      "title": "AgenTag: Attribution of AI Coding Agents from Behavioral Fingerprints",
+      "abstract": "AI coding agents increasingly author pull requests (PRs), often under developers' own accounts, obscuring who actually produced a change. Reliable attribution is important for repository governance, empirical studies of AI-assisted software development, and measuring the impact of AI coding agents. Existing work focuses on closed-set identification of known agents, leaving the practical limits of open-world AI coding agent attribution largely unexplored. In this paper, we present AgenTag, a multimodal framework for open-world AI coding agent attribution, evaluated on AIDev, comprising 33,580 PRs from five AI coding agents and 6,618 human-authored PRs. We represent each PR using textual, behavioral, and code-based modalities, and compare conventional classification with supervised contrastive learning for open-set recognition and few-shot enrollment of previously unseen agents. AgenTag identifies authoring agents with a weighted F1 of 0.96 (macro F1 of 0.84), distinguishes AI- from human-authored PRs with a balanced F1 of 0.89, and detects previously unseen agents with an AUC of 0.84. We further show that PR descriptions and commit messages provide nearly all of the attribution signal, whereas code diffs contribute little across multiple representations, indicating that coding agents are distinguished primarily by how they communicate changes rather than by the code they generate. Moreover, these behavioral fingerprints persist after removing explicit self-disclosed markers, demonstrating that attribution relies largely on latent stylistic characteristics. These findings show that reliable attribution of AI coding agents is feasible and clarify the practical trade-offs between attribution accuracy and the information required to achieve it.",
+      "authors": [
+        "Taher A. Ghaleb"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE"
+      ],
+      "published": "2026-08-02T03:35:25+00:00",
+      "link": "https://arxiv.org/pdf/2608.00966v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "attribution of AI coding agents from behavioral fingerprints",
+      "llm_evidence_cn": "基于行为指纹的AI编码智能体归因",
+      "llm_evidence": "基于行为指纹的AI编码智能体归因",
+      "canonical_evidence": "基于行为指纹的AI编码智能体归因",
+      "llm_tldr_en": "This paper presents AgenTag, a multimodal framework for open-world attribution of AI coding agents, using textual, behavioral, and code-based modalities on 33,580 pull requests from five agents and humans, addressing repository governance and empirical study needs.",
+      "llm_tldr_cn": "随着AI编码智能体在代码仓库中越来越多地以开发者名义提交PR，作者提出AgenTag多模态框架进行开放世界的AI编码智能体归因。该方法在包含五个AI编码智能体与人类作者的AIDev数据集上，综合文本、行为与代码模态进行识别。实验结果表明，该框架能够有效区分不同编码智能体与人类作者，为代码仓库治理、AI辅助开发实证研究提供了可靠归因工具。",
+      "llm_tldr": "随着AI编码智能体在代码仓库中越来越多地以开发者名义提交PR，作者提出AgenTag多模态框架进行开放世界的AI编码智能体归因。该方法在包含五个AI编码智能体与人类作者的AIDev数据集上，综合文本、行为与代码模态进行识别。实验结果表明，该框架能够有效区分不同编码智能体与人类作者，为代码仓库治理、AI辅助开发实证研究提供了可靠归因工具。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "applications of intelligent agents",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.01085v1",
+      "source": "arxiv",
+      "title": "When Collaboration Becomes a Trigger: Collective Evidence-Threshold Backdoors in Multi-Agent Systems",
+      "abstract": "LLM-based multi-agent systems (MAS) extend LLM capabilities through iterative communication and shared contexts. However, this collaboration introduces a vulnerability: backdoor behavior can be activated when peer evidence reaches a hidden threshold, rather than being determined by any single message. We introduce a collective evidence-threshold backdoor paradigm for MAS and Boundary-Conditioned Backdoor Injection (BCBI), which constructs counterfactual boundary pairs to separate benign behavior before the threshold from the adversarial objective after it, and learns latent progression aligned with evidence. To mitigate this threat, we propose LAtent Transition Test-time Evaluation (LATTE), a clean-only latent-transition defense that learns benign communication dynamics and quarantines anomalous agent updates before their responses propagate. Across several benchmarks, BCBI yields selective activation with little premature activation; without knowing the attack target or trigger, LATTE limits propagation with minimal disruption.",
+      "authors": [
+        "Jia-Hao Xiao",
+        "Lei Feng",
+        "Min-Ling Zhang"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.LG"
+      ],
+      "published": "2026-08-02T08:38:44+00:00",
+      "link": "https://arxiv.org/pdf/2608.01085v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Backdoor attacks exploiting collective evidence in LLM multi-agent communication and coordination",
+      "llm_evidence_cn": "利用LLM多智能体通信与协调中集体证据的后门攻击",
+      "llm_evidence": "利用LLM多智能体通信与协调中集体证据的后门攻击",
+      "canonical_evidence": "利用LLM多智能体通信与协调中集体证据的后门攻击",
+      "llm_tldr_en": "Introduces collective evidence-threshold backdoors for LLM multi-agent systems and a mitigation method LATTE, showing that collaboration itself can trigger hidden adversarial behavior via accumulated evidence.",
+      "llm_tldr_cn": "基于LLM的多智能体系统通过迭代通信和共享上下文增强能力，但协作可能引入一种新后门：当同行证据达到隐藏阈值时触发恶意行为。作者提出集体证据阈值后门范式及边界条件注入方法BCBI，构建反事实边界对将阈值前后的行为分离。为缓解该威胁，提出仅用干净数据的潜伏转移测试时评估LATTE。研究揭示了多智能体协作中的新型安全风险并提供防御手段。",
+      "llm_tldr": "基于LLM的多智能体系统通过迭代通信和共享上下文增强能力，但协作可能引入一种新后门：当同行证据达到隐藏阈值时触发恶意行为。作者提出集体证据阈值后门范式及边界条件注入方法BCBI，构建反事实边界对将阈值前后的行为分离。为缓解该威胁，提出仅用干净数据的潜伏转移测试时评估LATTE。研究揭示了多智能体协作中的新型安全风险并提供防御手段。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.00805v1",
+      "source": "arxiv",
+      "title": "AgentSLABench: Evaluating and Benchmarking Agentic Systems Under Resource Constraints",
+      "abstract": "We present AgentSLABench, a resource-aware evaluation framework for autonomous AI agents that measures correctness alongside latency, cost, compute, memory, and network usage under declared resource budgets. Unlike standard benchmarks that report only accuracy, AgentSLABench produces a multi-dimensional profile per agent per task - the same way systems profilers (perf, pprof, cProfile) measure resource consumption of code, but extended with task correctness as a first-class dimension. AgentSLABench provides 16 task environments across 6 categories (5 core: multi-hop QA, retail substitution, code generation, web shopping, travel planning; 11 extended) with isolated Docker containers, declared CPU/memory/time/network budgets, sealed test sets with SHA256 hashes, and a standardized profiling protocol. We profile 5 general-purpose baseline agents (ReAct, PlanAndSolve, Reflexion, CoT, Random) plus 4 task-specialized agents, finding that specialized agents achieve 100% success on 3/5 core tasks (fact_qa, web_shopping, travel_planning) and 66.7-83.3% on retail and code_gen, while general baselines fail entirely on 4/5 domain tasks. Crucially, we report the Efficiency-Adjusted Success Rate (EASR) - success weighted by resource consumption relative to declared budgets - revealing that high accuracy at unbounded cost is not production-viable. We release the full infrastructure, sealed test sets, and profiling results to enable reproducible, resource-aware agent evaluation.",
+      "authors": [
+        "Meher Bhaskar Madiraju",
+        "Meher Sai Preetam Madiraju"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-01T18:17:47+00:00",
+      "link": "https://arxiv.org/pdf/2608.00805v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Resource-aware benchmark for evaluating autonomous AI agents in practical application environments",
+      "llm_evidence_cn": "在实用应用环境中评估自主AI智能体的资源感知基准",
+      "llm_evidence": "在实用应用环境中评估自主AI智能体的资源感知基准",
+      "canonical_evidence": "在实用应用环境中评估自主AI智能体的资源感知基准",
+      "llm_tldr_en": "AgentSLABench evaluates autonomous agents on correctness and resource usage under declared budgets, providing a multi-dimensional profile of agent performance across 16 task environments.",
+      "llm_tldr_cn": "标准基准通常只报告准确性，忽略了智能体在真实部署中的资源消耗。AgentSLABench构建了面向自主AI智能体的资源感知评估框架，同时衡量正确性以及延迟、成本、算力、内存和网络占用。它提供16个任务环境、6个类别，并在隔离容器中执行。该基准能为资源受限场景下的智能体应用提供系统级评估支持。",
+      "llm_tldr": "标准基准通常只报告准确性，忽略了智能体在真实部署中的资源消耗。AgentSLABench构建了面向自主AI智能体的资源感知评估框架，同时衡量正确性以及延迟、成本、算力、内存和网络占用。它提供16个任务环境、6个类别，并在隔离容器中执行。该基准能为资源受限场景下的智能体应用提供系统级评估支持。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "applications of intelligent agents",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.01464v1",
+      "source": "arxiv",
+      "title": "Computing with Agentic Oracles",
+      "abstract": "This paper extends the stochastic-oracle model of AI-augmented computing to include agentic oracles. Unlike a stationary stochastic oracle, which responds to the same query according to a fixed response distribution across calls, an agentic oracle can pursue a goal autonomously and may access an environment containing task-relevant resources. These capabilities affect both response distributions and token costs beyond what is visible at the query-response interface. We develop a framework for analyzing token costs in Stochastic-Oracle Turing Machines (SOTMs) that compute with agentic oracles. Each call has an \\emph{orchestration token cost}, visible to the caller at the query-response interface, and an \\emph{agentic token cost}, incurred by internal operations not exposed to the caller. We show that an SOTM computing with an agentic oracle that can retain intermediate state can have token-cost advantages over SOTMs using stationary stochastic oracles when solving the same task at the same quality level, both with and without environment access. We also investigate goal-loss risk, including how internal dispatch ordering can reduce exposure to irreversible actions. We provide a goal-loss avoidance criterion, derive progress--retry--goal-loss formulas, establish goal-depth lower bounds on token complexity, characterize token complexity when the probability of goal loss is zero, and show that goal-loss risk can impose an upper bound on the achievable quality of a task involving environment updates.",
+      "authors": [
+        "Jie Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-02T19:50:15+00:00",
+      "link": "https://arxiv.org/pdf/2608.01464v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Models goal-pursuing agentic oracles and analyzes costs of autonomous agent computations",
+      "llm_evidence_cn": "为目标导向的智能体预言机建模，分析自主智能体计算成本",
+      "llm_evidence": "为目标导向的智能体预言机建模，分析自主智能体计算成本",
+      "canonical_evidence": "为目标导向的智能体预言机建模，分析自主智能体计算成本",
+      "llm_tldr_en": "This paper extends stochastic-oracle models to agentic oracles that autonomously pursue goals and access resources, distinguishing orchestration token costs from internal agentic token costs in Stochastic-Oracle Turing Machines.",
+      "llm_tldr_cn": "传统随机预言机按固定分布响应查询，而智能体预言机能自主追求目标并访问环境中的任务相关资源，从而影响响应分布和令牌成本。本文在随机预言机图灵机框架下分析这种智能体预言机的令牌开销，将调用方的编排成本与智能体内部运行的不可见成本加以区分。该框架为理解AI增强计算中智能体行为的成本结构提供了理论基础。",
+      "llm_tldr": "传统随机预言机按固定分布响应查询，而智能体预言机能自主追求目标并访问环境中的任务相关资源，从而影响响应分布和令牌成本。本文在随机预言机图灵机框架下分析这种智能体预言机的令牌开销，将调用方的编排成本与智能体内部运行的不可见成本加以区分。该框架为理解AI增强计算中智能体行为的成本结构提供了理论基础。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent decision making",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.01133v1",
+      "source": "arxiv",
+      "title": "Policy Optimality Measurement for Multi-Vehicle Decision-Making: From Extrinsic Indicators to Intrinsic Quality",
+      "abstract": "Evaluating Multi-Agent Reinforcement Learning (MARL) policies in autonomous driving fundamentally relies on extrinsic statistical indicators (e.g., reward curves and success rates), which often mask intrinsic policy degradation and algorithmic blind spots. To break this black-box evaluation, this letter proposes a novel information-theoretic diagnostic framework. By leveraging a fully converged Monte Carlo Tree Search (MCTS) as an asymptotic oracle, we establish a theoretical ground-truth baseline distribution. We formulate a bounded policy optimality score ($\\mathcal{M}_{opt}$) using the forward KL divergence to rigorously penalize fatal collaborative omissions. Crucially, we semantically decouple this metric into lateral and longitudinal dimensions, creating a granular \"semantic microscope\". Extensive spatial and temporal diagnostics on state-of-the-art MARL architectures and exploration mechanisms demonstrate that our framework conclusively exposes hidden directional biases, identifies temporal average-policy traps, and transforms heuristic hyperparameter tuning into a visually trackable trajectory optimization. This framework establishes a rigorous, model-agnostic standard for benchmarking intrinsic multi-agent policy quality.",
+      "authors": [
+        "Ye Han",
+        "Lijun Zhang",
+        "Dejian Meng"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-08-02T10:21:58+00:00",
+      "link": "https://arxiv.org/pdf/2608.01133v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "information-theoretic evaluation framework for MARL policies",
+      "llm_evidence_cn": "面向多智能体强化学习策略的信息论评估框架",
+      "llm_evidence": "面向多智能体强化学习策略的信息论评估框架",
+      "canonical_evidence": "面向多智能体强化学习策略的信息论评估框架",
+      "llm_tldr_en": "Proposes an information-theoretic diagnostic framework with an MCTS oracle and bounded policy optimality score using forward KL divergence, enabling intrinsic evaluation of MARL policies in autonomous driving beyond extrinsic indicators.",
+      "llm_tldr_cn": "多车决策中的多智能体强化学习（MARL）策略评估常依赖奖励曲线、成功率等外在统计指标，可能掩盖内在策略退化与算法盲区。本文提出一个基于信息论的诊断框架，以完全收敛的蒙特卡洛树搜索（MCTS）作为渐近最优基准，用前向KL散度构造有界的策略最优性分数，并对指标进行语义解耦。该方法能够严格惩罚致命协作遗漏，揭示算法盲点，为自动驾驶MARL策略提供内在质量度量。",
+      "llm_tldr": "多车决策中的多智能体强化学习（MARL）策略评估常依赖奖励曲线、成功率等外在统计指标，可能掩盖内在策略退化与算法盲区。本文提出一个基于信息论的诊断框架，以完全收敛的蒙特卡洛树搜索（MCTS）作为渐近最优基准，用前向KL散度构造有界的策略最优性分数，并对指标进行语义解耦。该方法能够严格惩罚致命协作遗漏，揭示算法盲点，为自动驾驶MARL策略提供内在质量度量。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "recent advances in multi agent reinforcement learning",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.01001v1",
+      "source": "arxiv",
+      "title": "From AI Technical Debt to Agentic Technical Debt: A Systematic Mapping of Root Causes and Manifestations in Agentic AI Systems",
+      "abstract": "The emergence of Agentic AI systems, characterized by autonomous reasoning, multi-agent collaboration, tool orchestration, adaptive decision-making, and persistent memory, represents a fundamental shift from traditional AI pipelines to dynamic software ecosystems. While AI Technical Debt (AITD) has been widely studied in machine learning and software engineering, existing models assume static, component-level architectures and fail to capture the dynamic and emergent behaviors of agentic environments. To address this gap, this paper introduces Agentic Technical Debt (AgTD), defined as technical debt that emerges, accumulates, propagates, and amplifies due to the autonomous and collaborative nature of Agentic AI systems. Building on our prior systematic scoping review of 31 AITDs across seven root-cause categories, we employ a theory-informed transformation methodology to reinterpret these debts in Agentic AI through direct transformation, contextual transformation, and manifestation expansion. We present the first systematic mapping of established AITDs to their agentic manifestations, showing how conventional debts evolve into system-level liabilities, including memory inconsistencies, orchestration fragility, cascading failures, and unsafe autonomous decision-making. Our findings show that technical debt extends beyond software artifacts to encompass agent behaviors, coordination mechanisms, and interactions among agents, tools, and execution environments. We further examine its implications for AI Trust, Risk, and Security Management (AI TRiSM), highlighting impacts on trustworthiness, governance, security, operational resilience, and Sustainability Technical Debt. Overall, this work establishes AgTD as a foundational software engineering construct and provides a transformation framework, taxonomy, and research agenda for managing technical debt in autonomous multi-agent AI systems.",
+      "authors": [
+        "Muhammad Tukur",
+        "Hayatullahi B. Adeyemo",
+        "Tao Chen",
+        "Nour Ali",
+        "Anis Zarrad",
+        "Marco Agus",
+        "Rick Kazman",
+        "Rami Bahsoon"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CR",
+        "cs.SE"
+      ],
+      "published": "2026-08-02T05:09:28+00:00",
+      "link": "https://arxiv.org/pdf/2608.01001v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Systematic mapping of root causes and manifestations of technical debt in agentic AI system design",
+      "llm_evidence_cn": "对智能体AI系统设计中技术债务根源与表现的系统性映射",
+      "llm_evidence": "对智能体AI系统设计中技术债务根源与表现的系统性映射",
+      "canonical_evidence": "对智能体AI系统设计中技术债务根源与表现的系统性映射",
+      "llm_tldr_en": "Introduces Agentic Technical Debt (AgTD) to capture emergent debt from autonomous reasoning, multi-agent collaboration, and tool orchestration, extending AI technical debt models to agentic ecosystems.",
+      "llm_tldr_cn": "传统AI技术债务模型假设静态的组件级架构，无法捕捉智能体系统的动态与涌现行为。本文提出Agentic Technical Debt（AgTD），定义为由智能体的自主性与协作性导致的技术债务，包括多智能体协作、工具编排、自适应决策等来源。通过系统性映射，梳理了AgTD的根因与表现形态。为理解和治理智能体系统的长期演进提供了新的分析框架。",
+      "llm_tldr": "传统AI技术债务模型假设静态的组件级架构，无法捕捉智能体系统的动态与涌现行为。本文提出Agentic Technical Debt（AgTD），定义为由智能体的自主性与协作性导致的技术债务，包括多智能体协作、工具编排、自适应决策等来源。通过系统性映射，梳理了AgTD的根因与表现形态。为理解和治理智能体系统的长期演进提供了新的分析框架。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "intelligent agent design and applications",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.06033v1",
+      "source": "arxiv",
+      "title": "ASGE-RR: Agentic Service Graph Embedding with Revisable Reservations for Dynamic AI-Agent Calls",
+      "abstract": "AI-agent workflows often involve remote calls to models, memory stores, and tools distributed across a network. As execution progresses, these dependency calls collectively form an agentic service graph (ASG). Unlike traditional service requests, many dependency calls are revealed only at runtime. Consequently, allocating resources to a currently visible call may consume capacity later needed by a call from a higher-value workflow. We formulate this challenge as Agentic Service Graph Embedding (ASGE), an online network-control problem that maps runtime-revealed workflow calls to service replicas and network paths under capacity, cost and deadline constraints. We present ASGE-RR, an online ASGE controller with revisable reservations. ASGE-RR protects capacity for likely future calls while enforcing the constraints. ASGE-RR evaluates candidate replica-and-path mappings against predicted workflow continuations and updates reservations as new execution information becomes available.   We evaluate ASGE-RR using OpenHands and GPT Researcher workflows executed with gpt-5.6-luna and replayed over in two complementary experimental environments, a controlled Docker testbed and a WAN testbed. The investigation shows that all the evaluated AI-agent tasks expose at least one runtime-revealed dependency call that can be steered before connection establishment. Exploiting this control point, even though the experimental environments are small-scale, ASGE-RR already demonstrates noticeable potential: It completes (up to) 10% more workflow value than a same-information rolling-horizon controller and a current-call steering controller on the WAN testbed. The results suggest that runtime-revealed workflow structure creates a new network control opportunity: protecting resources for likely future calls allows more AI-agent workflows to finish in time.",
+      "authors": [
+        "Trond Vatten",
+        "Yuming Jiang"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.PF"
+      ],
+      "published": "2026-08-06T13:43:28+00:00",
+      "link": "https://arxiv.org/pdf/2608.06033v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "online network-control for agentic service graphs with revisable reservations",
+      "llm_evidence_cn": "面向智能体服务图的在线网络控制与可修订预留",
+      "llm_evidence": "面向智能体服务图的在线网络控制与可修订预留",
+      "canonical_evidence": "面向智能体服务图的在线网络控制与可修订预留",
+      "llm_tldr_en": "Formulates Agentic Service Graph Embedding as an online network-control problem and presents ASGE-RR, an online controller with revisable reservations to map runtime-revealed AI-agent workflow calls under capacity, cost, and deadline constraints.",
+      "llm_tldr_cn": "AI智能体工作流在运行中逐步揭示对模型、存储与工具的依赖调用，传统资源分配可能为当前可见调用占用容量，从而影响后续更高价值工作流。本文将这一挑战形式化为智能体服务图嵌入（ASGE）问题，即一个需在容量、成本与截止期限约束下将运行时调用映射到服务副本和网络路径的在线网络控制问题。提出的ASGE-RR控制器引入可修订预留机制，能够动态调整资源占用。该工作为智能体工作流的网络资源管理提供了在线控制方案。",
+      "llm_tldr": "AI智能体工作流在运行中逐步揭示对模型、存储与工具的依赖调用，传统资源分配可能为当前可见调用占用容量，从而影响后续更高价值工作流。本文将这一挑战形式化为智能体服务图嵌入（ASGE）问题，即一个需在容量、成本与截止期限约束下将运行时调用映射到服务副本和网络路径的在线网络控制问题。提出的ASGE-RR控制器引入可修订预留机制，能够动态调整资源占用。该工作为智能体工作流的网络资源管理提供了在线控制方案。",
+      "llm_tags": [
+        "query:agent:composite"
+      ],
+      "matched_query_tag": "query:agent:composite",
+      "matched_query_text": "Papers central to 查找Agent相关论文, especially work that connects or combines: A; autonomous agent decision making; intelligent agent design and applications; multi-agent system coordination; agent architecture design patterns; agent communication protocols; papers on autonomous agent architectures and control; recent advances in multi agent reinforcement learning; applications of intelligent agents; autonomous agent planning.",
+      "matched_requirement_id": "req-composite-agent",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.01561v1",
+      "source": "arxiv",
+      "title": "FedWorld: Scope-Aware Federation of Agent World Models",
+      "abstract": "Large language model (LLM) agents learn world dynamics from local interaction experience to support subsequent planning and action selection. However, the experience available to a single client is often incomplete, which motivates sharing knowledge across clients. Existing federated methods mainly aggregate model parameters, while agent memory-sharing methods commonly pool trajectories, memories, or rules without checking whether they remain valid for each client. This assumption is problematic because the same abstract action may produce different effects under different policies, environments, or exception conditions. Consequently, a rule supported by most clients may overwrite correct knowledge held by a minority client. To address this problem, we propose FEDWORLD, a scope-aware federated world-model protocol that exchanges structured abstract transition rules. Each client converts private transitions into normalized rules, and the server aligns related rules to identify each rule supporting and contradicting evidence across clients. The resulting evidence determines whether a rule is shared, cluster-specific, private, or unresolved. Each target client retains its local rules and accepts federated updates only for uncovered cases whose inferred scope is compatible; ambiguous rules are withheld. Experiments on $τ$-bench and ALFWorld show that FEDWORLD reduces negative transfer under conflicting dynamics while retaining useful cross-client transfer, leading to fewer state regressions, repeated actions, and excess steps, as well as higher task success.",
+      "authors": [
+        "Yuchao Hou"
+      ],
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC"
+      ],
+      "published": "2026-08-03T00:37:52+00:00",
+      "link": "https://arxiv.org/pdf/2608.01561v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "federation of agent world models to support planning and action selection",
+      "llm_evidence_cn": "智能体世界模型的联邦学习以支撑规划与动作选择",
+      "llm_evidence": "智能体世界模型的联邦学习以支撑规划与动作选择",
+      "canonical_evidence": "智能体世界模型的联邦学习以支撑规划与动作选择",
+      "llm_tldr_en": "Proposes FedWorld, a scope-aware federation method for LLM agent world models that aggregates local interaction experience while preserving minority-valid knowledge, preventing a rule supported by most clients from overwriting correct knowledge held by another client in different environments.",
+      "llm_tldr_cn": "大语言模型智能体需要从本地交互经验学习世界动态来支持规划和动作选择，但单一客户端经验往往不完整，而现有联邦与记忆共享方法未验证共享规则对各客户端是否仍有效。本文提出FedWorld，以作用域感知方式联邦智能体世界模型，区分经验在不同策略或环境下的适用条件，避免多数客户端支持的规则覆盖少数客户端的正确知识。该方法让智能体在异构条件下更安全地共享经验，提升规划与决策质量。",
+      "llm_tldr": "大语言模型智能体需要从本地交互经验学习世界动态来支持规划和动作选择，但单一客户端经验往往不完整，而现有联邦与记忆共享方法未验证共享规则对各客户端是否仍有效。本文提出FedWorld，以作用域感知方式联邦智能体世界模型，区分经验在不同策略或环境下的适用条件，避免多数客户端支持的规则覆盖少数客户端的正确知识。该方法让智能体在异构条件下更安全地共享经验，提升规划与决策质量。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent planning",
+      "matched_requirement_id": "req-10",
+      "selection_source": "carryover_cache",
+      "paper_id": "2608.01561v1",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.03076v1",
+      "source": "arxiv",
+      "title": "AI Agent Economics: Can Autonomous Economic Behavior Emerge among AI Agents under Minimal External Conditions?",
+      "abstract": "Multi-agent studies commonly place AI agents in predefined games, markets, or roles, making it difficult to distinguish endogenous economic organization from behavior inherited from the scenario. We ask whether economic relations emerge when agents receive executable mechanisms for work, transfer, elections, and allocation but no prescribed social or economic strategy. We define AI Agent Economics as systems of production, allocation, consumption, exchange, and institutions that alter agents' future feasible actions. We develop a two-stage framework comprising a no-production boundary test and 24 independent six-agent worlds across GPT and DeepSeek. Without productive tasks, agents communicate and govern resource provision but show no substantive inter-agent transfer activity. With verified work and scarce task access, transfers, loans, access promises, vote-for-access exchanges, and allocation strategies emerge. Holding the election interface fixed, executable allocation authority increases differentiation while reducing failed allocation and prolonged exclusion. When energy becomes symbolic, continuation support disappears, yet competition over task access persists. These findings show that organization follows executable rights and resource consequences rather than role labels or prompt language, and motivate governance audits of the mechanisms that actually constrain agents' future actions.",
+      "authors": [
+        "Lingyun Zhang",
+        "Shang Shang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-04T03:40:08+00:00",
+      "link": "https://arxiv.org/pdf/2608.03076v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Explores emergent economic coordination among AI agents in multi-agent worlds without prescribed strategies",
+      "llm_evidence_cn": "在无预设策略的多智能体世界中考察AI智能体间涌现的经济协调行为",
+      "llm_evidence": "在无预设策略的多智能体世界中考察AI智能体间涌现的经济协调行为",
+      "canonical_evidence": "在无预设策略的多智能体世界中考察AI智能体间涌现的经济协调行为",
+      "llm_tldr_en": "Asks whether economic relations emerge among AI agents under minimal external conditions; uses a two-stage framework with no-production boundary tests and 24 independent six-agent worlds across GPT and DeepSeek.",
+      "llm_tldr_cn": "许多多智能体研究将智能体放入预定义博弈、市场或角色，难以区分内生组织与场景赋予的行为。本文提出 AI 智能体经济学，在仅提供工作、转移、选举和分配等可执行机制而无预设社会经济策略的条件下，检验经济关系能否从多智能体世界中涌现。作者构建两阶段框架，包含无生产边界测试和跨 GPT 与 DeepSeek 的 24 个独立六智能体世界。结果显示智能体会在无生产任务时自发交流与治理资源，为多智能体协调研究提供了新视角。",
+      "llm_tldr": "许多多智能体研究将智能体放入预定义博弈、市场或角色，难以区分内生组织与场景赋予的行为。本文提出 AI 智能体经济学，在仅提供工作、转移、选举和分配等可执行机制而无预设社会经济策略的条件下，检验经济关系能否从多智能体世界中涌现。作者构建两阶段框架，包含无生产边界测试和跨 GPT 与 DeepSeek 的 24 个独立六智能体世界。结果显示智能体会在无生产任务时自发交流与治理资源，为多智能体协调研究提供了新视角。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

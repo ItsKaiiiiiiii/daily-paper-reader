@@ -1,0 +1,297 @@
+{
+  "date": "20260808",
+  "date_label": "",
+  "generated_at": "2026-08-08 20:59:25 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2608.01189v1",
+      "route": "202608/08/2608.01189v1-made-belief-driven-dual-agent-coordination-for-autonomous-model-deployment",
+      "title": "MADE: Belief-Driven Dual-Agent Coordination for Autonomous Model Deployment",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "双智能体协调实现自主模型部署",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.01341v1",
+      "route": "202608/08/2608.01341v1-402pilot-an-x402-decision-layer-for-autonomous-agent-micropayments",
+      "title": "402Pilot: An x402 Decision Layer for Autonomous Agent Micropayments",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "钱包压力下的智能体原生支付决策",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.03735v1",
+      "route": "202608/08/2608.03735v1-an-actionable-diagnosis-of-multilingual-multi-agent-planning-failures",
+      "title": "An Actionable Diagnosis of Multilingual, Multi-Agent Planning Failures",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "诊断多智能体系统规划失败，提出基于分类树的缓解表示",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.04588v1",
+      "route": "202608/08/2608.04588v1-easy-towards-efficient-llm-based-agentic-system",
+      "title": "EASy: Towards Efficient LLM-Based Agentic System",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "LLM智能体的高效协调",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.05479v1",
+      "route": "202608/08/2608.05479v1-ai-farol-co-evolutionary-dynamics-in-a-multi-agent-two-sided-learning-framework",
+      "title": "AI-Farol: Co-Evolutionary Dynamics in a Multi-Agent Two-Sided Learning Framework",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "双边学习框架中的多智能体协调",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.05791v1",
+      "route": "202608/08/2608.05791v1-a-two-tier-perspective-on-inference-time-parallelism-in-multi-agent-llm-systems",
+      "title": "A Two-Tier Perspective on Inference-Time Parallelism in Multi-Agent LLM Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体LLM系统中的并行与协调",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.05956v1",
+      "route": "202608/08/2608.05956v1-certifying-collective-reasoning-in-multi-agent-systems-via-koopman-spectral-analysis",
+      "title": "Certifying Collective Reasoning in Multi-Agent Systems via Koopman Spectral Analysis",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "通信图上多智能体LLM集体推理的认证",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.00783v1",
+      "route": "202608/08/2608.00783v1-safety-invariants-for-agents-orchestrating-irreversible-state-transitions-a-four-dimensional-formalism-evaluated-on-public-ledgers",
+      "title": "Safety Invariants for Agents Orchestrating Irreversible State Transitions: A Four-Dimensional Formalism Evaluated on Public Ledgers",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向不可逆状态转换的自主智能体安全不变量与执行保真度",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.01085v1",
+      "route": "202608/08/2608.01085v1-when-collaboration-becomes-a-trigger-collective-evidence-threshold-backdoors-in-multi-agent-systems",
+      "title": "When Collaboration Becomes a Trigger: Collective Evidence-Threshold Backdoors in Multi-Agent Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "利用LLM多智能体通信与协调中集体证据的后门攻击",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.01133v1",
+      "route": "202608/08/2608.01133v1-policy-optimality-measurement-for-multi-vehicle-decision-making-from-extrinsic-indicators-to-intrinsic-quality",
+      "title": "Policy Optimality Measurement for Multi-Vehicle Decision-Making: From Extrinsic Indicators to Intrinsic Quality",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向多智能体强化学习策略的信息论评估框架",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.01561v1",
+      "route": "202608/08/2608.01561v1-fedworld-scope-aware-federation-of-agent-world-models",
+      "title": "FedWorld: Scope-Aware Federation of Agent World Models",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "智能体世界模型的联邦学习以支撑规划与动作选择",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.00339v1",
+      "route": "202608/08/2608.00339v1-bayesian-and-motivated-reasoning-in-ai-agents",
+      "title": "Bayesian and Motivated Reasoning in AI Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "研究框架与先验信念如何影响AI智能体从相同证据得出结论，直接关联智能体决策",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.00805v1",
+      "route": "202608/08/2608.00805v1-agentslabench-evaluating-and-benchmarking-agentic-systems-under-resource-constraints",
+      "title": "AgentSLABench: Evaluating and Benchmarking Agentic Systems Under Resource Constraints",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "在实用应用环境中评估自主AI智能体的资源感知基准",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.01001v1",
+      "route": "202608/08/2608.01001v1-from-ai-technical-debt-to-agentic-technical-debt-a-systematic-mapping-of-root-causes-and-manifestations-in-agentic-ai-systems",
+      "title": "From AI Technical Debt to Agentic Technical Debt: A Systematic Mapping of Root Causes and Manifestations in Agentic AI Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "对智能体AI系统设计中技术债务根源与表现的系统性映射",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.03076v1",
+      "route": "202608/08/2608.03076v1-ai-agent-economics-can-autonomous-economic-behavior-emerge-among-ai-agents-under-minimal-external-conditions",
+      "title": "AI Agent Economics: Can Autonomous Economic Behavior Emerge among AI Agents under Minimal External Conditions?",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "在无预设策略的多智能体世界中考察AI智能体间涌现的经济协调行为",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.00966v1",
+      "route": "202608/08/2608.00966v1-agentag-attribution-of-ai-coding-agents-from-behavioral-fingerprints",
+      "title": "AgenTag: Attribution of AI Coding Agents from Behavioral Fingerprints",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "基于行为指纹的AI编码智能体归因",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.01464v1",
+      "route": "202608/08/2608.01464v1-computing-with-agentic-oracles",
+      "title": "Computing with Agentic Oracles",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "为目标导向的智能体预言机建模，分析自主智能体计算成本",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    },
+    {
+      "paper_id": "2608.06033v1",
+      "route": "202608/08/2608.06033v1-asge-rr-agentic-service-graph-embedding-with-revisable-reservations-for-dynamic-ai-agent-calls",
+      "title": "ASGE-RR: Agentic Service Graph Embedding with Revisable Reservations for Dynamic AI-Agent Calls",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "面向智能体服务图的在线网络控制与可修订预留",
+      "first_seen_at": "2026-08-08 20:59:25 UTC",
+      "updated_at": "2026-08-08 20:59:25 UTC"
+    }
+  ]
+}
