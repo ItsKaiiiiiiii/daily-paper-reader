@@ -1,0 +1,586 @@
+Title: Hybrid AI for Explainable and Accurate Conversational Agents in eGovernment
+
+URL Source: https://arxiv.org/pdf/2608.01346v1
+
+Published Time: Tue, 04 Aug 2026 01:48:29 GMT
+
+Number of Pages: 11
+
+Markdown Content:
+# Hybrid AI for Explainable and Accurate Conversational Agents in eGovernment 
+
+Ilias Chalkidis 
+
+ilias.chalkidis@di.ku.dk Copenhagen University Copenhagen, Denmark 
+
+Vlad Paul Cosma 
+
+vco@di.ku.dk Copenhagen University Copenhagen, Denmark 
+
+Søren Debois 
+
+debois@dcrsolutions.net DCR Solutions Copenhagen, Denmark 
+
+Daniel Hershcovich 
+
+dh@di.ku.dk Copenhagen University Copenhagen, Denmark 
+
+Thomas Hildebrandt 
+
+hilde@di.ku.dk Copenhagen University Copenhagen, Denmark 
+
+Hugo A. Lòpez 
+
+hulo@dtu.dk Technical University of Denmark Kgs. Lyngby, Denmark 
+
+Amogh Raina 
+
+amogh.raina@di.ku.dk Copenhagen University Copenhagen, Denmark 
+
+Konstantinos Varvoutas 
+
+konva@dtu.dk Technical University of Denmark Kgs. Lyngby, Denmark 
+
+Tilman Zuckmantel 
+
+tizu@di.ku.dk Copenhagen University Copenhagen, Denmark 
+
+Abstract 
+
+We present a so-called Conversational Hybrid AI (CHAI) architec-ture for building explainable and accurate conversational agents for eGovernment. We exemplify the architecture with a running prototype of a Covid-19 Chatbot based on a governmental guideline directed to citizens. We also describe an ongoing case on case man-agement for supplementary grants for students with disabilities. We use large language models (LLMs) as a bounded conversational interface to a rule-based (symbolic AI) controller that executes a logical model expressing the provisions and obligations of the law and/or guidelines. As logical modelling language we use Dynamic Condition Response (DCR) graphs, a symbolic declarative process-modeling language developed with the aim to be able to express both deontic, defeasible and temporal logic properties, making it suitable for expressing both the rules of the law and the steps of the legal case management processes. 
+
+CCS Concepts 
+
+• Software and its engineering → Software as a service or-chestration system ; • Human-centered computing → Natural language interfaces ; • Theory of computation → Modal and tem-poral logics ; • Social and professional topics ;
+
+Keywords 
+
+Conversational Interfaces, LLMs, Computational Law, Symbolic AI, DCR Graphs, eGovernment, Explainability 
+
+> Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than the author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org.
+> AIDA2J at ICAIL ’26, SMU, Singapore
+> © 2026 Copyright held by the owner/author(s). Publication rights licensed to ACM. ACM ISBN 978-x-xxxx-xxxx-x/YYYY/MM https://doi.org/XXXXXXX.XXXXXXX
+
+ACM Reference Format: 
+
+Ilias Chalkidis, Vlad Paul Cosma, Søren Debois, Daniel Hershcovich, Thomas Hildebrandt, Hugo A. Lòpez, Amogh Raina, Konstantinos Varvoutas, and Tilman Zuckmantel. 2026. Hybrid AI for Explainable and Accurate Conversational Agents in eGovernment. In Preprints for AIDA2J 2026. ACM, New York, NY, USA, 11 pages. https://doi.org/XXXXXXX.XXXXXXX 
+
+1 Introduction 
+
+Recent advances in the development of large language models (LLMs) and the rollout of commercial LLM-based chatbot assistants based on the retrieval augmented generation (RAG) architcture have raised high expectations for the potential impact of such tech-nologies across industries. However, several critical concerns have been raised about the trustworthiness of end-to-end LLM-based RAG solutions [32]. Such concerns dictate the conversational frame-work as a whole, from the interpretation of information provided to the models as user input (prompt), the retrieval of appropriate infor-mation from its parametric (compressed in the model parameters) and non-parametric (externally retrieved documents) memory, the execution of tasks based on both, and the dissemination of decisions and results in the form of natural text (response). While in many use cases, e.g., Q&A of common knowledge, code development assistance, end-to-end LLM-based solutions can be quite effective, if the user is aware of and ready to cope with the possible incorrect outputs, the situation is quite different in high-stakes scenarios, such as those commonly encountered in processes that involve the interpretation and execution of law, i.e., case management in the public sector. In this work, we propose an architecture for developing trans-parent, accurate and explainable conversational user interfaces for eGovernment. Concretely, we propose treating LLMs as a bounded conversational interface to a rule-based controller (similar to the proposal in [1]) executing logical rules expressed as Dynamic Con-dition Response (DCR) graphs [21, 23]. As illustrative examples we show a conversational agent for guiding citizens who have been in close contact with a person infected with Covid-19 and also show a small part of the coding of an official guideline for handling arXiv:2608.01346v1 [cs.CY] 2 Aug 2026 AIDA2J at ICAIL ’26, June 08–12, 2018, SMU, Singapore Hildebrandt et al. 
+
+applications for study grants for students with disabilities. The work presented in the paper is part of a national project Explain-able Hybrid AI for Computational Law and Accurate Legal Chatbots 
+
+(XHAILE) supported by Innovation Fund Denmark. 1.
+
+2 Background 2.1 The Promise and Peril of End-to-End LLMs 
+
+The application of LLMs to the legal domain has accelerated rapidly, driven by their ability to process unstructured legal text, draft docu-ments, and apparently answer queries with high fluency. The news that such general-purpose models seemed to outperform special-ized models on bar exams and statutory reasoning tasks [24, 37] spread rapidly around the world. 2 Consequently, there has been a push to explore if LLMs could be used to provide digital support to citizens as part of eGovernment services, e.g. by answering ques-tions to the law. Many approaches employ a Retrieval Augmented Generation (RAG) architecture [27], where a chatbot first searches in a curated database containing up-to-date law texts and guidelines and indexed by a vector embedding. The search results are then appended to the question and used as prompt to the LLM, which generates the answer. However, the probabilistic nature of the LLMs presents a funda-mental barrier to adoption in high-stakes public sector case man-agement. LLMs are prone to “hallucinations” [32] and generating plausible but factually incorrect legal citations or reasoning paths [9]. In legal contexts, where “correctness” is defined by strict ad-herence to statute and procedure, a probabilistic approximation of the law is insufficient. Furthermore, the “black box” nature of artifi-cial neural networks creates an explainability gap; an LLM cannot provide a verifiable trace of its reasoning, making it impossible to audit whether a decision was derived from the correct provision or merely synthesized from training data [26]. The combination of a technology that provides factually incorrect answers by design and the lack of explainability also constitutes a problem for accountabil-ity, since a municipality or case worker cannot reasonably be held accountable for an answer from a chatbot, if they are not presented with a valid legal reasoning supporting it. These limitations push us toward architectures where LLMs never act as autonomous decision-makers facing citizens, but in-stead serve as interfaces to symbolic, knowledge-based models, that are based on explicit legal rules and well-defined methods for inference of conclusions. 
+
+2.2 Symbolic Legal Reasoning 
+
+Before the LLM era, legal AI focused on symbolic approaches, encod-ing laws as explicit rules using formalisms like Logic Programming (e.g., Prolog, ASP) or semantic web ontologies [3, 40]. These systems offer what LLMs lack: perfect consistency, auditable provenance, and guaranteed adherence to encoded constraints. However, purely symbolic systems have historically failed to scale due to the “knowledge acquisition bottleneck.” Translating natural language statutes into formal code requires immense man-ual effort and often results in brittle systems that break when faced with ambiguous user input or edge cases not explicitly modeled 
+
+> 1https://di.ku.dk/english/research/research-projects/xhaile/
+> 2The bar exam result was later questioned [34].
+
+[41]. Moreover, traditional logic engines (e.g., SMT solvers) typi-cally represent the law as code that is difficult to understand as a whole by legal experts and treat the law as a set of static constraints to be satisfied. While powerful for checking consistency, they are less natural for modeling the temporal and defeasible logical [35] lifecycle of a case (e.g., “Step A must happen before Step B, but only if deadline C has not passed”). 
+
+2.3 The Neuro-Symbolic Convergence 
+
+To bridge the divide between artificial neural networks and sym-bolic models, the field is shifting toward Neuro-Symbolic AI , which we will refer to as hybrid AI , which combines statistical associations represented in the sub-symbolic parameters of artificial neural net-works and learned from data with the flexibility and logical rigor of symbolic systems [2, 15]. There are generally two overall ap-proaches to Hybrid-AI. In the first approach, the symbolic systems are used to feed, monitor, and guard the sub-symbolic, artificial neu-ral network models, which, however, still carry out the inference of the answer. In the second approach, the sub-symbolic models are used to feed, e.g., as translators of inputs from users or knowledge bases, the symbolic models, which carry out the inference of the answer. In the legal domain, recent frameworks such as LawGiBa [42] are using the second approach, to convert natural language queries into formal logic (e.g., translating a tax question into a Prolog query) [38, 42]. In this architecture, the LLM handles the “unstruc-tured” world (interpreting user intent, extracting facts), while a sym-bolic solver handles the “structured” world (executing the rules). We will also follow this approach, since the grounding in formal sym-bolic reasoning ensures that the final output is not a hallucination, but a natural language description of a valid logical proof derived by the symbolic engine. Yet, the challenge of modeling dynamic 
+
+administrative processes and defeasible logical rules as exemplified above remains distinct from static statutory interpretations. 
+
+2.4 From Static Logic to Dynamic Process Logic 
+
+While neuro-symbolic approaches are promising, we argue that the interaction between citizens and governmental institutions is not merely a static logical one. Public administration is governed by a mix of deadlines, sequences of required actions, and permissions and obligations that may change over time as the case unfolds. This calls for a combination of decision, temporal, and defeasible rules. Specifically, we advocate for Dynamic Condition Response (DCR) graphs , a declarative executable process modelling lan-guage with support for deontic and defeasible temporal constraints [21]. Unlike imperative process modelling notations such as BPMN [36], that rigidly describe the sequencing of possible steps as flow charts, DCR graphs model the rules defining only what is forbidden, or required, leaving everything else allowed. This aligns naturally with the nature of law, which often prescribes prohibitions and obligations, and proscribes conduct, rather than scripting it. The modelling language of DCR graphs was introduced in [21]. Since then, the language has been extended to be able to model processes with time [22], data and decisions [23], introducing data-dependent rules and embedded computations, and also integrating the Decision Model and Notation (DMN) standard [19]. The task of modelling Explainable and Accurate Conversational Agents for eGovernment AIDA2J at ICAIL ’26, June 08–12, 2018, SMU, Singapore 
+
+is also supported by commercial cloud-based solutions, including tools for simulation of processes and for assisting domain and legal experts in the mapping of text based process models, guidelines, and regulations into DCR graphs [30]. DCR graphs have been success-fully deployed in Danish public-sector case-management systems using a process engine web service , that is integrated into commercial platforms [33]. Fig. 5 illustrates the use of DCR graphs as compu-tational law. By using the highlighter mapping tool, a legal expert interacts with an NLP tool to highlight and translate the legal text onto a DCR graph [31]. Using the DCR execution engine, the DCR graph can be validated in the design tool and also be executed as a self-service form and in a case management tool such as WorkZone, thereby handling the case management process after the form has been submitted. However, after the introduction of publicly available chatbots that can interact fluently with users in natural language, there has been a push for introducing chatbots instead of (or in addition to) the classical interfacing with eGovernment services using web forms. Recent work has begun exploring the combination of the sub-symbolic LLMs and declarative, symbolic rules models, demon-strating that LLMs can effectively interpret user intents for the modelling and discovering of declarative models [12, 18, 28]. In the XHAILe research project we aim to utilize (extensions of) DCR Graphs as symbolic models of the law that can be used to accurately control the answers of conversational interfaces between citizens and the government. The graphs should first support and ultimately replace the current electronic guidelines and form filling, and second, support the subsequent case management, including feedback interactions, to result in an answer provided to the citizen, with possible enactments of the decisions involved in the process. 
+
+3 Example Guidelines 
+
+We consider the digitalization of two different guidelines. The first guideline, briefly described in Sec. 3.1, was published by the danish government during the Covid-19 pandemic and is directed towards citizens. The guideline describes what to do in case of close contact with another person who is infected by Covid-19. The second guide-line, briefly described in Sec. 3.2, describes what a case manager and a citizen should do when the citizen apply for supplementary study grants due to disabilities. 
+
+3.1 Covid-19 Close Contact 
+
+The Covid-19 guidelines for what citizens should do in case of close contact with another person who is infected were frequently updated during the Covid-19 pandemic and distributed as online documents. They are no longer available from the governmental agencies, but examples can still be found e.g. at the websites of some highschools 3. The guideline was essentially a decision tree based on questions like wether the citizen live with the infected person, and if not, have been in physical contact with the person and when the last time of contact was, as also shown in Fig. 7. Even though the guideline was written to be understandable by citizens, many felt uncertain about how to interpret the guideline and called on the telephone help line and sometimes waiting in a 
+
+> 3https://oerestadgym.dk/wp-content/uploads/2021/04/Naer-kontakt-Corona-.pdf
+
+Figure 1: A DCR Graph coding a sub process of the handling of Study Grants for students with dissabilities. 
+
+queue for hours. A DCR graph encoding the 11 page guideline can be found at the URL: https://dcrgraphs.net/Tool?id=2001183. 
+
+3.2 Grants for Students with Disabilities 
+
+The guideline for Grants for Students with Disabilities is published at the official website for danish law, retsinformation 4. It consists of 21 pages describing both the permissions and obligations of citizens and the government case worker during the handling of an application. For instance, the sub process described as a DCR graph in Fig. 1 is a coding of subsections 5.2 and 5.3, which describe that the agency may decide to ask the applicant for additional information and in doing that, they must give a deadline. It is written, that the citizen may ask for extension of the deadline, but if the citizen does not ask for extension and does not provide the additional information, then the agency will decide on the basis of available information, which often means that the application will be rejected. In other words, these two sections written on page 14 of a 21 page long document contain important information for the applicant, i.e. that not reacting on a request for additional information will likely lead to rejection.  
+
+> 4https://www.retsinformation.dk/eli/retsinfo/2025/9577 AIDA2J at ICAIL ’26, June 08–12, 2018, SMU, Singapore Hildebrandt et al.
+
+Figure 2: The DCR graph with updated marking after Ask applicant for additional medical information has been executed (shown by a checkmark in the top left corner) and 
+
+Decide deadline is a pending obligation (shown by an excla-mation mark in the top left corner). 
+
+4 Conversational Hybrid AI (CHAI) 
+
+In this section we will present our architecture and prototype for Conversational Hybrid AI (CHAI) combining rule based, symbolic AI based on DCR graphs and sub-symbolic AI based on large lan-guage models. We first in Sec. 4.1 give a brief introduction to DCR Graphs explained using a sub process of the Study Grant process as example. We then in Sec.4.2 briefly describe a subset of the Ap-plication Programming Interface (API) for managing and executing DCR graphs. In Sec. 4.3, Sec. 4.4 and Sec. 4.5 we then describe re-spectively the purely symbolic, purely sub-symbolic and the hybrid approach with pseudo-code for the implementation. 
+
+4.1 DCR Graphs by Example 
+
+At its core, a DCR graph describes a process declaratively as a graph where the nodes of the graph represent activities or events, and the edges of the graph represent logical constraints or reactions between the activities/events. A key novel aspect of DCR graphs is that they can also express the intermediate states of a process, i.e. what has already been observed, such as established facts or actions done in the management of a 
+
+Figure 3: Selecting the deadline in the simulation tool. 
+
+Figure 4: After selecting the deadline, the activities Send additional medical information and Deadline expired are both pending obligations within the deadline, but Deadline expired is not enabled before the deadline has been reached, because the condition to Decide deadline has a delay. Explainable and Accurate Conversational Agents for eGovernment AIDA2J at ICAIL ’26, June 08–12, 2018, SMU, Singapore Consolidation Act on Social Services        
+
+> An Act to consolidate the Act on Social Services, cf. Consolidation Act No. 150 of 16 February 2015, as amended by section 3 of Act No. 527 of 29 April 2015, section 1 of Act No. 529 of 29 April 2015, section 2 of Act No. 530 of 29 April 2015, section 1 of Act No. 649 of 18 May 2015 and Act No. 650 of 18 May 2015.
+> The amendment under section 1(ii) of Act No. 495 of 21 May 2013 on Amendment of Act on Social Services and Act on Legal Protection and Administration in Social Matters (Crime preventive social initiatives) has not been incorporated into this Consolidation Act since the Minister for Social Affairs and the Interior shall determine the effective date of this amendment, cf. section 3(2) of Act No. 495 of 21 May 2013.
+> The amendment under section 1(vi) of Act No. 722 of 25 June 2014 on Amendment of Act on Social Services, Act on Legal Protection and Administration in Social Matters and various other acts (Follow-up on evaluation of the Local Government Reform regarding the most highly specialised social area and the most highly specialised special educational, etc.) has not been incorporated into this Consolidation Act since the Minister for Social Affairs and the Interior shall determine the effective date of this amendment, cf. section 12(3) of Act No. 722 of 25 June 2014.
+> Title I Introduction
+> Part 1
+> Purposes and scope
+> 1. –(1) The objectives of this Act are (i) to offer advice and support so as to prevent social problems, (ii) to offer a number of general services designed to serve as preventive measures at the same time and (iii) to satisfy needs resulting from impaired physical or mental function or special social problems.
+> (2) The purpose of the assistance provided under this Act is to improve the capability of the individual recipient to be self-reliant, or to facilitate his/her daily life and enhance the quality of life.
+> (3) The assistance provided under this Act is based on the individual recipient’s personal responsibility and the
+> responsibility for his/her family. The assistance shall be provided on the basis of a specific individual assessment of the recipient's particular needs and circumstances and in consultation with the individual recipient. Any decision under the Act shall be made on the basis of professional and financial considerations.
+> 2. –(1) Any person who is lawfully staying in Denmark is entitled to assistance under this Act.
+> (2) The Minister for Social Affairs and the Interior shall lay down rules specifying any assistance that may continue to be provided to a person residing outside Denmark on a temporary basis and the conditions for the provision of such assistance.
+> (3) By agreement with other states or international organisations, the municipal council may grant assistance for long-term care or treatment etc. in Denmark to a person who has a special connection to Denmark, but who is not a Danish resident at the time of application. The same shall apply to the care or treatment etc. of a Danish resident taking up residence in another country to which he/she has a special connection.
+> Executive Order no. 1053 of 8 September 2015 (Current) Print-out date: 28 October 2015
+> Ministry: The Danish Ministry of Social Affairs and the Interior File number: Ministry of Social Affairs and the Interior, file no. 2015-4958 Later amendments to the regulation ACT No. 495 of 21 May 2013 ACT No. 722 of 25 June 2014
+
+Law text DCR graph generated from law (with human-in-the-loop) validated using simulation Digital Self-service form executing DCR Graph 
+
+Digital case management by executing DCR graph DCR execution engine service 
+
+Highlighted activities in law text mapped to nodes in DCR graph 
+
+Figure 5: Rules and activities in law texts can be highlighted by domain-experts and thereby translated to a DCR graph in the DCR no-code design tool (dcrsolutions.net), that can be simulated for validation and executed in a case management processes and digital self-service forms using the DCR execution engine service. 
+
+case, what is currently included or excluded from the logical rules, and what needs to happen/be established in the future. Moreover, the DCR graphs notation is equipped with a formal semantics that allows to computationally decide which activities can be done at a current state and update the state according to the rules of the graph, if the activity/observation is carried out. Figure 1 shows an example of a DCR graph 5 coding a sub process in the handling of Study Grants for students with disabilities. The graph has five activities, depicted as boxes and constituting the nodes of the graph. Each activity has activity label in the middle (e.g. Decide deadline and Ask for deadline extension ) and a role at the top (e.g. Case manager and Applicant ) describing who can execute the activity. An activity may also have a role written on dark background at the bottom, defining the role for who gets notified about the execution of the activity. For instance, the activity labeled Ask for deadline extension is carried out by the applicant and the case manager is notified that it is executed. The relations between the activities, constituting the edges of the graph, define the logical conditions and reactions for activities. The graph showcases the four core relations of DCR graphs. The (orange) relation with the hollow circle at the one end, for instance between the activity Decide deadline and the activity Ask for deadline extension is called a condition relation and denotes, that the activity at the end with the circle, in this case Ask for deadline extension has to be executed before the other activ-ity, in this case Decide deadline , can be executed. Similarly, the condition between Ask applicant for additional medical information and Decide deadline define that the case manager must ask for additional medical information before deciding on the deadline. Since Ask applicant for additional medical information is the only activity without a condition, it is the only activity that can be executed in the initial state, where no other activities have been executed so far. The (blue) relations with a 
+
+5in the design tool available at https://dcrsolutions.net 
+
+box at one end containing an exclamation mark, define that when the activity at the end of the box gets executed, it becomes an obligation eventually to execute the other activity. For instance, if the applicant ask for deadline extension, it becomes an obligation for the case manager eventually to decide a deadline again. (The case manager may in this case decide to give the same deadline, which amounts to not extending the deadline). Also, if the case manger asks the applicant for additional medical information it not only becomes possible to decide a deadline, it also becomes an obligation. A key feature of DCR graphs is that the nodes (activities) also carry information about the relevant information about the process execution so far, which is referred to as the marking of the graph. The marking records for each activity wether the activity 1) has been executed (and the time of the last execution), 2) is obliga-tory to execute in the future (possibly within a deadline), and 3) is currently included in, or excluded from, the graph. Excluded activi-ties are depicted with a dashed border, as in this case, the activity 
+
+Deadline expired . Excluded activities are ignored when evaluat-ing the rules of the graph and cannot be executed. Fig. 2 shows the marking of the graph after executing the activity Ask applicant for additional medical information as shown in the online simulation tool. Note that now three activites (shown with green border) are enabled for execution: The activity Ask applicant for additional medical information may be executed again, but also the activities Decide deadline and Send additional medical information are now enabled for execution. The activity Decide deadline is different than the others by being a (typed) data input activity. That is, when it is executed, a data value must be provided. In this case, the data is of type date and the value provided is the deadline, which is stored in the marking of the graph as an attribute (referred to by the id deadline ) of the node Decide deadline . The execution of the activity in the simulation tool is shown in Fig. 3 and the resulting graph is shown in Fig. 4. It is worth noting, that after executing Decide deadline ,AIDA2J at ICAIL ’26, June 08–12, 2018, SMU, Singapore Hildebrandt et al. 
+
+Figure 6: Example interaction between client and API show-ing the instantiation of an instance of a DCR graph and the execution of the activitiy Ask applicant for additional medical information .
+
+the activity Deadline expired becomes included (shown with a solid border) and a pending obligation (an exclamation mark in the top left corner). The inclusion is due to the (green) relation with a plus inside the square between Decide deadline and Deadline expired . The pending obligation is due to the (blue) relation with a box and a small clock inside. This relation is a response relation with a deadline, and in this case, the deadline is the one provided by the user when executing the Decide deadline activity. The activity Deadline expired has the role Robot , which means that it is an activity that is automatically executed by the engine if it is enabled and a pending obligation. However, note that the or-ange condition relation between Decide deadline and Deadline expired also has a little clock symbol inside the circle, and the relation also has the word deadline on top of it. This means that the condition requires Decide deadline to be executed and de-lay at least until deadline has been reached, before Deadline expired can be executed. Consequently, the robot will execute 
+
+Deadline expired exactly when deadline has been reached. The (red) relations with a minus sign inside a square denotes that if 
+
+Deadline expired is executed, then Send additional medical information or Ask for deadline extension gets excluded and cannot anymore be executed, and vice versa, if the Applicant executes either Send additional medical information or Ask for deadline extension before Deadline expired is executed by the engine, then the (red) relations with a minus sign inside a square denotes that Deadline expired again gets excluded (and is then not executed by the engine.) 
+
+4.2 API for DCR as a Service 
+
+To support programmatic process execution using DCR graphs, 
+
+DCR Solutions offers a RESTful API exposed through the DCR Active Repository [11]. The API provides functionality for retrieving and managing graph models, including both the creation and editing of process graphs but also their execution and analysis. In the present paper we focus on the subset of the API for execution of process graphs, which we will refer to as the execution API. This API involves creating and querying execution instances (referred to as simulation instances or just simulations) and executing enabled activities within a simulation instance. Graph models are stored in the repository and can be retrieved and managed through dedicated endpoints. To illustrate the con-cepts of user-API interaction, we show in Fig. 6 the instantiation of the graph from Fig. 1 and the subsequent evolution of this instance through the execution of an activity. First, the user instantiates a new instance of the DCR graph with identifier 201 by issuing a POST 
+
+request. The server starts a new instance and responds with the instance identifier 42. The user then proceeds to query the current state of the instance’s activities via a GET request, which returns a list of all activities and their current state. Next, the user executes the 
+
+Ask applicant for additional medical information activity by issuing a POST request. An activity is executed by posting its identifier along with an optional data value, upon which the engine updates the instance state accordingly. Finally, the user retrieves the updated activity state, now reflecting that activity 2 ( Decide deadline ) has become pending as a result of the execution. Once a simulation instance is complete, the API further provides access to ordered execution logs and final activity snapshots. The endpoints used in this paper are summarized in Table 1.            
+
+> Method & URI Description Graph Management
+> GET /api/graphs/{id} Retrieve graph def.
+> Simulation Lifecycle
+> POST /api /graphs /{ id }/ sims
+> |{z }
+> base
+> Create sim. instance
+> GET base /{simId}/events Get events and state
+> POST base /{simId}/events/{eID} Execute an activity
+> GET base /{simId}/log Get execution log
+
+Table 1: DCR Active Repository API endpoints used. 
+
+bbb An important point of having an openly described API for management of DCR graphs and execution of processes is that one can plug in other implementations of rule engines. Concretely, in ad-dition to the DCR design tool and engine used for the present paper, multiple open source DCR tools, such as DCR-JS and DCR4Py [6, 20], exist. 
+
+4.3 Purely Symbolic Interfaces 
+
+Rule-based conversational interfaces present questions as fixed in-terface elements and advance through a predefined process flow according to selected values. Every input is validated at entry, every branch is a predictable consequence of prior answers, and the deci-sion is fully traceable, where no interpretation step could introduce error [3]. However, the user is required to map their own situation onto the system’s categorical vocabulary before any input is possi-ble, with no opportunity to express themselves in natural language Explainable and Accurate Conversational Agents for eGovernment AIDA2J at ICAIL ’26, June 08–12, 2018, SMU, Singapore 
+
+Algorithm 1 Purely symbolic conversational interface driven by a rule-based process engine. 
+
+Require: Process graph 𝐺  
+
+> 1:
+
+𝑠𝑖𝑚 ← CreateSimulation (𝐺 ) 
+
+> 2:
+
+ℎ𝑖𝑠𝑡𝑜𝑟𝑦 ← ∅  
+
+> 3:
+
+𝑒𝑛𝑎𝑏𝑙𝑒𝑑 ← 𝑠𝑖𝑚. GetEnabledEvents ()  
+
+> 4:
+
+𝑝𝑒𝑛𝑑𝑖𝑛𝑔 ← 𝑠𝑖𝑚. GetPendingEvents ()  
+
+> 5:
+
+while 𝑝𝑒𝑛𝑑𝑖𝑛𝑔 ≠ ∅ do  
+
+> 6:
+
+if 𝑒𝑛𝑎𝑏𝑙𝑒𝑑 ∩ 𝑝𝑒𝑛𝑑𝑖𝑛𝑔 ≠ ∅ then  
+
+> 7:
+
+𝑒 ← First (𝑒𝑛𝑎𝑏𝑙𝑒𝑑 ∩ 𝑝𝑒𝑛𝑑𝑖𝑛𝑔 ) 
+
+> 8:
+
+else  
+
+> 9:
+
+𝑒 ← First (𝑒𝑛𝑎𝑏𝑙𝑒𝑑 ) ⊲ pending events exist but none are enabled yet  
+
+> 10:
+
+end if  
+
+> 11:
+
+present Question (𝑒 ) and Options (𝑒 ) to user  
+
+> 12:
+
+𝑣𝑎𝑙𝑢𝑒 ← user selects one of Options (𝑒 ) 
+
+> 13:
+
+𝑠𝑖𝑚. Execute (𝑒, 𝑣𝑎𝑙𝑢𝑒 ) 
+
+> 14:
+
+ℎ𝑖𝑠𝑡𝑜𝑟𝑦 ← ℎ𝑖𝑠𝑡𝑜𝑟𝑦 ∪ {( 𝑒, 𝑣𝑎𝑙𝑢𝑒 )}  
+
+> 15:
+
+𝑒𝑛𝑎𝑏𝑙𝑒𝑑 ← 𝑠𝑖𝑚. GetEnabledEvents ()  
+
+> 16:
+
+𝑝𝑒𝑛𝑑𝑖𝑛𝑔 ← 𝑠𝑖𝑚. GetPendingEvents ()  
+
+> 17:
+
+end while  
+
+> 18:
+
+return 𝑠𝑖𝑚. Conclusion () 
+
+or seek clarification from the interface. This imposes significant cognitive load, particularly for users with limited administrative literacy [7], and purely structured interfaces have been criticized in eGovernment studies for feeling like “filling out a form” technically complete but communicatively impoverished [14]. Algorithm 1 formalizes this interaction. The interface is driven by the rule-based DCR process engine that maintains the authori-tative state of the conversation: at any point, 𝑠𝑖𝑚 exposes the set of activities that are currently enabled (whose preconditions are satisfied), pending and included (required to occur) in the current state). Both sets are fetched explicitly at the start of each iteration and refreshed after every execution. At each turn, the system se-lects the first event from the intersection of enabled and pending activities, where possible; if pending events exist, but none are currently enabled, meaning their preconditions have not yet been satisfied, the system instead selects the first enabled event, allowing the user to make progress that may unlock the pending ones. The engine then executes the selected event with the chosen value, re-computing the enabled, pending, and excluded sets according to the graph’s constraint semantics. The loop terminates when no events remain pending, at which point the engine returns its authoritative conclusion. 6 There is no interpretation step, and the user has no mechanism to express anything that the predefined options do not anticipate. 
+
+4.4 Purely LLM-Based Approaches 
+
+Retrieval-Augmented Generation (RAG) architectures have become the dominant approach for building natural language administra-tive assistants: a retrieval component surfaces relevant passages 
+
+> 6A DCR graph may deadlock, if some event remain pending but no events are enabled. Core and timed DCR graphs with bounded deadlines and delays can be mapped to finite state Büchi-automata that can be analysed for deadlock freedom [21, 22].
+
+Algorithm 2 Purely LLM-based conversational interface using retrieval-augmented generation. 
+
+Require: Knowledge base 𝐾𝐵 , language model 𝑀  
+
+> 1:
+
+ℎ𝑖𝑠𝑡𝑜𝑟𝑦 ← ∅  
+
+> 2:
+
+repeat  
+
+> 3:
+
+𝑞 ← receive free-text utterance from user  
+
+> 4:
+
+𝑝𝑎𝑠𝑠𝑎𝑔𝑒𝑠 ← Retrieve (𝐾𝐵, 𝑞, ℎ𝑖𝑠𝑡𝑜𝑟𝑦 ) 
+
+> 5:
+
+𝑝𝑟𝑜𝑚𝑝𝑡 ← Compose (ℎ𝑖𝑠𝑡𝑜𝑟𝑦, 𝑞, 𝑝𝑎𝑠𝑠𝑎𝑔𝑒𝑠 ) 
+
+> 6:
+
+𝑟𝑒𝑠𝑝𝑜𝑛𝑠𝑒 ← 𝑀. Generate (𝑝𝑟𝑜𝑚𝑝𝑡 ) 
+
+> 7:
+
+present 𝑟𝑒𝑠𝑝𝑜𝑛𝑠𝑒 to user  
+
+> 8:
+
+ℎ𝑖𝑠𝑡𝑜𝑟𝑦 ← ℎ𝑖𝑠𝑡𝑜𝑟𝑦 ∪ {( 𝑞, 𝑟𝑒𝑠𝑝𝑜𝑛𝑠𝑒 )}  
+
+> 9:
+
+until 𝑟𝑒𝑠𝑝𝑜𝑛𝑠𝑒 contains a final outcome or user ends session  
+
+> 10:
+
+return ExtractOutcome (𝑟𝑒𝑠𝑝𝑜𝑛𝑠𝑒 )
+
+from a document corpus, which are provided as context to a gener-ative model [27]. RAG reduces hallucination compared with unaug-mented generation, but does not eliminate it. Hallucination occurs both when the relevant passage is not retrieved and when the correct passage is retrieved but the model extrapolates beyond it [32, 43]. Beyond factual accuracy, a further problem arises in legal contexts: even a factually correct response does not guarantee that the correct decision procedure was applied to the user’s specific facts. Legal eligibility determinations require correct instantiation of a rule’s preconditions in a specific order under specific defini-tional constraints, and RAG provides no formal guarantee that the model’s reasoning follows the legally prescribed framework [9, 26]. Algorithm 2 formalizes the corresponding RAG interaction loop. The system maintains a running ℎ𝑖𝑠𝑡𝑜𝑟𝑦 of past user utterances and model responses, but no structured representation of the un-derlying administrative process. At each turn, the user’s free-text query 𝑞 is used to retrieve the top-ranked passages from the knowl-edge base 𝐾𝐵 , with the conversation history available as additional context. The retrieved passages are composed with ℎ𝑖𝑠𝑡𝑜𝑟𝑦 and 𝑞 
+
+into a single prompt, which the language model 𝑀 uses to generate a response; the response is presented to the user and appended to ℎ𝑖𝑠𝑡𝑜𝑟𝑦 . After each response, the loop terminates if the model has produced a final answer (e.g., an eligibility decision); other-wise, it continues. Crucially, whether the loop terminates and what outcome it returns are both determined by the model or the user. 
+
+4.5 A Hybrid Neuro-Symbolic Architecture 
+
+The limitations of each approach suggest a principled division of labor: the symbolic component handles the closed-world part of the system, encoding rules, enforcing preconditions, maintaining state, and producing conclusions guaranteed to be consistent with the encoded logic, while the language model handles the open-ended part: interpreting natural language, resolving ambiguity, and extracting candidate values from free-form text [10, 15]. Fig. 7 shows a run of the prototype implementation of the hybrid architecture. Note that below each answer given by the user is written how the NLP component interpreted the answer, That is, "No way, it is my neighbor" is interpreted as a "No" answer to the question "Do you live with the infected?" .AIDA2J at ICAIL ’26, June 08–12, 2018, SMU, Singapore Hildebrandt et al. 
+
+The symbolic component, 𝑠𝑖𝑚 in Algorithm 3, is the same DCR execution engine introduced in Sec. 4.2: it maintains the authorita-tive process state, and its enabled set evolves with every submitted answer through the same constraint semantics [21]. What is new in the hybrid architecture is the language component (the NLP inter-preter 𝑁 ), which interprets free-text utterances and maps them to structured event–value pairs. In our prototype, 𝑁 is implemented using an NLP endpoint available in the DCR Active Repository’s execution API described in Sec. 4.2, though the architecture itself is agnostic to the choice of NLP component. The two components are connected by a middleware layer that manages per-session state and applies type-level validation to interpretation outputs; neither the symbolic engine nor the NLP component is aware of the other’s internal state. At each conversational turn, the middleware queries the simula-tion for its current state and selects the next event to present using the same procedure as Algorithm 1 (line 14). The user may either se-lect from a set of predefined options where applicable (lines 18–19) or respond in free-form natural language. When the user responds in natural language, the utterance is forwarded to the NLP service together with the current event context and all still-open events and their value domains (lines 22-23), providing the constrained hy-pothesis space of activities that are legally admissible at that point in the process. The service returns whether the utterance addressed the current question, the extracted canonical value, and optionally inferred values for other open events derivable from the same ut-terance. Inferred values are queued and presented to the user for explicit confirmation before the next fresh question is posed (lines 4-12), providing an explicit user-confirmation step before inferred values are committed to the engine. If a value, entered directly or confirmed from the inferred queue, is accepted, and it is submitted to the simulation engine via the Advance procedure, which recom-putes the enabled and pending sets, and the loop repeats. The user may at any point revisit a previously answered event through the Edit procedure; doing so resets the inferred queue, since values inferred against an earlier answer may no longer be justified once that answer changes. The primary residual risk concerns the interpretation step. Type-level validation is applied to every returned value (line 29 of Algo-rithm 3), i.e., integers, dates, and choice values are each checked against the event’s declared domain, but these checks do not op-erate at the semantic level. The NLP service does not return a confidence score alongside the extracted value, so no threshold can be applied to reject low-confidence interpretations before they enter the simulation. Instead, the loop falls back to a bounded retry that advances to the next pending event when exhausted (line 32 of Algorithm 3). The symbolic engine enforces correctness over all state transitions it receives, but it cannot reject a value that is correctly typed yet incorrectly inferred [17]. Process-level correct-ness is therefore preserved; the engine cannot be induced to skip an obligation or reach an unpermitted conclusion, but the process may reach a legitimate terminal state based on a factually incorrect value if the interpretation step misreads the user’s intent. However, these errors are mitigated in the prototype by allowing the user to edit a misinterpreted intent, by clicking at the small pencil to the left of the user-given answer shown in Fig. 7, i.e. ensuring a human-in-the-loop. 
+
+Algorithm 3 Hybrid architecture combining a DCR execution engine with an LLM-based interpretation layer. 
+
+Require: DCR graph 𝐺 , NLP interpreter 𝑁  
+
+> 1:
+
+𝑠𝑖𝑚 ← CreateSimulation (𝐺 ) 
+
+> 2:
+
+ℎ𝑖𝑠𝑡𝑜𝑟𝑦 ← ∅ ; 𝑖𝑛𝑓 𝑒𝑟𝑟𝑒𝑑 ← ∅  
+
+> 3:
+
+while 𝑠𝑖𝑚 has at least one pending event do  
+
+> 4:
+
+if 𝑖𝑛𝑓 𝑒𝑟𝑟𝑒𝑑 is non-empty then  
+
+> 5:
+
+(𝑒, 𝑣 ) ← Deqeue (𝑖𝑛𝑓 𝑒𝑟𝑟𝑒𝑑 ) 
+
+> 6:
+
+present Label (𝑒 ) = 𝑣 for confirmation  
+
+> 7:
+
+if user confirms then  
+
+> 8:
+
+Advance (𝑠𝑖𝑚, 𝑒, 𝑣, ℎ𝑖𝑠𝑡𝑜𝑟𝑦 ) 
+
+> 9:
+
+end if  
+
+> 10:
+
+continue ⊲ rejected events remain pending  
+
+> 11:
+
+end if  
+
+> 12:
+
+𝑒 ← SelectEvent (𝑠𝑖𝑚 ) ⊲ see Alg. 1, lines 6–9  
+
+> 13:
+
+present Question (𝑒 ) and Options (𝑒 ) 
+
+> 14:
+
+𝑖𝑛𝑝𝑢𝑡 ← UserResponse () ⊲ option, text, or edit  
+
+> 15:
+
+if 𝑖𝑛𝑝𝑢𝑡 is edit request for 𝑒 prev then  
+
+> 16:
+
+Edit (𝑠𝑖𝑚, 𝑒 prev , 𝑖𝑛𝑓 𝑒𝑟𝑟𝑒𝑑, ℎ𝑖𝑠𝑡𝑜𝑟𝑦 ) 
+
+> 17:
+
+continue  
+
+> 18:
+
+else if 𝑖𝑛𝑝𝑢𝑡 is option selection then  
+
+> 19:
+
+𝑣𝑎𝑙𝑢𝑒 ← 𝑖𝑛𝑝𝑢𝑡 . option  
+
+> 20:
+
+else ⊲ free-text path  
+
+> 21:
+
+𝑐𝑡𝑥 ← 𝑠𝑖𝑚. EnabledNotExecuted ()  
+
+> 22:
+
+𝑟 ← 𝑁 . Interpret (𝑒, 𝑖𝑛𝑝𝑢𝑡 . text , 𝑐𝑡𝑥 ) 
+
+> 23:
+
+Enqeue (𝑖𝑛𝑓 𝑒𝑟𝑟𝑒𝑑, 𝑟 . inferred_replies ) 
+
+> 24:
+
+if ¬𝑟 . reply or 𝑟 . value is empty then  
+
+> 25:
+
+request clarification; continue ⊲ bounded by 
+
+MAX _RETRIES  
+
+> 26:
+
+end if  
+
+> 27:
+
+𝑣𝑎𝑙𝑢𝑒 ← 𝑟 . value  
+
+> 28:
+
+end if  
+
+> 29:
+
+if ValidateType (𝑒, 𝑣𝑎𝑙𝑢𝑒 ) then  
+
+> 30:
+
+Advance (𝑠𝑖𝑚, 𝑒, 𝑣𝑎𝑙𝑢𝑒, ℎ𝑖𝑠𝑡𝑜𝑟𝑦 ) 
+
+> 31:
+
+else  
+
+> 32:
+
+request retry  
+
+> 33:
+
+end if  
+
+> 34:
+
+end while  
+
+> 35:
+
+return 𝑠𝑖𝑚. Conclusion ()  
+
+> 36:
+
+procedure Advance( 𝑠𝑖𝑚, 𝑒, 𝑣, ℎ𝑖𝑠𝑡𝑜𝑟𝑦 ) 
+
+> 37:
+
+𝑠𝑖𝑚. Execute (𝑒, 𝑣 ) ⊲ recompute enabled/pending/excluded  
+
+> 38:
+
+ℎ𝑖𝑠𝑡𝑜𝑟𝑦 ← ℎ𝑖𝑠𝑡𝑜𝑟𝑦 ∪ {( 𝑒, 𝑣 )}  
+
+> 39:
+
+end procedure  
+
+> 40:
+
+procedure Edit( 𝑠𝑖𝑚, 𝑒 prev , 𝑖𝑛𝑓 𝑒𝑟𝑟𝑒𝑑, ℎ𝑖𝑠𝑡𝑜𝑟𝑦 ) 
+
+> 41:
+
+if 𝑒 prev is enabled in 𝑠𝑖𝑚 then  
+
+> 42:
+
+𝑖𝑛𝑓 𝑒𝑟𝑟𝑒𝑑 ← ∅  
+
+> 43:
+
+re-present Question (𝑒 prev ) 
+
+> 44:
+
+𝑣 new ← UserResponse ()  
+
+> 45:
+
+if ValidateType (𝑒 prev , 𝑣 new ) then  
+
+> 46:
+
+Advance (𝑠𝑖𝑚, 𝑒 prev , 𝑣 new , ℎ𝑖𝑠𝑡𝑜𝑟𝑦 ) 
+
+> 47:
+
+end if  
+
+> 48:
+
+end if  
+
+> 49:
+
+end procedure Explainable and Accurate Conversational Agents for eGovernment AIDA2J at ICAIL ’26, June 08–12, 2018, SMU, Singapore 
+
+Figure 7: The Chatbot prototype applied to the DCR graph for the Covid-19 guideline (available for test at https://hackathon. dcrgraphs.net/?graphid=2001183). Note how the citizen has given free text answers and the Chatbot shows how it was interpreted as one of the well-typed possible answers. 
+
+5 Discussion and Future Work 5.1 DCR Graph Technology Extensions 
+
+The DCR technology and tools, still have some limitations that need to be addressed. Firstly, the DCR Graphs become difficult to comprehend and manage when they grow to more than 20-30 activities, although some grouping of activities that have rules in common can help reducing the complexity [8]. We therefore explore means to support more modularity and reuse in the DCR graph modelling language. Secondly, the current tools for mapping from text to graphs are based on early language models and only capture the most basic elements of DCR models. In particular, the translations need to deal systematically with the presence of ambiguities in the input texts [29]. It also completely ignores data and thus cannot identify any data-dependent rules. Moreover, they have been trained for the translation of business process descriptions and not legal texts. We will explore the usage of modern language models for the trans-lation (with human in the loop) of the computational parts of law texts and guidelines into DCR graphs. Finally, we plan to extend the DCR API to include also end-points for explanations, e.g. for a particular sequence of activities leading to a particular end-state or why an activity is not possible to be executed. 
+
+5.2 Testing the Chatbot 
+
+Moving beyond proof-of-concept, the chatbot must be evaluated on legally grounded use cases that reflect realistic interaction flows and decision-making under regulatory constraints. While evalu-ation on real user interactions would be ideal, privacy and legal considerations prevent their use in our setting. We therefore adopt a controlled simulation approach, constructing synthetic cases that approximate real administrative scenarios and validating them with domain experts (case workers) in the relevant legal areas (e.g., COVID-19 regulation, student disability grants). On this basis, we aim to develop a legally informed benchmark consisting of a large collection of curated synthetic cases, each reviewed and refined by case workers to ensure fidelity to real-world practice. These cases will support the simulation of complete interaction trajectories, covering both citizen inputs and the corre-sponding case handling logic. This enables the design of a structured human evaluation protocol targeting (i) legal correctness of the outcome with respect to the underlying rule-based model, (ii) faith-fulness in interpreting user-provided information, (iii) clarity and appropriateness of the interaction, and (iv) procedural efficiency. To complement expert evaluation and enable scalability, we will develop an automated evaluation protocol based on LLM-as-a-judge. Importantly, these automated assessments will be calibrated against expert annotations to ensure alignment with legal reasoning stan-dards. Once validated, the protocol can be applied at scale to sys-tematically analyze performance across the benchmark, identifying strengths, failure modes, and corner cases. This staged approach allows us to defer testing with real case workers in operational set-tings until sufficient reliability has been established through legally grounded benchmarking. 
+
+5.3 Cognitive Implication for Case Workers 
+
+Case workers play a fundamental role in managing and resolving cases. They hold critical expertise in assessing and addressing sev-eral issues emerging while handling new cases, coming from their long-term experience practicing. While AI technologies bring the promise of efficiency, consistency, and cost reduction, as a remedy to overwhelmed bureaucratic systems, there are also considerable threats if such technologies are deployed without appropriate con-siderations. A prominent threat for knowledge workers, such as case workers, is the potential deskilling [13], i.e., loss of skills, as a result of severe cognitive offloading [39] to AI technologies, such as contemporary conversational assistants. Chalkidis and Søgaard [5] surveys the developing literature [4, 16, 25] around this critical topic, manifesting the negative effects of irresponsible AI adoption related to cognitive decline, such as the atrophy of critical thinking. Drawing parallels with the literature, we can imagine that, if not designed appropriately, a highly capable AI conversational agent deployed to assist case workers can, in time, lead to over-reliance on the system’s actions and decisions. The case workers may incre-mentally offload agency over critical tasks, jeopardizing their skills and knowledge due to a lack of personal practice and involvement. We plan to take appropriate consideration in the overall system design to mitigate such threats. Bearing the cognitive aspects in mind, chatbots have the poten-tial to unify all information retrieval tasks under one user interface with the help of RAG. We aim to develop additional, conservative, extensions of Algorithm 3. One such extension, aimed at case work-ers, will reintegrate the Knowledge base (KB) from Algorithm 2 as pairs of DCR Graphs and legal documents. This enables users to retrieve the most relevant DCR Graph and legal text from a given free-text utterance. AIDA2J at ICAIL ’26, June 08–12, 2018, SMU, Singapore Hildebrandt et al. 
+
+6 Conclusion 
+
+We have presented an approach to build accurate so-called Con-versational Hybrid AI (CHAI) chatbots by combining a rule based, symbolic AI given as DCR graphs accessible via an API, and an LLM (also accessible via an API). The key idea is to use the symbolic rule model to control the conversation, i.e. the enabled questions and valid types of answers, and then use the LLM to allow the user to provide free natural language texts as input. The past experience of modelling rules in guidelines and laws as DCR graphs and the running Conversational Hybrid AI Chatbot prototype demonstrates that the idea is indeed possible in practice. 
+
+Acknowledgments 
+
+This work is supported by Innovation Fund Denmark. 
+
+AI Use Statement 
+
+The authors used OpenAI ChatGPT during preparation of this manuscript to assist with outlining the paper, drafting and revising selected passages, improving clarity and structure, and converting author-provided notes into L ATEX prose. The tool was used as a writing and editing aid, not as a source of empirical results, legal authority, or scientific claims. All substantive ideas, architectural choices, examples, and claims were provided, checked, and revised by the authors. The authors independently verified the technical descriptions, legal framing, citations, and consistency with the XHAILe project materials, and take full responsibility for the final content of the paper. 
+
+References 
+
+[1] Peter Belcak, Greg Heinrich, Shizhe Diao, Yonggan Fu, Xin Dong, Saurav Muralidharan, Yingyan Celine Lin, and Pavlo Molchanov. 2025. Small Lan-guage Models are the Future of Agentic AI. arXiv:2506.02153 [cs.AI] https: //arxiv.org/abs/2506.02153 [2] Vaishak Belle. 2025. On the relevance of logic for artificial intelligence, and the promise of neurosymbolic learning. Neurosymbolic Artificial Intelligence 1 (2025). [3] Trevor Bench-Capon, Michał Araszkiewicz, Kevin Ashley, et al. 2012. A History of AI and Law in 50 Papers: 25 Years of the International Conference on AI and Law. Artificial Intelligence and Law 20, 3 (2012), 215–319. [4] Krzysztof Budzyń, Marcin Romańczyk, Diana Kitala, Paweł Kołodziej, Marek Bugajski, Hans O Adami, Johannes Blom, Marek Buszkiewicz, Natalie Halvorsen, Cesare Hassan, et al. 2025. Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy: a multicentre, observational study. The Lancet Gastroenterology & Hepatology (2025). [5] Ilias Chalkidis and Anders Søgaard. 2026. Brainrot: Deskilling and Addiction are Overlooked AI Risks. In Proceedings of the 2026 ACM Conference on Fairness, Accountability, and Transparency (Montreal, QC, Canada) (FAccT ’26) . Association for Computing Machinery, New York, NY, USA. [6] Axel KF Christfort and Hugo A. López. 2025. DCR-JS: An Online Environment for Declarative Process Mining. In BPM . CEUR-WS, 256–263. [7] María Emilia Cortés-Cediel, Iván Cantador, Julio Viejo-Tardío, and Manuel Pedro Rodríguez Bolívar. 2024. Trends and Challenges of e-Government Chatbots: Advances in Exploring Open Government Data and Citizen Participation Content. 
+
+Government Information Quarterly 41, 1 (2024). doi:10.1016/j.giq.2023.101892 [8] Vlad Paul Cosma, Axel Kjeld Fjelrad Christfort, Thomas T. Hildebrandt, Xixi Lu, Hajo A. Reijers, and Tijs Slaats. 2024. Improving Simplicity by Discovering Nested Groups in Declarative Models. In Advanced Information Systems Engineering ,Giancarlo Guizzardi, Flavia Santoro, Haralambos Mouratidis, and Pnina Soffer (Eds.). Springer Nature Switzerland, Cham, 440–455. [9] Matthew Dahl, Varvara Murems, Arjun Krishnan, et al. 2024. Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models. Journal of Legal Analysis (2024). Preprint available at arXiv:2401.01301. [10] Artur d’Avila Garcez and Luís C. Lamb. 2023. Neurosymbolic AI: The 3rd Wave. 
+
+Artificial Intelligence Review 56 (2023), 12387–12406. doi:10.1007/s10462-023-10448-w [11] DCR Solutions A/S. 2024. DCR Active Repository. https://documentation.dcr. design/documentation/dcr-active-repository/ Accessed: 2026-04-29. [12] Søren Debois and Tijs Slaats. 2024. Large Language Models as User Interface mechanisms for declarative process modelling. In Generative AI for Process Mining (GenAI4PM) Workshop .[13] Avigail Ferdman. 2025. AI deskilling is a structural problem. AI & SOCIETY 
+
+(2025), 1–13. [14] Asbjørn Følstad, Marita Skjuve, Ida Kristine Frigaard Haugeland, and Petter Bae Brandtzaeg. 2024. The Impact of Chatbots on Public Service Provision: A Quali-tative Interview Study with Citizens and Public Service Providers. Government Information Quarterly 41, 2 (2024), 101925. doi:10.1016/j.giq.2024.101925 [15] Artur d’Avila Garcez and Luis C Lamb. 2023. Neurosymbolic AI: The 3rd Wave. 
+
+Artificial Intelligence Review (2023). [16] Michael Gerlich. 2025. AI tools in society: Impacts on cognitive offloading and the future of critical thinking. Societies 15, 1 (2025), 6. [17] Hui Wen Goh and Jonas Mueller. 2025. Real-Time Trustworthiness Scoring for LLM Structured Outputs and Data Extraction. arXiv preprint arXiv:2603.18014 
+
+(2025). https://arxiv.org/abs/2603.18014 [18] M. Grohs, V. Fionda, et al. 2025. Are Large Language Models Fluent in Declarative Process Mining?. In Proceedings of the 34th International Joint Conference on Artificial Intelligence (IJCAI-25) .[19] Object Management Group. 2020. Decision Model and Notation V 1.3. (2020). https://www.omg.org/spec/DMN/1.3/ [20] {Simon V.H.} Hermansen, Ragnar Jónsson, {Jonas L.} Kjeldsen, Tijs Slaats, {Vlad Paul} Cosma, and {Hugo A.} López. 2024. DCR4Py: A PM4Py Library Extension for Declarative Process Mining in Python. In ICPM Demo .[21] Thomas T Hildebrandt and Raghava Rao Mukkamala. 2011. Declarative event-based workflow as distributed dynamic condition response graphs. arXiv preprint arXiv:1110.4161 (2011). [22] Thomas T. Hildebrandt, Raghava Rao Mukkamala, Tijs Slaats, and Francesco Zanitti. 2013. Contracts for cross-organizational workflows as timed Dynamic Condition Response Graphs. J. Log. Algebr. Program. 82, 5-7 (2013), 164–185. [23] Thomas T Hildebrandt, Håkon Normann, Morten Marquard, Søren Debois, and Tijs Slaats. 2021. Decision modelling in timed dynamic condition response graphs with data. In International Conference on Business Process Management . Springer. [24] Daniel Martin Katz, Michael James Bommarito, Shang Gao, and Pablo Arredondo. 2024. GPT-4 Passes the Bar Exam. SSRN Electronic Journal (2024). [25] Nataliya Kosmyna, Eugene Hauptmann, Ye Tong Yuan, Jessica Situ, Xian-Hao Liao, Ashly Vivian Beresnitzky, Iris Braunstein, and Pattie Maes. 2025. Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task. arXiv:2506.08872 [cs.AI] [26] Stanford Legal Design Lab. 2025. Auditability in Legal AI: A Design Perspective. In Proceedings of the 2025 Conference on AI and Law (ICAIL) .[27] Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela. 2021. Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. https://arxiv.org/abs/2005.11401 [28] Jonas Lindner and Hugo A. López. 2025. Discovering Declarative Processes in Textual Descriptions using Large Language Models. In The Second International Workshop on Generative AI for Process Mining . Springer. [29] Hugo A López, BingKun Feng, Jonas Lindner, Marco Franceschetti, and Amine Abbad-Andaloussi. 2025. Ambiguity Detection in Business Process Descriptions: An Evidence and an Automated Approach. In International Conference on Business Process Management . Springer, 379–396. [30] Hugo A. López, Thomas Hildebrandt, Søren Debois, and Morten Marquard. 2018. The Process Highlighter: From Texts to Declarative Processes and Back. CEUR Workshop Proceedings , 66–70. Joint Proceedings of the BIR 2018 Short Papers, Workshops and Doctoral Consortium co-located with 17th International Confer-ence Perspectives in Business Informatics Research (BIR 2018). [31] Hugo A López, Morten Marquard, Lukas Muttenthaler, and Rasmus Strømsted. 2019. Assisted declarative process creation from natural language descriptions. In 2019 IEEE 23rd International Enterprise Distributed Object Computing Workshop (EDOCW) . IEEE, 96–99. [32] Varun Magesh, Faiz Surani, Matthew Dahl, Mirac Suzgun, Christopher D. Man-ning, and Daniel E. Ho. 2025. Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools. Journal of Empirical Legal Studies 22, 2 (2025), 216–242. arXiv:https://onlinelibrary.wiley.com/doi/pdf/10.1111/jels.12413 doi:10.1111/jels.12413 [33] Morten Marquard and Tijs Slaats. 2017. From Law to DCR Graphs: A Case Study in Digitizing Public Administration. In Business Process Management Workshops .Springer. [34] E. Martínez. 2025. Re-evaluating GPT-4’s bar exam performance. Artificial Intelligence and Law 33 (2025), 581–604. doi.org/10.1007/s10506-024-09396-9 [35] Donald Nute. 2003. Defeasible Logic. In Web Knowledge Management and Decision Support , Oskar Bartenstein, Ulrich Geske, Markus Hannebauer, and Osamu Yoshie (Eds.). Springer Berlin Heidelberg, Berlin, Heidelberg, 151–169. [36] Object Management Group. 2013. Business Process Model and Notation (BPMN), Version 2.0.2 . Technical Report. Object Management Group. https://www.omg. org/spec/BPMN/2.0.2 Formal Version: 2013-12-09. Explainable and Accurate Conversational Agents for eGovernment AIDA2J at ICAIL ’26, June 08–12, 2018, SMU, Singapore 
+
+[37] OpenAI. 2024. GPT-4 Technical Report . Technical Report. OpenAI. https: //arxiv.org/abs/2303.08774 [38] Liangming Pan, Alon Albalak, Xinyi Wang, and William Yang Wang. 2023. Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning. In Findings of the Association for Computational Linguistics: EMNLP 2023 . 3806–3824. [39] Evan F Risko and Sam J Gilbert. 2016. Cognitive offloading. Trends in cognitive sciences 20, 9 (2016), 676–688. [40] Ken Satoh, K. Asai, et al. 2010. Logic Programming for Legal reasoning. In Logic Programming, 26th International Conference .[41] Richard Susskind. 2019. Online Courts and the Future of Justice . Oxford University Press. [42] Imperial College London Team. 2024. LawGiBa: Combining GPT, Knowledge Bases, and Logic Programming in a Legal Assistance System. In Proceedings of the 2024 International Conference on Legal Knowledge and Information Systems .[43] S M Towhidul Islam Tonmoy, S M Mehedi Zaman, Vinija Jain, Anku Rani, Usman Bhatt, and Asif Ekbal. 2024. A Comprehensive Survey of Hallucination Mitigation Techniques in Large Language Models. arXiv:2401.01313 (2024).

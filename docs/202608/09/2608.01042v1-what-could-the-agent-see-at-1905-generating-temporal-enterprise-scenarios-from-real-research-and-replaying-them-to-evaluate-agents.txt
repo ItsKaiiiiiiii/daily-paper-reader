@@ -1,0 +1,194 @@
+Title: What Could the Agent See at 19:05? Generating Temporal Enterprise Scenarios from Real Research and Replaying Them to Evaluate Agents
+
+URL Source: https://arxiv.org/pdf/2608.01042v1
+
+Published Time: Tue, 04 Aug 2026 01:22:52 GMT
+
+Number of Pages: 6
+
+Markdown Content:
+# What Could the Agent See at 19:05? Generating Temporal Enterprise Scenarios from Real Research and Replaying Them to Evaluate Agents 
+
+# Tezan Sahu 
+
+Microsoft Hyderabad, India tezansahu@microsoft.com 
+
+# Himani Arora 
+
+Microsoft Hyderabad, India hiarora@microsoft.com 
+
+## Abstract 
+
+Enterprise AI agents act across many apps whose data changes con-tinuously, so an answer is correct only relative to what data existed 
+
+and who could see it at the moment it was asked. Offline evaluation today grades against a single static snapshot —effectively the end of the episode—so it can only evaluate one situation, the final one, even though every earlier moment of the episode is a different situ-ation that invites its own realistic questions with its own correct answers. Recreating each of those moments as a separate snapshot would mean re-provisioning a whole tenant per instant, which is prohibitively costly; and even a single snapshot leaks future state hidden inside records and cannot represent the multi-app, time-ordered way real work happens. Our system closes two gaps at once: it generates a realistic, persona-driven, temporally-evolving enterprise world from real research, and replays that world at any chosen moment to evaluate any pluggable agent. A schema-inferred temporal description drives a deterministic-plus-LLM rebuild of each record’s past state; because the queryable moments are finite, all rebuilds are precomputed into a compact difference cache, mak-ing evaluation a fast, reproducible lookup with no model in the path. We describe the design, an architecture spanning both flows, and early experience evaluating enterprise agents. 
+
+## 1 When the Evaluator Cannot Rewind 
+
+Software is beginning to do open-ended knowledge work on peo-ple’s behalf. A new class of AI agents —like M365 Copilot [1], to-gether with the cross-app skills , and role-specific plugins now shipped by every major vendor [2–4]—reads a person’s email, chat, files, and connected business systems (an issue tracker, a code repos-itory, an incident tool) and acts across all of them to carry out a task. Such an agent is only as valuable as it is trustworthy, and the competitive question for these products is not whether they can be built but whether that trust can be established before release. Trust is earned through evaluation: the agent is replayed over realistic situations and its answers are graded against what was actually correct. Evaluation is the gate—the more rigorous it is, the better the agent that survives it. This is, in software-engineering terms, acceptance and regres-sion evaluation, but of an unusually hard kind. The system under evaluation is nondeterministic (a language model), and its “input” is not a request payload but an entire world of evolving, access-controlled enterprise data that the agent reads and writes through many apps. Producing faithful evaluation data for such a system is the central difficulty—and the way the industry does it today does not hold up. 
+
+The static-snapshot trap. Standard practice stands up a syn-thetic tenant (a sandbox of fabricated users and data), freezes it into one snapshot , and grades the agent against that single state [5]. But real work is not a state; it is a story that unfolds over hours. Each moment of that story is a different situation —mid-triage, fix-under-review, just-resolved—and each situation invites its own realistic questions with its own correct answers, asked by whichever person is involved. A single snapshot captures exactly one situation, the last, so every other situation the episode passed through is simply not evaluable, and an agent is graded as though every story were already over. One could imagine standing up a fresh snapshot for each moment worth evaluating, but that means re-provisioning a tenant, its connectors, and its mock data for every instant—dozens of near-identical tenants per episode—which is prohibitively expen-sive. Consider a concrete episode (the kind Fig. 2 builds). A payments service degrades; over two hours an incident is opened, an on-call engineer acknowledges it, a configuration change is suspected, a fix is opened as a pull request and merged, and the incident is finally resolved with a written root cause. At 19:05—twenty-three minutes in, mid-triage—the situation is its own: the engineer naturally asks the agent, “what is the status of the incident I’m leading, and what’s on the timeline so far?” The true answer then is acknowledged , three timeline entries, no root cause yet. But the tenant snapshot is the 
+
+end of the story, so the agent is graded against a world where the incident is already resolved , with a full timeline and root cause (Table 1). The agent that correctly says “acknowledged” is marked 
+
+wrong ; the one that parrots the resolved end-state is marked right .Evaluation rewards exactly the wrong behavior—and the entire span of mid-episode situations, each with different right answers, never gets evaluated at all. 
+
+Table 1: The same incident record at 19:05 (the truth) versus in the end-state snapshot the agent is actually graded against. The snapshot rewards the wrong answer. 
+
+Field Truth at 19:05 End-state snapshot 
+
+status acknowledged resolved timeline 3 entries 10 entries root cause (none yet) full text resolved-at — 20:55 
+
+Four failures follow from this one root cause, and together they make snapshot evaluation untrustworthy. (i) Only the final situa-tion can be evaluated. A snapshot is one state, so the many distinct arXiv:2608.01042v1 [cs.SE] 2 Aug 2026 Tezan Sahu and Himani Arora 
+
+Figure 1: System architecture, spanning both flows. Generation mines real research into grounded scenario seeds and expands them, under user-approval gates, into personas, a narrative arc, a timestamped timeline, and cross-referenced artifacts across every app—the full, all-time ground truth—while temporal augmentation infers each app’s temporal behavior from its schema and a precompute step stores point-in-time differences. Evaluation reconstructs the access-scoped world at a chosen moment by cache lookup and merge (no model in the path), runs any agent through a uniform adapter, and grades it against machine-generated, moment-anchored expectations. 
+
+situations an episode passes through—each with its own natural questions and answers—collapse to just the last one, and the rich 
+
+middle , where most real questions are asked, is unreachable. (ii) The future leaks from inside records. A natural patch is to drop records “newer than 𝑡 ,” but state lives inside records too: a ticket accrues later comments, an incident accrues a resolution, a pull request eventually merges. Keep the record but fail to trim its interior, and tomorrow’s facts leak into today. (iii) Hand-built ground truth does not scale. Authoring even one believable, internally consistent, multi-app episode—and its expected answers—takes a skilled per-son days , and must be redone for every person, moment, and app, so coverage stays tiny. (iv) An entire class of agents cannot be evalu-ated. Increasingly, agents are always-on : their value is to react to a change —“flag me when a dependency I rely on slips.” Evaluating that requires placing the agent at the instant just after the change; a snapshot, showing only the final state, makes it impossible in principle. (Resetting a system to a clean baseline is well understood; what is missing is stepping back into the middle of a multi-app world.) The remedy needs two things no current harness provides to-gether: a way to manufacture a realistic, time-evolving, multi-app world cheaply (Flow 1), and a way to step into it at any instant, as any person, to evaluate an agent there (Flow 2). The system is built around exactly these two flows (Fig. 1). 
+
+## 2 Flow 1: Manufacturing a Believable, Evolving World 
+
+An evaluation world is only as useful as it is believable; an agent that aces a contrived world tells you nothing. The expensive part is 
+
+believability —a coherent episode in which people, conversations, tickets, and code changes reference one another consistently over time . The system makes that cheap two ways: it grounds the world in real material, and it generates it in an order that forces coherence (Fig. 2). 
+
+Research grounding and seed mining (Fig. 1). The system in-gests a corpus of real artifacts a product team already has—interview notes, support tickets, incident write-ups, dissatisfaction reports— and mines recurring situations across them into a handful of con-crete scenario seeds . Grounding in real material keeps the world representative of genuine pain rather than an author’s imagination, and mining across documents matters because the situations worth evaluating usually appear as a pattern spanning several sources, not any one. What Could the Agent See at 19:05? Generating Temporal Enterprise Scenarios from Real Research and Replaying Them to Evaluate Agents 
+
+Figure 2: Flow 1 (scenario generation): real-world research is mined into grounded, temporally-rich seeds, then expanded under approval gates into personas, a narrative arc, a temporal timeline of events across apps, and full-fidelity synthetic artifacts—a self-contained, replayable scenario package. Gated scenario generation. A seed is expanded one reviewed step at a time, and the order is a deliberate design choice, not convenience: personas first (who is involved, and crucially what each is allowed to see ), then a narrative arc (the cause-and-effect spine—what triggers what, and the turning points), then a timeline 
+
+placing each beat at a concrete timestamp across apps, and finally the artifacts (emails, chat threads, tickets, pull requests, documents) those events produce. Jumping straight from people to a timeline, skipping the arc, reliably yields a bag of unrelated events no human would mistake for a real episode—the arc is the connective tissue. The result is the Ground-Truth World of Fig. 1—one omniscient record of the episode in which every artifact is stamped with the time it came into being and the set of personas permitted to see it, so time and visibility are first-class from the very first byte. 
+
+Connector temporal augmentation. Apps differ in how their records age. To onboard one—or a whole shipped package of skills, plugins, and connectors—the system reads only its data schema and infers a temporal description : which fields carry time, which change, which become meaningful only after a prerequisite (a “resolved-at” time means nothing until resolution), which lists grow, and which are lifecycle states (a “status”). It does this with cheap determin-istic checks (spotting timestamp-typed fields and nested lists by their shape) plus a language model for the judgment calls. A new connector thus goes from “just a schema” to “replayable through time” in minutes, with no temporal-modeling expertise. As a con-crete example, an incident record carries deterministic fields like a 
+
+timeline[] that only grows and a resolved_at that is empty until resolution, alongside a semantic status that must be derived (trig-gered → acknowledged → resolved) and a free-text description 
+
+that may have to be reworded (Appendix A’s incident schema illus-trates this). 
+
+## 3 Flow 2: Stepping Into the World at Any Instant 
+
+The hard problem of replay is simply stated: given the omniscient end-state and a target instant 𝑡 , reconstruct each record exactly as it stood at 𝑡 —undoing everything that had not happened yet, including changes buried inside the record—and then show a given person only what they were allowed to see. 
+
+A two-stage rebuild. Let the episode’s events occur at instants 
+
+𝑡 1 < 𝑡 2 < · · · < 𝑡 𝑛 . A record 𝑎 has a birth time 𝜏 (𝑎 ), a set acc (𝑎 ) of people allowed to see it, and a final state 𝑎 ∗. Rebuilding 𝑎 as of 𝑡 ,written 𝜌 (𝑎, 𝑡 ), runs in two stages, 
+
+𝜌 (𝑎, 𝑡 ) = Λ 𝐷 (𝑎, 𝑡 ), 𝑡 .
+
+The first stage 𝐷 is deterministic and cheap : it drops sub-items dated after 𝑡 (later comments, later timeline entries), blanks any value whose own timestamp is in the future, blanks values that only make sense after a now-blanked prerequisite (the duration of a still-unresolved incident), and caps “last-updated” to 𝑡 . The second stage 
+
+Λ is interpretive and used sparingly : it runs only when 𝐷 actually changed the record, and only for the few fields whose past value cannot be read off the clock—a lifecycle status (was the incident “triggered” or “acknowledged” at 𝑡 ?), or free text that mentions later events and must be reworded to what was known at 𝑡 . This split is the key engineering decision: it keeps the bulk of the work exact, fast, and rule-based, and spends a language model only where judgment is genuinely unavoidable. 
+
+Reconstruction precompute. A language model in stage Λ
+
+is both slow and nondeterministic —fatal if it runs while grading ,because scores would wobble run to run. The decisive observation is that the only instants anyone will ever query are the finite 𝑡 1, . . . , 𝑡 𝑛 
+
+on the timeline. So this stage computes every rebuild once , ahead of time, and stores only its small difference from the final state—the 
+
+Precomputed Point-in-Time Differences of Fig. 1, 
+
+𝛿 (𝑎, 𝑡 𝑖 ) = 𝜌 (𝑎, 𝑡 𝑖 ) ⊖ 𝑎 ∗,Tezan Sahu and Himani Arora 
+
+Figure 3: Flow 2 (temporally-aware evaluation): from the replayable scenario package, evaluation questions and expectations are generated and anchored to a person and an instant; for each, the world is reconstructed at that instant by cache lookup and merge, the agent under evaluation is run through the adapter, and its answer is graded against the expectations to produce a scorecard. 
+
+tiny because most of a record never changes. Identical differences are shared, and a fingerprint of the ground truth invalidates the cache if the world is ever edited. 
+
+Replay is a lookup. At grading time, the Point-in-Time Recon-struction Engine (Fig. 1) assembles the world person 𝑃 saw at 𝑡 by pure data operations—no model involved: 
+
+Σ(𝑡, 𝑃 ) = { 𝑎 ∗ ⊕ 𝛿 (𝑎, 𝑡 ) : 𝜏 (𝑎 ) ≤ 𝑡, 𝑃 ∈ acc (𝑎 ) } 
+
+—take every record that existed by 𝑡 , merge its precomputed differ-ence, and keep only those 𝑃 may see. Because nothing nondeter-ministic runs here, two evaluation runs over the same world are 
+
+byte-identical : reproducibility, the bedrock of regression evaluation, is guaranteed by construction rather than hoped for. 
+
+Grading any agent. Because the generator is omniscient, Query and Expectation Generation writes the evaluation questions and their expected answers directly—each tied to a person and instant— so grading needs no separate “what was the right answer?” lookup. The Agent-Agnostic Adapter then hands the rebuilt world and the time- and visibility-scoped app tools [12] to whatever agent is un-der evaluation—a Copilot, a declarative agent, an Azure AI Foundry agent [5], or a bespoke app—and records its reply; an Evaluator 
+
+grades that reply against the expected answers. Everything down-stream is shared, so swapping the agent is a one-line change, and two competing agents can be judged on the identical evolving world. Figure 3 summarizes this flow end-to-end. 
+
+## 4 Design Principles and Early Lessons 
+
+Four decisions did the heavy lifting; we offer them as transferable lessons for evaluating any nondeterministic, data-driven software. 
+
+• Push nondeterminism out of the measured path. Every model call that could move a score is run before grading, into the precompute; what remains at evaluation time is pure data manipulation. Reproducibility then comes for free—far easier to engineer in than to retrofit. 
+
+• Generate in an order that forces coherence. Coherence of synthetic data is not a post-hoc check but a consequence of generation order: persona → arc → timeline → artifact bakes cause-and-effect in, where flat generation cannot. 
+
+• Separate “cheap and exact” from “careful and rare.” 
+
+Most of point-in-time reconstruction is mechanical and should never touch a model; a small, clearly delimited re-mainder genuinely needs one. Drawing that line explicitly bought both speed and trust. 
+
+• Make the world agent-agnostic. Decoupling the world from the agent through one adapter turns “evaluate our agent” into “evaluate any agent on our world”—what makes fair comparison and cross-team reuse possible. Early use on enterprise agents bore out the payoff: one authored episode yielded dozens of point-in-time, per-person evals; onboard-ing a new app fell from days to minutes; and batch runs were exactly reproducible. The main open difficulty is calibrating stage Λ—how aggressively it should reword free text per app, and how to validate 
+
+that a rebuilt past is faithful—which we turn to next. 
+
+## 5 Discussion 
+
+Where this sits. Table 2 contrasts the system with how agents are evaluated today. The capability that most sets it apart is evaluating always-on, event-driven agents [13]: only a system that can step 
+
+back into an episode can place such an agent at the instant just after a change and ask whether it reacted—something a static snapshot can never do. 
+
+Reliability and reproducibility. Moving all model-based inter-pretation into the precompute keeps the grading path deterministic; What Could the Agent See at 19:05? Generating Temporal Enterprise Scenarios from Real Research and Replaying Them to Evaluate Agents 
+
+Table 2: Our system versus existing agent-evaluation ap-proaches. 
+
+Capability Static Sim. the system tenant bench. [6–8] Evaluate at any moment — — ✓
+
+Correct nested record state — — ✓
+
+Reproducible model-derived state n/a n/a ✓
+
+Temporal behavior from aschema — — ✓
+
+Machine-generated expecta-tions manual manual ✓
+
+Any agent via one adapter — — ✓
+
+the closest academic system for continuous enterprise benchmark generation [9] explicitly cannot handle temporally-evolving connec-tor snapshots, which is exactly what the difference cache provides. Temporal knowledge graphs and time-travel retrieval [10, 11] re-construct history for agent memory or document retrieval, not to generate an access-scoped world for grading. The open calibration question is per-app: how aggressively Λ should rewrite free text, and how to validate that a rebuilt world is faithful to the moment. 
+
+Generalization and what is next. The persona/timeline/artifact model and the schema-to-temporal-description mechanism assume nothing Microsoft-specific; any platform with evolving, multi-app, access-controlled records is a candidate. Two forward directions stand out: what-if (counterfactual) evaluation, forking the world at a decision point to compare alternatives, and a self-learning fly-wheel , using observed failures to generate new people, moments, and questions that target weak spots—a step toward high-quality self-learning for enterprise agents. 
+
+## 6 Conclusion 
+
+The system reframes offline agent evaluation from grading against a frozen end-state to replaying an access-scoped world at any moment in time. By pairing research-grounded, persona-driven generation 
+
+with deterministic, precomputed point-in-time replay , it turns one synthetic episode into a faithful, reproducible, time-aware evalu-ation suite for the cross-app agents, skills, and connectors now shipping into the enterprise. 
+
+## References                    
+
+> [1] Microsoft. Microsoft 365 Copilot extensibility: agents, skills, and connectors. https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/, 2026. [2] Anthropic. Agents and Agent Skills for Financial Services. https://www. anthropic.com/news/finance-agents, 2025. [3] OpenAI. Workspace agents in ChatGPT. https://openai.com/index/introducing-workspace-agents-in-chatgpt/, 2026. [4] Various. Agent Skills — reusable instruction sets for AI agents. https://agentskills. io/, 2025. [5] Microsoft. Azure AI Foundry agent evaluation. https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/evaluation-overview, 2026. [6] S. Yao et al. 𝜏 -bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains. arXiv:2406.12045, 2024. [7] O. Styles et al. WorkBench: a Benchmark Dataset for Agents in a Realistic Workplace Setting. COLM , 2024. [8] F. Xu et al. TheAgentCompany: Benchmarking LLM Agents on Consequential Real-World Tasks. arXiv:2412.14161, 2024. [9] Authors. Continuous Benchmark Generation for Evaluating Enterprise-scale LLM Agents. arXiv:2511.10049, 2025. [10] P. Rasmussen et al. Zep / Graphiti: A Temporal Knowledge Graph Architecture for Agent Memory. 2025. [11] Authors. Reproducible Hybrid Time-Travel Retrieval in Evolving Corpora. arXiv:2411.04051, 2024. [12] Anthropic. Model Context Protocol. https://modelcontextprotocol.io/, 2024. [13] Microsoft. Microsoft Scout — an always-on agent. https://www.microsoft.com/, 2026.
+
+## Appendix A: Worked Example 
+
+A payments-checkout service degrades, and the episode unfolds over two hours across four apps: an incident tool (the alert and its growing timeline), a Teams channel (responders coordinate), 
+
+email (a stakeholder update), and a code repository (the fix, as a pull request). Three people are involved, with different visibility: the on-call engineer Rohan and his manager Vikram can see the inci-dent, the Teams channel, and the repository; the product manager 
+
+Priya is kept informed only through the email thread. Generation timestamps every event: 𝑡 1=18:42 the incident is triggered; 𝑡 2=18:47 Rohan acknowledges it and posts in Teams; 𝑡 3=19:05 he adds a triage note correlating a recent configuration change; 𝑡 4=20:10 a fix is opened as a pull request; 𝑡 5=20:38 it is merged; 𝑡 6=20:55 the incident is resolved with a root cause and a postmortem link; a summary email reaches Priya at 21:00. We evaluate at 𝑡 3 = 19:05. Rohan asks the agent: “What is the current status of the incident I’m leading, what is on its timeline so far, and is a fix already in progress?” A correct answer must reflect the world as it stood at 19:05 —across the incident tool, Teams, and the repository—and only what Rohan may see. Table 3 gives the incident connector’s temporal schema and the resulting rebuild of the incident record at 19:05: stage 𝐷 resolves the deterministic fields, stage Λ derives the semantic ones. Two effects are worth highlighting. Cross-app: at 19:05 the fix does not yet exist—the pull request opens at 20:10—so a faithful world contains no merged code, and the rebuilt description must drop its reference to that not-yet-opened fix, a value that originates in a different app. Visibility: Σ(19:05 , Rohan ) contains this incident (with its three-entry timeline) and the Teams messages up to 19:05, but Priya—who sees only the email thread, whose first message arrives at 21:00—would see nothing of the incident at this instant. The expectation the generator wrote for the question— “status is acknowledged; the timeline shows the configuration-change triage note; no root cause; no fix in progress yet” —then grades the answer: a reply that says “resolved” or mentions the merged fix fails, because it is quoting a future that had not happened. 
+
+## Appendix B: Terminology 
+
+The paper uses several AI-extensibility terms with distinct, easily-confused meanings; Table 4 fixes how each is used. They are listed in the order each builds on the previous. Tezan Sahu and Himani Arora 
+
+Table 3: The incident connector’s temporal schema—deterministic vs. semantic fields and the rule for each—and the rebuild of one incident record at 19:05. Deterministic fields are resolved by stage 𝐷 ; semantic fields are derived by stage Λ.
+
+Field Kind Temporal rule Final state 𝑎 ∗ Rebuilt at 19:05 
+
+timestamp determ. record exists only if timestamp ≤ as-of 18:42 18:42 (kept) 
+
+timeline[] determ. drop child entries whose time > as-of 10 entries 3 entries 
+
+resolved_at determ. null if its value > as-of 20:55 null 
+
+root_cause determ. null when resolved_at is null ( depends-on ) full RCA text null 
+
+status semantic derive the lifecycle from the trimmed timeline: triggered → acknowledged → resolved resolved acknowledged 
+
+description semantic reword if it cites events after as-of “. . . merged fix; service re-stored 20:55” “error spike under investiga-tion; config change suspected” 
+
+Table 4: Terminology: the AI-extensibility ecosystem this work plugs into. 
+
+Term Meaning, with an example 
+
+App / enterprise app An application where enterprise work happens and data lives. E.g., Outlook, Teams, Jira, GitHub, ServiceNow. Tool A single callable function, with a defined input and output, that a model can invoke. E.g., a search_issues function. Agent An autonomous AI system, configured with scoped instructions, that plans and calls tools to accomplish a task. E.g., 
+
+Microsoft 365 Copilot, an Azure AI Foundry agent. MCP Model Context Protocol — an open standard for exposing an app ’s tools and data to any compliant agent .Connector Brings an external app ’s data and actions to an agent . Sync (graph): ingests and indexes the app’s content for local search (read only). Federated : reached live over MCP ; reads and writes. Skill A packaged set of instructions and resources that guides an agent through a domain or multi-step task. E.g., a discounted-cash-flow finance skill. Plugin A distributable package that bundles skills , tools , and connectors into one installable unit extending an AI app . E.g., an analytics plugin. Package A shipped bundle of skills , plugins , and the connectors they need — released and evaluated as a unit.

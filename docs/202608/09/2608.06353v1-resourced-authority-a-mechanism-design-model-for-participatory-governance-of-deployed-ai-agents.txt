@@ -1,0 +1,742 @@
+Title: Resourced Authority A Mechanism-Design Model for Participatory Governance of Deployed AI Agents
+
+URL Source: https://arxiv.org/pdf/2608.06353v1
+
+Published Time: Fri, 07 Aug 2026 01:19:07 GMT
+
+Number of Pages: 22
+
+Markdown Content:
+# Resourced Authority: A Mechanism-Design Model for Participatory Governance of Deployed AI Agents 
+
+## Praphul Chandra 1, Sujit Gujar 2, and Ganesh Ghalme 31Atria University 
+
+2IIIT Hyderabad 
+
+3IIT Hyderabad August 7, 2026 
+
+Abstract 
+
+We give a formal mechanism-design model for the continuous participatory governance of a deployed AI agent. The mechanism is built on the principle that governance should control an AI agent through resource allocation so as to make authorization self-enforcing via compute budgets. The mechanism seeks to establish the Safe-AI paradigm that compute is an effective governance lever. We situate our work as a compliance-or-commons overlay on a deployer. One governance period is an extensive-form game in which verified human stake-holders arrive sequentially and contribute, on a provision or a rejection market, in a governance currency that is deliberately distinct from the agent’s compute. A funding-aggregator turns raw contributions into breadth-weighted effective supports; a two-threshold gate with hystere-sis converts net support into a binary authorization that, through a coupling map bounded by an exogenously certified safety ceiling, releases a metered compute budget - realized in hardware as a signed compute license so that the decision is self-enforcing. We characterize the class of agents the mechanism can govern (club-or-commons-good agents with a bounded stakeholder community, reversible and compute-scaled impact, genuine contestation, and — decisively — attestable outcomes) and isolate manipulation of the governing electorate by the governed agent as the central open problem. We also introduce several challenges addressing manipulation of governing electorate by the governed agents. 
+
+CCS Concepts: • Theory of computation → Algorithmic mechanism design; • Computing methodologies → Multi-agent systems; • Applied computing → Economics; • Security and privacy → Trusted computing. 
+
+Keywords: mechanism design; AI governance; quadratic funding; provision-point mecha-nisms; prediction markets; compute governance; hardware-enabled mechanisms; attestation; multi-agent systems. 
+
+# 1 Introduction 
+
+The widespread deployment of AI agents with different objectives has given rise to many new challenges. Aligning an AI agent’s objective and governing its deployment are different problems. We refer to the first problem as an inner-loop question: the question of training, interpretability, and evaluation. We call the second problem an outer loop question. The outer loop deals with who may operate a deployed agent, for how long, funded by whom, at what scale, and accountable to whom. It is a collective-decision-and-resource-allocation problem over a population of affected stakeholders with private, heterogeneous, and partly conflicting valuations, which is the domain of mechanism design (MD). In this paper, we focus on the outer loop question through the lens of Mechanism Design. Two developments make such a governance layer newly feasible. First, compute is a governable resource . AI-relevant compute is detectable, excludable, and quantifiable, and for a deployed agent the fine-grained unit — inference tokens, runtime, tool-invocations — inherits this metered, 1arXiv:2608.06353v1 [cs.GT] 6 Aug 2026 excludable character. Second, hardware-enabled mechanisms (offline licensing; flexible hardware-enabled guarantees, “flexHEG”; workload attestation) now prototype an enforcement substrate in which an authorization expressed as a compute budget is physically self-enforcing, and in which facts about what a chip ran can be verifiably attested. Our model exploits exactly this: a governance decision and its enforcement become a single artifact — a signed compute license. We are explicit about a point that shapes the entire design. A mechanism whose purpose is to move authorization away from a deployer, hand an external electorate a halt lever, and expose the deployer to outside-triggered liability is not necessarily something a commercial platform may adopt to serve its own commercial objective. We therefore position the mechanism as an overlay on a deployer, adopted through one of three routes: 
+
+• Mandated Compliance, where a regulator requires certain high-impact autonomous de-ployments to run under participatory authorization, much as a clinical trial runs under a data-safety monitoring board or a facility under an environmental permit; 
+
+• Commons or Cooperative Deployment, where the customer and the electorate coincide (a DAO, a municipality, a scientific consortium, a platform co-op), so collective control is a feature the members want; 
+
+• Internal authorization gate, strip-down use in a lab as a structured control checkpoint. Such an overlay acts as an indirect regulatory wrapper: rather than directly constraining inter-nal model weights or training pipelines, it regulates the deployer’s external operational boundary by conditioning compute issuance on continuous stakeholder authorization. To make this ac-ceptable to a regulated deployer rather than merely imposed on it, we build the adoption model around a liability safe-harbour: operating inside the attested, community-authorized envelope caps the deployer’s exposure (§4.2). The mechanism that we propose is not a general AI-governance solvent. It fits club-or-commons-good agents: a definable stakeholder community, consequential-but-reversible impact, compute-scaled operation, genuine two-sided contestation, repeated operation, and attestable out-comes. Our mechanism builds on Provision-point mechanisms (PPMs) and proper scoring rules from the literature. PPMs provide threshold-gated, binary authorization with built-in anti-capture quorums and refund protections for contestable deployment decisions. Meanwhile, proper scoring rules and prediction markets elicit honest, informationally grounded beliefs about post-deployment safety and potential harm without relying on uncoordinated cheap talk. We make this precise in 
+
+§4.3–4.4. Catastrophic or irreversible harm is out of scope by construction: there the exogenous safety ceiling must dominate, and a market is inappropriate. 
+
+## 1.1 Our Contributions. 
+
+(i) We formalize continuous AI-agent governance as a mechanism-design problem, distinct from alignment ( §3), and give an explicit deployment and adoption model with a hardware instan-tiation and a liability safe harbor ( §4). (ii) We integrate a quadratic-funding aggregator with a two-sided provision-point gate, so that authorization tracks the breadth of stakeholder support rather than wealth, while admitting stakeholders who want the agent stopped (Definitions 3.5 and 3.8). (iii) We decouple a human-anchored governance currency from the agent’s compute, coupling them only through a map bounded by an exogenously certified safety ceiling, realized as a signed compute license, and encode seven design principles as formal admissibility constraints (§3.1). (iv) We separate the verifier into a fact-attesting part and a semantics-adjudicating part, make the harm finding challengeable, replace a coherence assumption with a derived run-feasibility condition while recasting the provision point as an anti-capture quorum floor, and reconcile peer-prediction with market scoring by outcome-observability (Lemma 3.10, Definitions 3.11– 3.13). 2(v) We prove sided-incentive-compatibility, early commitment, and a breadth-weighted autho-rization theorem (authorization tracks the effective number of backers times their intensity, not wealth). (vi) We characterize the governable-agent class, isolating a manipulation-robustness problem with no public-goods analogue as the central open question ( §5, §7). 
+
+# 2 Preliminaries and Related Work 
+
+Our approach heavily relies on two important concepts from mechanism design: (i) Provision Point Mechanisms (PPM) and (ii) Quadratic Funding. We explain them briefly here. 
+
+Provision-point mechanisms. A public project has a cost target (the provision point) and a deadline; contributors pledge over time and the project is provisioned iff pledges reach the target. PPM (Bagnoli & Lipman, 1989) is the bare threshold scheme; PPR (Zubrickas, 2014) adds a failure-contingent refund bonus; PPS (Chandra, Gujar & Narahari, 2016) replaces the bonus with securities from a cost-function prediction market so that earlier contributions earn more securities, making contribute-on-arrival a subgame-perfect equilibrium. PPRN / PPSN (Damle et al., 2019) extend the family to negative valuations by running parallel provision and rejection markets, provisioning iff net preference is nonnegative, and add a belief layer (PPRx / PPSx) via a Belief-Based Reward built on RBTS peer prediction (Witkowski & Parkes, 2012; Prelec, 2004). Our game form, securities layer, two-sidedness, and belief layer are adapted from this lineage; §3.1 lists precisely which dials, when reset, recover it. 
+
+Quadratic funding. For contributions c1, . . . , c m to a project, QF (Buterin, Hitzig & Weyl, 2019) makes the funded amount proportional to 
+
+X
+
+> j
+
+√cj
+
+
+
+> 2
+
+,
+
+so support scales with the number of distinct contributors; the gap over raw contributions is met from a matching pool. We use the QF aggregator to replace the linear aggregation of PPS/Damle; as we discuss in §3 (following Definition 3.9), in our decoupled setting the “pool” is repurposed and is better read as a compute subsidy. Collusion- and Sybil-resistance (Miller, Weyl & Erichsen, 2022) are treated as external substrate. 
+
+Compute governance, hardware-enabled mechanisms, and AI control. Compute is an effective governance lever (Sastry et al., 2024). Offline licensing (Aarne, Fist & Withers, 2024; Petrie, 2025) lets a chip require a locally-checkable signed authorization encoding a budget and expiry, enforced without network contact; flexHEG (Petrie et al., 2025) realizes a programmable on-accelerator guarantee layer capable of a hard capability cap; workload attestation (Heim et al., 2025) supplies verifiable evidence of which model ran and how much compute it consumed. AI control (Greenblatt et al., 2024) contributes the adversarial framing and the notion of a scarce oversight budget that our layer funds and allocates. §4.1 maps our abstract objects to these primitives. 
+
+Relationship to prior mechanisms. Table 1 records what the model re-uses, adapts, or intro-duces. 
+
+# 3 The Model 
+
+In this work, we develop the case where a single deployed AI-agent impacts multiple human stake-holders. We address the outer-loop challenge of multiple human stakeholders jointly regulating the deployment of this deployed AI agent. §7 notes the multi-agent extension. We propose a two-component architecture to regulate the deployment of an AI agent. Each module is described in detail throughout this section. At the highest level, Figure 1 describes the 3Component Status Source Extensive-form sequential game; SPE/PBE re-used PPS; Damle et al. Provision-point threshold dynamics re-used PPS; Damle et al. Two-sided provision vs. rejection markets re-used Damle et al. (PPRN/PPSN) Securities / early-commitment (Conditions 1– 7) re-used PPS Belief elicitation (RBTS, Belief-Based Re-ward) re-used Damle et al. (PPRx/PPSx) QF aggregator ϕ (replaces linear sums) new Buterin–Hitzig–Weyl Governance-currency / compute decoupling new compute-governance lit. Signed-license instantiation; safety ceiling Γ new offline licensing; flexHEG Fact/semantics verifier split; challengeable harm new this work Generations / continuous re-authorization new —Burnable liability bond; safe harbour adapted this work Manipulation of the electorate by the gov-erned agent new —Breadth-weighted authorization theorem (Theorem 5.7) new this work 
+
+Table 1: Provenance of the model’s components. two-component architecture: — (outer loop) a human-anchored governance currency and (inner loop) the agent’s compute — linked only through a coupling map bounded by a safety ceiling. The first component is governence currency domain . It consists of a set of verified, distinct human stakeholders ( I = {1, . . . , n }). Individual human distinctness is an assumed Sybil-resistant substrate and not modeled as part of the mechanism. Human stakeholders who benefit from the AI-agent contribute xj in a human-anchored currency in an Authorization Market. On the other hand, human stakeholders for whom the AI-agent is detrimental contribute zj in a human-anchored currency in a Halt Market. These two-sided mechanism consisting of parallel Provision and Rejection markets are aggregated using a Quadratic Funding (QF) aggregator ϕ to produce a net effective support score that drives the binary compute-authorization gate. 
+
+Definition 3.1 (Types of (Human) Stakeholders) . Each i ∈ I has a private type τi = ( θi, ε i) ∈
+
+R × [0 , 12 ], where θi is i’s signed net value for the agent operating this period ( θi ≥ 0 ⇒ i ∈ P ,beneficiary; θi < 0 ⇒ i ∈ N , harmed), and εi parametrizes i’s private belief that the agent will behave acceptably, k1 
+
+> i
+
+= 12 + εi, k2 
+
+> i
+
+= 12 − εi. I = P ∪ N and P ∩ N = ∅ and write τ = ( τi)i∈I ..
+
+The belief component εi is not a free-floating prior: it is formed from observable ex-ante signals — the deployer’s track record (the mechanism’s own history of past-generation attested outcomes ˆ o and harm findings ¯H, an endogenous signal that accrues over generations), the size of the committed liability bond Λ (a costly signal of the deployer’s confidence), model provenance and published evaluations (the same evidence base underwriting the certified ceiling Γ), whether the agent runs under attested hardware mechanisms, third-party audits and insurance pricing, and, through the public history Ht, the contributions of others. Two consequences carry into the analysis: Λ does double duty as a payoff term and a belief signal (Definition 3.15), and because “past behaviour” is one of the strongest signals, εi is partly endogenous to the agent’s own strategic performance — the surface that the manipulation problem of §5.3 attacks. 
+
+Definition 3.2 (Endowments) . Each human i ∈ I holds a governance-currency endowment ei ≥
+
+0. The governed AI-agent holds no endowment and has no contribution action; it enters the mechanism only through its attested behaviour (Definition 3.12). This is the formal content of human-anchored authority (Invariant 5). 
+
+Definition 3.3 (Generations and timing) . Time is partitioned into generations g ∈ N. Generation 
+
+g runs a contribution window [0 , T g ]; stakeholder i arrives at an exogenous time ai ∈ [0 , T g ] and observes the public history Ht of all contributions and reports up to t. Types are private; actions are observable. The period is therefore a game of incomplete information with observable actions. 
+
+4Figure 1: The decoupling. Verified humans spend governance-currency endowments as non-negative contributions on a provision or rejection market; a quadratic-funding aggregator produces effective supports that drive a binary gate. The gate’s net support feeds a coupling map ρ that releases compute β, capped by an exogenous safety ceiling Γ. The two domains meet only through 
+
+ρ and the compute-subsidy parameter μ (Invariants 1–5). 5The generation is also the natural license epoch ( §4.1): Tg maps to a license expiry, and re-authorization is license renewal. 
+
+Note: In each generation (temporal), we run an incentive mechanism to aggregate and enforce the preferences of the human stakeholders towards the AI agent. 
+
+Definition 3.4 (Generation mechanism) . A generation mechanism is a tuple 
+
+Mg = ϕ, (κstart , κ halt ), H 0, C, ρ, V, Λ, Π , with exogenous parameters (h0, Γ, μ ),
+
+partitioned into design choices — the QF aggregator ϕ; the halt/start margins κstart ≥ κhalt ≥ 0
+
+and the participation floor H0 (Definitions 3.8 and 3.11); the per-side securities cost function C;the coupling map ρ; the verifier V = ( Vhard , V soft ) (Definition 3.12); the liability bond Λ ≥ 0;and settlement rules Π — and exogenous parameters not free to the designer: the compute-cost provision point h0 (technologically set), the safety ceiling Γ (certified by evaluations/red-lines), and the compute-subsidy parameter μ (Definition 3.9). The split is the decoupling: the designer tunes how preferences are aggregated and priced, but may not set the capability ceiling Γ or understate the cost h0.
+
+Definition 3.5 (QF aggregator) . ϕ : S 
+
+> m
+
+Rm 
+
+> +
+
+→ R+,
+
+ϕ(c1, . . . , c m) = 
+
+X
+
+> j
+
+√cj
+
+
+
+> 2
+
+.
+
+Definition 3.6 (Strategy) . On arrival, human-i chooses ψi = ( xi, z i, t i, ˜si) with 
+
+xi, z i ≥ 0, xi + zi ≤ ei, ti ∈ [ai, T g ], ˜si ∈ { +, −} ,
+
+subject to xi > 0 ⇒ ˜si = + and zi > 0 ⇒ ˜si = − (contribute on the reported side only). Non-negativity on each side, with no signed single netting variable, is Invariant 4. A strategy is a map 
+
+σi : Ht 7 → ψi from public histories to actions. 
+
+Definition 3.7 (Securities) . A contributor of size c at time ti, against the prevailing state qti
+
+of that side’s securities market with cost function C (satisfying the PPS cost-function Conditions 1–7), is issued securities ri = r(c, q ti ) with ∂r i/∂t i ≤ 0 (earlier contributions earn weakly more securities). Securities pay out only in the refund event Dg = 0 , funding the early-commitment bonus bi = b(ri) of Definition 3.13. This mirrors PPS’s securities layer, restated on each side separately. 
+
+Definition 3.8 (Two-sided QF gate) . Let ˆP = {i : xi > 0} and ˆN = {j : zj > 0} be the revealed supporters and objectors at Tg . Define the breadth-weighted effective supports 
+
+S+ = ϕ({xi}i∈ ˆP ) = 
+
+X 
+
+> i∈ˆP
+
+√xi
+
+
+
+> 2
+
+, S− = ϕ({zj }j∈ ˆN ) = 
+
+X 
+
+> j∈ˆN
+
+√zj
+
+
+
+> 2
+
+,
+
+and the raw totals X+ = P  
+
+> i∈ˆP
+
+xi, X− = P  
+
+> j∈ˆN
+
+zj (bookkeeping only). Let Dg−1 ∈ { 0, 1} be the previous authorization ( D0 = 0 ) and let Safe( g) ∈ { 0, 1} be an exogenous certified-envelope predicate. The gate is 
+
+Dg =
+
+
+
+1, Safe( g) ∧ (S+ ≥ H0) ∧ (S+ − S− ≥ κstart ) ∧ (Dg−1 = 0) — start ,
+
+1, Safe( g) ∧ (S+ ≥ H0) ∧ (S+ − S− ≥ κhalt ) ∧ (Dg−1 = 1) — continue ,
+
+0, otherwise. 
+
+Three properties are encoded. Dg depends on contributions only through ( S+, S −), never (X+, X −) (Invariant 3: wealth is filtered out). The dead-band κhalt ≤ S+ − S− < κ start gives safety-tilted hysteresis: a comfortable margin is required to start, no flapping in between, and halting triggers as soon as net support falls below κhalt . And Safe( g) dominates: outside the certified envelope, Dg ≡ 0 regardless of support (Invariant 7). Figure 2 gives a worked example in which raw wealth would reject but breadth authorizes. 6Figure 2: The two-sided QF gate (worked example). Five supporters contributing 4 each yield 
+
+S+ = 100; a single objector contributing 36 yields S− = 36. Raw wealth would reject ( X− > X +), but the breadth-weighted supports authorize ( S+ > S −), so Dg = 1. 
+
+Definition 3.9 (Released compute) .
+
+β = Dg · min  Γ, ρ (S+ − S−, μ ),
+
+with ρ continuous and strictly increasing in its first argument on [κhalt , ∞). Thus β depends on currency-side data only through the scalar S+ − S− fed to ρ, and on compute-side data (Γ , μ );no other equation crosses the unit boundary (Invariant 1). The outer min with Γ gives β ≤ Γ
+
+pointwise, and Γ is not a function of any contribution (Invariant 2, capability non-amplification). Figure 3 plots the release curve. 
+
+In classic QF the matching pool tops up funding in the contribution unit. Here contributions are governance currency while μ feeds compute through ρ, so μ matches no currency budget; it is a support-to-compute conversion subsidy — a larger μ makes a given breadth of net support convert into more runway. The breadth amplification proper already lives in S± = ( P √·)2; μ is a separate generosity dial, naturally provided by a patron who wants to encourage well-governed deployment (a public compute pool, a foundation, a national research-cloud allocation, or — as the adoption carrot of §4.2 — the platform itself). An alternative design places matching on the currency side to recover “true QF” semantics, at the cost of reintroducing a currency budget and complicating the decoupling; we prefer the compute-side reading. 
+
+Lemma 3.10 (Run-feasibility) . Suppose Γ ≥ h0, that ρ(·, μ ) is continuous and strictly increasing on [κhalt , ∞), and that ρ(x, ·) is continuous and nondecreasing in μ. Then β ≥ h0 whenever 
+
+Dg = 1 (in either gate branch) if and only if 
+
+ρ(κhalt , μ ) ≥ h0 ⇐⇒ κhalt ≥ ρ−1(h0; μ) ⇐⇒ μ ≥ μ∗ := min {μ : ρ(κhalt , μ ) ≥ h0},
+
+whenever the inverse and the minimum exist. If only cold-start authorizations are in play ( Dg−1 =0, so the gate can fire only through the start branch), the same equivalences hold with κstart in place of κhalt — a weaker requirement, since κstart ≥ κhalt .
+
+7Figure 3: The coupling ρ and capability non-amplification. Released compute β is zero below the start margin, rises with net support (steeper for a larger compute subsidy μ), and saturates at the exogenous ceiling Γ. The region above Γ is unreachable by the market (Invariant 2). 
+
+Proof. If Dg = 1 then S+ − S− ≥ κhalt (in the start branch S+ − S− ≥ κstart ≥ κhalt ), so by monotonicity ρ(S+ − S−, μ ) ≥ ρ(κhalt , μ ) ≥ h0, and with Γ ≥ h0, β = min(Γ , ρ (·)) ≥ h0.Conversely the boundary case S+ −S− = κhalt with Dg−1 = 1 (attainable by continuity of ϕ) forces 
+
+ρ(κhalt , μ ) ≥ h0; the stated equivalences are monotone inversions of ρ in each argument. The cold-start variant repeats the argument on the start branch, with boundary case S+ − S− = κstart .Feasibility is thus pinned by the net-support margins ( κhalt , and only κstart in the cold-start case) and the subsidy μ (with the hardware condition Γ ≥ h0), and the currency provision point 
+
+H0 does not appear. This frees H0 to be what it should be. 
+
+Definition 3.11 (Participation floor) . H0 is a quorum requirement: authorization additionally requires S+ ≥ H0, an absolute breadth floor on the supporting side, chosen on governance grounds as an anti-capture / legitimacy device (broad support in absolute terms, not merely more than the opposition). H0 and the feasibility condition of Lemma 3.10 are independent design knobs governing different things — legitimacy versus physical runnability. 
+
+Definition 3.12 (Attested outcome; fact/semantics split) . After the agent runs, the verifier returns ˆo = (ˆ ohard , ˆosoft ):
+
+• ˆohard = Vhard (evidence ) attests facts — model identity, compute consumed, and coarse proce-dural compliance (ran inside sandbox, invoked only whitelisted tools) — via workload attesta-tion. This part is cryptographically trust-minimized. 
+
+• ˆosoft = Vsoft (evidence ) adjudicates semantics — most importantly the verified-harm indicator 
+
+¯H = 1[harm ]. Hardware cannot produce this; it requires an audit, an oracle, or a court-like process, and is the model’s genuinely trusted component ( §4.4). 
+
+To avoid treating ¯H as an infallible oracle, we model it as a challengeable claim: a proposed finding enters a claims-and-challenges window with an appeal path to a slower, higher-trust pro-cess, and ¯H is the finding that survives challenge. Every outcome-contingent transfer below is a function of ˆ o (and, for ¯H, of the resolved claim), never of contributions or sentiment (Invariant 6). An optional decision-market forecast Y ∈ [0 , 1] resolves on ˆ o (see the belief layer below). 8Definition 3.13 (Transfers Π) . Let ci = xi + zi; contributions are escrowed at contribution time. Settlement is: (provision) if Dg = 1 , the escrow ci is spent (on provisioning β and oversight) and securities settle on the funded outcome; (refund + early commitment) if Dg = 0 , the escrow 
+
+ci is refunded and securities pay the bonus bi = b(ri), nondecreasing in ri (hence in earliness); (belief reward) νi from a bounded budget BB (below); (liability) if Dg = 1 and ¯H = 1 , the bond is forfeited (burned) by the deployer and redistributed to the attested-harmed objectors, P 
+
+> j
+
+λj = Λ 
+
+(e.g. λj ∝ assessed harm); it is never returned to the deployer or paid to other contributors. 
+
+The model contains two truth technologies, for two different regimes. Proper scoring on the outcome: where Vsoft delivers a credible ˆ osoft , forecasts can be scored directly against reality; the decision market Y resolving on ˆ o is exactly this. Peer prediction (RBTS): νi = ν(Mi) rewards, from the bounded budget BB , honest calibrated judgment, where Mi is i’s Robust Bayesian Truth Serum score computed against other stakeholders’ reports (Witkowski & Parkes, 2012). Its defining virtue is that it needs no ground truth: truthful reporting is a strict equilibrium purely from inter-report consistency. The reconciliation is by outcome-observability: score on ˆ o where a credible semantic verifier exists; fall back to RBTS peer prediction where it does not. The two may also coexist with distinct roles — RBTS elicits pre-decision belief for reward and legitimacy (and contributes to the ε-signals of Definition 3.1), while Y is a market price used as a public forecast. Peer prediction is the tool for the regime the outcome oracle cannot reach; pairing them is deliberate, not redundant. 
+
+Definition 3.14 (Stakeholder utility) . With contributions escrowed (Definition 3.13), for i of type (θi, ε i), given (Dg , ˆo) and transfers, 
+
+ui = Dg (θi − ci) + (1 − Dg )bi + νi + 1[zi > 0] · ¯H · λi,
+
+the reduced form of the branch accounting: the running value θi net of the spent escrow if pro-visioned; the failure bonus if not; the belief reward; and harm compensation, paid only to an attested-harmed objector. Define the decision preference ∆i := θi − ci − bi, the change in payoff from Dg : 0 → 1 at fixed (ci, t i); §5.1 turns the sign of ∆i into sided incentive compatibility. (Equivalently, ∆i = ui|Dg =1 − ui|Dg =0 at fixed (ci, t i), net of the belief and compensation terms. This difference is the same whether contributions are escrowed and refunded on failure or charged contingently on provision, so the accounting convention is immaterial; we standardize on escrow.) 
+
+Definition 3.15 (Deployer payoff and the safe harbour) . The deployer d / ∈ I has payoff 
+
+ud = Dg
+
+ πd − Λ ¯H − Πext · (1 − InEnv) − (posting cost ),
+
+where πd is its private operating benefit, Λ ¯H the bond burned on verified harm from an authorized run (an unauthorized agent does not run in-envelope, so the bond term is active only when Dg = 1 ), and the safe-harbour term levies uncapped external liability Πext only when the agent operates outside the attested authorized envelope ( InEnv = 0 ). Operating inside the envelope caps exposure at the bond; this is the formal carrot that makes adoption individually rational for a deployer (§4.2). The bond term makes the deployer internalize expected verified harm — the accountability channel — and, per Definition 3.1, Λ simultaneously signals type. 
+
+## 3.1 Admissibility: the invariants as constraints 
+
+A mechanism Mg is admissible iff it satisfies the following, each established piecewise above. Figure 4 maps the variables to the four layers these constraints govern. 1. Decoupling. β depends on currency-side data only via ρ(S+ − S−, μ ). 2. Non-amplification. β ≤ Γ pointwise, and Γ is independent of all contributions. 3. Breadth. Dg depends on contributions only through ( S+, S −) (invariant to X±). 4. Two-sided, unsigned. xi, z i ≥ 0; netting only through S+ − S−.5. Human-anchored. Endowment/contribution actions exist only for i ∈ I; the agent affects (Dg , β ) only via ˆ o.96. Attested resolution. Securities settlement, νi, Y , and the Λ-payout are functions of ˆ o =
+
+V (·) (and resolved claims) only. 7. Subordination. Dg = 1 ⇒ Safe( g). These are not desiderata to be traded off; they are the definition of a well-formed mechanism in this family. 
+
+Figure 4: The layered stack, mapped to the variables. Four governance layers — preferences, beliefs, resource/enforcement, liability — operate strictly inside the certified safety envelope Γ, with an attestation spine ˆ o = V (·) resolving beliefs and liability (Invariants 6–7). 
+
+Equilibrium. Because types are private and actions observable, the solution concept is perfect Bayesian equilibrium (PBE): a strategy profile σ = ( σi) and a belief system such that, at every history Ht, each i plays a sequential best response given beliefs updated by Bayes’ rule on the observed history. A caveat on what “collapses” and what does not. If belief types are degenerate (the εi common knowledge, or the belief layer switched off), there is nothing to update and sequential rationality on the observable-action tree reduces to subgame perfection, so PBE = SPE. This is a statement about the solution concept only. It does not mean the mechanism reduces to PPSN/PPRN: degenerate beliefs remove only the belief layer. Recovering Damle et al. requires additionally resetting four dials — (a) make ϕ linear (removing breadth-weighting), (b) remove Γ and ρ (removing the ceiling and the currency/compute decoupling), (c) collapse generations to a single one-shot provision (removing hysteresis and carried state Dg−1), and (d) remove attestation and the bond (removing behavioural resolution). Enumerating these dials is the cleanest statement of what is new here; each is exercised by exactly one of Invariants 1–3, the generational loop, and Invariant 6. One generation proceeds as in Figure 5: (0) the exogenous parameters ( h0, Γ, μ ) are certified and published, and the deployer commits the design parameters ⟨H0, κ start , κ halt ⟩ (with the rest of Mg ) and escrows Λ; (1) stakeholders arrive at ai, observe Ht, play ψi, and receive securities ri;(2) at Tg , S± = ϕ(·) are computed and Dg evaluated; (3) if Dg = 1, a license carrying β is issued and the agent runs, consuming ≤ β ≤ Γ; (4) the outcome is attested, ˆ o = V (·), and harm claims resolved; (5) Π settles on ˆ o; (6) g ← g + 1. 10 Figure 5: One generation as an extensive-form game. Stakeholders arrive sequentially, report a side and belief, and contribute with securities that reward early commitment; at the deadline the gate fires; the agent runs under a license, the outcome is attested, transfers settle, and control passes to the next generation. Sequential arrivals and securities are re-used from PPS/Damle; generations, attestation, the bond, and the decision market are new. 11 4 Instantiation, Adoption, and Scope 
+
+The formal model is deliberately implementation-agnostic, but its claims to self-enforcement and attested resolution are only as good as the substrate that realizes them. This section grounds the abstract objects in hardware, gives an adoption model under which a deployer would opt in, characterizes agents the mechanism can govern, and isolates trust assumptions everything rests on. 
+
+## 4.1 Hardware instantiation 
+
+The abstract objects map onto hardware-enabled mechanisms as follows (Figure 6). 
+
+• Authorization Dg = 1 , and the budget β, become a signed compute license. Offline licensing lets a chip or firmware require a locally-verifiable signed authorization encoding a budget and expiry, enforced without network contact. The gate’s decision is realized as issuing or renewing a license 
+
+Lg = (model id , budget = β, window = [start g , T g+1 ], policy) .
+
+License exhaustion or expiry halts the device — realizing “self-enforcing mechanism.” 
+
+• Γ and Safe( g) become the flexHEG governor’s hard cap. The programmable on-accelerator guarantee layer enforces a maximum the license can never exceed, so β ≤ Γ holds in silicon; this becomes a hardware property / enforcement. 
+
+• ˆohard comes from workload attestation. Verifiable evidence of which model ran and how much compute it consumed (and coarse procedural facts) feeds Vhard .
+
+Figure 6: Hardware instantiation and the two timescales. A slow, online governance loop (per generation) turns the gate decision Dg into a signed license carrying budget β; a fast, local, offline enforcement loop (per inference) meters against β and is hard-capped at Γ by the on-accelerator governor. Attestation returns facts (ˆ ohard ) to the governance loop; the semantic verifier Vsoft and harm claims sit off-device. The license signing key is the locus of governance authority. 12 Three structural points the base model must respect for this instantiation to be honest. First, there are two timescales that must be separated: a slow governance loop (per generation, online, sets the license from Dg ) and a fast enforcement loop (per inference, local, offline, meters against β and hard-caps at Γ). Nothing at inference time may depend on reaching the governance layer. Second, β must be expressed in a hardware-meterable unit — FLOP, tokens, runtime, or tool-invocation count — because attestation can only witness metered quantities; “abstract compute” is not attestable. Third, whoever holds the license signing key the governor trusts is the governance authority; key custody (a threshold among stakeholder representatives, a regulator, an escrow agent) is a first-class trust assumption, not an implementation detail. The generation-as-license-epoch mapping of Definition 3.3 is what lets the slow loop drive the fast one cleanly. Crucially, attestation delivers facts, not semantics: it can witness that a particular model consumed a particular amount of compute inside a sandbox, but not whether the result was harmful. That seam is the Vhard /V soft split of Definition 3.12, and it is the subject of §4.4. 
+
+## 4.2 Adoption pathways and the liability safe harbour 
+
+A mechanism that constrains a deployer will not be adopted by that deployer as a product feature. Three realistic pathways, in decreasing order of how much of the mechanism they use: 1. Mandated compliance. A regulator or statute requires certain high-impact autonomous deployments to run under participatory authorization — the structural analogue of a data-safety monitoring board for a clinical trial, or an environmental permit for a facility. The deployer is the party d; the mechanism operator is an independent body. This route supports the full mechanism. 2. Commons / cooperative deployment. A Decentralized Autonomous Organization (DAO) which controls pooled contributions from multiple stakeholders, a municipality, a scientific consortium, or a platform co-op where the customer and the electorate coincide, so collective control is a feature the members want. Adoption is natural because no principal is being coerced. 3. Internal re-authorization gate. A lab uses a stripped-down version as a structured control checkpoint for a risky agent; this sheds the open electorate and most participatory machinery. For the mandated and commons routes to be individually rational for the deployer rather than merely imposed, Definition 3.15 builds in a liability safe harbour: operating inside the attested, community-authorized envelope caps the deployer’s exposure at the posted bond Λ, whereas operating outside it incurs uncapped external liability Π ext . This flips the deployer’s incentive from avoiding the mechanism to opting into it, and it converts the halt lever from a pure threat into a shared risk-management instrument. Two design corollaries follow: the halt action should be a pause-and-review with due process, not an instantaneous kill switch (both to be adoptable and to avoid its own manipulation), and the safe harbour must be conditioned on genuine attestation — the cap applies only to conduct that Vhard can confirm stayed inside the envelope. 
+
+## 4.3 Which agents are governable 
+
+The suitability of an agent is determined by dimensions, not by domain labels. An agent fits to the degree that it has: a bounded, identifiable stakeholder community (so I is definable and legitimate); consequential-but-reversible impact (catastrophic/irreversible cases must let the safety layer dominate); compute-scaled operation (so β is a real lever); genuine contestation 
+
+(both P and N nonempty, or two-sidedness is idle); attestable outcomes (a credible ˆ o; §4.4); 
+
+repeated operation (so generations make sense); and community standing to authorize at all. Table 2 scores a diverse set on the binding dimensions (Y = yes, P = partial, N = no). The boundary — poor fits, stated to define the space — includes general-purpose consumer 13 Candidate agent Bounded Reversible Compute-scaled Contested Attestable Fit Municipal / Grid resource-allocation Y Y Y Y Y Strong DAO treasury / protocol-parameter Y P Y Y Y Strong Shared scientific-compute /self-driving-lab Y Y Y P Y Strong Commons software-maintenance (OSS) Y Y P Y Y Strong Environmental / infrastructure actuation Y P Y Y P Medium Community content-moderation / policy Y Y P Y N Medium Public-service delivery (bene-fits, info) Y P P Y P Medium Member-owned commercial (co-op) Y Y P P P Medium 
+
+Table 2: Agent suitability on the binding dimensions. chatbots (no bounded community, catastrophic tail, harm not compute-metered), personal assis-tants (a single principal: no collective, no two-sidedness), military/weapons and any irreversible actuation (safety must dominate; a market is inappropriate), and adversarial trading agents (no legitimate electorate). The one-sentence characterization: the sweet spot is a club-or-commons-good agent — definable membership, reversible and compute-scaled impact, genuine contesta-tion, and an audit trail — which is the civic-crowdfunding lineage’s natural habitat, translated from public projects to agents. 
+
+## 4.4 The verifier as the load-bearing trust assumption 
+
+It is fair to say the model’s accountability half rests on a trusted semantic verifier, and precision about this is more useful than a disclaimer. Split the mechanism ex-ante/ex-post: 
+
+• Ex-ante authorization is trust-minimized. Dg and β are computed from contributions (S+, S −) and the hardware ceiling Safe( g)/Γ — not from ˆ o. “Who may run, at what scale” needs only Sybil-resistance and the governor; it needs no semantic verifier. 
+
+• Ex-post accountability is trust-dependent. Liability ( ¯H), securities settlement on the funded outcome, and the decision market Y resolve on ˆ o. Strip Vsoft and this layer collapses — and with it the principal mitigation for the manipulation problem of §5.3, which relies on resolving on ˆ o rather than sentiment. Because Vhard is cryptographically trust-minimized while Vsoft is genuinely trusted, the design imperative is to make as much as possible depend only on Vhard , and to model ¯H as a challengeable claim with an appeal path (Definition 3.12) rather than an atomic oracle. The scope consequence is direct and sharpens §4.3: the mechanism is suitable exactly where a credible outcome oracle exists — did the grid stay up, did the treasury lose funds, did the SLA hold, did the experiment validate — and unsuitable where harm is diffuse, delayed, or contested. This is why community content-moderation (Table 2) scores as it does despite ideal electorate legitimacy: its outcome is exactly the kind Vsoft cannot deliver cleanly. 
+
+# 5 Incentive Analysis 
+
+We prove three base-game results (Targets 1–3: sided incentive compatibility, early commitment, and the breadth-weighted authorization theorem), then state the one that remains open (Target 4). Throughout we use the reduced payoff of Definition 3.14 and two standing conditions, both already implied by the model: 14 (A1) Belief-layer separability. νi depends only on i’s belief report, not on ( xi, z i, t i); it is an additive constant in the contribution–timing subgame (as in Damle et al.). 
+
+(A2) Individually-attested liability (Invariant 6). Compensation λi is paid only to an attested-harmed objector: eligibility requires zi > 0 together with a harm finding under the attested ˆ o, and the amount is fixed by assessed harm, never by the size or timing of the contribu-tion. Because harm findings are attested rather than self-reported, a stakeholder with θi ≥ 0 is not attested-harmed; hence for such i the term 1[zi > 0] ¯Hλ i has zero expectation and creates no incentive to set zi > 0. Write others’ root-sums as 
+
+R+ 
+
+> −i
+
+= X  
+
+> j̸=i, x j>0
+
+√xj and R−−i = X  
+
+> j̸=i, z j>0
+
+√zj ,
+
+so S+ = ( R+ 
+
+> −i
+
++ √xi)2 and S− = ( R−−i + √zi)2.
+
+## 5.1 Basic incentive properties (Targets 1–2) 
+
+Lemma 5.1 (Gate monotonicity survives QF and hysteresis) . For fixed play of all j̸ = i, Dg is nondecreasing in xi and nonincreasing in zi.Proof. S+ = ( R+ 
+
+> −i
+
++ √xi)2 is strictly increasing in xi and constant in zi; S− is strictly increasing in zi and constant in xi — the only property of ϕ used is coordinatewise monotonicity, which the square-of-sum-of-roots has. Each gate branch is a conjunction Safe( g) ∧ (S+ ≥ H0) ∧ (S+ −
+
+S− ≥ κ) with κ ∈ { κstart , κ halt } fixed within g. Safe( g) is contribution-independent; ( S+ ≥
+
+H0) is nondecreasing in S+; ( S+ − S− ≥ κ) is nondecreasing in S+ and nonincreasing in S−.A conjunction of predicates monotone in the same direction is monotone; composing with the monotonicities of S± gives the claim. Hysteresis only shifts κ and conditions on Dg−1, fixed within g.
+
+Proposition 5.2 (Target 1 — Sided incentive compatibility) . Under (A1)–(A2), for every i,every (ci, t i), and every profile of the others: (a) putting the whole budget ci on the side of sign(∆ i)
+
+weakly dominates every split, so in equilibrium each i contributes on at most one side, never the side opposite its decision preference; (b) if θi < 0 then ∆i < 0 unconditionally, so a harmed stakeholder contributes only to reject; if θi > 0 then ∆i ≥ 0 under the bounded-stake condition (BB) ci +bi ≤ θi, so a beneficiary in that regime contributes only to authorize. Hence ˜si = sign( θi).Proof. Holding ( ci, t i) fixed makes bi, ν i constants, so ui = Dg ∆i + ( bi + νi) + 1[zi > 0] ¯Hλ i; the split ( xi, z i) with xi + zi = ci enters only through Dg and the indicator. If ∆ i > 0, ui increases in Dg , maximized over the budget line at ( ci, 0) by Lemma 5.1, which also sets 1[zi > 0] = 0 — forgoing nothing in expectation for θi > 0 by (A2). If ∆ i < 0, ui decreases in Dg , minimized at (0 , c i), which sets the indicator to 1 and adds ¯Hλ i ≥ 0 — for a genuinely harmed party ( θi < 0) exactly the compensation (A2) permits. Ties (∆ i = 0) break weakly toward the correct side through the same terms. This gives (a). For (b): ci, b i ≥ 0 give ∆ i = θi − ci − bi < 0 whenever 
+
+θi < 0 unconditionally; and ∆ i ≥ 0 for θi > 0 exactly when θi ≥ ci + bi, which is (BB). The asymmetry is real and worth stating: the halt side is incentive-compatible uncondi-tionally; the authorize side only under bounded stake (BB). (BB) is the two-sided image of the bounded-loss requirement (Conditions 6–7): if the failure bonus could exceed a supporter’s own valuation, a nominal beneficiary would rather bet on failure — the classic refund-bonus rever-sal — and bounded loss forecloses it. Neither QF nor the decoupling touches this; it is a property of the securities/bonus schedule. 
+
+Lemma 5.3 (Timing enters only through the failure bonus) . Fix i’s side, amount ci, and the others’ end-of-window contributions. Then Dg is invariant to ti, and ui depends on ti only through 
+
+(1 − Dg )bi(ti), with bi(ti) = b(r(ci, q ti )) nonincreasing in ti.Proof. The gate reads the deadline aggregates S±, functions of the final contribution vector; a contribution placed at any ti ∈ [ai, T g ] is present at Tg , so S± and Dg are unchanged by ti. In 
+
+ui = Dg (θi − ci) + (1 − Dg )bi + νi + comp, the terms Dg (θi − ci), νi (A1) and comp (A2, a 15 function of ˆ o) carry no ti; only bi does, nonincreasing because ∂r/∂t i ≤ 0 (Definition 3.7) and b is nondecreasing. 
+
+Proposition 5.4 (Target 2 — Early commitment) . Under (A1)–(A2), in the game where autho-rization depends only on end-of-window aggregates and others’ contributions are not conditioned on i’s contribution time, ti = ai is a weakly dominant timing choice — strictly on the event 
+
+Dg = 0 whenever b is strictly decreasing in securities. Hence ti = ai is a PBE property whenever 
+
+i’s off-path retiming leaves others’ deadline aggregates unchanged. Proof. By Lemma 5.3, ui = Dg (θi − ci) + (1 − Dg )bi(ti) + const with Dg constant in ti and (1 − Dg ) ≥ 0; since bi is nonincreasing, ui is nonincreasing in ti, maximized at ti = ai, strictly on 
+
+Dg = 0 when b strictly decreases. The scope clause is the one PPS lives with: in an observable-history game a rival could condition on when i moved, so early commitment is dominant in the deadline-aggregate reduction and a best response against timing-independent play, rather than dominant in the fullest game. Cost-function Conditions 3–4 keep the securities channel from manufacturing a profitable delay. Every modification we introduced — QF aggregation, two-threshold gating, and β = min(Γ , ρ (·)) — acts on how Dg is computed from the deadline aggregates, never on the per-agent securities schedule 
+
+r(c, q t) or its timing monotonicity, so the PPS early-commitment argument transfers intact. 
+
+The re-verification ledger. QF enters only through Lemma 5.1 and only via coordinatewise monotonicity, so sided-IC is unaffected in direction (QF changes magnitudes — Target 3 — not signs); the two-threshold gate with hysteresis is still a conjunction of the same monotone predicates with a within-generation-constant threshold, so Lemma 5.1 holds verbatim; the decoupling sits entirely downstream of Dg and re-enters the contribution payoff only through Dg ; attested liability discharges (A2) and even reinforces the harmed side; and the securities layer is untouched, so Target 2 is inherited once Lemma 5.3 isolates the timing channel. 
+
+## 5.2 Breadth-weighted authorization (Target 3) 
+
+We now prove the central characterization: the gate authorizes exactly when a breadth-weighted net preference clears the start margin. The result rests on the base-game properties just established — sided-IC (Proposition 5.2), early commitment (Proposition 5.4), gate monotonicity (Lemma 5.1) — together with the truthful-revelation property of the two-sided securities layer, which we inherit from the provision-point lineage and state as a standing assumption rather than re-derive. 
+
+(A3) Securities revelation (inherited). In its selected undominated equilibrium, the two-sided securities layer (Definition 3.7, Conditions 1–7) induces each stakeholder to back its own side up to a reservation capacity equal to its gross type net of the early-commitment bonus: a beneficiary i ∈ P will stake up to w+ 
+
+> i
+
+= θi − bi on the authorize side, and a harmed j ∈ N up to 
+
+w− 
+
+> j
+
+= |θj | − bj on the halt side, and no more — the upper bound is exactly the bounded-stake condition (BB) of Proposition 5.2 and its halt-side mirror. This is the two-sided PPS/Damle revelation property adapted to our reduced payoff; §5.1 supplies its sided and timing content. In the bonus-normalized benchmark bi → 0, capacities are the gross types, w+ 
+
+> i
+
+= θi and w− 
+
+> j
+
+= |θj |.
+
+Definition 5.5 (Breadth-weighted supports and effective breadth) . For a type profile θ, the authorize and halt breadth-weighted capacities are the QF aggregates of each side at reservation, 
+
+Φ+(θ) = ϕ({w+ 
+
+> i
+
+}i∈P ) = X
+
+> i∈P
+
+q
+
+w+
+
+> i
+
+!2
+
+, Φ−(θ) = ϕ({w− 
+
+> j
+
+}j∈N ) = 
+
+X
+
+> j∈N
+
+q
+
+w−
+
+> j
+
+
+
+> 2
+
+.
+
+Writing the linear (Damle) net-preference masses ϑ+ = P 
+
+> i∈P
+
+w+ 
+
+> i
+
+and ϑ− = P 
+
+> j∈N
+
+w− 
+
+> j
+
+, define the effective breadth of each side 
+
+n+eff = Φ +/ϑ +, n− 
+
+> eff
+
+= Φ −/ϑ −
+
+(with neff = 0 for an empty side), so that Φ± = n± 
+
+> eff
+
+· ϑ±.
+
+16 Lemma 5.6 (Effective-breadth bounds) . For any side with m contributors of positive capacity, 
+
+1 ≤ neff ≤ m. The lower bound holds with equality iff exactly one contributor has positive capacity; the upper bound iff all capacities on that side are equal. Proof. Put ai = √wi ≥ 0, so Φ = ( P ai)2 and ϑ = P a2 
+
+> i
+
+. Since ( P ai)2 = P a2 
+
+> i
+
++ 2 P 
+
+> i<j
+
+aiaj ≥
+
+P a2 
+
+> i
+
+, we get neff ≥ 1, with equality iff all cross terms vanish, i.e. at most one ai > 0. By Cauchy– Schwarz, ( P ai · 1) 2 ≤ m P a2 
+
+> i
+
+, so neff ≤ m, with equality iff ( ai) is proportional to (1 , . . . , 1), i.e. all wi equal. Thus neff is the participation ratio of the capacity-roots — the effective number of distinct backers on a side — and Φ ± is the Damle mass ϑ± scaled by it. 
+
+Theorem 5.7 (Breadth-weighted authorization) . Assume (A1)–(A3), the bounded-stake condi-tion (BB), the securities Conditions 1–7, Safe( g) = 1 (otherwise Dg ≡ 0), and the cold-start run-feasibility condition of Lemma 3.10 ( Γ ≥ h0 and ρ(κstart , μ ) ≥ h0, i.e. κstart ≥ ρ−1(h0; μ)). Then the cold-start generation game ( Dg−1 = 0 ) has an efficient — objection-robust, coalition-undominated — PBE, and in every such equilibrium the authorization decision is 
+
+Dg = 1 ⇐⇒ Φ+(θ) ≥ H0 ∧ Φ+(θ) − Φ−(θ) ≥ κstart 
+
+,
+
+equivalently n+eff ϑ+ ≥ H0 and n+eff ϑ+ − n− 
+
+> eff
+
+ϑ− ≥ κstart . Moreover, whenever Dg = 1 the released budget satisfies β ≥ h0, so the authorization is physically runnable. (The continuation decision replaces κstart by κhalt throughout; run-feasibility then requires ρ(κhalt , μ ) ≥ h0, per Lemma 3.10.) Proof. By Proposition 5.2 each i contributes on side sign( θi), and by Proposition 5.4 at arrival, so a profile is summarized by magnitudes xi ∈ [0 , w + 
+
+> i
+
+] ( i ∈ P ) and zj ∈ [0 , w − 
+
+> j
+
+] ( j ∈ N ), where the caps are (A3). By Definition 3.8 the gate depends on these only through S+ = ϕ({xi}) and 
+
+S− = ϕ({zj }), and by Lemma 5.1 it is nondecreasing in each xi, nonincreasing in each zj . Hence the attainable supports satisfy S+ ≤ ϕ({w+ 
+
+> i
+
+}) = Φ + and S− ≤ ϕ({w− 
+
+> j
+
+}) = Φ −, each attained only at full mobilization of that side. 
+
+(Necessity.) If Φ + < H 0 then S+ ≤ Φ+ < H 0 at every admissible profile, so the quorum clause fails and Dg = 0. Suppose instead Φ + − Φ− < κ start and, for contradiction, that an efficient equilibrium has Dg = 1. The objecting coalition N can jointly deviate to full mobilization zj = w− 
+
+> j
+
+:this is within capacity, hence individually rational (each harmed j weakly prefers the resulting move toward its preferred Dg = 0), so it is an admissible coalitional deviation. After it, S− = Φ −
+
+while S+ ≤ Φ+, giving S+ − S− ≤ Φ+ − Φ− < κ start , so Dg = 0 — strictly preferred by every member of N . This contradicts coalition-undominance. Hence Dg = 0. 
+
+(Sufficiency.) Suppose Φ + ≥ H0 and Φ +−Φ− ≥ κstart . Put the objectors at capacity, S− = Φ −
+
+(a weak best response: when authorization carries, a non-pivotal objector is payoff-neutral by the bounded-loss refund of Conditions 6–7). Because Φ + ≥ max( H0, Φ− + κstart ) ≥ max( H0, S − +
+
+κstart ), the beneficiaries can, by continuity of ϕ, choose xi ≤ w+ 
+
+> i
+
+with S+ = max( H0, S − + κstart ); when the hypotheses are strict this target is met with slack ( xi < w + 
+
+> i
+
+), so each pivotal beneficiary has ∆ i > 0 and strictly prefers provision. Then S+ ≥ H0 and S+ − S− ≥ κstart , so Dg = 1. No beneficiary gains by lowering xi — a pivotal reduction forfeits provision it strictly values, a non-pivotal one is payoff-neutral by bounded loss; no objector gains by moving; deviations above capacity are not IR. The refund-bonus/securities layer (Proposition 5.4 and PPS selection) rules out the free-ride-to-failure profile as weakly dominated, selecting this efficient equilibrium. Combining the two directions, Dg = 1 in the efficient equilibrium exactly when both clauses hold. 
+
+(Feasibility.) When Dg = 1, S+ − S− ≥ κstart , so by monotonicity of ρ and Lemma 3.10, 
+
+β = min(Γ , ρ (S+ − S−, μ )) ≥ min(Γ , ρ (κstart , μ )) ≥ h0.
+
+Proposition 5.8 (Breadth can overturn wealth) . The breadth-weighted net preference Φ+ − Φ−
+
+and the valuation net preference ϑ+ − ϑ− can differ in sign. Since Φ± = n± 
+
+> eff
+
+ϑ± (both sides nonempty), the breadth-weighted comparison is governed by n+eff ϑ+ − n− 
+
+> eff
+
+ϑ−; whenever the support side is broader than the opposition by more than the valuation gap against it, 
+
+n+eff /n − 
+
+> eff
+
+> ϑ −/ϑ +,
+
+17 the breadth-weighted net preference is positive ( Φ+ > Φ−) — so that, with the quorum and start margin met, the gate authorizes — even though aggregate valuation opposes ( ϑ+ < ϑ −); symmet-rically, a lone high-value backer can fail against a broad opposition. Proof. Φ+ > Φ− ⇐⇒ n+eff ϑ+ > n − 
+
+> eff
+
+ϑ− ⇐⇒ n+eff /n − 
+
+> eff
+
+> ϑ −/ϑ +, all quantities positive; the right side exceeds 1 exactly when ϑ+ < ϑ −.
+
+Illustration (Figures 2 and 7). Five beneficiaries of capacity 4 and one objector of capacity 36 give ϑ+ = 20 < 36 = ϑ− (wealth rejects) yet Φ + = (5 √4) 2 = 100 > 36 = Φ − (breadth authorizes): here n+eff = 5 (its maximum — five equal backers) and n− 
+
+> eff
+
+= 1 (a singleton), and 5 /1 > 36 /20. Authorization tracks the count of genuine backers, scaled by intensity, not wealth alone — the mechanism’s defining property, now a theorem. 
+
+Remarks (scope of Theorem 5.7). Complete information (commonly-known types) is as-sumed for the characterization, exactly as in the core-implementation results for provision-point games (Bagnoli & Lipman, 1989) and the two-sided characterization of Damle et al. (2019); with private types the same profile is a PBE under the information-aggregating belief system of the securities market, which we do not develop here. The efficient-equilibrium refinement (objection-robust, coalition-undominated) is the two-sided QF analogue of the undominated-/ strong-Nash selection those papers use to rule out the degenerate all-abstain equilibrium that every voluntary-contribution threshold game admits. The theorem pins the decision, not the contribution profile: many profiles clear, but all efficient equilibria authorize on the same breadth-weighted condition. 
+
+Figure 7: Breadth-weighted vs. valuation-weighted authorization. The gate fires on the breadth-weighted net preference Φ + −Φ− (vertical axis) crossing κstart , not on the valuation net preference 
+
+ϑ+ − ϑ− (horizontal axis). Because Φ ± = n± 
+
+> eff
+
+· ϑ±, the two disagree in the shaded off-axis regions: broad support authorizes what concentrated wealth would reject (upper-left), and concentrated wealth cannot authorize against broad but thin opposition (lower-right). The Figure 2 example sits in the upper-left region. 
+
+## 5.3 Manipulation-robustness (Target 4, open) 
+
+Target 5.9 (Manipulation-robustness — open) . Mg is δ-robust if, for every manipulation induc-ing ˜θ with ∥˜θ − θ∥ ≤ δ, the equilibrium Dg equals the θ-truthful one. 
+
+18 breadth net preference  Φ+ − Φ−
+
+valuation net preference ϑ+ − ϑ−         
+
+> ϑ+=ϑ−(wealth-neutral)
+> gate: Φ+−Φ−=κstart
+> neff = 1 : breadth = wealth
+
+AUTHORIZE 
+
+breadth authorizes what wealth would reject 
+
+AUTHORIZE 
+
+breadth and wealth agree 
+
+WITHHOLD 
+
+both oppose 
+
+WITHHOLD          
+
+> wealth favours, but breadth is too thin to clear κstart
+> Fig. 3 example (5 ×4 vs 1 ×36):
+> ϑ+−ϑ−=−16 ,Φ+−Φ−= +64
+
+Figure 8: Breadth-weighted vs. valuation-weighted authorization. The gate fires on the breadth-weighted net preference Φ + −Φ− (vertical axis) crossing κstart , not on the valuation net preference 
+
+ϑ+ − ϑ− (horizontal axis). Because Φ ± = n± 
+
+> eff
+
+· ϑ±, the two disagree in the shaded off-axis regions: broad support authorizes what concentrated wealth would reject (upper-left), and concentrated wealth cannot authorize against broad but thin opposition (lower-right). The Figure 2 example sits in the upper-left region. This has no analogue in the public-goods literature: the “project” can shape the electorate that funds it (Figure 9). As Definition 3.1 notes, the channel is concrete — the agent grooms the reputation signal feeding εi, and through it θi; Theorem 5.7 makes the stakes precise, since the decision is a function of the induced Φ ±(˜θ), and a manipulator who broadens or intensifies its apparent support moves n+eff ϑ+ directly. The model’s structural mitigations are: resolving liability and the decision market on the attested ˆ o rather than sentiment (Invariant 6); the opera-tional/governance separation of duties; and the pause-with-due-process halt ( §4.2). Characterizing mechanisms robust to ∥˜θ − θ∥ ≤ δ is the frontier. 
+
+# 6 Notation 
+
+Table 3 collects every symbol. Provenance is marked R (re-used from PPS / Damle et al.), A (adapted), or N (new). Table 3: Complete notation for the single-agent base case. 
+
+Symbol Domain Meaning Prov. 
+
+I, i finite set verified, distinct human stakeholders R
+
+K, k finite set governed agents —
+
+g, T g , a i, t i N; R+ generation; deadline; arrival; action time R/N 
+
+Ht history public history of contributions/reports up to t R
+
+θi; P, N R; ⊆ I signed net value; beneficiaries / harmed R
+
+εi, k 1 
+
+> i
+
+, k 2 
+
+> i
+
+[0 , 12 ]; [0 , 1] belief asymmetry; belief agent behaves acceptably / not R
+
+ei R+ governance-currency endowment (humans only) N
+
+xi, z i; ˜ si R+; {+, −} authorize / halt contribution; reported side R
+
+ψi, σ i tuple; map strategy; history-contingent strategy R/A 
+
+ϕ; S+, S − map; R+ QF aggregator; breadth-weighted effective supports N
+
+19 Symbol Domain Meaning Prov. 
+
+X+, X − R+ raw totals (bookkeeping only) RˆP , ˆN ⊆ I revealed supporters / objectors at Tg N
+
+C; q; ri — securities cost function (Conditions 1–7); market state; issued securities R
+
+bi, ν i, M i, B B R+; [0 , 1] early-commit bonus; belief reward; RBTS score; budget R
+
+H0 R+ (currency) participation / quorum floor ( S+ ≥ H0), anti-capture N
+
+h0 R+ (compute) compute-cost provision point (technologically set) AΓ R+ (compute) safety ceiling — exogenous, certified; hardware-enforced N
+
+μ; μ∗ R+ (compute) compute-subsidy parameter; minimal feasible subsidy N
+
+ρ; β map; R+ coupling map; released compute β = Dg min(Γ , ρ (S+ −
+
+S−, μ )) ≤ ΓN
+
+κstart , κ halt R+ start / halt net-support margins ( κstart ≥ κhalt ) NSafe( g); Dg {0, 1} exogenous safety predicate; authorization decision N
+
+Lg tuple signed compute license (model, β, window, policy) N
+
+Vhard , V soft maps fact attestation; semantic adjudication Nˆohard , ˆosoft O attested outcome (facts, semantics); outcome space N¯H; Y {0, 1}; [0 , 1] verified-harm indicator; decision-market forecast NΛ, λ j ; Π R+; rules liability bond; harmed-party share; settlement rules AΠext , InEnv R+; {0, 1} uncapped external liability; in-envelope indicator N
+
+ci; ∆ i R+; R total contribution xi + zi; decision preference θi − ci − bi R/N 
+
+w+ 
+
+> i
+
+, w − 
+
+> j
+
+R+ authorize/halt reservation capacity ( θi − bi, |θj | − bj ) —
+
+ϑ+, ϑ − R+ linear (Damle) net-preference masses P w+, P w− R/A Φ+, Φ− R+ breadth-weighted supports ϕ({w+}), ϕ ({w−}) (Theo-rem 5.7) N
+
+n+eff , n − 
+
+> eff
+
+[1 , m ] effective breadth Φ ±/ϑ ± (participation ratio) N˜θi, δ R; R+ induced valuation under manipulation; robustness bound N
+
+ui, u d, π d; Wi R stakeholder/deployer payoff; operating benefit; outcome-contingent value R/N 
+
+# 7 Discussion and Limitations 
+
+The central open problem. Target 4 is the deepest. A capable agent can persuade, astroturf, or strategically perform for the stakeholders whose contributions govern it, inducing ˜θ from the au-tonomous θ and then being resourced by the vote it shaped (Figure 9). Because “past behaviour” is among the strongest inputs to εi (Definition 3.1), the manipulation surface is not hypotheti-cal; reputation-grooming is a dominant-looking strategy absent countermeasures. Our structural mitigations (Invariant 6 resolution on ˆ o; separation of duties; due-process halt) constrain but do not solve it, and it interacts with the trusted-verifier limit below: the less credible Vsoft , the more governance leans on sentiment, and the larger the manipulation prize. 
+
+The trusted-verifier scope limit. As §4.4 makes precise, ex-ante authorization is trust-minimized but ex-post accountability rests on a trusted semantic verifier Vsoft . The mechanism is therefore genuinely suitable only where a credible outcome oracle exists; where harm is diffuse, delayed, or contested, the accountability half does not apply and the design should not be claimed for it. This is a scope statement, not a caveat: it is what makes the governable-agent class of §4.3 a class rather than a wish. 
+
+Preferences, wealth, and legitimacy. Willingness-to-contribute is not welfare, and QF only partially corrects for wealth; whose preferences count is a prior social-choice question the mecha-nism presupposes via the definition of I and the Sybil-resistant substrate. The participation floor 
+
+H0 is an anti-capture device but not a legitimacy proof. Thin or unrepresentative participation de-grades both provision-point and QF guarantees, so legitimacy under low turnout must be designed for, not assumed. Reversibility is imperfect: some within-generation actions are realized and non-refundable before a halt can bind, which is why the scope insists on consequential-but-reversible impact and why the halt is a pause with due process rather than a guarantee of undo. 20 Figure 9: The central open problem. The governed agent can induce ˜θ from true θ within ∥˜θ−θ∥ ≤ 
+
+δ and is then resourced by the vote it shaped — a manipulation loop with no public-goods analogue. The desideratum is that the gate track θ, not ˜θ.
+
+Adoption realism. The safe harbour (Definition 3.15, §4.2) is what makes deployer participa-tion individually rational, but it presupposes a liability regime with teeth outside the envelope; absent that, the carrot has no bite and only the commons route remains. The mechanism is best understood as an overlay that a regulator or a community imposes or chooses, not a product a platform ships. 
+
+Multi-agent extension. For |K| > 1, endowments, gates, licenses, and ceilings are indexed by k; shared compute introduces a budget-allocation problem across agents (a knapsack under the common ceiling P 
+
+> k
+
+βk ≤ Γtot ) and cross-agent externalities in θ and ¯H. The invariants are unchanged per agent; the coupling and safety layers become joint. We leave the commons case to future work. 
+
+# 8 Conclusion 
+
+We have given a formal model in which a governance decision over a deployed AI agent is expressed as a breadth-weighted, two-sided, threshold-gated release of a metered compute budget. This compute budget can be realized as a signed hardware license, subordinate to an exogenous safety envelope, and settled on attested outcomes. We have grounded the construction: a two-timescale hardware instantiation, an adoption model with a liability safe harbour, a fact/semantics split of the verifier with a challengeable harm finding, a derived run-feasibility condition that frees the provision point to be an anti-capture quorum, and an explicit characterization of the club-or-commons-good agents the mechanism can govern. We proved sided incentive compatibility (with an honest asymmetry: the authorize side needs a bounded-stake condition, the halt side does not), early commitment, and a breadth-weighted authorization theorem — in the efficient equilibrium the gate fires exactly when the effective number of backers times their intensity, n+eff ϑ+ − n− 
+
+> eff
+
+ϑ−,clears the start margin, so that broad support authorizes what concentrated wealth would reject. The model’s value is that it turns design principles into checkable properties and states its own scope — and it isolates one genuinely new problem, the manipulation of a governing electorate by the system it governs, as the central open question. 21 References 
+
+[1] Aarne, O., Fist, T., & Withers, C. (2024). Secure, Governable Chips. Center for a New American Security. [2] Bagnoli, M., & Lipman, B. L. (1989). Provision of public goods: fully implementing the core through private contributions. Review of Economic Studies , 56(4), 583–601. [3] Buterin, V., Hitzig, Z., & Weyl, E. G. (2019). A flexible design for funding public goods. 
+
+Management Science , 65(11), 5171–5187. [4] Chandra, P., Gujar, S., & Narahari, Y. (2016). Crowdfunding public projects with provision point: a prediction market approach. ECAI , 778–786. [5] Damle, S., Moti, M. H., Chandra, P., & Gujar, S. (2019). Civic crowdfunding for agents with negative valuations and agents with asymmetric beliefs. arXiv:1905.11324. [6] Greenblatt, R., Shlegeris, B., Sachan, K., & Roger, F. (2024). AI control: improving safety despite intentional subversion. ICML . arXiv:2312.06942. [7] Heim, L., et al. (2025). Hardware-enabled mechanisms for verifying responsible AI devel-opment. arXiv:2505.03742. [8] Miller, J., Weyl, E. G., & Erichsen, L. (2022). Beyond collusion resistance: leveraging social information for plural funding and voting. SSRN 4311507. [9] Petrie, J. (2025). Embedded off-switches for AI compute. arXiv:2509.07637. [10] Petrie, J., Aarne, O., Ammann, N., & Dalrymple, D. (2025). Flexible hardware-enabled guarantees for AI compute (flexHEG). arXiv:2506.15093. [11] Prelec, D. (2004). A Bayesian truth serum for subjective data. Science , 306(5695), 462–466. [12] Sastry, G., Heim, L., Belfield, H., Anderljung, M., Brundage, M., et al. (2024). Computing power and the governance of artificial intelligence. arXiv:2402.08797. [13] Witkowski, J., & Parkes, D. C. (2012). A robust Bayesian truth serum for small populations. 
+
+AAAI .[14] Zubrickas, R. (2014). The provision point mechanism with refund bonuses. Journal of Public Economics , 120, 231–234. 22

@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-08</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-09</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 18 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 17 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>7</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>6</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-08 20:59:25 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-09 20:14:04 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,7 +62,7 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日18篇论文聚焦自主代理部署与微支付决策，精读重点为MADE双代理协调与402Pilot支付层。最值得关注的是模型部署中的信念驱动协作机制，以及代理自动支付的安全边界。后续可延伸阅读多代理系统的安全不变量与协作后门风险研究。</p>
+<p>今日共读17篇论文，重点精读2篇关于LLM智能体的自适应框架与长时程任务研究。最值得关注的是将大模型嵌入流程控制实现可信自动化，以及面向长期自主性的智能体评测设计。下一步建议普通读者从智能体的“长期可靠性”与“跨域泛化”两个方向持续跟踪。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -71,12 +71,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">7 篇</strong>
+    <strong class="dpr-home-dashboard-count">6 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="MADE: Belief-Driven Dual-Agent Coordination for Autonomous Model Deployment">MADE: Belief-Driven Dual-Agent Coordination for Autonomous Model Deployment</span></li><li><span class="dpr-home-dashboard-paper-title" title="402Pilot: An x402 Decision Layer for Autonomous Agent Micropayments">402Pilot: An x402 Decision Layer for Autonomous Agent Micropayments</span></li><li><span class="dpr-home-dashboard-paper-title" title="An Actionable Diagnosis of Multilingual, Multi-Agent Planning Failures">An Actionable Diagnosis of Multilingual, Multi-Agent Planning Failures</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Embedding Large Language Models into Flow Controls: An Agentic Framework for Adaptive and Trustworthy Automated Cooking">Embedding Large Language Models into Flow Controls: An Agentic Framework for Adaptive and Trustworthy Automated Cooking</span></li><li><span class="dpr-home-dashboard-paper-title" title="OneDayAgent: Towards a Long-Horizon Harness for Autonomous Agents">OneDayAgent: Towards a Long-Horizon Harness for Autonomous Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="ASTELD: A Six-Axis Classification Framework for Autonomous AI Agents - Design, Evaluation, and an OpenClaw Case Study">ASTELD: A Six-Axis Classification Framework for Autonomous AI Agents - Design, Evaluation, and an OpenClaw Case Study</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>7</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>6</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -87,7 +87,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Safety Invariants for Agents Orchestrating Irreversible State Transitions: A Four-Dimensional Formalism Evaluated on Public Ledgers">Safety Invariants for Agents Orchestrating Irreversible State Transitions: A Four-Dimensional Formalism Evaluated on Public Ledgers</span></li><li><span class="dpr-home-dashboard-paper-title" title="When Collaboration Becomes a Trigger: Collective Evidence-Threshold Backdoors in Multi-Agent Systems">When Collaboration Becomes a Trigger: Collective Evidence-Threshold Backdoors in Multi-Agent Systems</span></li><li><span class="dpr-home-dashboard-paper-title" title="Policy Optimality Measurement for Multi-Vehicle Decision-Making: From Extrinsic Indicators to Intrinsic Quality">Policy Optimality Measurement for Multi-Vehicle Decision-Making: From Extrinsic Indicators to Intrinsic Quality</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="PATH-Bench: Path-Dependent Evaluation of Lifelong Agents">PATH-Bench: Path-Dependent Evaluation of Lifelong Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Cross-Domain Hybrid OPD for Generalizable Search Agents">Cross-Domain Hybrid OPD for Generalizable Search Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Beyond Solution-Centric Search: Adaptive Inquiry and Knowledge Revision for Autonomous ML Engineering">Beyond Solution-Centric Search: Adaptive Inquiry and Knowledge Revision for Autonomous ML Engineering</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>

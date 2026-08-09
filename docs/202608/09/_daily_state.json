@@ -1,0 +1,281 @@
+{
+  "date": "20260809",
+  "date_label": "",
+  "generated_at": "2026-08-09 20:14:04 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2608.04768v1",
+      "route": "202608/09/2608.04768v1-embedding-large-language-models-into-flow-controls-an-agentic-framework-for-adaptive-and-trustworthy-automated-cooking",
+      "title": "Embedding Large Language Models into Flow Controls: An Agentic Framework for Adaptive and Trustworthy Automated Cooking",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向自动烹饪的智能体应用",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    },
+    {
+      "paper_id": "2608.05013v1",
+      "route": "202608/09/2608.05013v1-onedayagent-towards-a-long-horizon-harness-for-autonomous-agents",
+      "title": "OneDayAgent: Towards a Long-Horizon Harness for Autonomous Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "处理目标漂移与上下文溢出的长时程自主智能体管理系统",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    },
+    {
+      "paper_id": "2608.05201v1",
+      "route": "202608/09/2608.05201v1-asteld-a-six-axis-classification-framework-for-autonomous-ai-agents---design-evaluation-and-an-openclaw-case-study",
+      "title": "ASTELD: A Six-Axis Classification Framework for Autonomous AI Agents - Design, Evaluation, and an OpenClaw Case Study",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "自治AI智能体架构设计选择的六轴分类框架",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    },
+    {
+      "paper_id": "2608.06128v1",
+      "route": "202608/09/2608.06128v1-contextual-information-policy-optimization-for-search-agents",
+      "title": "Contextual Information Policy Optimization for Search Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向搜索智能体的策略优化，使检索后决策基于证据，契合自主智能体决策制定",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    },
+    {
+      "paper_id": "2608.01149v1",
+      "route": "202608/09/2608.01149v1-path-bench-path-dependent-evaluation-of-lifelong-agents",
+      "title": "PATH-Bench: Path-Dependent Evaluation of Lifelong Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "终身智能体路径依赖评估基准",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    },
+    {
+      "paper_id": "2608.01918v1",
+      "route": "202608/09/2608.01918v1-harnesscompass-guiding-automatic-harness-evolution-toward-generalizable-and-effective-agent-harnesses",
+      "title": "HarnessCompass: Guiding Automatic Harness Evolution toward Generalizable and Effective Agent Harnesses",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "智能体harness设计与演化模式",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    },
+    {
+      "paper_id": "2608.02101v1",
+      "route": "202608/09/2608.02101v1-cross-domain-hybrid-opd-for-generalizable-search-agents",
+      "title": "Cross-Domain Hybrid OPD for Generalizable Search Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "提出可泛化搜索智能体的训练框架，结合智能体强化学习与跨域专家策略蒸馏，用于自主搜索与行为控制",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    },
+    {
+      "paper_id": "2608.02143v1",
+      "route": "202608/09/2608.02143v1-beyond-solution-centric-search-adaptive-inquiry-and-knowledge-revision-for-autonomous-ml-engineering",
+      "title": "Beyond Solution-Centric Search: Adaptive Inquiry and Knowledge Revision for Autonomous ML Engineering",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "提出面向自主机器学习工程的信息范式，通过演化信息状态生成行动计划，体现自主智能体规划机制",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    },
+    {
+      "paper_id": "2608.02358v1",
+      "route": "202608/09/2608.02358v1-scrambletoolbench-agents-search-exhaustively-even-when-their-own-map-points-to-the-next-step",
+      "title": "ScrambleToolBench: Agents Search Exhaustively Even When Their Own Map Points to the Next Step",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "提出交互式终端基准，要求智能体在没有语义线索的情况下通过试错推断工具行为并规划动作，考验自主行为推理",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    },
+    {
+      "paper_id": "2608.02441v1",
+      "route": "202608/09/2608.02441v1-agentic-commerce-world-an-auditable-and-verifiable-environment-for-vibe-commerce",
+      "title": "Agentic Commerce World: An Auditable and Verifiable Environment for Vibe Commerce",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "提出Agentic Commerce World环境，用于评估在vibe商业应用中买方与商家智能体的交互",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    },
+    {
+      "paper_id": "2608.04626v1",
+      "route": "202608/09/2608.04626v1-blockchain-empowered-trustworthy-agent-networks-foundations-taxonomy-and-future-directions",
+      "title": "Blockchain Empowered Trustworthy Agent Networks: Foundations, Taxonomy, and Future Directions",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "智能体互联协议与开放网络综述",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    },
+    {
+      "paper_id": "2608.01042v1",
+      "route": "202608/09/2608.01042v1-what-could-the-agent-see-at-1905-generating-temporal-enterprise-scenarios-from-real-research-and-replaying-them-to-evaluate-agents",
+      "title": "What Could the Agent See at 19:05? Generating Temporal Enterprise Scenarios from Real Research and Replaying Them to Evaluate Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "通过生成并重放时间场景来评估企业AI智能体，为智能体设计与应用评估提供新方法",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    },
+    {
+      "paper_id": "2608.01346v1",
+      "route": "202608/09/2608.01346v1-hybrid-ai-for-explainable-and-accurate-conversational-agents-in-egovernment",
+      "title": "Hybrid AI for Explainable and Accurate Conversational Agents in eGovernment",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向电子政务的LLM与符号DCR图结合的对话智能体混合架构",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    },
+    {
+      "paper_id": "2608.02764v1",
+      "route": "202608/09/2608.02764v1-stateful-governance-for-concurrent-agentic-systems",
+      "title": "Stateful Governance for Concurrent Agentic Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "针对并发Agent系统的控制与治理，解决过期授权和策略状态可串行化问题，涉及智能体控制",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    },
+    {
+      "paper_id": "2608.03272v1",
+      "route": "202608/09/2608.03272v1-attacking-and-defending-multi-agent-collaborative-filtering-systems-through-connectivity",
+      "title": "Attacking and Defending Multi-Agent Collaborative Filtering Systems Through Connectivity",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "协同过滤中LLM用户与物品智能体的协调",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    },
+    {
+      "paper_id": "2608.05223v1",
+      "route": "202608/09/2608.05223v1-towards-a-risk-assessment-of-malicious-skill-files-in-coding-agents",
+      "title": "Towards a Risk Assessment of Malicious Skill Files in Coding Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "企业工作流中自主编码智能体的安全风险评估",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    },
+    {
+      "paper_id": "2608.06353v1",
+      "route": "202608/09/2608.06353v1-resourced-authority-a-mechanism-design-model-for-participatory-governance-of-deployed-ai-agents",
+      "title": "Resourced Authority A Mechanism-Design Model for Participatory Governance of Deployed AI Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "基于计算预算的部署AI代理参与式治理机制设计模型",
+      "first_seen_at": "2026-08-09 20:14:04 UTC",
+      "updated_at": "2026-08-09 20:14:04 UTC"
+    }
+  ]
+}
