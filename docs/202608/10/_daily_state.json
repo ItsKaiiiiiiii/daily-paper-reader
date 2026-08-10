@@ -1,0 +1,281 @@
+{
+  "date": "20260810",
+  "date_label": "",
+  "generated_at": "2026-08-10 21:16:33 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2608.03392v1",
+      "route": "202608/10/2608.03392v1-self-evolving-coding-agents",
+      "title": "Self-Evolving Coding Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "综述使编码智能体通过记忆、技能、工具与协作结构实现自我演化的架构模式",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    },
+    {
+      "paper_id": "2608.03420v1",
+      "route": "202608/10/2608.03420v1-towards-improving-sequential-decision-making-in-llm-agents-via-experience-memory",
+      "title": "Towards Improving Sequential Decision-Making in LLM Agents via Experience Memory",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "基于经验记忆的LLM智能体序贯决策",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    },
+    {
+      "paper_id": "2608.05987v1",
+      "route": "202608/10/2608.05987v1-agentopsd-recursive-self-distillation-for-agentic-reinforcement-learning",
+      "title": "AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向自主决策的智能体强化学习信用分配",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    },
+    {
+      "paper_id": "2608.06520v1",
+      "route": "202608/10/2608.06520v1-online-security-learning-in-cooperative-multi-agent-systems-under-hidden-byzantine-attacks",
+      "title": "Online Security Learning in Cooperative Multi-Agent Systems under Hidden Byzantine Attacks",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "拜占庭攻击下多智能体强化学习的安全学习",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    },
+    {
+      "paper_id": "2608.06714v1",
+      "route": "202608/10/2608.06714v1-the-optimizer-is-the-agent-reasoning-driven-search-across-prompts-programs-and-ml-workflows",
+      "title": "The Optimizer Is the Agent: Reasoning-Driven Search across Prompts, Programs, and ML Workflows",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "提出ReASearch框架，由智能体自主决定评估、诊断与编辑策略",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    },
+    {
+      "paper_id": "2608.02683v1",
+      "route": "202608/10/2608.02683v1-s3-improving-agent-safety-through-multi-stage-defense",
+      "title": "$S^3$: Improving Agent Safety through Multi-Stage Defense",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "针对LLM智能体多阶段防御的阶段特定安全技能",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    },
+    {
+      "paper_id": "2608.03609v1",
+      "route": "202608/10/2608.03609v1-formal-verification-of-agentic-systems-over-operational-data",
+      "title": "Formal Verification of Agentic Systems over Operational Data",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "基于运行数据的智能体系统形式化验证",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    },
+    {
+      "paper_id": "2608.04341v1",
+      "route": "202608/10/2608.04341v1-continuous-improvement-and-parallel-autonomous-exploration-an-llm-agent-framework-for-searching-large-solution-spaces",
+      "title": "Continuous Improvement and Parallel Autonomous Exploration: An LLM-Agent Framework for Searching Large Solution Spaces",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "用于自主探索与自我改进的LLM智能体框架",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    },
+    {
+      "paper_id": "2608.04761v2",
+      "route": "202608/10/2608.04761v2-insightemb-learning-action-intent-embeddings-for-agentic-insight-retrieval",
+      "title": "InsightEmb: Learning Action-Intent Embeddings for Agentic Insight Retrieval",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向决策支持的智能体洞察检索",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    },
+    {
+      "paper_id": "2608.05446v1",
+      "route": "202608/10/2608.05446v1-evoharness-rl-learning-self-evolving-runtime-harness-for-long-horizon-llm-agents",
+      "title": "EvoHarness-RL: Learning Self-Evolving Runtime Harness for Long-Horizon LLM Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向长周期LLM智能体学习自演化运行时harness策略，进行状态构建与运行控制",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    },
+    {
+      "paper_id": "2608.03283v1",
+      "route": "202608/10/2608.03283v1-agentpanel-toward-a-new-paradigm-for-human--ai-collaboration-in-exploring-scientific-questions",
+      "title": "AgentPanel: Toward a New Paradigm for Human--AI Collaboration in Exploring Scientific Questions",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "异构智能体以论坛形式异步协作进行科学问题探索",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    },
+    {
+      "paper_id": "2608.04003v1",
+      "route": "202608/10/2608.04003v1-past-bench-benchmarking-the-foundations-of-recursive-self-improvement-in-personal-agents",
+      "title": "PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "针对个人AI智能体递归自我改进的基准测试",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    },
+    {
+      "paper_id": "2608.04148v1",
+      "route": "202608/10/2608.04148v1-agentforge-an-immersive-role-playing-platform-for-learning-agentic-software-engineering",
+      "title": "AgentForge: An Immersive Role-Playing Platform for Learning Agentic Software Engineering",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "学习智能体软件工程的沉浸式平台",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    },
+    {
+      "paper_id": "2608.04317v1",
+      "route": "202608/10/2608.04317v1-trident--how-to-break-deep-reinforcement-learning-cyber-defenses-agentic",
+      "title": "Trident : How to Break Deep Reinforcement Learning Cyber Defenses (Agentic)",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "用于红队对抗自主网络防御智能体的智能体化LLM框架",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    },
+    {
+      "paper_id": "2608.02553v1",
+      "route": "202608/10/2608.02553v1-a-taxonomy-of-cognitive-capability-gaps-in-generative-and-agentic-ai",
+      "title": "A Taxonomy of Cognitive Capability Gaps in Generative and Agentic AI",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "智能体AI认知能力差距分类",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    },
+    {
+      "paper_id": "2608.05884v1",
+      "route": "202608/10/2608.05884v1-the-vulnerability-with-no-cve-managing-persistent-gaps-between-mandate-and-authority-in-ai-coding-agents",
+      "title": "The Vulnerability With No CVE: Managing Persistent Gaps Between Mandate and Authority in AI Coding Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "提出智能体姿态漏洞抽象来管理自主编码智能体中的持久控制差距",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    },
+    {
+      "paper_id": "2608.06227v1",
+      "route": "202608/10/2608.06227v1-from-passive-mirrors-to-active-agents-holonic-digital-twins-for-physical-ai-over-networks",
+      "title": "From Passive Mirrors to Active Agents: Holonic Digital Twins for Physical AI over Networks",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "面向网络物理AI的主动智能体架构与控制",
+      "first_seen_at": "2026-08-10 21:16:33 UTC",
+      "updated_at": "2026-08-10 21:16:33 UTC"
+    }
+  ]
+}

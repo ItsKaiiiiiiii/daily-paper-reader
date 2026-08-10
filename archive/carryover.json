@@ -1,218 +1,12 @@
 {
-  "generated_at": "2026-08-09T20:04:57.702447+00:00",
-  "updated_date": "20260809",
+  "generated_at": "2026-08-10T21:08:51.480167+00:00",
+  "updated_date": "20260810",
   "carryover_days": 9,
   "tag_states": {
     "agent": {
-      "updated_date": "20260809",
+      "updated_date": "20260810",
       "carryover_days": 9,
       "items": [
-        {
-          "id": "2608.02683v1",
-          "source": "arxiv",
-          "title": "$S^3$: Improving Agent Safety through Multi-Stage Defense",
-          "abstract": "Large Language Model (LLM) agents rely on multi-stage agentic workflows, with stages such as memory, planning, and tool execution, to accomplish complex tasks. However, risks may emerge at different stages, propagate across steps, and become difficult to detect and mitigate. Existing safety methods protect only isolated stages and are difficult to integrate, leaving agents without comprehensive protection throughout the workflow. To address these limitations, we introduce Stage-Specific Safety Skills, a unified abstraction that represents heterogeneous safety designs as reusable and composable components with explicit stage semantics. We further develop an automated transformation pipeline that converts existing safety designs into reusable safety skills and establish a community-driven safety skill library. Building on this abstraction, we propose $S^3$, a multi-stage defense framework in which a guard agent orchestrates stage-specific safety skills for risk detection and mitigation throughout the agentic workflow. We also construct the Multi-Stage Risk Benchmark (MSRB) to evaluate representative risks across workflow stages. Experimental results show that $S^3$ consistently outperforms representative state-of-the-art baselines in both safety effectiveness and utility preservation. These results demonstrate the potential of stage-specific safety skills as a scalable and composable foundation for building resilient and trustworthy agent systems.",
-          "authors": [
-            "Zibo Xiao",
-            "Haoyu Wang",
-            "Jun Sun"
-          ],
-          "primary_category": "cs.CR",
-          "categories": [
-            "cs.CR",
-            "cs.AI"
-          ],
-          "published": "2026-08-03T02:06:06+00:00",
-          "link": "https://arxiv.org/pdf/2608.02683v1",
-          "tags": [
-            "keyword:agent",
-            "query:agent"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "multi-stage safety skills for LLM agent workflows",
-          "llm_evidence_cn": "面向LLM智能体工作流的多阶段安全技能",
-          "llm_evidence": "面向LLM智能体工作流的多阶段安全技能",
-          "canonical_evidence": "面向LLM智能体工作流的多阶段安全技能",
-          "llm_tldr_en": "Introduces Stage-Specific Safety Skills, a unified abstraction for heterogeneous safety designs in LLM agent workflows, plus an automated pipeline converting existing designs into reusable safety skills for comprehensive multi-stage protection.",
-          "llm_tldr_cn": "大型语言模型智能体依赖记忆、规划、工具执行等多阶段工作流，安全风险会跨阶段传播。现有方法只保护孤立阶段且难以集成。作者提出阶段特定安全技能这一统一抽象，将异构安全设计转化为可复用、可组合的组件，并开发自动化转换流水线。该方法为智能体工作流提供端到端安全防护，弥补了分阶段防御的集成缺口。",
-          "llm_tldr": "大型语言模型智能体依赖记忆、规划、工具执行等多阶段工作流，安全风险会跨阶段传播。现有方法只保护孤立阶段且难以集成。作者提出阶段特定安全技能这一统一抽象，将异构安全设计转化为可复用、可组合的组件，并开发自动化转换流水线。该方法为智能体工作流提供端到端安全防护，弥补了分阶段防御的集成缺口。",
-          "llm_tags": [
-            "query:agent"
-          ],
-          "matched_query_tag": "query:agent",
-          "matched_query_text": "papers on autonomous agent architectures and control",
-          "matched_requirement_id": "req-7",
-          "selection_source": "carryover_cache",
-          "paper_id": "2608.02683v1",
-          "carry_days": 1
-        },
-        {
-          "id": "2608.05729v1",
-          "source": "arxiv",
-          "title": "Unified Agent: Managing Interactions across Devices",
-          "abstract": "As capabilities rapidly increase, AI agents can move from running inside one app to acting across a user's devices over time. Yet existing agent systems still fall short in this scenario. This is because observations are scattered across devices and moments, but mainstream systems are not designed around this fact: a single agent that treats devices as tools lacks effective state management for all devices across time, and multi-agent systems coordinate across agents but do not maintain the compact carried state a cross-device, cross-time request needs. We argue that the agent should maintain an effectively designed state that organizes engagement evidence, stated facts, and the standing request in a compact, action-ready form for deciding its action given the current observation. To compare state designs, we construct a benchmark of user-agent interaction across devices and time. We instantiate this principle in Unified Agent, a stateful agent that carries interaction evidence across devices and moments and uses it with the current observation to act. In the default setting, it significantly outperforms our adaptations of four published designs. Across changes in multimodal large language model (MLLM) family, capability, and reasoning effort, it remains ahead of all compared systems, demonstrating that the state-design advantage is robust across MLLM settings. Our code and data will be publicly available on GitHub.",
-          "authors": [
-            "Xinshuang Liu",
-            "Runfa Blark Li",
-            "Shaoxiu Wei",
-            "Xin Lin",
-            "Truong Nguyen"
-          ],
-          "primary_category": "cs.AI",
-          "categories": [
-            "cs.AI",
-            "cs.CL",
-            "cs.CV",
-            "cs.HC"
-          ],
-          "published": "2026-08-06T08:14:33+00:00",
-          "link": "https://arxiv.org/pdf/2608.05729v1",
-          "tags": [
-            "keyword:agent",
-            "query:agent"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "Proposes agent architecture with effectively designed state for cross-device, cross-time interaction management",
-          "llm_evidence_cn": "提出一种智能体架构，通过设计紧凑、可操作的状态来管理跨设备、跨时间的交互",
-          "llm_evidence": "提出一种智能体架构，通过设计紧凑、可操作的状态来管理跨设备、跨时间的交互",
-          "canonical_evidence": "提出一种智能体架构，通过设计紧凑、可操作的状态来管理跨设备、跨时间的交互",
-          "llm_tldr_en": "Argues for a unified agent design that maintains compact, action-ready state organizing engagement evidence, facts, and requests to manage interactions across devices and time.",
-          "llm_tldr_cn": "现有智能体系统在跨设备交互中因观测分散而效果不佳，单一智能体缺乏有效的全局状态管理，多智能体系统又难以维持紧凑的携带状态。论文提出统一智能体设计，维护一个组织互动证据、事实和待办请求的紧凑、可操作状态，以支持跨设备跨时间的决策，为智能体架构设计提供了新范式。",
-          "llm_tldr": "现有智能体系统在跨设备交互中因观测分散而效果不佳，单一智能体缺乏有效的全局状态管理，多智能体系统又难以维持紧凑的携带状态。论文提出统一智能体设计，维护一个组织互动证据、事实和待办请求的紧凑、可操作状态，以支持跨设备跨时间的决策，为智能体架构设计提供了新范式。",
-          "llm_tags": [
-            "query:agent"
-          ],
-          "matched_query_tag": "query:agent",
-          "matched_query_text": "agent architecture design patterns",
-          "matched_requirement_id": "req-5",
-          "selection_source": "carryover_cache",
-          "paper_id": "2608.05729v1",
-          "carry_days": 1
-        },
-        {
-          "id": "2608.04458v1",
-          "source": "arxiv",
-          "title": "Architectural Implications of Agentic AI Workflows",
-          "abstract": "Agentic AI is emerging in datacenters, but its architectural implications remain unexplored. We organize agentic workflows in a taxonomy and present its first architectural characterization with a production study at Microsoft Azure and a controlled study of open-source frameworks. We show that agentic execution is fragmented and heterogeneous. Requests expand into a workflow of LLM inferences, tool invocations, and orchestration decisions that repeatedly cross the CPU-GPU boundary. Our taxonomy explains how this fragmentation turns into resource demand. As orchestration and tools run on the host, the CPU sits on the critical path. Execution structure sets the load over time, which stays low with sudden spikes. Model composition sets how evenly the workflow uses the GPUs. Diversity in tasks and tools widens this range even further. These characteristics expose architectural mismatches of conventional uniform servers. Fragmented execution strands CPU and GPU capacity despite bursty demand. Different software roles make homogeneous CPU provisioning inefficient. Finally, multiplexing many agents onto shared cores degrades microarchitectural locality. Guided by our findings, we derive implications for agentic servers and examine them through Agora, our prototype for commodity servers. Agora dynamically harvests idle CPU cores for co-located throughput work, while protecting agentic tail latency against tool spikes. It oversubscribes GPU memory by placing more agents on each GPU, prefetching the next agent's state to hide swap latency. To match the machine to the heterogeneous roles, Agora pools cores by role and applies affinity-aware scheduling to restore locality. It automatically tunes mechanisms to the workload. Agora improves utilization and server throughput while preserving agent tail latency. Our insights also identify key directions for future server architectures for agentic AI.",
-          "authors": [
-            "Jirong Yang",
-            "Peizhe Liu",
-            "Chaojie Zhang",
-            "Jovan Stojkovic"
-          ],
-          "primary_category": "cs.AI",
-          "categories": [
-            "cs.AI",
-            "cs.AR",
-            "cs.OS"
-          ],
-          "published": "2026-08-05T05:31:33+00:00",
-          "link": "https://arxiv.org/pdf/2608.04458v1",
-          "tags": [
-            "keyword:agent",
-            "query:agent"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "Taxonomy and architectural characterization of agentic AI workflows in datacenters",
-          "llm_evidence_cn": "数据中心中代理式AI工作流的分类与架构特征分析",
-          "llm_evidence": "数据中心中代理式AI工作流的分类与架构特征分析",
-          "canonical_evidence": "数据中心中代理式AI工作流的分类与架构特征分析",
-          "llm_tldr_en": "Provides the first architectural characterization of agentic workflows, showing their fragmented, heterogeneous nature and how orchestration, tool invocation, and LLM calls repeatedly cross the CPU-GPU boundary.",
-          "llm_tldr_cn": "代理式AI正进入数据中心，但其架构影响尚不明确。本文对代理工作流进行分类，并通过Azure生产研究和开源框架对照实验给出首个架构特征分析。结果显示代理执行具有碎片化和异构性：请求扩展为包含LLM推理、工具调用和编排决策的工作流，并反复跨越CPU-GPU边界，CPU位于关键路径。该特征分析为代理架构设计与数据中心资源调度提供了依据。",
-          "llm_tldr": "代理式AI正进入数据中心，但其架构影响尚不明确。本文对代理工作流进行分类，并通过Azure生产研究和开源框架对照实验给出首个架构特征分析。结果显示代理执行具有碎片化和异构性：请求扩展为包含LLM推理、工具调用和编排决策的工作流，并反复跨越CPU-GPU边界，CPU位于关键路径。该特征分析为代理架构设计与数据中心资源调度提供了依据。",
-          "llm_tags": [
-            "query:agent"
-          ],
-          "matched_query_tag": "query:agent",
-          "matched_query_text": "agent architecture design patterns",
-          "matched_requirement_id": "req-5",
-          "selection_source": "carryover_cache",
-          "paper_id": "2608.04458v1",
-          "carry_days": 1
-        },
-        {
-          "id": "2608.04003v1",
-          "source": "arxiv",
-          "title": "PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents",
-          "abstract": "Recursive self-improvement requires agents to turn accumulated experience into better future behavior. Personal AI agents offer a concrete setting for studying this capability because they retain preferences, task histories, tool routines, and learned skills across sessions. Yet whether retained experience actually improves them over time has not been systematically tested. We introduce PAST-Bench, a benchmark designed to isolate this question. Each agent runs through ordered sequences of fresh-session tasks under matched conditions that turn retained experience on and off. It spans 26 scenarios and 204 episodes across memory, procedural reuse, information gathering, and update. We report both later-task gains and whether those gains follow the intended save, retrieve, and update pathway. Across seven base models and four agent frameworks, improvement is real but uneven across capabilities. Agents with the same headline gain can differ markedly in whether that gain is supported by evidence of the intended pathway. Guided by these findings, we develop Hermes+, which extends Hermes with five targeted interventions across stages of the agent loop. Hermes+ raises the average gain from retained experience and provides clearer pathway evidence, with its strongest improvement on tasks requiring outdated state to be replaced, although the effect remains capability- and model-dependent. Together, PAST-Bench and Hermes+ provide an evaluation and diagnostic foundation for studying how persistent agents can progress from retaining experience to systematically improving through it. Code: https://github.com/Gen-Verse/PAST-Bench",
-          "authors": [
-            "Shuhan Xue",
-            "Zixin Ding",
-            "Yichen Shen",
-            "Yinjie Wang",
-            "Zhenfei Yin",
-            "Yingcheng Wu",
-            "Yuxin Chen",
-            "Mengdi Wang",
-            "Ling Yang"
-          ],
-          "primary_category": "cs.CL",
-          "categories": [
-            "cs.CL"
-          ],
-          "published": "2026-08-04T17:58:05+00:00",
-          "link": "https://arxiv.org/pdf/2608.04003v1",
-          "tags": [
-            "keyword:agent",
-            "query:agent"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "benchmark for personal agent self-improvement",
-          "llm_evidence_cn": "面向个人智能体自我改进的基准",
-          "llm_evidence": "面向个人智能体自我改进的基准",
-          "canonical_evidence": "面向个人智能体自我改进的基准",
-          "llm_tldr_en": "Introduces PAST-Bench, a benchmark with 26 scenarios and 204 episodes that isolates whether retained experience improves future performance of personal AI agents across fresh-session tasks.",
-          "llm_tldr_cn": "递归自我改进要求智能体把积累的经验转化为更好的未来行为，但缺少系统测试个人智能体能否从保留经验中获益。本文提出PAST-Bench基准，在匹配条件下开关经验记忆，覆盖26个场景和204个回合，跨记忆、过程复用、信息收集和更新四类能力评测。结果显示保留经验带来的后续任务增益及是否稳健。为个人智能体持续学习提供了精确评测工具。",
-          "llm_tldr": "递归自我改进要求智能体把积累的经验转化为更好的未来行为，但缺少系统测试个人智能体能否从保留经验中获益。本文提出PAST-Bench基准，在匹配条件下开关经验记忆，覆盖26个场景和204个回合，跨记忆、过程复用、信息收集和更新四类能力评测。结果显示保留经验带来的后续任务增益及是否稳健。为个人智能体持续学习提供了精确评测工具。",
-          "llm_tags": [
-            "query:agent"
-          ],
-          "matched_query_tag": "query:agent",
-          "matched_query_text": "intelligent agent design and applications",
-          "matched_requirement_id": "req-3",
-          "selection_source": "carryover_cache",
-          "paper_id": "2608.04003v1",
-          "carry_days": 1
-        },
-        {
-          "id": "2608.04341v1",
-          "source": "arxiv",
-          "title": "Continuous Improvement and Parallel Autonomous Exploration: An LLM-Agent Framework for Searching Large Solution Spaces",
-          "abstract": "We present a framework that gives LLM agents two mechanisms for searching large solution spaces autonomously. First, a leaderboard scored on held-out data acts as a reward signal that drives each agent to refine its solutions over repeated submissions, a loop that operates even with a single agent. Second, the framework enables running many agents in parallel, fully autonomously, with no human in the loop: agents independently analyze, survey methods, implement, self-evaluate, submit, and revise, while a moderator agent handles only logistics. Running agents in parallel under the shared reward broadens the explored region of the solution space rather than refining the single seeded paradigm. We instantiate the framework on product-to-catalog matching (a core e-commerce retrieval task with a large, category-structured solution space), posed as selective prediction with a precision-coverage operating point. A single agent refines within its seeded paradigm, whereas parallel autonomous agents surface qualitatively different solutions. On this testbed, best qualified coverage (>=95% P@1 per category) reaches 47.8-57.4% with a single agent and 62.8-69.4% with five, against a 33.3% baseline. Our contribution is the framework itself: a continuous-improvement reward loop and a substrate for fully autonomous parallel exploration, backed by case-study evidence.",
-          "authors": [
-            "Dulmini Hettiarachchi",
-            "Andre Rusli",
-            "Julio Christian Young",
-            "Sho Akiyama"
-          ],
-          "primary_category": "cs.MA",
-          "categories": [
-            "cs.MA"
-          ],
-          "published": "2026-08-05T01:40:25+00:00",
-          "link": "https://arxiv.org/pdf/2608.04341v1",
-          "tags": [
-            "keyword:agent",
-            "query:agent"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "LLM agents autonomously exploring solution spaces with continuous improvement",
-          "llm_evidence_cn": "大语言模型智能体自主搜索解空间并持续改进",
-          "llm_evidence": "大语言模型智能体自主搜索解空间并持续改进",
-          "canonical_evidence": "大语言模型智能体自主搜索解空间并持续改进",
-          "llm_tldr_en": "Presents an LLM-agent framework using a leaderboard reward and parallel autonomous agents to explore large solution spaces without human intervention, broadening exploration beyond a single seeded paradigm.",
-          "llm_tldr_cn": "大语言模型智能体在搜索大解空间时容易陷入单一种子范式，且需要人工介入。本文提出一个框架，通过持分榜作为奖励信号驱动智能体反复提交改进答案，即使单智能体也能持续优化；同时允许多智能体完全自主地并行分析、实现、自评和修订，仅由协调智能体处理后勤。实验显示并行共享奖励机制拓宽了解空间探索范围。为自主研究型智能体提供了可扩展架构。",
-          "llm_tldr": "大语言模型智能体在搜索大解空间时容易陷入单一种子范式，且需要人工介入。本文提出一个框架，通过持分榜作为奖励信号驱动智能体反复提交改进答案，即使单智能体也能持续优化；同时允许多智能体完全自主地并行分析、实现、自评和修订，仅由协调智能体处理后勤。实验显示并行共享奖励机制拓宽了解空间探索范围。为自主研究型智能体提供了可扩展架构。",
-          "llm_tags": [
-            "query:agent"
-          ],
-          "matched_query_tag": "query:agent",
-          "matched_query_text": "autonomous agent decision making",
-          "matched_requirement_id": "req-2",
-          "selection_source": "carryover_cache",
-          "paper_id": "2608.04341v1",
-          "carry_days": 1
-        },
         {
           "id": "2608.05587v1",
           "source": "arxiv",
@@ -237,148 +31,21 @@
             "query:agent"
           ],
           "llm_score": 8.0,
-          "llm_evidence_en": "autonomous mobile GUI agent action reflection for reliable decision making",
-          "llm_evidence_cn": "自主移动GUI智能体的行为反思与决策",
-          "llm_evidence": "自主移动GUI智能体的行为反思与决策",
-          "canonical_evidence": "自主移动GUI智能体的行为反思与决策",
-          "llm_tldr_en": "This paper proposes StepReflect, a structured prediction approach for per-step GUI action reflection in autonomous mobile agents, achieving 82.16% transition accuracy on AndroidWorld, surpassing zero-shot GPT-5.2 by 11.83 points.",
-          "llm_tldr_cn": "现有自主移动GUI智能体在执行后依赖开放式多模态推理进行行为反思，成本高且难以匹配GUI状态转移的结构化特性。本文提出StepReflect，将逐步骤GUI反思建模为监督结构化预测，结合显式转移规格与视觉证据，并通过微调、师生蒸馏及偏好奖励优化训练。在AndroidWorld上达到82.16%的转移级准确率，比零样本GPT-5.2高出11.83个百分点，为长程GUI任务提供了高效可靠的动作反思机制。",
-          "llm_tldr": "现有自主移动GUI智能体在执行后依赖开放式多模态推理进行行为反思，成本高且难以匹配GUI状态转移的结构化特性。本文提出StepReflect，将逐步骤GUI反思建模为监督结构化预测，结合显式转移规格与视觉证据，并通过微调、师生蒸馏及偏好奖励优化训练。在AndroidWorld上达到82.16%的转移级准确率，比零样本GPT-5.2高出11.83个百分点，为长程GUI任务提供了高效可靠的动作反思机制。",
+          "llm_evidence_en": "structured UI transition reflection for autonomous mobile GUI agents",
+          "llm_evidence_cn": "面向自主移动GUI智能体的结构化UI转换反思",
+          "llm_evidence": "面向自主移动GUI智能体的结构化UI转换反思",
+          "canonical_evidence": "面向自主移动GUI智能体的结构化UI转换反思",
+          "llm_tldr_en": "StepReflect formulates per-step GUI reflection as supervised structured prediction conditioned on transition specifications and visual evidence, trained via SFT, distillation, and preference/reward refinement. An 8B model achieves 82.16% transition-level accuracy on AndroidWorld, surpassing zero-shot GPT-5.2 by 11.83 points.",
+          "llm_tldr_cn": "自主移动GUI智能体需要准确的动作反思来保证长时程执行可靠性，但现有开放式多模态推理成本高且与结构化状态转换不匹配。本文提出StepReflect，将每步GUI反思建模为以转换规范与视觉证据为条件的监督结构化预测。通过监督微调、师生蒸馏和偏好-奖励精化的分阶段训练，8B模型在AndroidWorld上达到82.16%的转换级准确率，超过零样本GPT-5.2达11.83个百分点，展示了结构化反思的可靠性与高效性。",
+          "llm_tldr": "自主移动GUI智能体需要准确的动作反思来保证长时程执行可靠性，但现有开放式多模态推理成本高且与结构化状态转换不匹配。本文提出StepReflect，将每步GUI反思建模为以转换规范与视觉证据为条件的监督结构化预测。通过监督微调、师生蒸馏和偏好-奖励精化的分阶段训练，8B模型在AndroidWorld上达到82.16%的转换级准确率，超过零样本GPT-5.2达11.83个百分点，展示了结构化反思的可靠性与高效性。",
           "llm_tags": [
             "query:agent"
           ],
           "matched_query_tag": "query:agent",
-          "matched_query_text": "autonomous agent decision making",
-          "matched_requirement_id": "req-2",
+          "matched_query_text": "papers on autonomous agent architectures and control",
+          "matched_requirement_id": "req-7",
           "selection_source": "carryover_cache",
           "paper_id": "2608.05587v1",
-          "carry_days": 1
-        },
-        {
-          "id": "2608.05987v1",
-          "source": "arxiv",
-          "title": "AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning",
-          "abstract": "Reinforcement learning (RL) with verifiable rewards constructs trajectory-level advantage estimates, yet it often fails to credit the few pivotal decisions that determine outcomes in long-horizon, multi-turn agentic tasks. Recent work introduces privileged self-distillation for credit assignment, providing denser supervision, but it remains unclear how such local signals should represent sequential credit. We propose AgentOPSD, a critic-free, recursive method for turn-level credit assignment in agentic reinforcement learning. AgentOPSD aggregates token-level teacher-student log-probability gaps into turn-level evidence and recursively updates a Bayesian belief state in log-odds space. This yields a principled reweighting scheme that converts sparse outcome supervision into turn-level credit signals and identifies pivotal turns through the marginal belief revision between consecutive states. The method is fully compatible with standard policy optimization and requires neither an additional critic nor extra rollouts. We evaluate AgentOPSD on ALFWorld, WebShop, and Search-QA using Qwen2.5 models at two scales (3B and 7B). AgentOPSD outperforms GRPO and strong self-distillation baselines, achieving 89.1% success on ALFWorld with Qwen2.5-7B. Ablation studies attribute the gains to turn-level aggregation and history-dependent recursive belief updates.",
-          "authors": [
-            "Zi-Han Wang",
-            "Zhengxi Lu",
-            "Zhiyuan Yao",
-            "Jinyang Wu",
-            "Jie Wu",
-            "Zhengzhou Cai",
-            "Yueqing Sun",
-            "Ziang Ye",
-            "Linji Hao",
-            "Qi Gu",
-            "Xunliang Cai",
-            "Yongliang Shen",
-            "Yujiu Yang"
-          ],
-          "primary_category": "cs.AI",
-          "categories": [
-            "cs.AI",
-            "cs.LG"
-          ],
-          "published": "2026-08-06T13:00:59+00:00",
-          "link": "https://arxiv.org/pdf/2608.05987v1",
-          "tags": [
-            "keyword:agent",
-            "query:agent"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "turn-level credit assignment for RL in long-horizon agentic decision tasks",
-          "llm_evidence_cn": "面向长期智能体决策任务的回合级信用分配强化学习",
-          "llm_evidence": "面向长期智能体决策任务的回合级信用分配强化学习",
-          "canonical_evidence": "面向长期智能体决策任务的回合级信用分配强化学习",
-          "llm_tldr_en": "AgentOPSD is a critic-free recursive method for turn-level credit assignment in agentic RL, aggregating token-level gaps into log-odds evidence to reweight sparse rewards. It improves decision quality in long-horizon multi-turn tasks.",
-          "llm_tldr_cn": "针对长期多回合智能体任务中稀疏奖励难以定位关键决策的问题，论文提出AgentOPSD，一种无需评论家的递归回合级信用分配方法。该方法在log-odds空间聚合token级师生对数概率差，递归更新贝叶斯信念状态，形成对回合的加权重估。实验显示它比轨迹级优势估计更有效地识别关键决策并提升策略性能，为智能体强化学习提供了新的密集监督机制。",
-          "llm_tldr": "针对长期多回合智能体任务中稀疏奖励难以定位关键决策的问题，论文提出AgentOPSD，一种无需评论家的递归回合级信用分配方法。该方法在log-odds空间聚合token级师生对数概率差，递归更新贝叶斯信念状态，形成对回合的加权重估。实验显示它比轨迹级优势估计更有效地识别关键决策并提升策略性能，为智能体强化学习提供了新的密集监督机制。",
-          "llm_tags": [
-            "query:agent"
-          ],
-          "matched_query_tag": "query:agent",
-          "matched_query_text": "autonomous agent decision making",
-          "matched_requirement_id": "req-2",
-          "selection_source": "carryover_cache",
-          "paper_id": "2608.05987v1",
-          "carry_days": 1
-        },
-        {
-          "id": "2608.05332v1",
-          "source": "arxiv",
-          "title": "Hierarchical Server Architecture for Agentic Science",
-          "abstract": "Agentic science is transforming the landscape of computational work, extending to scientific pipelines and workload managers. The workloads require specialized hardware within and across institutions. If assessing workload needs against environments is required for scheduling, automated discovery of resources is an essential step. In this paper, we present a hierarchical, dynamic architecture and software to discover resources across diverse cloud, edge, and HPC systems. The design enables concurrent, asynchronous negotiation, selection, and dispatch of requests for work using secretary agents. The agents probe and discover 51 real and simulated providers across 7 categories. We perform 19,973 negotiation and 6,952 selection simulations to assess reliability of decisions, demonstrating high (87.71\\%) negotiation accuracy and selection costs comparable to more traditional strategies. Designed for extensibility and currently supporting the Genesis Mission, this architecture exemplifies the importance of careful coordination between agents, discovery tools, and infrastructure for agentic science.",
-          "authors": [
-            "Vanessa Sochat",
-            "Daniel Milroy"
-          ],
-          "primary_category": "cs.DC",
-          "categories": [
-            "cs.DC",
-            "cs.AI"
-          ],
-          "published": "2026-08-05T18:43:00+00:00",
-          "link": "https://arxiv.org/pdf/2608.05332v1",
-          "tags": [
-            "keyword:agent",
-            "query:agent"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "Agent architecture design patterns: hierarchical dynamic architecture with secretary agents",
-          "llm_evidence_cn": "层次化动态架构与秘书智能体设计模式",
-          "llm_evidence": "层次化动态架构与秘书智能体设计模式",
-          "canonical_evidence": "层次化动态架构与秘书智能体设计模式",
-          "llm_tldr_en": "This paper presents a hierarchical dynamic architecture and software for automated resource discovery in agentic science, enabling concurrent negotiation, selection, and dispatch of workloads across cloud, edge, and HPC systems.",
-          "llm_tldr_cn": "智能体科学中的工作负载需要跨云、边缘和HPC系统自动发现资源，但现有调度方法难以适应动态环境。本文提出一种层次化动态架构和软件，利用秘书智能体并发地进行协商、选择和任务分派。在7类共51个真实与模拟提供商上的近2万次协商和6千多次选择仿真显示，该架构具有可靠决策能力。该工作为智能体工作负载的资源发现提供了一种可部署的基础设施方案。",
-          "llm_tldr": "智能体科学中的工作负载需要跨云、边缘和HPC系统自动发现资源，但现有调度方法难以适应动态环境。本文提出一种层次化动态架构和软件，利用秘书智能体并发地进行协商、选择和任务分派。在7类共51个真实与模拟提供商上的近2万次协商和6千多次选择仿真显示，该架构具有可靠决策能力。该工作为智能体工作负载的资源发现提供了一种可部署的基础设施方案。",
-          "llm_tags": [
-            "query:agent"
-          ],
-          "matched_query_tag": "query:agent",
-          "matched_query_text": "agent architecture design patterns",
-          "matched_requirement_id": "req-5",
-          "selection_source": "carryover_cache",
-          "paper_id": "2608.05332v1",
-          "carry_days": 1
-        },
-        {
-          "id": "2608.04148v1",
-          "source": "arxiv",
-          "title": "AgentForge: An Immersive Role-Playing Platform for Learning Agentic Software Engineering",
-          "abstract": "Agentic AI is increasingly used to coordinate planning, implementation, review, and testing in software development, yet it often offers limited transparency into its decisions and interactions. Many such systems also assume that users can effectively guide the AI's decisions and validate its outputs. This assumption poses a particular challenge for novices, who must simultaneously learn how agentic AI works, how to collaborate with it effectively, and how to evaluate its outputs critically. To address this challenge, we present \\textit{AgentForge}, an immersive learning system in which novices take on one of four software-engineering roles: Task Planner, Patch Author, Code Reviewer, or Test Runner, within a multi-agent code-repair workflow. In each practice session, the novices perform their chosen role while AI agents perform the remaining three. Through role-based scaffolding and metacognitive support, AgentForge clarifies role-specific responsibilities, makes agent coordination and intermediate artifacts visible, and encourages novices to monitor and evaluate their decisions. In a study with 37 novice developers, participants achieved high task-completion rates with AI-agent support. However, interaction demands differed significantly across practices: the Code Reviewer practice required more interaction turns, reroutes, and completion time ($p_{\\mathrm{adj}} = .004$) and was perceived as the most challenging. Participants nevertheless reported significant gains in their understanding of software repair and agent collaboration ($p_{\\mathrm{adj}} < .001$). These findings suggest that AgentForge can help novices develop practical software-engineering skills while learning to collaborate with agentic AI more critically and effectively.",
-          "authors": [
-            "Zihan Fang",
-            "Yueke Zhang",
-            "Yu Huang"
-          ],
-          "primary_category": "cs.SE",
-          "categories": [
-            "cs.SE",
-            "cs.AI",
-            "cs.HC"
-          ],
-          "published": "2026-08-04T18:58:18+00:00",
-          "link": "https://arxiv.org/pdf/2608.04148v1",
-          "tags": [
-            "keyword:agent",
-            "query:agent"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "Multi-agent role-playing platform for code-repair workflow with planner, author, reviewer, tester roles",
-          "llm_evidence_cn": "多智能体角色扮演平台，用于代码修复流程中的规划、编写、审查与测试协作",
-          "llm_evidence": "多智能体角色扮演平台，用于代码修复流程中的规划、编写、审查与测试协作",
-          "canonical_evidence": "多智能体角色扮演平台，用于代码修复流程中的规划、编写、审查与测试协作",
-          "llm_tldr_en": "AgentForge is an immersive learning platform where novices act as planner, author, reviewer, or tester inside a multi-agent code-repair workflow, helping them understand and validate agentic AI decisions.",
-          "llm_tldr_cn": "AgentForge是一个沉浸式学习平台，让新手在多人智能体代码修复流程中分别担任任务规划者、补丁作者、代码审查者或测试执行者。该平台旨在解决代理式AI决策透明性不足、新手难以引导和评估输出等问题。通过角色扮演协作，用户能直观理解代理式AI的工作原理、协作方式，并学会批判性评估其输出。这对推动代理式AI的可解释性与普及教育具有重要价值。",
-          "llm_tldr": "AgentForge是一个沉浸式学习平台，让新手在多人智能体代码修复流程中分别担任任务规划者、补丁作者、代码审查者或测试执行者。该平台旨在解决代理式AI决策透明性不足、新手难以引导和评估输出等问题。通过角色扮演协作，用户能直观理解代理式AI的工作原理、协作方式，并学会批判性评估其输出。这对推动代理式AI的可解释性与普及教育具有重要价值。",
-          "llm_tags": [
-            "query:agent"
-          ],
-          "matched_query_tag": "query:agent",
-          "matched_query_text": "multi-agent system coordination",
-          "matched_requirement_id": "req-4",
-          "selection_source": "carryover_cache",
-          "paper_id": "2608.04148v1",
           "carry_days": 1
         },
         {
@@ -406,13 +73,52 @@
             "query:agent"
           ],
           "llm_score": 8.0,
-          "llm_evidence_en": "Survey unifying agentic AI with integrated sensing and communication via a six-stage closed-loop framework",
-          "llm_evidence_cn": "综述将代理式AI与通感一体化统一到六阶段闭环框架",
-          "llm_evidence": "综述将代理式AI与通感一体化统一到六阶段闭环框架",
-          "canonical_evidence": "综述将代理式AI与通感一体化统一到六阶段闭环框架",
-          "llm_tldr_en": "Surveys how agentic AI transforms ISAC into goal-driven closed-loop systems, unifying literature across sensing, decision-making, planning, multi-agent coordination, and resilience in a six-stage framework.",
-          "llm_tldr_cn": "现有的感知、资源分配、边缘智能、多智能体协调等研究彼此孤立，阻碍了通感一体化（ISAC）向智能闭环系统的演进。本文提出AISAC范式，用六阶段闭环框架（观察、情境化、推理与预测、规划与编排、执行与协作、反馈与韧性）统一相关文献，并引入五级代理成熟度。该工作为通感一体化中的智能代理设计提供了系统性蓝图。",
-          "llm_tldr": "现有的感知、资源分配、边缘智能、多智能体协调等研究彼此孤立，阻碍了通感一体化（ISAC）向智能闭环系统的演进。本文提出AISAC范式，用六阶段闭环框架（观察、情境化、推理与预测、规划与编排、执行与协作、反馈与韧性）统一相关文献，并引入五级代理成熟度。该工作为通感一体化中的智能代理设计提供了系统性蓝图。",
+          "llm_evidence_en": "Survey on agentic AI applications in integrated sensing and communication",
+          "llm_evidence_cn": "智能体AI在通感一体化中的应用综述",
+          "llm_evidence": "智能体AI在通感一体化中的应用综述",
+          "canonical_evidence": "智能体AI在通感一体化中的应用综述",
+          "llm_tldr_en": "This survey unifies agentic AI and ISAC into a six-stage closed-loop framework with five levels of agentic maturity, covering planning, orchestration, execution, and collaboration.",
+          "llm_tldr_cn": "本文将智能体AI与通感一体化（ISAC）结合，提出AISAC范式，把传统物理层技术转变为目标驱动的闭环智能系统。现有工作分散在感知、资源分配、RIS、边缘智能、多智能体协调等方面，本综述用六阶段闭环框架（观察、情境化、推理预测、规划编排、执行协作、反馈恢复）统一了文献，并定义了五个智能体成熟度等级。该框架为智能体AI在通信与感知中的应用提供了系统化视角。",
+          "llm_tldr": "本文将智能体AI与通感一体化（ISAC）结合，提出AISAC范式，把传统物理层技术转变为目标驱动的闭环智能系统。现有工作分散在感知、资源分配、RIS、边缘智能、多智能体协调等方面，本综述用六阶段闭环框架（观察、情境化、推理预测、规划编排、执行协作、反馈恢复）统一了文献，并定义了五个智能体成熟度等级。该框架为智能体AI在通信与感知中的应用提供了系统化视角。",
+          "llm_tags": [
+            "query:agent"
+          ],
+          "matched_query_tag": "query:agent",
+          "matched_query_text": "applications of intelligent agents",
+          "matched_requirement_id": "req-9",
+          "selection_source": "carryover_cache",
+          "paper_id": "2608.05792v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2608.07169v1",
+          "source": "arxiv",
+          "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory",
+          "abstract": "Memory systems have shown promise for improving agent performance, but their potential remains largely unexplored for small language models, which struggle to generate sufficient successful trajectories on their own. We propose Agent Memory Distillation (AMD), a training-free framework that transfers structured knowledge from a large teacher agent to a small student agent through hierarchical memory. AMD constructs three complementary memory types from successful teacher trajectories: Workflow memory encodes task-level strategies, Subtask memory provides concrete behavioral examples at an intermediate granularity, and Function memory captures per-function calling conventions and common pitfalls. Workflow and Subtask memories are injected proactively at the start of each task, while Function memory is retrieved reactively upon tool-calling errors. We evaluate AMD on three tool-use benchmarks using four student models (4B-8B parameters) with GPT-5-mini as the teacher, achieving average accuracy gains of 27.2%p, 11.2%p, and 3.4%p on AppWorld, BFCL V3, and ToolSandbox, while consistently outperforming existing memory-based baselines. Further analysis shows that Subtask memory contributes the largest gains, teacher effectiveness depends on both teacher capability and student compatibility, and 4B-sized students benefit most from AMD.",
+          "authors": [
+            "Taeil Kim",
+            "Kangsan Kim",
+            "Sung Ju Hwang"
+          ],
+          "primary_category": "cs.AI",
+          "categories": [
+            "cs.AI",
+            "cs.LG"
+          ],
+          "published": "2026-08-07T12:43:00+00:00",
+          "link": "https://arxiv.org/pdf/2608.07169v1",
+          "tags": [
+            "keyword:agent",
+            "query:agent"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "training-free hierarchical memory distillation to empower small LLM agents",
+          "llm_evidence_cn": "免训练的层次化记忆蒸馏方法，赋能小型LLM智能体",
+          "llm_evidence": "免训练的层次化记忆蒸馏方法，赋能小型LLM智能体",
+          "canonical_evidence": "免训练的层次化记忆蒸馏方法，赋能小型LLM智能体",
+          "llm_tldr_en": "Agent Memory Distillation transfers structured knowledge from a large teacher agent to a small student agent via hierarchical workflow, subtask, and function memories, improving the student agent's performance without extra training.",
+          "llm_tldr_cn": "小型语言模型智能体因难以自行生成足够成功轨迹而性能受限。本文提出智能体记忆蒸馏（AMD）这一免训练框架，利用层次化记忆将大型教师智能体的结构化知识迁移给学生智能体，构建工作流、子任务和函数三类互补记忆。实验显示该方法能显著提升小型智能体的任务执行能力，为资源受限场景下的智能体设计提供了新思路。",
+          "llm_tldr": "小型语言模型智能体因难以自行生成足够成功轨迹而性能受限。本文提出智能体记忆蒸馏（AMD）这一免训练框架，利用层次化记忆将大型教师智能体的结构化知识迁移给学生智能体，构建工作流、子任务和函数三类互补记忆。实验显示该方法能显著提升小型智能体的任务执行能力，为资源受限场景下的智能体设计提供了新思路。",
           "llm_tags": [
             "query:agent"
           ],
@@ -420,51 +126,85 @@
           "matched_query_text": "intelligent agent design and applications",
           "matched_requirement_id": "req-3",
           "selection_source": "carryover_cache",
-          "paper_id": "2608.05792v1",
+          "paper_id": "2608.07169v1",
           "carry_days": 1
         },
         {
-          "id": "2608.05446v1",
+          "id": "2608.06410v1",
           "source": "arxiv",
-          "title": "EvoHarness-RL: Learning Self-Evolving Runtime Harness for Long-Horizon LLM Agents",
-          "abstract": "Long-horizon LLM agents increasingly rely on external execution support to maintain state, track progress, invoke tools, verify outcomes, and reuse experience across interactions. However, effective harness use raises two coupled challenges: state formation from noisy interaction traces and runtime control over external-state access. Existing agents usually handle both through prompts, heuristics, or domain-specific conventions, leaving the external workspace and its usage policy manually engineered. To address this, we study the problem of harness policy learning, where agents learn harness policies offline and deploy them to construct and update external harness state online during runtime task execution. We introduce EvoHarness-RL, which exposes Belief, Progress, and Experience (BPE) as policy-facing harness state. Supervised harness fine-tuning teaches the base agent the harness action space and how to construct useful external state, while cost-aware GRPO explores coordination policies to selectively read, update, and consolidate that state during long-horizon interaction. Instantiated on ALFWorld with a Qwen3-8B LLM, EvoHarness-RL reaches 96.9% success and reveals two key dynamics: harness annealing, where training internalizes recurring harness-use patterns into the model policy and shifts the agent from frequent harness calls toward selective external-state access, and harness evolution, where progress updates and experience consolidation refine the harness into a compact, task-adaptive state substrate. These results suggest that long-horizon agents benefit from trainable policies for constructing and coordinating with external harness workspaces, beyond simply adding stronger tools or larger memories.",
+          "title": "ADIAS: Automated Design of Interactive Agentic Systems",
+          "abstract": "Automated agent design improves agent harnesses through iterative revision, evaluation, and feedback summarization. Existing methods are largely candidate-centric: cross-round experience is organized around candidate agents, which leaves the repair progress implicit. This causes inefficient repair targeting, slow consolidation of partial progress, and propagation of ineffective interventions across rounds. Therefore, we formulate issue-centric agent optimization, in which repair progress is carried forward as an explicit persistent issue state to guide optimization, rather than re-derived from candidate history in each round. We instantiate the formulation in ADIAS, a framework for automated full-code agent design with two mechanisms. A persistent issue state maintains stable issue identities, lifecycle status, supporting evidence, and intervention-outcome histories. Issue-guided optimization uses this state to jointly propose repair targets and revision directions for subsequent focused full-code modification. Across five interactive benchmarks, ADIAS outperforms the strongest baseline by 25.2% on average and achieves consistent gains across four backbone models. Controlled ablations further show that removing persistent issue state or replacing issue-centric revision with candidate-centric policies leads to performance drops of up to 40.7%.",
           "authors": [
-            "Xuying Ning",
-            "Dongqi Fu",
-            "Tianxin Wei",
-            "Hanqing Zeng",
-            "Yuanchen Bei",
-            "Bingxuan Li",
-            "Zihao Li",
-            "Qifan Wang",
-            "Xiang Shen",
-            "Yifan Wu",
-            "Jiayi Liu",
-            "Hong Li",
-            "Yinglong Xia",
-            "Xiangjun Fan",
-            "Hanghang Tong",
-            "Jingrui He"
+            "Lekang Jiang",
+            "Bohan Tang",
+            "Stephan Goetz",
+            "Yiwen Guo"
           ],
-          "primary_category": "cs.LG",
+          "primary_category": "cs.AI",
           "categories": [
-            "cs.LG",
-            "cs.CL"
+            "cs.AI",
+            "cs.CL",
+            "cs.MA"
           ],
-          "published": "2026-08-05T22:29:20+00:00",
-          "link": "https://arxiv.org/pdf/2608.05446v1",
+          "published": "2026-08-03T22:50:49+00:00",
+          "link": "https://arxiv.org/pdf/2608.06410v1",
           "tags": [
             "keyword:agent",
             "query:agent"
           ],
           "llm_score": 8.0,
-          "llm_evidence_en": "Reinforcement learning for self-evolving runtime harness policies in long-horizon LLM agents",
-          "llm_evidence_cn": "用强化学习为长周期LLM代理学习自演进运行时环境策略",
-          "llm_evidence": "用强化学习为长周期LLM代理学习自演进运行时环境策略",
-          "canonical_evidence": "用强化学习为长周期LLM代理学习自演进运行时环境策略",
-          "llm_tldr_en": "EvoHarness-RL learns offline harness policies for long-horizon LLM agents to autonomously form and update external state, improving runtime control over tool use and experience reuse.",
-          "llm_tldr_cn": "长周期LLM代理依赖外部运行时支持来维护状态、调用工具和积累经验，但环境的构建策略通常靠人工设计。本文提出EvoHarness-RL，离线学习环境策略并在在线执行时构造和更新外部状态，解决状态形成与访问控制两大难题。该学习方法提升了代理在复杂任务中的自主性与适应性，减少人工提示和规则设置。",
-          "llm_tldr": "长周期LLM代理依赖外部运行时支持来维护状态、调用工具和积累经验，但环境的构建策略通常靠人工设计。本文提出EvoHarness-RL，离线学习环境策略并在在线执行时构造和更新外部状态，解决状态形成与访问控制两大难题。该学习方法提升了代理在复杂任务中的自主性与适应性，减少人工提示和规则设置。",
+          "llm_evidence_en": "issue-centric automated agent design with persistent issue state",
+          "llm_evidence_cn": "以问题为中心的自动化智能体设计，使用持久化问题状态",
+          "llm_evidence": "以问题为中心的自动化智能体设计，使用持久化问题状态",
+          "canonical_evidence": "以问题为中心的自动化智能体设计，使用持久化问题状态",
+          "llm_tldr_en": "ADIAS formulates issue-centric agent optimization with a persistent issue state to guide automated full-code agent design, improving repair targeting and consolidating progress across iterations.",
+          "llm_tldr_cn": "现有自动化智能体设计以候选者为中心，跨轮次修复进展不明确。本文提出以问题为中心的优化范式，将修复进度显式维护为持久化问题状态，并实现ADIAS框架以全代码方式自动设计交互式智能体系统。实验表明该方法能提高修复针对性，加速部分进度整合，减少无效干预传播。",
+          "llm_tldr": "现有自动化智能体设计以候选者为中心，跨轮次修复进展不明确。本文提出以问题为中心的优化范式，将修复进度显式维护为持久化问题状态，并实现ADIAS框架以全代码方式自动设计交互式智能体系统。实验表明该方法能提高修复针对性，加速部分进度整合，减少无效干预传播。",
+          "llm_tags": [
+            "query:agent"
+          ],
+          "matched_query_tag": "query:agent",
+          "matched_query_text": "agent architecture design patterns",
+          "matched_requirement_id": "req-5",
+          "selection_source": "carryover_cache",
+          "paper_id": "2608.06410v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2608.07449v1",
+          "source": "arxiv",
+          "title": "SkillProx: Self-Evolving Agent Skills via Proximal Textual Gradient Descent",
+          "abstract": "LLM agents increasingly adapt to recurring tasks by accumulating procedural knowledge in skills. These skills are lightweight, reusable textual artifacts that are loaded into the agent's context without weight updates. Recent methods refine skills through iterative task execution, failure diagnosis, and trajectory-guided text-space updates. However, existing frameworks lack explicit diagnosis--outcome feedback and treat deletion as a generic edit operation rather than a dedicated mechanism for consolidating accumulated knowledge. We introduce SkillProx, a proximal-gradient-inspired forward--backward framework that couples closed-loop diagnostic evolution with utility-aware proximal refinement. Motivated by a composite objective balancing task loss and skill complexity, the forward stage re-executes diagnosis-driven edits on the same task batch, rolls back regressions, and feeds measured outcomes into subsequent diagnoses. The backward stage decomposes the resulting skill into auditable knowledge units, estimates their contributions using a frozen leave-one-out utility audit, and applies validation-gated consolidation, demotion, or removal. Experiments on in-distribution and out-of-distribution benchmarks across multiple backbone LLMs show that SkillProx improves average accuracy by 3.0 percentage points over the strongest gradient-based baseline. Component ablations demonstrate the complementary effects of closed-loop diagnosis and proximal refinement.",
+          "authors": [
+            "Mingxuan Zheng",
+            "Yujin Zhou",
+            "Chuxue Cao",
+            "Boqin Yin",
+            "Yuyao Zhang",
+            "Jiapeng Sun",
+            "Shuaishuai Gong",
+            "Sirui Han",
+            "Yike Guo"
+          ],
+          "primary_category": "cs.AI",
+          "categories": [
+            "cs.AI",
+            "cs.CL"
+          ],
+          "published": "2026-08-07T17:40:33+00:00",
+          "link": "https://arxiv.org/pdf/2608.07449v1",
+          "tags": [
+            "keyword:agent",
+            "query:agent"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "Self-evolving LLM agent skills via proximal textual gradient descent",
+          "llm_evidence_cn": "基于近端文本梯度下降的智能体技能自演化",
+          "llm_evidence": "基于近端文本梯度下降的智能体技能自演化",
+          "canonical_evidence": "基于近端文本梯度下降的智能体技能自演化",
+          "llm_tldr_en": "Proposes SkillProx, a proximal-gradient-inspired framework for self-evolving agent skills, coupling closed-loop diagnostic evolution with utility-aware proximal refinement.",
+          "llm_tldr_cn": "针对现有LLM智能体技能精炼缺乏显式诊断-结果反馈、且将删除视为通用编辑而非知识整合机制的问题，本文提出SkillProx框架。该框架受近端梯度下降启发，将闭环诊断演化与效用感知的近端精炼相结合，在任务损失与知识整合之间权衡，使技能在迭代执行中不断自我演化，形成更紧凑、可复用的程序性知识，提升了智能体在重复任务中的适应能力。",
+          "llm_tldr": "针对现有LLM智能体技能精炼缺乏显式诊断-结果反馈、且将删除视为通用编辑而非知识整合机制的问题，本文提出SkillProx框架。该框架受近端梯度下降启发，将闭环诊断演化与效用感知的近端精炼相结合，在任务损失与知识整合之间权衡，使技能在迭代执行中不断自我演化，形成更紧凑、可复用的程序性知识，提升了智能体在重复任务中的适应能力。",
           "llm_tags": [
             "query:agent"
           ],
@@ -472,79 +212,38 @@
           "matched_query_text": "autonomous agent decision making",
           "matched_requirement_id": "req-2",
           "selection_source": "carryover_cache",
-          "paper_id": "2608.05446v1",
+          "paper_id": "2608.07449v1",
           "carry_days": 1
         },
         {
-          "id": "2608.03392v1",
+          "id": "2608.06587v1",
           "source": "arxiv",
-          "title": "Self-Evolving Coding Agents",
-          "abstract": "Large language models are increasingly embedded in software engineering workflows as coding agents that can inspect repositories, invoke tools, execute tests, debug failures, and generate patches. Yet most existing agents remain largely static after deployment, even though software development is a dynamic, feedback-rich process in which repositories evolve, dependencies change, tests fail, and repair attempts leave reusable experience. This tension has motivated a growing body of work on self-evolving coding agents, where the agent improves its future behavior by updating its framework, memory, skills, tools, models, or collaboration structures from prior coding interactions. In this survey, we provide a systematic synthesis of this emerging area. We first define self-evolving coding agents and distinguish them from conventional coding agents and general self-evolving agents. We then develop an object-centered taxonomy that characterizes what evolves in these systems, and complement it with two orthogonal perspectives: when evolution occurs and what software-specific evidence drives it. Across the literature, we find that executable feedback, repository-level context, and coding trajectories give software engineering a distinctive role as a natural domain for agent self-evolution, but also introduce new challenges in feedback reliability, benchmark overfitting, safety, maintainability, cost, and generalization. By organizing existing work around these dimensions, this survey aims to clarify the conceptual boundaries of self-evolving coding agents and provide a foundation for designing more adaptive, reliable, and software-aware agentic systems. The papers we collect can be found at https://github.com/zhouhao1024/Awesome-Self-Evolving-Coding-Agents.",
+          "title": "SyncSBC: Decentralized Swarm Behavior Prediction for Synchronized Autonomous Control",
+          "abstract": "Robot swarms utilize many independent limited-sensing agents to produce complex emergent behaviors without requiring centralized control. However, little research explores how agents can infer swarm-level behavior from purely local perception, a capability critical for detecting faults and behavior changes. In this paper, we introduce Synchronized Swarm Behavior Classification (SyncSBC), which combines improvements in machine learning and distributed consensus to classify collective swarm behavior and synchronize swarm decision-making in an entirely decentralized manner. We show that SyncSBC achieves high classification accuracy and low synchronization delay, making it suitable for real-world deployment. Finally, we use SyncSBC to demonstrate two promising swarm applications on real robots where we show that swarms utilizing SyncSBC can accurately identify anomalies in robot behavior and autonomously coordinate collective changes in swarm behavior. Videos, code and supplemental experiments are available at https://sites.google.com/view/sync-sbc/home.",
           "authors": [
-            "Hao Zhou",
-            "Haichuan Hu",
-            "Ye Shang",
-            "Quanjun Zhang"
+            "Varun Raveendra",
+            "Connor Mattson",
+            "Daniel S. Brown"
           ],
-          "primary_category": "cs.SE",
+          "primary_category": "cs.RO",
           "categories": [
-            "cs.SE"
+            "cs.RO",
+            "cs.AI"
           ],
-          "published": "2026-08-04T09:43:46+00:00",
-          "link": "https://arxiv.org/pdf/2608.03392v1",
+          "published": "2026-08-06T20:59:04+00:00",
+          "link": "https://arxiv.org/pdf/2608.06587v1",
           "tags": [
             "keyword:agent",
             "query:agent"
           ],
           "llm_score": 8.0,
-          "llm_evidence_en": "Survey on self-evolving coding agents that update memory, skills, tools, and collaboration structures",
-          "llm_evidence_cn": "关于自演进编码代理的综述，涵盖更新记忆、技能、工具与协作结构",
-          "llm_evidence": "关于自演进编码代理的综述，涵盖更新记忆、技能、工具与协作结构",
-          "canonical_evidence": "关于自演进编码代理的综述，涵盖更新记忆、技能、工具与协作结构",
-          "llm_tldr_en": "A systematic survey of self-evolving coding agents, defining the area and synthesizing how agents improve future behavior by updating framework, memory, skills, tools, models, or collaboration from interactions.",
-          "llm_tldr_cn": "现有编码代理在部署后通常保持静态，而软件工程是动态反馈丰富的环境。本文系统综述了自演进编码代理这一新兴领域，定义了代理如何通过更新框架、记忆、技能、工具、模型或协作结构来改进未来行为。该工作为智能代理在软件工程中的持续学习和适应提供了系统性梳理，指出了关键研究方向。",
-          "llm_tldr": "现有编码代理在部署后通常保持静态，而软件工程是动态反馈丰富的环境。本文系统综述了自演进编码代理这一新兴领域，定义了代理如何通过更新框架、记忆、技能、工具、模型或协作结构来改进未来行为。该工作为智能代理在软件工程中的持续学习和适应提供了系统性梳理，指出了关键研究方向。",
-          "llm_tags": [
-            "query:agent"
-          ],
-          "matched_query_tag": "query:agent",
-          "matched_query_text": "intelligent agent design and applications",
-          "matched_requirement_id": "req-3",
-          "selection_source": "carryover_cache",
-          "paper_id": "2608.03392v1",
-          "carry_days": 1
-        },
-        {
-          "id": "2608.06227v1",
-          "source": "arxiv",
-          "title": "From Passive Mirrors to Active Agents: Holonic Digital Twins for Physical AI over Networks",
-          "abstract": "Despite advances in artificial intelligence (AI) across multiple sectors, today's AI tools, including deep learning and generative AI, still fail when embedded into physical systems, such as robots and vehicles operating under real-world physical laws. This stems from their inability to maintain reliable world models for long-horizon planning under uncertainty and generalize to unseen scenarios. In this context, wireless networks, through pervasive sensing and communication, can orchestrate physical intelligence. However, current architectures optimize throughput, latency, and reliability and cannot support real-time physical AI coordination, requiring agents to maintain shared spatiotemporal context. To address these challenges, a network of holonic digital twins (HDT-Nets) framework is proposed to deliver real-time physical AI inference through holonic agents that actively reason about their environment rather than passively mirror physical assets. Each HDT is realized as a hierarchical structure spanning the physical agent and network edge, reasoning autonomously at the local level while cooperating with neighboring HDTs to form collectively intelligent units. In HDT-Net, causal Markov blankets spanning sensing, communication, and control determine which agents must coordinate and enable counterfactual reasoning over multi-domain interventions. Active inference within these boundaries unifies perception, action, and learning by minimizing expected free energy while deciding which beliefs to transmit based on their cognitive value to the receiver. Category theory ensures that transmitted beliefs preserve semantic structure across heterogeneous agents with incompatible representations. Finally, integrated information theory quantifies when collective intelligence exceeds independent operation and how network intelligence evolves through coordinated learning and information exchange.",
-          "authors": [
-            "Christo Kurisummoottil Thomas",
-            "Omar Hashash",
-            "Walid Saad"
-          ],
-          "primary_category": "cs.NI",
-          "categories": [
-            "cs.NI",
-            "cs.AI",
-            "cs.IT",
-            "eess.SY"
-          ],
-          "published": "2026-08-06T16:17:43+00:00",
-          "link": "https://arxiv.org/pdf/2608.06227v1",
-          "tags": [
-            "keyword:agent",
-            "query:agent"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "holonic digital twins for coordinating physical AI agents over networks",
-          "llm_evidence_cn": "基于合弄数字孪生的网络化物理AI智能体协调",
-          "llm_evidence": "基于合弄数字孪生的网络化物理AI智能体协调",
-          "canonical_evidence": "基于合弄数字孪生的网络化物理AI智能体协调",
-          "llm_tldr_en": "Proposes holonic digital twins that enable active agents to maintain shared spatiotemporal context over wireless networks for real-time physical AI coordination and long-horizon planning.",
-          "llm_tldr_cn": "物理AI系统在现实世界中的长时程规划与泛化面临挑战，现有网络架构无法支持实时物理AI协调。作者提出合弄数字孪生框架，将被动镜像转变为主动智能体，通过网络使智能体维护共享时空上下文，实现物理系统间的协同规划与控制。该框架为机器人、车辆等在复杂环境下的协调提供了新范式。",
-          "llm_tldr": "物理AI系统在现实世界中的长时程规划与泛化面临挑战，现有网络架构无法支持实时物理AI协调。作者提出合弄数字孪生框架，将被动镜像转变为主动智能体，通过网络使智能体维护共享时空上下文，实现物理系统间的协同规划与控制。该框架为机器人、车辆等在复杂环境下的协调提供了新范式。",
+          "llm_evidence_en": "decentralized swarm behavior classification and synchronized control",
+          "llm_evidence_cn": "去中心化群体行为分类与同步控制",
+          "llm_evidence": "去中心化群体行为分类与同步控制",
+          "canonical_evidence": "去中心化群体行为分类与同步控制",
+          "llm_tldr_en": "SyncSBC combines machine learning and distributed consensus to classify collective swarm behavior from local perception and synchronize swarm decision-making.",
+          "llm_tldr_cn": "本文关注机器人群体中智能体如何仅凭局部感知推断群体级行为，这对于故障检测和行为变化至关重要。作者提出SyncSBC，结合机器学习和分布式共识，以完全去中心化的方式对群体行为进行分类并同步决策。实验表明SyncSBC具有高分类精度和低同步延迟，适合实际部署，可用于按需去中心化控制等场景。",
+          "llm_tldr": "本文关注机器人群体中智能体如何仅凭局部感知推断群体级行为，这对于故障检测和行为变化至关重要。作者提出SyncSBC，结合机器学习和分布式共识，以完全去中心化的方式对群体行为进行分类并同步决策。实验表明SyncSBC具有高分类精度和低同步延迟，适合实际部署，可用于按需去中心化控制等场景。",
           "llm_tags": [
             "query:agent"
           ],
@@ -552,47 +251,125 @@
           "matched_query_text": "multi-agent system coordination",
           "matched_requirement_id": "req-4",
           "selection_source": "carryover_cache",
-          "paper_id": "2608.06227v1",
+          "paper_id": "2608.06587v1",
           "carry_days": 1
         },
         {
-          "id": "2608.02553v1",
+          "id": "2608.06651v1",
           "source": "arxiv",
-          "title": "A Taxonomy of Cognitive Capability Gaps in Generative and Agentic AI",
-          "abstract": "Cognitive AI seeks to move beyond language generation and autonomous task execution toward systems capable of sustained reasoning, adaptive behavior, persistent memory, and self-regulation. While generative and agentic AI have demonstrated impressive capabilities across a wide range of tasks, many fundamental cognitive functions remain fragmented or weakly developed, limiting reliable operation over extended time horizons. This paper presents a taxonomy-driven survey of the major cognitive capability gaps that continue to constrain the development of Cognitive AI. The literature is organized around five dimensions: persistent state modeling, goal-directed autonomy, self-monitoring and control, environment interaction, and learning and adaptation. For each dimension, we review recent advances, identify recurring limitations, and discuss open research challenges. Building on these insights, we outline a conceptual Adaptive Cognitive Intelligence Architecture (ACIA) and examine emerging directions in cognition-centric evaluation. The proposed taxonomy provides a unified framework for organizing existing research, identifying unresolved challenges, and guiding the design of future cognitively capable systems. Together, the taxonomy, architectural perspective, and evaluation framework offer a roadmap for advancing AI systems that exhibit more reliable long-term reasoning, adaptive decision-making, and continual learning. The survey highlights key research opportunities toward more adaptive, reliable, and cognitively capable AI systems, providing a foundation for future progress toward Cognitive AI and, ultimately, Artificial General Intelligence (AGI).",
+          "title": "CyberLLM: A Multi-Agent LLM Framework for Autonomous Detection and Guarded Response in Automotive Cybersecurity",
+          "abstract": "Software-Defined Vehicles (SDVs) expand the automotive attack surface across source code, runtime logs, and deployment topologies, while safety constraints forbid autonomous agents from acting without oversight. This paper presents CyberLLM, a multi-agent, LLM-orchestrated framework that autonomously detects vulnerabilities and executes remediations under a formal, runtime safety guard. Detection combines a deterministic layer (regex rules, AST analyzers, and topology graph checks) with an LLM refinement pass, so a high-recall floor is complemented by high-precision reasoning. A decision agent aggregates findings, tags them with a human-centric asset taxonomy, and selects a tiered response, ratcheting its confidence with signed cross-session memory and re-planning feedback. Every action is validated against four contextual security properties and an independent action-alignment oracle before it is allowed to run, and refused actions trigger escalation and re-planning. A symmetric attack pipeline generates and replays exploits so both sides can be exercised on the same scenarios. On an independent, ground-truthed benchmark of nine original automotive ECU modules in C, C++, and Rust seeding 47 layered vulnerabilities plus clean controls, the always-on deterministic layer covers 34\\% of the labeled vulnerabilities at perfect precision, and adding the grounded LLM refinement and completeness passes roughly doubles coverage to about 70\\% (F1 $0.83$) while producing zero false positives on the clean controls. The results indicate that LLM agents can perform useful autonomous cyber-defense when wrapped in a deterministic, auditable safety envelope.",
           "authors": [
-            "Taye Akinrele",
-            "Sindhuja Penchala",
-            "Noorbakhsh Amiri Golilarz",
-            "Sudip Mittal",
-            "Shahram Rahimi"
+            "Nenad Petrovic",
+            "Oussama Jeddou",
+            "Feres Ben Fraj",
+            "Vahid Zolfaghari",
+            "Fengjunjie Pan",
+            "Andre Schamschurko",
+            "Alois Knoll"
           ],
-          "primary_category": "cs.AI",
+          "primary_category": "cs.CR",
           "categories": [
-            "cs.AI"
+            "cs.CR",
+            "cs.SE"
           ],
-          "published": "2026-08-03T17:37:38+00:00",
-          "link": "https://arxiv.org/pdf/2608.02553v1",
+          "published": "2026-08-06T23:39:13+00:00",
+          "link": "https://arxiv.org/pdf/2608.06651v1",
           "tags": [
             "keyword:agent",
             "query:agent"
           ],
           "llm_score": 8.0,
-          "llm_evidence_en": "Taxonomy of cognitive capability gaps in agentic AI, covering goal-directed autonomy, self-monitoring and control; informs intelligent agent design",
-          "llm_evidence_cn": "对Agentic AI认知能力差距进行分类，涉及目标导向自主、自我监控与控制，为智能体设计提供参考",
-          "llm_evidence": "对Agentic AI认知能力差距进行分类，涉及目标导向自主、自我监控与控制，为智能体设计提供参考",
-          "canonical_evidence": "对Agentic AI认知能力差距进行分类，涉及目标导向自主、自我监控与控制，为智能体设计提供参考",
-          "llm_tldr_en": "This survey organizes literature on cognitive AI capability gaps into five dimensions: persistent state modeling, goal-directed autonomy, self-monitoring, environment interaction, and learning/adaptation. It identifies fragmented cognitive functions that limit reliable long-horizon agent operation, providing a taxonomy-driven roadmap for advancing generative and agentic AI systems.",
-          "llm_tldr_cn": "认知AI要求系统具备持续推理、自适应行为、持久记忆和自我调节，但当前生成式与智能体AI在这些认知功能上仍碎片化。本文围绕持久状态建模、目标导向自主、自我监控与控制、环境交互、学习与适应五个维度，对相关文献进行系统性分类与梳理。该分类学揭示了限制智能体长时间可靠运行的主要能力缺口，为认知AI和智能体设计提供了研究路线图。",
-          "llm_tldr": "认知AI要求系统具备持续推理、自适应行为、持久记忆和自我调节，但当前生成式与智能体AI在这些认知功能上仍碎片化。本文围绕持久状态建模、目标导向自主、自我监控与控制、环境交互、学习与适应五个维度，对相关文献进行系统性分类与梳理。该分类学揭示了限制智能体长时间可靠运行的主要能力缺口，为认知AI和智能体设计提供了研究路线图。",
+          "llm_evidence_en": "multi-agent LLM framework for autonomous detection and guarded response",
+          "llm_evidence_cn": "多智能体LLM框架实现自主检测与受控响应",
+          "llm_evidence": "多智能体LLM框架实现自主检测与受控响应",
+          "canonical_evidence": "多智能体LLM框架实现自主检测与受控响应",
+          "llm_tldr_en": "CyberLLM is a multi-agent LLM framework that combines deterministic detection with LLM refinement and a runtime safety guard to autonomously detect vulnerabilities and execute tiered remediations in automotive cybersecurity.",
+          "llm_tldr_cn": "软件定义汽车扩展了攻击面，但安全约束禁止智能体在无监督下行动。本文提出CyberLLM，一个多智能体LLM框架，在正式运行时安全卫士下自主检测漏洞并执行补救。检测结合正则、AST分析等确定性层与LLM精炼层，决策智能体聚合结果并选择分级响应，同时控制置信度。实验证明其能在保证安全约束的同时实现高召回与高精度，兼顾自主性与受控操作。",
+          "llm_tldr": "软件定义汽车扩展了攻击面，但安全约束禁止智能体在无监督下行动。本文提出CyberLLM，一个多智能体LLM框架，在正式运行时安全卫士下自主检测漏洞并执行补救。检测结合正则、AST分析等确定性层与LLM精炼层，决策智能体聚合结果并选择分级响应，同时控制置信度。实验证明其能在保证安全约束的同时实现高召回与高精度，兼顾自主性与受控操作。",
           "llm_tags": [
             "query:agent"
           ],
           "matched_query_tag": "query:agent",
-          "matched_query_text": "intelligent agent design and applications",
-          "matched_requirement_id": "req-3",
+          "matched_query_text": "multi-agent system coordination",
+          "matched_requirement_id": "req-4",
           "selection_source": "carryover_cache",
-          "paper_id": "2608.02553v1",
+          "paper_id": "2608.06651v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2608.06926v1",
+          "source": "arxiv",
+          "title": "TRIBE: Predicting Team Performance via Communication Behavior Ensembles",
+          "abstract": "Designing autonomous agents that effectively assist human teams hinges on understanding team dynamics, often without task specific knowledge. We present TRIBE, a domain independent approach that reveals team behavioral dynamics invisible to traditional performance metrics. We show that communication patterns can categorize teams into performance predictive behavioral tribes, as early as 10% into the task, enabling timely interventions. We test TRIBE on four diverse datasets and demonstrate that communication patterns predict team performance while the prediction strength varies by the degree a task structure allows for behavioral freedom. Our temporal analysis reveals that AI agents significantly alter team behavioral trajectories while human advisors align with natural dynamics, and that teams maintain behavioral flexibility throughout collaboration. Further, we compare TRIBE to Llama and optimize the pipeline, achieving significant speedup with performance improvement.",
+          "authors": [
+            "Ali Jalal-Kamali",
+            "Nikolos Gurney",
+            "David V. Pynadath",
+            "Fred Morstatter"
+          ],
+          "primary_category": "cs.AI",
+          "categories": [
+            "cs.AI"
+          ],
+          "published": "2026-08-07T08:01:45+00:00",
+          "link": "https://arxiv.org/pdf/2608.06926v1",
+          "tags": [
+            "keyword:agent",
+            "query:agent"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "Communication behavior ensembles predict team performance, informing design of communication patterns in autonomous agent teams",
+          "llm_evidence_cn": "基于通信行为集成预测团队绩效，为智能体通信模式设计提供依据",
+          "llm_evidence": "基于通信行为集成预测团队绩效，为智能体通信模式设计提供依据",
+          "canonical_evidence": "基于通信行为集成预测团队绩效，为智能体通信模式设计提供依据",
+          "llm_tldr_en": "TRIBE reveals that communication patterns can categorize human-AI teams into performance-predictive behavioral tribes as early as 10% into a task, tested on four datasets, enabling timely interventions and showing AI agents significantly alter team behavioral trajectories.",
+          "llm_tldr_cn": "针对缺乏任务特定知识时理解团队动态的问题，文章提出TRIBE方法，利用通信行为集成在任务初期约10%阶段即可将团队划分为可预测绩效的行为部落。在四个数据集上的实验表明，通信模式能有效预测团队表现，且预测强度受任务结构自由度的调节。TRIBE的早期预测能力使得及时干预成为可能，也揭示了AI智能体对团队行为轨迹的显著影响，为智能体参与团队协作的行为评估与干预提供了新工具。",
+          "llm_tldr": "针对缺乏任务特定知识时理解团队动态的问题，文章提出TRIBE方法，利用通信行为集成在任务初期约10%阶段即可将团队划分为可预测绩效的行为部落。在四个数据集上的实验表明，通信模式能有效预测团队表现，且预测强度受任务结构自由度的调节。TRIBE的早期预测能力使得及时干预成为可能，也揭示了AI智能体对团队行为轨迹的显著影响，为智能体参与团队协作的行为评估与干预提供了新工具。",
+          "llm_tags": [
+            "query:agent"
+          ],
+          "matched_query_tag": "query:agent",
+          "matched_query_text": "agent communication protocols",
+          "matched_requirement_id": "req-6",
+          "selection_source": "carryover_cache",
+          "paper_id": "2608.06926v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2608.06871v1",
+          "source": "arxiv",
+          "title": "CEDAR: Agent-Orchestrated Tree Search for Goal-Directed Optimization of Complex Systems",
+          "abstract": "Complex systems, core objects of study in artificial life, model diverse phenomena through nonlinear, feedback-driven interactions that produce emergent behavior, with applications from population dynamics and biology to economic policy and strategic decision-making. Yet the difficulty of predicting how feedback structure gives rise to emergent behavior, a central open problem in artificial life, makes goal-directed design exceptionally challenging. In established practice, system structures are written in specialized modeling languages such as DYNAMO or STELLA, compounding the challenge with labor-intensive workflows that limit adoption and hinder timely decision-making. To address these challenges, we introduce CEDAR, an autonomous method that uses Large Language Model (LLM) agents to discover complex systems satisfying user-specified behavioral goals. Our key innovation is an LLM-driven Monte Carlo Tree Search (MCTS) deeply coupled with complex systems: at each iteration, an LLM Judge evaluates emergent behavior against specified goals and an LLM Editor proposes improved variants, with the Judge acting as a fitness function and the Editor as a variation operator, akin to a generate-and-evaluate loop in evolutionary computation. We represent complex systems as a restricted, runnable subset of Python with domain-specific primitives, letting LLMs modify system dynamics directly. CEDAR formalizes this as an MCTS variant with an LLM-parameterized transition kernel and value function, enabling goal-directed discovery of complex system behaviors while preserving solution diversity, and its LLM-based interpretability reveals how structural changes drive emergent behavior. CEDAR reduces human effort while enabling capabilities difficult to achieve with existing approaches, facilitating broader adoption of complex systems across domains.",
+          "authors": [
+            "Yingtao Tian"
+          ],
+          "primary_category": "cs.AI",
+          "categories": [
+            "cs.AI"
+          ],
+          "published": "2026-08-07T06:54:58+00:00",
+          "link": "https://arxiv.org/pdf/2608.06871v1",
+          "tags": [
+            "keyword:agent",
+            "query:agent"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "Autonomous agent-orchestrated tree search for goal-directed optimization under complex feedback-driven systems",
+          "llm_evidence_cn": "自主智能体编排的树搜索用于复杂反馈系统的目标导向优化",
+          "llm_evidence": "自主智能体编排的树搜索用于复杂反馈系统的目标导向优化",
+          "canonical_evidence": "自主智能体编排的树搜索用于复杂反馈系统的目标导向优化",
+          "llm_tldr_en": "CEDAR is an autonomous agent that orchestrates tree search to enable goal-directed optimization of complex systems, addressing the difficulty of predicting emergent behavior from feedback structure without specialized modeling languages.",
+          "llm_tldr_cn": "复杂系统的目标导向设计因难以从反馈结构预测涌现行为而极具挑战，传统建模语言工作流繁重。本文提出CEDAR，一个自主智能体，通过编排树搜索实现复杂系统的目标导向优化。该方法使系统设计者无需依赖专业建模语言即可探索结构-行为关系，支持从种群动力学到经济政策等应用，提升了决策效率与可用性。CEDAR基于反馈结构进行树搜索，能在复杂的非线性交互中定位满足目标的设计点。",
+          "llm_tldr": "复杂系统的目标导向设计因难以从反馈结构预测涌现行为而极具挑战，传统建模语言工作流繁重。本文提出CEDAR，一个自主智能体，通过编排树搜索实现复杂系统的目标导向优化。该方法使系统设计者无需依赖专业建模语言即可探索结构-行为关系，支持从种群动力学到经济政策等应用，提升了决策效率与可用性。CEDAR基于反馈结构进行树搜索，能在复杂的非线性交互中定位满足目标的设计点。",
+          "llm_tags": [
+            "query:agent"
+          ],
+          "matched_query_tag": "query:agent",
+          "matched_query_text": "autonomous agent decision making",
+          "matched_requirement_id": "req-2",
+          "selection_source": "carryover_cache",
+          "paper_id": "2608.06871v1",
           "carry_days": 1
         }
       ]
