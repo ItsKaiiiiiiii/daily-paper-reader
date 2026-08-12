@@ -1,0 +1,377 @@
+{
+  "date": "20260812",
+  "date_label": "",
+  "generated_at": "2026-08-12 21:28:59 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2608.08035v1",
+      "route": "202608/12/2608.08035v1-decentralized-multi-agent-urban-traffic-management-via-spatio-temporal-mobility-profile-planning",
+      "title": "Decentralized Multi-Agent Urban Traffic Management via Spatio-Temporal Mobility Profile Planning",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "基于时空出行规划的去中心化多智能体交通管理",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.08045v1",
+      "route": "202608/12/2608.08045v1-lingjing-a-simulation-testbed-for-multi-agent-embodied-tasks-in-open-ended-cities",
+      "title": "Lingjing: A Simulation Testbed for Multi-Agent Embodied Tasks in Open-Ended Cities",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向城市异构多智能体协调的仿真测试平台",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.08523v1",
+      "route": "202608/12/2608.08523v1-discovering-diverse-planning-policies-for-multimodal-embodied-agents-with-quality-diversity-optimization",
+      "title": "Discovering Diverse Planning Policies for Multimodal Embodied Agents with Quality-Diversity Optimization",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "自主智能体规划；多模态具身智能体的规划策略",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.08604v1",
+      "route": "202608/12/2608.08604v1-multi-agent-reinforcement-learning-via-agent-specific-preference",
+      "title": "Multi-Agent Reinforcement Learning via Agent-Specific Preference",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "通过智能体特定偏好而非全局奖励进行多智能体强化学习",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.08605v1",
+      "route": "202608/12/2608.08605v1-forestbench-a-unified-graph-framework-for-evaluating-multi-agent-collaboration",
+      "title": "ForestBench: A Unified Graph Framework for Evaluating Multi-Agent Collaboration",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体系统协调；基于协作图的统一评估框架",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.09251v1",
+      "route": "202608/12/2608.09251v1-morse-task-oriented-multi-agent-system-with-mixture-of-role-subtask-experts",
+      "title": "MoRSE: Task-Oriented Multi-Agent System with Mixture of Role-Subtask Experts",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "基于角色-子任务专家的任务导向多智能体架构",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.09629v1",
+      "route": "202608/12/2608.09629v1-rethinking-self-evolving-agents-do-we-still-need-prescribed-optimization-pipelines",
+      "title": "Rethinking Self-Evolving Agents: Do We Still Need Prescribed Optimization Pipelines?",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "通过开放式优化实现自进化智能体的设计",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.09828v1",
+      "route": "202608/12/2608.09828v1-multi-agent-ai-safety-as-an-institutional-design-problem",
+      "title": "Multi-Agent AI Safety as an Institutional Design Problem",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体系统作为制度化设计问题，研究委托规则和权威状态对安全的影响",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.10157v1",
+      "route": "202608/12/2608.10157v1-sbco-self-supervised-verifier-grounded-harness-optimization-for-planning-agents",
+      "title": "SBCO: Self-Supervised, Verifier-Grounded Harness Optimization For Planning Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "通过自监督验证器引导优化规划智能体流程",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.10330v1",
+      "route": "202608/12/2608.10330v1-hierarchical-compositionality-for-an-assistive-ai-agent",
+      "title": "Hierarchical Compositionality for An Assistive AI Agent",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "辅助AI智能体架构中的层次组合性原则，用于处理指代歧义",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.10529v1",
+      "route": "202608/12/2608.10529v1-robust-multi-agent-bandits-with-heavy-tailed-rewards-and-information-asymmetry",
+      "title": "Robust Multi-Agent Bandits with Heavy-Tailed Rewards and Information Asymmetry",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "重尾奖励和信息不对称下的鲁棒多智能体多臂赌博机算法",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.10934v1",
+      "route": "202608/12/2608.10934v1-understanding-the-architecture-of-coding-agents-an-exploratory-study-using-a-research-prototype",
+      "title": "Understanding the Architecture of Coding Agents: An Exploratory Study Using a Research Prototype",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "系统化记录编码智能体架构",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.04458v1",
+      "route": "202608/12/2608.04458v1-architectural-implications-of-agentic-ai-workflows",
+      "title": "Architectural Implications of Agentic AI Workflows",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "对数据中心中智能体AI工作流架构的分类与特征刻画",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.05587v1",
+      "route": "202608/12/2608.05587v1-stepreflect-structured-ui-transition-reflection-for-mobile-gui-agents",
+      "title": "StepReflect: Structured UI Transition Reflection for Mobile GUI Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "通过结构化每步反思提升移动GUI智能体在长程执行中的决策可靠性。",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.05729v1",
+      "route": "202608/12/2608.05729v1-unified-agent-managing-interactions-across-devices",
+      "title": "Unified Agent: Managing Interactions across Devices",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向跨设备行动决策的智能体状态设计",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.06410v1",
+      "route": "202608/12/2608.06410v1-adias-automated-design-of-interactive-agentic-systems",
+      "title": "ADIAS: Automated Design of Interactive Agentic Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向交互式智能体系统的以问题为中心的自动设计框架",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.03800v1",
+      "route": "202608/12/2608.03800v1-autoreflection-how-agentic-strange-loops-turn-human-culture-into-ai-infrastructure",
+      "title": "Autoreflection: How Agentic Strange Loops Turn Human Culture into AI Infrastructure",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "智能体架构设计模式；LLM智能体编辑自身配置文件的循环架构",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.04661v1",
+      "route": "202608/12/2608.04661v1-an-exploratory-study-of-agent-plans-for-agentic-ai-coding-tools-in-open-source-software",
+      "title": "An Exploratory Study of Agent Plans for Agentic AI Coding Tools in Open-Source Software",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "对指导智能体AI编码工具的Agent Plans配置文件的开源探索研究",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.05332v1",
+      "route": "202608/12/2608.05332v1-hierarchical-server-architecture-for-agentic-science",
+      "title": "Hierarchical Server Architecture for Agentic Science",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "智能体应用；秘书智能体在智能体科学中的资源发现",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.05792v1",
+      "route": "202608/12/2608.05792v1-when-agentic-ai-meets-integrated-sensing-and-communication",
+      "title": "When Agentic AI Meets Integrated Sensing and Communication",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "综述统一了ISAC中的多智能体协调与智能体闭环编排",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.06033v1",
+      "route": "202608/12/2608.06033v1-asge-rr-agentic-service-graph-embedding-with-revisable-reservations-for-dynamic-ai-agent-calls",
+      "title": "ASGE-RR: Agentic Service Graph Embedding with Revisable Reservations for Dynamic AI-Agent Calls",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "面向动态AI智能体调用的智能体服务图嵌入与可修订预留",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.08413v1",
+      "route": "202608/12/2608.08413v1-tangent-an-empirical-study-of-testing-practices-for-llm-based-agent-applications",
+      "title": "Tangent: An Empirical Study of Testing Practices for LLM-Based Agent Applications",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "针对LLM智能体应用测试实践的实证研究",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    },
+    {
+      "paper_id": "2608.08793v1",
+      "route": "202608/12/2608.08793v1-evidence-calibrated-runtime-reconstruction-for-agent-skills-across-heterogeneous-coding-agents",
+      "title": "Evidence-Calibrated Runtime Reconstruction for Agent Skills Across Heterogeneous Coding Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "跨异构编码智能体对技能生命周期进行证据校准的运行时重建",
+      "first_seen_at": "2026-08-12 21:28:59 UTC",
+      "updated_at": "2026-08-12 21:28:59 UTC"
+    }
+  ]
+}

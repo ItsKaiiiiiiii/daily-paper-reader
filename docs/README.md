@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-10</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-12</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 17 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 23 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>6</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>12</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-10 21:16:33 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-12 21:28:59 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,7 +62,7 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日精读6篇、速读11篇，聚焦LLM智能体的编码、决策与搜索优化。最值得关注《Self-Evolving Coding Agents》与《Towards Improving Sequential Decision-Making via Experience Memory》，分别指向智能体自进化编码和记忆增强决策。建议普通读者优先了解自进化编码与记忆机制如何提升智能体性能。</p>
+<p>今日精读12篇、速读11篇，聚焦多智能体与城市管理及模拟仿真。最值得关注两篇9.0分工作：基于时空移动性规划的分布式城市交通管理，以及面向开放城市的多智能体具身任务测试平台Lingjing。建议普通读者优先浏览多智能体在城市场景的协作与仿真方向，后续可延伸阅读Agentic AI工作流架构与GUI智能体反思相关速读文章。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -71,12 +71,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">6 篇</strong>
+    <strong class="dpr-home-dashboard-count">12 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Self-Evolving Coding Agents">Self-Evolving Coding Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Towards Improving Sequential Decision-Making in LLM Agents via Experience Memory">Towards Improving Sequential Decision-Making in LLM Agents via Experience Memory</span></li><li><span class="dpr-home-dashboard-paper-title" title="AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning">AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Decentralized Multi-Agent Urban Traffic Management via Spatio-Temporal Mobility Profile Planning">Decentralized Multi-Agent Urban Traffic Management via Spatio-Temporal Mobility Profile Planning</span></li><li><span class="dpr-home-dashboard-paper-title" title="Lingjing: A Simulation Testbed for Multi-Agent Embodied Tasks in Open-Ended Cities">Lingjing: A Simulation Testbed for Multi-Agent Embodied Tasks in Open-Ended Cities</span></li><li><span class="dpr-home-dashboard-paper-title" title="Discovering Diverse Planning Policies for Multimodal Embodied Agents with Quality-Diversity Optimization">Discovering Diverse Planning Policies for Multimodal Embodied Agents with Quality-Diversity Optimization</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>6</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>12</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -87,7 +87,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Formal Verification of Agentic Systems over Operational Data">Formal Verification of Agentic Systems over Operational Data</span></li><li><span class="dpr-home-dashboard-paper-title" title="Continuous Improvement and Parallel Autonomous Exploration: An LLM-Agent Framework for Searching Large Solution Spaces">Continuous Improvement and Parallel Autonomous Exploration: An LLM-Agent Framework for Searching Large Solution Spaces</span></li><li><span class="dpr-home-dashboard-paper-title" title="InsightEmb: Learning Action-Intent Embeddings for Agentic Insight Retrieval">InsightEmb: Learning Action-Intent Embeddings for Agentic Insight Retrieval</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Architectural Implications of Agentic AI Workflows">Architectural Implications of Agentic AI Workflows</span></li><li><span class="dpr-home-dashboard-paper-title" title="StepReflect: Structured UI Transition Reflection for Mobile GUI Agents">StepReflect: Structured UI Transition Reflection for Mobile GUI Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Unified Agent: Managing Interactions across Devices">Unified Agent: Managing Interactions across Devices</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>

@@ -1,95 +1,12 @@
 {
-  "generated_at": "2026-08-10T21:08:51.480167+00:00",
-  "updated_date": "20260810",
+  "generated_at": "2026-08-12T21:13:29.708850+00:00",
+  "updated_date": "20260812",
   "carryover_days": 9,
   "tag_states": {
     "agent": {
-      "updated_date": "20260810",
+      "updated_date": "20260812",
       "carryover_days": 9,
       "items": [
-        {
-          "id": "2608.05587v1",
-          "source": "arxiv",
-          "title": "StepReflect: Structured UI Transition Reflection for Mobile GUI Agents",
-          "abstract": "Autonomous mobile GUI agents require accurate action reflection for reliable long-horizon execution. Existing approaches rely on open-ended multimodal reasoning after each action, which is costly and poorly matched to the structured nature of GUI state transitions. We propose StepReflect, which formulates per-step GUI reflection as supervised structured prediction conditioned on explicit transition specifications and paired visual evidence. StepReflect is trained through a staged pipeline combining supervised fine-tuning, teacher-student distillation, and preference- and reward-based refinement. Offline, the resulting 8B model achieves 82.16% transition-level accuracy on AndroidWorld, exceeding zero-shot GPT-5.2 by 11.83 percentage points under the same structured input. Online, across M3A, Agent-SAMA, MAI-UI-8B, and Seed-2.0-Pro, StepReflect achieves higher task success in three of four agent configurations and remains within one successful task of the GPT-5.2 Reflection Agent in the fourth. It also reduces paid API charges relative to GPT-based reflection in all four configurations. These results establish StepReflect as a practical, locally deployable alternative to repeated frontier-model reflection for long-horizon mobile GUI agents.",
-          "authors": [
-            "Linqiang Guo",
-            "Wei Liu",
-            "Li Gu",
-            "Yang Wang",
-            "Tse-Hsun",
-            "Chen"
-          ],
-          "primary_category": "cs.AI",
-          "categories": [
-            "cs.AI"
-          ],
-          "published": "2026-08-06T04:17:27+00:00",
-          "link": "https://arxiv.org/pdf/2608.05587v1",
-          "tags": [
-            "keyword:agent",
-            "query:agent"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "structured UI transition reflection for autonomous mobile GUI agents",
-          "llm_evidence_cn": "面向自主移动GUI智能体的结构化UI转换反思",
-          "llm_evidence": "面向自主移动GUI智能体的结构化UI转换反思",
-          "canonical_evidence": "面向自主移动GUI智能体的结构化UI转换反思",
-          "llm_tldr_en": "StepReflect formulates per-step GUI reflection as supervised structured prediction conditioned on transition specifications and visual evidence, trained via SFT, distillation, and preference/reward refinement. An 8B model achieves 82.16% transition-level accuracy on AndroidWorld, surpassing zero-shot GPT-5.2 by 11.83 points.",
-          "llm_tldr_cn": "自主移动GUI智能体需要准确的动作反思来保证长时程执行可靠性，但现有开放式多模态推理成本高且与结构化状态转换不匹配。本文提出StepReflect，将每步GUI反思建模为以转换规范与视觉证据为条件的监督结构化预测。通过监督微调、师生蒸馏和偏好-奖励精化的分阶段训练，8B模型在AndroidWorld上达到82.16%的转换级准确率，超过零样本GPT-5.2达11.83个百分点，展示了结构化反思的可靠性与高效性。",
-          "llm_tldr": "自主移动GUI智能体需要准确的动作反思来保证长时程执行可靠性，但现有开放式多模态推理成本高且与结构化状态转换不匹配。本文提出StepReflect，将每步GUI反思建模为以转换规范与视觉证据为条件的监督结构化预测。通过监督微调、师生蒸馏和偏好-奖励精化的分阶段训练，8B模型在AndroidWorld上达到82.16%的转换级准确率，超过零样本GPT-5.2达11.83个百分点，展示了结构化反思的可靠性与高效性。",
-          "llm_tags": [
-            "query:agent"
-          ],
-          "matched_query_tag": "query:agent",
-          "matched_query_text": "papers on autonomous agent architectures and control",
-          "matched_requirement_id": "req-7",
-          "selection_source": "carryover_cache",
-          "paper_id": "2608.05587v1",
-          "carry_days": 1
-        },
-        {
-          "id": "2608.05792v1",
-          "source": "arxiv",
-          "title": "When Agentic AI Meets Integrated Sensing and Communication",
-          "abstract": "Agentic artificial intelligence (AI) is transforming Integrated Sensing and Communication (ISAC) from a function-oriented physical-layer technology into a goal-driven, closed-loop intelligent system, a paradigm we term AISAC. Existing work on learning-based sensing, resource allocation, reconfigurable intelligent surfaces (RIS), edge intelligence, multi-agent coordination, and resilient networking has developed largely in isolation. This survey unifies the literature within a six-stage closed-loop framework comprising observation, contextualization, reasoning and prediction, planning and orchestration, execution and collaboration, and feedback and resilience. It also introduces five levels of agentic maturity, ranging from physical-layer primitives to fully closed-loop agentic ISAC. We use this framework to review advances in multimodal intelligence, large language models, reinforcement learning, federated learning, RIS-assisted control, Unmanned Aerial Vehicle (UAV) and vehicular networks, and AI-native network management, and analyze privacy, security, resilience, and sustainability as cross-cutting requirements of the full perception-reasoning-action loop. An audit of representative studies against nine agentic-specific evaluation criteria shows that no system reports more than one or two of them, exposing a gap between claimed and demonstrated agentic maturity. We identify open challenges in physical-to-semantic grounding, predictive world models, real-time agent-PHY interaction, safe tool use, heterogeneous multi-agent collaboration, benchmarking, and resource-efficient autonomy.",
-          "authors": [
-            "Kai Li",
-            "Conggai Li",
-            "Sarah Ali Siddiqui",
-            "Syed Sohail Ahmed",
-            "Xin Yuan",
-            "Shenghong Li",
-            "Wei Ni"
-          ],
-          "primary_category": "cs.AI",
-          "categories": [
-            "cs.AI"
-          ],
-          "published": "2026-08-06T09:26:49+00:00",
-          "link": "https://arxiv.org/pdf/2608.05792v1",
-          "tags": [
-            "keyword:agent",
-            "query:agent"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "Survey on agentic AI applications in integrated sensing and communication",
-          "llm_evidence_cn": "智能体AI在通感一体化中的应用综述",
-          "llm_evidence": "智能体AI在通感一体化中的应用综述",
-          "canonical_evidence": "智能体AI在通感一体化中的应用综述",
-          "llm_tldr_en": "This survey unifies agentic AI and ISAC into a six-stage closed-loop framework with five levels of agentic maturity, covering planning, orchestration, execution, and collaboration.",
-          "llm_tldr_cn": "本文将智能体AI与通感一体化（ISAC）结合，提出AISAC范式，把传统物理层技术转变为目标驱动的闭环智能系统。现有工作分散在感知、资源分配、RIS、边缘智能、多智能体协调等方面，本综述用六阶段闭环框架（观察、情境化、推理预测、规划编排、执行协作、反馈恢复）统一了文献，并定义了五个智能体成熟度等级。该框架为智能体AI在通信与感知中的应用提供了系统化视角。",
-          "llm_tldr": "本文将智能体AI与通感一体化（ISAC）结合，提出AISAC范式，把传统物理层技术转变为目标驱动的闭环智能系统。现有工作分散在感知、资源分配、RIS、边缘智能、多智能体协调等方面，本综述用六阶段闭环框架（观察、情境化、推理预测、规划编排、执行协作、反馈恢复）统一了文献，并定义了五个智能体成熟度等级。该框架为智能体AI在通信与感知中的应用提供了系统化视角。",
-          "llm_tags": [
-            "query:agent"
-          ],
-          "matched_query_tag": "query:agent",
-          "matched_query_text": "applications of intelligent agents",
-          "matched_requirement_id": "req-9",
-          "selection_source": "carryover_cache",
-          "paper_id": "2608.05792v1",
-          "carry_days": 1
-        },
         {
           "id": "2608.07169v1",
           "source": "arxiv",
@@ -112,54 +29,13 @@
             "query:agent"
           ],
           "llm_score": 8.0,
-          "llm_evidence_en": "training-free hierarchical memory distillation to empower small LLM agents",
-          "llm_evidence_cn": "免训练的层次化记忆蒸馏方法，赋能小型LLM智能体",
-          "llm_evidence": "免训练的层次化记忆蒸馏方法，赋能小型LLM智能体",
-          "canonical_evidence": "免训练的层次化记忆蒸馏方法，赋能小型LLM智能体",
-          "llm_tldr_en": "Agent Memory Distillation transfers structured knowledge from a large teacher agent to a small student agent via hierarchical workflow, subtask, and function memories, improving the student agent's performance without extra training.",
-          "llm_tldr_cn": "小型语言模型智能体因难以自行生成足够成功轨迹而性能受限。本文提出智能体记忆蒸馏（AMD）这一免训练框架，利用层次化记忆将大型教师智能体的结构化知识迁移给学生智能体，构建工作流、子任务和函数三类互补记忆。实验显示该方法能显著提升小型智能体的任务执行能力，为资源受限场景下的智能体设计提供了新思路。",
-          "llm_tldr": "小型语言模型智能体因难以自行生成足够成功轨迹而性能受限。本文提出智能体记忆蒸馏（AMD）这一免训练框架，利用层次化记忆将大型教师智能体的结构化知识迁移给学生智能体，构建工作流、子任务和函数三类互补记忆。实验显示该方法能显著提升小型智能体的任务执行能力，为资源受限场景下的智能体设计提供了新思路。",
-          "llm_tags": [
-            "query:agent"
-          ],
-          "matched_query_tag": "query:agent",
-          "matched_query_text": "intelligent agent design and applications",
-          "matched_requirement_id": "req-3",
-          "selection_source": "carryover_cache",
-          "paper_id": "2608.07169v1",
-          "carry_days": 1
-        },
-        {
-          "id": "2608.06410v1",
-          "source": "arxiv",
-          "title": "ADIAS: Automated Design of Interactive Agentic Systems",
-          "abstract": "Automated agent design improves agent harnesses through iterative revision, evaluation, and feedback summarization. Existing methods are largely candidate-centric: cross-round experience is organized around candidate agents, which leaves the repair progress implicit. This causes inefficient repair targeting, slow consolidation of partial progress, and propagation of ineffective interventions across rounds. Therefore, we formulate issue-centric agent optimization, in which repair progress is carried forward as an explicit persistent issue state to guide optimization, rather than re-derived from candidate history in each round. We instantiate the formulation in ADIAS, a framework for automated full-code agent design with two mechanisms. A persistent issue state maintains stable issue identities, lifecycle status, supporting evidence, and intervention-outcome histories. Issue-guided optimization uses this state to jointly propose repair targets and revision directions for subsequent focused full-code modification. Across five interactive benchmarks, ADIAS outperforms the strongest baseline by 25.2% on average and achieves consistent gains across four backbone models. Controlled ablations further show that removing persistent issue state or replacing issue-centric revision with candidate-centric policies leads to performance drops of up to 40.7%.",
-          "authors": [
-            "Lekang Jiang",
-            "Bohan Tang",
-            "Stephan Goetz",
-            "Yiwen Guo"
-          ],
-          "primary_category": "cs.AI",
-          "categories": [
-            "cs.AI",
-            "cs.CL",
-            "cs.MA"
-          ],
-          "published": "2026-08-03T22:50:49+00:00",
-          "link": "https://arxiv.org/pdf/2608.06410v1",
-          "tags": [
-            "keyword:agent",
-            "query:agent"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "issue-centric automated agent design with persistent issue state",
-          "llm_evidence_cn": "以问题为中心的自动化智能体设计，使用持久化问题状态",
-          "llm_evidence": "以问题为中心的自动化智能体设计，使用持久化问题状态",
-          "canonical_evidence": "以问题为中心的自动化智能体设计，使用持久化问题状态",
-          "llm_tldr_en": "ADIAS formulates issue-centric agent optimization with a persistent issue state to guide automated full-code agent design, improving repair targeting and consolidating progress across iterations.",
-          "llm_tldr_cn": "现有自动化智能体设计以候选者为中心，跨轮次修复进展不明确。本文提出以问题为中心的优化范式，将修复进度显式维护为持久化问题状态，并实现ADIAS框架以全代码方式自动设计交互式智能体系统。实验表明该方法能提高修复针对性，加速部分进度整合，减少无效干预传播。",
-          "llm_tldr": "现有自动化智能体设计以候选者为中心，跨轮次修复进展不明确。本文提出以问题为中心的优化范式，将修复进度显式维护为持久化问题状态，并实现ADIAS框架以全代码方式自动设计交互式智能体系统。实验表明该方法能提高修复针对性，加速部分进度整合，减少无效干预传播。",
+          "llm_evidence_en": "agent architecture design pattern using hierarchical memory distillation from teacher to student agents",
+          "llm_evidence_cn": "通过层级记忆蒸馏从教师智能体向学生智能体迁移知识的智能体架构模式",
+          "llm_evidence": "通过层级记忆蒸馏从教师智能体向学生智能体迁移知识的智能体架构模式",
+          "canonical_evidence": "通过层级记忆蒸馏从教师智能体向学生智能体迁移知识的智能体架构模式",
+          "llm_tldr_en": "Agent Memory Distillation is a training-free framework that transfers structured knowledge from a large teacher agent to a small student agent using three hierarchical memory types (workflow, subtask, function), empowering small LLM agents.",
+          "llm_tldr_cn": "记忆系统虽能提升智能体性能，但在小语言模型上尚未充分探索，因为小模型难以独立生成足够的成功轨迹。论文提出Agent Memory Distillation（AMD）框架，这是一种无需训练的蒸馏方法，通过构建工作流、子任务和函数三种互补的层级记忆，将教师智能体的结构化知识迁移给小型学生智能体。实验表明AMD显著增强了小语言模型智能体的任务执行能力，为小型智能体高效利用大模型经验提供了一条轻量级路径。",
+          "llm_tldr": "记忆系统虽能提升智能体性能，但在小语言模型上尚未充分探索，因为小模型难以独立生成足够的成功轨迹。论文提出Agent Memory Distillation（AMD）框架，这是一种无需训练的蒸馏方法，通过构建工作流、子任务和函数三种互补的层级记忆，将教师智能体的结构化知识迁移给小型学生智能体。实验表明AMD显著增强了小语言模型智能体的任务执行能力，为小型智能体高效利用大模型经验提供了一条轻量级路径。",
           "llm_tags": [
             "query:agent"
           ],
@@ -167,7 +43,7 @@
           "matched_query_text": "agent architecture design patterns",
           "matched_requirement_id": "req-5",
           "selection_source": "carryover_cache",
-          "paper_id": "2608.06410v1",
+          "paper_id": "2608.07169v1",
           "carry_days": 1
         },
         {
@@ -198,19 +74,19 @@
             "query:agent"
           ],
           "llm_score": 8.0,
-          "llm_evidence_en": "Self-evolving LLM agent skills via proximal textual gradient descent",
-          "llm_evidence_cn": "基于近端文本梯度下降的智能体技能自演化",
-          "llm_evidence": "基于近端文本梯度下降的智能体技能自演化",
-          "canonical_evidence": "基于近端文本梯度下降的智能体技能自演化",
-          "llm_tldr_en": "Proposes SkillProx, a proximal-gradient-inspired framework for self-evolving agent skills, coupling closed-loop diagnostic evolution with utility-aware proximal refinement.",
-          "llm_tldr_cn": "针对现有LLM智能体技能精炼缺乏显式诊断-结果反馈、且将删除视为通用编辑而非知识整合机制的问题，本文提出SkillProx框架。该框架受近端梯度下降启发，将闭环诊断演化与效用感知的近端精炼相结合，在任务损失与知识整合之间权衡，使技能在迭代执行中不断自我演化，形成更紧凑、可复用的程序性知识，提升了智能体在重复任务中的适应能力。",
-          "llm_tldr": "针对现有LLM智能体技能精炼缺乏显式诊断-结果反馈、且将删除视为通用编辑而非知识整合机制的问题，本文提出SkillProx框架。该框架受近端梯度下降启发，将闭环诊断演化与效用感知的近端精炼相结合，在任务损失与知识整合之间权衡，使技能在迭代执行中不断自我演化，形成更紧凑、可复用的程序性知识，提升了智能体在重复任务中的适应能力。",
+          "llm_evidence_en": "Self-evolving agent skills via proximal textual gradient descent",
+          "llm_evidence_cn": "通过近端文本梯度下降实现智能体技能自进化",
+          "llm_evidence": "通过近端文本梯度下降实现智能体技能自进化",
+          "canonical_evidence": "通过近端文本梯度下降实现智能体技能自进化",
+          "llm_tldr_en": "SkillProx couples closed-loop diagnostic evolution with utility-aware proximal refinement to let LLM agents self-evolve reusable skills, outperforming prior skill refinement frameworks on recurring task loss.",
+          "llm_tldr_cn": "LLM智能体常通过积累技能来适应重复任务，但已有技能精炼框架缺少显式的诊断-结果反馈，也没有将删除视为知识整合的专门操作。作者提出SkillProx，采用近端梯度启发的双向框架，将闭环诊断演化与效用感知的近端精炼相结合，用于更新文本技能库。实验表明，SkillProx在重复任务上取得了更优的任务损失，并比既有技能精炼框架更为稳定。该方法为智能体技能自进化提供了系统的设计范式，有助于提升智能体的自适应能力。",
+          "llm_tldr": "LLM智能体常通过积累技能来适应重复任务，但已有技能精炼框架缺少显式的诊断-结果反馈，也没有将删除视为知识整合的专门操作。作者提出SkillProx，采用近端梯度启发的双向框架，将闭环诊断演化与效用感知的近端精炼相结合，用于更新文本技能库。实验表明，SkillProx在重复任务上取得了更优的任务损失，并比既有技能精炼框架更为稳定。该方法为智能体技能自进化提供了系统的设计范式，有助于提升智能体的自适应能力。",
           "llm_tags": [
             "query:agent"
           ],
           "matched_query_tag": "query:agent",
-          "matched_query_text": "autonomous agent decision making",
-          "matched_requirement_id": "req-2",
+          "matched_query_text": "intelligent agent design and applications",
+          "matched_requirement_id": "req-3",
           "selection_source": "carryover_cache",
           "paper_id": "2608.07449v1",
           "carry_days": 1
@@ -252,7 +128,7 @@
           "matched_requirement_id": "req-4",
           "selection_source": "carryover_cache",
           "paper_id": "2608.06587v1",
-          "carry_days": 1
+          "carry_days": 3
         },
         {
           "id": "2608.06651v1",
@@ -295,46 +171,7 @@
           "matched_requirement_id": "req-4",
           "selection_source": "carryover_cache",
           "paper_id": "2608.06651v1",
-          "carry_days": 1
-        },
-        {
-          "id": "2608.06926v1",
-          "source": "arxiv",
-          "title": "TRIBE: Predicting Team Performance via Communication Behavior Ensembles",
-          "abstract": "Designing autonomous agents that effectively assist human teams hinges on understanding team dynamics, often without task specific knowledge. We present TRIBE, a domain independent approach that reveals team behavioral dynamics invisible to traditional performance metrics. We show that communication patterns can categorize teams into performance predictive behavioral tribes, as early as 10% into the task, enabling timely interventions. We test TRIBE on four diverse datasets and demonstrate that communication patterns predict team performance while the prediction strength varies by the degree a task structure allows for behavioral freedom. Our temporal analysis reveals that AI agents significantly alter team behavioral trajectories while human advisors align with natural dynamics, and that teams maintain behavioral flexibility throughout collaboration. Further, we compare TRIBE to Llama and optimize the pipeline, achieving significant speedup with performance improvement.",
-          "authors": [
-            "Ali Jalal-Kamali",
-            "Nikolos Gurney",
-            "David V. Pynadath",
-            "Fred Morstatter"
-          ],
-          "primary_category": "cs.AI",
-          "categories": [
-            "cs.AI"
-          ],
-          "published": "2026-08-07T08:01:45+00:00",
-          "link": "https://arxiv.org/pdf/2608.06926v1",
-          "tags": [
-            "keyword:agent",
-            "query:agent"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "Communication behavior ensembles predict team performance, informing design of communication patterns in autonomous agent teams",
-          "llm_evidence_cn": "基于通信行为集成预测团队绩效，为智能体通信模式设计提供依据",
-          "llm_evidence": "基于通信行为集成预测团队绩效，为智能体通信模式设计提供依据",
-          "canonical_evidence": "基于通信行为集成预测团队绩效，为智能体通信模式设计提供依据",
-          "llm_tldr_en": "TRIBE reveals that communication patterns can categorize human-AI teams into performance-predictive behavioral tribes as early as 10% into a task, tested on four datasets, enabling timely interventions and showing AI agents significantly alter team behavioral trajectories.",
-          "llm_tldr_cn": "针对缺乏任务特定知识时理解团队动态的问题，文章提出TRIBE方法，利用通信行为集成在任务初期约10%阶段即可将团队划分为可预测绩效的行为部落。在四个数据集上的实验表明，通信模式能有效预测团队表现，且预测强度受任务结构自由度的调节。TRIBE的早期预测能力使得及时干预成为可能，也揭示了AI智能体对团队行为轨迹的显著影响，为智能体参与团队协作的行为评估与干预提供了新工具。",
-          "llm_tldr": "针对缺乏任务特定知识时理解团队动态的问题，文章提出TRIBE方法，利用通信行为集成在任务初期约10%阶段即可将团队划分为可预测绩效的行为部落。在四个数据集上的实验表明，通信模式能有效预测团队表现，且预测强度受任务结构自由度的调节。TRIBE的早期预测能力使得及时干预成为可能，也揭示了AI智能体对团队行为轨迹的显著影响，为智能体参与团队协作的行为评估与干预提供了新工具。",
-          "llm_tags": [
-            "query:agent"
-          ],
-          "matched_query_tag": "query:agent",
-          "matched_query_text": "agent communication protocols",
-          "matched_requirement_id": "req-6",
-          "selection_source": "carryover_cache",
-          "paper_id": "2608.06926v1",
-          "carry_days": 1
+          "carry_days": 3
         },
         {
           "id": "2608.06871v1",
@@ -355,13 +192,220 @@
             "query:agent"
           ],
           "llm_score": 8.0,
-          "llm_evidence_en": "Autonomous agent-orchestrated tree search for goal-directed optimization under complex feedback-driven systems",
-          "llm_evidence_cn": "自主智能体编排的树搜索用于复杂反馈系统的目标导向优化",
-          "llm_evidence": "自主智能体编排的树搜索用于复杂反馈系统的目标导向优化",
-          "canonical_evidence": "自主智能体编排的树搜索用于复杂反馈系统的目标导向优化",
-          "llm_tldr_en": "CEDAR is an autonomous agent that orchestrates tree search to enable goal-directed optimization of complex systems, addressing the difficulty of predicting emergent behavior from feedback structure without specialized modeling languages.",
-          "llm_tldr_cn": "复杂系统的目标导向设计因难以从反馈结构预测涌现行为而极具挑战，传统建模语言工作流繁重。本文提出CEDAR，一个自主智能体，通过编排树搜索实现复杂系统的目标导向优化。该方法使系统设计者无需依赖专业建模语言即可探索结构-行为关系，支持从种群动力学到经济政策等应用，提升了决策效率与可用性。CEDAR基于反馈结构进行树搜索，能在复杂的非线性交互中定位满足目标的设计点。",
-          "llm_tldr": "复杂系统的目标导向设计因难以从反馈结构预测涌现行为而极具挑战，传统建模语言工作流繁重。本文提出CEDAR，一个自主智能体，通过编排树搜索实现复杂系统的目标导向优化。该方法使系统设计者无需依赖专业建模语言即可探索结构-行为关系，支持从种群动力学到经济政策等应用，提升了决策效率与可用性。CEDAR基于反馈结构进行树搜索，能在复杂的非线性交互中定位满足目标的设计点。",
+          "llm_evidence_en": "Agent-orchestrated tree search for goal-directed optimization of complex systems",
+          "llm_evidence_cn": "自主智能体编排树搜索，用于复杂系统的目标导向优化",
+          "llm_evidence": "自主智能体编排树搜索，用于复杂系统的目标导向优化",
+          "canonical_evidence": "自主智能体编排树搜索，用于复杂系统的目标导向优化",
+          "llm_tldr_en": "CEDAR is an autonomous agent that orchestrates tree search for goal-directed optimization of complex systems, addressing the challenge of predicting emergent behavior from feedback structure and reducing labor-intensive workflows.",
+          "llm_tldr_cn": "复杂系统的目标导向设计因难以预测反馈结构涌现行为而极具挑战。CEDAR 将自主智能体与树搜索相结合，自动化地探索系统结构以实现目标优化。该方法避免了传统建模语言（如DYNAMO/STELLA）的繁琐流程，提升了决策效率。在人口动态、生物学、经济政策等应用中展示了广阔前景。",
+          "llm_tldr": "复杂系统的目标导向设计因难以预测反馈结构涌现行为而极具挑战。CEDAR 将自主智能体与树搜索相结合，自动化地探索系统结构以实现目标优化。该方法避免了传统建模语言（如DYNAMO/STELLA）的繁琐流程，提升了决策效率。在人口动态、生物学、经济政策等应用中展示了广阔前景。",
+          "llm_tags": [
+            "query:agent"
+          ],
+          "matched_query_tag": "query:agent",
+          "matched_query_text": "autonomous agent planning",
+          "matched_requirement_id": "req-10",
+          "selection_source": "carryover_cache",
+          "paper_id": "2608.06871v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2608.08545v1",
+          "source": "arxiv",
+          "title": "Curriculum Generation under Structured Parametric Environments for Robust Navigation Policies",
+          "abstract": "Robust navigation policies for autonomous agents must generalize across continuously varying environmental conditions such as turn rates, obstacles, friction, pits, and slopes. Curriculum generation provides a principled mechanism for improving generalization by progressively adapting training environments, but designing such curricula in a sample-efficient and automated manner remains challenging. This paper proposes a reparameterized curriculum generation framework for structured continuous environment parameters using unidirectional gradient-based optimization. To improve robustness in multimodal observation spaces consisting of image-based and scalar inputs, a distribution-shift regularization objective is incorporated to encourage the learning of finer-grained latent representations. The proposed method is evaluated across two continuous-control OpenAI Gym environments: a 2D obstacle-based Car Racing variant and Bipedal Walker variant, where coupled environment parameters jointly influence policy performance. Across five random seeds, our method consistently outperforms vanilla policy training, random parameter sampling, manual curricula, frontier-based methods, Self-Paced Reinforcement Learning (SPRL), Absolute Learning Progress with Gaussian Mixture Models (ALP-GMM), and reverse curriculum learning baselines. Ablation studies further demonstrate the effectiveness of the reparameterized curriculum mechanism across both environments, while highlighting environment-dependent benefits of the auxiliary regularization objective.",
+          "authors": [
+            "Prishita Ray"
+          ],
+          "primary_category": "cs.RO",
+          "categories": [
+            "cs.RO",
+            "cs.LG"
+          ],
+          "published": "2026-08-09T07:45:21+00:00",
+          "link": "https://arxiv.org/pdf/2608.08545v1",
+          "tags": [
+            "keyword:agent",
+            "query:agent"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "curriculum generation for robust autonomous navigation policies",
+          "llm_evidence_cn": "面向鲁棒自主导航策略的课程生成方法",
+          "llm_evidence": "面向鲁棒自主导航策略的课程生成方法",
+          "canonical_evidence": "面向鲁棒自主导航策略的课程生成方法",
+          "llm_tldr_en": "Proposes a reparameterized curriculum generation framework using unidirectional gradient-based optimization with distribution-shift regularization to train robust navigation policies for autonomous agents across varying environmental parameters.",
+          "llm_tldr_cn": "自主智能体的导航策略需要在变化的连续环境参数下保持鲁棒性，手工设计课程困难且低效。本文提出基于单向梯度优化的重参数化课程生成框架，并引入分布偏移正则化以应对图像与标量多模态观测，可自动生成训练环境课程，提升导航策略的泛化能力。",
+          "llm_tldr": "自主智能体的导航策略需要在变化的连续环境参数下保持鲁棒性，手工设计课程困难且低效。本文提出基于单向梯度优化的重参数化课程生成框架，并引入分布偏移正则化以应对图像与标量多模态观测，可自动生成训练环境课程，提升导航策略的泛化能力。",
+          "llm_tags": [
+            "query:agent"
+          ],
+          "matched_query_tag": "query:agent",
+          "matched_query_text": "papers on autonomous agent architectures and control",
+          "matched_requirement_id": "req-7",
+          "selection_source": "carryover_cache",
+          "paper_id": "2608.08545v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2608.08184v1",
+          "source": "arxiv",
+          "title": "Large Multimodal Agents for Intelligent Transportation Systems: Architectures, Evidence, and Deployment Challenges",
+          "abstract": "Large multimodal agents (LMAs) are increasingly proposed for intelligent transportation systems (ITS), but existing studies often conflate multimodality, agency, empirical performance, and deployment readiness. This review provides an auditable evidence map of 42 primary study families released between January 2023 and 3 August 2026 within a corpus of 91 mapped sources. It distinguishes model-level, system-level, and hybrid multimodality and classifies each family by system architecture and action authority. Evidence is assessed independently through functional capability (C0-C3), validation setting (E0-E4), three evidence propositions (P1-P3), and eight methodological-concern domains (Q1-Q8). Transportation semantics (P1) are directly evaluated in 23 families and multidimensional integration (P3) in 24; 19 families directly evaluate both. Evidence reconciliation (P2) remains unresolved because no family demonstrates the complete provenance-challenge-handling-comparison-outcome chain. Fourteen families reach C3, but 13 remain at E2; only one reaches E3 and none reaches E4. Across ITS domains, LMAs are best supported for semantic interpretation, intent translation, evidence organisation, scenario authoring, explanation, and specialist-tool coordination. Numerical forecasting, optimisation, simulation fidelity, hard constraints, low-level control, safety fallback, and final authority should remain with independently verifiable specialist systems or accountable humans. The review therefore supports bounded orchestration rather than replacement and provides a matched comparative evaluation protocol and staged roadmap for accountable deployment. The living evidence repository is available at https://github.com/pangjunbiao/ITS-LMA-Review.",
+          "authors": [
+            "Muhammad Ayub Sabir",
+            "Shaohong Zheng",
+            "Zhiyu Qu",
+            "Fatima Ashraf",
+            "Junbiao Pang"
+          ],
+          "primary_category": "cs.AI",
+          "categories": [
+            "cs.AI"
+          ],
+          "published": "2026-08-08T15:22:40+00:00",
+          "link": "https://arxiv.org/pdf/2608.08184v1",
+          "tags": [
+            "keyword:agent"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "Auditable evidence map of large multimodal agent architectures for intelligent transportation systems",
+          "llm_evidence_cn": "面向智能交通系统的大型多模态智能体架构的可审计证据图谱",
+          "llm_evidence": "面向智能交通系统的大型多模态智能体架构的可审计证据图谱",
+          "canonical_evidence": "面向智能交通系统的大型多模态智能体架构的可审计证据图谱",
+          "llm_tldr_en": "This review maps 42 primary study families of large multimodal agents for ITS, distinguishing model-level, system-level, and hybrid multimodality, classifying system architecture and action authority, and assessing evidence quality via functional capability, validation setting, and methodological concerns.",
+          "llm_tldr_cn": "大型多模态智能体被越来越多地用于智能交通系统，但已有研究常混淆多模态、能动性、实证性能和部署准备度。本文对42个主要研究家族进行可审计证据图谱分析，区分模型级、系统级和混合多模态，并按系统架构和行动权分类。每个家族通过功能能力、验证设置、证据命题和方法学关注维度独立评估。该综述为交通领域智能体架构选择和研究评价提供了系统参考。",
+          "llm_tldr": "大型多模态智能体被越来越多地用于智能交通系统，但已有研究常混淆多模态、能动性、实证性能和部署准备度。本文对42个主要研究家族进行可审计证据图谱分析，区分模型级、系统级和混合多模态，并按系统架构和行动权分类。每个家族通过功能能力、验证设置、证据命题和方法学关注维度独立评估。该综述为交通领域智能体架构选择和研究评价提供了系统参考。",
+          "llm_tags": [
+            "query:agent"
+          ],
+          "matched_query_tag": "query:agent",
+          "matched_query_text": "agent architecture design patterns",
+          "matched_requirement_id": "req-5",
+          "selection_source": "carryover_cache",
+          "paper_id": "2608.08184v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2608.10299v1",
+          "source": "arxiv",
+          "title": "Co-Evolution in Agentic Systems: Toward Self-Directed Evolution Beyond Human Design",
+          "abstract": "Agentic systems are increasingly expected to improve after deployment, yet single-entity self-evolution is often bounded by a static learning context, such as fixed tasks and feedback. This survey focuses on co-evolution in agentic systems, a multi-component form of self-evolution in which multiple agents and their environment impose adaptive pressure on one another. To organize existing papers, we propose a progressive three-stage taxonomy that traces how the system gradually sheds human-engineered constraints. Agent--Agent Co-Evolution studies how agents adapt through dynamic peers, including adversarial, collaborative, and organizational adaptation. Agent--Environment Co-Evolution extends this loop to adaptive tasks, feedback, and interaction spaces that change with the agents. Meta Co-Evolution further explores the possibility of making the evolution mechanism itself evolvable. We also discuss open challenges in evaluating such systems, scaling them across multiple components, and keeping increasingly autonomous evolutionary processes safe and controllable. This survey provides a unified foundation for building robust and open-ended agentic systems that can improve beyond fixed human-designed paths.",
+          "authors": [
+            "Qing Zong",
+            "Jiayu Liu",
+            "Junhao Shen",
+            "Zecong Tang",
+            "Linsi Wu",
+            "Yuxuan Liu",
+            "Rui Wang",
+            "Zhaowei Wang",
+            "Weiqi Wang",
+            "Cheng Qian",
+            "Xiusi Chen",
+            "Yangqiu Song"
+          ],
+          "primary_category": "cs.CL",
+          "categories": [
+            "cs.CL"
+          ],
+          "published": "2026-08-10T23:10:40+00:00",
+          "link": "https://arxiv.org/pdf/2608.10299v1",
+          "tags": [
+            "keyword:agent",
+            "query:agent"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "multi-agent system coordination; agent-agent and agent-environment co-evolution",
+          "llm_evidence_cn": "多智能体系统协调；智能体间及智能体与环境的共同进化",
+          "llm_evidence": "多智能体系统协调；智能体间及智能体与环境的共同进化",
+          "canonical_evidence": "多智能体系统协调；智能体间及智能体与环境的共同进化",
+          "llm_tldr_en": "Surveys co-evolution in agentic systems, proposing a progressive three-stage taxonomy that covers agent-agent and agent-environment adaptive loops and traces how systems shed human-engineered constraints over time.",
+          "llm_tldr_cn": "本文系统梳理了智能体系统中的共同进化现象，即多个智能体及其环境相互施加适应压力以改善系统性能。作者提出一个渐进式三阶段分类法，涵盖智能体-智能体共同进化与智能体-环境共同进化，分析系统如何逐步摆脱人类设定的约束。该综述为多智能体系统的自适应协调与持续改进提供了统一视角。",
+          "llm_tldr": "本文系统梳理了智能体系统中的共同进化现象，即多个智能体及其环境相互施加适应压力以改善系统性能。作者提出一个渐进式三阶段分类法，涵盖智能体-智能体共同进化与智能体-环境共同进化，分析系统如何逐步摆脱人类设定的约束。该综述为多智能体系统的自适应协调与持续改进提供了统一视角。",
+          "llm_tags": [
+            "query:agent"
+          ],
+          "matched_query_tag": "query:agent",
+          "matched_query_text": "multi-agent system coordination",
+          "matched_requirement_id": "req-4",
+          "selection_source": "carryover_cache",
+          "paper_id": "2608.10299v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2608.10504v1",
+          "source": "arxiv",
+          "title": "MEGA: Self-Evolving Agent Optimization Infrastructure via Wisdom Graph",
+          "abstract": "As coding agents increasingly handle implementation, the central challenge shifts from building individual agents to building an infrastructure that systematically improves them. Current approaches optimize agent systems without accumulating transferable knowledge, accumulate knowledge without compositional reasoning over it, and lack a mechanism for that knowledge to self-evolve through operational evidence. MEGA (Meta Evaluation-Grounded Adaptation) addresses these gaps as a self-evolving infrastructure: each optimization cycle produces durable assets, compositional reasoning over those assets guides subsequent optimization, and operational evidence refines both the accumulated wisdom and the reasoning that governs it. Layer 1 distills reusable wisdom from agent sessions through behavioral-pattern clustering and empirical A/B validation, transforming each process into a durable asset. Layer 2 decomposes these assets into atomic PCR (Primary-Context-Resultant) units within a typed Wisdom Graph and performs deductive, abductive, and inductive reasoning to expand implicit relations; it then assembles context-specific execution plans through compositional retrieval that surfaces bridging knowledge unreachable by embedding similarity alone. Layer 3 performs multi-agent collaborative optimization over heterogeneous agent workflows (code nodes, LLM calls, and tool-using agents), attributing improvement effects to specific strategy changes through controlled evaluation that eliminates data variance. Evidence fed back from Layer 3 drives the self-evolution of both the curation strategies that govern wisdom composition and the optimization trajectories accumulated across runs. The result is an infrastructure in which optimizing an agent system and evolving the knowledge that guides optimization are one and the same process.",
+          "authors": [
+            "Jung Hwan Lee",
+            "Kyu Ho Lee",
+            "Gwang Hoon Yoo"
+          ],
+          "primary_category": "cs.AI",
+          "categories": [
+            "cs.AI"
+          ],
+          "published": "2026-08-11T05:21:16+00:00",
+          "link": "https://arxiv.org/pdf/2608.10504v1",
+          "tags": [
+            "keyword:agent",
+            "query:agent"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "Self-evolving infrastructure for systematically optimizing coding agents, central to intelligent agent design.",
+          "llm_evidence_cn": "面向智能体系统优化的自进化基础设施，贴合智能体设计主题。",
+          "llm_evidence": "面向智能体系统优化的自进化基础设施，贴合智能体设计主题。",
+          "canonical_evidence": "面向智能体系统优化的自进化基础设施，贴合智能体设计主题。",
+          "llm_tldr_en": "MEGA is a self-evolving infrastructure for agent optimization that accumulates transferable wisdom from each cycle and uses compositional reasoning over that wisdom to guide further improvement.",
+          "llm_tldr_cn": "现有智能体优化方法要么不进行知识积累，要么无法对积累的知识进行组合推理，更缺乏让知识依据运行证据自我进化的机制。为此提出MEGA，一个自进化的智能体优化基础设施：每个优化周期生成持久化资产，组合推理指导后续优化，运行证据同时精炼知识与治理推理。该框架将优化从单次调参转变为持续积累与进化的过程。",
+          "llm_tldr": "现有智能体优化方法要么不进行知识积累，要么无法对积累的知识进行组合推理，更缺乏让知识依据运行证据自我进化的机制。为此提出MEGA，一个自进化的智能体优化基础设施：每个优化周期生成持久化资产，组合推理指导后续优化，运行证据同时精炼知识与治理推理。该框架将优化从单次调参转变为持续积累与进化的过程。",
+          "llm_tags": [
+            "query:agent"
+          ],
+          "matched_query_tag": "query:agent",
+          "matched_query_text": "intelligent agent design and applications",
+          "matched_requirement_id": "req-3",
+          "selection_source": "carryover_cache",
+          "paper_id": "2608.10504v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2608.07949v1",
+          "source": "arxiv",
+          "title": "Guixu: Valuation-Driven Data Discovery for Autonomous AI Agents with On-Chain Attestation",
+          "abstract": "Autonomous agents increasingly rely on external data to complete downstream tasks such as model training and decision support. However, existing data discovery systems remain largely retrieval-oriented: they surface candidate datasets from heterogeneous sources, but provide limited support for estimating task-specific utility, selecting cost-effective datasets under budget constraints, or incorporating trustworthy feedback from prior usage. This paper presents Guixu, a valuation-driven data discovery system for autonomous agents. Guixu employs a three-phase valuation pipeline with proxy-label propagation and multi-round knapsack optimization for task-aware data valuation. Guixu integrates agentic payment protocol to enable budget-constrained data procurement workflows. Guixu leverages on-chain data market and attestation signals for verifiable data discovery. Our demonstration highlights how Guixu enables an agent to move beyond keyword-based dataset retrieval toward task- and budget-aware, trustworthy data discovery and procurement. Attendees can interactively explore the full workflow, from NL task specification and multi-source search to data valuation and verifiable transaction feedback.",
+          "authors": [
+            "Yifan Wu",
+            "Yuchen Peng",
+            "Jiaqi Chai",
+            "Yufei Qian",
+            "Xilin Li",
+            "Ke Chen",
+            "Lidan Shou"
+          ],
+          "primary_category": "cs.AI",
+          "categories": [
+            "cs.AI",
+            "cs.CR",
+            "cs.DB",
+            "cs.IR",
+            "cs.MA"
+          ],
+          "published": "2026-08-08T06:25:16+00:00",
+          "link": "https://arxiv.org/pdf/2608.07949v1",
+          "tags": [
+            "keyword:agent",
+            "query:agent"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "Valuation-driven data discovery system that supports autonomous agents in task-aware data selection under budget constraints, aiding decision making.",
+          "llm_evidence_cn": "为自主智能体提供数据估值与预算约束下的数据选择，支持其决策能力。",
+          "llm_evidence": "为自主智能体提供数据估值与预算约束下的数据选择，支持其决策能力。",
+          "canonical_evidence": "为自主智能体提供数据估值与预算约束下的数据选择，支持其决策能力。",
+          "llm_tldr_en": "Guixu presents a valuation-driven data discovery system for autonomous agents, applying a three-phase valuation pipeline with proxy-label propagation and knapsack optimization for task-aware data valuation, plus an agentic payment protocol.",
+          "llm_tldr_cn": "自主智能体依赖外部数据完成模型训练和决策支持，但现有数据发现系统多为检索导向，难以估计任务效用并选择高性价比数据。Guixu提出三阶段估值流水线，结合代理标签传播与多轮背包优化实现任务感知数据估值，并集成智能体支付协议以支持预算受限下的数据获取。该系统使智能体的数据选择更高效、可信。",
+          "llm_tldr": "自主智能体依赖外部数据完成模型训练和决策支持，但现有数据发现系统多为检索导向，难以估计任务效用并选择高性价比数据。Guixu提出三阶段估值流水线，结合代理标签传播与多轮背包优化实现任务感知数据估值，并集成智能体支付协议以支持预算受限下的数据获取。该系统使智能体的数据选择更高效、可信。",
           "llm_tags": [
             "query:agent"
           ],
@@ -369,7 +413,180 @@
           "matched_query_text": "autonomous agent decision making",
           "matched_requirement_id": "req-2",
           "selection_source": "carryover_cache",
-          "paper_id": "2608.06871v1",
+          "paper_id": "2608.07949v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2608.08236v1",
+          "source": "arxiv",
+          "title": "LatticeMind: A Conflict-Aware Memory Primitive for Multi-Agent Systems",
+          "abstract": "Multi-agent LLM systems often fail not for lack of candidate answers, but because they have no persistent mechanism for deciding which incompatible claim should currently be trusted. Majority vote, debate, and judge-based selection choose an output without recording which claim wins, which is contested, or why a later update supersedes it. We present \\term{LatticeMind}, a conflict-aware structured memory that handles contradiction at write time. It maintains explicit item status, applies cheap symbolic conflict checks, and invokes LLM reconciliation only for unresolved semantic cases. On a label-blind ConflictBank evaluation that removes source-name hints, LatticeMind reaches 0.97 accuracy versus 0.61 for the strongest aggregation baseline, with the gap significant at $p<10^{-6}$ by paired McNemar test. Ablations show that removing the checker or the reconciler costs 12 to 14 points. On four secondary planning benchmarks the picture is mixed: LatticeMind beats naive merge on three of four, but does not replace deliberation methods on tasks rewarding iterative search.",
+          "authors": [
+            "Heng Zhou",
+            "Lian Zhang",
+            "Yutao Fan",
+            "Tiancheng He",
+            "Siki Chen",
+            "Hejia Geng",
+            "Philip Torr",
+            "Zhenfei Yin"
+          ],
+          "primary_category": "cs.AI",
+          "categories": [
+            "cs.AI",
+            "cs.CL"
+          ],
+          "published": "2026-08-08T17:05:08+00:00",
+          "link": "https://arxiv.org/pdf/2608.08236v1",
+          "tags": [
+            "keyword:agent",
+            "query:agent"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "conflict-aware memory primitive for multi-agent LLM systems",
+          "llm_evidence_cn": "面向多智能体LLM系统的冲突感知内存原语",
+          "llm_evidence": "面向多智能体LLM系统的冲突感知内存原语",
+          "canonical_evidence": "面向多智能体LLM系统的冲突感知内存原语",
+          "llm_tldr_en": "Multi-agent LLM systems lack a persistent mechanism for resolving contradictory claims; LatticeMind provides a conflict-aware structured memory that checks conflicts at write time and only calls LLM reconciliation for semantic cases, achieving 0.97 accuracy on ConflictBank.",
+          "llm_tldr_cn": "多智能体LLM系统常因缺乏持久化机制来决定哪些相互矛盾的声明应当被信任而失败。本文提出LatticeMind，一种冲突感知的结构化内存原语，在写入时处理矛盾，先进行廉价符号冲突检测，仅对未解决的语义情况调用LLM调解。在去除了来源提示的ConflictBank评测上，LatticeMind达到0.97的准确率，显著超过最强的聚合基线。这一原语为多智能体系统提供了一种可扩展的冲突解决组件。",
+          "llm_tldr": "多智能体LLM系统常因缺乏持久化机制来决定哪些相互矛盾的声明应当被信任而失败。本文提出LatticeMind，一种冲突感知的结构化内存原语，在写入时处理矛盾，先进行廉价符号冲突检测，仅对未解决的语义情况调用LLM调解。在去除了来源提示的ConflictBank评测上，LatticeMind达到0.97的准确率，显著超过最强的聚合基线。这一原语为多智能体系统提供了一种可扩展的冲突解决组件。",
+          "llm_tags": [
+            "query:agent"
+          ],
+          "matched_query_tag": "query:agent",
+          "matched_query_text": "multi-agent system coordination",
+          "matched_requirement_id": "req-4",
+          "selection_source": "carryover_cache",
+          "paper_id": "2608.08236v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2608.09857v1",
+          "source": "arxiv",
+          "title": "Agentic Harnesses: LLM-Driven Verification Layers for Robot Autonomy",
+          "abstract": "Advances in advanced artificial intelligence tools have sparked research in robot autonomy, but the development of such systems has largely focused on execution rather than verifying the feasibility actions planning models propose. Like general-purpose LLMs, robotics planning models carry risks: biased toward user-specified goals, they may suggest actions misaligned with scientific ethics, they may be unsafe due to an inability to \"remember\" prior safety risks, or they may be vulnerable to adversarial attacks on the autonomy ecosystem. We propose a LLM-driven verification layer between planning and execution to evaluate action permissibility. Our LLM-as-a-Judge ensemble combines chain-of-thought reasoning across models and synthesizes those expert judge outputs, mirroring a combination of a mixture of experts and self-consistency approach. This layer serves as middleware, gating plans from the server's planning module before they reach the MCP server and therefore the robot's low-level controls: plans are approved, rejected for reformulation, or escalated for human review. With this system, we achieve near 85% precision across accept/escalate/reject categories 97% containment of adversarial attacks, with negligible errors between accepting and rejecting tasks, and errors mostly manifesting at the escalate boundary.",
+          "authors": [
+            "Rohan Bhagra",
+            "Mahantesh Halapannavar",
+            "Uddhav Bhattarai"
+          ],
+          "primary_category": "cs.RO",
+          "categories": [
+            "cs.RO",
+            "cs.AI"
+          ],
+          "published": "2026-08-10T17:15:55+00:00",
+          "link": "https://arxiv.org/pdf/2608.09857v1",
+          "tags": [
+            "keyword:agent",
+            "query:agent"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "LLM-driven verification layer for robot autonomy planning",
+          "llm_evidence_cn": "面向机器人自主规划的LLM驱动验证层",
+          "llm_evidence": "面向机器人自主规划的LLM驱动验证层",
+          "canonical_evidence": "面向机器人自主规划的LLM驱动验证层",
+          "llm_tldr_en": "Proposes an LLM-as-a-Judge ensemble verification layer between planning and execution to evaluate action permissibility, addressing safety and adversarial risks in robot autonomy.",
+          "llm_tldr_cn": "机器人自主系统开发多聚焦于执行，而很少验证规划模型提议动作的可行性。针对规划模型可能偏向用户目标、遗忘安全风险或易受对抗攻击等问题，本文提出在规划与执行之间加入LLM驱动的验证层。采用LLM-as-a-Judge集成，结合跨模型的链式思考，综合判断动作的准许性。该验证层为机器人自主性增加了一道安全审查环节。",
+          "llm_tldr": "机器人自主系统开发多聚焦于执行，而很少验证规划模型提议动作的可行性。针对规划模型可能偏向用户目标、遗忘安全风险或易受对抗攻击等问题，本文提出在规划与执行之间加入LLM驱动的验证层。采用LLM-as-a-Judge集成，结合跨模型的链式思考，综合判断动作的准许性。该验证层为机器人自主性增加了一道安全审查环节。",
+          "llm_tags": [
+            "query:agent"
+          ],
+          "matched_query_tag": "query:agent",
+          "matched_query_text": "papers on autonomous agent architectures and control",
+          "matched_requirement_id": "req-7",
+          "selection_source": "carryover_cache",
+          "paper_id": "2608.09857v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2608.09096v1",
+          "source": "arxiv",
+          "title": "Evo-Bench: Can Language Models Improve Agent Harness?",
+          "abstract": "Large Language Models (LLMs) have driven rapid progress in autonomous agents, yet standard evaluations remain confined to static task solving. An emerging frontier is harness evolution---the agent's capacity to autonomously optimize its own operating harness. However, systematically benchmarking this capability remains challenging, as existing evaluations fail to isolate harness improvements from base model strength, prevent task-specific overfitting, or capture long-horizon iterative research. To address these challenges, we introduce Evo-Bench, the first benchmark designed to evaluate models' intrinsic harness-evolving capabilities across Search, Office, and General agent domains. To rigorously isolate this capability, Evo-Bench employs a novel harness-guided construction framework: it leverages auxiliary-task evolution to identify tasks genuinely sensitive to framework improvements, followed by sensitivity-aware stratified splitting to ensure robust cross-suite generalization. Extensive evaluations across nine frontier and open-weight models reveal that top models achieve massive absolute gains reaching 16.6 points, closely approaching state-of-the-art human-engineered baselines. Crucially, while autonomous evolution outpeforms artificial harness in General tasks and excels in Search tasks, it struggles in Office tasks that demand highly specific processing workflows. Furthermore, our analysis exposes critical temporal anomalies like early saturation, while demonstrating that the synthesized harnesses act as highly transferable reasoning structures, consistently boosting diverse policy models.",
+          "authors": [
+            "Lisheng Huang",
+            "Chen Yang",
+            "Hao Zhou",
+            "Huatong Song",
+            "Zongchao Chen",
+            "Ran Le",
+            "Yang Song",
+            "Wayne Xin Zhao",
+            "Tao Zhang"
+          ],
+          "primary_category": "cs.CL",
+          "categories": [
+            "cs.CL"
+          ],
+          "published": "2026-08-10T03:49:28+00:00",
+          "link": "https://arxiv.org/pdf/2608.09096v1",
+          "tags": [
+            "keyword:agent",
+            "query:agent"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "benchmark for LLM agents' harness evolution capabilities",
+          "llm_evidence_cn": "语言模型智能体运行框架进化能力的基准评测",
+          "llm_evidence": "语言模型智能体运行框架进化能力的基准评测",
+          "canonical_evidence": "语言模型智能体运行框架进化能力的基准评测",
+          "llm_tldr_en": "Introduces Evo-Bench, the first benchmark for evaluating LLM agents' capacity to autonomously improve their operating harness, isolating harness evolution from base model strength across Search, Office, and General domains.",
+          "llm_tldr_cn": "标准智能体评测局限于静态任务求解，而新兴前沿是智能体自主优化自身运行框架的能力。然而现有评测无法将框架改进与基座模型能力分离，也难防任务过拟合或覆盖长周期迭代研究。为此提出Evo-Bench，首个在搜索、办公与通用智能体领域评测模型框架演化能力的基准。通过新颖的框架引导结构设计，能够严格孤立该能力，为智能体自主改进研究提供评测基础。",
+          "llm_tldr": "标准智能体评测局限于静态任务求解，而新兴前沿是智能体自主优化自身运行框架的能力。然而现有评测无法将框架改进与基座模型能力分离，也难防任务过拟合或覆盖长周期迭代研究。为此提出Evo-Bench，首个在搜索、办公与通用智能体领域评测模型框架演化能力的基准。通过新颖的框架引导结构设计，能够严格孤立该能力，为智能体自主改进研究提供评测基础。",
+          "llm_tags": [
+            "query:agent"
+          ],
+          "matched_query_tag": "query:agent",
+          "matched_query_text": "papers on autonomous agent architectures and control",
+          "matched_requirement_id": "req-7",
+          "selection_source": "carryover_cache",
+          "paper_id": "2608.09096v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2608.10030v1",
+          "source": "arxiv",
+          "title": "Automating and Scaling Behavioral Scientific Research on AI Agents",
+          "abstract": "As AI agents are increasingly deployed in complex environments, understanding their behaviors becomes critical. Yet behavioral scientific research on AI agents remains manual and labor-intensive. We introduce AEROBAT, the first multi-agent system to automate behavioral scientific research on AI agents. Given an arbitrary target behavior by its user, AEROBAT automatically executes a full pipeline of behavioral scientific research---generating hypotheses about the behavior, designing and executing controlled experiments, making behavioral assessments, analyzing the results, and writing reports. For 12 target behaviors, we used AEROBAT to generate and test 79 hypotheses: designing 1,240 controlled experiments and executing 23,512 simulation rounds in total. Moderate-to-strong statistical evidence was found for 26 hypotheses, including some novel ones. In sum, our results demonstrate that automated behavioral scientific research on AI agents can complement and extend the reach of manual research.",
+          "authors": [
+            "Soo Yong Lee",
+            "Jongha Lee",
+            "Jaewan Chun",
+            "Hyunjin Hwang",
+            "Fanchen Bu",
+            "Ziv Ben-Zion",
+            "Taekwan Kim",
+            "Denny Borsboom",
+            "Jaemin Yoo",
+            "Kijung Shin"
+          ],
+          "primary_category": "cs.AI",
+          "categories": [
+            "cs.AI",
+            "cs.MA"
+          ],
+          "published": "2026-08-10T01:14:31+00:00",
+          "link": "https://arxiv.org/pdf/2608.10030v1",
+          "tags": [
+            "keyword:agent",
+            "query:agent"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "AEROBAT is a multi-agent system automating behavioral research on AI agents",
+          "llm_evidence_cn": "AEROBAT是一个自动化AI智能体行为研究的多智能体系统",
+          "llm_evidence": "AEROBAT是一个自动化AI智能体行为研究的多智能体系统",
+          "canonical_evidence": "AEROBAT是一个自动化AI智能体行为研究的多智能体系统",
+          "llm_tldr_en": "AEROBAT is the first multi-agent system that automatically runs a full behavioral science pipeline on AI agents, generating hypotheses, designing and executing controlled experiments, and writing reports.",
+          "llm_tldr_cn": "针对AI智能体行为研究长期依赖人工、流程繁琐且难以规模化的问题，本文提出AEROBAT，这是首个自动化执行行为科学研究的完整流程的多智能体系统。该系统能自动生成假设、设计并执行受控实验、进行行为评估、分析结果并撰写报告。在12个目标行为上，AEROBAT共生成并测试79个假设，设计1240个受控实验，执行23512轮模拟。这项工作展示了多智能体自动化研究范式的巨大潜力，为AI智能体行为的规模化理解提供了高效工具。",
+          "llm_tldr": "针对AI智能体行为研究长期依赖人工、流程繁琐且难以规模化的问题，本文提出AEROBAT，这是首个自动化执行行为科学研究的完整流程的多智能体系统。该系统能自动生成假设、设计并执行受控实验、进行行为评估、分析结果并撰写报告。在12个目标行为上，AEROBAT共生成并测试79个假设，设计1240个受控实验，执行23512轮模拟。这项工作展示了多智能体自动化研究范式的巨大潜力，为AI智能体行为的规模化理解提供了高效工具。",
+          "llm_tags": [
+            "query:agent"
+          ],
+          "matched_query_tag": "query:agent",
+          "matched_query_text": "multi-agent system coordination",
+          "matched_requirement_id": "req-4",
+          "selection_source": "carryover_cache",
+          "paper_id": "2608.10030v1",
           "carry_days": 1
         }
       ]
