@@ -1,0 +1,297 @@
+{
+  "date": "20260814",
+  "date_label": "",
+  "generated_at": "2026-08-14 21:20:43 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2608.10299v1",
+      "route": "202608/14/2608.10299v1-co-evolution-in-agentic-systems-toward-self-directed-evolution-beyond-human-design",
+      "title": "Co-Evolution in Agentic Systems: Toward Self-Directed Evolution Beyond Human Design",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体协同进化与智能体系统综述",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.11166v1",
+      "route": "202608/14/2608.11166v1-agentic-configuration-management-acm-a-reference-configuration-model-for-governed-agentic-systems",
+      "title": "Agentic Configuration Management (ACM): A Reference Configuration Model for Governed Agentic Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "异构智能体系统的参考配置模型",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.11386v1",
+      "route": "202608/14/2608.11386v1-the-devil-is-in-the-interface-evaluating-how-tool-architecture-shapes-coding-agent-behavior",
+      "title": "The Devil Is in the Interface: Evaluating How Tool Architecture Shapes Coding Agent Behavior",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "对编码智能体六种工具架构进行受控比较，属于智能体设计核心维度",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.11658v1",
+      "route": "202608/14/2608.11658v1-is-per-agent-policy-composition-safe-rethinking-successor-feature-transfer-in-cooperative-multi-agent-reinforcement-learning",
+      "title": "Is Per-Agent Policy Composition Safe? Rethinking Successor-Feature Transfer in Cooperative Multi-Agent Reinforcement Learning",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体强化学习中的策略组合与迁移",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.11949v1",
+      "route": "202608/14/2608.11949v1-exrole-from-team-trajectories-to-executable-roles-in-multi-agent-language-models",
+      "title": "ExRole: From Team Trajectories to Executable Roles in Multi-Agent Language Models",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向多智能体语言模型的可执行角色学习",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.12921v1",
+      "route": "202608/14/2608.12921v1-discovering-efficient-and-explainable-communication-topologies-for-llm-based-multi-agent-systems-via-causal-inference",
+      "title": "Discovering Efficient and Explainable Communication Topologies for LLM-based Multi-Agent Systems via Causal Inference",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "LLM多智能体系统通信拓扑的可解释发现",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.13030v1",
+      "route": "202608/14/2608.13030v1-intersage-the-secure-and-verifiable-interoperability-protocol-for-an-internet-of-agents",
+      "title": "InterSAGE: The Secure and Verifiable Interoperability Protocol for An Internet of Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向智能体通信的安全可验证互操作协议",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.06503v1",
+      "route": "202608/14/2608.06503v1-toward-reliable-context-compression-for-long-horizon-agents-an-empirical-study-of-execution-instability",
+      "title": "Toward Reliable Context Compression for Long-Horizon Agents: An Empirical Study of Execution Instability",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "智能体架构设计模式——面向长时程智能体稳定执行的验证器引导上下文压缩框架",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.06587v1",
+      "route": "202608/14/2608.06587v1-syncsbc-decentralized-swarm-behavior-prediction-for-synchronized-autonomous-control",
+      "title": "SyncSBC: Decentralized Swarm Behavior Prediction for Synchronized Autonomous Control",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "去中心化群体行为分类与同步控制",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.06651v1",
+      "route": "202608/14/2608.06651v1-cyberllm-a-multi-agent-llm-framework-for-autonomous-detection-and-guarded-response-in-automotive-cybersecurity",
+      "title": "CyberLLM: A Multi-Agent LLM Framework for Autonomous Detection and Guarded Response in Automotive Cybersecurity",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "多智能体LLM框架实现自主检测与受控响应",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.06871v1",
+      "route": "202608/14/2608.06871v1-cedar-agent-orchestrated-tree-search-for-goal-directed-optimization-of-complex-systems",
+      "title": "CEDAR: Agent-Orchestrated Tree Search for Goal-Directed Optimization of Complex Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "自主智能体规划——智能体编排树搜索实现复杂系统的目标定向设计",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.07169v1",
+      "route": "202608/14/2608.07169v1-agent-memory-distillation-empowering-small-llm-agents-with-hierarchical-teacher-memory",
+      "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向小型LLM智能体设计的层次化记忆蒸馏",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.07449v1",
+      "route": "202608/14/2608.07449v1-skillprox-self-evolving-agent-skills-via-proximal-textual-gradient-descent",
+      "title": "SkillProx: Self-Evolving Agent Skills via Proximal Textual Gradient Descent",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "通过近端文本梯度实现LLM智能体技能自进化",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.06926v1",
+      "route": "202608/14/2608.06926v1-tribe-predicting-team-performance-via-communication-behavior-ensembles",
+      "title": "TRIBE: Predicting Team Performance via Communication Behavior Ensembles",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "基于沟通行为预测团队性能的领域无关方法",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.07214v1",
+      "route": "202608/14/2608.07214v1-toward-a-causal-data-management-ecosystem-for-decision-making-and-agentic-ai",
+      "title": "Toward a Causal Data Management Ecosystem for Decision Making and Agentic AI",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向决策与智能体AI的数据管理生态系统",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.08163v1",
+      "route": "202608/14/2608.08163v1-agentic-ai-driven-immersive-simulation-a-knowledge-aware-virtual-training-platform-forhigh-dose-rate-hdr-brachytherapy",
+      "title": "Agentic AI-driven Immersive Simulation: A Knowledge-Aware Virtual Training Platform forHigh Dose Rate (HDR) Brachytherapy",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "智能体AI沉浸式模拟在医学培训中的应用",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.08545v1",
+      "route": "202608/14/2608.08545v1-curriculum-generation-under-structured-parametric-environments-for-robust-navigation-policies",
+      "title": "Curriculum Generation under Structured Parametric Environments for Robust Navigation Policies",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向鲁棒自主导航策略的课程生成",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    },
+    {
+      "paper_id": "2608.12172v1",
+      "route": "202608/14/2608.12172v1-rethinking-agent-security-as-a-networking-problem",
+      "title": "Rethinking Agent Security as a Networking Problem",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "将智能体安全架构建模为网络问题",
+      "first_seen_at": "2026-08-14 21:20:43 UTC",
+      "updated_at": "2026-08-14 21:20:43 UTC"
+    }
+  ]
+}

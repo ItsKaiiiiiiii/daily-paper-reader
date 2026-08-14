@@ -1,0 +1,727 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-14T21:06:12.867794+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 39,
+    "deep_cap": 6,
+    "deep_selected": 7,
+    "quick_candidates": 45,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2608.10299v1",
+      "source": "arxiv",
+      "title": "Co-Evolution in Agentic Systems: Toward Self-Directed Evolution Beyond Human Design",
+      "abstract": "Agentic systems are increasingly expected to improve after deployment, yet single-entity self-evolution is often bounded by a static learning context, such as fixed tasks and feedback. This survey focuses on co-evolution in agentic systems, a multi-component form of self-evolution in which multiple agents and their environment impose adaptive pressure on one another. To organize existing papers, we propose a progressive three-stage taxonomy that traces how the system gradually sheds human-engineered constraints. Agent--Agent Co-Evolution studies how agents adapt through dynamic peers, including adversarial, collaborative, and organizational adaptation. Agent--Environment Co-Evolution extends this loop to adaptive tasks, feedback, and interaction spaces that change with the agents. Meta Co-Evolution further explores the possibility of making the evolution mechanism itself evolvable. We also discuss open challenges in evaluating such systems, scaling them across multiple components, and keeping increasingly autonomous evolutionary processes safe and controllable. This survey provides a unified foundation for building robust and open-ended agentic systems that can improve beyond fixed human-designed paths.",
+      "authors": [
+        "Qing Zong",
+        "Jiayu Liu",
+        "Junhao Shen",
+        "Zecong Tang",
+        "Linsi Wu",
+        "Yuxuan Liu",
+        "Rui Wang",
+        "Zhaowei Wang",
+        "Weiqi Wang",
+        "Cheng Qian",
+        "Xiusi Chen",
+        "Yangqiu Song"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-10T23:10:40+00:00",
+      "link": "https://arxiv.org/pdf/2608.10299v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Survey on multi-agent co-evolution and self-directed agentic systems",
+      "llm_evidence_cn": "多智能体协同进化与智能体系统综述",
+      "llm_evidence": "多智能体协同进化与智能体系统综述",
+      "canonical_evidence": "多智能体协同进化与智能体系统综述",
+      "llm_tldr_en": "Survey of co-evolution in agentic systems, proposing a three-stage taxonomy from agent-agent to agent-environment co-evolution toward self-directed evolution beyond human design, tracing how systems shed human constraints.",
+      "llm_tldr_cn": "该综述聚焦智能体系统的协同进化这一多组件自我进化形式，提出渐进三阶段分类法，从智能体-智能体协同进化到智能体-环境协同进化，系统梳理了系统如何逐步摆脱人工设定的约束，为设计超越静态上下文的自主智能体提供了系统化视角，有助于理解多智能体动态适应与架构演化。",
+      "llm_tldr": "该综述聚焦智能体系统的协同进化这一多组件自我进化形式，提出渐进三阶段分类法，从智能体-智能体协同进化到智能体-环境协同进化，系统梳理了系统如何逐步摆脱人工设定的约束，为设计超越静态上下文的自主智能体提供了系统化视角，有助于理解多智能体动态适应与架构演化。",
+      "llm_tags": [
+        "query:agent:composite"
+      ],
+      "matched_query_tag": "query:agent:composite",
+      "matched_query_text": "Papers central to 查找Agent相关论文, especially work that connects or combines: A; autonomous agent decision making; intelligent agent design and applications; multi-agent system coordination; agent architecture design patterns; agent communication protocols; papers on autonomous agent architectures and control; recent advances in multi agent reinforcement learning; applications of intelligent agents; autonomous agent planning.",
+      "matched_requirement_id": "req-composite-agent",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.11166v1",
+      "source": "arxiv",
+      "title": "Agentic Configuration Management (ACM): A Reference Configuration Model for Governed Agentic Systems",
+      "abstract": "Agentic systems are increasingly composed of heterogeneous agents, prompts, tools, models, skills, composite subsystems, policies, and execution workflows whose configurations evolve across frameworks and runtime environments. Existing LLMOps and AgentOps platforms support orchestration and observability but do not provide a common configuration-governance model for representing and governing these systems as coherent, versioned configurations.   This paper introduces Agentic Configuration Management (ACM), a framework-independent governance and configuration reference model for heterogeneous agentic systems. ACM combines typed and independently versioned Agentic Configuration Items, immutable revisions and baselines, explicit configuration-runtime separation, lifecycle and assurance semantics, dependency-aware impact propagation, and runtime provenance. Heterogeneous native configurations are normalized through semantic projection into a canonical Configuration Graph on which common governance semantics operate.   We provide a Python reference implementation with adapters for LangGraph, CrewAI, and the OpenAI Agents SDK. The evaluation combines 27 governance scenarios with nine quantitative impact-propagation cases. For the evaluated configurations, the three frameworks yield governance-equivalent ACM representations and reproducible governance outcomes after projection. The impact semantics are formalized as monotone propagation over a finite lattice, establishing convergence, termination, and uniqueness of the least fixed point above the initial impact valuation. These results provide evidence that common governance semantics can support reproducibility, auditability, dependency analysis, and interoperability across heterogeneous agentic execution abstractions within the evaluated scope.",
+      "authors": [
+        "Audrey Quessada-Vial"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE"
+      ],
+      "published": "2026-08-11T17:28:39+00:00",
+      "link": "https://arxiv.org/pdf/2608.11166v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "reference configuration model for heterogeneous agentic systems",
+      "llm_evidence_cn": "异构智能体系统的参考配置模型",
+      "llm_evidence": "异构智能体系统的参考配置模型",
+      "canonical_evidence": "异构智能体系统的参考配置模型",
+      "llm_tldr_en": "Proposes Agentic Configuration Management (ACM), a framework-independent reference model for governing heterogeneous agentic systems as coherent versioned configurations.",
+      "llm_tldr_cn": "智能体系统由异构代理、提示、工具、模型和策略组成，其配置在框架间不断演化，但现有LLMOps/AgentOps缺乏统一治理模型。本文提出智能体配置管理（ACM），一个框架无关的治理与配置参考模型，通过类型化且独立版本化的配置项、不可变修订和基线，将异构智能体系统表示为一致的版本化配置。该模型为复杂智能体系统的架构治理与运维提供了基础框架。",
+      "llm_tldr": "智能体系统由异构代理、提示、工具、模型和策略组成，其配置在框架间不断演化，但现有LLMOps/AgentOps缺乏统一治理模型。本文提出智能体配置管理（ACM），一个框架无关的治理与配置参考模型，通过类型化且独立版本化的配置项、不可变修订和基线，将异构智能体系统表示为一致的版本化配置。该模型为复杂智能体系统的架构治理与运维提供了基础框架。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.11386v1",
+      "source": "arxiv",
+      "title": "The Devil Is in the Interface: Evaluating How Tool Architecture Shapes Coding Agent Behavior",
+      "abstract": "As large language models continue to improve, agentic systems are becoming increasingly important, and tools are a key design dimension because they determine how agents access information and take action in their environments. Prior work on agent tooling has primarily focused on expanding what agents can do, but has paid less systematic attention to how those capabilities are organized and exposed to the model. We refer to this latter design dimension as tool architecture. We study tool architecture in coding agents through controlled experiments on repository-level issue fixing, comparing six tool architectures that hold the underlying information and actions similar while varying how they are organized and exposed to the model, across three actors and a total of 11,700 trajectories. Our experiments show that, even when tools provide similar capabilities, tool architecture changes agent behavior: Compared to a basic architecture where the agent has only the bash tool, more structured low-level interfaces improve consistency across repeated attempts by up to 4.7 $\\times$; natural-language search broadens repository exploration and increases access to relevant files by more than 11%; and Python CodeAct-style interfaces achieve similar task performance with 41.6% fewer steps and 56.3% lower token usage. By contrast, lightweight text-based cognitive-scaffolding tools, such as tools that let the agent record intermediate reasoning, have limited effect on actor behavior.",
+      "authors": [
+        "Xiangzhe Xu",
+        "Hamidreza Saghir",
+        "Qianhui Wu",
+        "Marc-Alexandre Côté",
+        "Tong Wang",
+        "Kiran Lakkaraju",
+        "Kexin Pei",
+        "Xiangyu Zhang"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE"
+      ],
+      "published": "2026-08-11T19:50:56+00:00",
+      "link": "https://arxiv.org/pdf/2608.11386v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Comparative study of six tool architectures for coding agents, a core agent design dimension",
+      "llm_evidence_cn": "对编码智能体六种工具架构进行受控比较，属于智能体设计核心维度",
+      "llm_evidence": "对编码智能体六种工具架构进行受控比较，属于智能体设计核心维度",
+      "canonical_evidence": "对编码智能体六种工具架构进行受控比较，属于智能体设计核心维度",
+      "llm_tldr_en": "Investigates how tool architecture, i.e., the organization and exposure of agent capabilities, shapes coding agent behavior through controlled repository-level issue-fixing experiments comparing six tool architectures while holding underlying information and actions similar.",
+      "llm_tldr_cn": "大模型智能体的工具设计长期关注扩展能力，却较少关注能力如何组织与暴露给模型，即工具架构。本文在仓库级问题修复任务上开展受控实验，比较六种保持底层信息与动作相似、仅改变组织与暴露方式的工具架构。结果表明工具架构显著影响编码智能体行为，为智能体工具与系统架构设计提供了实证依据。",
+      "llm_tldr": "大模型智能体的工具设计长期关注扩展能力，却较少关注能力如何组织与暴露给模型，即工具架构。本文在仓库级问题修复任务上开展受控实验，比较六种保持底层信息与动作相似、仅改变组织与暴露方式的工具架构。结果表明工具架构显著影响编码智能体行为，为智能体工具与系统架构设计提供了实证依据。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.11658v1",
+      "source": "arxiv",
+      "title": "Is Per-Agent Policy Composition Safe? Rethinking Successor-Feature Transfer in Cooperative Multi-Agent Reinforcement Learning",
+      "abstract": "Many reinforcement learning systems, from fleet management to traffic signal control, must serve an objective that changes dynamically after deployment, and retraining a policy for each new objective is prohibitively expensive. For a single agent, this problem is well understood: successor features with generalized policy improvement, together with their universal extension, recombine a library of learned policies into a policy for any new objective, with a guarantee that the result is never worse than any policy in the library. However, multi-agent transfer has received far less attention, and the common practice of letting each agent recombine its own library independently inherits the recipe but not the guarantee. We prove that this independent composition can produce joint behavior strictly worse than every policy in the library, because recombining teammates changes the environment each agent faces and invalidates the values it relies on, a failure with no single-agent counterpart. We further show that the only unconditionally safe fixed rule is synchronized composition, which moves the whole team to one jointly trained policy but cannot serve objectives that assign different goals to different agents. To attain safety and flexibility at once, we propose MA-USFA, a hierarchical method with two layers: a lower layer of universal successor feature approximators that predicts each agent's successor features while conditioned on its teammates' objectives, and an upper composer that selects, across agents, which library entry each agent should follow and supplies the cross-agent correction a per-agent value cannot represent. Trained once over the distribution of objectives, it is applied at deployment with no per-task adaptation.",
+      "authors": [
+        "Zijian Zhao",
+        "Sen Li"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-08-12T04:56:52+00:00",
+      "link": "https://arxiv.org/pdf/2608.11658v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "multi-agent reinforcement learning policy composition and transfer",
+      "llm_evidence_cn": "多智能体强化学习中的策略组合与迁移",
+      "llm_evidence": "多智能体强化学习中的策略组合与迁移",
+      "canonical_evidence": "多智能体强化学习中的策略组合与迁移",
+      "llm_tldr_en": "For changing objectives after deployment, the paper rethinks successor-feature transfer in cooperative multi-agent RL, showing that independently per-agent policy composition is unsafe, and analyzing conditions for safe multi-agent transfer.",
+      "llm_tldr_cn": "面对部署后目标动态变化且重训代价高昂的多智能体强化学习场景，常见做法是让每个智能体独立重组各自的策略库，沿用单智能体后继特征的方法。本文重新审视这一逐智能体策略组合的迁移方式，指出其在协作式多智能体环境中并不安全，并对其安全性与条件进行重新思考。研究为动态目标下的多智能体策略迁移提供了理论分析和可行方向。",
+      "llm_tldr": "面对部署后目标动态变化且重训代价高昂的多智能体强化学习场景，常见做法是让每个智能体独立重组各自的策略库，沿用单智能体后继特征的方法。本文重新审视这一逐智能体策略组合的迁移方式，指出其在协作式多智能体环境中并不安全，并对其安全性与条件进行重新思考。研究为动态目标下的多智能体策略迁移提供了理论分析和可行方向。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "recent advances in multi agent reinforcement learning",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.11949v1",
+      "source": "arxiv",
+      "title": "ExRole: From Team Trajectories to Executable Roles in Multi-Agent Language Models",
+      "abstract": "Roles provide an interpretable interface for organizing language-model agents, yet most multi-agent systems treat them as hand-written prompt labels disconnected from learned behavior and parameter updates. We argue that a useful role should instead be an executable control variable: it should summarize behavior predictive of future utility, guide subsequent interaction, and identify the trainable capacity responsible for that behavior. We introduce ExRole, a trajectory-to-role framework that learns future-aware role prototypes from prefix-local team traces, resolves them into readable instructions and token-aligned role markers, and optionally routes shared LoRA rank slots with turn-aligned credit. Across MuSiQue and 2WikiMultiHopQA, ExRole improves over single-agent search by 15.0/14.4 and 13.5/16.1 EM/F1 points, respectively. Against the strongest non-ExRole controls, the corresponding gains remain 11.5/11.6 and 7.7/9.7 points. Across both benchmarks, the controlled results consistently favor trajectory-induced role conditioning over role-free, manual, random, and shuffled alternatives. Role-Agent-Turn interventions further show that the induced roles capture transferable behavioral specialization beyond fixed agent identities or turn positions.",
+      "authors": [
+        "Zhou Liu",
+        "Chaoyang Han",
+        "Zewei Pan",
+        "Zeli Su",
+        "Wentao Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-12T11:35:31+00:00",
+      "link": "https://arxiv.org/pdf/2608.11949v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Learn and execute roles for multi-agent language models",
+      "llm_evidence_cn": "面向多智能体语言模型的可执行角色学习",
+      "llm_evidence": "面向多智能体语言模型的可执行角色学习",
+      "canonical_evidence": "面向多智能体语言模型的可执行角色学习",
+      "llm_tldr_en": "ExRole learns future-aware role prototypes from team trajectories and turns them into executable control variables with instructions and token-aligned markers for better multi-agent role routing.",
+      "llm_tldr_cn": "角色为组织语言模型智能体提供了可解释的接口，但多数多智能体系统把它们当作与学习行为脱节的手写提示标签。本文主张角色应当是可执行的控制变量：既能概括可预测未来效用的行为，又能指导后续交互，还可以定位承担该行为的可训练容量。为此提出ExRole，从prefix-local团队轨迹中学习面向未来的角色原型，将其解析为可读指令和token对齐标记，并可选地将共享LoRA秩槽按回合对齐信用进行路由。在多跳问答基准上，ExRole验证了角色作为可执行控制变量的价值。",
+      "llm_tldr": "角色为组织语言模型智能体提供了可解释的接口，但多数多智能体系统把它们当作与学习行为脱节的手写提示标签。本文主张角色应当是可执行的控制变量：既能概括可预测未来效用的行为，又能指导后续交互，还可以定位承担该行为的可训练容量。为此提出ExRole，从prefix-local团队轨迹中学习面向未来的角色原型，将其解析为可读指令和token对齐标记，并可选地将共享LoRA秩槽按回合对齐信用进行路由。在多跳问答基准上，ExRole验证了角色作为可执行控制变量的价值。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.12921v1",
+      "source": "arxiv",
+      "title": "Discovering Efficient and Explainable Communication Topologies for LLM-based Multi-Agent Systems via Causal Inference",
+      "abstract": "The performance of large language model (LLM)-based multi-agent systems (MAS) largely depends on effective communication topologies. Existing topology generation methods, however, typically learn communication topologies through black-box optimization driven solely by task-level rewards. While effective, such optimization provides little insight into why particular communication edges are selected, making it difficult to identify the critical communication subgraphs responsible for successful collaboration. To address this limitation, we propose E2-Explainer, a model-agnostic framework for providing interpretable explanations of communication topologies produced by arbitrary topology generators. Specifically, we formulate topology explanation as a causal attribution problem that identifies compact communication subgraphs supported by edge-level evidence of task preservation. We obtain this evidence with a Granger-style objective that measures how masking each communication channel changes the task outcome and the stability of the final response. The resulting budgeted subgraphs are then distilled into an amortized explainer, enabling efficient post-hoc explanation without repeated edge-level evaluations at deployment. Extensive experiments on multiple reasoning and coding benchmarks demonstrate that E2-Explainer identifies critical communication subgraphs that preserve successful collaboration. These subgraphs can also be executed directly to prune redundant communication edges, substantially reducing communication costs while maintaining competitive task performance.",
+      "authors": [
+        "Junzhi Li",
+        "Peng He",
+        "Qirui Ji",
+        "Wei Wang",
+        "Lixiang Liu",
+        "Chuxiong Sun"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "published": "2026-08-13T08:03:02+00:00",
+      "link": "https://arxiv.org/pdf/2608.12921v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "explainable communication topology discovery for LLM-based MAS",
+      "llm_evidence_cn": "LLM多智能体系统通信拓扑的可解释发现",
+      "llm_evidence": "LLM多智能体系统通信拓扑的可解释发现",
+      "canonical_evidence": "LLM多智能体系统通信拓扑的可解释发现",
+      "llm_tldr_en": "Proposes E2-Explainer, a model-agnostic causal-inference framework that explains communication topologies generated by arbitrary topology generators in LLM-based multi-agent systems.",
+      "llm_tldr_cn": "LLM多智能体系统的性能高度依赖通信拓扑，但现有方法多通过黑盒优化学习拓扑，难以解释为何选择某些通信边。本文提出E2-Explainer，一个模型无关的框架，利用因果推断为任意拓扑生成器产生的通信拓扑提供可解释性说明，帮助识别协作成功所需的关键通信子图。该方法能提升通信拓扑的透明度与效率，对多智能体系统设计有重要价值。",
+      "llm_tldr": "LLM多智能体系统的性能高度依赖通信拓扑，但现有方法多通过黑盒优化学习拓扑，难以解释为何选择某些通信边。本文提出E2-Explainer，一个模型无关的框架，利用因果推断为任意拓扑生成器产生的通信拓扑提供可解释性说明，帮助识别协作成功所需的关键通信子图。该方法能提升通信拓扑的透明度与效率，对多智能体系统设计有重要价值。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent communication protocols",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.13030v1",
+      "source": "arxiv",
+      "title": "InterSAGE: The Secure and Verifiable Interoperability Protocol for An Internet of Agents",
+      "abstract": "The emerging Internet of Agents enables LLM-powered agents to discover peers, invoke tools, and delegate tasks across organizational boundaries. Existing protocols increasingly define how agents exchange messages, but not how an agent proves its identity, authorization, advertised capabilities, or accountability after delegation. We present InterSAGE, a trust-native protocol suite that supplies this missing security substrate alongside, rather than in place of, communication protocols. InterSAGE comprises four layers: Persistent Identity, Discovery, Trust Negotiation, and Accountability. Its four core primitives are: (1) Agent Identity Cards that bind developer, code package, operator, and deployment context; (2) capability-aware discovery using DID-bound Verifiable Credential manifests; (3) trust negotiation combining monotonic capability attenuation with two-tier access control; and (4) kernel-mediated cryptographic audit trails that bind usage, delegation, and execution traces to agent identity without a consensus ledger. InterSAGE is designed to complement MCP, A2A, ANP, and AG-UI, allowing communication protocols to evolve independently while keeping trust semantics explicit, portable, and verifiable. We compare InterSAGE with more than 50 efforts spanning agent protocols, decentralized identity, OAuth/OIDC extensions, zero-trust governance, delegation, and audit architectures. We show that no prior architecture jointly enforces persistent identity, capability-aware discovery, trust negotiation, and accountability as a unified four-layer trust substrate for secure agent interoperability.",
+      "authors": [
+        "Zhenhua Zou",
+        "Sheng Guo",
+        "Qiuyang Zhan",
+        "Lepeng Zhao",
+        "Shuo Li",
+        "Zhuotao Liu"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.MA",
+        "cs.NI"
+      ],
+      "published": "2026-08-13T10:00:13+00:00",
+      "link": "https://arxiv.org/pdf/2608.13030v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "secure and verifiable interoperability protocol for agent communication",
+      "llm_evidence_cn": "面向智能体通信的安全可验证互操作协议",
+      "llm_evidence": "面向智能体通信的安全可验证互操作协议",
+      "canonical_evidence": "面向智能体通信的安全可验证互操作协议",
+      "llm_tldr_en": "InterSAGE adds a trust-native protocol suite for LLM agents, covering persistent identity, discovery, trust negotiation, and accountability, enabling secure delegation and capability-aware interaction across organizational boundaries.",
+      "llm_tldr_cn": "随着智能体互联网的发展，现有协议只规定消息交换，却无法证明智能体的身份、授权与责任。本文提出InterSAGE，一个内建信任的协议套件，提供持久身份、发现、信任协商与问责四层，并通过智能体身份卡等原语绑定代码包、运营者与部署环境。该协议在不取代通信协议的基础上补齐安全基底，使跨组织的智能体委托和协作可验证、可追责，为智能体互操作奠定信任基础。",
+      "llm_tldr": "随着智能体互联网的发展，现有协议只规定消息交换，却无法证明智能体的身份、授权与责任。本文提出InterSAGE，一个内建信任的协议套件，提供持久身份、发现、信任协商与问责四层，并通过智能体身份卡等原语绑定代码包、运营者与部署环境。该协议在不取代通信协议的基础上补齐安全基底，使跨组织的智能体委托和协作可验证、可追责，为智能体互操作奠定信任基础。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent communication protocols",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2608.06503v1",
+      "source": "arxiv",
+      "title": "Toward Reliable Context Compression for Long-Horizon Agents: An Empirical Study of Execution Instability",
+      "abstract": "Recurrent context compression controls context growth in long-horizon agents, but its behavioral effects remain poorly understood. In this preliminary empirical study, we show that compression can weaken the influence of recent interactions, increasing blocked actions, repeated exploration, and instability across runs. Motivated by these observations, we introduce TRACE, a verifier-guided framework that evaluates individual compaction events through paired closed-loop continuations from the same environment state and uses summary preferences to optimize a natural-language compression prompt while keeping all models frozen. Initial results on AppWorld show improvements over existing compression baselines in task performance, multi-run reliability, and context--execution efficiency. These findings provide early evidence for boundary-local evaluation as a promising direction for reliable agent context compression.",
+      "authors": [
+        "Guanghui Min",
+        "Liang Wu",
+        "Mayank Darbari",
+        "Chen Chen",
+        "Liangjie Hong"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-06T18:42:02+00:00",
+      "link": "https://arxiv.org/pdf/2608.06503v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "agent architecture design patterns - verifier-guided framework for context compression to stabilize long-horizon agent execution",
+      "llm_evidence_cn": "智能体架构设计模式——面向长时程智能体稳定执行的验证器引导上下文压缩框架",
+      "llm_evidence": "智能体架构设计模式——面向长时程智能体稳定执行的验证器引导上下文压缩框架",
+      "canonical_evidence": "智能体架构设计模式——面向长时程智能体稳定执行的验证器引导上下文压缩框架",
+      "llm_tldr_en": "Empirically shows recurrent context compression can destabilize long-horizon agents, then presents TRACE, a verifier-guided framework that evaluates compaction events via paired closed-loop continuations and optimizes a natural-language compression prompt with frozen models.",
+      "llm_tldr_cn": "论文通过实证研究发现，循环上下文压缩可能削弱近期交互的影响，导致长时程智能体出现更多受阻动作、重复探索和运行间不稳定性。为此提出TRACE框架，利用验证器引导，通过同一状态的双闭环延续评估每次紧凑事件，并基于摘要偏好优化自然语言压缩提示，同时保持模型冻结。在AppWorld上的初步结果显示，TRACE在任务表现上优于现有压缩基线，为长时程智能体提供了更可靠的上下文压缩方案。",
+      "llm_tldr": "论文通过实证研究发现，循环上下文压缩可能削弱近期交互的影响，导致长时程智能体出现更多受阻动作、重复探索和运行间不稳定性。为此提出TRACE框架，利用验证器引导，通过同一状态的双闭环延续评估每次紧凑事件，并基于摘要偏好优化自然语言压缩提示，同时保持模型冻结。在AppWorld上的初步结果显示，TRACE在任务表现上优于现有压缩基线，为长时程智能体提供了更可靠的上下文压缩方案。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.06926v1",
+      "source": "arxiv",
+      "title": "TRIBE: Predicting Team Performance via Communication Behavior Ensembles",
+      "abstract": "Designing autonomous agents that effectively assist human teams hinges on understanding team dynamics, often without task specific knowledge. We present TRIBE, a domain independent approach that reveals team behavioral dynamics invisible to traditional performance metrics. We show that communication patterns can categorize teams into performance predictive behavioral tribes, as early as 10% into the task, enabling timely interventions. We test TRIBE on four diverse datasets and demonstrate that communication patterns predict team performance while the prediction strength varies by the degree a task structure allows for behavioral freedom. Our temporal analysis reveals that AI agents significantly alter team behavioral trajectories while human advisors align with natural dynamics, and that teams maintain behavioral flexibility throughout collaboration. Further, we compare TRIBE to Llama and optimize the pipeline, achieving significant speedup with performance improvement.",
+      "authors": [
+        "Ali Jalal-Kamali",
+        "Nikolos Gurney",
+        "David V. Pynadath",
+        "Fred Morstatter"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.HC",
+        "cs.MA"
+      ],
+      "published": "2026-08-07T08:01:45+00:00",
+      "link": "https://arxiv.org/pdf/2608.06926v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "domain-independent prediction of team performance from communication behavior",
+      "llm_evidence_cn": "基于沟通行为预测团队性能的领域无关方法",
+      "llm_evidence": "基于沟通行为预测团队性能的领域无关方法",
+      "canonical_evidence": "基于沟通行为预测团队性能的领域无关方法",
+      "llm_tldr_en": "Presents TRIBE, a domain-independent method using communication patterns to predict team performance early and reveal behavioral dynamics for human-AI teams.",
+      "llm_tldr_cn": "设计辅助人类团队的自主智能体需要理解团队动态，但传统性能指标无法揭示内部行为模式。本文提出TRIBE，一种领域无关的方法，利用沟通模式将团队划分为可预测性能的行为部落，并在任务进行到10%时即可预测结果。在四个数据集上的实验表明，沟通模式能有效预测团队表现，且AI代理会显著改变团队行为轨迹。该工作为智能体的团队协作与干预提供了新的分析工具。",
+      "llm_tldr": "设计辅助人类团队的自主智能体需要理解团队动态，但传统性能指标无法揭示内部行为模式。本文提出TRIBE，一种领域无关的方法，利用沟通模式将团队划分为可预测性能的行为部落，并在任务进行到10%时即可预测结果。在四个数据集上的实验表明，沟通模式能有效预测团队表现，且AI代理会显著改变团队行为轨迹。该工作为智能体的团队协作与干预提供了新的分析工具。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "applications of intelligent agents",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.12172v1",
+      "source": "arxiv",
+      "title": "Rethinking Agent Security as a Networking Problem",
+      "abstract": "AI agents are rapidly becoming more capable and widely deployed, promising substantial gains in productivity and enabling new classes of applications. However, their growing autonomy also introduces significant privacy and security risks. Existing defenses are predominantly agent-centric, relying on the agent itself to detect threats and enforce privacy and security policies. This approach is fundamentally limited because it entrusts policy enforcement to AI agents whose LLM-driven behavior is inherently nondeterministic and vulnerable to manipulation through attacks such as prompt injection. As a result, current defenses cannot reliably prevent privacy and security threats, highlighting a critical need for a new solution to securing AI agent systems.   The networking community has long grappled with similar challenges and offers insightful principles we can borrow to design a more secure AI agent system. These include centralized control with distributed enforcement, capability-based access for mediating requests to sensitive resources, and least privilege through zero-trust enforcement. Historically, these principles have provided strong deterministic guarantees for networked systems. However, these principles alone are insufficient for AI agents because the safety and appropriateness of an agent's actions often depend on semantic context beyond the expressiveness of static rules.   Building on these principles, we advocate for a systematic approach to AI agent security that combines deterministic enforcement mechanisms, which provide strong security guarantees, with semantic, context-aware policies that enable nuanced decision-making. We then present a reference architecture and identify key research questions and future directions to guide the design of secure and privacy-preserving AI agent systems.",
+      "authors": [
+        "Van Tran",
+        "Taveesh Sharma",
+        "Tajveer Singh Dhesi",
+        "Nick Feamster"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "published": "2026-08-12T15:29:51+00:00",
+      "link": "https://arxiv.org/pdf/2608.12172v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "agent security architecture framed as networking problem",
+      "llm_evidence_cn": "将智能体安全架构建模为网络问题",
+      "llm_evidence": "将智能体安全架构建模为网络问题",
+      "canonical_evidence": "将智能体安全架构建模为网络问题",
+      "llm_tldr_en": "Argues that AI agent security should be treated as a networking problem, proposing a network-based enforcement approach to mitigate risks like prompt injection.",
+      "llm_tldr_cn": "该文指出AI智能体的自主性带来严重隐私与安全风险，现有防御主要依赖智能体自身检测威胁并执行隐私策略，但因LLM行为的非确定性和易受提示注入攻击而无法可靠防御。为此提出将智能体安全视为网络问题，借助网络通信的思想在智能体之外实施安全边界，将策略执行从不可靠的智能体转移到网络基础设施层面。该视角为构建可信AI智能体系统提供了新的解决路径。",
+      "llm_tldr": "该文指出AI智能体的自主性带来严重隐私与安全风险，现有防御主要依赖智能体自身检测威胁并执行隐私策略，但因LLM行为的非确定性和易受提示注入攻击而无法可靠防御。为此提出将智能体安全视为网络问题，借助网络通信的思想在智能体之外实施安全边界，将策略执行从不可靠的智能体转移到网络基础设施层面。该视角为构建可信AI智能体系统提供了新的解决路径。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.06587v1",
+      "source": "arxiv",
+      "title": "SyncSBC: Decentralized Swarm Behavior Prediction for Synchronized Autonomous Control",
+      "abstract": "Robot swarms utilize many independent limited-sensing agents to produce complex emergent behaviors without requiring centralized control. However, little research explores how agents can infer swarm-level behavior from purely local perception, a capability critical for detecting faults and behavior changes. In this paper, we introduce Synchronized Swarm Behavior Classification (SyncSBC), which combines improvements in machine learning and distributed consensus to classify collective swarm behavior and synchronize swarm decision-making in an entirely decentralized manner. We show that SyncSBC achieves high classification accuracy and low synchronization delay, making it suitable for real-world deployment. Finally, we use SyncSBC to demonstrate two promising swarm applications on real robots where we show that swarms utilizing SyncSBC can accurately identify anomalies in robot behavior and autonomously coordinate collective changes in swarm behavior. Videos, code and supplemental experiments are available at https://sites.google.com/view/sync-sbc/home.",
+      "authors": [
+        "Varun Raveendra",
+        "Connor Mattson",
+        "Daniel S. Brown"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-08-06T20:59:04+00:00",
+      "link": "https://arxiv.org/pdf/2608.06587v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "decentralized swarm behavior classification and synchronized control",
+      "llm_evidence_cn": "去中心化群体行为分类与同步控制",
+      "llm_evidence": "去中心化群体行为分类与同步控制",
+      "canonical_evidence": "去中心化群体行为分类与同步控制",
+      "llm_tldr_en": "SyncSBC combines machine learning and distributed consensus to classify collective swarm behavior from local perception and synchronize swarm decision-making.",
+      "llm_tldr_cn": "本文关注机器人群体中智能体如何仅凭局部感知推断群体级行为，这对于故障检测和行为变化至关重要。作者提出SyncSBC，结合机器学习和分布式共识，以完全去中心化的方式对群体行为进行分类并同步决策。实验表明SyncSBC具有高分类精度和低同步延迟，适合实际部署，可用于按需去中心化控制等场景。",
+      "llm_tldr": "本文关注机器人群体中智能体如何仅凭局部感知推断群体级行为，这对于故障检测和行为变化至关重要。作者提出SyncSBC，结合机器学习和分布式共识，以完全去中心化的方式对群体行为进行分类并同步决策。实验表明SyncSBC具有高分类精度和低同步延迟，适合实际部署，可用于按需去中心化控制等场景。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "carryover_cache",
+      "paper_id": "2608.06587v1",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.07214v1",
+      "source": "arxiv",
+      "title": "Toward a Causal Data Management Ecosystem for Decision Making and Agentic AI",
+      "abstract": "Modern AI is no longer a single model but an ecosystem: classical ML predictors, deep and multimodal models, large language models, and agents, each trained and tuned over different data sources and each producing outputs at scale that become inputs to the others. Operating such an ecosystem is fundamentally a data integration problem - the knowledge it depends on is fragmented across dozens of heterogeneous, independently governed sources that must be reconciled and continually maintained. Yet integration alone is not enough. The predictions these systems make are shaped by many interacting factors, and the events, decisions, and variables that drive an outcome are routinely entangled with the ones that merely accompany it; treated as a basis for action, such correlational signals invite confounded decisions. This becomes acute once agents act autonomously: to be trustworthy and reliable, an agent must anticipate the consequences of its actions, not merely extrapolate from what has co-occurred before. Causal reasoning is what closes this gap, distinguishing the drivers of an outcome from its correlates, and enabling prescriptive and counterfactual analysis over the ecosystem's data. We therefore argue that the integrated ecosystem needs an explicit causal layer, and we propose to build it as a shared, persistent, queryable Causal World System (CWS).",
+      "authors": [
+        "Dazhuo Qiu",
+        "Yingli Zhou",
+        "Amedeo Pachera",
+        "Angela Bonifati",
+        "Andrea Mauri"
+      ],
+      "primary_category": "cs.DB",
+      "categories": [
+        "cs.DB",
+        "cs.AI",
+        "eess.SY"
+      ],
+      "published": "2026-08-07T13:30:17+00:00",
+      "link": "https://arxiv.org/pdf/2608.07214v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "data management ecosystem to support decision making and agentic AI",
+      "llm_evidence_cn": "面向决策与智能体AI的数据管理生态系统",
+      "llm_evidence": "面向决策与智能体AI的数据管理生态系统",
+      "canonical_evidence": "面向决策与智能体AI的数据管理生态系统",
+      "llm_tldr_en": "This position paper argues that modern AI ecosystems including agents require causal data integration and management, proposing a data management ecosystem that reconciles heterogeneous sources and disentangles causal factors to support reliable agentic decision making.",
+      "llm_tldr_cn": "现代AI已成为由多种模型和智能体构成的生态系统，其知识分散于异构数据源，且预测受混杂因素干扰。本文提出构建因果数据管理生态，在数据集成基础上引入因果视角，以理清驱动决策的变量与伴随变量。该框架为决策与智能体AI提供一致、可维护的数据基础，旨在提升智能体在复杂环境中的判断可靠性与可解释性。",
+      "llm_tldr": "现代AI已成为由多种模型和智能体构成的生态系统，其知识分散于异构数据源，且预测受混杂因素干扰。本文提出构建因果数据管理生态，在数据集成基础上引入因果视角，以理清驱动决策的变量与伴随变量。该框架为决策与智能体AI提供一致、可维护的数据基础，旨在提升智能体在复杂环境中的判断可靠性与可解释性。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent decision making",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.06651v1",
+      "source": "arxiv",
+      "title": "CyberLLM: A Multi-Agent LLM Framework for Autonomous Detection and Guarded Response in Automotive Cybersecurity",
+      "abstract": "Software-Defined Vehicles (SDVs) expand the automotive attack surface across source code, runtime logs, and deployment topologies, while safety constraints forbid autonomous agents from acting without oversight. This paper presents CyberLLM, a multi-agent, LLM-orchestrated framework that autonomously detects vulnerabilities and executes remediations under a formal, runtime safety guard. Detection combines a deterministic layer (regex rules, AST analyzers, and topology graph checks) with an LLM refinement pass, so a high-recall floor is complemented by high-precision reasoning. A decision agent aggregates findings, tags them with a human-centric asset taxonomy, and selects a tiered response, ratcheting its confidence with signed cross-session memory and re-planning feedback. Every action is validated against four contextual security properties and an independent action-alignment oracle before it is allowed to run, and refused actions trigger escalation and re-planning. A symmetric attack pipeline generates and replays exploits so both sides can be exercised on the same scenarios. On an independent, ground-truthed benchmark of nine original automotive ECU modules in C, C++, and Rust seeding 47 layered vulnerabilities plus clean controls, the always-on deterministic layer covers 34\\% of the labeled vulnerabilities at perfect precision, and adding the grounded LLM refinement and completeness passes roughly doubles coverage to about 70\\% (F1 $0.83$) while producing zero false positives on the clean controls. The results indicate that LLM agents can perform useful autonomous cyber-defense when wrapped in a deterministic, auditable safety envelope.",
+      "authors": [
+        "Nenad Petrovic",
+        "Oussama Jeddou",
+        "Feres Ben Fraj",
+        "Vahid Zolfaghari",
+        "Fengjunjie Pan",
+        "Andre Schamschurko",
+        "Alois Knoll"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.SE"
+      ],
+      "published": "2026-08-06T23:39:13+00:00",
+      "link": "https://arxiv.org/pdf/2608.06651v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "multi-agent LLM framework for autonomous detection and guarded response",
+      "llm_evidence_cn": "多智能体LLM框架实现自主检测与受控响应",
+      "llm_evidence": "多智能体LLM框架实现自主检测与受控响应",
+      "canonical_evidence": "多智能体LLM框架实现自主检测与受控响应",
+      "llm_tldr_en": "CyberLLM is a multi-agent LLM framework that combines deterministic detection with LLM refinement and a runtime safety guard to autonomously detect vulnerabilities and execute tiered remediations in automotive cybersecurity.",
+      "llm_tldr_cn": "软件定义汽车扩展了攻击面，但安全约束禁止智能体在无监督下行动。本文提出CyberLLM，一个多智能体LLM框架，在正式运行时安全卫士下自主检测漏洞并执行补救。检测结合正则、AST分析等确定性层与LLM精炼层，决策智能体聚合结果并选择分级响应，同时控制置信度。实验证明其能在保证安全约束的同时实现高召回与高精度，兼顾自主性与受控操作。",
+      "llm_tldr": "软件定义汽车扩展了攻击面，但安全约束禁止智能体在无监督下行动。本文提出CyberLLM，一个多智能体LLM框架，在正式运行时安全卫士下自主检测漏洞并执行补救。检测结合正则、AST分析等确定性层与LLM精炼层，决策智能体聚合结果并选择分级响应，同时控制置信度。实验证明其能在保证安全约束的同时实现高召回与高精度，兼顾自主性与受控操作。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "carryover_cache",
+      "paper_id": "2608.06651v1",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.08163v1",
+      "source": "arxiv",
+      "title": "Agentic AI-driven Immersive Simulation: A Knowledge-Aware Virtual Training Platform forHigh Dose Rate (HDR) Brachytherapy",
+      "abstract": "The convergence of the Metaverse and Large Language Model (LLM)-based AI agent is catalyzing a shift toward autonomous, immersive, and personalized pedagogical frameworks in medical education. This paper presents a novel agentic AI-driven immersive simulation specifically designed for High Dose Rate (HDR) vaginal cylinder (VC) brachytherapy in cancer care. By integrating Virtual Reality (VR) and mobile computing, the system establishes a high-fidelity, risk-free environment that allows trainees to master complex procedural skills without the facility or safety constraints posed by physical anatomy or live radioactive sources. A core contribution of this work is the seamless integration of a knowledge-aware assistant leveraging Retrieval-Augmented Generation (RAG) to ground agent interactions in authoritative clinical guidelines. This architecture also enables an interactive agent to provide natural language interfaces and hands-free, real-time guidance during intricate medical maneuvers. We validate the proposed system through a prototype deployment comprising a Meta Quest 3 interface linked to a local GPU-accelerated AI backend, demonstrating a feasible architecture for HDR brachytherapy simulation. Experimental results indicate that the system maintains suitable end-to-end latency and high context precision, answer completeness, and relevance in the RAG-enhanced pedagogical support.",
+      "authors": [
+        "Ronghua Xu",
+        "Kepha Barasa",
+        "Manoj Kumal",
+        "Xinyun Liu",
+        "Weihua Zhou",
+        "Xin Qian"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-08T14:46:08+00:00",
+      "link": "https://arxiv.org/pdf/2608.08163v1",
+      "tags": [
+        "keyword:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "agentic AI immersive simulation for medical training application",
+      "llm_evidence_cn": "智能体AI沉浸式模拟在医学培训中的应用",
+      "llm_evidence": "智能体AI沉浸式模拟在医学培训中的应用",
+      "canonical_evidence": "智能体AI沉浸式模拟在医学培训中的应用",
+      "llm_tldr_en": "Presents an agentic AI-driven immersive simulation for HDR brachytherapy training, integrating VR, mobile computing, and LLM agents to create a risk-free learning environment.",
+      "llm_tldr_cn": "该文结合元宇宙与基于大语言模型的AI智能体，为高剂量率阴道圆柱体近距离放疗构建了一个智能体驱动的沉浸式虚拟培训平台。系统集成虚拟现实和移动计算，在无实体解剖和放射源的情况下提供高保真、无风险的训练环境。核心贡献是将知识感知机制无缝融入系统，使受训者能够掌握复杂操作流程。该平台展示了智能体AI在医学教育中的应用潜力，为个性化自主培训提供了新思路。",
+      "llm_tldr": "该文结合元宇宙与基于大语言模型的AI智能体，为高剂量率阴道圆柱体近距离放疗构建了一个智能体驱动的沉浸式虚拟培训平台。系统集成虚拟现实和移动计算，在无实体解剖和放射源的情况下提供高保真、无风险的训练环境。核心贡献是将知识感知机制无缝融入系统，使受训者能够掌握复杂操作流程。该平台展示了智能体AI在医学教育中的应用潜力，为个性化自主培训提供了新思路。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "applications of intelligent agents",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.06871v1",
+      "source": "arxiv",
+      "title": "CEDAR: Agent-Orchestrated Tree Search for Goal-Directed Optimization of Complex Systems",
+      "abstract": "Complex systems, core objects of study in artificial life, model diverse phenomena through nonlinear, feedback-driven interactions that produce emergent behavior, with applications from population dynamics and biology to economic policy and strategic decision-making. Yet the difficulty of predicting how feedback structure gives rise to emergent behavior, a central open problem in artificial life, makes goal-directed design exceptionally challenging. In established practice, system structures are written in specialized modeling languages such as DYNAMO or STELLA, compounding the challenge with labor-intensive workflows that limit adoption and hinder timely decision-making. To address these challenges, we introduce CEDAR, an autonomous method that uses Large Language Model (LLM) agents to discover complex systems satisfying user-specified behavioral goals. Our key innovation is an LLM-driven Monte Carlo Tree Search (MCTS) deeply coupled with complex systems: at each iteration, an LLM Judge evaluates emergent behavior against specified goals and an LLM Editor proposes improved variants, with the Judge acting as a fitness function and the Editor as a variation operator, akin to a generate-and-evaluate loop in evolutionary computation. We represent complex systems as a restricted, runnable subset of Python with domain-specific primitives, letting LLMs modify system dynamics directly. CEDAR formalizes this as an MCTS variant with an LLM-parameterized transition kernel and value function, enabling goal-directed discovery of complex system behaviors while preserving solution diversity, and its LLM-based interpretability reveals how structural changes drive emergent behavior. CEDAR reduces human effort while enabling capabilities difficult to achieve with existing approaches, facilitating broader adoption of complex systems across domains.",
+      "authors": [
+        "Yingtao Tian"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-07T06:54:58+00:00",
+      "link": "https://arxiv.org/pdf/2608.06871v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "autonomous agent planning - agent-orchestrated tree search for goal-directed design of complex systems",
+      "llm_evidence_cn": "自主智能体规划——智能体编排树搜索实现复杂系统的目标定向设计",
+      "llm_evidence": "自主智能体规划——智能体编排树搜索实现复杂系统的目标定向设计",
+      "canonical_evidence": "自主智能体规划——智能体编排树搜索实现复杂系统的目标定向设计",
+      "llm_tldr_en": "Presents CEDAR, an autonomous agent that orchestrates tree search for goal-directed optimization of complex nonlinear systems, replacing labor-intensive modeling workflows and enabling timely design decisions.",
+      "llm_tldr_cn": "论文针对复杂系统目标定向设计困难、传统建模语言工作流繁琐的问题，提出CEDAR，一个自主智能体编排的树搜索方法。它由智能体自动驱动搜索过程，在非线性反馈系统中探索结构设计空间，从而指导涌现行为的设计。该方法有望减少对专用建模语言和人工工作流的依赖，使复杂系统的目标导向优化更加高效，并支撑经济政策、战略决策等应用。",
+      "llm_tldr": "论文针对复杂系统目标定向设计困难、传统建模语言工作流繁琐的问题，提出CEDAR，一个自主智能体编排的树搜索方法。它由智能体自动驱动搜索过程，在非线性反馈系统中探索结构设计空间，从而指导涌现行为的设计。该方法有望减少对专用建模语言和人工工作流的依赖，使复杂系统的目标导向优化更加高效，并支撑经济政策、战略决策等应用。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent planning",
+      "matched_requirement_id": "req-10",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.08545v1",
+      "source": "arxiv",
+      "title": "Curriculum Generation under Structured Parametric Environments for Robust Navigation Policies",
+      "abstract": "Robust navigation policies for autonomous agents must generalize across continuously varying environmental conditions such as turn rates, obstacles, friction, pits, and slopes. Curriculum generation provides a principled mechanism for improving generalization by progressively adapting training environments, but designing such curricula in a sample-efficient and automated manner remains challenging. This paper proposes a reparameterized curriculum generation framework for structured continuous environment parameters using unidirectional gradient-based optimization. To improve robustness in multimodal observation spaces consisting of image-based and scalar inputs, a distribution-shift regularization objective is incorporated to encourage the learning of finer-grained latent representations. The proposed method is evaluated across two continuous-control OpenAI Gym environments: a 2D obstacle-based Car Racing variant and Bipedal Walker variant, where coupled environment parameters jointly influence policy performance. Across five random seeds, our method consistently outperforms vanilla policy training, random parameter sampling, manual curricula, frontier-based methods, Self-Paced Reinforcement Learning (SPRL), Absolute Learning Progress with Gaussian Mixture Models (ALP-GMM), and reverse curriculum learning baselines. Ablation studies further demonstrate the effectiveness of the reparameterized curriculum mechanism across both environments, while highlighting environment-dependent benefits of the auxiliary regularization objective.",
+      "authors": [
+        "Prishita Ray"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "published": "2026-08-09T07:45:21+00:00",
+      "link": "https://arxiv.org/pdf/2608.08545v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "curriculum generation for robust autonomous agent navigation policies",
+      "llm_evidence_cn": "面向鲁棒自主导航策略的课程生成",
+      "llm_evidence": "面向鲁棒自主导航策略的课程生成",
+      "canonical_evidence": "面向鲁棒自主导航策略的课程生成",
+      "llm_tldr_en": "For robust navigation policies of autonomous agents, this paper proposes reparameterized curriculum generation over structured continuous environment parameters using unidirectional gradient-based optimization, plus distribution-shift regularization for multimodal observations.",
+      "llm_tldr_cn": "自主智能体的导航策略需要在转弯速率、障碍、摩擦、坑洞和坡度等连续变化的环境条件下泛化。手工设计课程费时且难以自动化。本文提出一种重参数化课程生成框架，在结构化连续环境参数上使用单向梯度优化来渐进调整训练环境；同时加入分布偏移正则化以应对图像和标量组成的多模态观测空间。该方法提升了导航策略的泛化鲁棒性和训练样本效率。",
+      "llm_tldr": "自主智能体的导航策略需要在转弯速率、障碍、摩擦、坑洞和坡度等连续变化的环境条件下泛化。手工设计课程费时且难以自动化。本文提出一种重参数化课程生成框架，在结构化连续环境参数上使用单向梯度优化来渐进调整训练环境；同时加入分布偏移正则化以应对图像和标量组成的多模态观测空间。该方法提升了导航策略的泛化鲁棒性和训练样本效率。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "papers on autonomous agent architectures and control",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.07169v1",
+      "source": "arxiv",
+      "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory",
+      "abstract": "Memory systems have shown promise for improving agent performance, but their potential remains largely unexplored for small language models, which struggle to generate sufficient successful trajectories on their own. We propose Agent Memory Distillation (AMD), a training-free framework that transfers structured knowledge from a large teacher agent to a small student agent through hierarchical memory. AMD constructs three complementary memory types from successful teacher trajectories: Workflow memory encodes task-level strategies, Subtask memory provides concrete behavioral examples at an intermediate granularity, and Function memory captures per-function calling conventions and common pitfalls. Workflow and Subtask memories are injected proactively at the start of each task, while Function memory is retrieved reactively upon tool-calling errors. We evaluate AMD on three tool-use benchmarks using four student models (4B-8B parameters) with GPT-5-mini as the teacher, achieving average accuracy gains of 27.2%p, 11.2%p, and 3.4%p on AppWorld, BFCL V3, and ToolSandbox, while consistently outperforming existing memory-based baselines. Further analysis shows that Subtask memory contributes the largest gains, teacher effectiveness depends on both teacher capability and student compatibility, and 4B-sized students benefit most from AMD.",
+      "authors": [
+        "Taeil Kim",
+        "Kangsan Kim",
+        "Sung Ju Hwang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-08-07T12:43:00+00:00",
+      "link": "https://arxiv.org/pdf/2608.07169v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "hierarchical memory distillation for small LLM agent design",
+      "llm_evidence_cn": "面向小型LLM智能体设计的层次化记忆蒸馏",
+      "llm_evidence": "面向小型LLM智能体设计的层次化记忆蒸馏",
+      "canonical_evidence": "面向小型LLM智能体设计的层次化记忆蒸馏",
+      "llm_tldr_en": "Agent Memory Distillation transfers structured knowledge from large teacher agents to small student agents via workflow, subtask, and function memories, improving small LLM agents without additional training.",
+      "llm_tldr_cn": "小型语言模型智能体往往难以自行生成足够多的成功轨迹，记忆系统的潜力未被充分挖掘。本文提出Agent Memory Distillation（AMD）这一免训练框架，从大型教师智能体的成功轨迹中构建工作流记忆、子任务记忆与函数记忆三类互补知识，再注入小型学生智能体。该方法通过层次化记忆迁移增强了小型智能体在复杂任务中的性能，为资源受限场景下的智能体设计提供了可复用的路径。",
+      "llm_tldr": "小型语言模型智能体往往难以自行生成足够多的成功轨迹，记忆系统的潜力未被充分挖掘。本文提出Agent Memory Distillation（AMD）这一免训练框架，从大型教师智能体的成功轨迹中构建工作流记忆、子任务记忆与函数记忆三类互补知识，再注入小型学生智能体。该方法通过层次化记忆迁移增强了小型智能体在复杂任务中的性能，为资源受限场景下的智能体设计提供了可复用的路径。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "intelligent agent design and applications",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.07449v1",
+      "source": "arxiv",
+      "title": "SkillProx: Self-Evolving Agent Skills via Proximal Textual Gradient Descent",
+      "abstract": "LLM agents increasingly adapt to recurring tasks by accumulating procedural knowledge in skills. These skills are lightweight, reusable textual artifacts that are loaded into the agent's context without weight updates. Recent methods refine skills through iterative task execution, failure diagnosis, and trajectory-guided text-space updates. However, existing frameworks lack explicit diagnosis--outcome feedback and treat deletion as a generic edit operation rather than a dedicated mechanism for consolidating accumulated knowledge. We introduce SkillProx, a proximal-gradient-inspired forward--backward framework that couples closed-loop diagnostic evolution with utility-aware proximal refinement. Motivated by a composite objective balancing task loss and skill complexity, the forward stage re-executes diagnosis-driven edits on the same task batch, rolls back regressions, and feeds measured outcomes into subsequent diagnoses. The backward stage decomposes the resulting skill into auditable knowledge units, estimates their contributions using a frozen leave-one-out utility audit, and applies validation-gated consolidation, demotion, or removal. Experiments on in-distribution and out-of-distribution benchmarks across multiple backbone LLMs show that SkillProx improves average accuracy by 3.0 percentage points over the strongest gradient-based baseline. Component ablations demonstrate the complementary effects of closed-loop diagnosis and proximal refinement.",
+      "authors": [
+        "Mingxuan Zheng",
+        "Yujin Zhou",
+        "Chuxue Cao",
+        "Boqin Yin",
+        "Yuyao Zhang",
+        "Jiapeng Sun",
+        "Shuaishuai Gong",
+        "Sirui Han",
+        "Yike Guo"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-07T17:40:33+00:00",
+      "link": "https://arxiv.org/pdf/2608.07449v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "self-evolving LLM agent skills via proximal textual gradient",
+      "llm_evidence_cn": "通过近端文本梯度实现LLM智能体技能自进化",
+      "llm_evidence": "通过近端文本梯度实现LLM智能体技能自进化",
+      "canonical_evidence": "通过近端文本梯度实现LLM智能体技能自进化",
+      "llm_tldr_en": "Introduces SkillProx, a proximal-gradient-inspired framework for self-evolving agent skills with closed-loop diagnostic evolution and utility-aware refinement.",
+      "llm_tldr_cn": "该文针对LLM智能体通过积累可复用技能来适应重复任务的场景，指出现有方法缺乏显式的诊断-结果反馈，且将删除当作普通编辑操作。提出SkillProx框架，借鉴近端梯度思想，将闭环诊断进化与效用感知的近端精炼耦合。方法在文本空间中更新技能，联合优化任务损失与技能效用。实验表明SkillProx能高效整合累积知识，提升智能体的持续学习能力。",
+      "llm_tldr": "该文针对LLM智能体通过积累可复用技能来适应重复任务的场景，指出现有方法缺乏显式的诊断-结果反馈，且将删除当作普通编辑操作。提出SkillProx框架，借鉴近端梯度思想，将闭环诊断进化与效用感知的近端精炼耦合。方法在文本空间中更新技能，联合优化任务损失与技能效用。实验表明SkillProx能高效整合累积知识，提升智能体的持续学习能力。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "intelligent agent design and applications",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    }
+  ]
+}

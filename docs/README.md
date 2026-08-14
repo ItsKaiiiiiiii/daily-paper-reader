@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-12</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-14</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 23 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 18 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>12</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>7</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-12 21:28:59 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-14 21:20:43 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,7 +62,9 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日精读12篇、速读11篇，聚焦多智能体与城市管理及模拟仿真。最值得关注两篇9.0分工作：基于时空移动性规划的分布式城市交通管理，以及面向开放城市的多智能体具身任务测试平台Lingjing。建议普通读者优先浏览多智能体在城市场景的协作与仿真方向，后续可延伸阅读Agentic AI工作流架构与GUI智能体反思相关速读文章。</p>
+<p>今日共读18篇，精读7篇，聚焦智能体系统的自导演化与治理配置。</p>
+<p>最值得看的是《Co-Evolution in Agentic Systems》和《Agentic Configuration Management》，分别指向自主演化与受控治理两大核心方向。</p>
+<p>建议普通读者优先关注智能体系统的可控性与配置管理，为未来自主AI的落地建立安全预期。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -71,12 +73,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">12 篇</strong>
+    <strong class="dpr-home-dashboard-count">7 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Decentralized Multi-Agent Urban Traffic Management via Spatio-Temporal Mobility Profile Planning">Decentralized Multi-Agent Urban Traffic Management via Spatio-Temporal Mobility Profile Planning</span></li><li><span class="dpr-home-dashboard-paper-title" title="Lingjing: A Simulation Testbed for Multi-Agent Embodied Tasks in Open-Ended Cities">Lingjing: A Simulation Testbed for Multi-Agent Embodied Tasks in Open-Ended Cities</span></li><li><span class="dpr-home-dashboard-paper-title" title="Discovering Diverse Planning Policies for Multimodal Embodied Agents with Quality-Diversity Optimization">Discovering Diverse Planning Policies for Multimodal Embodied Agents with Quality-Diversity Optimization</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Co-Evolution in Agentic Systems: Toward Self-Directed Evolution Beyond Human Design">Co-Evolution in Agentic Systems: Toward Self-Directed Evolution Beyond Human Design</span></li><li><span class="dpr-home-dashboard-paper-title" title="Agentic Configuration Management (ACM): A Reference Configuration Model for Governed Agentic Systems">Agentic Configuration Management (ACM): A Reference Configuration Model for Governed Agentic Systems</span></li><li><span class="dpr-home-dashboard-paper-title" title="The Devil Is in the Interface: Evaluating How Tool Architecture Shapes Coding Agent Behavior">The Devil Is in the Interface: Evaluating How Tool Architecture Shapes Coding Agent Behavior</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>12</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>7</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -87,7 +89,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Architectural Implications of Agentic AI Workflows">Architectural Implications of Agentic AI Workflows</span></li><li><span class="dpr-home-dashboard-paper-title" title="StepReflect: Structured UI Transition Reflection for Mobile GUI Agents">StepReflect: Structured UI Transition Reflection for Mobile GUI Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Unified Agent: Managing Interactions across Devices">Unified Agent: Managing Interactions across Devices</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Toward Reliable Context Compression for Long-Horizon Agents: An Empirical Study of Execution Instability">Toward Reliable Context Compression for Long-Horizon Agents: An Empirical Study of Execution Instability</span></li><li><span class="dpr-home-dashboard-paper-title" title="SyncSBC: Decentralized Swarm Behavior Prediction for Synchronized Autonomous Control">SyncSBC: Decentralized Swarm Behavior Prediction for Synchronized Autonomous Control</span></li><li><span class="dpr-home-dashboard-paper-title" title="CyberLLM: A Multi-Agent LLM Framework for Autonomous Detection and Guarded Response in Automotive Cybersecurity">CyberLLM: A Multi-Agent LLM Framework for Autonomous Detection and Guarded Response in Automotive Cybersecurity</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>
