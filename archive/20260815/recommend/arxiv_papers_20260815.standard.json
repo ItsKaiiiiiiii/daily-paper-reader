@@ -1,0 +1,678 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-15T20:32:30.922762+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 31,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 47,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2608.08184v1",
+      "source": "arxiv",
+      "title": "Large Multimodal Agents for Intelligent Transportation Systems: Architectures, Evidence, and Deployment Challenges",
+      "abstract": "Large multimodal agents (LMAs) are increasingly proposed for intelligent transportation systems (ITS), but existing studies often conflate multimodality, agency, empirical performance, and deployment readiness. This review provides an auditable evidence map of 42 primary study families released between January 2023 and 3 August 2026 within a corpus of 91 mapped sources. It distinguishes model-level, system-level, and hybrid multimodality and classifies each family by system architecture and action authority. Evidence is assessed independently through functional capability (C0-C3), validation setting (E0-E4), three evidence propositions (P1-P3), and eight methodological-concern domains (Q1-Q8). Transportation semantics (P1) are directly evaluated in 23 families and multidimensional integration (P3) in 24; 19 families directly evaluate both. Evidence reconciliation (P2) remains unresolved because no family demonstrates the complete provenance-challenge-handling-comparison-outcome chain. Fourteen families reach C3, but 13 remain at E2; only one reaches E3 and none reaches E4. Across ITS domains, LMAs are best supported for semantic interpretation, intent translation, evidence organisation, scenario authoring, explanation, and specialist-tool coordination. Numerical forecasting, optimisation, simulation fidelity, hard constraints, low-level control, safety fallback, and final authority should remain with independently verifiable specialist systems or accountable humans. The review therefore supports bounded orchestration rather than replacement and provides a matched comparative evaluation protocol and staged roadmap for accountable deployment. The living evidence repository is available at https://github.com/pangjunbiao/ITS-LMA-Review.",
+      "authors": [
+        "Muhammad Ayub Sabir",
+        "Shaohong Zheng",
+        "Zhiyu Qu",
+        "Fatima Ashraf",
+        "Junbiao Pang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-08T15:22:40+00:00",
+      "link": "https://arxiv.org/pdf/2608.08184v1",
+      "tags": [
+        "keyword:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Reviews architectures of large multimodal agents for intelligent transportation systems, classifying system architecture and action authority",
+      "llm_evidence_cn": "系统梳理大型多模态智能体的架构、证据与部署挑战，分类体系结构和行动权限",
+      "llm_evidence": "系统梳理大型多模态智能体的架构、证据与部署挑战，分类体系结构和行动权限",
+      "canonical_evidence": "系统梳理大型多模态智能体的架构、证据与部署挑战，分类体系结构和行动权限",
+      "llm_tldr_en": "A systematic evidence map of 42 large multimodal agent studies for ITS, distinguishing model-level/system-level/hybrid multimodality and assessing action authority, validation setting, and evidence, with implications for deployment.",
+      "llm_tldr_cn": "该综述对智能交通系统中的大型多模态智能体进行了可审计的证据梳理，涵盖42个主要研究族。作者区分了模型级、系统级和混合多模态，并按系统架构和行动权限分类。他们从功能能力、验证设置和证据命题等维度独立评估证据，指出当前研究常混淆多模态、智能体能力、实证表现与部署就绪度。本综述为智能体中架构设计、证据评估和部署挑战提供了系统化视角。",
+      "llm_tldr": "该综述对智能交通系统中的大型多模态智能体进行了可审计的证据梳理，涵盖42个主要研究族。作者区分了模型级、系统级和混合多模态，并按系统架构和行动权限分类。他们从功能能力、验证设置和证据命题等维度独立评估证据，指出当前研究常混淆多模态、智能体能力、实证表现与部署就绪度。本综述为智能体中架构设计、证据评估和部署挑战提供了系统化视角。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.09184v1",
+      "source": "arxiv",
+      "title": "Agentic Router: An Execution-Grounded Continual Learning Approach With Memory",
+      "abstract": "Large language model (LLM) agents provide a promising interface for command-line-based network operations, but a plausible command may still fail or introduce operational risk after execution. Existing approaches mainly focus on command generation or final configuration correctness, and do not use execution-grounded experience to jointly improve candidate coverage and action selection. We propose an execution-grounded dual-path consequence-aware agent for CLI-based SONiC operations, which generates multiple complete actions, predicts their execution consequences, and selects the final action through utility- and risk-aware reranking. The proposal-side path abstracts reusable operational lessons into retrievable guidance to improve feasible-action coverage without modifying the proposal LLM, while the selection-side path adapts the consequence predictor through session-level LoRA updates using real SSH feedback to improve conditional selection quality. Experiments over multi-turn SONiC operation sessions with different Qwen3 proposal models show that the framework improves feasible-action coverage and top-1 execution success, and that the two adaptation paths provide complementary gains over interaction.",
+      "authors": [
+        "Yuxuan Chen",
+        "Rongpeng Li",
+        "Zhifeng Zhao",
+        "Yuntao Liu",
+        "Xing Xu",
+        "Honggang Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-10T06:53:24+00:00",
+      "link": "https://arxiv.org/pdf/2608.09184v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "execution-grounded consequence-aware agent for action generation and selection in CLI operations",
+      "llm_evidence_cn": "基于执行后果感知的双路径智能体，在命令行操作中生成并选择行动",
+      "llm_evidence": "基于执行后果感知的双路径智能体，在命令行操作中生成并选择行动",
+      "canonical_evidence": "基于执行后果感知的双路径智能体，在命令行操作中生成并选择行动",
+      "llm_tldr_en": "Agentic Router proposes an execution-grounded dual-path consequence-aware agent for CLI-based network operations, generating multiple actions, predicting execution consequences, and reranking by utility and risk, with continual learning and memory to improve agent decision making.",
+      "llm_tldr_cn": "在命令行网络运维中，LLM智能体可能生成合理但会失败或带来运维风险的命令。现有方法只关注命令生成或配置正确性，未利用执行后的经验。Agentic Router提出执行受控的双路径后果感知智能体：同时生成多条完整动作、预测执行后果，并通过效用与风险感知的重排序选择最终动作；提案侧将操作教训抽象为可检索指导以改善动作覆盖，结合持续学习与记忆机制。该方法持续提升智能体在真实操作中的决策质量与安全性。",
+      "llm_tldr": "在命令行网络运维中，LLM智能体可能生成合理但会失败或带来运维风险的命令。现有方法只关注命令生成或配置正确性，未利用执行后的经验。Agentic Router提出执行受控的双路径后果感知智能体：同时生成多条完整动作、预测执行后果，并通过效用与风险感知的重排序选择最终动作；提案侧将操作教训抽象为可检索指导以改善动作覆盖，结合持续学习与记忆机制。该方法持续提升智能体在真实操作中的决策质量与安全性。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent decision making",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.09848v1",
+      "source": "arxiv",
+      "title": "CEAA: A Cognitive Embodied Agents Architecture for Interactive Computing Systems",
+      "abstract": "The development of embodied Intelligent Virtual Agents (IVAs) that have cognitive capabilities in real-time interactive virtual environments remains a challenge, even with today's advancements in technology. Existing architectures are often focused on either the implementation of low-level reactive control systems that are constrained by commercial game engines, or high-level representations of reasoning models that can be difficult to implement in virtual worlds. This paper builds on that notion and proposes a modular cognitive architecture for deploying embodied IVAs. This architecture builds on existing, pre-established frameworks such as the Sense-Think-Act paradigm and the Belief-Desire-Intention cognitive model, among others, and aims to provide a reusable implementation-oriented framework as a template for deploying IVA \"brains\" in interactive 3D computing systems. The proposed architecture contributes by providing a modular, implementation-oriented framework for the deployment of embodied, cognitive-capable IVAs and bridges the gap between high-level agent reasoning models with real-time embodied execution, for scalable, adaptive, and explainable agents in complex interactive virtual environments.",
+      "authors": [
+        "Aimilios Hadjiliasi",
+        "Louis Nisiotis"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-10T17:07:41+00:00",
+      "link": "https://arxiv.org/pdf/2608.09848v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "modular cognitive architecture for embodied intelligent virtual agents based on Sense-Think-Act and BDI",
+      "llm_evidence_cn": "基于感知-思考-行动与BDI等框架的模块化具身智能体架构",
+      "llm_evidence": "基于感知-思考-行动与BDI等框架的模块化具身智能体架构",
+      "canonical_evidence": "基于感知-思考-行动与BDI等框架的模块化具身智能体架构",
+      "llm_tldr_en": "Proposes CEAA, a modular cognitive architecture for deploying embodied intelligent virtual agents in interactive environments, integrating Sense-Think-Act and Belief-Desire-Intention models.",
+      "llm_tldr_cn": "在实时交互虚拟环境中部署具备认知能力的具身智能代理仍面临挑战，现有架构或偏重低层反应控制，或难以落地理性推理模型。本文提出CEAA，一种模块化认知架构，融合感知-思考-行动范式和信念-欲望-意图等既有框架，为具身智能代理提供系统化设计蓝图。该架构强调各模块的可组合性与可实施性，旨在弥合高层认知模型与虚拟世界实现之间的鸿沟。它为交互式系统中的智能代理开发提供了新的架构参考。",
+      "llm_tldr": "在实时交互虚拟环境中部署具备认知能力的具身智能代理仍面临挑战，现有架构或偏重低层反应控制，或难以落地理性推理模型。本文提出CEAA，一种模块化认知架构，融合感知-思考-行动范式和信念-欲望-意图等既有框架，为具身智能代理提供系统化设计蓝图。该架构强调各模块的可组合性与可实施性，旨在弥合高层认知模型与虚拟世界实现之间的鸿沟。它为交互式系统中的智能代理开发提供了新的架构参考。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.11967v1",
+      "source": "arxiv",
+      "title": "LoongReflect: Boosting Long-Horizon Reflection in Search Agents via Global Perspective Distillation",
+      "abstract": "Large language model agents increasingly rely on long-horizon reasoning to solve complex tasks involving planning, tool use, and memory. A critical capability in such settings is reflection: assessing trajectory progress, identifying missing evidence and unreliable intermediate states, and deciding whether to continue, revise, or abandon the current branch. Learning effective reflection, however, is challenging because reflection is performed locally within the current branch, whereas its utility can only be determined by its contribution to the final trajectory outcome. This local-global mismatch makes outcome-based reinforcement learning provide only local, sparse and delayed supervision for reflective decisions. To solve these, we propose LoongReflect, a training framework that formulates reflection as a memory-control policy. The agent operates over a reversible trajectory tree using explicit reflect and backtrack actions. Reflection consolidates verified facts, missing evidence, and branch-specific risks into working memory, while backtracking removes an unreliable branch from the active context and preserves a concise corrective lesson. To learn this policy, LoongReflect combines two complementary signals through a look-ahead, extragradient-style coordination mechanism. A fast channel distills globally informed reflective behavior from a privileged teacher, with supervision restricted to reflection and backtracking tokens. A slow channel optimizes complete trajectories using outcome-based GRPO, aligning local control decisions with final task success. Experiments on multi-hop retrieval-augmented generation and mathematical reasoning benchmarks demonstrate consistent improvements over outcome-only reinforcement learning and self-distillation baselines.",
+      "authors": [
+        "Zhixin Zhang",
+        "Xinke Jiang",
+        "Zhibang Yang",
+        "Weixuan Xu",
+        "Guohong Qiu",
+        "Xu Chu",
+        "Junfeng Zhao",
+        "Yasha Wang"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-08-12T11:56:03+00:00",
+      "link": "https://arxiv.org/pdf/2608.11967v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "boosts long-horizon reflection in search agents via global perspective distillation, directly related to autonomous agent planning and decision-making",
+      "llm_evidence_cn": "通过全局视角蒸馏增强搜索智能体的长时程反思能力,直接面向自主智能体规划与决策",
+      "llm_evidence": "通过全局视角蒸馏增强搜索智能体的长时程反思能力,直接面向自主智能体规划与决策",
+      "canonical_evidence": "通过全局视角蒸馏增强搜索智能体的长时程反思能力,直接面向自主智能体规划与决策",
+      "llm_tldr_en": "This paper addresses the local-global mismatch in learning reflection for LLM search agents. It proposes global perspective distillation to convert outcome information into reflective supervision, improving long-horizon planning, tool use, and decision execution.",
+      "llm_tldr_cn": "大模型智能体在长时程任务中的反思能力至关重要,但反思只在局部分支内进行,其效用却由最终轨迹结果决定,导致监督稀疏延迟。该文提出全局视角蒸馏方法,将全局结局信息转化为反思决策的监督信号,以解决局部-全局不匹配问题。该方法提升了搜索智能体在规划、工具使用和记忆等复杂任务中的反思质量。实验结果验证了其对长时程推理和任务成功率的改进。",
+      "llm_tldr": "大模型智能体在长时程任务中的反思能力至关重要,但反思只在局部分支内进行,其效用却由最终轨迹结果决定,导致监督稀疏延迟。该文提出全局视角蒸馏方法,将全局结局信息转化为反思决策的监督信号,以解决局部-全局不匹配问题。该方法提升了搜索智能体在规划、工具使用和记忆等复杂任务中的反思质量。实验结果验证了其对长时程推理和任务成功率的改进。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent planning",
+      "matched_requirement_id": "req-10",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.12995v1",
+      "source": "arxiv",
+      "title": "OGR-MARL: Option-Guided Residual Multi-Agent Reinforcement Learning for Heterogeneous USV Cooperative Pursuit in Constrained Port Waterways",
+      "abstract": "Heterogeneous USV cooperative pursuit in constrained port waterways requires evader interception under navigation, traffic, and role constraints. This paper proposes OGR-MARL, an option-guided residual multi-agent reinforcement learning framework that is decoupled from a specific MARL algorithm. OGR-MARL integrates shared evader belief, role-conditioned option targets, adaptive rule penalties, and residual policy learning, allowing different MARL algorithms to learn corrective actions on top of rule-guided behaviors rather than exploring constrained port environments from scratch. We instantiate OGR-MARL with representative continuous-control MARL backbones, including MADDPG, MATD3, MAPPO, and MASAC, yielding OGR-MADDPG, OGR-MATD3, OGR-MAPPO, and OGR-MASAC. Experiments in an abstract Xiazhimen port-waterway scenario show that the OGR-MASAC instantiation achieves a 75.0% capture rate, promising mission-effective rule compliance, and the best heterogeneous coordination among the tested methods. Without retraining, zero-shot transfer to a QGIS/AIS-informed Xiazhimen map achieves promising results, demonstrating the generalization potential of OGR-MARL in more complex port scenarios.",
+      "authors": [
+        "Mao Jiayang",
+        "Wang Lanfeng",
+        "Peng Zhao-Han"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-08-13T09:19:10+00:00",
+      "link": "https://arxiv.org/pdf/2608.12995v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "option-guided residual multi-agent reinforcement learning framework",
+      "llm_evidence_cn": "选项引导残差多智能体强化学习框架",
+      "llm_evidence": "选项引导残差多智能体强化学习框架",
+      "canonical_evidence": "选项引导残差多智能体强化学习框架",
+      "llm_tldr_en": "Presents OGR-MARL, a MARL-algorithm-agnostic framework with option-guided targets, adaptive rule penalties, and residual policy learning for heterogeneous USV cooperative pursuit.",
+      "llm_tldr_cn": "针对约束港口航道中异构无人水面艇协同追捕面临的导航、交通与角色约束，提出OGR-MARL框架。该框架集成共享逃逸者信念、角色条件化选项目标、自适应规则惩罚与残差策略学习，可与不同MARL算法解耦使用。基于MADDPG、MATD3等连续控制MARL骨干的实例验证表明，智能体能在规则引导基础上学习修正动作，显著降低从零探索复杂约束环境的代价。",
+      "llm_tldr": "针对约束港口航道中异构无人水面艇协同追捕面临的导航、交通与角色约束，提出OGR-MARL框架。该框架集成共享逃逸者信念、角色条件化选项目标、自适应规则惩罚与残差策略学习，可与不同MARL算法解耦使用。基于MADDPG、MATD3等连续控制MARL骨干的实例验证表明，智能体能在规则引导基础上学习修正动作，显著降低从零探索复杂约束环境的代价。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "recent advances in multi agent reinforcement learning",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.13317v1",
+      "source": "arxiv",
+      "title": "StateBridge: Training-free Hidden-state Alignment for Latent Communication in LLM Multi-Agent Systems",
+      "abstract": "Large language model based multi-agent systems usually communicate in text, i.e., using discrete tokens. However, text introduces a discrete bottleneck. Converting the sender's continuous hidden states into discrete tokens discards information that token identities alone cannot capture. Recent work proposes latent communication as an alternative, where agents transmit hidden representations directly without converting them to text. However, existing latent methods either inject working memory layer by layer across the transformers, or require trained projectors that limit portability. We propose StateBridge, a training-free latent communication approach that aligns the sender's final-layer hidden states to the receiver's input space via a closed-form orthogonal transformation. Lightweight norm calibration and vocabulary anchoring ensure compatibility with the pretrained input distribution. The aligned states are prepended to the input of the receiver agent as a continuous prefix. We evaluate StateBridge on math reasoning, code generation, and question answering with four models from two families. StateBridge achieves the best or tied-best score on 22 out of 26 model-task pairs, consistently outperforming the strongest baseline.",
+      "authors": [
+        "Yanwen Peng",
+        "Delvin Ce Zhang",
+        "Xi Wang",
+        "Nikolaos Aletras"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-13T14:40:59+00:00",
+      "link": "https://arxiv.org/pdf/2608.13317v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Latent communication protocol for LLM multi-agent systems via hidden-state alignment",
+      "llm_evidence_cn": "通过隐状态对齐实现LLM多智能体系统的潜在通信协议",
+      "llm_evidence": "通过隐状态对齐实现LLM多智能体系统的潜在通信协议",
+      "canonical_evidence": "通过隐状态对齐实现LLM多智能体系统的潜在通信协议",
+      "llm_tldr_en": "Proposes StateBridge, a training-free latent communication method that aligns sender final-layer hidden states to the receiver input, avoiding discrete text bottlenecks and trained projectors.",
+      "llm_tldr_cn": "LLM多智能体系统通常用离散文本通信，但文本作为离散瓶颈会丢失连续隐状态中的信息。现有潜在通信方法要么逐层注入工作记忆，要么依赖需训练的项目器而限制可移植性。本文提出StateBridge，免训练地将发送方最终层隐状态对齐到接收方输入，直接传递连续表示。该方法在提升通信信息量的同时保持了便捷的可移植性，为多智能体通信协议提供了新方案。",
+      "llm_tldr": "LLM多智能体系统通常用离散文本通信，但文本作为离散瓶颈会丢失连续隐状态中的信息。现有潜在通信方法要么逐层注入工作记忆，要么依赖需训练的项目器而限制可移植性。本文提出StateBridge，免训练地将发送方最终层隐状态对齐到接收方输入，直接传递连续表示。该方法在提升通信信息量的同时保持了便捷的可移植性，为多智能体通信协议提供了新方案。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent communication protocols",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2608.07700v1",
+      "source": "arxiv",
+      "title": "Towards Researcher Agents for Knowledge-Graph Question Answering",
+      "abstract": "Translating a natural-language question into a SPARQL query that can be executed against a large knowledge graph requires resolving lexical ambiguity, grounding surface terms in the target ontology, and producing graph patterns that are both syntactically valid and semantically faithful. We present an agentic text-to-SPARQL system that goes one step beyond static tool-using agents: a researcher agent that, after each round of inference on a validation set, proposes and tests changes to its own prompts, rules, and tool-orchestration code. We instantiate the loop on DBpedia, evolve nine successive versions of the agent driven by a low-cost reasoning model, and deploy the best-performing configuration with two stronger backbone models. The study yields three observations: (i) self-improvement converges quickly and then achieves 0.22 overall accuracy on the 2025 DBpedia validation set; (ii) the bottleneck is consistently in basic-graph-pattern predicate selection, not in SPARQL syntax or modifiers; and (iii) several benchmark items appear to penalise correct queries due to property ambiguity in DBpedia, suggesting that future Text-to-SPARQL benchmarks should be scored using a combination of machine translation and information retrieval metrics.",
+      "authors": [
+        "Tommaso Soru",
+        "Abdulsobur Oyewale"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.DB"
+      ],
+      "published": "2026-08-07T18:42:53+00:00",
+      "link": "https://arxiv.org/pdf/2608.07700v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "researcher agent that autonomously evolves its own prompts and tool orchestration for KG-QA",
+      "llm_evidence_cn": "面向知识图谱问答的可自我演化研究者智能体设计",
+      "llm_evidence": "面向知识图谱问答的可自我演化研究者智能体设计",
+      "canonical_evidence": "面向知识图谱问答的可自我演化研究者智能体设计",
+      "llm_tldr_en": "Presents a researcher agent for text-to-SPARQL that iteratively proposes and tests changes to its own prompts, rules, and tool-orchestration code, evolving across nine versions on DBpedia.",
+      "llm_tldr_cn": "知识图谱问答中的文本到SPARQL转换面临消歧、本体匹配与图模式生成等挑战。现有工具型智能体往往静态调用工具，缺少对自身流程的反思与改进。本文提出研究者智能体，让模型在验证集上推理后自主修改提示词、规则与工具编排代码，并循环演化。在DBpedia上经过九代版本迭代后，部署到更强推理模型上取得了明显效果。这一范式推动了智能体自我改进能力的研究。",
+      "llm_tldr": "知识图谱问答中的文本到SPARQL转换面临消歧、本体匹配与图模式生成等挑战。现有工具型智能体往往静态调用工具，缺少对自身流程的反思与改进。本文提出研究者智能体，让模型在验证集上推理后自主修改提示词、规则与工具编排代码，并循环演化。在DBpedia上经过九代版本迭代后，部署到更强推理模型上取得了明显效果。这一范式推动了智能体自我改进能力的研究。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "intelligent agent design and applications",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.06699v1",
+      "source": "arxiv",
+      "title": "AgentPatch: Coarse-to-Fine Weak-Task Repair for Merging Agentic Multimodal Large Language Models",
+      "abstract": "Agentic multimodal large language models (MLLMs) extend multimodal perception and reasoning with planning, tool use, and interaction in dynamic environments. Yet current models are specialized for particular tools or environments, complicating consolidation into a single generalist. We formulate Agentic MLLM Merging and identify two challenges: asymmetric capability preservation, whereby capabilities with different interaction complexity are retained unevenly, producing weak tasks after merging, and behavior-critical forgetting, whereby losing decisive actions can derail long-horizon execution. We propose AgentPatch, a training-free coarse-to-fine repair framework. It selects a stable merged backbone, restores diluted weak-task-specific signals through Weak-Task Unique Residual Recovery, and applies an Agent-Guided Behavior-Critical Patch that recovers decisive behaviors under explicit capability protection. AgentPatch produces a single static checkpoint without routing or ensembles. Experiments across six agentic and multimodal benchmarks show that AgentPatch improves diverse merged backbones, alleviates weak-task degradation, and better balances weak-task recovery with the preservation of complementary search and agentic visual processing capabilities. Code is available at https://github.com/ziboshao/AgentPatch.",
+      "authors": [
+        "Zibo Shao",
+        "Baochen Xiong",
+        "Chengdong Xu",
+        "Linhui Xiao",
+        "Kaichen Li",
+        "Haoran Gong",
+        "Yan Li",
+        "Yaguang Song",
+        "Xiaoshan Yang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-08-07T01:52:45+00:00",
+      "link": "https://arxiv.org/pdf/2608.06699v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "a coarse-to-fine repair framework for merging agentic multimodal LLMs into a generalist agent",
+      "llm_evidence_cn": "面向智能体多模态大模型合并的弱任务修复方法,服务于通用智能体设计",
+      "llm_evidence": "面向智能体多模态大模型合并的弱任务修复方法,服务于通用智能体设计",
+      "canonical_evidence": "面向智能体多模态大模型合并的弱任务修复方法,服务于通用智能体设计",
+      "llm_tldr_en": "AgentPatch addresses merging specialized agentic multimodal LLMs into a generalist by handling asymmetric capability preservation and behavior-critical forgetting. It proposes a training-free coarse-to-fine repair framework that selects a stable merged backbone and restores diluted weak tasks.",
+      "llm_tldr_cn": "当前智能体多模态大模型往往针对特定工具或环境专门化,难以整合为通用模型。该文提出AgentPatch,一种免训练的由粗到细修复框架,用于在模型合并后恢复被稀释的弱任务能力。它先选择稳定的合并主干,再针对容量损失和关键行为遗忘进行修复,从而缓解合并过程中的非对称能力保留问题。实验表明该方法能改善长期执行中的行为可靠性,为构建通用智能体提供可行路径。",
+      "llm_tldr": "当前智能体多模态大模型往往针对特定工具或环境专门化,难以整合为通用模型。该文提出AgentPatch,一种免训练的由粗到细修复框架,用于在模型合并后恢复被稀释的弱任务能力。它先选择稳定的合并主干,再针对容量损失和关键行为遗忘进行修复,从而缓解合并过程中的非对称能力保留问题。实验表明该方法能改善长期执行中的行为可靠性,为构建通用智能体提供可行路径。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "intelligent agent design and applications",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.07642v1",
+      "source": "arxiv",
+      "title": "Contextual Value Alignment via Multilayer Combinatorial Fusion",
+      "abstract": "Aligning large language models (LLMs) with human values remains a major challenge, especially for trustworthy AI. While existing approaches such as RLHF, CAI, and their variants have achieved promising results, they often rely on a single-agent framework and a unified reward system. This limits their ability to capture ethical pluralism, adapt to diverse moral contexts, and reflect the dynamics of multi-agent moral reasoning.   In this work, we propose a framework that utilizes multilayer combinatorial fusion for contextual value alignment (MCF-CVA). At the first layer of the framework, it instantiates multiple moral agents, each fine-tuned to represent a distinctive value. Their outputs are then expanded combinatorially using both score- and rank-combinations as well as average and weighted aggregations. These combined models are then reduced to the same number of initial moral agents. This expansion and reduction (EAR) process continues for multi-layers until a stopping criterion is reached.   The MCF-CVA framework leverages cognitive diversity between agents to mitigate conflicts and redundancies across multiple agents, producing responses that better reflect contextual human values. The framework using the EAR algorithm is performed on the dual architecture of Euclidean score space and Kemeny rank space. Empirical evaluations demonstrated that the proposed framework outperforms single-agent baselines, multi-agent single-layer results, and previous aggregation approaches on standard metrics, showing that the MCF-CVA framework provides a robust and effective mechanism for advancing contextual value alignment in LLMs.",
+      "authors": [
+        "Yuanhong Wu",
+        "Djallel Bouneffouf",
+        "D. Frank Hsu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "published": "2026-08-07T16:22:33+00:00",
+      "link": "https://arxiv.org/pdf/2608.07642v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Proposes a multi-agent framework with multilayer combinatorial fusion for contextual value alignment in LLMs",
+      "llm_evidence_cn": "提出基于多层组合融合的多智能体框架实现大语言模型的上下文价值对齐",
+      "llm_evidence": "提出基于多层组合融合的多智能体框架实现大语言模型的上下文价值对齐",
+      "canonical_evidence": "提出基于多层组合融合的多智能体框架实现大语言模型的上下文价值对齐",
+      "llm_tldr_en": "MCF-CVA instantiates multiple moral agents each tuned to a distinctive value, then combines their outputs via score- and rank-fusion to adapt to diverse moral contexts, overcoming single-agent alignment limits.",
+      "llm_tldr_cn": "大语言模型的价值对齐仍是信任人工智能的难题，现有强化学习与人类反馈等方法依赖单智能体和统一奖励系统，难以反映伦理多元性和多智能体推理。该文提出基于多层组合融合的上下文价值对齐框架，第一层实例化多个道德智能体，每个代表一种价值，再通过分数和排名组合扩展输出。这种多智能体组合方式能更好地捕捉多样道德语境，使对齐更灵活。它为价值对齐提供了一种多智能体协同的新思路。",
+      "llm_tldr": "大语言模型的价值对齐仍是信任人工智能的难题，现有强化学习与人类反馈等方法依赖单智能体和统一奖励系统，难以反映伦理多元性和多智能体推理。该文提出基于多层组合融合的上下文价值对齐框架，第一层实例化多个道德智能体，每个代表一种价值，再通过分数和排名组合扩展输出。这种多智能体组合方式能更好地捕捉多样道德语境，使对齐更灵活。它为价值对齐提供了一种多智能体协同的新思路。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "intelligent agent design and applications",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.07775v1",
+      "source": "arxiv",
+      "title": "AndroidReality: How Far Are Mobile Agents from the Real World?",
+      "abstract": "Mobile agents have achieved promising results on clean online benchmarks such as AndroidWorld, yet their performance often degrades sharply in real-world deployment due to environmental variations and imperfect interface conditions. In this work, we introduce AndroidReality, a perturbation-based framework for evaluating and improving the robustness of mobile agents. Through a Markov Decision Process (MDP) perspective, we organize real-world interface variability into a principled taxonomy of perturbations along three axes: state, transition, and action. Guided by this taxonomy, we build a perturbed mobile benchmark on top of AndroidWorld with realistic and controllable perturbation injections, enabling systematic robustness evaluation of mobile agents. Our evaluation reveals substantial robustness gaps and four recurring error categories, motivating a simple training-free Test-Time Introspective Recovery (TTIR) mechanism that mitigates these failures on both perturbed and clean settings. Together, these results position robustness as a missing dimension in mobile agent evaluation and establish benchmark perturbation as an effective tool for both stress testing and surfacing latent weaknesses of mobile agents.",
+      "authors": [
+        "Xiaoou Liu",
+        "Longchao Da",
+        "Hanyang Chen",
+        "Yuan Ling",
+        "Hua Wei"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-07T21:47:43+00:00",
+      "link": "https://arxiv.org/pdf/2608.07775v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "robustness evaluation of mobile agents via perturbation taxonomy",
+      "llm_evidence_cn": "基于扰动分类的移动智能体鲁棒性评估",
+      "llm_evidence": "基于扰动分类的移动智能体鲁棒性评估",
+      "canonical_evidence": "基于扰动分类的移动智能体鲁棒性评估",
+      "llm_tldr_en": "Introduces AndroidReality, a perturbation-based framework with an MDP-based taxonomy to evaluate and improve mobile agent robustness in real-world conditions.",
+      "llm_tldr_cn": "移动智能体在干净基准上表现良好，但在真实部署中因环境变化和界面条件不佳而性能下降。本文提出AndroidReality，基于马尔可夫决策过程视角，将真实界面可变性归为状态、转移和动作三类扰动，并在AndroidWorld基础上构建带可控扰动的评测基准。实验系统评估了移动智能体的鲁棒性，并提供了改进方向，使智能体更接近真实世界应用。",
+      "llm_tldr": "移动智能体在干净基准上表现良好，但在真实部署中因环境变化和界面条件不佳而性能下降。本文提出AndroidReality，基于马尔可夫决策过程视角，将真实界面可变性归为状态、转移和动作三类扰动，并在AndroidWorld基础上构建带可控扰动的评测基准。实验系统评估了移动智能体的鲁棒性，并提供了改进方向，使智能体更接近真实世界应用。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent decision making",
+      "matched_requirement_id": "req-2",
+      "selection_source": "carryover_cache",
+      "paper_id": "2608.07775v1",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.07949v1",
+      "source": "arxiv",
+      "title": "Guixu: Valuation-Driven Data Discovery for Autonomous AI Agents with On-Chain Attestation",
+      "abstract": "Autonomous agents increasingly rely on external data to complete downstream tasks such as model training and decision support. However, existing data discovery systems remain largely retrieval-oriented: they surface candidate datasets from heterogeneous sources, but provide limited support for estimating task-specific utility, selecting cost-effective datasets under budget constraints, or incorporating trustworthy feedback from prior usage. This paper presents Guixu, a valuation-driven data discovery system for autonomous agents. Guixu employs a three-phase valuation pipeline with proxy-label propagation and multi-round knapsack optimization for task-aware data valuation. Guixu integrates agentic payment protocol to enable budget-constrained data procurement workflows. Guixu leverages on-chain data market and attestation signals for verifiable data discovery. Our demonstration highlights how Guixu enables an agent to move beyond keyword-based dataset retrieval toward task- and budget-aware, trustworthy data discovery and procurement. Attendees can interactively explore the full workflow, from NL task specification and multi-source search to data valuation and verifiable transaction feedback.",
+      "authors": [
+        "Yifan Wu",
+        "Yuchen Peng",
+        "Jiaqi Chai",
+        "Yufei Qian",
+        "Xilin Li",
+        "Ke Chen",
+        "Lidan Shou"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CR",
+        "cs.DB",
+        "cs.IR",
+        "cs.MA"
+      ],
+      "published": "2026-08-08T06:25:16+00:00",
+      "link": "https://arxiv.org/pdf/2608.07949v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "data discovery and valuation system for autonomous AI agents",
+      "llm_evidence_cn": "面向自主AI智能体的数据发现与价值评估系统",
+      "llm_evidence": "面向自主AI智能体的数据发现与价值评估系统",
+      "canonical_evidence": "面向自主AI智能体的数据发现与价值评估系统",
+      "llm_tldr_en": "Presents Guixu, a valuation-driven data discovery system with proxy-label propagation, multi-round knapsack optimization, and on-chain attestation for autonomous agents.",
+      "llm_tldr_cn": "针对自主智能体依赖外部数据但现有发现系统难以估计任务效用、选择低成本数据的问题，提出Guixu数据发现系统。系统通过代理标签传播与多轮背包优化实现任务感知数据估值，并整合智能体支付协议与链上认证以支持预算约束和可信反馈。该工作将数据发现从检索导向升级为价值导向，为自主智能体的数据决策提供基础设施支持。",
+      "llm_tldr": "针对自主智能体依赖外部数据但现有发现系统难以估计任务效用、选择低成本数据的问题，提出Guixu数据发现系统。系统通过代理标签传播与多轮背包优化实现任务感知数据估值，并整合智能体支付协议与链上认证以支持预算约束和可信反馈。该工作将数据发现从检索导向升级为价值导向，为自主智能体的数据决策提供基础设施支持。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "applications of intelligent agents",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.10475v1",
+      "source": "arxiv",
+      "title": "Evaluating Rational Contracting in Natural Language",
+      "abstract": "The emergence of language-based AI agents promises to transform the scope of machine economic activity. Instead of just proposing bids or following hard-coded protocols, such agents can be used to negotiate and execute agreements in open-ended natural language. However, most evaluations of these abilities have focused on one-off exchanges or simple economic games, leaving open the rich space of time-extended, contingent, and incomplete contracts made expressible by language; they also focus on raw profit, without measuring the qualities required for trustworthy contracting. We address this by formulating a rational framework for how agents should negotiate and perform natural language contracts in uncertain multi-step environments. Within this framework, we develop metrics and baselines for quantifying rational and cooperative play. To evaluate how agents perform at such contracting, we instantiate our framework in ContractSim, an evaluation suite where two players negotiate and execute a multi-turn supplier contract under environmental and inter-player uncertainty. Across six environments and three supplier settings (catering, hotel cleaning, and AI hosting) we find that current LLM-based agents reach agreement reliably, and negotiate efficient contracts when environmental uncertainty is low. However, under high uncertainty, they often fail to negotiate satisfiable, efficient, or mutually beneficial contracts. They are also frequently uncooperative when executing contracts, violating contract terms for additional profit even when contracts are easy to satisfy. These findings highlight room for improvement in the design of language agents that can negotiate, interpret, and execute contracts both rationally and cooperatively.",
+      "authors": [
+        "Bhavyesh Sajja",
+        "Max Kleiman-Weiner",
+        "Roger Zimmermann",
+        "Tan Zhi-Xuan"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.GT"
+      ],
+      "published": "2026-08-11T04:44:50+00:00",
+      "link": "https://arxiv.org/pdf/2608.10475v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "framework for evaluating language-based AI agents in rational natural-language contracting",
+      "llm_evidence_cn": "语言型AI代理在理性自然语言合约中的评估框架",
+      "llm_evidence": "语言型AI代理在理性自然语言合约中的评估框架",
+      "canonical_evidence": "语言型AI代理在理性自然语言合约中的评估框架",
+      "llm_tldr_en": "This paper formulates a rational framework for how language-based AI agents should negotiate and perform natural-language contracts in uncertain multi-step environments, developing metrics for trustworthy contracting beyond raw profit.",
+      "llm_tldr_cn": "语言型AI代理能够进行开放式自然语言谈判与执行，但现有评测多局限于一次性交换或简单博弈，且只看利润。论文提出一个理性框架，刻画代理在不确定多步环境下应如何谈判和履行自然语言合约。基于该框架开发了反映可信缔约质量的度量。该工作扩展了代理经济行为评估的范围，并为可信自动缔约奠定基础。",
+      "llm_tldr": "语言型AI代理能够进行开放式自然语言谈判与执行，但现有评测多局限于一次性交换或简单博弈，且只看利润。论文提出一个理性框架，刻画代理在不确定多步环境下应如何谈判和履行自然语言合约。基于该框架开发了反映可信缔约质量的度量。该工作扩展了代理经济行为评估的范围，并为可信自动缔约奠定基础。",
+      "llm_tags": [
+        "query:agent:composite"
+      ],
+      "matched_query_tag": "query:agent:composite",
+      "matched_query_text": "Papers central to 查找Agent相关论文, especially work that connects or combines: A; autonomous agent decision making; intelligent agent design and applications; multi-agent system coordination; agent architecture design patterns; agent communication protocols; papers on autonomous agent architectures and control; recent advances in multi agent reinforcement learning; applications of intelligent agents; autonomous agent planning.",
+      "matched_requirement_id": "req-composite-agent",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.08036v1",
+      "source": "arxiv",
+      "title": "Compiling and Benchmarking Task-State Horizons for Embodied Agents",
+      "abstract": "Frontier agentic models are increasingly deployed as high-level planners for long-horizon embodied tasks. Existing robotic benchmarks have advanced long-horizon evaluation, but primarily characterize difficulty through action-sequence length and subtask complexity, overlooking a distinct challenge: agents must track evolving task-relevant world states induced by both their exploration and environmental dynamics. We define the span of task-relevant state transitions that an agent must track as task-state horizon (TSH). To evaluate how agent performance varies with TSH, we introduce RoboGraph, a robotic task compiler that translates state-transition dependencies into executable symbolic graphs. Specifically, RoboGraph constructs task-state horizons from spatial and temporal causal dependencies, including those induced by unexpected failures and interventions during task execution. Building on RoboGraph, we release a benchmark comprising 588 episodes across 84 scenes with varying TSHs. Experiments evaluating 15 advanced agentic models in both semantic and visual closed-loop environments show that most models struggle with demanding TSHs, revealing substantial gaps in maintaining, exploring, and updating task-relevant state over long horizon.",
+      "authors": [
+        "Meiqi Wang",
+        "Shichao Li"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-08T09:45:01+00:00",
+      "link": "https://arxiv.org/pdf/2608.08036v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "task-state horizon tracking for long-horizon embodied agent planning",
+      "llm_evidence_cn": "面向长周期具身智能体规划的任务状态跨度跟踪与评测",
+      "llm_evidence": "面向长周期具身智能体规划的任务状态跨度跟踪与评测",
+      "canonical_evidence": "面向长周期具身智能体规划的任务状态跨度跟踪与评测",
+      "llm_tldr_en": "Defines task-state horizon (TSH) and introduces RoboGraph, a robotic task compiler that converts state-transition dependencies into executable symbolic graphs to benchmark embodied agents' ability to track evolving task states.",
+      "llm_tldr_cn": "现有机器人基准多通过动作序列长度和子任务复杂度衡量难度，忽略了智能体需跟踪的环境状态演变。本文定义任务状态跨度（TSH），用于刻画智能体需要跟踪的任务相关状态转移。为评测该能力，提出RoboGraph，一个机器人任务编译器，将状态转移依赖转换为可执行的符号图。通过构建不同状态跨度的任务，可系统衡量具身智能体在长周期规划中的表现。这一基准补全了长程任务评测的关键维度。",
+      "llm_tldr": "现有机器人基准多通过动作序列长度和子任务复杂度衡量难度，忽略了智能体需跟踪的环境状态演变。本文定义任务状态跨度（TSH），用于刻画智能体需要跟踪的任务相关状态转移。为评测该能力，提出RoboGraph，一个机器人任务编译器，将状态转移依赖转换为可执行的符号图。通过构建不同状态跨度的任务，可系统衡量具身智能体在长周期规划中的表现。这一基准补全了长程任务评测的关键维度。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent planning",
+      "matched_requirement_id": "req-10",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.08038v1",
+      "source": "arxiv",
+      "title": "Stateful Multi-Agent LLMs for Cross-View Interface Alignment in Automotive Model-Based Systems Engineering",
+      "abstract": "While Large Language Models (LLMs) can accelerate Model-Based Systems Engineering (MBSE) for software-defined vehicles, their probabilistic nature causes \"architectural drift\", fabricating interfaces in behavioral views that lack structural foundations. To enforce deterministic interface alignment, we propose a stateful, multi-agent validation pipeline. The framework utilizes a sequential generation matrix (Class->Activity->Sequence) and Vehicle Signal Specification (VSS)-grounded Retrieval-Augmented Generation (RAG). An independent AI Validator Agent dynamically audits outputs against a strict error taxonomy, triggering state-preserving backtracking loops to resolve incompatibilities. Evaluated on an Advanced Driver Assistance System (ADAS) scenario, standard RAG yielded 0% Entity Traceability. Conversely, our multi-agent workflow eradicated cross-phase hallucinations, achieving 97% Entity Traceability, 87% Signal Conservation, and an 85% F1-score. This proves adversarial auditing enables LLMs to reliably synthesize zero-error MBSE architectures.",
+      "authors": [
+        "Aleksei Velsh",
+        "Nenad Petrovic",
+        "Alois Knoll"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE"
+      ],
+      "published": "2026-08-08T09:49:10+00:00",
+      "link": "https://arxiv.org/pdf/2608.08038v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "stateful multi-agent LLM coordination for deterministic interface alignment",
+      "llm_evidence_cn": "有状态多智能体LLM协作实现确定性接口对齐",
+      "llm_evidence": "有状态多智能体LLM协作实现确定性接口对齐",
+      "canonical_evidence": "有状态多智能体LLM协作实现确定性接口对齐",
+      "llm_tldr_en": "Proposes a stateful multi-agent validation pipeline for automotive MBSE that enforces deterministic interface alignment via Class->Activity->Sequence generation, VSS-grounded RAG, and an independent AI Validator Agent with state-preserving backtracking.",
+      "llm_tldr_cn": "大语言模型加速软件定义汽车的MBSE时会因概率性导致架构漂移，虚构缺乏结构基础的行为视图接口。论文提出有状态的多智能体验证流水线：按类到活动到序列生成矩阵推进，并用车辆信号规范VSS驱动的RAG保证语义基础。独立的AI验证器代理依据严格错误分类法审计输出，触发保持状态的回溯循环解决不一致。在高级驾驶辅助场景评估中，该方法有效保持了接口的确定性对齐。",
+      "llm_tldr": "大语言模型加速软件定义汽车的MBSE时会因概率性导致架构漂移，虚构缺乏结构基础的行为视图接口。论文提出有状态的多智能体验证流水线：按类到活动到序列生成矩阵推进，并用车辆信号规范VSS驱动的RAG保证语义基础。独立的AI验证器代理依据严格错误分类法审计输出，触发保持状态的回溯循环解决不一致。在高级驾驶辅助场景评估中，该方法有效保持了接口的确定性对齐。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.12273v1",
+      "source": "arxiv",
+      "title": "Convergent Detour Hijacking: Task-Preserving Resource Amplification in Skill-Based LLM Agents",
+      "abstract": "LLM agents increasingly rely on third-party skills, using natural-language descriptions for selection and instruction bodies for planning. This progressive-disclosure design exposes two sequential control points to untrusted publishers: a static skill may steer an otherwise correct task onto an unnecessarily costly trajectory. Prior work studies selection manipulation, malicious skill instructions, and tool-chain resource amplification largely separately, leaving their end-to-end composition unclear. We introduce Convergent Detour Hijacking (CDH), a text-only, runtime-independent attack that couples these stages. Under shared semantic cover, a description establishes relevance during selection, while an aligned body reuses that rationale to fabricate plausible dependencies during planning. CDH attracts an attacker-controlled coordinator alongside legitimate skills, recruits unnecessary benign skills into a bounded detour, and then re-enters the original route to preserve task completion. We evaluate it across multiple LLM backends and 491 held-out tasks under single-task and multi-turn conditions. On DeepSeek-V4-Pro, the matched coordinator is selected in 80.02% of tasks; among coordinator-hit runs that complete tasks, token consumption and end-to-end execution time increase by 66.91% and 92.45%, respectively, while aggregate task completion remains comparable. Thus, correct outcomes do not guarantee trajectory integrity or cost safety.",
+      "authors": [
+        "Junliang Liu",
+        "Ruoyu Li",
+        "Wenxin Tang",
+        "Jingyu Xiao",
+        "Zhenyu Liu",
+        "Jingheng Xu",
+        "Laizhong Cui"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-08-12T17:12:49+00:00",
+      "link": "https://arxiv.org/pdf/2608.12273v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Security attack on skill-based LLM agents, central to agent reliability theme",
+      "llm_evidence_cn": "针对基于技能的LLM智能体的安全攻击，与智能体可靠性主题相关",
+      "llm_evidence": "针对基于技能的LLM智能体的安全攻击，与智能体可靠性主题相关",
+      "canonical_evidence": "针对基于技能的LLM智能体的安全攻击，与智能体可靠性主题相关",
+      "llm_tldr_en": "Introduces Convergent Detour Hijacking, a text-only attack coupling skill selection and instruction manipulation to amplify resource use in LLM agents.",
+      "llm_tldr_cn": "LLM智能体越来越依赖第三方技能，并通过自然语言描述进行选择、通过指令体进行规划，这种渐进式披露设计给了不可信发布者两个连续控制点。已有研究分别关注选择操纵、恶意技能指令和工具链资源放大，但未将它们组合考虑。本文提出汇聚绕行劫持（CDH），一种纯文本且与运行时无关的攻击，将选择阶段的描述操纵与规划阶段的指令对齐相结合，在保持任务正确性的同时放大资源消耗。该工作揭示了技能型智能体设计的潜在安全隐患。",
+      "llm_tldr": "LLM智能体越来越依赖第三方技能，并通过自然语言描述进行选择、通过指令体进行规划，这种渐进式披露设计给了不可信发布者两个连续控制点。已有研究分别关注选择操纵、恶意技能指令和工具链资源放大，但未将它们组合考虑。本文提出汇聚绕行劫持（CDH），一种纯文本且与运行时无关的攻击，将选择阶段的描述操纵与规划阶段的指令对齐相结合，在保持任务正确性的同时放大资源消耗。该工作揭示了技能型智能体设计的潜在安全隐患。",
+      "llm_tags": [
+        "query:agent:composite"
+      ],
+      "matched_query_tag": "query:agent:composite",
+      "matched_query_text": "Papers central to 查找Agent相关论文, especially work that connects or combines: A; autonomous agent decision making; intelligent agent design and applications; multi-agent system coordination; agent architecture design patterns; agent communication protocols; papers on autonomous agent architectures and control; recent advances in multi agent reinforcement learning; applications of intelligent agents; autonomous agent planning.",
+      "matched_requirement_id": "req-composite-agent",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.08037v1",
+      "source": "arxiv",
+      "title": "SkillSmith: Enhancing Locally Deployed Agents via Automatic Skill Construction and Evolution",
+      "abstract": "LLM-based agent frameworks now act as personal assistants for multi-step tasks. Existing agent frameworks such as OpenClaw commonly follow the Cloud Agent depolyment mode using closed-source cloud LLMs as backbone model, which may expose private user information and incur repeated LLM-calling costs. Local Agents address these deployment concerns by depolying frontier open-source SLMs on user-controlled devices, but their task effectiveness still lags far behind Cloud Agents. Through diagnostic analysis, we reveal that the limited effectiveness of Local Agents with frontier SLM backbones mainly comes from missing environment knowledge caused by limited backbone model scale including environment rules and operation procedures. To supply such knowledge non-parametrically, context-efficiently, and without expert authoring, we present SkillSmith, a Cloud--Local Agent collaboration framework that uses Skill as a context-efficient knowledge carrier, automatic constructs Skill from Cloud Agent task exploration and evolves Skill using Local Agent execution feedback to enhance a frozen Local Agent. Experiments on daily agent task datasets AppWorld and WorkBench show that the automatically generated Skill enables the Local Agent with Qwen3.6-27B(SLM) to achieve task effectiveness comparable to Cloud Agents with frontier LLMs, outperform the strongest non-parametric baselines, reduce average actions per task from 36.1 to 9.9 on AppWorld-Normal, and generalize to other SLM backbone models without rerunning Skill construction.",
+      "authors": [
+        "Xinle Jiang",
+        "Remy Xie",
+        "Ming Tang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-08T09:48:21+00:00",
+      "link": "https://arxiv.org/pdf/2608.08037v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "automatic skill construction and evolution to enhance locally deployed LLM agents",
+      "llm_evidence_cn": "通过自动技能构建与演化来增强本地部署的大模型智能体",
+      "llm_evidence": "通过自动技能构建与演化来增强本地部署的大模型智能体",
+      "canonical_evidence": "通过自动技能构建与演化来增强本地部署的大模型智能体",
+      "llm_tldr_en": "SkillSmith diagnoses that limited local SLM agents' performance stems from missing environment knowledge, and proposes automatic skill construction and evolution to improve local agents' task effectiveness while preserving privacy and reducing costs.",
+      "llm_tldr_cn": "本地部署的大模型智能体虽能保护隐私并降低调用成本，但任务效果远弱于云端智能体。作者诊断发现，小模型骨干缺失环境知识与操作流程，造成有效性瓶颈。为此提出SkillSmith，通过自动技能构建与演化来补充环境规则和操作过程知识，从而提升本地智能体在多步任务上的表现。该工作为本地化智能体应用提供了一条低成本、隐私友好的增强路径，具有较强的工程价值。",
+      "llm_tldr": "本地部署的大模型智能体虽能保护隐私并降低调用成本，但任务效果远弱于云端智能体。作者诊断发现，小模型骨干缺失环境知识与操作流程，造成有效性瓶颈。为此提出SkillSmith，通过自动技能构建与演化来补充环境规则和操作过程知识，从而提升本地智能体在多步任务上的表现。该工作为本地化智能体应用提供了一条低成本、隐私友好的增强路径，具有较强的工程价值。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "intelligent agent design and applications",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.08220v1",
+      "source": "arxiv",
+      "title": "Metanormative Theory for RL-Based Moral Agents",
+      "abstract": "The overlapping disciplines of machine ethics and value alignment are concerned with designing artificial agents that are aligned with human values and that act in ethically acceptable ways. A recent trend in these disciplines is the use of reinforcement learning (RL) to design such agents, sidelining the philosophical literature that used to play a more central role. Against this backdrop, this paper pursues two goals. The first is to draw out ideas from recent work in metanormative theory that can be useful for designing artificial moral and value-aligned agents. The second is to examine the RL architecture through the lens of these ideas. This will give us clearer criteria for when an RL agent's behavior can be classified as moral, as well as a basis for evaluating and comparing different RL-based approaches to machine ethics and value alignment.",
+      "authors": [
+        "Aleks Knoks",
+        "Marija Slavkovik"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-08T16:33:28+00:00",
+      "link": "https://arxiv.org/pdf/2608.08220v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "designing RL-based moral and value-aligned agents using metanormative theory",
+      "llm_evidence_cn": "运用元规范理论设计基于强化学习的道德与价值对齐智能体",
+      "llm_evidence": "运用元规范理论设计基于强化学习的道德与价值对齐智能体",
+      "canonical_evidence": "运用元规范理论设计基于强化学习的道德与价值对齐智能体",
+      "llm_tldr_en": "Paper draws on metanormative theory to guide the design of RL-based moral agents, clarifying criteria for when RL agent behavior counts as moral and providing a basis for evaluating and comparing agent architectures.",
+      "llm_tldr_cn": "论文主张在强化学习智能体的设计中重新引入元规范理论视角，指出当前机器伦理与价值对齐领域偏重RL而忽视哲学基础的问题。作者梳理了元规范理论中的关键思想，并将其用于审视RL架构，以判断智能体行为是否具有道德属性。该工作为设计价值对齐的自主智能体提供了更清晰的标准与评价框架，也推动了机器伦理与RL的交叉研究。",
+      "llm_tldr": "论文主张在强化学习智能体的设计中重新引入元规范理论视角，指出当前机器伦理与价值对齐领域偏重RL而忽视哲学基础的问题。作者梳理了元规范理论中的关键思想，并将其用于审视RL架构，以判断智能体行为是否具有道德属性。该工作为设计价值对齐的自主智能体提供了更清晰的标准与评价框架，也推动了机器伦理与RL的交叉研究。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "intelligent agent design and applications",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

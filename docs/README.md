@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-14</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-15</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 18 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 17 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>7</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>6</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-14 21:20:43 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-15 20:45:04 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,9 +62,9 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日共读18篇，精读7篇，聚焦智能体系统的自导演化与治理配置。</p>
-<p>最值得看的是《Co-Evolution in Agentic Systems》和《Agentic Configuration Management》，分别指向自主演化与受控治理两大核心方向。</p>
-<p>建议普通读者优先关注智能体系统的可控性与配置管理，为未来自主AI的落地建立安全预期。</p>
+<p>今日精读6篇、速读11篇，重点聚焦大型多模态交通智能体与执行落地持续学习两条主线。</p>
+<p>最值得看的是《Large Multimodal Agents for Intelligent Transportation Systems》（9.0）与《Agentic Router》（9.0），前者关注架构与部署挑战，后者强调记忆驱动的持续学习。</p>
+<p>若时间有限，可顺带翻看《AndroidReality》等8分速读，了解移动智能体在真实场景的评估差距。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -73,12 +73,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">7 篇</strong>
+    <strong class="dpr-home-dashboard-count">6 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Co-Evolution in Agentic Systems: Toward Self-Directed Evolution Beyond Human Design">Co-Evolution in Agentic Systems: Toward Self-Directed Evolution Beyond Human Design</span></li><li><span class="dpr-home-dashboard-paper-title" title="Agentic Configuration Management (ACM): A Reference Configuration Model for Governed Agentic Systems">Agentic Configuration Management (ACM): A Reference Configuration Model for Governed Agentic Systems</span></li><li><span class="dpr-home-dashboard-paper-title" title="The Devil Is in the Interface: Evaluating How Tool Architecture Shapes Coding Agent Behavior">The Devil Is in the Interface: Evaluating How Tool Architecture Shapes Coding Agent Behavior</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Large Multimodal Agents for Intelligent Transportation Systems: Architectures, Evidence, and Deployment Challenges">Large Multimodal Agents for Intelligent Transportation Systems: Architectures, Evidence, and Deployment Challenges</span></li><li><span class="dpr-home-dashboard-paper-title" title="Agentic Router: An Execution-Grounded Continual Learning Approach With Memory">Agentic Router: An Execution-Grounded Continual Learning Approach With Memory</span></li><li><span class="dpr-home-dashboard-paper-title" title="CEAA: A Cognitive Embodied Agents Architecture for Interactive Computing Systems">CEAA: A Cognitive Embodied Agents Architecture for Interactive Computing Systems</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>7</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>6</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -89,7 +89,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Toward Reliable Context Compression for Long-Horizon Agents: An Empirical Study of Execution Instability">Toward Reliable Context Compression for Long-Horizon Agents: An Empirical Study of Execution Instability</span></li><li><span class="dpr-home-dashboard-paper-title" title="SyncSBC: Decentralized Swarm Behavior Prediction for Synchronized Autonomous Control">SyncSBC: Decentralized Swarm Behavior Prediction for Synchronized Autonomous Control</span></li><li><span class="dpr-home-dashboard-paper-title" title="CyberLLM: A Multi-Agent LLM Framework for Autonomous Detection and Guarded Response in Automotive Cybersecurity">CyberLLM: A Multi-Agent LLM Framework for Autonomous Detection and Guarded Response in Automotive Cybersecurity</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Towards Researcher Agents for Knowledge-Graph Question Answering">Towards Researcher Agents for Knowledge-Graph Question Answering</span></li><li><span class="dpr-home-dashboard-paper-title" title="AndroidReality: How Far Are Mobile Agents from the Real World?">AndroidReality: How Far Are Mobile Agents from the Real World?</span></li><li><span class="dpr-home-dashboard-paper-title" title="Compiling and Benchmarking Task-State Horizons for Embodied Agents">Compiling and Benchmarking Task-State Horizons for Embodied Agents</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>

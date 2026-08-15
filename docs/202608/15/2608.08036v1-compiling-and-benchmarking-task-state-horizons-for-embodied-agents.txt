@@ -1,0 +1,3751 @@
+Compiling and Benchmarking Task-State Horizons for
+Embodied Agents
+Meiqi Wang1∗, Shichao Li2∗
+1Tsinghua University
+2Beijing University of Posts and Telecommunications
+wang-mq22@mails.tsinghua.edu.cn, lishichao@bupt.edu.cn
+Abstract
+Frontier agentic models are increasingly deployed as high-
+level planners for long-horizon embodied tasks. Existing
+robotic benchmarks have advanced long-horizon evaluation,
+but primarily characterize difficulty through action-sequence
+length and subtask complexity, overlooking a distinct chal-
+lenge: agents must track evolving task-relevant world states
+induced by both their exploration and environmental dy-
+namics. We define the span of task-relevant state transi-
+tions that an agent must track as task-state horizon (TSH).
+To evaluate how agent performance varies with TSH, we
+introduce RoboGraph, a robotic task compiler that trans-
+lates state-transition dependencies into executable symbolic
+graphs. Specifically, RoboGraph constructs task-state hori-
+zons from spatial and temporal causal dependencies, including
+those induced by unexpected failures and interventions during
+task execution. Building on RoboGraph, we release a bench-
+mark comprising 588 episodes across 84 scenes with varying
+TSHs. Experiments evaluating 15 advanced agentic models
+in both semantic and visual closed-loop environments show
+that most models struggle with demanding TSHs, revealing
+substantial gaps in maintaining, exploring, and updating task-
+relevant state over long horizons.
+Introduction
+Recent advances in embodied foundation models have pro-
+duced agents capable of interpreting language, grounding
+visual observations, and generating action plans (Ahn et al.
+2022; Intelligence et al. 2025, 2026; Wu et al. 2026; Wang
+et al. 2026a). To assess long-horizon action planning, exist-
+ing benchmarks make substantial progress in task composi-
+tion (Shridhar et al. 2020a; Li et al. 2024; Chang et al. 2025),
+embodied memory (Yadav et al. 2026; Hu et al. 2026), and
+adaptation to changing environments (Liao et al. 2026; Zhang
+et al. 2026), for instance, to traverse more rooms, manipulate
+more objects, and satisfy more subgoals. However, action
+and subgoal complexity capture only part of embodied task
+difficulty. A further challenge lies in managing evolving task-
+relevant world state over extended horizons. For instance, a
+decision at step t may depend on state information obtained
+at step t −k, which was initially hidden and required ac-
+tive exploration, or unexpectedly changed in the interim and
+required world state updating.
+∗These authors contributed equally.
+Figure 1: An example illustrating the distinction between the
+proposed task-state horizon (TSH) and action horizon.
+Crucially, long-sequence actions and complex world states
+are not always aligned. As illustrated in Figure 1, both (a) and
+(b) require an agent to place a lipstick into a storage bag. In
+(b), however, the lipstick is out of sight: it may occupy one of
+several drawers or be moved during execution. Thus, despite
+an identical action sequence, (b) imposes more demanding
+state-transition dependencies.
+We formalize this challenge through the task-state horizon
+(TSH), which characterizes the span over which an agent
+must maintain, explore, and update task-relevant world state
+to sustain reliable longer-horizon execution. Specifically, we
+decompose state-management demands into three dimen-
+sions: state maintenance, retaining and retrieving previously
+observed state; state exploration, actively resolving hidden or
+uncertain state; and state updating, detecting environmental
+changes and revising outdated beliefs. Whereas most existing
+embodied benchmarks implicitly entangle task-relevant state
+dependencies within subtasks (Shridhar et al. 2020a; Li et al.
+2024; Zhang et al. 2025; Zhu et al. 2026), TSH formulation
+makes both state dependencies and the associated transitions
+explicit. Furthermore, this enables fine-grained attribution
+of unsuccessful subtasks to specific state-management er-
+rors; for instance, forgetting the lipstick’s location indicates
+a maintenance failure, neglecting to inspect candidate draw-
+ers indicates an exploration failure, and relying on outdated
+location after moving indicates an updating failure.
+To enable systematic measurement and controlled vari-
+arXiv:2608.08036v1  [cs.RO]  8 Aug 2026
+
+
+ation of TSH, we introduce RoboGraph, a robotic task
+compiler that translates spatial and temporal causal depen-
+dencies among task-relevant state transitions into executable
+symbolic graphs. Spatial dependencies capture state propa-
+gation across objects, while temporal dependencies capture
+how prior states constrain later actions. Each graph explic-
+itly represents these dependencies and records transitions in-
+duced by agent actions or environmental changes. The graph
+serves as an intermediate representation that can be executed
+across multiple backends, including symbolic environments,
+simulators, and real-world robots.
+Given a task family goal, we automatically generate nu-
+merous graphs embedding varying spatial and temporal de-
+pendencies. We construct RoboGraphBench, a bench-
+mark comprising 10 task families including tabletop manipu-
+lation and indoor navigation, with 84 automatically generated
+scenes. Furthermore, we incorporate six types of external in-
+terventions during execution, thus yielding a total of 588
+episodes. We evaluate 15 agentic models across closed- and
+open-source families using our unified harness in both se-
+mantic and visual closed-loop environments. Beyond task
+success rate, we introduce new metrics to assess agents’ state
+management capabilities. Although GPT-5.5 performs com-
+paratively well, it still exhibits imperfect state maintenance
+through redundant actions, insufficient exploration through
+premature termination, and limited state updating through
+prolonged recovery latency. These results reveal substantial
+remaining gaps in handling tasks with demanding TSHs.
+In conclusion, we make three contributions:
+• We introduce the task-state horizon (TSH) as a com-
+plement to existing action-horizon measures, capturing
+the task-relevant state-management demands of robotic
+agents, i.e., maintenance, exploration, and updating.
+• We design RoboGraph, a compiler that transforms spa-
+tial and temporal state dependencies into executable se-
+mantic scene graphs and supports dynamic world changes
+to control varying TSHs.
+• We introduce RoboGraphBench, instantiating 588
+TSH-controlled robotic tasks, new metrics to systemat-
+ically assess state management, and a unified harness to
+evaluate 15 frontier agentic models in both symbolic and
+simulated closed-loop environments.
+Related Work
+Long-horizon embodied tasks. Embodied benchmarks have
+progressively expanded the compositional, spatial, and tem-
+poral structure of goal-directed interaction. VirtualHome
+(Puig et al. 2018), ALFRED (Shridhar et al. 2020a),
+and ALFWorld (Shridhar et al. 2020b) study program-
+matic or language-grounded task execution in household
+environments. BEHAVIOR (Srivastava et al. 2022) and
+BEHAVIOR-1K (Li et al. 2024) scale this setting to large
+collections of predicate-defined activities with richer ob-
+ject states, action preconditions, and physical interactions.
+PARTNR (Chang et al. 2025), ET-Plan-Bench (Zhang et al.
+2025), and LongAct (Zhu et al. 2026) further extend long-
+horizon evaluation to temporal dependencies, coordination
+constraints, and interdependent household goals. Across
+these benchmarks, long-horizon difficulty is largely ex-
+pressed through the scale and structure of actions, subgoals,
+and constraints. RoboGraph extends this view by identi-
+fying state management as a core challenge in long-horizon
+embodied tasks.
+Long-term memory and changing world state. Long-
+horizon action planning requires agents to use information
+accumulated over extended interactions. FindingDory (Ya-
+dav et al. 2026), LMEE-Bench (Wang et al. 2026b), and
+3DMem-Bench (Hu et al. 2026) evaluate long-term memory
+in embodied navigation, exploration, and spatial reasoning.
+MIKASA-Robo (Cherepanov et al. 2026), RoboMME (Dai
+et al. 2026), and RoboMemArena (Lei et al. 2026) focus on
+manipulation tasks that depend on prior states, actions, and
+event sequences. SpaMEM (Liao et al. 2026) and WorldLines
+(Zhang et al. 2026) study how agents track and revise world
+state as objects and relations evolve. In our work, we identify
+the broader challenge underlying these capabilities: actively
+reasoning over accumulated and evolving state to guide task
+decisions throughout execution.
+Procedural task generation and benchmark compilation.
+Procedural generation has substantially expanded the scale of
+embodied environments and tasks. ProcTHOR (Deitke et al.
+2022) generates diverse interactive homes, while GenSim
+(Wang et al. 2024a) and RoboGen (Wang et al. 2024b) gen-
+erate simulation tasks, scenes, demonstrations, and training
+supervision. PARTNR (Chang et al. 2025) and ManiTaskGen
+(Dai et al. 2025) further incorporate simulator grounding
+and feasibility constraints into task generation. As embodied
+agents move toward longer-horizon and more autonomous
+tasks, RoboGraph compiles persistent and evolving state
+dependencies into executable task families.
+Problem Formulation
+Embodied tasks under partial observation. We formu-
+late embodied interaction as a partially observable deci-
+sion process (Kaelbling, Littman, and Cassandra 1998). Let
+the task-relevant world state at time t be a scene graph
+Gt = (Vt, Et, Xt), where nodes Vt represent entities, edges
+Et represent spatial and functional relations, and Xt contains
+node attributes. We denote that a fact is an atomic assertion
+over Gt, e.g., an open drawer, and a base task is
+B = (G0, g, A),
+(1)
+where G0 is the initial state, g is a goal predicate over graphs,
+and A is a set of task-level action schemas, each with state-
+dependent preconditions and effects, a = ⟨Pre(a), Eff(a)⟩.
+The agent never receives the complete graph. At each step,
+the environment returns a task-conditioned view graph
+eGt = O(Gt, ht),
+(2)
+where ht is the interaction history and O exposes the facts
+currently observable given the agent’s past actions. A policy
+selects actions conditioned on the goal, the current view
+graph, and its action history,
+at ∼π(· | g, eGt, a0:t−1).
+(3)
+Let E denote the set of admissible exogenous events, in-
+cluding environment-induced state changes and execution
+
+
+Figure 2: Overview of RoboGraph. (a) Compiler inputs include a task-relevant latent scene graph and a goal predicate. (b)
+RoboGraph encodes spatial, temporal, and dynamic state dependencies into executable symbolic task graphs with controlled
+TSHs, verified through a reference rollout. (c) The compiler generates a baseline instance and intervention-augmented variants.
+(d) During closed-loop execution, the agent observes the partial view graph, selects an action, and updates the latent world state.
+disturbances. At each step, the world evolves according to
+both the agent-selected action and an optional event:
+Gt+1 = T (Gt, at, et),
+et ∈E ∪{∅},
+(4)
+where et denotes an environment-induced transition, e.g., an
+object being relocated, with et = ∅when no such transition
+occurs. Task-relevant facts may therefore change without be-
+ing reflected in eGt until the agent re-observes the affected
+region. A rollout τ succeeds if the agent issues stop in a
+goal-satisfying state within the step budget:
+Succ(τ) = I [ T ≤Tmax, aT = stop, GT |= g ] .
+(5)
+where T denotes the step at which the rollout terminates.
+Definition 1 (state dependency).
+A decision at step t has
+a state dependency on a fact f if actions at t depend on f,
+while f is not recoverable from the current view graph eGt
+alone. State dependencies arise from two sources:
+• A spatial dependency occurs when f is hidden in the
+current state, e.g., behind occluders or inside containers,
+and must be exposed through view-exploring actions.
+• A temporal dependency arises when a fact f, observed at
+an earlier step t′ < t, remains necessary for selecting a
+goal-directed action at step t.
+If an exogenous event changes f during the interval (t′, t),
+the agent’s retained estimate of f becomes stale and must be
+updated before it can support the decision at t.
+Definition 2 (Task-state horizon).
+Let τ ∗be a reference
+solution of a task instance I, i.e., a shortest oracle action
+sequence, and let F be the set of facts on which some action
+decision along τ ∗has a state dependency. The task-state
+horizon (TSH) of I is a tuple:
+H = (Hmaintain, Hexplore, Hupdate),
+(6)
+where
+• Hmaintain is the maximum, over all temporally-dependent
+facts in F, of the number of steps in τ ∗between the
+acquisition of the fact and the last decision it constrains.
+• Hexplore is the maximum, over all spatially-dependent
+facts in F, of the minimal number of view-expanding
+actions required to expose the fact in G0.
+• Hupdate is the number of facts in F invalidated by exoge-
+nous events along τ ∗.
+As all components are computed on τ ∗, TSH is a property of
+the task instance itself and measures the state-management
+burden of efficient execution.
+RoboGraph: A Task-State Horizon Compiler
+Overview. As shown in Figure 2, RoboGraph is a task
+compiler that transforms a task-family specification and a
+source semantic scene graph into an executable task instance
+for closed-loop interaction. Compilation produces:
+I = (G0, g, A, O, Λ) ,
+(7)
+where O specifies how the latent scene graph is compiled
+into the agent’s view, and Λ specifies the exogenous events
+that may occur during execution.
+At run time, the compiled instance maintains the latent
+scene graph Gt, compiles (Gt, ht) into the view graph eGt
+according to Eq. (2), and applies each agent action together
+with any triggered event to update the world state according
+to Eq. (4). The same instance can be executed by the sym-
+bolic backend directly or mapped to simulator backends that
+implement the same task-level action and event semantics.
+Executable scene graph.
+RoboGraph represents each
+task instance as an executable semantic scene graph. Nodes
+represent scene entities, such as rooms, containers, surfaces,
+and objects. Each node stores its affordances and mutable
+state, which determine the applicable actions in A and record
+properties such as openness, location, and ownership. Edges
+represent spatial and functional relations, including contain-
+ment, support, adjacency, and occlusion (see Figure 3).
+The scene graph defines which facts are currently observ-
+able. Containment and occlusion may hide entities until en-
+closing containers are opened or blocking objects are moved
+
+
+Figure 3: Visualization of instantiated RoboGraph during closed-loop evaluation. We illustrate a GPT-5.5 rollout on a cosmetic-
+storage task, in which the agent correctly terminates at step 84 after placing all objects in their locations. At each step, the agent
+observes only the currently visible subgraph and executes a symbolic action. At step 12, open(first drawer) reveals
+the concealer (NO.19) and primer bottle (NO.16); however, the opened first drawer occludes the already-open second drawer
+(NO.5), making it invisible in the next observation of step 13. Some objects like lipstick are composed of assemblable parts.
+aside, with nested constraints requiring sequential resolution.
+In indoor scenes, room boundaries further restrict visibility
+to entities in the agent’s current room.
+Given a task-family specification, RoboGraph constructs
+the initial scene graph G0 and goal predicate g. The result-
+ing scene structure and goal dependencies determine when
+task-relevant facts become observable, how long they remain
+relevant to subsequent decisions, and whether their values
+may change during execution. The TSH of each instance is
+therefore fixed during compilation.
+Compiling partial observations.
+At each step, the obser-
+vation operator derives the current view graph from the world
+graph. Let
+Eblock
+t
+= {e ∈Et : e blocks visibility under Xt}
+(8)
+denotes the active visibility constraints. The visible node set
+V vis
+t
+includes entities in the agent’s current room that are
+reachable without crossing Eblock
+t
+.
+The observation is the induced view graph
+O(Gt, ht) =
+ V vis
+t
+, Et[V vis
+t
+], ρ
+ Xt[V vis
+t
+]
+
+∪ϕ(ht)
+
+, (9)
+where Et[V vis
+t
+] retains relations among visible nodes, ρ se-
+lects observable attributes, and ϕ(ht) provides feedback from
+the preceding action and information revealed by inspection.
+Actions affect subsequent observations by modifying Gt.
+Opening a container, moving an occluder, or entering another
+room changes the next view projection. Facts that leave the
+current view are removed rather than carried forward. Vis-
+ible changes therefore appear in the next view graph, while
+hidden changes remain unobserved until the affected region
+is revealed again. Failed actions leave Gt unchanged and
+provide only failure feedback through ϕ(ht).
+Compiling state transitions.
+RoboGraph compiles the
+rules by which agent actions and exogenous events update
+the world graph from Gt to Gt+1. For each selected action
+at, RoboGraph checks its preconditions Pre(at) against
+the complete graph Gt and applies its effects Eff(at) as a
+graph rewrite. For example, open(drawer) requires the
+drawer to be closed and accessible, and changes its state
+from closed to open. If the preconditions are not satisfied,
+Gt remains unchanged, and the failure outcome is returned.
+Exogenous changes are specified by an event schedule:
+Λ = {λ1, . . . , λK},
+λ = ⟨ψλ, δλ, κλ⟩,
+(10)
+where ψλ is a trigger over the current execution state, δλ is
+the corresponding graph rewrite, and κλ specifies when the
+rewrite is applied. Triggers are defined by task progress, such
+as a successful action or a newly satisfied goal fact, rather
+than by fixed time steps. These events not only affect active
+task state, but also extend task goals.
+RoboGraphBench
+Data analysis. Our benchmark contains 84 source scenes
+from seven task families, including 57 tabletop and 27 in-
+door scenes. Each scene yields one baseline and six in-
+tervention conditions: action failure (I1), state regression
+(I2), completed-subgoal rollback (I3), wrong relocation (I4),
+added occlusion (I5), and an added-object subgoal (I6), pro-
+ducing 588 distinct episodes (399 tabletop and 189 indoor).
+Across the scene graphs, each contains 18.4 nodes, 21.8
+edges, 6.1 occluded nodes, and 14.3 subgoals on average.
+Our final evaluation contains 8820 completed rollouts: 5985
+tabletop rollouts and 2835 indoor rollouts across 15 models.
+More details of the analysis are provided in the Appendix.
+Experiments
+Setup
+Base models. We evaluate 15 foundation models, includ-
+ing 8 closed-source models comprising 2 LLMs, DeepSeek-
+
+
+Model
+Tabletop (399 episodes, 57 scenes)
+Indoor (189 episodes, 27 scenes)
+N s ↓
+SR↑
+SSAL↑
+AER↑
+RAR↓
+SEG↑
+ADR↑
+IRR↑
+N s ↓
+SR↑
+SSAL↑
+AER↑
+RAR↓
+SEG↑
+ADR↑
+IRR↑
+Closed-source models
+DeepSeek-V4 Pro
+50.2
+49.1
+0.406
+94.0
+19.0
+68.6
+13.7
+49.8
+50.9
+23.3
+0.188
+97.0
+12.1
+35.7
+6.0
+23.7
+GLM-5.2
+55.3
+43.6
+0.324
+95.4
+32.0
+53.9
+10.6
+46.7
+57.8
+57.1
+0.305
+97.1
+17.3
+43.7
+6.9
+57.6
+Qwen3.6-Plus
+40.7
+21.1
+0.224
+92.7
+23.1
+56.2
+11.0
+20.6
+61.7
+28.6
+0.132
+98.7
+14.5
+32.7
+5.7
+30.9
+Qwen3.7-Plus
+47.1
+24.3
+0.232
+90.3
+25.9
+55.5
+11.1
+24.7
+51.5
+21.7
+0.076
+97.5
+13.2
+30.0
+6.3
+24.8
+GPT-5.4
+69.5
+23.1
+0.190
+93.6
+47.7
+40.7
+8.3
+25.1
+52.0
+41.8
+0.283
+95.4
+16.7
+35.1
+6.2
+44.2
+Claude Opus 4.7
+48.8
+56.6
+0.439
+89.2
+24.4
+69.1
+14.8
+57.4
+44.5
+80.4
+0.553
+96.9
+13.2
+40.7
+8.6
+81.4
+Gemini 3.1 Pro
+40.2
+62.7
+0.529
+94.1
+13.3
+67.6
+14.7
+63.4
+35.9
+42.3
+0.371
+98.3
+10.9
+32.7
+5.5
+42.8
+GPT-5.5
+40.0
+78.4
+0.689
+97.4
+12.2
+76.9
+16.7
+78.6
+41.5
+82.5
+0.607
+99.4
+10.6
+44.5
+8.6
+81.4
+Open-source models
+Qwen3-VL-8B
+42.1
+1.5
+0.003
+69.7
+46.7
+28.7
+4.7
+2.4
+50.9
+0.5
+0.000
+59.1
+41.0
+13.1
+2.3
+1.1
+Qwen3-VL-32B
+71.7
+9.3
+0.074
+81.6
+51.6
+45.0
+8.3
+11.6
+61.1
+9.0
+0.034
+88.4
+24.8
+35.5
+6.9
+11.3
+InternVL3.5-8B
+96.0
+2.3
+0.003
+31.3
+76.9
+29.4
+4.8
+3.5
+98.5
+0.5
+0.000
+26.1
+77.6
+12.7
+3.5
+1.2
+InternVL3.5-38B
+90.7
+6.3
+0.033
+32.3
+74.1
+30.0
+5.1
+8.4
+84.9
+5.8
+0.039
+63.0
+44.7
+32.2
+6.1
+6.5
+Cosmos-Reason1-7B
+79.0
+0.0
+0.000
+22.6
+63.6
+17.2
+3.1
+0.0
+93.1
+0.0
+0.000
+12.8
+71.7
+6.6
+1.3
+0.0
+RoboBrain2.0-7B
+58.3
+0.0
+0.000
+38.1
+68.7
+22.0
+3.8
+0.0
+80.5
+0.0
+0.000
+11.5
+78.5
+3.9
+0.2
+0.0
+RoboBrain2.0-32B
+64.6
+0.3
+0.000
+51.6
+63.7
+24.7
+4.2
+0.5
+54.5
+0.0
+0.000
+48.8
+54.7
+13.6
+3.1
+0.0
+Table 1: Performance of 15 agentic models under semantic closed-loop evaluation across tabletop and indoor task families.
+Every model is evaluated on 399 tabletop episodes and 189 navigation-enabled indoor episodes. Best and second-best displayed
+values in each column are bolded and underlined, respectively; ties receive the same formatting.
+Figure 4: For each model, we report (1) Normalized Goal Progress (NGP), the normalized fraction of task subgoals completed;
+(2) termination distribution, the proportions of episodes that terminate correctly, prematurely, or neither; and (3) average steps,
+the average number of agent execution steps per trajectory. Results are reported separately for tabletop and indoor tasks.
+V4 Pro (Xu et al. 2026) and GLM-5.2 (Zeng et al. 2026),
+and 6 VLMs, GPT-5.4 (OpenAI 2026a), GPT-5.5 (Ope-
+nAI 2026b), Claude Opus 4.7 (Anthropic 2026), Gemini
+3.1 Pro (Google DeepMind 2026), Qwen3.6-Plus (Qwen
+Team 2026a), and Qwen3.7-Plus (Qwen Team 2026b). Also,
+we evaluate 7 open-source models, covering 4 general-
+purpose VLMs, Qwen3-VL-8B/32B (Bai et al. 2025),
+InternVL3.5-8B/38B (Wang et al. 2025), and 3 VLMs for
+robotics, Cosmos-Reason1-7B (Azzolini et al. 2025) and
+RoboBrain2.0-7B/32B (Team et al. 2025). These models
+span diverse families, scales, and modalities, enabling a com-
+prehensive evaluation across model capabilities. Note that in
+our semantic evaluation setting, visual observations are re-
+placed with symbolic graphs, allowing text-only LLMs to
+operate as closed-loop embodied agents.
+Closed-loop evaluation. We deploy all models within a uni-
+fied agentic harness for closed-loop evaluation. At each step,
+the agent receives the current observation, final task goal,
+available action skills, and a history of its 16 most recent
+actions as context. The agent then selects an action, and re-
+peatedly observes and acts until it emits stop or reaches
+the maximum step limit, e.g., 100 steps in our experiments,
+which largely exceeds the length of oracle trajectories. When
+an action fails, the harness returns the corresponding feed-
+back, enabling failure recovery. Additional details of prompt
+and context are provided in the Appendix.
+Our harness supports two observation interfaces: symbolic
+scene graph and robot-camera images, together with their
+corresponding execution backends. In the symbolic back-
+end, the agent observes only the currently visible view graph
+rather than the complete latent scene graph, preserving par-
+tial observability analogous to real-world perception. As ac-
+tions are executed, newly observable nodes and relations are
+incrementally added to the visible graph. In the simulation
+backend, the agent receives multiple-view camera images
+rendered by the simulator, i.e., RoboTwin 2.0 (Chen et al.
+2025) for tabletop tasks and RoboCasa (Nasiriany et al. 2024)
+for indoor kitchen tasks.
+Metrics. To assess agent state-management performance
+across varying task-state horizons (TSHs), we introduce a
+suite of complementary metrics. First, to evaluate overall
+task completion and execution quality, we use 2 metrics:
+• Task Success Rate (SR, %): the proportion of episodes
+that achieve the task goal and terminate correctly.
+• Success weighted by Symbolic Action Length (SSAL):
+the success-weighted ratio of the symbolic oracle’s short-
+est action-sequence length (Lo) to the agent’s number
+of non-stop action steps (Ns). Detailed formulations are
+provided in the Appendix.
+Second, to assess state-management capability, we introduce
+5 metrics:
+
+
+• Action Executability Rate (AER, %; maintenance):
+the proportion of executable actions whose preconditions
+hold in the current world state.
+• Redundant Action Rate (RAR, %; maintenance): the
+percentage of unnecessary actions that repeat a previously
+attempted action.
+• State Exploration Gain (SEG, %; exploration): the
+percentage of task-relevant spatial dependencies revealed
+by successful exploratory actions.
+• Action-Distance Reduction Rate (ADR, %; explo-
+ration): the average reduction in the symbolic oracle’s
+remaining ordered action distance, measuring how effec-
+tively exploration resolves prerequisite dependencies.
+• Intervention Recovery Rate (IRR, %; updating): the
+proportion of intervention-induced state updates that the
+agent detects and successfully recovers from.
+Besides, we leverage two metrics to measure the ability of
+failure recovery:
+• F1@Recovery Detection (F1@RD, %): the F1 score for
+detecting when failure recovery is required.
+• Acc@Recovery Grounding (Acc@RG, %): the accu-
+racy of grounding the failed action and relevant object.
+Research Questions
+RQ1: How does agent performance vary across the three
+dimensions of state management: maintenance, exploration,
+and updating?
+RQ2: How does the proposed TSH relate to conventional
+action-sequence length and subgoal complexity in character-
+izing long-horizon difficulty?
+RQ3: How does recovery difficulty vary across dynamic
+interventions, and which severely disrupt task completion?
+Main Results
+Overall performance varies across models (RQ1). As
+shown in Table 1, GPT-5.5 achieves the strongest overall per-
+formance across both task families, reaching an SR of 78.4%
+on tabletop tasks and 82.5% on indoor tasks. It also attains
+the highest SSAL, indicating that it completes tasks success-
+fully with action sequences that are comparatively close to
+the symbolic oracle. Gemini 3.1 Pro ranks second in tabletop
+SR at 62.7%, while Claude Opus 4.7 approaches GPT-5.5 on
+indoor tasks with an SR of 80.4%. By contrast, Qwen3.6-
+Plus and Qwen3.7-Plus perform substantially worse on these
+tasks, achieving SRs of no more than 30%, revealing consid-
+erable limitations ontaskswith demandingTSHs.Theperfor-
+mance gap between closed- and open-source models is even
+more pronounced. Among the open-source models, Qwen3-
+VL-32B performs best on tabletop tasks, yet achieves an SR
+of only 9.3%, while Cosmos-Reason1-7B and RoboBrain2.0-
+7B fail to complete any task.
+To better understand these performance gaps, we analyze
+Normalized Goal Progress (NGP), termination distributions,
+and average step counts. As shown in Figure 4, different
+models fail in different ways. Qwen3.6-Plus and Qwen3.7-
+Plus achieve NGPs of approximately 75% on tabletop tasks
+and 60% on indoor tasks, yet frequently terminate before
+Figure 5: Recovery detection and grounding performance
+by action type on tabletop and indoor tasks, measured by
+F1@RD and Acc@RG, respectively.
+Figure 6: Between-scene correlations of oracle action-
+sequence length (Lo), subgoal counts (Ng), and 5 proposed
+state-management metrics with task success rate.
+completing the goal, indicating insufficient exploration of
+unresolved task-relevant states. Gemini 3.1 Pro uses only
+35.9 average steps on indoor tasks, fewer than GPT-5.5’s
+41.5, but its SR is 40.2 points lower. By contrast, GPT-5.4
+reaches the maximum step limit in 52.6% of tabletop rollouts,
+and open-source models frequently exhaust the step budget,
+e.g., InternVL3.5-8B and InternVL3.5-38B average 96.0 and
+90.7 steps per rollout, suggesting prolonged but unproductive
+exploration and poor maintenance.
+State-management
+capabilities
+vary
+across
+models
+(RQ1). For state maintenance, GPT-5.5 achieves the high-
+est AER and the lowest RAR across both task families,
+with an AER/RAR of 97.4%/12.2% on tabletop tasks and
+99.4%/10.6% on indoor tasks. Across models, achieving high
+action executability appears relatively easy, whereas avoid-
+ing redundant actions remains challenging. This discrepancy
+suggests that agents can often select actions whose precon-
+ditions are satisfied, yet struggle to leverage history to recall
+prior action outcomes and maintain an accurate representa-
+tion of the current task state. GPT-5.4 exemplifies this on
+tabletop tasks: despite achieving a 93.6% AER, it repeatedly
+revisits previously attempted actions, resulting in a 47.7%
+RAR and an SR of only 23.1%.
+For state exploration, GPT-5.5 performs best, achieving
+76.9% SEG and 16.7% ADR on tabletop tasks, while Claude
+Opus 4.7 and Gemini 3.1 Pro also achieve competitive re-
+sults. Nearly all models exhibit lower SEG and ADR on
+indoor tasks than on tabletop tasks, whereas AER and RAR
+remain broadly comparable across the two domains. This
+gap reflects the greater resolving demands of spatial and
+temporal dependencies for indoor exploration, where agents
+must first identify the correct room and then reveal the target
+object. Thus, selecting locally executable actions alone is
+insufficient to assess state management.
+For state updating and recovery, GPT-5.5 reaches 78.6%
+IRR for tabletop, while GPT-5.5 and Claude Opus 4.7
+both reach 81.4% for indoor. One intervention type injects
+
+
+Figure 7: Within-scene correlations of 5 proposed state-
+management metrics with task success rate across the models
+evaluated on that scene.
+Intervention
+Domain
+∆SR (pp)
+IRR (%)
+Latency
+I1
+Tabletop
+−1.9
+26.4
+35.8
+Indoor
+−0.7
+28.0
+37.1
+I2
+Tabletop
++0.1
+33.7
+22.6
+Indoor
+−1.0
+31.0
+28.1
+I3
+Tabletop
+−2.7
+28.9
+30.3
+Indoor
+−1.5
+30.6
+29.5
+I4
+Tabletop
++0.9
+31.5
+32.4
+Indoor
+−1.0
+32.0
+30.5
+I5
+Tabletop
+−10.4
+27.6
+27.5
+Indoor
+−4.4
+34.3
+23.9
+I6
+Tabletop
+−4.3
+41.0
+19.4
+Indoor
+−1.2
+43.3
+24.0
+Table 2: Recovery performance by intervention type. ∆SR
+compares each intervention with its paired baseline, and la-
+tency is averaged over successfully recovered rollouts.
+execution-time failures into randomly selected actions. We
+report F1@RD and Acc@RG disaggregated by action type in
+Figure 5. Recovery detection is generally easier than issuing
+accurate recovery action.
+State-management metrics disentangle TSH difficulty
+from model capability (RQ2). Figure 6 presents a between-
+scene analysis. We average results across models within
+each scene and then compare these scene-level averages
+across scenes, indicating which metrics are associated with a
+scene being more difficult for models overall. Oracle action-
+sequence length and subgoal count are only moderately cor-
+related with SR. In comparison, AER is most informative
+on tabletop tasks (ρ = 0.69), whereas RAR is most in-
+formative on indoor tasks (ρ = −0.71). SEG and ADR
+exhibit relatively weak scene-level correlations, suggesting
+that they are less indicative of distinguishing the relative
+difficulty of different scenes. Figure 7 instead presents a
+within-scene analysis. We fix one scene and compute cor-
+relations across models, revealing which metrics distinguish
+successful from unsuccessful models. In this setting, SEG
+and ADR are strongly associated with SR on both tabletop
+tasks, with median correlations of 0.72 and 0.74, and indoor
+tasks, with median correlations of 0.61 and 0.56. Thus, ex-
+ploration metrics clearly distinguish which models handle
+the same scene more effectively. In summary, action length
+and subgoal count characterize coarse task difficulty, whereas
+state-management metrics reveal complementary differences
+in model capability in varying TSHs.
+Occlusion is the most disruptive intervention (RQ3). As
+shown in Table 2, added occlusion causes the largest SR
+decline in both task families, reducing performance by 10.4
+percentage points on tabletop tasks and 4.4 points indoors.
+Figure 8: Visual observation during closed-loop evaluation.
+This suggests that interventions that introduce new spatial
+and temporal dependencies impose particularly demanding
+state-updating requirements. Action failures incur the longest
+recovery latency, at approximately 36 steps, indicating that
+recovery requires not only detecting the state change but also
+repairing its consequences. Note that IRR is computed only
+over rollouts in which an intervention is actually triggered,
+whereas ∆SR compares each intervention against its paired
+no-intervention baseline.
+Extension to Visual Backends
+RoboGraph also supports simulator backends. We evaluate
+8 closed-source models on two matched RoboTwin table-
+top tasks (see Figure 8): desk organization and cosmetics
+storage, using three-view RGB observations from the head,
+right, and left camera, instead of symbolic view graphs. All
+models are evaluated using the same unified harness as in
+the semantic setting. We find that all metrics in the seman-
+tic and visual settings are positively correlated, e.g., Spear-
+man’s ρ = 0.37 for NGP and ρ = 0.75 for ADR. On the
+more challenging cosmetics storage task, where performance
+varies more widely across models, the correlation increases
+to ρ = 0.63. Task success rates are substantially lower in
+simulation, likely reflecting the additional demands of vi-
+sual grounding and state decoding. These results suggest
+that symbolic view graphs primarily isolate planning and
+state-management quality, whereas simulation additionally
+evaluates perception and precise physical execution.
+Conclusion
+In this paper, we introduce a complementary perspective
+on long-horizon difficulty in embodied tasks: the span over
+which an agent must maintain known state, explore hid-
+den state, and update stale state. We formalize this span
+as the task-state horizon (TSH), develop RoboGraph to
+compile controlled TSHs into executable tasks, and construct
+RoboGraphBench for closed-loop evaluation. Oursystem-
+atic analysis of 8820 rollouts across tabletop and indoor do-
+mains and 15 foundation models shows that TSH-based state-
+management measures are more closely associated with task
+success than conventional proxies based on action-sequence
+length or subgoal count. We hope that TSH-controlled task
+compilation will become a standard framework for evaluat-
+ing and training embodied agents that must act reliably in a
+dynamic and evolving world.
+References
+Ahn, M.; Brohan, A.; Brown, N.; Chebotar, Y.; Cortes, O.;
+David, B.; Finn, C.; Fu, C.; Gopalakrishnan, K.; Hausman,
+
+
+K.; et al. 2022. Do as i can, not as i say: Grounding language
+in robotic affordances. arXiv preprint arXiv:2204.01691.
+Anthropic. 2026. Introducing Claude Opus 4.7. https://www.
+anthropic.com/news/claude-opus-4-7.
+Azzolini, A.; Bai, J.; Brandon, H.; Cao, J.; Chattopadhyay, P.;
+Chen, H.; Chu, J.; Cui, Y.; Diamond, J.; Ding, Y.; et al. 2025.
+Cosmos-reason1: From physical common sense to embodied
+reasoning. arXiv preprint arXiv:2503.15558.
+Bai, S.; Cai, Y.; Chen, R.; Chen, K.; Chen, X.; Cheng, Z.;
+Deng, L.; Ding, W.; Gao, C.; Ge, C.; et al. 2025. Qwen3-vl
+technical report. arXiv preprint arXiv:2511.21631.
+Chang, M.; Chhablani, G.; Clegg, A.; Dallaire Cote, M.; De-
+sai, R.; Hlavac, M.; Karashchuk, V.; Krantz, J.; Mottaghi,
+R.; Parashar, P.; et al. 2025. Partnr: A benchmark for plan-
+ning and reasoning in embodied multi-agent tasks. In Inter-
+national Conference on Learning Representations, volume
+2025, 65205–65268.
+Chen, T.; Chen, Z.; Chen, B.; Cai, Z.; Liu, Y.; Li, Z.; Liang,
+Q.; Lin, X.; Ge, Y.; Gu, Z.; et al. 2025. Robotwin 2.0: A scal-
+able data generator and benchmark with strong domain ran-
+domization for robust bimanual robotic manipulation. arXiv
+preprint arXiv:2506.18088.
+Cherepanov, E.; Kachaev, N.; Kovalev, A.; and Panov, A. I.
+2026. Memory, Benchmark & Robots: A Benchmark for
+Solving Complex Tasks with Reinforcement Learning. In
+The Fourteenth International Conference on Learning Rep-
+resentations.
+Dai, L.; Wang, H.; Wan, W.; and Su, H. 2025. Manitaskgen: A
+comprehensive task generator for benchmarking and improv-
+ing vision-language agents on embodied decision-making.
+arXiv preprint arXiv:2505.20726.
+Dai, Y.; Fu, H.; Lee, J.; Liu, Y.; Zhang, H.; Yang, J.; Finn,
+C.; Fazeli, N.; and Chai, J. 2026. RoboMME: Benchmarking
+and Understanding Memory for Robotic Generalist Policies.
+arXiv preprint arXiv:2603.04639.
+Deitke, M.; VanderBilt, E.; Herrasti, A.; Weihs, L.; Salvador,
+J.; Ehsani, K.; Han, W.; Kolve, E.; Farhadi, A.; Kembhavi, A.;
+and Mottaghi, R. 2022. ProcTHOR: Large-Scale Embodied
+AI Using Procedural Generation. In NeurIPS. Outstanding
+Paper Award.
+Google DeepMind. 2026. Gemini 3.1 Pro Model Card. https:
+//deepmind.google/models/model-cards/gemini-3-1-pro/.
+Hu, W.; Hong, Y.; Wang, Y.; Gao, L.; Wei, Z.; Yao, X.; Peng,
+N.; Bitton, Y.; Szpektor, I.; and Chang, K.-W. 2026. 3dllm-
+mem: Long-term spatial-temporal memory for embodied 3d
+large language model. Advances in Neural Information Pro-
+cessing Systems, 38: 67856–67884.
+Intelligence, P.; Ai, B.; Amin, A.; Aniceto, R.; Balakrishna,
+A.; Balke, G.; Black, K.; Bokinsky, G.; Cao, S.; Charbon-
+nier, T.; et al. 2026. π0.7: a Steerable Generalist Robotic
+Foundation Model with Emergent Capabilities, 2026. URL
+https://arxiv.org/abs/2604.15483.
+Intelligence, P.; Black, K.; Brown, N.; Darpinian, J.; Dha-
+balia, K.; Driess, D.; Esmail, A.; Equi, M.; Finn, C.;
+Fusai, N.; et al. 2025.
+π0.5: a Vision-Language-Action
+Model with Open-World Generalization.
+arXiv preprint
+arXiv:2504.16054.
+Kaelbling, L. P.; Littman, M. L.; and Cassandra, A. R. 1998.
+Planning and acting in partially observable stochastic do-
+mains. Artificial intelligence, 101(1-2): 99–134.
+Lei, H.; Song, W.; Zhang, H.; Pei, J.; Chen, J.; Yan, H.; Zhao,
+H.; Ding, P.; Zhang, Z.; Huang, L.; Wang, D.; Wang, Y.;
+and Li, H. 2026. RoboMemArena: A Comprehensive and
+Challenging Robotic Memory Benchmark. arXiv preprint
+arXiv:2605.10921.
+Li, C.; Zhang, R.; Wong, J.; Gokmen, C.; Srivastava, S.;
+Martín-Martín, R.; Wang, C.; Levine, G.; Ai, W.; Martinez,
+B.; et al. 2024. Behavior-1k: A human-centered, embodied
+ai benchmark with 1,000 everyday activities and realistic
+simulation. arXiv preprint arXiv:2403.09227.
+Liao, C.-T.; Xiao, X.; Meng, C.; Chen, Z.; Qiao, Y.; Zhou,
+W.; Wang, T.; Zheng, X.; and Cao, X. 2026.
+Spamem:
+Benchmarking dynamic spatial reasoning via perception-
+memory integration in embodied environments.
+arXiv
+preprint arXiv:2604.22409.
+Nasiriany, S.; Maddukuri, A.; Zhang, L.; Parikh, A.; Lo, A.;
+Joshi, A.; Mandlekar, A.; and Zhu, Y. 2024. Robocasa: Large-
+scale simulation of everyday tasks for generalist robots. arXiv
+preprint arXiv:2406.02523.
+OpenAI. 2026a.
+GPT-5.4 Thinking System Card.
+https:
+//deploymentsafety.openai.com/gpt-5-4-thinking.
+OpenAI. 2026b. GPT-5.5 System Card. https://openai.com/
+index/gpt-5-5-system-card/.
+Puig, X.; Ra, K.; Boben, M.; Li, J.; Wang, T.; Fidler, S.; and
+Torralba, A. 2018. Virtualhome: Simulating household ac-
+tivities via programs. In Proceedings of the IEEE conference
+on computer vision and pattern recognition, 8494–8502.
+Qwen Team. 2026a.
+Qwen3.6-Plus: Towards Real World
+Agents.
+Qwen Team. 2026b. Qwen3.7-Plus: Multimodal Agent In-
+telligence. https://qwen.ai/blog?id=qwen3.7-plus.
+Shridhar, M.; Thomason, J.; Gordon, D.; Bisk, Y.; Han, W.;
+Mottaghi, R.; Zettlemoyer, L.; and Fox, D. 2020a. Alfred: A
+benchmark for interpreting grounded instructions for every-
+day tasks. In Proceedings of the IEEE/CVF conference on
+computer vision and pattern recognition, 10740–10749.
+Shridhar, M.; Yuan, X.; Côté, M.-A.; Bisk, Y.; Trischler,
+A.; and Hausknecht, M. 2020b.
+Alfworld: Aligning text
+and embodied environments for interactive learning. arXiv
+preprint arXiv:2010.03768.
+Srivastava, S.; Li, C.; Lingelbach, M.; Martín-Martín, R.;
+Xia, F.; Vainio, K. E.; Lian, Z.; Gokmen, C.; Buch, S.; Liu,
+K.; et al. 2022. Behavior: Benchmark for everyday household
+activities in virtual, interactive, and ecological environments.
+In Conference on robot learning, 477–490. PMLR.
+Team, B. R.; Cao, M.; Tan, H.; Ji, Y.; Chen, X.; Lin, M.; Li,
+Z.; Cao, Z.; Wang, P.; Zhou, E.; et al. 2025. Robobrain 2.0
+technical report. arXiv preprint arXiv:2507.02029.
+Wang, L.; Ling, Y.; Yuan, Z.; Shridhar, M.; Bao, C.; Qin, Y.;
+Wang, B.; Xu, H.; and Wang, X. 2024a. Gensim: Generating
+robotic simulation tasks via large language models. In Inter-
+national Conference on Learning Representations, volume
+2024, 4890–4924.
+
+
+Wang, Q.; Li, M.; Guan, J.; Ye, J.; Xie, S.; Liu, Y.; Chen, J.;
+Liang, Z.; Zhang, J.; Hu, X.; et al. 2026a. Qwen-vla: Unifying
+vision-language-action modeling across tasks, environments,
+and robot embodiments. arXiv preprint arXiv:2605.30280.
+Wang, S.; Liu, B.; Gao, Z.; Ma, L.; Wang, X.; Xie, Y.; and
+Tan, X. 2026b. Explore with Long-term Memory: A Bench-
+mark and Multimodal LLM-based Reinforcement Learning
+Framework for Embodied Exploration. In Proceedings of
+the IEEE/CVF Computer Vision and Pattern Recognition
+(CVPR).
+Wang, W.; Gao, Z.; Gu, L.; Pu, H.; Cui, L.; Wei, X.; Liu, Z.;
+Jing, L.; Ye, S.; Shao, J.; et al. 2025. Internvl3. 5: Advancing
+open-source multimodal models in versatility, reasoning, and
+efficiency. arXiv preprint arXiv:2508.18265.
+Wang, Y.; Xian, Z.; Chen, F.; Wang, T.-H.; Wang, Y.; Fragki-
+adaki, K.; Erickson, Z.; Held, D.; and Gan, C. 2024b. Robo-
+Gen: towards unleashing infinite data for automated robot
+learning via generative simulation. In Proceedings of the
+41st International Conference on Machine Learning, 51936–
+51983.
+Wu, W.; Lu, F.; Wang, Y.; Yang, S.; Liu, S.; Wang, F.; Zhu,
+Q.; Sun, H.; Wang, Y.; Ma, S.; et al. 2026. A Pragmatic VLA
+Foundation Model. arXiv preprint arXiv:2601.18692.
+Xu, A.; Lin, B.; Xue, B.; Wang, B.; Xu, B.; Wu, B.; Zhang,
+B.; Lin, C.; Dong, C.; Ling, C.; et al. 2026. Deepseek-v4:
+Towards highly efficient million-token context intelligence.
+arXiv preprint arXiv:2606.19348.
+Yadav, K.; Ali, Y.; Gupta, G.; Gal, Y.; and Kira, Z. 2026.
+FindingDory: A Benchmark to Evaluate Memory in Embod-
+ied Agents. In European Conference on Computer Vision.
+Zeng, A.; Lv, X.; Hou, Z.; Du, Z.; Zheng, Q.; Chen, B.;
+Yin, D.; Ge, C.; Huang, C.; Xie, C.; et al. 2026. Glm-5:
+from vibe coding to agentic engineering.
+arXiv preprint
+arXiv:2602.15763.
+Zhang, L.; Wang, Y.; Gu, H.; Hamidizadeh, A.; Zhang, Z.;
+Liu, Y.; Wang, Y.; Bravo, D. G. A.; Dong, J.; Zhou, S.;
+et al. 2025. Et-plan-bench: Embodied task-level planning
+benchmark towards spatial-temporal cognition with founda-
+tion models. In 2025 IEEE/RSJ International Conference on
+Intelligent Robots and Systems (IROS), 21566–21573. IEEE.
+Zhang, Y.; Su, J.; Huang, H.; Chang, Y.; Zhou, T.; Xu, X.;
+Xu, Y.; Li, Y.; Li, Z.; and Chen, Y.-C. 2026. Worldlines:
+Benchmarking and modeling long-horizon stateful embodied
+agents. arXiv preprint arXiv:2606.18847.
+Zhu, Z.; Guo, L.; Mei, Y.; Pang, B.; Zhang, Z.; He, X.;
+Ji, R.; and Liu, J. 2026. When Robots Do the Chores: A
+Benchmark and Agent for Long-Horizon Household Task
+Execution. arXiv preprint arXiv:2605.14504.
+
+
+Benchmark and Data Analysis
+Compiled task instances. As mentioned in the paper,
+RoboGraph compiles a task-family specification and a
+source scene graph into an executable instance
+I = (G0, g, A, Λ),
+(11)
+where G0 is the initial latent scene graph,g is goal predicates,
+A is the action skill, and Λ is an event schedule.
+Dataset composition. Table 3 reports the source-scene and
+episode coverage. The 84 source scenes instantiate one base-
+line and six intervention conditions each, yielding 588 inde-
+pendent episodes. Across all scene graphs, there are 1544
+node entities and 1829 directed edge relations. On aver-
+age, a graph contains 18.4 ± 3.3 nodes, 21.8 ± 6.1 edges,
+and 6.1 ± 1.8 initially occluded nodes. The task specifica-
+tions contain 1200 logical goal predicates, corresponding to
+14.3 ± 4.1 subgoal counts per scene. The average symbolic
+oracle action-sequence length is 21.7 ± 5.4 actions across
+the 84 source scenes.
+Given an initial state, we compute the ordered action dis-
+tance used in ADR as
+Cdistance(G0) = Cgoal(G0) + Cpre(G0),
+where Cdistance(G0) counts the actions that directly satisfy
+currently unsatisfied goal predicates, and Cpre(G0) counts
+the prerequisite actions required to access the relevant enti-
+ties and execute those goal-directed actions. Such prerequi-
+sites include navigation, opening closed containers, remov-
+ing occluders, and acquiring objects for manipulation. Pre-
+requisites shared by multiple goal predicates are counted only
+once. For example, consider a tabletop task with the goals
+INSIDE(red pen, pencil case) ∧CLOSED(pencil case).
+Suppose that the red pen is initially occluded by a book, the
+pencil case is open, and both objects are located in the agent’s
+current room. A valid action sequence is
+π = [ move_aside(book), grab(red pen),
+putin(red pen, pencil case), close(pencil case)].
+The initial action distance is therefore
+Cdistance(G0) = 1 + 1 + 1 + 1 = 4.
+If both the red pen and the pencil case are instead located
+in an adjacent room, one additional walk action is required,
+yielding Cdistance(G0) = 5. If the pencil case is initially
+closed, an additional open action must be executed before
+putin; the case must subsequently be closed again to satisfy
+the CLOSED predicate. This ordered interaction exemplifies
+a temporal dependency. Across all 84 source scenes, the
+average ordered action distance is 24.3 ± 5.6.
+Event schedule. Dynamic changes are compiled into
+Λ = {λ1, . . . , λK},
+λ = ⟨ψλ, δλ, κλ⟩,
+(12)
+where ψλ is a trigger over the current execution state, δλ is
+the corresponding graph rewrite, and κλ specifies when the
+rewrite is applied. Triggers refer to semantic progress, such
+as the first normally executable action of a type or the first
+satisfied placement fact, rather than by fixed time steps.
+Task family
+Tabletop
+Indoor
+Sources
+Episodes
+Buffet-tray sorting
+7
+7
+14
+98
+Cosmetics storage
+10
+0
+10
+70
+Desk organization
+10
+0
+10
+70
+Dining-table organization
+10
+0
+10
+70
+Food packing
+0
+10
+10
+70
+Fridge-condiment loading
+10
+10
+20
+140
+Toy organization
+10
+0
+10
+70
+Total
+57
+27
+84
+588
+Table 3: Task composition in RoboGraphBench. Each task
+comprises one base scene and six mutually exclusive inter-
+vention conditions derived from that scene.
+Table 4 details the six event types. “Triggered rollouts”
+counts evaluated rollouts in which the event fired at least
+once, out of 855 tabletop and 405 indoor intervention rollouts
+per event type. This rollout-level convention is important for
+I1: its trigger may fire once for each distinct action type
+within the same rollout, whereas I2–I6 are applied at most
+once per rollout.
+Closed-Loop Evaluation Harness
+Interaction protocol. All models run in the same agentic
+harness. At step t, the backend first applies any event in
+Λ whose trigger is satisfied, projects the latent state into
+the policy observation, and constructs the request payload.
+The model emits one typed action; the backend checks its
+preconditions against the complete latent state, applies its
+effect if executable, and returns the physical or symbolic
+event outcome.
+The next request contains the 16 most recent inference
+actions and their outcomes. Interaction terminates when the
+model emits stop or reaches 100 steps.
+The policy receives an action-skill catalog and must
+ground each skill’s arguments in the current observation. It
+is not provided with a list of grounded valid actions, thereby
+adhering to the open-world formulation. The symbolic policy
+receives only visible nodes and relations, while the complete
+latent graph is retained internally by the backend only for
+transition execution and metric computation.
+System prompt. The agent uses the following system
+prompt:
+You are a policy for high-level
+embodied task evaluation.
+Choose exactly one semantic action
+using the action catalog and the
+provided observation.
+Output strict JSON only.
+Complete action catalog. Table 5 expands every field of ev-
+ery action catalog entry that can appear in a closed-loop
+evaluation request. Tabletop requests contain ten actions,
+while navigation-enabled indoor requests additionally con-
+tain walk.
+Complete user payload. The user message contains a
+text block formed by serializing the following object. The
+action_catalog object contains the complete records in
+Table 5 and all keys are shown explicitly below. Figures 10–
+12 partition the serialized JSON format.
+
+
+Triggered rollouts
+ID
+Event
+Trigger ψλ
+State update δλ
+T / 855
+I / 405
+All / 1260
+I1
+Action failure
+First otherwise successful execution
+of each action type; at most once per
+action name.
+Suppress the action effect, leave Gt unchanged, and return
+typed failure feedback. The agent must retry or replan.
+840
+389
+1,229
+I2
+State regression
+First achieved a reversible node state,
+such as an opened container, after the
+minimum-step guard.
+Reset one node attribute (e.g., open, closed, or
+moved_aside) to its prior value.
+689
+348
+1,037
+I3
+Completed-subgoal rollback
+Currently satisfied object-placement
+goal fact.
+Remove the satisfied ON/INSIDE relation and relocate the
+object to a valid non-goal staging surface.
+744
+346
+1,090
+I4
+Wrong relocation
+Currently satisfied object-inside-the-
+container goal fact.
+Update the object’s location relative to another visible, plau-
+sible, but wrong container.
+731
+338
+1,069
+I5
+Added occlusion
+Eligible mid-episode blocker–target
+pair whose occlusion is resolvable by
+an available action schema.
+Move a goal-relevant object behind a blocker and add an
+active OCCLUDES edge; recovery may require open or
+move_aside followed by placement restoration.
+518
+108
+626
+I6
+Added object
+A source object’s local goal becomes
+satisfied, or a designated container
+reaches its capacity condition.
+Add an object node and staging relation, then extend the
+active goal by an inherited placement rule (74 scenes) or
+activate an existing capacity-bound goal (10 scenes).
+490
+245
+735
+Table 4: Intervention semantics and observed trigger coverage over the full 8820-rollout evaluation. T and I denote tabletop and
+indoor, respectively. Counts are the numbers of rollouts with at least one applied intervention.
+For visual evaluation, the system prompt and all non-
+observation fields in the user prompt remain unchanged.
+The adapter replaces current_observation with RGB
+camera references and appends the corresponding images to
+the user message.
+Metric Formulation
+Success weighted by Symbolic Action Length. Let Sr ∈
+{0, 1} indicate that rollout r both satisfies the final goal
+and terminates with a correct stop. Let Lo,r be the exact
+symbolic oracle’s shortest action-sequence length and let
+Ns,r =
+Tr
+X
+t=1
+1[at̸ = stop]
+(13)
+be the model’s number of non-stop action steps. We define
+SSALr = Sr
+Lo,r
+max(Lo,r, Ns,r).
+(14)
+Thus, unsuccessful rollouts receive zero, successful oracle-
+length rollouts receive one, and additional non-stop actions
+reduce the score. The maximum in the denominator keeps
+the metric in [0, 1] if an observed execution is shorter than
+the symbolic reference.
+SR and the state-management metrics in Table 1 average
+over the baseline and all six intervention conditions. SSAL
+in Table 1 is averaged over the baseline condition only.
+Simulation-Backend Rollout Visualization
+Successful physical rollout. Figure 13 visualizes ev-
+ery head-camera observation from a successful 49-step
+RoboTwin backend-validation rollout in assisted execution
+controller, including the initial frame. The trajectory con-
+tains injected failures and explicit recovery transitions be-
+fore completing all object placements at step 47, restoring
+the required closed state at step 48, and emitting stop at
+step 49.
+Step-level model outputs. Table 9 reports the issued action
+and the complete raw_response stored for every action
+step in the same rollout.
+Per-Scene Results and Difficulty Analysis
+Difficulty definition. We define empirical scene difficulty by
+mean SR over all 15 models and all seven conditions for that
+scene. NGP is reported alongside SR to distinguish complete
+failure from substantial partial progress.
+Which scenes are difficult? Four of the five hardest tabletop
+scenes are cosmetics-storage instances. Cosmetics-16
+and Cosmetics-1 each attain only 4.8% SR, despite NGPs
+of 46.6% and 52.8%, respectively. This gap indicates that
+agents often make meaningful progress but fail to maintain
+and complete the full 20-unit goal. At the task-family level,
+cosmetics storage is the hardest tabletop family (11.8% SR),
+followed by dining-table organization (23.4% SR). Both also
+have high RARs, 56.8% and 56.1%, suggesting that repeated
+manipulation is a major failure mode.
+For indoor tasks, FoodPack-I4 is hardest at 5.7% SR,
+followed by three fridge-condiment scenes with SR no higher
+than 7.6%. Aggregated over scenes, fridge-condiment load-
+ing is the hardest indoor family at 16.9% SR and has the
+highest indoor RAR at 39.2%. Its difficulty is consistent
+with the need to coordinate room-level navigation, container
+opening and closing, and capacity-aware placement, which
+jointly involve both spatial and temporal dependencies.
+Complete per-scene results. Table 8 reports all 84 scenes
+and per-scene results averaged over all 15 models and seven
+conditions. Scenes are ordered from lower to higher SR
+within each domain.
+
+
+Figure 9: Scenes ranked from hardest to easiest by mean SR over 15 models and seven conditions. NGP reveals that many low-SR
+scenes still permit partial progress. The shaded region and numbered key identify the five hardest scenes in each domain.
+Action
+Parameters
+Description
+Free
+Held
+Hand result
+FI
+observe
+—
+Refresh the current observation without changing object state.
+0
+No
+hands unchanged
+No
+walk†
+target
+Move to an adjacent room in a navigation-enabled indoor scene.
+0
+No
+hands unchanged
+Yes
+open
+container
+Open a visible closed openable container or reveal-capable object.
+2
+No
+hands unchanged
+Yes
+close
+container
+Close a visible open openable container.
+2
+No
+hands unchanged
+Yes
+press
+object
+Press a visible reachable object with PRESSABLE affordance.
+1
+No
+hands unchanged
+Yes
+grab
+object
+Try to hold a visible reachable grabbable movable object; loaded
+carriers may reject the attempt.
+1
+No
+occupies one hand
+Yes
+attach
+part, target
+Attach two visible or held compatible part nodes; use this action
+to satisfy ASSEMBLED goals.
+2
+No
+two-hand coordination
+Yes
+puton
+object, target
+Place a held object on a visible surface without creating a self-
+placement or placement cycle.
+0
+Yes
+frees one hand
+Yes
+putin
+object,
+con-
+tainer
+Place a held object inside a visible container that is open if open-
+able, without creating a self-containment or containment cycle.
+0
+Yes
+frees one hand
+Yes
+move_aside
+object
+Move a visible movable blocker aside so hidden nodes may be-
+come visible.
+1
+No
+hands unchanged
+Yes
+stop
+—
+End the episode and submit the current state for success evaluation.
+0
+No
+hands unchanged
+No
+Free is required_free_hands; Held is held_object_required; FI is failure_injectable. †walk is included only for navigation-enabled indoor scenes.
+Table 5: Complete action catalog exposed by the closed-loop evaluation harness. Each row corresponds to the serialized fields
+of one catalog entry: description, parameters, hand-usage, and injectable failure.
+Domain Scene
+Task family
+SR NGP Lo
+Ng
+Tabletop Cosmetics-16 Cosmetics storage
+4.8
+46.6
+30
+20
+Cosmetics-1
+Cosmetics storage
+4.8
+52.8
+28
+20
+Cosmetics-14 Cosmetics storage
+5.7
+38.5
+30
+20
+Cosmetics-9
+Cosmetics storage
+8.6
+40.1
+30
+20
+Dining-8
+Dining-table organization
+9.5
+39.9
+19
+9
+Indoor
+FoodPack-I4
+Food packing
+5.7
+29.3
+22
+12
+Fridge-I3
+Fridge-condiment loading
+6.7
+39.9
+23
+14
+Fridge-I1
+Fridge-condiment loading
+7.6
+29.3
+24
+14
+Fridge-I8
+Fridge-condiment loading
+7.6
+40.4
+24
+14
+Buffet-I7
+Buffet-tray sorting
+10.5
+39.4
+18
+10
+Table 6: The five hardest scenes in each domain. SR and NGP are
+percentages averaged over all 15 models and seven conditions; Lo
+and Ng are the symbolic oracle length and subgoal count.
+Domain Task family
+Scenes
+SR NGP RAR
+Indoor
+Buffet-tray sorting
+7 31.4
+49.8
+26.8
+Indoor
+Food packing
+10 32.0
+46.2
+31.9
+Indoor
+Fridge-condiment loading
+10 16.9
+44.7
+39.2
+Tabletop Buffet-tray sorting
+7 41.1
+59.4
+33.2
+Tabletop Cosmetics storage
+10 11.8
+46.1
+56.8
+Tabletop Desk organization
+10 25.7
+58.7
+42.3
+Tabletop Dining-table organization
+10 23.4
+53.8
+56.1
+Tabletop Fridge-condiment loading
+10 25.0
+52.5
+34.2
+Tabletop Toy organization
+10 29.0
+64.1
+30.4
+Table 7: Results aggregated by task family. SR, NGP, and
+RAR are percentages averaged over all scene–model pairs
+and seven conditions.
+
+
+{
+"task": <high-level task title>,
+"task_type": <task-family identifier>,
+"settings": [<tabletop or indoor settings>],
+"success_criterion": <active symbolic goal g_t>,
+"step": <t>,
+"action_catalog": {
+"observe":
+<complete catalog record>,
+"walk":
+<complete record; indoor navigation only>,
+"open":
+<complete catalog record>,
+"close":
+<complete catalog record>,
+"press":
+<complete catalog record>,
+"grab":
+<complete catalog record>,
+"attach":
+<complete catalog record>,
+"puton":
+<complete catalog record>,
+"putin":
+<complete catalog record>,
+"move_aside": <complete catalog record>,
+"stop":
+<complete catalog record>
+},
+"action_constraints": [
+"Choose exactly one action using action_catalog and the provided
+observation.",
+"Ground object, target, and node_ids in the visual observation and task
+context.",
+"Do not assume that a candidate action list is available.",
+"Treat success_criterion as the authoritative task goal; task is only a
+high-level title.",
+"Treat recover as an internal transition, not as a second physical
+action.",
+"The current observation was captured after the previous task action and
+before the current action.",
+"Use the current observation to assess the most recent task action in
+recent_history; do not use that decision’s prior recovery value as its
+outcome.",
+"Set recovery.required=true when the current observation shows that the
+most recent task action failed and the selected current action corrects
+that failure’s consequences or retries the failed action.",
+"Set recovery.required=false when the current observation shows that it
+succeeded."
+]
+}
+Figure 10: Closed-loop user payload, part 1 of 3: task fields, the complete set of action-catalog keys, and all symbolic action
+constraints.
+
+
+{
+"observation_timing": {
+"current_observation":
+"after the previous task action, before the selected current action",
+"recovery_assessment":
+"judge the previous task action from the current observation"
+},
+"recent_history": [
+{
+"step": <t-k>,
+"action": {
+"name": <previous semantic action>,
+"node_ids": [<ordered grounded identifiers>]
+},
+"event": {
+"status": <success or failure>,
+"failure_type": <typed failure or null>
+}
+}
+// the 16 most recent inference steps
+],
+"current_observation": {
+"visible_nodes": [
+{
+"id": <node identifier>,
+"name": <node name>,
+"category": <node category>,
+"open": <boolean, when applicable>,
+"assembled": <boolean, when applicable>,
+"pressed": <boolean, when applicable>,
+"is_full": <boolean, when applicable>
+}
+],
+"visible_edges": [
+{"from": <visible id>, "to": <visible id>, "relation": <relation>}
+],
+"held_objects": [{"id": <held id>, "name": <held name>}],
+"robot": {
+"hands": <left/right hand state>,
+"navigation_enabled": <boolean, when applicable>,
+"current_room": <room id, when applicable>,
+"adjacent_rooms": [<room ids, when applicable>]
+}
+}
+}
+Figure 11: Closed-loop user payload, part 2 of 3: observation timing, the 16-step inference-history window, and the partial
+visible-graph observation.
+
+
+{
+"output_schema": {
+"reason":
+"short rationale that assesses the previous action outcome from the
+current observation, then explains the selected current action",
+"recovery": {
+"required":
+"true when the current observation shows the previous task action
+failed and this action corrects its consequences or retries it",
+"failed_action":
+"previous task action name when required, otherwise null",
+"failed_node_ids":
+"node_ids of the previous failed action when required, otherwise [];
+order is ignored for attach and preserved for directional actions"
+},
+"action": {
+"name": "one semantic action name from action_catalog",
+"object": "observed object identifier when applicable",
+"target": "observed target identifier when applicable",
+"node_ids":
+"ordered observed object and target identifiers when applicable"
+}
+}
+}
+Figure 12: Closed-loop user payload, part 3 of 3: the complete structured output schema.
+
+
+Table 8: Per-scene results averaged over all 15 models and seven conditions. Scenes are ordered from lower to higher SR within
+each domain.
+Domain
+Scene
+Family
+SR
+NGP
+SSAL
+AER
+RAR
+SEG
+ADR
+IRR
+Lo
+Ng
+T
+Cosmetics-16
+Cosmetics
+4.8
+46.6
+0.034
+61.6
+54.8
+41.5
+7.6
+4.4
+30
+20
+T
+Cosmetics-1
+Cosmetics
+4.8
+52.8
+0.000
+64.8
+48.0
+42.7
+5.8
+5.6
+28
+20
+T
+Cosmetics-14
+Cosmetics
+5.7
+38.5
+0.060
+62.3
+64.4
+36.1
+6.1
+5.0
+30
+20
+T
+Cosmetics-9
+Cosmetics
+8.6
+40.1
+0.000
+62.8
+63.2
+36.0
+6.7
+10.7
+30
+20
+T
+Cosmetics-10
+Cosmetics
+9.5
+39.0
+0.053
+63.4
+60.3
+42.2
+8.4
+10.0
+30
+20
+T
+Dining-8
+Dining
+9.5
+39.9
+0.057
+59.6
+72.3
+23.4
+7.4
+16.3
+19
+9
+T
+Fridge-T9
+Fridge
+9.5
+44.6
+0.068
+66.5
+38.1
+58.3
+20.7
+9.1
+20
+14
+T
+Cosmetics-13
+Cosmetics
+13.3
+41.5
+0.059
+67.4
+54.5
+35.4
+7.3
+13.6
+28
+20
+T
+Cosmetics-12
+Cosmetics
+14.3
+47.3
+0.061
+65.7
+60.2
+42.3
+7.8
+14.4
+30
+20
+T
+Toy-B2
+Toy
+14.3
+59.8
+0.172
+69.2
+36.2
+51.8
+5.6
+14.3
+31
+16
+T
+Dining-7
+Dining
+14.3
+63.1
+0.089
+59.8
+51.9
+13.0
+2.5
+16.4
+18
+9
+T
+Cosmetics-15
+Cosmetics
+15.2
+48.3
+0.067
+66.2
+58.6
+41.6
+7.7
+15.6
+30
+20
+T
+Toy-A1
+Toy
+16.2
+64.3
+0.119
+72.6
+29.1
+34.7
+3.5
+16.7
+29
+16
+T
+Dining-10
+Dining
+16.2
+44.2
+0.053
+70.2
+60.7
+23.7
+7.5
+19.3
+19
+9
+T
+Desk-7
+Desk
+17.1
+48.4
+0.120
+72.1
+50.1
+50.8
+10.9
+16.7
+24
+21
+T
+Toy-B1
+Toy
+17.1
+61.8
+0.239
+75.9
+25.0
+27.8
+2.9
+14.7
+29
+16
+T
+Desk-4
+Desk
+18.1
+58.2
+0.102
+71.4
+44.3
+46.3
+11.0
+18.9
+24
+21
+T
+Dining-9
+Dining
+19.0
+49.0
+0.176
+56.3
+60.4
+42.5
+9.5
+19.0
+19
+9
+T
+Fridge-T2
+Fridge
+20.0
+46.5
+0.208
+70.7
+40.5
+64.6
+16.0
+19.8
+19
+14
+T
+Cosmetics-4
+Cosmetics
+20.0
+56.2
+0.138
+66.7
+53.3
+42.0
+6.4
+20.5
+30
+20
+T
+Desk-2
+Desk
+20.0
+67.4
+0.094
+71.1
+45.8
+50.7
+6.5
+20.0
+22
+21
+T
+Toy-A5
+Toy
+21.0
+61.3
+0.192
+76.8
+23.9
+36.8
+3.6
+21.1
+31
+16
+T
+Toy-A2
+Toy
+21.0
+65.3
+0.172
+78.5
+26.7
+27.0
+1.9
+21.1
+29
+16
+T
+Fridge-T8
+Fridge
+21.9
+47.8
+0.230
+72.5
+34.3
+64.6
+20.4
+21.3
+21
+14
+T
+Cosmetics-11
+Cosmetics
+21.9
+50.3
+0.204
+67.8
+51.0
+40.6
+6.9
+21.3
+29
+20
+T
+Desk-11
+Desk
+21.9
+55.8
+0.159
+72.2
+47.0
+52.2
+10.6
+22.2
+24
+21
+T
+Desk-15
+Desk
+21.9
+65.5
+0.243
+75.5
+32.1
+49.6
+10.5
+21.3
+24
+21
+T
+Fridge-T1
+Fridge
+22.9
+43.9
+0.160
+73.7
+37.2
+51.6
+7.7
+23.8
+21
+14
+T
+Dining-11
+Dining
+22.9
+50.3
+0.119
+64.0
+63.7
+26.6
+6.9
+26.4
+19
+9
+T
+Fridge-T10
+Fridge
+22.9
+54.1
+0.124
+65.7
+37.4
+69.9
+14.8
+24.9
+18
+14
+T
+Desk-8
+Desk
+23.8
+44.4
+0.230
+73.1
+46.2
+51.4
+21.5
+23.1
+25
+21
+T
+Fridge-T3
+Fridge
+23.8
+48.0
+0.197
+68.1
+39.7
+61.5
+20.2
+23.6
+20
+14
+T
+Fridge-T4
+Fridge
+25.7
+52.2
+0.262
+72.9
+36.1
+60.1
+10.6
+27.0
+20
+14
+T
+Dining-5
+Dining
+25.7
+52.6
+0.205
+76.2
+51.1
+23.5
+5.9
+26.8
+19
+9
+T
+Desk-13
+Desk
+25.7
+56.9
+0.227
+73.6
+44.7
+53.4
+12.1
+24.0
+24
+21
+T
+Buffet-T4
+Buffet
+25.7
+57.9
+0.184
+80.7
+44.2
+68.5
+13.2
+27.4
+11
+10
+T
+Desk-14
+Desk
+26.7
+53.6
+0.156
+68.6
+51.2
+50.2
+11.7
+28.0
+24
+21
+T
+Fridge-T6
+Fridge
+26.7
+58.1
+0.288
+76.9
+24.7
+71.8
+16.0
+29.0
+18
+14
+T
+Fridge-T7
+Fridge
+26.7
+63.4
+0.267
+80.8
+22.3
+67.8
+20.5
+27.1
+18
+14
+T
+Dining-3
+Dining
+26.7
+74.2
+0.246
+74.5
+38.2
+23.0
+4.1
+27.6
+18
+9
+T
+Desk-12
+Desk
+27.6
+57.9
+0.227
+68.7
+37.8
+49.5
+10.9
+26.7
+24
+21
+T
+Dining-6
+Dining
+28.6
+48.4
+0.149
+71.6
+60.6
+36.2
+8.5
+33.3
+19
+9
+T
+Buffet-T6
+Buffet
+29.5
+41.7
+0.158
+81.4
+55.2
+49.0
+7.7
+30.4
+11
+10
+T
+Buffet-T7
+Buffet
+29.5
+53.9
+0.229
+82.9
+42.8
+64.6
+8.8
+28.9
+15
+10
+T
+Dining-12
+Dining
+35.2
+58.1
+0.252
+69.6
+47.2
+43.6
+12.1
+36.9
+19
+9
+T
+Toy-B5
+Toy
+35.2
+63.0
+0.326
+69.6
+35.8
+67.6
+8.5
+33.8
+31
+16
+T
+Dining-4
+Dining
+36.2
+58.4
+0.233
+68.7
+55.1
+33.8
+7.1
+37.8
+19
+9
+T
+Buffet-T2
+Buffet
+37.1
+42.5
+0.328
+81.0
+36.8
+39.0
+8.2
+40.7
+10
+10
+T
+Toy-B3
+Toy
+37.1
+68.7
+0.347
+76.1
+27.7
+28.4
+2.2
+34.7
+27
+16
+T
+Toy-B4
+Toy
+40.0
+64.5
+0.339
+74.6
+39.4
+28.6
+3.3
+39.3
+27
+16
+T
+Toy-A3
+Toy
+43.8
+65.6
+0.497
+76.5
+30.8
+11.9
+0.9
+42.2
+25
+16
+T
+Toy-A4
+Toy
+44.8
+66.6
+0.332
+77.8
+28.9
+25.1
+2.3
+45.6
+27
+16
+T
+Buffet-T3
+Buffet
+49.5
+68.3
+0.559
+86.2
+23.6
+84.4
+9.0
+48.7
+10
+10
+Continued on next page
+
+
+Table 8 (continued)
+Domain
+Scene
+Family
+SR
+NGP
+SSAL
+AER
+RAR
+SEG
+ADR
+IRR
+Lo
+Ng
+T
+Fridge-T5
+Fridge
+50.5
+66.7
+0.501
+69.5
+31.6
+24.6
+0.3
+49.8
+18
+14
+T
+Desk-1
+Desk
+54.3
+78.5
+0.456
+78.6
+24.2
+47.3
+6.3
+54.4
+20
+21
+T
+Buffet-T5
+Buffet
+58.1
+73.3
+0.542
+85.4
+17.1
+84.4
+12.8
+56.7
+12
+10
+T
+Buffet-T1
+Buffet
+58.1
+78.3
+0.650
+90.7
+13.1
+90.3
+16.4
+57.8
+14
+10
+I
+FoodPack-I4
+Food pack
+5.7
+29.3
+0.031
+74.8
+37.6
+24.3
+4.0
+5.8
+22
+12
+I
+Fridge-I3
+Fridge
+6.7
+39.9
+0.099
+67.9
+41.3
+34.4
+7.6
+7.5
+23
+14
+I
+Fridge-I1
+Fridge
+7.6
+29.3
+0.041
+72.6
+42.6
+24.9
+2.7
+8.0
+24
+14
+I
+Fridge-I8
+Fridge
+7.6
+40.4
+0.000
+71.7
+38.4
+36.5
+8.8
+8.0
+24
+14
+I
+Buffet-I7
+Buffet
+10.5
+39.4
+0.046
+72.8
+35.1
+22.5
+4.6
+12.0
+18
+10
+I
+Fridge-I9
+Fridge
+10.5
+43.0
+0.093
+73.0
+38.2
+34.7
+8.4
+10.0
+23
+14
+I
+Fridge-I2
+Fridge
+11.4
+41.1
+0.030
+70.7
+37.4
+36.2
+8.2
+11.4
+22
+14
+I
+Buffet-I4
+Buffet
+14.3
+52.4
+0.028
+74.1
+27.4
+21.2
+8.1
+15.6
+14
+10
+I
+Fridge-I4
+Fridge
+17.1
+40.8
+0.112
+69.5
+46.7
+30.2
+4.5
+20.0
+23
+14
+I
+Fridge-I7
+Fridge
+18.1
+47.9
+0.139
+66.5
+36.8
+31.6
+7.6
+17.1
+21
+14
+I
+Buffet-I6
+Buffet
+23.8
+31.2
+0.095
+72.7
+33.6
+14.6
+5.6
+25.1
+14
+10
+I
+Fridge-I10
+Fridge
+23.8
+56.9
+0.189
+68.7
+34.4
+38.4
+7.2
+25.8
+21
+14
+I
+FoodPack-I1
+Food pack
+25.7
+41.7
+0.197
+73.2
+31.6
+26.8
+2.6
+26.7
+24
+12
+I
+Fridge-I6
+Fridge
+25.7
+49.3
+0.170
+63.8
+43.6
+34.6
+6.5
+29.6
+21
+14
+I
+Buffet-I2
+Buffet
+28.6
+35.9
+0.207
+75.9
+30.6
+7.1
+2.9
+27.1
+12
+10
+I
+FoodPack-I8
+Food pack
+28.6
+42.6
+0.243
+73.3
+32.5
+27.0
+2.8
+27.0
+24
+12
+I
+FoodPack-I9
+Food pack
+32.4
+46.2
+0.133
+74.9
+31.0
+26.4
+3.3
+33.1
+21
+12
+I
+FoodPack-I10
+Food pack
+33.3
+40.0
+0.201
+73.6
+29.4
+22.9
+3.3
+33.6
+21
+12
+I
+FoodPack-I7
+Food pack
+33.3
+54.0
+0.272
+75.8
+31.8
+28.3
+4.1
+32.2
+21
+12
+I
+FoodPack-I5
+Food pack
+39.0
+47.1
+0.254
+72.5
+32.5
+30.7
+3.0
+38.2
+21
+12
+I
+FoodPack-I3
+Food pack
+39.0
+53.3
+0.298
+73.6
+30.5
+32.1
+6.6
+38.9
+21
+12
+I
+FoodPack-I2
+Food pack
+40.0
+57.4
+0.270
+75.5
+32.8
+29.9
+4.1
+41.3
+21
+12
+I
+Fridge-I5
+Fridge
+40.0
+58.9
+0.205
+72.2
+32.1
+19.9
+0.4
+38.7
+21
+14
+I
+FoodPack-I6
+Food pack
+42.9
+50.5
+0.298
+73.8
+29.6
+32.4
+3.2
+40.0
+23
+12
+I
+Buffet-I3
+Buffet
+44.8
+59.0
+0.275
+76.5
+16.3
+17.8
+4.0
+48.1
+13
+10
+I
+Buffet-I5
+Buffet
+48.6
+62.4
+0.389
+77.8
+22.4
+24.4
+6.1
+50.5
+15
+10
+I
+Buffet-I1
+Buffet
+49.5
+68.4
+0.340
+77.2
+22.3
+33.2
+8.2
+49.6
+17
+10
+
+
+Figure 13: All head-camera observations in a successful RoboTwin 2.0 backend-evaluation rollout (GPT-5.5). Blue marks the
+initial observation, red marks an injected failed action, and green marks a successfully executed transition. Each tile is labeled
+with its step index and issued action.
+
+
+Table 9: Step-level issued actions and model (GPT-5.5) raw_response strings for a successful rollout.
+Step Issued action
+raw_response
+1
+failed_grab(blue pen)
+{
+"reason": "The task requires placing three pens and an eraser into the pencil
+case. Currently, the robot’s hands are empty. The valid actions include grabbing
+the ’blue pen’, ’black pen’, or ’eraser’. I will start by grabbing one of the
+items to be placed in the pencil case. Let’s grab the blue pen first.",
+"action": {
+"name": "grab",
+"object": "blue pen",
+"target": null,
+"node_ids": [
+"blue pen"
+]
+}
+}
+2
+recover()
+{
+"reason": "The previous action ’grab’ on ’blue pen’ failed due to an injected
+failure. According to the action constraints, after an injected failure,
+valid_actions contains ’recover’ and ’stop’. To continue the task, I must choose
+’recover’ to retry the previous action.",
+"action": {
+"name": "recover",
+"object": null,
+"target": null,
+"node_ids": []
+}
+}
+3
+grab(blue pen)
+{
+"reason": "The previous ’grab’ action on ’blue pen’ failed due to an injected
+failure, but ’recover’ was successfully executed in the last step. According to
+the constraints, after a successful recovery, the valid_actions will contain only
+the original failed action so it can be retried. The current valid_actions list
+contains exactly one option: grabbing the ’blue pen’. Therefore, I must retry
+this action.",
+"action": {
+"name": "grab",
+"object": "blue pen",
+"target": null,
+"node_ids": [
+"blue pen"
+]
+}
+}
+4
+failed_putin(blue pen,
+pencil case)
+{
+"reason": "The robot is currently holding the blue pen. The task requires placing
+the blue pen into the pencil box. The pencil box is visible and open. Therefore,
+the next logical step is to put the held blue pen into the pencil box.",
+"action": {
+"name": "putin",
+"object": "blue pen",
+"target": "pencil case",
+"node_ids": [
+"blue pen",
+"pencil case"
+]
+}
+}
+Continued on next page
+
+
+Table 9 (continued)
+Step Issued action
+raw_response
+5
+recover()
+{
+"reason": "The previous action ’putin’ failed due to an injected failure.
+According to the action constraints, after an injected failure, valid_actions
+contains ’recover’ and ’stop’. To continue the task and retry the failed action,
+I must choose ’recover’.",
+"action": {
+"name": "recover",
+"object": null,
+"target": null,
+"node_ids": []
+}
+}
+6
+grab(blue pen)
+"" (empty in source trajectory)
+7
+putin(blue pen, pencil
+case)
+{
+"reason": "The previous ’putin’ action failed due to an injected failure, but
+’recover’ was successfully executed in the last step. According to the
+constraints, after a successful recovery, the valid_actions will contain only the
+original failed action so it can be retried. The current valid_actions list
+contains exactly one option: putting the ’blue pen’ into the ’pencil case’.
+Therefore, I must retry this action.",
+"action": {
+"name": "putin",
+"object": "blue pen",
+"target": "pencil case",
+"node_ids": [
+"blue pen",
+"pencil case"
+]
+}
+}
+8
+failed_grab(black pen)
+{
+"reason": "The blue pen has been successfully placed in the pencil case. The next
+step is to place the remaining items (black pen, red pen, eraser) into the pencil
+case. The black pen is visible on the desk and grabbable. I will grab the black
+pen next.",
+"action": {
+"name": "grab",
+"object": "black pen",
+"target": null,
+"node_ids": [
+"black pen"
+]
+}
+}
+9
+recover()
+{
+"reason": "The previous action ’grab’ on ’black pen’ failed due to an injected
+failure. According to the action constraints, after an injected failure,
+valid_actions contains ’recover’ and ’stop’. To continue the task and retry the
+failed action, I must choose ’recover’.",
+"action": {
+"name": "recover",
+"object": null,
+"target": null,
+"node_ids": []
+}
+}
+Continued on next page
+
+
+Table 9 (continued)
+Step Issued action
+raw_response
+10
+grab(black pen)
+{
+"reason": "The previous ’grab’ action on ’black pen’ failed due to an injected
+failure, but ’recover’ was successfully executed in the last step. According to
+the constraints, after a successful recovery, the valid_actions will contain only
+the original failed action so it can be retried. The current valid_actions list
+contains exactly one option: grabbing the ’black pen’. Therefore, I must retry
+this action.",
+"action": {
+"name": "grab",
+"object": "black pen",
+"target": null,
+"node_ids": [
+"black pen"
+]
+}
+}
+11
+failed_putin(black
+pen, pencil case)
+{
+"reason": "The robot is currently holding the black pen. The task requires
+placing the black pen into the pencil box. The pencil box is visible and open.
+Therefore, the next logical step is to put the held black pen into the pencil
+box.",
+"action": {
+"name": "putin",
+"object": "black pen",
+"target": "pencil case",
+"node_ids": [
+"black pen",
+"pencil case"
+]
+}
+}
+12
+recover()
+{
+"reason": "The previous action ’putin’ on ’black pen’ and ’pencil case’ failed
+due to an injected failure. According to the action constraints, after an
+injected failure, valid_actions contains ’recover’ and ’stop’. To continue the
+task and retry the failed action, I must choose ’recover’.",
+"action": {
+"name": "recover",
+"object": null,
+"target": null,
+"node_ids": []
+}
+}
+13
+grab(black pen)
+"" (empty in source trajectory)
+Continued on next page
+
+
+Table 9 (continued)
+Step Issued action
+raw_response
+14
+putin(black pen,
+pencil case)
+{
+"reason": "The previous ’putin’ action for the black pen failed due to an
+injected failure, but ’recover’ was successfully executed in the last step.
+According to the constraints, after a successful recovery, the valid_actions will
+contain only the original failed action so it can be retried. The current
+valid_actions list contains exactly one option: putting the ’black pen’ into the
+’pencil case’. Therefore, I must retry this action.",
+"action": {
+"name": "putin",
+"object": "black pen",
+"target": "pencil case",
+"node_ids": [
+"black pen",
+"pencil case"
+]
+}
+}
+15
+failed_grab(eraser)
+{
+"reason": "The blue and black pens are already in the pencil case. The red pen is
+not visible, but the eraser is visible on the desk. The task requires placing the
+eraser into the pencil case. Since the robot’s hands are empty, the next logical
+step is to grab the eraser.",
+"action": {
+"name": "grab",
+"object": "eraser",
+"target": null,
+"node_ids": [
+"eraser"
+]
+}
+}
+16
+recover()
+{
+"reason": "The previous action ’grab’ on ’eraser’ failed due to an injected
+failure. According to the action constraints, after an injected failure,
+valid_actions contains ’recover’ and ’stop’. To continue the task and retry the
+failed action, I must choose ’recover’.",
+"action": {
+"name": "recover",
+"object": null,
+"target": null,
+"node_ids": []
+}
+}
+17
+grab(eraser)
+{
+"reason": "The previous action ’grab’ on ’eraser’ failed due to an injected
+failure, but ’recover’ was successfully executed in the last step. According to
+the constraints, after a successful recovery, the valid_actions will contain only
+the original failed action so it can be retried. The current valid_actions list
+contains exactly one option: grabbing the ’eraser’. Therefore, I must retry this
+action.",
+"action": {
+"name": "grab",
+"object": "eraser",
+"target": null,
+"node_ids": [
+"eraser"
+]
+}
+}
+Continued on next page
+
+
+Table 9 (continued)
+Step Issued action
+raw_response
+18
+failed_putin(eraser,
+pencil case)
+{
+"reason": "The robot is currently holding the eraser. The task requires placing
+the eraser into the pencil box. The pencil box is visible and open. Therefore,
+the next logical step is to put the held eraser into the pencil box.",
+"action": {
+"name": "putin",
+"object": "eraser",
+"target": "pencil case",
+"node_ids": [
+"eraser",
+"pencil case"
+]
+}
+}
+19
+recover()
+{
+"reason": "The previous action ’putin’ on ’eraser’ and ’pencil case’ failed due
+to an injected failure. According to the action constraints, after an injected
+failure, valid_actions contains ’recover’ and ’stop’. To continue the task and
+retry the failed action, I must choose ’recover’.",
+"action": {
+"name": "recover",
+"object": null,
+"target": null,
+"node_ids": []
+}
+}
+20
+grab(eraser)
+"" (empty in source trajectory)
+21
+putin(eraser, pencil
+case)
+{
+"reason": "The previous ’putin’ action for the eraser failed due to an injected
+failure, but ’recover’ was successfully executed in the last step. According to
+the constraints, after a successful recovery, the valid_actions will contain only
+the original failed action so it can be retried. The current valid_actions list
+contains exactly one option: putting the ’eraser’ into the ’pencil case’.
+Therefore, I must retry this action.",
+"action": {
+"name": "putin",
+"object": "eraser",
+"target": "pencil case",
+"node_ids": [
+"eraser",
+"pencil case"
+]
+}
+}
+Continued on next page
+
+
+Table 9 (continued)
+Step Issued action
+raw_response
+22
+failed_open(book 1)
+{
+"reason": "The blue pen, black pen, and eraser are already inside the pencil
+case. The red pen is not visible in the current observation, but the task
+requires closing the pencil box after placing items. Since the pencil box is
+currently open and contains the required items (assuming the red pen is either
+already inside or not visible/required for this step’s immediate action given the
+valid actions), and ’close’ is a valid action for the pencil box, I should close
+it. However, looking at the success criteria, the red pen must be inside. The red
+pen is not visible. But wait, the valid actions do not include searching for the
+red pen. Let’s re-read the valid actions. The valid actions are: open
+books/drawers, grab eraser/blue/black pens, close pencil box, stop. The eraser,
+blue pen, and black pen are already inside the pencil box according to the
+observation (location: INSIDE target: pencil case). The red pen is missing from
+the visible nodes. This might imply it’s hidden or the task description implies
+it’s there. However, I cannot act on invisible objects. The only progress-making
+action available that aligns with the goal of ’closing the pencil box’ is to
+close it. But first, I need to ensure all items are in. The red pen is not
+visible. Is it possible the red pen is inside one of the books or drawers? The
+books are closed. The drawers are closed. I should probably check inside the
+books or drawers. But ’open’ is a valid action for books and drawers. Let’s look
+at the constraints. ’Book itself cannot be loaded into other items’. This doesn’t
+prevent opening. Let’s try opening a book to see if the red pen is there, or just
+close the pencil box if we assume the red pen is handled. Actually, looking at
+the history, we haven’t looked for the red pen. But ’look’ is not in
+valid_actions. ’inspect’ is not in valid_actions. ’open’ is. Let’s open ’book 1’
+to see if the red pen is inside.",
+"action": {
+"name": "open",
+"object": "book 1",
+"target": null,
+"node_ids": [
+"book 1"
+]
+}
+}
+23
+recover()
+{
+"reason": "The previous action ’open’ on ’book 1’ failed due to an injected
+failure. According to the action constraints, after an injected failure,
+valid_actions contains ’recover’ and ’stop’. To continue the task and retry the
+failed action, I must choose ’recover’.",
+"action": {
+"name": "recover",
+"object": null,
+"target": null,
+"node_ids": []
+}
+}
+Continued on next page
+
+
+Table 9 (continued)
+Step Issued action
+raw_response
+24
+open(book 1)
+{
+"reason": "The previous action ’open’ on ’book 1’ failed due to an injected
+failure, but ’recover’ was successfully executed in the last step. According to
+the constraints, after a successful recovery, the valid_actions will contain only
+the original failed action so it can be retried. The current valid_actions list
+contains exactly one option: opening ’book 1’. Therefore, I must retry this
+action.",
+"action": {
+"name": "open",
+"object": "book 1",
+"target": null,
+"node_ids": [
+"book 1"
+]
+}
+}
+25
+failed_grab(red pen)
+{
+"reason": "The red pen was just revealed inside book_1. The task requires placing
+the red pen into the pencil case. The pencil case is currently open. The robot’s
+hands are empty. Therefore, the next logical step is to grab the red pen.",
+"action": {
+"name": "grab",
+"object": "red pen",
+"target": null,
+"node_ids": [
+"red pen"
+]
+}
+}
+26
+recover()
+{
+"reason": "The previous action ’grab’ on ’red pen’ failed due to an injected
+failure. According to the action constraints, after an injected failure,
+valid_actions contains ’recover’ and ’stop’. To continue the task and retry the
+failed action, I must choose ’recover’.",
+"action": {
+"name": "recover",
+"object": null,
+"target": null,
+"node_ids": []
+}
+}
+27
+grab(red pen)
+{
+"reason": "The previous action ’grab’ on ’red pen’ failed due to an injected
+failure, but ’recover’ was successfully executed in the last step. According to
+the constraints, after a successful recovery, the valid_actions will contain only
+the original failed action so it can be retried. The current valid_actions list
+contains exactly one option: grabbing the ’red pen’. Therefore, I must retry this
+action.",
+"action": {
+"name": "grab",
+"object": "red pen",
+"target": null,
+"node_ids": [
+"red pen"
+]
+}
+}
+Continued on next page
+
+
+Table 9 (continued)
+Step Issued action
+raw_response
+28
+failed_putin(red pen,
+pencil case)
+{
+"reason": "The robot is currently holding the red pen. The task requires placing
+the red pen into the pencil box. The pencil box is visible and open. Therefore,
+the next logical step is to put the held red pen into the pencil box.",
+"action": {
+"name": "putin",
+"object": "red pen",
+"target": "pencil case",
+"node_ids": [
+"red pen",
+"pencil case"
+]
+}
+}
+29
+recover()
+{
+"reason": "The previous action ’putin’ on ’red pen’ and ’pencil case’ failed due
+to an injected failure. According to the action constraints, after an injected
+failure, valid_actions contains ’recover’ and ’stop’. To continue the task and
+retry the failed action, I must choose ’recover’.",
+"action": {
+"name": "recover",
+"object": null,
+"target": null,
+"node_ids": []
+}
+}
+30
+grab(red pen)
+"" (empty in source trajectory)
+31
+putin(red pen, pencil
+case)
+{
+"reason": "The previous ’putin’ action for the red pen failed due to an injected
+failure, but ’recover’ was successfully executed in the last step. According to
+the constraints, after a successful recovery, the valid_actions will contain only
+the original failed action so it can be retried. The current valid_actions list
+contains exactly one option: putting the ’red pen’ into the ’pencil case’.
+Therefore, I must retry this action.",
+"action": {
+"name": "putin",
+"object": "red pen",
+"target": "pencil case",
+"node_ids": [
+"red pen",
+"pencil case"
+]
+}
+}
+32
+failed_close(pencil
+case)
+{
+"reason": "All three pens and the eraser are now inside the pencil box. The next
+step in the task is to close the pencil box. The ’close’ action for ’pencil case’
+is available in valid_actions.",
+"action": {
+"name": "close",
+"object": "pencil case",
+"target": null,
+"node_ids": [
+"pencil case"
+]
+}
+}
+Continued on next page
+
+
+Table 9 (continued)
+Step Issued action
+raw_response
+33
+recover()
+{
+"reason": "The previous action ’close’ on ’pencil case’ failed due to an injected
+failure. According to the action constraints, after an injected failure,
+valid_actions contains ’recover’ and ’stop’. To continue the task and retry the
+failed action, I must choose ’recover’.",
+"action": {
+"name": "recover",
+"object": null,
+"target": null,
+"node_ids": []
+}
+}
+34
+close(pencil case)
+{
+"reason": "The previous action ’close’ on ’pencil case’ failed due to an injected
+failure, but ’recover’ was successfully executed in the last step. According to
+the constraints, after a successful recovery, the valid_actions will contain only
+the original failed action so it can be retried. The current valid_actions list
+contains exactly one option: closing the ’pencil case’. Therefore, I must retry
+this action.",
+"action": {
+"name": "close",
+"object": "pencil case",
+"target": null,
+"node_ids": [
+"pencil case"
+]
+}
+}
+35
+grab(book 1)
+{
+"reason": "The pencil box has been successfully closed. The next part of the task
+is to place the two books into the first shelf. Currently, ’book 1’ is open and
+on the desk, and ’book 2’ is closed and on the desk. To place them in the shelf,
+I first need to ensure they are ready to be moved. ’book 1’ is currently open;
+while it can be grabbed, closing it might be a prerequisite or good practice
+before moving, but more importantly, I need to grab the books to put them in the
+shelf. Looking at valid_actions, I can ’grab’ ’book 1’. I will start by grabbing
+the first book.",
+"action": {
+"name": "grab",
+"object": "book 1",
+"target": null,
+"node_ids": [
+"book 1"
+]
+}
+}
+Continued on next page
+
+
+Table 9 (continued)
+Step Issued action
+raw_response
+36
+putin(book 1,
+bookshelf slot 1)
+{
+"reason": "The robot is currently holding ’book 1’. The task requires placing
+both books into ’bookshelf slot 1’. Since ’book 1’ is already held and ’bookshelf
+slot 1’ is a valid target container, the next logical step is to place the held
+book into the shelf.",
+"action": {
+"name": "putin",
+"object": "book 1",
+"target": "bookshelf slot 1",
+"node_ids": [
+"book 1",
+"bookshelf slot 1"
+]
+}
+}
+Continued on next page
+
+
+Table 9 (continued)
+Step Issued action
+raw_response
+37
+open(book 2)
+{
+"reason": "Book 1 has been successfully placed in the first shelf. The next step
+is to place Book 2 into the first shelf. Book 2 is currently on the desk and
+needs to be grabbed first. The valid actions include grabbing ’book 1’ (which is
+already in the shelf, so likely not the target) or other actions. Wait, looking
+at valid_actions, I see ’grab’ for ’book 1’. But ’book 1’ is already in the
+shelf. I need to grab ’book 2’. However, ’book 2’ is not in the valid_actions
+list for ’grab’. Let me re-examine valid_actions. The valid actions are: close
+’book 1’, open ’book 2’, open drawers, open pencil box, grab ’book 1’, stop. This
+is strange. ’book 2’ is visible and reachable. Why is ’grab’ ’book 2’ not valid?
+Perhaps because ’book 2’ is closed and acts as a container? No, it’s grabbable.
+Let’s look closer. Ah, ’book 1’ is currently OPEN. The valid action ’close’ ’book
+1’ is available. Maybe I should close it? No, the task is to put books in the
+shelf. ’book 1’ is already there. I need to move ’book 2’. If ’grab’ ’book 2’ is
+not available, maybe I need to inspect it or something else? Or maybe I made a
+mistake and ’book 1’ refers to the object ID which might be reusable? No. Let’s
+look at the state. ’book 1’ is INSIDE ’bookshelf slot 1’. ’book 2’ is ON
+’tabletop’. I need to get ’book 2’ into ’bookshelf slot 1’. The only grab action
+available is for ’book 1’. This seems like a trap or I am missing something.
+Wait, if ’book 1’ is in the shelf, grabbing it would take it out. That’s
+counter-productive. Is it possible that ’book 2’ is not grabbable because it’s
+considered a container that needs to be opened? No, it has GRABBABLE property.
+Let’s re-read the valid actions carefully. \nValid actions:\n1. close ’book
+1’\n2. open ’book 2’\n3. open drawers...\n4. open pencil box\n5. grab ’book
+1’\n6. stop\n\nIf I cannot grab ’book 2’, I cannot complete the task. However,
+often in these environments, if an object is a container, you might need to
+ensure it’s closed or open depending on context. But ’putin’ requires holding.
+\nLet’s consider that maybe I need to ’open’ ’book 2’ to make it manipulable or
+check inside? The hint says ’may_reveal_hidden’. There might be another item
+inside, or maybe opening it changes its state to allow grabbing? Or perhaps the
+’grab’ action for ’book 2’ is missing due to some constraint I don’t see (e.g.
+it’s considered ’full’ or something?). \nActually, looking at previous steps,
+when ’red pen’ was hidden, I had to open ’book 1’ to reveal it. Maybe ’book 2’
+also contains something required? The success criteria doesn’t mention anything
+inside book 2. \nHowever, I MUST choose from valid actions. I cannot invent
+’grab’ ’book 2’. \nBetween ’close’ ’book 1’ and ’open’ ’book 2’: \nClosing ’book
+1’ might be good practice before leaving it, but it’s already in the shelf.
+\nOpening ’book 2’ might reveal something or just change its state. \nLet’s try
+opening ’book 2’ as it is the only action involving the second book, which is the
+remaining item to be processed.",
+"action": {
+"name": "open",
+"object": "book 2",
+"target": null,
+"node_ids": [
+"book 2"
+]
+}
+}
+Continued on next page
+
+
+Table 9 (continued)
+Step Issued action
+raw_response
+38
+grab(waste paper)
+{
+"reason": "The books are now in the shelf. The waste paper was revealed inside
+book_2 and is now visible on the desk. The task requires putting the waste paper
+into the desktop trash can. The valid actions include grabbing the waste paper. I
+will grab it first.",
+"action": {
+"name": "grab",
+"object": "waste paper",
+"target": null,
+"node_ids": [
+"waste paper"
+]
+}
+}
+39
+puton(waste paper,
+tabletop)
+"" (empty in source trajectory)
+40
+grab(book 2)
+{
+"reason": "The previous step opened ’book 2’, revealing ’waste paper’. The
+current valid actions include grabbing ’book 2’. Although the ultimate goal is to
+place ’book 2’ in the shelf, it must be grabbed first. Since ’grab’ for ’book 2’
+is a valid action and necessary to move it, I will select it.",
+"action": {
+"name": "grab",
+"object": "book 2",
+"target": null,
+"node_ids": [
+"book 2"
+]
+}
+}
+41
+putin(book 2,
+bookshelf slot 1)
+{
+"reason": "The robot is currently holding ’book 2’. The task requires placing
+both books into ’bookshelf slot 1’. ’book 1’ is already in the shelf. The next
+logical step is to place the held ’book 2’ into ’bookshelf slot 1’. This action
+is available in valid_actions.",
+"action": {
+"name": "putin",
+"object": "book 2",
+"target": "bookshelf slot 1",
+"node_ids": [
+"book 2",
+"bookshelf slot 1"
+]
+}
+}
+42
+grab(waste paper)
+"" (empty in source trajectory)
+43
+putin(waste paper,
+desktop trash bin)
+{
+"reason": "The robot is currently holding the waste paper. The task requires
+placing the waste paper into the desktop trash can (’desktop trash bin’). This
+action is available in valid_actions and aligns with the success criterion.",
+"action": {
+"name": "putin",
+"object": "waste paper",
+"target": "desktop trash bin",
+"node_ids": [
+"waste paper",
+"desktop trash bin"
+]
+}
+}
+Continued on next page
+
+
+Table 9 (continued)
+Step Issued action
+raw_response
+44
+open(drawer tier 1)
+{
+"reason": "Most task goals are met: pens/eraser in pencil box (closed), books in
+shelf, waste paper in trash. However, the success criterion includes ’ASSEMBLED’
+for ’lipstick’ and ’INSIDE’ ’lipstick’ in ’drawer tier 1’. These objects are not
+currently visible or handled. The valid actions include opening drawers, which
+may reveal the lipstick. Opening ’drawer tier 1’ is a logical next step to find
+the missing item.",
+"action": {
+"name": "open",
+"object": "drawer tier 1",
+"target": null,
+"node_ids": [
+"drawer tier 1"
+]
+}
+}
+45
+attach(lipstick cap,
+lipstick body)
+{
+"reason": "The lipstick parts (cap and body) have been revealed in the first
+drawer. The success criterion requires the lipstick to be assembled and placed in
+the first drawer. The valid actions include ’attach’ for ’lipstick cap’ and
+’lipstick body’. This is the necessary step to assemble the lipstick.",
+"action": {
+"name": "attach",
+"object": "lipstick cap",
+"target": "lipstick body",
+"node_ids": [
+"lipstick cap",
+"lipstick body"
+]
+}
+}
+46
+grab(lipstick)
+{
+"reason": "The lipstick has been assembled. The success criterion requires the
+lipstick to be inside the first drawer. The first drawer is currently open. The
+valid actions include grabbing the lipstick. I need to grab it first before
+putting it in the drawer.",
+"action": {
+"name": "grab",
+"object": "lipstick",
+"target": null,
+"node_ids": [
+"lipstick"
+]
+}
+}
+47
+putin(lipstick, drawer
+tier 1)
+{
+"reason": "The robot is currently holding the assembled lipstick. The success
+criterion requires the lipstick to be inside the first drawer (’drawer tier 1’).
+The first drawer is currently open and visible. Therefore, the next logical step
+is to place the held lipstick into the first drawer using the ’putin’ action.",
+"action": {
+"name": "putin",
+"object": "lipstick",
+"target": "drawer tier 1",
+"node_ids": [
+"lipstick",
+"drawer tier 1"
+]
+}
+}
+Continued on next page
+
+
+Table 9 (continued)
+Step Issued action
+raw_response
+48
+close(drawer tier 1)
+"" (empty in source trajectory)
+49
+stop()
+{
+"reason": "All success criteria have been met: pens and eraser are in the closed
+pencil box, books are in the first shelf, waste paper is in the trash, and the
+assembled lipstick is in the first drawer. The task is complete.",
+"action": {
+"name": "stop",
+"object": null,
+"target": null,
+"node_ids": []
+}
+}
