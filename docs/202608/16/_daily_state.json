@@ -1,0 +1,297 @@
+{
+  "date": "20260816",
+  "date_label": "",
+  "generated_at": "2026-08-16 20:47:57 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2608.08175v1",
+      "route": "202608/16/2608.08175v1-aoc-cbs-anytime-optimal-continuous-time-conflict-based-search-for-generalised-multi-agent-path-finding",
+      "title": "AOC-CBS: Anytime-Optimal Continuous-time Conflict-Based Search for Generalised Multi-Agent Path Finding",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "通用连续时间冲突搜索实现多智能体协调",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.10030v1",
+      "route": "202608/16/2608.10030v1-automating-and-scaling-behavioral-scientific-research-on-ai-agents",
+      "title": "Automating and Scaling Behavioral Scientific Research on AI Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "用于自动化AI智能体行为科学研究的智能体系统，属于智能体应用",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.10224v1",
+      "route": "202608/16/2608.10224v1-self-evolving-agentic-customer-support-system-at-linkedin",
+      "title": "Self-evolving Agentic Customer Support System at LinkedIn",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "已部署的智能体客户支持系统应用",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.10357v1",
+      "route": "202608/16/2608.10357v1-efficient-reinforcement-learning-for-long-horizon-tool-use-agentic-tasks",
+      "title": "Efficient Reinforcement Learning for Long-Horizon Tool-Use Agentic Tasks",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "针对长时程工具使用智能体任务的高效强化学习",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.11350v1",
+      "route": "202608/16/2608.11350v1-self-evolving-embodied-agents-via-skill-harness-evolution",
+      "title": "Self-Evolving Embodied Agents via Skill-Harness Evolution",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向具身智能体的自进化技能与执行框架，属于自主智能体架构与控制",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.11895v1",
+      "route": "202608/16/2608.11895v1-scalable-multi-agent-maze-traversal-with-local-communication",
+      "title": "Scalable Multi-Agent Maze Traversal with Local Communication",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "基于局部通信的多智能体分布式协作穿越迷宫",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.12896v1",
+      "route": "202608/16/2608.12896v1-distance-based-formation-control-with-prescribed-performance-for-higher-order-multi-agent-systems",
+      "title": "Distance-Based Formation Control with Prescribed Performance for Higher-Order Multi-Agent Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向高阶多智能体系统的基于距离的编队控制与预设性能协调",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.08236v1",
+      "route": "202608/16/2608.08236v1-latticemind-a-conflict-aware-memory-primitive-for-multi-agent-systems",
+      "title": "LatticeMind: A Conflict-Aware Memory Primitive for Multi-Agent Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向多智能体系统冲突感知的共享记忆机制",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.08277v1",
+      "route": "202608/16/2608.08277v1-wirelessopsagent-a-benchmark-and-agent-design-for-action-assurance-in-wireless-networks",
+      "title": "WirelessOpsAgent: A Benchmark and Agent Design for Action Assurance in Wireless Networks",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向无线网络操作的智能体基准与设计",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.08392v1",
+      "route": "202608/16/2608.08392v1-cap-a-scalable-benchmark-for-evaluating-cross-site-browser-agents-with-complex-actions-and-perception",
+      "title": "CAP: A Scalable Benchmark for Evaluating Cross-Site Browser Agents with Complex Actions and Perception",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "跨站点浏览器智能体评估基准",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.08600v1",
+      "route": "202608/16/2608.08600v1-population-scalable-multi-agent-world-modeling",
+      "title": "Population-Scalable Multi-Agent World Modeling",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向任意智能体数量的可扩展多智能体世界建模",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.08601v1",
+      "route": "202608/16/2608.08601v1-unaccountable-delegation-fading-skills-mapping-the-risks-of-workplace-ai-agents",
+      "title": "Unaccountable Delegation, Fading Skills: Mapping the Risks of Workplace AI Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "针对职场AI智能体应用的风险分类与场景映射",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.09096v2",
+      "route": "202608/16/2608.09096v2-evo-bench-can-language-models-improve-agent-harness",
+      "title": "Evo-Bench: Can Language Models Improve Agent Harness?",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "评估智能体自主优化自身运行框架（harness）的能力基准",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.09857v1",
+      "route": "202608/16/2608.09857v1-agentic-harnesses-llm-driven-verification-layers-for-robot-autonomy",
+      "title": "Agentic Harnesses: LLM-Driven Verification Layers for Robot Autonomy",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "在规划与执行之间增加LLM驱动的验证层，评估机器人动作的可允许性",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.10299v1",
+      "route": "202608/16/2608.10299v1-co-evolution-in-agentic-systems-toward-self-directed-evolution-beyond-human-design",
+      "title": "Co-Evolution in Agentic Systems: Toward Self-Directed Evolution Beyond Human Design",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "综述智能体系统中的共同进化，涉及智能体如何自适应设计及智能体间协同适应",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.08939v1",
+      "route": "202608/16/2608.08939v1-not-an-a11y-how-android-accessibility-exposes-mobile-ai-agents-to-indirect-prompt-injection",
+      "title": "Not an A11y: How Android Accessibility Exposes Mobile AI Agents to Indirect Prompt Injection",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "自主移动智能体架构中的间接提示注入漏洞",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.10499v1",
+      "route": "202608/16/2608.10499v1-exploration-driven-personalized-federated-reinforcement-learning-via-intrinsic-motivation",
+      "title": "Exploration-Driven Personalized Federated Reinforcement Learning via Intrinsic Motivation",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "基于内在动机的个性化联邦强化学习探索",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    },
+    {
+      "paper_id": "2608.11873v1",
+      "route": "202608/16/2608.11873v1-dcm-bandits-multiplayer-information-asymmetric-cascading-bandits-for-multiple-clicks",
+      "title": "DCM Bandits: Multiplayer Information Asymmetric Cascading Bandits for Multiple Clicks",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "多人级联老虎机，多个智能体在共享环境中进行顺序决策学习并存在信息非对称",
+      "first_seen_at": "2026-08-16 20:47:57 UTC",
+      "updated_at": "2026-08-16 20:47:57 UTC"
+    }
+  ]
+}

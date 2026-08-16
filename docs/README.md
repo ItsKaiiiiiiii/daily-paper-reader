@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-15</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-16</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 17 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 18 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>6</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>7</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-15 20:45:04 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-16 20:47:57 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,9 +62,7 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日精读6篇、速读11篇，重点聚焦大型多模态交通智能体与执行落地持续学习两条主线。</p>
-<p>最值得看的是《Large Multimodal Agents for Intelligent Transportation Systems》（9.0）与《Agentic Router》（9.0），前者关注架构与部署挑战，后者强调记忆驱动的持续学习。</p>
-<p>若时间有限，可顺带翻看《AndroidReality》等8分速读，了解移动智能体在真实场景的评估差距。</p>
+<p>今日共读18篇论文，精读7篇、速读11篇，聚焦多智能体与AI代理前沿。最值得关注的是连续时间冲突搜索算法AOC-CBS（9.0分）以及AI代理行为科学自动化研究（9.0分），均代表高价值突破。下一步建议优先精读这两篇，并顺带浏览LatticeMind等速读列表中多智能体系统与基准测试进展。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -73,12 +71,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">6 篇</strong>
+    <strong class="dpr-home-dashboard-count">7 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Large Multimodal Agents for Intelligent Transportation Systems: Architectures, Evidence, and Deployment Challenges">Large Multimodal Agents for Intelligent Transportation Systems: Architectures, Evidence, and Deployment Challenges</span></li><li><span class="dpr-home-dashboard-paper-title" title="Agentic Router: An Execution-Grounded Continual Learning Approach With Memory">Agentic Router: An Execution-Grounded Continual Learning Approach With Memory</span></li><li><span class="dpr-home-dashboard-paper-title" title="CEAA: A Cognitive Embodied Agents Architecture for Interactive Computing Systems">CEAA: A Cognitive Embodied Agents Architecture for Interactive Computing Systems</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="AOC-CBS: Anytime-Optimal Continuous-time Conflict-Based Search for Generalised Multi-Agent Path Finding">AOC-CBS: Anytime-Optimal Continuous-time Conflict-Based Search for Generalised Multi-Agent Path Finding</span></li><li><span class="dpr-home-dashboard-paper-title" title="Automating and Scaling Behavioral Scientific Research on AI Agents">Automating and Scaling Behavioral Scientific Research on AI Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Self-evolving Agentic Customer Support System at LinkedIn">Self-evolving Agentic Customer Support System at LinkedIn</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>6</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>7</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -89,7 +87,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Towards Researcher Agents for Knowledge-Graph Question Answering">Towards Researcher Agents for Knowledge-Graph Question Answering</span></li><li><span class="dpr-home-dashboard-paper-title" title="AndroidReality: How Far Are Mobile Agents from the Real World?">AndroidReality: How Far Are Mobile Agents from the Real World?</span></li><li><span class="dpr-home-dashboard-paper-title" title="Compiling and Benchmarking Task-State Horizons for Embodied Agents">Compiling and Benchmarking Task-State Horizons for Embodied Agents</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="LatticeMind: A Conflict-Aware Memory Primitive for Multi-Agent Systems">LatticeMind: A Conflict-Aware Memory Primitive for Multi-Agent Systems</span></li><li><span class="dpr-home-dashboard-paper-title" title="WirelessOpsAgent: A Benchmark and Agent Design for Action Assurance in Wireless Networks">WirelessOpsAgent: A Benchmark and Agent Design for Action Assurance in Wireless Networks</span></li><li><span class="dpr-home-dashboard-paper-title" title="CAP: A Scalable Benchmark for Evaluating Cross-Site Browser Agents with Complex Actions and Perception">CAP: A Scalable Benchmark for Evaluating Cross-Site Browser Agents with Complex Actions and Perception</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>
