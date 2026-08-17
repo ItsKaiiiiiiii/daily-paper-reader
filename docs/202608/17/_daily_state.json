@@ -1,0 +1,345 @@
+{
+  "date": "20260817",
+  "date_label": "",
+  "generated_at": "2026-08-17 19:56:30 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2608.10915v2",
+      "route": "202608/17/2608.10915v2-combodied-agents-a-new-paradigm-of-human-centric-agentic-ai",
+      "title": "ComBodied Agents: a New Paradigm of Human-Centric Agentic AI",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "以人为中心的智能体AI新范式",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.12534v1",
+      "route": "202608/17/2608.12534v1-entropy-augmented-multi-objective-policy-optimization-in-multiagent-systems",
+      "title": "Entropy-Augmented Multi-Objective Policy Optimization in Multiagent Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向多智能体团队协同行动的多目标优化方法",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.13046v1",
+      "route": "202608/17/2608.13046v1-boardroomai-dependency-aware-human-steerable-multi-agent-deliberation-through-evolving-decision-graphs",
+      "title": "BoardroomAI: Dependency-Aware Human-Steerable Multi-Agent Deliberation through Evolving Decision Graphs",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "基于演进决策图的多智能体协同审议系统",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.13476v1",
+      "route": "202608/17/2608.13476v1-marc-v1-an-open-source-multi-agent-framework-for-clinical-ai-reasoning-and-coordination",
+      "title": "MARC v1: An Open-Source Multi-Agent Framework for Clinical AI Reasoning and Coordination",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "确定性多智能体编排，角色专业化智能体协作",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.13982v1",
+      "route": "202608/17/2608.13982v1-xai-guided-conservative-decentralized-execution-for-offline-multi-agent-network-slicing",
+      "title": "XAI-Guided Conservative Decentralized Execution for Offline Multi-Agent Network Slicing",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向网络切片的离线多智能体强化学习",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.14239v1",
+      "route": "202608/17/2608.14239v1-a-temporal-barrier-framework-for-collision-avoidance-in-multi-agent-autonomous-aerial-vehicles",
+      "title": "A Temporal Barrier Framework for Collision Avoidance in Multi-Agent Autonomous Aerial Vehicles",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体自主飞行器防撞的时间势垒框架",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.14246v1",
+      "route": "202608/17/2608.14246v1-polaris--multi-agentic-system-for-conversational-enterprise-analytics",
+      "title": "Polaris : Multi Agentic System for Conversational Enterprise Analytics",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "监督者主导的多智能体协调分析",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.14306v1",
+      "route": "202608/17/2608.14306v1-sensor-driven-mission-synthesis-for-uavugv-swarms-a-tb-cspn-coordination-architecture-with-hardware-enforced-safety",
+      "title": "Sensor-Driven Mission Synthesis for UAV/UGV Swarms: A TB-CSPN Coordination Architecture with Hardware-Enforced Safety",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "基于TB-CSPN编排的异构无人机/无人车集群协调架构",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.14335v1",
+      "route": "202608/17/2608.14335v1-multi-agent-reinforcement-learning-for-joint-handover-management-and-power-allocation-in-multi-orbit-satellite-networks",
+      "title": "Multi-Agent Reinforcement Learning for Joint Handover Management and Power Allocation in Multi-Orbit Satellite Networks",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体近端策略优化用于联合切换与功率分配",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.14390v1",
+      "route": "202608/17/2608.14390v1-submodular-policy-learning-for-distributed-task-allocation-in-open-multi-agent-systems",
+      "title": "Submodular Policy Learning for Distributed Task Allocation in Open Multi-Agent Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "开放多智能体系统中的分布式任务分配策略学习",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.08621v1",
+      "route": "202608/17/2608.08621v1-business-arena-benchmarking-llm-agents-in-a-realistic-marketplace",
+      "title": "Business Arena: Benchmarking LLM Agents in a Realistic Marketplace",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "在真实市场应用中评测LLM智能体",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.09029v1",
+      "route": "202608/17/2608.09029v1-physically-constrained-agentic-ai-for-energy-scheduling",
+      "title": "Physically Constrained Agentic AI for Energy Scheduling",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "分层ReAct能源管理系统，编排者协调专家智能体",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.09168v1",
+      "route": "202608/17/2608.09168v1-from-relevance-to-execution-utility-reward-aware-dynamic-execution-gating-for-skill-based-llm-agents",
+      "title": "From Relevance to Execution Utility: Reward-Aware Dynamic Execution Gating for Skill-Based LLM Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "为LLM智能体引入是否执行检索技能包的决策门控层",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.09253v1",
+      "route": "202608/17/2608.09253v1-skillsentry-reliable-skill-execution-for-llm-agents-via-runtime-assurance",
+      "title": "SkillSentry: Reliable Skill Execution for LLM Agents via Runtime Assurance",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向LLM智能体技能可靠执行的运行时保障框架",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.10153v1",
+      "route": "202608/17/2608.10153v1-the-case-framework-a-multi-disciplinary-control-architecture-for-governing-enterprise-agentic-ai",
+      "title": "The CASE Framework: A Multi-Disciplinary Control Architecture for Governing Enterprise Agentic AI",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向自主智能体AI治理的多学科控制架构，涵盖单智能体与群体控制",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.10366v1",
+      "route": "202608/17/2608.10366v1-dsagentbench-can-agents-automate-end-to-end-data-science-workflows-in-real-computer-environments",
+      "title": "DSAgentBench: Can Agents Automate End-to-End Data-Science Workflows in Real Computer Environments?",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "智能体自动化数据科学工作流的基准",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.10646v1",
+      "route": "202608/17/2608.10646v1-ascon-a-direction-aware-reciprocal-agent--step-contextualization-model-for-failure-attribution-in-multi-agent-systems",
+      "title": "ASCon: A Direction-Aware Reciprocal Agent--Step Contextualization Model for Failure Attribution in Multi-Agent Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "LLM多智能体系统中的失败归因",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.11596v1",
+      "route": "202608/17/2608.11596v1-small-language-model-enabled-autonomous-agent-for-language-conditioned-cognitive-radar",
+      "title": "Small Language Model enabled Autonomous agent for Language-Conditioned Cognitive Radar",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向认知雷达控制的自主智能体",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.10669v1",
+      "route": "202608/17/2608.10669v1-redagentbench-executable-red-teaming-and-faithful-measurement-of-llm-agent-systems",
+      "title": "REDAgentBench: Executable Red Teaming and Faithful Measurement of LLM Agent Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "用于LLM智能体自主红队与安全测量的可执行框架",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.11524v1",
+      "route": "202608/17/2608.11524v1-descriptive-dispatch-of-computational-work",
+      "title": "Descriptive Dispatch of Computational Work",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "AI/ML智能体用于跨集群计算任务调度",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    },
+    {
+      "paper_id": "2608.12977v1",
+      "route": "202608/17/2608.12977v1-beyond-handcrafted-security-towards-self-evolving-defense-for-llm-agents",
+      "title": "Beyond Handcrafted Security: Towards Self-Evolving Defense for LLM Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "面向LLM智能体的基于harness的自演化防御架构",
+      "first_seen_at": "2026-08-17 19:56:30 UTC",
+      "updated_at": "2026-08-17 19:56:30 UTC"
+    }
+  ]
+}
