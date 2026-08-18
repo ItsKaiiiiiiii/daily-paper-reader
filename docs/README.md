@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-17</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-18</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 21 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 22 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>10</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>11</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-17 19:56:30 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-18 20:36:24 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,9 +62,7 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日共读21篇，精读10篇，速读11篇，核心聚焦多智能体与人本AI新范式。</p>
-<p>最值得看：人中心具身代理《ComBodied Agents》提出全新范式，多智能体熵增强优化方法领跑精读榜首。</p>
-<p>明天可从速读中的商业竞技场与能源调度Agent入手，快速了解LLM在真实市场与物理约束下的落地边界。</p>
+<p>今日共处理22篇论文，精读11篇，其中两篇获9.0高分。最值得关注的方向是智能体自进化优化（MEGA）与移动通信代理的频谱控制。建议优先精读MEGA，了解其智慧图驱动的自进化基础设施。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -73,12 +71,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">10 篇</strong>
+    <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="ComBodied Agents: a New Paradigm of Human-Centric Agentic AI">ComBodied Agents: a New Paradigm of Human-Centric Agentic AI</span></li><li><span class="dpr-home-dashboard-paper-title" title="Entropy-Augmented Multi-Objective Policy Optimization in Multiagent Systems">Entropy-Augmented Multi-Objective Policy Optimization in Multiagent Systems</span></li><li><span class="dpr-home-dashboard-paper-title" title="BoardroomAI: Dependency-Aware Human-Steerable Multi-Agent Deliberation through Evolving Decision Graphs">BoardroomAI: Dependency-Aware Human-Steerable Multi-Agent Deliberation through Evolving Decision Graphs</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="MEGA: Self-Evolving Agent Optimization Infrastructure via Wisdom Graph">MEGA: Self-Evolving Agent Optimization Infrastructure via Wisdom Graph</span></li><li><span class="dpr-home-dashboard-paper-title" title="Adjacency-Based Spectral Proxy Control of Mobile Communication Agents">Adjacency-Based Spectral Proxy Control of Mobile Communication Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Clearing the Fog: Towards Installing and Refining Proactive Exploration Capabilities in LLM Agents">Clearing the Fog: Towards Installing and Refining Proactive Exploration Capabilities in LLM Agents</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>10</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -89,7 +87,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Business Arena: Benchmarking LLM Agents in a Realistic Marketplace">Business Arena: Benchmarking LLM Agents in a Realistic Marketplace</span></li><li><span class="dpr-home-dashboard-paper-title" title="Physically Constrained Agentic AI for Energy Scheduling">Physically Constrained Agentic AI for Energy Scheduling</span></li><li><span class="dpr-home-dashboard-paper-title" title="From Relevance to Execution Utility: Reward-Aware Dynamic Execution Gating for Skill-Based LLM Agents">From Relevance to Execution Utility: Reward-Aware Dynamic Execution Gating for Skill-Based LLM Agents</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="DH-VLM: Dual-Horizon Cooperative Latent Reasoning for Autonomous Driving">DH-VLM: Dual-Horizon Cooperative Latent Reasoning for Autonomous Driving</span></li><li><span class="dpr-home-dashboard-paper-title" title="OpenLoopEvolve: A Verifiable Self-Evolution Framework for Loop Policies in Long-Horizon Complex Tasks">OpenLoopEvolve: A Verifiable Self-Evolution Framework for Loop Policies in Long-Horizon Complex Tasks</span></li><li><span class="dpr-home-dashboard-paper-title" title="Bidirectional Context Self-Distillation for Reinforcement Learning of Skill-Based LLM Agents">Bidirectional Context Self-Distillation for Reinforcement Learning of Skill-Based LLM Agents</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>
