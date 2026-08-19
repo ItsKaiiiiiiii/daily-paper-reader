@@ -1,0 +1,815 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-19T19:49:49.453540+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 40,
+    "deep_cap": 6,
+    "deep_selected": 9,
+    "quick_candidates": 48,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2608.14109v1",
+      "source": "arxiv",
+      "title": "A Graph-Based Reinforcement Learning Framework for Structured Drift Diagnosis and Recovery in Autonomous LLM Agents",
+      "abstract": "Autonomous LLM agents are increasingly deployed in complex real-world workflows, yet they remain vulnerable to runtime behavioral drift, a silent deviation from the original task that can lead to irreversible side effects on external systems. Existing approaches address drift at the prompt level but lack structured mechanisms for step-level detection, risk assessment, and recovery decision. Because the main task-executing agent is often a large and expensive model that cannot be re-trained on every deployment, this work targets a plug-and-play recovery module instead. It introduces a graph-based framework in which a single small language model is trained via reinforcement learning to specialize at each node of a recovery graph, external to the main agent. Each node has a precise role\\,: drift classification, operation detection, risk evaluation, or final decision and the model learns to produce structured XML-formatted reasoning adapted to that role. Training combines rule-based structural rewards with an LLM-as-judge semantic-quality signal, so that the model is graded both on how it answers (schema and length) and on what it says. Experiments on the public AppWorld benchmark show that the method generally exploits information about the suspected drift onset to issue correct recovery decisions using a small language model. In addition, the trained small language model reliably respects the prescribed output schema and produces semantically appropriate content in each field according to its assigned node role.",
+      "authors": [
+        "Ismail El Hamraoui",
+        "Sagar Jose",
+        "Nicolas Bureau",
+        "Robert Plana"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "published": "2026-08-14T09:12:14+00:00",
+      "link": "https://arxiv.org/pdf/2608.14109v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "graph-based RL framework for step-level drift detection, risk assessment, and recovery decision in autonomous LLM agents",
+      "llm_evidence_cn": "面向自主LLM智能体的图强化学习框架，用于步骤级漂移诊断、风险评估与恢复决策",
+      "llm_evidence": "面向自主LLM智能体的图强化学习框架，用于步骤级漂移诊断、风险评估与恢复决策",
+      "canonical_evidence": "面向自主LLM智能体的图强化学习框架，用于步骤级漂移诊断、风险评估与恢复决策",
+      "llm_tldr_en": "Proposes a graph-based RL framework that trains a small LM to detect step-level behavioral drift, assess risk, and decide recovery for autonomous LLM agents, acting as a plug-and-play recovery module.",
+      "llm_tldr_cn": "针对自主LLM智能体在复杂工作流中可能发生运行时行为漂移却缺乏结构化检测与恢复机制的问题，本文提出基于图的强化学习恢复框架。该框架只用一个较小的语言模型，通过强化学习在每个节点上专业化，实现步骤级漂移检测、风险分级和恢复决策。由于主执行智能体不可重训练，该恢复模块即插即用，无需改动大模型，为提升部署中的智能体可靠性提供了一种轻量级、可迁移的保障机制。",
+      "llm_tldr": "针对自主LLM智能体在复杂工作流中可能发生运行时行为漂移却缺乏结构化检测与恢复机制的问题，本文提出基于图的强化学习恢复框架。该框架只用一个较小的语言模型，通过强化学习在每个节点上专业化，实现步骤级漂移检测、风险分级和恢复决策。由于主执行智能体不可重训练，该恢复模块即插即用，无需改动大模型，为提升部署中的智能体可靠性提供了一种轻量级、可迁移的保障机制。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent decision making",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.15175v1",
+      "source": "arxiv",
+      "title": "LAPF: LLM-Agent-Based Path Finder Using the UAVScenes Dataset",
+      "abstract": "Uncrewed aerial vehicles (UAVs) are increasingly deployed for autonomous navigation in complex outdoor environments, where dynamic conditions and mission requirements require intelligent adaptive decision-making. Existing optimization-based, Machine Learning (ML), and Reinforcement Learning (RL) approaches often rely on predefined models or task-specific training, limiting their generalization and adaptability in uncertain scenarios. Recent Large Language Model (LLM)-assisted approaches offer promising reasoning capabilities but remain constrained by limited agentic functionality, including insufficient memory, planning, and tool interaction mechanisms.This paper proposes an LLM-Agent-Based Path Finder (LAPF) framework for autonomous UAV navigation in town-scale outdoor environments. LAPF extends LLM-assisted navigation by integrating perception, memory, planning, and action modules into a closed-loop cognitive architecture. The proposed agent leverages prior navigation experiences, performs Chain-of-Thought (CoT) reasoning, couples each detected hazard to a bounded corrective action, and dynamically refines waypoint decisions based on environmental feedback.The three independent trials per method demonstrate that LAPF achieves mean path lengths of 512.83 m and 506.37 m, compared to the straight-line optimum of 497.33 m, corresponding to path length reductions of 17.2% and 15.6% relative to CoT prompting and absolute path efficiencies of 97.1% and 98.1% in open-field and obstacle-injected scenarios, respectively. Furthermore, LAPF is the only evaluated approach that couples every detected hazard to a bounded, metric-neutral corrective action while maintaining near-goal stability, with zero clamp events in both scenarios, whereas CoT prompting increases from 9.7 to 14.0 events.",
+      "authors": [
+        "Yousef Emami",
+        "Mohammadhossein Homaei",
+        "Hao Zhou",
+        "Miguel Gutiérrez Gaitán",
+        "Atefeh Hajijamali Arani",
+        "Rui Zhang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-08-15T11:28:21+00:00",
+      "link": "https://arxiv.org/pdf/2608.15175v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "LLM-agent-based path finder for autonomous UAV navigation, involving agent planning and decision-making",
+      "llm_evidence_cn": "基于LLM智能体的无人机自主导航路径规划，涉及智能体规划与决策",
+      "llm_evidence": "基于LLM智能体的无人机自主导航路径规划，涉及智能体规划与决策",
+      "canonical_evidence": "基于LLM智能体的无人机自主导航路径规划，涉及智能体规划与决策",
+      "llm_tldr_en": "LAPF framework uses an LLM agent with memory, planning, and tool interaction for autonomous UAV path finding, addressing poor generalization of existing optimization, ML, and RL methods in uncertain environments.",
+      "llm_tldr_cn": "无人机在复杂户外环境的自主导航需要智能自适应决策，现有优化、机器学习和强化学习方法往往依赖预定义模型和任务特定训练，泛化与适应能力有限。该文提出LAPF框架，将LLM智能体引入路径规划，整合记忆、规划与工具交互机制，使智能体能在不确定场景中做出自适应决策。在UAVScenes数据集上的实验验证了框架的有效性，表明其在复杂环境中的导航性能优于现有方案，为智能体在自主导航中的应用提供了新思路。",
+      "llm_tldr": "无人机在复杂户外环境的自主导航需要智能自适应决策，现有优化、机器学习和强化学习方法往往依赖预定义模型和任务特定训练，泛化与适应能力有限。该文提出LAPF框架，将LLM智能体引入路径规划，整合记忆、规划与工具交互机制，使智能体能在不确定场景中做出自适应决策。在UAVScenes数据集上的实验验证了框架的有效性，表明其在复杂环境中的导航性能优于现有方案，为智能体在自主导航中的应用提供了新思路。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent planning",
+      "matched_requirement_id": "req-10",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.15191v1",
+      "source": "arxiv",
+      "title": "When Deep Research Agents Stagnate: Enhancing Reasoning with Retrieval-Aware Agent Control",
+      "abstract": "In this paper, we analyze the reasoning trajectories of a variety of DRAs and show that existing agents often suffer from reasoning stagnation: the majority of iterations contribute little or no improvement to final performance, while agents lack awareness of their trajectories and are therefore ineffective at adapting their search strategies or determining when to terminate. To address this issue, we introduce a set of unsupervised signals and a Retrieval-Aware Agent Controller (RAAC), which assists the agent in selecting optimal actions at each stage of the research process. RAAC incorporates key information retrieval principles, namely search novelty and information coverage, resulting in more effective reasoning trajectories that improve overall performance while reducing unnecessary iterations, and consequently cost and latency. Specifically on BrowseComp-Plus and across a large set of DRAs, adding RAAC reduces the number of search calls by an average of 14, significantly improves the best-performing DRA on recall and accuracy, and achieves an accuracy gain of up to 10% (3% on average).",
+      "authors": [
+        "Heydar Soudani",
+        "Elizabeth Lingg",
+        "Faegheh Hasibi",
+        "Navid Rekabsaz"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-08-15T12:14:38+00:00",
+      "link": "https://arxiv.org/pdf/2608.15191v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Retrieval-aware agent controller improving reasoning and adaptive action selection for deep research agents",
+      "llm_evidence_cn": "面向深度研究智能体的检索感知控制与自适应决策",
+      "llm_evidence": "面向深度研究智能体的检索感知控制与自适应决策",
+      "canonical_evidence": "面向深度研究智能体的检索感知控制与自适应决策",
+      "llm_tldr_en": "Analyzes reasoning stagnation in deep research agents and introduces RAAC, a retrieval-aware controller using search novelty and information coverage to help agents select actions and terminate appropriately, improving reasoning trajectories.",
+      "llm_tldr_cn": "针对深度研究智能体在推理过程中出现停滞、多数迭代对最终性能贡献甚微的问题，本文提出检索感知智能体控制器(RAAC)。RAAC利用搜索新颖性和信息覆盖度等检索原则，为智能体在每个研究阶段选择最优动作，并帮助其判断何时终止。实验表明RAAC能生成更有效的推理轨迹，显著提升深度研究智能体的整体性能，为智能体推理控制与规划提供了新思路。",
+      "llm_tldr": "针对深度研究智能体在推理过程中出现停滞、多数迭代对最终性能贡献甚微的问题，本文提出检索感知智能体控制器(RAAC)。RAAC利用搜索新颖性和信息覆盖度等检索原则，为智能体在每个研究阶段选择最优动作，并帮助其判断何时终止。实验表明RAAC能生成更有效的推理轨迹，显著提升深度研究智能体的整体性能，为智能体推理控制与规划提供了新思路。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent planning",
+      "matched_requirement_id": "req-10",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.16578v1",
+      "source": "arxiv",
+      "title": "Physics of Agents: Statistical Mechanics Predicts Collective Behavior of AI Agents",
+      "abstract": "AI agents increasingly operate as part of interacting systems rather than in isolation. As agents exchange information and jointly make decisions, their interactions can improve collective reasoning but may also produce herding, polarization, or amplify shared biases. Understanding and predicting these collective dynamics is therefore important for designing effective and aligned multi-agent systems. Here, we study over 10,000 communities of language-model agents that repeatedly exchange messages and revise their opinions across objective mathematics questions and subjective political statements. Despite substantial diversity in possible behavior, the individual and group dynamics can be represented by three characteristic regimes: indifference, polarization, and consensus. AI agents start indifferent and build conviction as they interact. On objective questions, communication improves collective accuracy, while on subjective questions it often drifts group opinions toward the right in the political spectrum. We explain these observations with a statistical-mechanics formalism in which agents stochastically favor lower social pressure. Given only initial opinions, our model predicts individual trajectories, outperforms all standard baselines, generalizes to unseen community graphs, and reproduces the observed group archetype distributions. Our fitted model parameters reveal the mechanics underlying our key observations: i) communities operate below the critical social temperature, which explains conviction buildup; ii) attractive ties outweigh repulsive ones, which favors consensus; and iii) agents holding the correct answer exert the strongest pull, which drives truth-seeking. Overall, our results demonstrate that collective behavior of AI agents, like that of other complex systems, follows compact and predictive dynamical laws.",
+      "authors": [
+        "Batu El",
+        "Jinhee Paeng",
+        "Fatih Dinc",
+        "Shiye Su",
+        "Mete Erdogan",
+        "Aneesh Pappu",
+        "Haotian Ye",
+        "Wanjia Zhao",
+        "Surya Ganguli",
+        "James Zou"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA",
+        "cs.SI"
+      ],
+      "published": "2026-08-17T13:41:24+00:00",
+      "link": "https://arxiv.org/pdf/2608.16578v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "studies collective behavior of interacting AI agents across 10,000 communities",
+      "llm_evidence_cn": "研究一万多个语言模型代理社区的集体行为与观点演化",
+      "llm_evidence": "研究一万多个语言模型代理社区的集体行为与观点演化",
+      "canonical_evidence": "研究一万多个语言模型代理社区的集体行为与观点演化",
+      "llm_tldr_en": "Applies statistical mechanics to model collective opinion dynamics of language-model agents, revealing three characteristic regimes that help predict and design effective multi-agent systems.",
+      "llm_tldr_cn": "本文针对多智能体系统交互可能引发羊群效应、极化与偏差放大等问题，利用统计力学框架对超过一万个语言模型代理社区的消息交换与观点更新进行建模。研究发现个体与群体动力学可归纳为三种典型状态，能够刻画从改善集体推理到放大共有偏差的过渡。该成果为设计有效且对齐的多智能体系统提供了普适的预测工具与理论支撑。",
+      "llm_tldr": "本文针对多智能体系统交互可能引发羊群效应、极化与偏差放大等问题，利用统计力学框架对超过一万个语言模型代理社区的消息交换与观点更新进行建模。研究发现个体与群体动力学可归纳为三种典型状态，能够刻画从改善集体推理到放大共有偏差的过渡。该成果为设计有效且对齐的多智能体系统提供了普适的预测工具与理论支撑。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.16794v1",
+      "source": "arxiv",
+      "title": "Neurosymbolic Embodied Agents",
+      "abstract": "Language and vision-language models generate plausible embodied plans but do not guarantee executability, as their outputs can violate environment dynamics or act on incorrectly grounded entities. We present a neurosymbolic agent that factors long-horizon household tasks into task-directed visual exploration and constrained symbolic planning. In the first phase, a vision-language model and exploration harness acquire goal-relevant predicates and instance bindings from egocentric observations and grounded interactions, producing a symbolic initial state. In the second, a PDDL transition model restricts decoding to tokens that extend applicable actions. Monte Carlo tree search then evaluates executable continuations using a domain-independent planning heuristic. The resulting plans are executable by construction under the transition model, with transfer to the environment conditioned on correct visual grounding. On VirtualHome and ALFWorld, open 4B-27B models exceed 90% success in both environments, and our smallest agent substantially outperforms a 27B direct visual policy in each. Constraints and search prove complementary rather than interchangeable: in ALFWorld either alone solves under a third of tasks, whereas their combination solves over 95%. The method also uses several times fewer generated tokens than extended thinking and far fewer model-visible images than direct interaction, and residual failures localize to state acquisition rather than plan generation without any specialized training.",
+      "authors": [
+        "Mohammad Albinhassan",
+        "Yuming Feng",
+        "Alessandra Russo",
+        "Pranava Madhyastha"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-17T16:50:59+00:00",
+      "link": "https://arxiv.org/pdf/2608.16794v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "neurosymbolic agent with constrained symbolic planning and MCTS for long-horizon tasks",
+      "llm_evidence_cn": "神经符号智能体结合受限符号规划与蒙特卡洛树搜索解决长程任务",
+      "llm_evidence": "神经符号智能体结合受限符号规划与蒙特卡洛树搜索解决长程任务",
+      "canonical_evidence": "神经符号智能体结合受限符号规划与蒙特卡洛树搜索解决长程任务",
+      "llm_tldr_en": "Neurosymbolic Embodied Agents combines visual exploration with PDDL-constrained decoding and MCTS to produce executable plans for long-horizon household tasks.",
+      "llm_tldr_cn": "语言与视觉语言模型生成的具身计划可能违反环境动态或错误设定物体，无法保证可执行。本文提出神经符号智能体，将长程家务任务分解为面向任务的视觉探索与受限符号规划两阶段。先由视觉语言模型和探索装置从自我中心观察中获取谓词和实例绑定，构建符号初始状态；再用PDDL转移模型限制token解码至可应用动作，并通过蒙特卡洛树搜索评估可执行延续。计划在确保环境动态与实体正确性上具有可执行性，为具身智能体规划提供了可靠架构。",
+      "llm_tldr": "语言与视觉语言模型生成的具身计划可能违反环境动态或错误设定物体，无法保证可执行。本文提出神经符号智能体，将长程家务任务分解为面向任务的视觉探索与受限符号规划两阶段。先由视觉语言模型和探索装置从自我中心观察中获取谓词和实例绑定，构建符号初始状态；再用PDDL转移模型限制token解码至可应用动作，并通过蒙特卡洛树搜索评估可执行延续。计划在确保环境动态与实体正确性上具有可执行性，为具身智能体规划提供了可靠架构。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent planning",
+      "matched_requirement_id": "req-10",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.17209v1",
+      "source": "arxiv",
+      "title": "Teach and Grow: An Agent-Centered Architecture for General Robot Learning",
+      "abstract": "End-to-end vision-language-action (VLA) and world-action models offer an elegant route to general-purpose robotics, but their reliability is bounded by validated physical coverage. When an unfamiliar object, sensor, embodiment, or contact falls outside that coverage and no validated fallback exists, correcting the failure requires new robot data, a policy update, and regression testing. This recurring burden is the retraining tax. Unlike text, embodied data must often be created by operating machines. We present Teach-and-Grow Learning (TGL), an agent-centered architecture for general robot learning. In its general form, a multimodal agent turns a few successful demonstrations into reusable Skill Blocks: closed-loop behaviors for meaningful subgoals. In a new scene, the agent grounds and composes these blocks, selects learned or geometric tools, observes the physical outcome, and revises the route when execution departs from intent. A Skill Library stores executable behavior, while structured Experience Memory carries forward success, failure, and repair. New tasks are acquired without task-specific policy retraining. Our LIBERO evaluation attains state-of-the-art performance; controlled studies expose skill induction, persistent reuse, and agent-directed adaptation. Finally, we propose the Teach-and-Grow scaling-law hypothesis: if X denotes effective reusable experience, future-task error and teaching demand should approach irreducible floors as power laws in X. The architecture therefore treats deployment as a period of continued learning, in which one task can make the next easier.",
+      "authors": [
+        "Chang Nie",
+        "Zhe Liu",
+        "Hesheng Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-08-17T23:45:21+00:00",
+      "link": "https://arxiv.org/pdf/2608.17209v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "agent-centered architecture that converts demonstrations into reusable Skill Blocks for general robot learning",
+      "llm_evidence_cn": "以智能体为中心的架构，将少量演示转化为可复用的技能块以支持通用机器人学习",
+      "llm_evidence": "以智能体为中心的架构，将少量演示转化为可复用的技能块以支持通用机器人学习",
+      "canonical_evidence": "以智能体为中心的架构，将少量演示转化为可复用的技能块以支持通用机器人学习",
+      "llm_tldr_en": "Introduces Teach-and-Grow Learning, an agent-centered architecture where a multimodal agent converts few demonstrations into reusable Skill Blocks, reducing retraining tax for general robot learning.",
+      "llm_tldr_cn": "针对端到端机器人模型在未知物理覆盖下需要反复收集数据、更新策略的高昂重训练代价，本文提出以智能体为中心的教与学（TGL）架构。多模态智能体将少量成功演示转化为可复用的封闭循环技能块，并通过增长方式覆盖新对象、传感器与接触场景。实验表明该架构能显著减少回归测试与重训练负担，为通用机器人学习提供了一种可持续演化的设计模式。",
+      "llm_tldr": "针对端到端机器人模型在未知物理覆盖下需要反复收集数据、更新策略的高昂重训练代价，本文提出以智能体为中心的教与学（TGL）架构。多模态智能体将少量成功演示转化为可复用的封闭循环技能块，并通过增长方式覆盖新对象、传感器与接触场景。实验表明该架构能显著减少回归测试与重训练负担，为通用机器人学习提供了一种可持续演化的设计模式。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.17282v1",
+      "source": "arxiv",
+      "title": "DeAR: Decentralized Agentic Reasoning via Capability Grounding and Collaborative Thought Navigation",
+      "abstract": "Existing agentic reasoning systems typically rely on centralized protocols. This design introduces routing bottlenecks and static role allocations that often fail when handling complex multimodal queries. We propose DeAR (Decentralized Agentic Reasoning), a framework that shifts from central control to autonomous peer-to-peer collaboration. DeAR is built on three mechanisms: (1) decentralized capability grounding for query-dependent agent specialization, (2) thought map navigation for targeted peer interactions, and (3) topology update for adaptive error correction. Evaluations across 9 diverse multimodal reasoning and text-based QA benchmarks indicate that DeAR consistently outperforms recent baseline methods, validating that decentralized and adaptive collaboration among agents enhances accuracy in knowledge-intensive reasoning tasks. The source code will be available at https://open_upon_acceptance.",
+      "authors": [
+        "Xing Wei",
+        "Changmeng Zheng",
+        "XiaoYong Wei",
+        "Xiufen Ye",
+        "Qing Li"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-18T02:26:13+00:00",
+      "link": "https://arxiv.org/pdf/2608.17282v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Decentralized agentic reasoning framework for peer-to-peer multi-agent collaboration",
+      "llm_evidence_cn": "实现去中心化智能体对等协作与自适应拓扑更新的推理框架",
+      "llm_evidence": "实现去中心化智能体对等协作与自适应拓扑更新的推理框架",
+      "canonical_evidence": "实现去中心化智能体对等协作与自适应拓扑更新的推理框架",
+      "llm_tldr_en": "DeAR shifts from centralized agent orchestration to autonomous peer-to-peer collaboration using capability grounding, thought map navigation, and topology updates, outperforming baselines on multimodal QA benchmarks.",
+      "llm_tldr_cn": "集中式智能体推理系统存在路由瓶颈与静态角色分配问题，难以处理复杂多模态查询。该文提出DeAR，去中心化智能体推理框架，通过能力定位实现查询相关的智能体特化，利用思维地图导航进行目标对等交互，并通过拓扑更新实现自适应错误修正。在9个多模态与文本问答基准上的实验表明，DeAR持续优于当前基线，验证了去中心化协作在复杂推理中的有效性，为多智能体系统设计提供了新范式。",
+      "llm_tldr": "集中式智能体推理系统存在路由瓶颈与静态角色分配问题，难以处理复杂多模态查询。该文提出DeAR，去中心化智能体推理框架，通过能力定位实现查询相关的智能体特化，利用思维地图导航进行目标对等交互，并通过拓扑更新实现自适应错误修正。在9个多模态与文本问答基准上的实验表明，DeAR持续优于当前基线，验证了去中心化协作在复杂推理中的有效性，为多智能体系统设计提供了新范式。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "multi-agent system coordination",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.17289v1",
+      "source": "arxiv",
+      "title": "PlanPO: Group Planning-Aware Policy Optimization for Multi-Turn Agentic LLMs",
+      "abstract": "Group-relative policy optimization has emerged as a key paradigm for training agentic large language models (LLMs) on multi-turn interactive tasks. However, most existing variants fail to distinguish advantages among successful trajectories even when these trajectories differ substantially in their interaction efficiency. For instance, circuitous successes are often assigned the identical outcome reward, causing advantage collapse and severe performance bottlenecks. To this end, we propose Group Planning-aware Policy Optimization (PlanPO), a simple yet effective RL method for learning generalizable planning abilities beyond task-specific high-quality behavior patterns. Specifically, PlanPO introduces coarse-to-fine advantage signals, which capture the relative differences in trajectory-level lengths and turn-level response lengths conditioned on successful trajectories sampled for the same task. Within the group-relative optimization structure, this enables agents to actively learn generalizable and deliberate behaviors spanning interaction planning and textual generation from high-quality rollouts, without degenerating into vanilla length minimization. Experimentally, PlanPO improves over GRPO by 27.2\\% on average across the challenging multi-turn benchmarks ALFWorld, WebShop, and SciWorld, outperforming recent powerful baselines while incurring negligible additional training cost.",
+      "authors": [
+        "Dayang Liang",
+        "Liyuan He",
+        "Xuan Feng",
+        "Shuxin Li",
+        "Bo An",
+        "Yunlong Liu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-18T02:39:53+00:00",
+      "link": "https://arxiv.org/pdf/2608.17289v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "RL policy optimization to improve planning abilities in multi-turn agentic LLMs",
+      "llm_evidence_cn": "面向多轮智能体大模型的规划感知策略优化方法",
+      "llm_evidence": "面向多轮智能体大模型的规划感知策略优化方法",
+      "canonical_evidence": "面向多轮智能体大模型的规划感知策略优化方法",
+      "llm_tldr_en": "Proposes PlanPO, a group planning-aware policy optimization that injects coarse-to-fine advantage signals to learn generalizable planning for multi-turn agentic LLMs, avoiding advantage collapse in circuitous successes.",
+      "llm_tldr_cn": "现有策略优化方法在多轮智能体任务中难以区分效率不同的成功轨迹，导致优势坍缩和规划能力瓶颈。为此提出PlanPO，一种规划感知的策略优化方法，通过自粗到细的优势信号提升智能体在长程交互中的规划泛化能力。实验表明该方法能避免优势坍缩并显著提升性能，为训练通用规划型智能体提供了新的优化范式。",
+      "llm_tldr": "现有策略优化方法在多轮智能体任务中难以区分效率不同的成功轨迹，导致优势坍缩和规划能力瓶颈。为此提出PlanPO，一种规划感知的策略优化方法，通过自粗到细的优势信号提升智能体在长程交互中的规划泛化能力。实验表明该方法能避免优势坍缩并显著提升性能，为训练通用规划型智能体提供了新的优化范式。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent planning",
+      "matched_requirement_id": "req-10",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.17584v1",
+      "source": "arxiv",
+      "title": "HODAgent: Towards On-Demand, Responsive Humanoids for Physical World Human Interaction",
+      "abstract": "We propose HODAgent, a System-2 embodied agent for humanoid robots in service settings, addressing situated intent, responsive execution, task revision, and outcome verification. Its semi-duplex architecture integrates an Env-Interactor, Planner, Executor, and hierarchical Memory to maintain coherent interaction, planning, and task state during service episodes. This allows handling new requests during motion, retaining progress, revising actions, and grounding closure in execution outcomes. A shared interface connects simulation and physical robots (Unitree G1), isolating platform-specific control. In an interactive simulation with 164 cases, HODAgent achieves 84.8% and 91.5% Joint Success under two VLM backbones, outperforming baselines by 9.8 and 18.9 points. On physical robots, pass rates are 92% (atomic), 72% (composite), and 63.3% (complete tasks). On multiple embodied benchmarks, it improves over baselines by 0.7-9.0 points. Results show a unified System-2 agent enables adaptive humanoid service across simulation and reality.",
+      "authors": [
+        "Wang Warren Chen",
+        "Jiahao Zhang",
+        "Zhenjiang Li",
+        "Mingxu Wang",
+        "Lei Yi",
+        "Yuchen Kang",
+        "Shuo Sun",
+        "Ziping Chen",
+        "Jie Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-18T09:49:16+00:00",
+      "link": "https://arxiv.org/pdf/2608.17584v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "System-2 embodied agent architecture for humanoid robots integrating planning, execution, memory, and interaction control",
+      "llm_evidence_cn": "面向人形机器人的System-2具身智能体架构，整合规划、执行、记忆与交互控制",
+      "llm_evidence": "面向人形机器人的System-2具身智能体架构，整合规划、执行、记忆与交互控制",
+      "canonical_evidence": "面向人形机器人的System-2具身智能体架构，整合规划、执行、记忆与交互控制",
+      "llm_tldr_en": "HODAgent introduces a semi-duplex System-2 architecture with Env-Interactor, Planner, Executor, and hierarchical memory, enabling humanoid robots to handle on-demand requests and revise tasks during service.",
+      "llm_tldr_cn": "服务场景中的人形机器人需要理解情境意图、响应执行、任务修订和结果验证。该文提出HODAgent，一个System-2具身智能体，采用半双工架构整合环境交互器、规划器、执行器和分层记忆，使机器人在运动过程中能处理新请求、保持进度并修订动作。在164个交互仿真案例中，HODAgent在两种VLM骨干下分别取得84.8%和91.5%的联合成功率，优于基线，并支持仿真与实体机器人的共享接口。",
+      "llm_tldr": "服务场景中的人形机器人需要理解情境意图、响应执行、任务修订和结果验证。该文提出HODAgent，一个System-2具身智能体，采用半双工架构整合环境交互器、规划器、执行器和分层记忆，使机器人在运动过程中能处理新请求、保持进度并修订动作。在164个交互仿真案例中，HODAgent在两种VLM骨干下分别取得84.8%和91.5%的联合成功率，优于基线，并支持仿真与实体机器人的共享接口。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "papers on autonomous agent architectures and control",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2608.10475v1",
+      "source": "arxiv",
+      "title": "Evaluating Rational Contracting in Natural Language",
+      "abstract": "The emergence of language-based AI agents promises to transform the scope of machine economic activity. Instead of just proposing bids or following hard-coded protocols, such agents can be used to negotiate and execute agreements in open-ended natural language. However, most evaluations of these abilities have focused on one-off exchanges or simple economic games, leaving open the rich space of time-extended, contingent, and incomplete contracts made expressible by language; they also focus on raw profit, without measuring the qualities required for trustworthy contracting. We address this by formulating a rational framework for how agents should negotiate and perform natural language contracts in uncertain multi-step environments. Within this framework, we develop metrics and baselines for quantifying rational and cooperative play. To evaluate how agents perform at such contracting, we instantiate our framework in ContractSim, an evaluation suite where two players negotiate and execute a multi-turn supplier contract under environmental and inter-player uncertainty. Across six environments and three supplier settings (catering, hotel cleaning, and AI hosting) we find that current LLM-based agents reach agreement reliably, and negotiate efficient contracts when environmental uncertainty is low. However, under high uncertainty, they often fail to negotiate satisfiable, efficient, or mutually beneficial contracts. They are also frequently uncooperative when executing contracts, violating contract terms for additional profit even when contracts are easy to satisfy. These findings highlight room for improvement in the design of language agents that can negotiate, interpret, and execute contracts both rationally and cooperatively.",
+      "authors": [
+        "Bhavyesh Sajja",
+        "Max Kleiman-Weiner",
+        "Roger Zimmermann",
+        "Tan Zhi-Xuan"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.GT"
+      ],
+      "published": "2026-08-11T04:44:50+00:00",
+      "link": "https://arxiv.org/pdf/2608.10475v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "rational framework for how agents should negotiate and perform natural language contracts in uncertain multi-step environments",
+      "llm_evidence_cn": "提出智能体在不确定多步环境中进行自然语言合同谈判与履约的理性框架",
+      "llm_evidence": "提出智能体在不确定多步环境中进行自然语言合同谈判与履约的理性框架",
+      "canonical_evidence": "提出智能体在不确定多步环境中进行自然语言合同谈判与履约的理性框架",
+      "llm_tldr_en": "Presents a rational framework and metrics for evaluating how language-based AI agents negotiate and perform time-extended, contingent, and incomplete contracts in uncertain multi-step environments, going beyond one-off exchanges and raw profit.",
+      "llm_tldr_cn": "语言智能体的出现有望扩展机器经济活动，但现有评测多局限于一次性交易或简单博弈，且只关注利润而忽略可信履约所需的能力。本文提出一个理性框架，描述智能体如何在不确定多步环境中谈判并履行自然语言合同，并开发相应的评估指标。该框架可用于评估更丰富的时间延展性与或有合同，推动语言智能体在经济交互中的可信部署。",
+      "llm_tldr": "语言智能体的出现有望扩展机器经济活动，但现有评测多局限于一次性交易或简单博弈，且只关注利润而忽略可信履约所需的能力。本文提出一个理性框架，描述智能体如何在不确定多步环境中谈判并履行自然语言合同，并开发相应的评估指标。该框架可用于评估更丰富的时间延展性与或有合同，推动语言智能体在经济交互中的可信部署。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent decision making",
+      "matched_requirement_id": "req-2",
+      "selection_source": "carryover_cache",
+      "paper_id": "2608.10475v1",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.10669v1",
+      "source": "arxiv",
+      "title": "REDAgentBench: Executable Red Teaming and Faithful Measurement of LLM Agent Systems",
+      "abstract": "Large language model (LLM) agents combine language-based reasoning with external tools to perform complex tasks. Adversarial inputs can exploit interactions between the agent and its environment, causing the agent to violate safety policies during execution. Yet existing evaluations often reduce agent safety to a single attack success rate (ASR), collapsing exposure, execution, observation, and adjudication and potentially conflating actual violations with evidence visibility. We introduce REDAgentBench, an executable framework for autonomous red-teaming and faithful measurement. It derives attacks from explicit safety constraints and associated agent-system vulnerabilities, runs them in isolated service sandboxes, and verifies harmful effects from service receipts and final-state changes. The benchmark contains 1,661 cases across five service surfaces. Across six models and three agent harnesses, macro-average ASR is 65.69%; reported ASR varies with harness and evidence view, while evaluation-context disclosure changes execution behavior. In a state-grounded diagnostic cohort, almost one in five confirmed violations with resolved action anchors occurs after the agent states the relevant constraint or risk, revealing a Recognition--Execution Gap. Finally, a training-free policy reminder reduces confirmed violations by more than 70 percentage points in matched replay. These findings show that executable evaluation can improve safety measurement and identify actionable intervention points.",
+      "authors": [
+        "Zixing Chen",
+        "Xingyuan Liu",
+        "Jie Zhu",
+        "Huaixia Dou",
+        "Shuo Jiang",
+        "Junhui Li",
+        "Lifan Guo",
+        "Feng Chen",
+        "Chi Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-11T08:48:54+00:00",
+      "link": "https://arxiv.org/pdf/2608.10669v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "executable red-teaming and faithful measurement framework for safety evaluation of LLM agent systems",
+      "llm_evidence_cn": "面向LLM智能体系统的可执行红队与忠实测量框架，用于安全性评估",
+      "llm_evidence": "面向LLM智能体系统的可执行红队与忠实测量框架，用于安全性评估",
+      "canonical_evidence": "面向LLM智能体系统的可执行红队与忠实测量框架，用于安全性评估",
+      "llm_tldr_en": "Introduces REDAgentBench, an executable framework that derives attacks from explicit safety constraints, runs them in isolated sandboxes, and faithfully measures actual violations in LLM agent systems.",
+      "llm_tldr_cn": "针对现有LLM智能体安全性评估常将攻击暴露、执行、观测与判定压缩为单一成功率的缺陷，本文提出REDAgentBench可执行红队框架。该框架从显式安全约束和系统漏洞推导攻击，在隔离服务沙箱中执行，并对有害影响进行忠实验证。通过区分实际违规与证据可见性，为自主智能体系统的安全性测量提供更准确、可复现的评测基础。",
+      "llm_tldr": "针对现有LLM智能体安全性评估常将攻击暴露、执行、观测与判定压缩为单一成功率的缺陷，本文提出REDAgentBench可执行红队框架。该框架从显式安全约束和系统漏洞推导攻击，在隔离服务沙箱中执行，并对有害影响进行忠实验证。通过区分实际违规与证据可见性，为自主智能体系统的安全性测量提供更准确、可复现的评测基础。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "intelligent agent design and applications",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.14893v1",
+      "source": "arxiv",
+      "title": "Weaker Coherence, Weaker Reciprocity: Comparing the Semantic and Social Organization of Moltbook and Reddit",
+      "abstract": "Large language models enable the creation of autonomous agents that interact in social environments, raising the question of whether agent-based platforms reproduce the organizational properties of human social networks. We compare Moltbook, a social network populated by AI agents, with early Reddit, focusing on how communities organize and differentiate semantic content, using network analysis and NLP methods to characterize semantic coherence and diversity within and between communities, and their relationship to user activity. We find a systematic difference between the two platforms. Reddit communities show stronger semantic coherence, closer alignment with community names, and greater semantic diversity, with individual communities spanning broader content and communities more differentiated from one another. This combination distinguishes Reddit from Moltbook, whose communities are more homogeneous, less differentiated, and increasingly misaligned with their names over time. Users on Reddit also participate across communities that are more semantically related than those connected by activity in Moltbook. At the interaction level, comment-network motif analysis shows Moltbook dominated by non-reciprocal, broadcast-like exchanges, whereas Reddit shows more reciprocal, chained interaction patterns. These results indicate that Reddit combines semantic coherence with diversity across organizational levels, a pattern not reproduced by the AI-agent network.",
+      "authors": [
+        "Favio Di Ciocco",
+        "Lucas Díaz Celauro",
+        "Sebastián Pinto",
+        "Marcelo Kuperman",
+        "Pablo Balenzuela"
+      ],
+      "primary_category": "cs.SI",
+      "categories": [
+        "cs.SI",
+        "physics.soc-ph"
+      ],
+      "published": "2026-08-14T21:01:00+00:00",
+      "link": "https://arxiv.org/pdf/2608.14893v1",
+      "tags": [
+        "keyword:agent"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "measuring social organization and coordination in AI-agent communities",
+      "llm_evidence_cn": "衡量AI智能体社区中的社会组织与协调特性",
+      "llm_evidence": "衡量AI智能体社区中的社会组织与协调特性",
+      "canonical_evidence": "衡量AI智能体社区中的社会组织与协调特性",
+      "llm_tldr_en": "This paper compares Moltbook, a social network populated by AI agents, with early Reddit using network analysis and NLP. It finds Reddit communities have stronger semantic coherence, closer alignment with community names, and greater diversity.",
+      "llm_tldr_cn": "为研究由AI智能体构成的社会平台能否复现人类社会网络的组织特性，本文用网络分析和NLP方法比较Moltbook与早期Reddit。结果显示Reddit社区具有更强的语义连贯性、与社区名称更一致、语义多样性更高。该工作揭示了智能体平台与人类社区在组织化程度上的系统性差异。",
+      "llm_tldr": "为研究由AI智能体构成的社会平台能否复现人类社会网络的组织特性，本文用网络分析和NLP方法比较Moltbook与早期Reddit。结果显示Reddit社区具有更强的语义连贯性、与社区名称更一致、语义多样性更高。该工作揭示了智能体平台与人类社区在组织化程度上的系统性差异。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "applications of intelligent agents",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.10618v1",
+      "source": "arxiv",
+      "title": "Toward the Cognitive--Physical Limits of Embodied Intelligence through a World-Model-Centric Autonomous Racing Agent",
+      "abstract": "Embodied artificial intelligence aims to develop agents that perceive, reason, and act through continuous interaction with the physical world. However, most embodied systems are still evaluated within conservative safety margins or moderate interaction regimes, leaving their capability boundaries under extreme conditions insufficiently understood. Autonomous racing provides a stringent testbed by combining high-frequency localization and perception, adversarial interaction, near-saturated vehicle dynamics, and strict safety constraints. Existing systems push high-speed performance but rarely model and refine cognitive and physical limits jointly. Here we show that a world-model-centric autonomous racing agent provides a concrete step toward exploring these coupled limits. The framework learns predictive world models from near-limit successes and failures to capture interaction evolution, ego dynamics, and feasible-motion boundaries, coupling world-state construction, future-aware reasoning, and near-limit control in a closed-loop refinement process. Training data were collected from real-vehicle autonomous racing, where the onboard system maintained robust localization and perception at speeds up to 256.3 km/h and peak lateral acceleration of 26.8 m/s$^2$. In full-scale simulated racing, the well trained world-model-centric agent achieves an 88.3% interaction success rate across various challenging simulated racing scenarios. Closed-loop refinement of the world model and policy further improved utilization of cognitive-physical limits, recovery from failure modes, and generalization across varying conditions and unseen circuits. These results suggest a boundary-aware methodology in which world models help embodied agents represent, predict, and continually refine their capability boundaries for safer real-world deployment.",
+      "authors": [
+        "Zitong Shan",
+        "Baichuan Lou",
+        "Yanxin Zhou",
+        "Shuge Wu",
+        "Xianqi He",
+        "Bolin Zhao",
+        "Sheng Zhao",
+        "Zhouheng Li",
+        "Chee Kiong Ong",
+        "King Ho Holden Li",
+        "Chen Lv"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-11T08:01:35+00:00",
+      "link": "https://arxiv.org/pdf/2608.10618v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "world-model-centric autonomous racing agent for embodied control",
+      "llm_evidence_cn": "以世界模型为中心的自主赛车智能体与具身控制",
+      "llm_evidence": "以世界模型为中心的自主赛车智能体与具身控制",
+      "canonical_evidence": "以世界模型为中心的自主赛车智能体与具身控制",
+      "llm_tldr_en": "Embodied agents are rarely tested at capability limits. Autonomous racing offers a demanding testbed. A world-model-centric racing agent jointly models cognitive and physical limits, demonstrating reliable high-speed operation near vehicle dynamics saturation and revealing cognitive-physical tradeoffs.",
+      "llm_tldr_cn": "具身智能体通常只在保守安全边际或中等交互下评估，其极端条件下的能力边界尚不清楚。自主竞速结合高频定位感知、对抗交互、近饱和车辆动态和严格安全约束，是理想的极限测试平台。本文提出一个以世界模型为中心的自主赛车智能体，通过联合建模认知与物理极限，使车辆在高速度下依然能安全可靠地行驶。实验显示该智能体可在接近车辆物理极限时保持性能，并揭示了认知与物理能力之间的相互制约关系，为设计更鲁棒的具身智能体提供了新思路。",
+      "llm_tldr": "具身智能体通常只在保守安全边际或中等交互下评估，其极端条件下的能力边界尚不清楚。自主竞速结合高频定位感知、对抗交互、近饱和车辆动态和严格安全约束，是理想的极限测试平台。本文提出一个以世界模型为中心的自主赛车智能体，通过联合建模认知与物理极限，使车辆在高速度下依然能安全可靠地行驶。实验显示该智能体可在接近车辆物理极限时保持性能，并揭示了认知与物理能力之间的相互制约关系，为设计更鲁棒的具身智能体提供了新思路。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "papers on autonomous agent architectures and control",
+      "matched_requirement_id": "req-7",
+      "selection_source": "carryover_cache",
+      "paper_id": "2608.10618v1",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.11632v1",
+      "source": "arxiv",
+      "title": "Beyond Memory: A Transactional Continuity Kernel for Long-Lived AI Agents",
+      "abstract": "Persistent AI agents accumulate versioned state across long horizons, but storage retention alone does not identify authoritative state. Without an explicit control plane, unmediated updates by models, tools, and background workers risk stale overwrites, un-audited exposures, and self-authorizing privilege escalation. We argue that agent state governance is an infrastructural activation problem, defining continuity as an unbroken, authorized lineage of accepted branch heads. We present the Continuity Kernel (CK), an activation contract that decouples off-commit candidate evaluation from atomic state activation. Untrusted components propose typed changes against an exact predecessor head or typed absence. A short activation transaction revalidates ownership, pre-state authority, freshness, and effect uniqueness, recording one stable disposition (Commit, Reject, Quarantine, or Defer). Only Commit atomically advances the branch head and installs the complete accepted unit (state, authority, lineage, effects, outcome, and receipt). A bounded executable model verifies the protocol across 2,808,230 reachable states and 5,526,474 state-changing transitions with zero invariant violations.",
+      "authors": [
+        "Jun He",
+        "Deying Yu"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "published": "2026-08-12T04:28:49+00:00",
+      "link": "https://arxiv.org/pdf/2608.11632v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "architecture pattern for managing persistent AI agent state and continuity",
+      "llm_evidence_cn": "管理持久AI智能体状态与连续性的架构模式",
+      "llm_evidence": "管理持久AI智能体状态与连续性的架构模式",
+      "canonical_evidence": "管理持久AI智能体状态与连续性的架构模式",
+      "llm_tldr_en": "Beyond Memory presents the Continuity Kernel, a transactional control plane for long-lived AI agents that prevents stale overwrites and privilege escalation by requiring authorized atomic activation of state candidates.",
+      "llm_tldr_cn": "持久化AI智能体会积累版本化状态，但仅靠存储保留无法识别权威状态，无控制平面的更新可能导致旧覆盖、未审计暴露和特权提升。本文将状态治理视为基础设施激活问题，提出连续性内核（CK）作为激活契约，将提交前候选评估与原子状态激活分离。不可信组件须针对确切前驱头提出类型化变更，由短的激活事务重新验证。该架构为长时间运行的智能体提供了权威状态管理的设计模式。",
+      "llm_tldr": "持久化AI智能体会积累版本化状态，但仅靠存储保留无法识别权威状态，无控制平面的更新可能导致旧覆盖、未审计暴露和特权提升。本文将状态治理视为基础设施激活问题，提出连续性内核（CK）作为激活契约，将提交前候选评估与原子状态激活分离。不可信组件须针对确切前驱头提出类型化变更，由短的激活事务重新验证。该架构为长时间运行的智能体提供了权威状态管理的设计模式。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.16178v1",
+      "source": "arxiv",
+      "title": "Agent-Native Telemetry: Verifiable State-Delta Evidence for Autonomous Operations",
+      "abstract": "Operational telemetry is predominantly engineered for human reading: systems repeatedly serialize verbose prose, static keys, and redundant context across billions of log lines. As autonomous AI agents become primary operational consumers, feeding them traditional logs wastes scarce context capacity parsing lexical syntax rather than reasoning over system state changes -- all while lacking cryptographic guarantees of provenance or collection completeness.   This paper introduces agent-native telemetry, an operational evidence architecture for autonomous machine operators founded on verifiable state deltas rather than human prose. We present the Agent Telemetry Protocol (ATP) and the State-Delta Evidence Ledger, an implementation that structures operational facts into four core evidence primitives (Transitions, Observations, Relations, and State Checkpoints) governed by content-addressed schemas, while isolating uncurated text as digest-verified opaque references. Producers sign and hash-chain batches for atomic collector append. Verified records feed two parallel agent access paths: a stateless protocol decoder emitting compact positional rows, and a stateful semantic gateway serving bounded graph capsules. We prove an information-preservation lower bound and formalize a ledger-relative verified negative theorem for provable event non-occurrence. On distributed microservice benchmarks (AIOpsLab and OpenTelemetry Astronomy Shop), ATP reduces raw wire payload and modeled cloud query scan costs by 96.4% relative to OpenTelemetry JSON, reduces LLM context tokens by 88.8% and query operations by 66.2%, detects all 500 tested adversarial storage mutations, and yields zero successful prompt injections across 50 adversarial trials per ATP configuration.",
+      "authors": [
+        "Jun He",
+        "Deying Yu"
+      ],
+      "primary_category": "cs.DC",
+      "categories": [
+        "cs.DC",
+        "cs.AI"
+      ],
+      "published": "2026-08-17T06:50:12+00:00",
+      "link": "https://arxiv.org/pdf/2608.16178v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "introduces agent-native telemetry and state-delta evidence ledger for autonomous AI operations",
+      "llm_evidence_cn": "提出面向自主AI操作的agent原生遥测与状态增量证据账本",
+      "llm_evidence": "提出面向自主AI操作的agent原生遥测与状态增量证据账本",
+      "canonical_evidence": "提出面向自主AI操作的agent原生遥测与状态增量证据账本",
+      "llm_tldr_en": "This paper introduces agent-native telemetry, an operational evidence architecture based on verifiable state deltas, with the Agent Telemetry Protocol and State-Delta Evidence Ledger to feed autonomous agents verifiable, space-efficient state changes.",
+      "llm_tldr_cn": "传统遥测是为人类阅读设计的，冗余文本浪费自主智能体的上下文，且缺乏可验证性和完整性。本文提出agent原生遥测，以可验证的状态增量替代人类文本，并实现Agent遥测协议和状态增量证据账本，为自主机器操作员提供结构化、可验证的运行证据。该架构提高了自主操作的安全性和效率。",
+      "llm_tldr": "传统遥测是为人类阅读设计的，冗余文本浪费自主智能体的上下文，且缺乏可验证性和完整性。本文提出agent原生遥测，以可验证的状态增量替代人类文本，并实现Agent遥测协议和状态增量证据账本，为自主机器操作员提供结构化、可验证的运行证据。该架构提高了自主操作的安全性和效率。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "papers on autonomous agent architectures and control",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.10676v1",
+      "source": "arxiv",
+      "title": "Self-Correcting Long-Horizon Search Agents via Tree-Structured Memory",
+      "abstract": "Large language model (LLM)-based search agents answer questions through multi-step interactions with external environments. However, providing complete execution trajectories to the LLM causes unbounded context growth and introduces noise. Existing compression methods reduce context at the cost of important details and often replace erroneous facts without repairing downstream reasoning derived from them. To address this problem, we propose ReTree, a self-correcting tree-structured memory mechanism for search agents. ReTree constructs a bounded per-step reasoning context while preserving source-linked evidence. It models search as an evidence tree whose nodes store bounded summaries, evidence, and revision histories. When newly retrieved evidence contradicts an earlier claim, ReTree traces back to the node where the claim was introduced, replaces outdated evidence, regenerates summaries, prunes affected branches, and resumes search. Source-grounded evidence provenance supports reliable conflict localization and keeps final claims traceable to retrieved passages. Experiments on four public question-answering and search benchmarks show that ReTree consistently outperforms Full-Trajectory ReAct, improving answer accuracy by up to 25.6 percentage points (pp); the average maximum per-step reasoning context of Full-Trajectory ReAct is $1.27$--$1.51\\times$ that of ReTree. These results establish ReTree as an effective self-correcting memory abstraction for long-horizon search.",
+      "authors": [
+        "Aijun Yang",
+        "Qianxue Guo",
+        "Ziyi Huang",
+        "Yuxuan Chen",
+        "Shiyou Qian",
+        "Jian Cao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-11T08:56:42+00:00",
+      "link": "https://arxiv.org/pdf/2608.10676v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "tree-structured memory mechanism for self-correcting long-horizon search agents",
+      "llm_evidence_cn": "为长时程搜索智能体设计的树状结构化记忆机制",
+      "llm_evidence": "为长时程搜索智能体设计的树状结构化记忆机制",
+      "canonical_evidence": "为长时程搜索智能体设计的树状结构化记忆机制",
+      "llm_tldr_en": "LLM-based search agents suffer from unbounded context and noise; ReTree introduces a self-correcting tree-structured memory that preserves source-linked evidence while bounding reasoning context. It models search as an evidence tree with summaries and revision histories, enabling reliable long-horizon search.",
+      "llm_tldr_cn": "长时程搜索智能体在逐多步交互中常因上下文无限增长和噪声而失效，现有压缩方法会丢失细节且无法修复下游推理。该文提出ReTree自纠正树状结构化记忆机制，将搜索建模为带摘要、证据和修订历史的证据树，在有限上下文内保留来源链接证据。实验显示ReTree能显著提升搜索智能体在长时程任务上的鲁棒性与答案质量，为可自我修正的智能体记忆架构提供了新范式。",
+      "llm_tldr": "长时程搜索智能体在逐多步交互中常因上下文无限增长和噪声而失效，现有压缩方法会丢失细节且无法修复下游推理。该文提出ReTree自纠正树状结构化记忆机制，将搜索建模为带摘要、证据和修订历史的证据树，在有限上下文内保留来源链接证据。实验显示ReTree能显著提升搜索智能体在长时程任务上的鲁棒性与答案质量，为可自我修正的智能体记忆架构提供了新范式。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "carryover_cache",
+      "paper_id": "2608.10676v1",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.13420v1",
+      "source": "arxiv",
+      "title": "Enhancing Virtual Agents through SLMs and Edge-Computing: An Exploratory Evaluation of Think and Memory Processes",
+      "abstract": "Embodied intelligent virtual agents are expected to operate as persistent, adaptive, and context-aware entities within complex virtual and Metaverse worlds. However, implementing cognitively capable agents in such environments is conceptually and technologically challenging. Among a range of blueprints and development approaches, the Cognitive Embodied Agent Architecture (CEAA) has been developed as an implementation-oriented framework for architecting components of perception, memory, reasoning, planning, and embodied action. Considering the recent advances in edge computing and generative AI language models, this paper explores the use of Small Language Models (SLMs) to support edge-based operation of selected CEAA components, focusing on \"Think\" and \"Memory\" as processes central to cognitive orchestration and persistence of virtual agents in interactive virtual worlds. An edge-based virtual agent gateway system was developed and evaluated on an NVIDIA Jetson Orin NX using Qwen2.5 models of different sizes, exploring the system's capability to process service requests and handle memory-driven conversations. A series of simulation experiments evaluated routing accuracy, memory-read performance, and latency, demonstrating an SLM-driven prototype agent system that partially implements selected CEAA processes to support the development of embodied agents whose cognitive \"brain\" can operate efficiently and contextually for interactive experiences in immersive virtual worlds.",
+      "authors": [
+        "Aimilios Hadjiliasi",
+        "Louis Nisiotis"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-13T16:12:52+00:00",
+      "link": "https://arxiv.org/pdf/2608.13420v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Cognitive Embodied Agent Architecture evaluated with SLMs and edge computing for virtual agents",
+      "llm_evidence_cn": "基于认知具身智能体架构与边缘计算的虚拟智能体设计评估",
+      "llm_evidence": "基于认知具身智能体架构与边缘计算的虚拟智能体设计评估",
+      "canonical_evidence": "基于认知具身智能体架构与边缘计算的虚拟智能体设计评估",
+      "llm_tldr_en": "Explores using Small Language Models and edge computing to support Think and Memory processes in the Cognitive Embodied Agent Architecture, addressing cognitive implementation for persistent virtual agents.",
+      "llm_tldr_cn": "针对虚拟世界中认知智能体实现困难的问题，本文基于认知具身智能体架构(CEAA)，探索利用小型语言模型(SLM)和边缘计算来支撑智能体的思考与记忆过程。研究聚焦于在边缘端运行选择性的认知组件，以支持持久、自适应的虚拟智能体。实验评估显示该路径在资源受限环境下具有可行性，为Metaverse等复杂虚拟环境中的智能体实现提供了技术方向。",
+      "llm_tldr": "针对虚拟世界中认知智能体实现困难的问题，本文基于认知具身智能体架构(CEAA)，探索利用小型语言模型(SLM)和边缘计算来支撑智能体的思考与记忆过程。研究聚焦于在边缘端运行选择性的认知组件，以支持持久、自适应的虚拟智能体。实验评估显示该路径在资源受限环境下具有可行性，为Metaverse等复杂虚拟环境中的智能体实现提供了技术方向。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "agent architecture design patterns",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.16295v1",
+      "source": "arxiv",
+      "title": "Executable Code Knowledge: Code as a Native, Validation-Carrying Knowledge Representation for AI Coding Agents",
+      "abstract": "AI coding agents need more than relevant snippets: they need business semantics, validation evidence, relations, and assurance that their context is current. Existing systems usually infer or externalize this knowledge through retrieval, summaries, graphs, rules, or reverse specifications. We investigate a complementary representation in which selected code units directly carry agent-usable knowledge. We introduce Executable Code Knowledge (ECK) and define an Executable Code Knowledge Unit (ECKU) as a source-bound object combining stable identity, semantics, executable behavior, contracts, evidence, relations, provenance, validation state, and a query interface. Our Python prototype supports code-local authoring, manifest export, evidence execution, exact changed-line impact, freshness checking, and agent-facing projections. Across three real Python repositories and 26 controlled patch tasks, direct ECK provides executable test coverage for 11/11 evidence-bearing tasks and exact selectors for 9/11; hiding declared evidence reduces exact recovery to 1/11 (paired exact McNemar p=0.0078). ECK-derived rules recover 11/11 exact selectors, showing that rules are effective delivery artifacts while ECK supplies source binding, validation state, impact, and freshness. Exact changed-line impact matches independently authored labels on all 26 patches (12 unit links; precision, recall, and F1 all 1.000). AST-bounded fingerprints classify 50 positive changes and 17 unrelated same-file controls correctly, whereas static rules snapshots detect none of the 50 stale cases. Model-backed patch-review and cross-layer studies measure projection fidelity rather than independent impact discovery. These results support a hybrid architecture: retrieval for coverage, ECK for source and evidence governance, and projections for delivery.",
+      "authors": [
+        "Xueping Gao"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-17T09:07:45+00:00",
+      "link": "https://arxiv.org/pdf/2608.16295v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "knowledge representation and architecture for AI coding agents",
+      "llm_evidence_cn": "面向AI编码智能体的知识表示与架构设计",
+      "llm_evidence": "面向AI编码智能体的知识表示与架构设计",
+      "canonical_evidence": "面向AI编码智能体的知识表示与架构设计",
+      "llm_tldr_en": "This paper introduces Executable Code Knowledge (ECK), a representation where selected code units directly carry agent-usable semantics, contracts, evidence, and validation state. A Python prototype supports code-local authoring and query interfaces for AI coding agents.",
+      "llm_tldr_cn": "AI编码智能体不仅需要相关代码片段，还需要业务语义、验证证据和上下文时效性。本文提出可执行代码知识（ECK）及其单元ECKU，将稳定身份、语义、可执行行为、契约、证据、来源和验证状态绑定在代码单元上。该表示为编码智能体提供了原生、自带验证的知识载体，原型验证了其可行性。",
+      "llm_tldr": "AI编码智能体不仅需要相关代码片段，还需要业务语义、验证证据和上下文时效性。本文提出可执行代码知识（ECK）及其单元ECKU，将稳定身份、语义、可执行行为、契约、证据、来源和验证状态绑定在代码单元上。该表示为编码智能体提供了原生、自带验证的知识载体，原型验证了其可行性。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "intelligent agent design and applications",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.11338v1",
+      "source": "arxiv",
+      "title": "Better, Faster, Stronger: Programmatic Skill Learning Best Reduces Agent Cost",
+      "abstract": "Recently, the practice of augmenting LLM agent capability with skills has gained prevalence. We explore the cost effective adaptation of agents to novel domains by means of learning skills. Existing works focus on performance gain over cost effectiveness. As a result, little is known about what skill learning strategies save cost. We argue that among all the different skill learning methods, those that view skills as programs can achieve the best cost reduction. By executing sequences of actions deterministically, a program-augmented agent can reliably and cheaply achieve goals that would otherwise require trial and error and risk degenerate behavior over long horizons. An agent can learn at inference time by incrementally discovering these programs and equipping them for future tasks. We hypothesize that past trajectories contain enough signal to guide skill learning, even without replay or validation, provided the agent can learn to analyze them. To test our claims, we propose SpeedRunner, a coding agent that analyzes trajectories and refactors skills for better performance on future tasks. Across three different embodied environments, we show that SpeedRunner consistently achieves the frontier in learning and cost reduction while remaining robust against distribution shifts and environmental randomness.",
+      "authors": [
+        "Zixi Huang",
+        "Xiheng Wang",
+        "Andrew Wang",
+        "William Jurayj",
+        "Bernal Jiménez Gutiérrez",
+        "Daniel Khashabi",
+        "Nicholas Andrews"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-08-11T18:42:23+00:00",
+      "link": "https://arxiv.org/pdf/2608.11338v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "skill learning strategies for cost-effective LLM agent adaptation",
+      "llm_evidence_cn": "针对LLM智能体成本效益的技能学习策略",
+      "llm_evidence": "针对LLM智能体成本效益的技能学习策略",
+      "canonical_evidence": "针对LLM智能体成本效益的技能学习策略",
+      "llm_tldr_en": "The paper studies cost-effective skill learning for LLM agents and argues that program-based skills reduce cost best, enabling reliable action sequences and inference-time learning without expensive trial and error.",
+      "llm_tldr_cn": "现有LLM智能体技能学习主要关注性能提升而忽视成本效益，本文系统探索不同技能学习方式对智能体适应新领域成本的影响。作者提出将技能视为程序来执行确定性动作序列，能够以较低成本可靠地完成长时程目标，避免反复试错和退化行为。这种程序增强智能体可在推理时增量式发现程序，不断降低运行开销。实验验证了程序化技能学习在成本控制上的显著优势，为智能体的高效部署提供了实用指导。",
+      "llm_tldr": "现有LLM智能体技能学习主要关注性能提升而忽视成本效益，本文系统探索不同技能学习方式对智能体适应新领域成本的影响。作者提出将技能视为程序来执行确定性动作序列，能够以较低成本可靠地完成长时程目标，避免反复试错和退化行为。这种程序增强智能体可在推理时增量式发现程序，不断降低运行开销。实验验证了程序化技能学习在成本控制上的显著优势，为智能体的高效部署提供了实用指导。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "autonomous agent decision making",
+      "matched_requirement_id": "req-2",
+      "selection_source": "carryover_cache",
+      "paper_id": "2608.11338v1",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.14352v1",
+      "source": "arxiv",
+      "title": "ATLAS: Discovering Agent Strategies through LLM-Guided Abstraction and Automata Learning",
+      "abstract": "Large Language Model (LLM)-based agents are increasingly used for complex tasks such as software testing and cybersecurity assessment. While these agents demonstrate impressive capabilities, their behavior is difficult to understand, explain, and analyze. Existing evaluations focus mainly on task success and execution traces, offering limited insight into the strategies employed by the agent. We present ATLAS (Automata Learning for Agent Trajectory Analysis and Strategy Discovery), an approach for recovering interpretable behavioral models from agent trajectories. ATLAS combines trace abstraction with automata learning to infer finite-state models that capture observed agent-environment interaction strategies. These models provide human-interpretable insights and support automated analyses of recurring behaviors, decision points, successful task-completion paths, and failure loops. As a proof of concept, we apply ATLAS to trajectories generated by an LLM-based penetration-testing agent. The resulting models expose high-level behavioral strategies for exploiting vulnerable machines that are difficult to identify from raw execution traces alone. We discuss how learned behavioral models can support explainability, model-guided exploration, auditing, and analysis of agentic systems. We further demonstrate symbolic model-based knowledge transfer from powerful frontier models to compact language models. In addition, we show how model transformations can derive concise explanations of agent behavior in a penetration-testing case study comprising 12 vulnerable machines. ATLAS highlights a new opportunity for model-driven engineering: transforming agent trajectories into explicit behavioral models that enable systematic understanding and analysis of otherwise opaque AI agents.",
+      "authors": [
+        "Ignacio D. Lopez-Miguel",
+        "Andreas Happe",
+        "Jürgen Cito",
+        "Ezio Bartocci",
+        "Bettina Könighofer",
+        "Martin Tappler"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.LG"
+      ],
+      "published": "2026-08-14T14:51:48+00:00",
+      "link": "https://arxiv.org/pdf/2608.14352v1",
+      "tags": [
+        "keyword:agent",
+        "query:agent"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Automata learning to recover interpretable behavioral strategies of LLM agents, supporting intelligent agent analysis and design",
+      "llm_evidence_cn": "通过自动机学习从轨迹中恢复LLM智能体的可解释策略，支持智能体分析与设计",
+      "llm_evidence": "通过自动机学习从轨迹中恢复LLM智能体的可解释策略，支持智能体分析与设计",
+      "canonical_evidence": "通过自动机学习从轨迹中恢复LLM智能体的可解释策略，支持智能体分析与设计",
+      "llm_tldr_en": "ATLAS combines trace abstraction with automata learning to infer finite-state models of LLM agent strategies, enabling interpretable behavior analysis beyond task success rates.",
+      "llm_tldr_cn": "LLM智能体在软件测试和网络安全等任务中展现强大能力，但行为难以解释和分析，现有评估只关注任务成功与执行轨迹。该文提出ATLAS，结合轨迹抽象与自动机学习，从智能体轨迹中推断有限状态模型，捕获智能体与环境交互的策略。这些模型为人类理解、解释和分析智能体行为提供了可解释的路径，有助于改进智能体设计与评估。",
+      "llm_tldr": "LLM智能体在软件测试和网络安全等任务中展现强大能力，但行为难以解释和分析，现有评估只关注任务成功与执行轨迹。该文提出ATLAS，结合轨迹抽象与自动机学习，从智能体轨迹中推断有限状态模型，捕获智能体与环境交互的策略。这些模型为人类理解、解释和分析智能体行为提供了可解释的路径，有助于改进智能体设计与评估。",
+      "llm_tags": [
+        "query:agent"
+      ],
+      "matched_query_tag": "query:agent",
+      "matched_query_text": "intelligent agent design and applications",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

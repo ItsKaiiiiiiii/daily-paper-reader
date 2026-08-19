@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-18</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-19</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 22 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 20 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>11</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>9</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-18 20:36:24 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-19 20:04:41 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,7 +62,9 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日共处理22篇论文，精读11篇，其中两篇获9.0高分。最值得关注的方向是智能体自进化优化（MEGA）与移动通信代理的频谱控制。建议优先精读MEGA，了解其智慧图驱动的自进化基础设施。</p>
+<p>今日完成20篇论文扫描，精读9篇、速读11篇，聚焦LLM智能体的结构化诊断与路径规划。</p>
+<p>最值得关注：图强化学习框架用于LLM代理漂移恢复（9.0分），及基于UAVScenes的LLM路径查找器（9.0分）。</p>
+<p>下一步可优先精读树结构记忆的长期搜索自纠正方法，并对比世界模型驱动的具身智能极限。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -71,12 +73,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">11 篇</strong>
+    <strong class="dpr-home-dashboard-count">9 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="MEGA: Self-Evolving Agent Optimization Infrastructure via Wisdom Graph">MEGA: Self-Evolving Agent Optimization Infrastructure via Wisdom Graph</span></li><li><span class="dpr-home-dashboard-paper-title" title="Adjacency-Based Spectral Proxy Control of Mobile Communication Agents">Adjacency-Based Spectral Proxy Control of Mobile Communication Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Clearing the Fog: Towards Installing and Refining Proactive Exploration Capabilities in LLM Agents">Clearing the Fog: Towards Installing and Refining Proactive Exploration Capabilities in LLM Agents</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="A Graph-Based Reinforcement Learning Framework for Structured Drift Diagnosis and Recovery in Autonomous LLM Agents">A Graph-Based Reinforcement Learning Framework for Structured Drift Diagnosis and Recovery in Autonomous LLM Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="LAPF: LLM-Agent-Based Path Finder Using the UAVScenes Dataset">LAPF: LLM-Agent-Based Path Finder Using the UAVScenes Dataset</span></li><li><span class="dpr-home-dashboard-paper-title" title="When Deep Research Agents Stagnate: Enhancing Reasoning with Retrieval-Aware Agent Control">When Deep Research Agents Stagnate: Enhancing Reasoning with Retrieval-Aware Agent Control</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>9</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -87,7 +89,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="DH-VLM: Dual-Horizon Cooperative Latent Reasoning for Autonomous Driving">DH-VLM: Dual-Horizon Cooperative Latent Reasoning for Autonomous Driving</span></li><li><span class="dpr-home-dashboard-paper-title" title="OpenLoopEvolve: A Verifiable Self-Evolution Framework for Loop Policies in Long-Horizon Complex Tasks">OpenLoopEvolve: A Verifiable Self-Evolution Framework for Loop Policies in Long-Horizon Complex Tasks</span></li><li><span class="dpr-home-dashboard-paper-title" title="Bidirectional Context Self-Distillation for Reinforcement Learning of Skill-Based LLM Agents">Bidirectional Context Self-Distillation for Reinforcement Learning of Skill-Based LLM Agents</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Evaluating Rational Contracting in Natural Language">Evaluating Rational Contracting in Natural Language</span></li><li><span class="dpr-home-dashboard-paper-title" title="Toward the Cognitive--Physical Limits of Embodied Intelligence through a World-Model-Centric Autonomous Racing Agent">Toward the Cognitive--Physical Limits of Embodied Intelligence through a World-Model-Centric Autonomous Racing Agent</span></li><li><span class="dpr-home-dashboard-paper-title" title="Self-Correcting Long-Horizon Search Agents via Tree-Structured Memory">Self-Correcting Long-Horizon Search Agents via Tree-Structured Memory</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>
