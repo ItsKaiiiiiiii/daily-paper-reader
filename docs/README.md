@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-19</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-22</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 20 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 23 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>9</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>12</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-19 20:04:41 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-22 20:46:47 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,9 +62,7 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日完成20篇论文扫描，精读9篇、速读11篇，聚焦LLM智能体的结构化诊断与路径规划。</p>
-<p>最值得关注：图强化学习框架用于LLM代理漂移恢复（9.0分），及基于UAVScenes的LLM路径查找器（9.0分）。</p>
-<p>下一步可优先精读树结构记忆的长期搜索自纠正方法，并对比世界模型驱动的具身智能极限。</p>
+<p>今日精读12篇、速读11篇，核心聚焦长程智能体的记忆与执行可靠性。最值得关注的是《AgentRewind》（可恢复执行）与《HyMem》（分层上下文管理），均获9.0高分。建议优先阅读这两篇，理解智能体在长程任务中如何避免记忆丢失与中断失败。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -73,12 +71,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">9 篇</strong>
+    <strong class="dpr-home-dashboard-count">12 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="A Graph-Based Reinforcement Learning Framework for Structured Drift Diagnosis and Recovery in Autonomous LLM Agents">A Graph-Based Reinforcement Learning Framework for Structured Drift Diagnosis and Recovery in Autonomous LLM Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="LAPF: LLM-Agent-Based Path Finder Using the UAVScenes Dataset">LAPF: LLM-Agent-Based Path Finder Using the UAVScenes Dataset</span></li><li><span class="dpr-home-dashboard-paper-title" title="When Deep Research Agents Stagnate: Enhancing Reasoning with Retrieval-Aware Agent Control">When Deep Research Agents Stagnate: Enhancing Reasoning with Retrieval-Aware Agent Control</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="AgentRewind: Recoverable Execution for Long-Horizon LLM Agents">AgentRewind: Recoverable Execution for Long-Horizon LLM Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="HyMem: Hierarchical Context Management for Long-Horizon Agents via Information Isolation">HyMem: Hierarchical Context Management for Long-Horizon Agents via Information Isolation</span></li><li><span class="dpr-home-dashboard-paper-title" title="Principled Authority Switching for Shared Autonomy in Human-Robot Teams">Principled Authority Switching for Shared Autonomy in Human-Robot Teams</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>9</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>12</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -89,7 +87,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Evaluating Rational Contracting in Natural Language">Evaluating Rational Contracting in Natural Language</span></li><li><span class="dpr-home-dashboard-paper-title" title="Toward the Cognitive--Physical Limits of Embodied Intelligence through a World-Model-Centric Autonomous Racing Agent">Toward the Cognitive--Physical Limits of Embodied Intelligence through a World-Model-Centric Autonomous Racing Agent</span></li><li><span class="dpr-home-dashboard-paper-title" title="Self-Correcting Long-Horizon Search Agents via Tree-Structured Memory">Self-Correcting Long-Horizon Search Agents via Tree-Structured Memory</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="MindMemOS: A Portable and Self-Evolving Memory Operating Layer for AI Agents">MindMemOS: A Portable and Self-Evolving Memory Operating Layer for AI Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence">Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence</span></li><li><span class="dpr-home-dashboard-paper-title" title="Heterogeneity-Aware Belief Synchronization for Semantic Communication in AI-Native 6G Networks">Heterogeneity-Aware Belief Synchronization for Semantic Communication in AI-Native 6G Networks</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>
