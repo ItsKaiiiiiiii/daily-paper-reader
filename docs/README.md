@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-22</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-23</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 23 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 17 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>12</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>6</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-22 20:46:47 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-23 20:04:15 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,7 +62,7 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日精读12篇、速读11篇，核心聚焦长程智能体的记忆与执行可靠性。最值得关注的是《AgentRewind》（可恢复执行）与《HyMem》（分层上下文管理），均获9.0高分。建议优先阅读这两篇，理解智能体在长程任务中如何避免记忆丢失与中断失败。</p>
+<p>今日精读6篇、速读11篇，聚焦多智能体隐蔽协调检测与小模型社交推理。最值得看《Beyond the Transcript》9.0分，从潜空间识别协调信号；《SocialRL》8.0分，用强化学习提升小模型谈判策略。建议优先读这两篇，再快速浏览移动智能体意图推断与自博弈追逃方向。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -71,12 +71,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">12 篇</strong>
+    <strong class="dpr-home-dashboard-count">6 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="AgentRewind: Recoverable Execution for Long-Horizon LLM Agents">AgentRewind: Recoverable Execution for Long-Horizon LLM Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="HyMem: Hierarchical Context Management for Long-Horizon Agents via Information Isolation">HyMem: Hierarchical Context Management for Long-Horizon Agents via Information Isolation</span></li><li><span class="dpr-home-dashboard-paper-title" title="Principled Authority Switching for Shared Autonomy in Human-Robot Teams">Principled Authority Switching for Shared Autonomy in Human-Robot Teams</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Beyond the Transcript: Detecting Covert Co ordination in Latent Multi-Agent Communication">Beyond the Transcript: Detecting Covert Co ordination in Latent Multi-Agent Communication</span></li><li><span class="dpr-home-dashboard-paper-title" title="From Passive Delegates to Strategic Negotiators: Reinforcing Social Reasoning in Small Language Models with SocialRL">From Passive Delegates to Strategic Negotiators: Reinforcing Social Reasoning in Small Language Models with SocialRL</span></li><li><span class="dpr-home-dashboard-paper-title" title="Engineering Reliable Coding Agents: Evaluating and Operating the System Around the Model">Engineering Reliable Coding Agents: Evaluating and Operating the System Around the Model</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>12</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>6</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -87,7 +87,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="MindMemOS: A Portable and Self-Evolving Memory Operating Layer for AI Agents">MindMemOS: A Portable and Self-Evolving Memory Operating Layer for AI Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence">Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence</span></li><li><span class="dpr-home-dashboard-paper-title" title="Heterogeneity-Aware Belief Synchronization for Semantic Communication in AI-Native 6G Networks">Heterogeneity-Aware Belief Synchronization for Semantic Communication in AI-Native 6G Networks</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Act2Intention: A Benchmark For Developing Active Mobile Agents Through Inferring User Intention from GUI Actions">Act2Intention: A Benchmark For Developing Active Mobile Agents Through Inferring User Intention from GUI Actions</span></li><li><span class="dpr-home-dashboard-paper-title" title="AgilePE: Autonomous UAV Pursuit-Evasion via Self-Play Reinforcement Learning">AgilePE: Autonomous UAV Pursuit-Evasion via Self-Play Reinforcement Learning</span></li><li><span class="dpr-home-dashboard-paper-title" title="SkillCommit: Evolving Agent Skills through Behaviorally Validated Scope Expansion">SkillCommit: Evolving Agent Skills through Behaviorally Validated Scope Expansion</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>
