@@ -41,7 +41,7 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-23</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-24</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
     <strong class="dpr-home-dashboard-count">共 17 篇</strong>
@@ -51,7 +51,7 @@
     <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>6</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-23 20:04:15 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-24 19:39:05 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,7 +62,7 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日精读6篇、速读11篇，聚焦多智能体隐蔽协调检测与小模型社交推理。最值得看《Beyond the Transcript》9.0分，从潜空间识别协调信号；《SocialRL》8.0分，用强化学习提升小模型谈判策略。建议优先读这两篇，再快速浏览移动智能体意图推断与自博弈追逃方向。</p>
+<p>今日聚焦AI Agent前沿，精读2篇高价值论文，速读3篇，重点覆盖命令行智能体与多智能体协同拓扑。最值得关注的是终端Agent的实用潜力，以及多智能体协调结构对系统效率的关键影响。若想快速切入，可优先精读这两篇9分论文，速读材料用于拓展应用视角。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -74,7 +74,7 @@
     <strong class="dpr-home-dashboard-count">6 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Beyond the Transcript: Detecting Covert Co ordination in Latent Multi-Agent Communication">Beyond the Transcript: Detecting Covert Co ordination in Latent Multi-Agent Communication</span></li><li><span class="dpr-home-dashboard-paper-title" title="From Passive Delegates to Strategic Negotiators: Reinforcing Social Reasoning in Small Language Models with SocialRL">From Passive Delegates to Strategic Negotiators: Reinforcing Social Reasoning in Small Language Models with SocialRL</span></li><li><span class="dpr-home-dashboard-paper-title" title="Engineering Reliable Coding Agents: Evaluating and Operating the System Around the Model">Engineering Reliable Coding Agents: Evaluating and Operating the System Around the Model</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Terminal Agents: A Survey of AI Agents in Command-Line Environments">Terminal Agents: A Survey of AI Agents in Command-Line Environments</span></li><li><span class="dpr-home-dashboard-paper-title" title="Towards Traffic Modelling of Multi-Agent Systems: The Role of Coordination Topology">Towards Traffic Modelling of Multi-Agent Systems: The Role of Coordination Topology</span></li><li><span class="dpr-home-dashboard-paper-title" title="Consilience: Conformally Calibrated Communication Control for Hidden-Profile Multi-Agent Reasoning">Consilience: Conformally Calibrated Communication Control for Hidden-Profile Multi-Agent Reasoning</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>6</strong></span></div>
 </section>
@@ -87,7 +87,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Act2Intention: A Benchmark For Developing Active Mobile Agents Through Inferring User Intention from GUI Actions">Act2Intention: A Benchmark For Developing Active Mobile Agents Through Inferring User Intention from GUI Actions</span></li><li><span class="dpr-home-dashboard-paper-title" title="AgilePE: Autonomous UAV Pursuit-Evasion via Self-Play Reinforcement Learning">AgilePE: Autonomous UAV Pursuit-Evasion via Self-Play Reinforcement Learning</span></li><li><span class="dpr-home-dashboard-paper-title" title="SkillCommit: Evolving Agent Skills through Behaviorally Validated Scope Expansion">SkillCommit: Evolving Agent Skills through Behaviorally Validated Scope Expansion</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Agents unlock new capabilities through Switching LoRA Adapters as a Tool (SLAaaT)">Agents unlock new capabilities through Switching LoRA Adapters as a Tool (SLAaaT)</span></li><li><span class="dpr-home-dashboard-paper-title" title="When AI Designs AI: Innovation or Imitation?">When AI Designs AI: Innovation or Imitation?</span></li><li><span class="dpr-home-dashboard-paper-title" title="Towards Better Agents for Multi-Turn User Interaction: The Next User Turn Is More Than Context">Towards Better Agents for Multi-Turn User Interaction: The Next User Turn Is More Than Context</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>

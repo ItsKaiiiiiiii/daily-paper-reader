@@ -1,0 +1,281 @@
+{
+  "date": "20260824",
+  "date_label": "",
+  "generated_at": "2026-08-24 19:39:05 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2608.20485v1",
+      "route": "202608/24/2608.20485v1-terminal-agents-a-survey-of-ai-agents-in-command-line-environments",
+      "title": "Terminal Agents: A Survey of AI Agents in Command-Line Environments",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向命令行环境AI智能体的综述，覆盖架构、能力习得与评估",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    },
+    {
+      "paper_id": "2608.20494v1",
+      "route": "202608/24/2608.20494v1-towards-traffic-modelling-of-multi-agent-systems-the-role-of-coordination-topology",
+      "title": "Towards Traffic Modelling of Multi-Agent Systems: The Role of Coordination Topology",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "对多智能体系统在不同协调拓扑下的LLM调用间隔时间分布进行实证刻画",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    },
+    {
+      "paper_id": "2608.20564v1",
+      "route": "202608/24/2608.20564v1-consilience-conformally-calibrated-communication-control-for-hidden-profile-multi-agent-reasoning",
+      "title": "Consilience: Conformally Calibrated Communication Control for Hidden-Profile Multi-Agent Reasoning",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "多智能体推理的通信控制与认证",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    },
+    {
+      "paper_id": "2608.15844v1",
+      "route": "202608/24/2608.15844v1-microverse-an-instrument-for-measuring-self-authored-identity-drift-in-long-horizon-multi-agent-language-model-simulations",
+      "title": "MicroVerse: An Instrument for Measuring Self-Authored Identity Drift in Long-Horizon Multi-Agent Language-Model Simulations",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向多智能体长期仿真中的身份漂移测量工具，直接涉及多智能体系统的行为与协调。",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    },
+    {
+      "paper_id": "2608.15888v1",
+      "route": "202608/24/2608.15888v1-bounded-agents-delegation-security-for-multi-agent-ai-systems",
+      "title": "Bounded Agents: Delegation Security for Multi-Agent AI Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "多智能体系统的委派安全与授权架构",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    },
+    {
+      "paper_id": "2608.16798v1",
+      "route": "202608/24/2608.16798v1-clawgym-ii-exploring-black-box-rl-on-agent-harness",
+      "title": "ClawGym II: Exploring Black-Box RL on Agent Harness",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向智能体架构与框架设计模式的统一黑盒RL方法",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    },
+    {
+      "paper_id": "2608.17034v2",
+      "route": "202608/24/2608.17034v2-agents-unlock-new-capabilities-through-switching-lora-adapters-as-a-tool-slaaat",
+      "title": "Agents unlock new capabilities through Switching LoRA Adapters as a Tool (SLAaaT)",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "智能体工具切换LoRA适配器，长轨迹能力组合",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    },
+    {
+      "paper_id": "2608.17471v1",
+      "route": "202608/24/2608.17471v1-when-ai-designs-ai-innovation-or-imitation",
+      "title": "When AI Designs AI: Innovation or Imitation?",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "研究LLM智能体为AI任务设计算法，并与人类设计对比",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    },
+    {
+      "paper_id": "2608.17499v1",
+      "route": "202608/24/2608.17499v1-towards-better-agents-for-multi-turn-user-interaction-the-next-user-turn-is-more-than-context",
+      "title": "Towards Better Agents for Multi-Turn User Interaction: The Next User Turn Is More Than Context",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向交互式智能体决策的反馈感知信用分配",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    },
+    {
+      "paper_id": "2608.17588v1",
+      "route": "202608/24/2608.17588v1-truss-towards-task-reliable-and-user-safe-automated-agent-skill-generation",
+      "title": "TRUSS: Towards Task-Reliable and User-Safe Automated Agent Skill Generation",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "智能体技能自动生成与安全评估",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    },
+    {
+      "paper_id": "2608.15834v1",
+      "route": "202608/24/2608.15834v1-schema-agnostic-graph-reasoning-agent-for-hybrid-knowledge-graphs",
+      "title": "Schema-Agnostic Graph Reasoning Agent for Hybrid Knowledge Graphs",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "使用通用工具探索混合知识图谱的图推理智能体，是智能体的应用",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    },
+    {
+      "paper_id": "2608.16666v1",
+      "route": "202608/24/2608.16666v1-chronocooked-a-benchmark-for-implicit-interval-timing-in-reinforcement-learning-agents",
+      "title": "Chronocooked: A Benchmark for Implicit Interval Timing in Reinforcement Learning Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "RL智能体时间决策与评测基准",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    },
+    {
+      "paper_id": "2608.17129v1",
+      "route": "202608/24/2608.17129v1-probe-manipulation-grounded-visual-question-answering-with-vlm-agents",
+      "title": "PROBE: Manipulation-Grounded Visual Question Answering with VLM Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "VLM智能体操作规划与评测框架",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    },
+    {
+      "paper_id": "2608.19557v1",
+      "route": "202608/24/2608.19557v1-when-do-llm-agents-help-deadline-aware-mixed-criticality-task-scheduling-at-the-autonomous-vehicle-edge",
+      "title": "When Do LLM Agents Help? Deadline-Aware Mixed-Criticality Task Scheduling at the Autonomous-Vehicle Edge",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "多智能体LLM控制在自动驾驶边缘调度中的应用",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    },
+    {
+      "paper_id": "2608.15424v1",
+      "route": "202608/24/2608.15424v1-ethos-towards-a-modular-ethics-framework-for-clinical-multi-agent-systems",
+      "title": "ETHOS: Towards a Modular Ethics Framework for Clinical Multi-Agent Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "临床多智能体系统应用，面向真实医疗AI的伦理框架",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    },
+    {
+      "paper_id": "2608.18280v1",
+      "route": "202608/24/2608.18280v1-what-makes-software-issue-resolution-tasks-difficult-for-agents",
+      "title": "What Makes Software Issue Resolution Tasks Difficult for Agents?",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "量化智能体软件任务难度的测量框架，为智能体设计与评估提供依据",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    },
+    {
+      "paper_id": "2608.20797v1",
+      "route": "202608/24/2608.20797v1-automated-trajectory-evaluation-for-mobile-agents-via-step-level-consequence-reasoning-and-aggregation",
+      "title": "Automated Trajectory Evaluation for Mobile Agents via Step-Level Consequence Reasoning and Aggregation",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "面向语言引导移动智能体的VLM自动评估框架",
+      "first_seen_at": "2026-08-24 19:39:05 UTC",
+      "updated_at": "2026-08-24 19:39:05 UTC"
+    }
+  ]
+}
