@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-24</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-28</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 17 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 32 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>6</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>21</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-24 19:39:05 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-28 03:06:22 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,7 +62,9 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日聚焦AI Agent前沿，精读2篇高价值论文，速读3篇，重点覆盖命令行智能体与多智能体协同拓扑。最值得关注的是终端Agent的实用潜力，以及多智能体协调结构对系统效率的关键影响。若想快速切入，可优先精读这两篇9分论文，速读材料用于拓展应用视角。</p>
+<p>今日扫描32篇论文，精读21篇，重点聚焦多智能体协作与AI能耗优化。</p>
+<p>最值得关注的是满分论文《The Collaboration Tax》揭示多智能体协调成本，以及9分论文《AgentDecarbonizer》提出的碳感知执行方案。</p>
+<p>建议优先阅读这两篇，理解AI系统的协作代价与绿色运行趋势。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -71,12 +73,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">6 篇</strong>
+    <strong class="dpr-home-dashboard-count">21 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Terminal Agents: A Survey of AI Agents in Command-Line Environments">Terminal Agents: A Survey of AI Agents in Command-Line Environments</span></li><li><span class="dpr-home-dashboard-paper-title" title="Towards Traffic Modelling of Multi-Agent Systems: The Role of Coordination Topology">Towards Traffic Modelling of Multi-Agent Systems: The Role of Coordination Topology</span></li><li><span class="dpr-home-dashboard-paper-title" title="Consilience: Conformally Calibrated Communication Control for Hidden-Profile Multi-Agent Reasoning">Consilience: Conformally Calibrated Communication Control for Hidden-Profile Multi-Agent Reasoning</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="The Collaboration Tax: How Much LLM Multi-Agent Systems Pay to Coordinate">The Collaboration Tax: How Much LLM Multi-Agent Systems Pay to Coordinate</span></li><li><span class="dpr-home-dashboard-paper-title" title="AgentDecarbonizer: Carbon-Aware Execution for AI Agents">AgentDecarbonizer: Carbon-Aware Execution for AI Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="HiDiffTIR: Hierarchical Difficulty-Aware Policy Optimization for Multi-Turn Tool-Integrated Reasoning">HiDiffTIR: Hierarchical Difficulty-Aware Policy Optimization for Multi-Turn Tool-Integrated Reasoning</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>6</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>21</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -87,7 +89,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Agents unlock new capabilities through Switching LoRA Adapters as a Tool (SLAaaT)">Agents unlock new capabilities through Switching LoRA Adapters as a Tool (SLAaaT)</span></li><li><span class="dpr-home-dashboard-paper-title" title="When AI Designs AI: Innovation or Imitation?">When AI Designs AI: Innovation or Imitation?</span></li><li><span class="dpr-home-dashboard-paper-title" title="Towards Better Agents for Multi-Turn User Interaction: The Next User Turn Is More Than Context">Towards Better Agents for Multi-Turn User Interaction: The Next User Turn Is More Than Context</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows">StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows</span></li><li><span class="dpr-home-dashboard-paper-title" title="Adversarial Review: Structured Disagreement for Grounded Agentic Code Review">Adversarial Review: Structured Disagreement for Grounded Agentic Code Review</span></li><li><span class="dpr-home-dashboard-paper-title" title="DocClaw: A Unified Agentic System for Intelligent Document Processing">DocClaw: A Unified Agentic System for Intelligent Document Processing</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>

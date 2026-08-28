@@ -1,0 +1,778 @@
+Title: AgentDecarbonizer: Carbon-Aware Execution for AI Agents
+
+URL Source: https://arxiv.org/pdf/2608.20566v1
+
+Published Time: Mon, 24 Aug 2026 00:13:36 GMT
+
+Number of Pages: 28
+
+Markdown Content:
+# AgentDecarbonizer: Carbon-Aware Execution for AI Agents 
+
+LEYI YAN, University of Waterloo, Canada 
+
+SHUANGNING LI, University of Chicago, USA 
+
+SIHANG LIU, University of Waterloo, Canada AI agents extend large language models from single prompt-response interactions to long-running, goal-directed workflows that issue many model calls, invoke tools, and interact with external environments. These workflows enable tasks such as software repair, data analysis, and experiment management, but their repeated model invocations can incur substantial carbon emissions. This paper characterizes the carbon emissions of OpenClaw agent workloads using WildClawBench, and shows that emissions depend on token consumption, context cache reuse, and the carbon intensity of the grid. Our characterization identifies deadline flexibility as an opportunity for carbon-aware execution: agent tasks can wait for lower-carbon-intensity periods or shift to lower-carbon grids. However, doing so requires handling uncertain execution time for temporal shifting and cached context recomputation during spatial shifting. We present AgentDecarbonizer, a carbon optimizer for AI agents that runs alongside OpenClaw. Given a task prompt and user-specified deadline, AgentDecarbonizer conservatively estimates task duration and selects deadline-feasible execution schedules, while accounting for cache recomputation overhead during spatial shifting. Evaluated on WildClawBench workloads with 60 agent tasks across four grids, AgentDecarbonizer reduces carbon emissions by up to 57.9 % compared with a carbon-agnostic baseline and by up to 37.5 % compared with a baseline that selects the carbon-optimal grid at task start time. 
+
+1 Introduction 
+
+AI agents extend large language models (LLMs) from single prompt-response interactions into autonomous, goal-directed workflows. Given a high-level task, an agent plans intermediate steps, invokes model APIs and external tools, and refines its execution based on intermediate observa-tions [72, 79, 89]. This execution model enables long-running tasks such as software repair, data anal-ysis, and machine learning experimentation to proceed with limited user intervention [34, 35, 87]. For example, OpenAI recently introduced scheduled tasks which have flexible deadlines [61]. Un-like traditional LLM queries, an agent task may expand into many model calls, tool invocations, and environmental interactions. These agent workloads have been supported by dedicated plat-forms [5, 24, 56] and OpenClaw is a representative open-source example [63]. Agent execution also differs from conventional LLM workloads through repeated reuse of context across model invocations [40, 75, 92, 98]. Because agents maintain states such as task goals, conversation history, and tool outputs throughout execution, modern LLM serving systems use context caching to avoid recomputing shared context and reduce inference overhead [6, 8, 21, 25, 60]. While autonomous agents enable complex task processing, their multi-step execution introduces substantial computational demands. To characterize these workloads, we analyze OpenClaw using WildClawBench [13], a benchmark suite of 60 realistic agent tasks across six categories, such as productivity and coding. We observe that agent execution is highly diverse, exhibiting significant variations in execution time, API calls, and token consumption. Moreover, these workloads are input-heavy, with input tokens accounting for 99.1% of all processed tokens. This makes context caching highly critical, as cached input tokens eliminate recomputation for 94.6% of input tokens. Their computation-intensive workload characteristics also have sustainability implications. Serving large-scale AI models leads to high carbon emissions [16, 19, 37]. The long-running and intensive execution of autonomous agents further amplifies this impact. We model the energy consumption of AI agents based on prior studies [4, 16, 38] and vendor API pricing [26, 59], extending existing per-prompt energy measurements into per-token estimates for input, output, and cached input tokens. We then convert the estimated energy consumption into carbon emissions arXiv:2608.20566v1 [cs.LG] 20 Aug 2026 2 Leyi Yan, Shuangning Li, and Sihang Liu 
+
+using the carbon intensity of the grid (in units of gCO 2e/kWh)—a factor that varies across locations and over time with the energy generation mix [51, 76]. For example, executing WildClawBench on the CISO grid (California, USA) on Feb 24, 2026 is estimated to emit 6.6 kgCO 2e, equivalent to driving a passenger vehicle for approximately 25 km [18]. These emissions can become substantial when agents are deployed at scale, motivating carbon emission optimizations for AI agents. Because carbon intensity varies across time and locations, existing carbon-aware optimization techniques reduce emissions by shifting workloads to lower-carbon periods and regions [31, 69, 78, 84]. However, these techniques do not directly address the unique execution characteristics of AI agents. First, agent execution duration is uncertain because later steps may depend on earlier model outputs, tool results, and interactions with external environments. Meanwhile, user-specified deadlines must be met rather than indefinitely deferring execution for lower-carbon periods. Second, reusable context caches are critical for agent execution. In our characterization, context caching reduces carbon emissions by 80.7 %. Maintaining agent execution in the same location can preserve these cached contexts, which is usually assumed by serving systems [8, 28, 67]. In contrast, shifting execution to another grid can lose cache and require recomputing previously cached inputs, adding extra emissions. As a result, spatial shifting is not always beneficial: the grid with the lowest carbon intensity may not yield the lowest total emissions once the cache recomputation overhead is considered. To address these practical challenges, we present AgentDecarbonizer, a carbon optimization tool for autonomous AI agents on OpenClaw. Given a task prompt and user-specified deadline, AgentDecarbonizer runs alongside OpenClaw to estimate task duration, forecast carbon intensity, and select deadline-feasible execution schedules across time and grids. To handle uncertain agent execution time, we design an execution time estimator based on a lightweight Gemma 4 4B model [42] that runs on the local device. It begins with a conservative duration estimate based on the task phases and their complexity, and refines the remaining-duration estimate during execution using the OpenClaw agent’s progress, API-call statistics, and observed tool usage. This allows the agent task to wait for lower-carbon periods when there is enough time and to fall back to immediate execution when the deadline is tight. To account for the impact of caching during spatial workload shifting, AgentDecarbonizer estimates the recomputation overhead using model token statistics. It performs grid shifting only when the expected carbon reduction exceeds this cache overhead. We formulate this cache-aware optimization problem under a deadline constraint and derive a dynamic-programming solution based on the observation that future cache costs depend solely on the previous execution location. We evaluate AgentDecarbonizer on top of OpenClaw [63], a representative open-source agent system, using a lightweight Mac mini to run the local OpenClaw client. The agent invokes GPT-5.4 as the remote model API, and we run 60 WildClawBench tasks spanning six categories. While this work targets OpenClaw, the optimization strategies are broadly applicable to other agent systems. We construct six long-running workloads by composing tasks within the same category. The evaluation uses carbon intensity traces from four grids and workload deadlines ranging from 3 hours to 24 hours. We compare AgentDecarbonizer against two baselines: a carbon-agnostic baseline that uses the average emissions across all four grids and a current-optimal baseline that selects the grid with the lowest carbon intensity at the workload start time. The evaluation shows that, with a flexible 24-hour deadline, AgentDecarbonizer reduces carbon emissions by 57.9 % over the average baseline and 37.5 % over the current-optimal baseline. Even under a tighter 3-hour deadline, AgentDecarbonizer reduces carbon emissions by 34.9 % over the average baseline and 3.3 % over the current-optimal baseline. This paper makes the following contributions: AgentDecarbonizer: Carbon-Aware Execution for AI Agents 3
+
+• To the best of our knowledge, this is the first work to systematically study the carbon emissions of AI agents and optimize carbon using methods tailored to their execution characteristics. 
+
+• We systematically characterize the carbon emissions of AI agent workloads on OpenClaw, and identify the key factors that affect their emissions. 
+
+• We design AgentDecarbonizer, a carbon optimizer for AI agents that estimates agent duration and progress, forecasts regional carbon intensity, and selects deadline-feasible low-carbon execution plans with cache-aware grid shifting decisions. 
+
+• We evaluate AgentDecarbonizer using AI agent workloads from WildClawBench and demonstrate that it always meets workload deadlines while achieving up to 57.9 % carbon emission savings compared to a carbon-agnostic baseline under a flexible 24-hour deadline. 
+
+2 Background and Motivation 
+
+In this section, we introduce autonomous AI agents, OpenClaw, and carbon emission accounting. 
+
+2.1 Large Language Models 
+
+Recent advances in large language models (LLMs) have demonstrated powerful capabilities in natural language understanding, logical reasoning, and code generation. LLM inference typically consists of two execution phases: prefill and decode . During the prefill phase, the model processes the entire user prompt and context in a single, parallel forward pass. Subsequently, during the 
+
+decode phase , the model generates output tokens autoregressively. Because of the different execution patterns, the prefill phase is compute-bound while the decode phase is memory-bound . There have been various system-level optimizations that improve the efficiency of AI model serving [2, 41, 66, 91, 96]. Notably, one class of techniques employs context caching, which reuses precomputed Key-Value (KV) states for shared prompts across requests, thereby avoiding repeated prefill computation. This allows future prompts or multi-turn queries with shared or similar context to reuse cached computation [21, 85, 90]. As LLMs become more capable and widely used, serving them requires substantial computational resources. As a result, deploying these advanced models is particularly compute-intensive, requiring high-end GPUs or AI accelerators. 
+
+2.2 Autonomous AI Agents 
+
+Advances in LLMs have enabled autonomous AI agents, which extend conventional chatbot-style prompt-response interactions into goal-directed workflows. Instead of requiring the user to repeatedly issue instructions and interpret each response, an agent begins with an initial request that specifies the goal, requirements, and expected outcome. It can plan actions, invoke tools, interact with external environments, validate intermediate results, and retry failed steps before producing the final outcome. As a result, the user can wait for the completed result without monitoring intermediate steps, which provides greater flexibility in execution scheduling [13, 39, 56, 98]. For example, OpenAI’s Scheduled Tasks feature allows agent workflows to be executed with flexible schedules and deadlines [61]. Representative tasks include code repository analysis, large-scale document comprehension, data analysis, and software development. This shift from user-guided, prompt-by-prompt interactions to goal-directed workflows in realistic task environments is also reflected in recent AI agent studies [13, 39, 47, 75, 92, 98]. 
+
+2.3 OpenClaw 
+
+Recently, autonomous agent capabilities have been integrated into systems from major AI service providers, such as Codex [56], Claude Code [5], and Antigravity [24]. While these proprietary systems primarily target coding and software development, OpenClaw has emerged as a popular open-source autonomous agent system designed for more general tasks [63]. OpenClaw serves as 4 Leyi Yan, Shuangning Li, and Sihang Liu Task:     
+
+> Prepare a daily arXiv digest for cs.CV papers submitted on Feb 25, 2026. Classify papers into categories and build a doc that summarizes papers about vision language models.
+> Understand Task:
+> LLM reasoning for task planning
+> 1
+> Return to User
+> Classify Papers:
+> LLM reasoning for classification
+> 3
+> Build Summary:
+> Use PDF tool to generate a report
+> 4
+> OpenClaw User
+> Search Papers:
+> Use arXiv search tool to lookup papers
+> 2
+> PDF Editing Tool
+> Remote Services Web Search Tool Model Service
+> Model API Call Model Output Model Output Search Query Papers + Metadata Model API Call Summary Text PDF Doc
+> Model Service
+
+Fig. 1. Example of an autonomous AI agent workflow on the OpenClaw platform [63]. 
+
+a workload harness that connects user requests, agent actions, external tools, and backend model APIs. Through provider-specific adapters, OpenClaw can invoke different model APIs, such as GPT and Gemini, while keeping the agent runtime largely independent of the underlying model service [62]. These model APIs can also return request-level metadata, such as input, output, and cached token counts, alongside the generated response [57]. Such metadata provides visibility into agent execution behavior and resource usage. Figure 1 illustrates an OpenClaw workflow adapted from one task in WildClawBench [13]. In this example, the task is to summarize papers related to a specific topic. OpenClaw coordinates planning, remote model reasoning, and tool-based data retrieval and processing before returning the final result. 
+
+2.4 Carbon Accounting in Computing 
+
+Carbon emissions of LLM-based systems have already attracted attention from both academia and industry [16, 19, 37, 46]. Autonomous agent platforms such as OpenClaw can further amplify this impact. Their workflows often involve repeated model invocations and tool calls, increasing token consumption and execution time. This motivates carbon-aware analysis for agent workloads. In this section, we introduce the basic carbon accounting background for computing systems. Section 3 then focuses on carbon accounting for AI agent systems. Carbon accounting estimates the greenhouse gas emissions associated with completing a computing task. Emissions from different sources are commonly translated into a shared unit, CO 2 equivalent (gCO 2e), which allows their climate impact to be compared consistently. In computing systems, carbon emissions are often divided into operational and embodied components. Operational carbon captures the runtime emissions caused by electricity consumed during workload execution: 
+
+𝐶 𝑜 = 𝐸 × CI , (1) where 𝐸 denotes the workload energy consumption and CI denotes the average carbon intensity of the electricity supplied by the grid. When expressed in kWh and gCO 2e/kWh, respectively, 
+
+𝐶 𝑜 is measured in gCO 2e. This model is commonly used for carbon accounting in computing systems [19, 32, 46, 74]. Computing systems also incur embodied carbon from the manufacturing processes of their components, such as CPUs, GPUs, memory, and storage. Lifecycle accounting frameworks often amortize these emissions over the hardware lifetime and allocate a fraction to each workload based on execution time or resource usage [32]. Embodied carbon is therefore important for full lifecycle assessments of AI infrastructure. This paper targets carbon optimization through runtime execution decisions, such as when and where remote model API calls are executed. These decisions directly affect operational carbon through workload energy consumption and grid carbon intensity, but AgentDecarbonizer: Carbon-Aware Execution for AI Agents 5
+
+Table 1. Average carbon intensity (CI, gCO 2e/kWh) and major energy sources of different grids in 2025 [15]. 
+
+Grid Region Avg CI Major Energy Sources AT Austria 164 Hydro, wind, gas, solar CISO California, USA 208 Solar, gas, wind, hydro FI Finland 68 Nuclear, wind, hydro GB Great Britain 174 Wind, gas, nuclear 0100 200 300 00:00 06:00 12:00 18:00 24:00    
+
+> UTC Carbon Intensity (gCO ₂e/kWh)  AT CISO FI GB
+
+Fig. 2. Carbon intensity on Feb 24, 2026. 
+
+they do not directly change the manufacturing emissions of the underlying hardware. Therefore, this work focuses on optimizing operational carbon. A key factor of operational carbon is carbon intensity, which links energy use to carbon emissions. Table 1 lists four grids and their average carbon intensity in 2025 using data from Electricity Maps [15]. Carbon intensity varies across regions because electricity grids rely on different energy generation mixes. Grids with larger shares of renewable energy, such as wind, solar, and hydro, generally have lower carbon intensity than grids that depend heavily on fossil fuels. Carbon intensity also varies over time within the same region as the generation mix changes. For example, increased solar generation during the day reduces carbon intensity. Figure 2 shows the dynamics of carbon intensity for each grid in a day. Because of the dynamics of carbon intensity, carbon-aware systems can reduce emissions by shifting computation across time or regions [1, 30, 33, 45, 76, 93]. 
+
+3 Carbon Emissions of AI Agents 
+
+In this section, we describe a carbon accounting method for AI agents and then provide estimates of per-token carbon emissions. 
+
+3.1 Carbon Accounting Method for AI Agents 
+
+As introduced in Section 2.3, AI agent systems like OpenClaw split execution between a local user device and remote model APIs. The local device provides the user interface and runs lightweight control logic, while computationally intensive model inference is delegated to the remote API service. This execution model introduces two sources of operational carbon: local execution on the user device and remote execution by the model API service. For the workloads considered in this paper, the local component is lightweight compared with remote LLM inference [73] and largely independent of the remote model API. Therefore, local operational carbon acts mainly as a common background component, while remote API operational carbon is the major contributor to carbon emissions and therefore the primary optimization target. Following the accounting scope defined in Section 2.4, we focus on the operational carbon 𝐶 
+
+of the remote model service. We refer to each time block of length Δ𝑡 as an interval, and use 𝑡 to denote its start time. For a task whose remote API calls may be served by different grids over its execution period, we calculate 
+
+𝐶 =∑︁ 
+
+> 𝑟
+
+∑︁ 𝑡 
+
+𝐸 𝑟,𝑡 × 𝐶𝐼 𝑟,𝑡 , (2) where 𝑟 refers to the grid, 𝐸 𝑟,𝑡 is the energy consumed by remote API execution served by grid 𝑟 
+
+during interval [𝑡, 𝑡 + Δ𝑡 ), and 𝐶𝐼 𝑟,𝑡 is the corresponding average carbon intensity. This time- and grid-dependent accounting method captures the operational carbon associated with serving the remote model of an AI agent task. This accounting formulation forms the basis of our optimization problem, which uses the same interval convention. 6 Leyi Yan, Shuangning Li, and Sihang Liu               
+
+> Table 2. WildClawBench tasks and categories [13].
+> Category # Tasks Example tasks Productivity Flow 10 Paper digest, PDF analysis Code Intelligence 12 Website development, code debugging Social Interaction 6Chat extraction, calendar scheduling Search & Retrieval 11 Data collection, fuzzy search Creative Synthesis 11 Slides generation, posters generation Safety Alignment 10 Skill injection filtering, password leak detection
+
+3.2 Energy Consumption Estimate 
+
+As described in Equation (2), energy consumption and real-time carbon intensity are the two primary factors in carbon emission calculation. Carbon intensity has been widely studied, and databases are available for querying real-time carbon intensity across grids [14, 15, 17, 80]. Therefore, the main challenge is to estimate the energy consumption of AI agents. We begin with public data from prior studies and blog posts that have estimated the carbon emissions of serving AI models [4, 16, 38]. These studies span both lightweight chatbot applications and complex tasks such as reasoning. For example, Sam Altman’s blog mentions that a ChatGPT query consumes 0 .34 Wh of energy on average [4] and Google’s study shows that the median energy consumption of a Gemini application is 0 .24 Wh [16]. As AI agent tasks typically use high-capability models and process long contexts, we focus on estimating energy consumption in such scenarios, based on a recent study of the energy consumption of the OpenAI API [38]. Specifically, their long, high-reasoning GPT-5 configuration assumes 10 000 input tokens and 1500 output tokens, with a reported energy consumption of 33 .8 Wh per prompt. Since this study reports energy only at the prompt level, we use a simple effective per-token model: 
+
+𝐸 prompt = 𝑒 in 𝑁 in + 𝑒 out 𝑁 out , (3) where 𝑒 in and 𝑒 out are the per-token input and output energy, and 𝑁 in and 𝑁 out are the corresponding numbers of input and output tokens. Based on typical metadata for token usage reported by AI service APIs, such as OpenAI’s response usage fields for input, output, and cached tokens [57, 60], we divide tokens into three categories: 
+
+output tokens , input tokens , and cached input tokens , where cached input tokens benefit from context caching as introduced in Section 2.1. Since the prior study focuses on individual prompts without caching, we first split the reported energy between input and output tokens. API pricing typically reflects the computational cost of model serving. Therefore, motivated by OpenAI’s API pricing, where output tokens are priced at 6 times the input token price for GPT-5-class models [59], we assume that output tokens consume 6 times the energy of input tokens, i.e., 𝑒 out = 6𝑒 in . This yields 
+
+𝑒 in = 0.00178 Wh /token , 𝑒 out = 0.01067 Wh /token . (4) For cached input tokens, we again use their price relative to regular input tokens, i.e., 10 % of the regular input token price [59], leading to 
+
+𝑒 in ,cache = 0.000178 Wh /token . (5) 
+
+4 Characterization of AI Agent Workloads 
+
+Although prior studies have characterized various AI agent workloads [9, 11, 39, 47, 92, 94, 98], their carbon emissions have not been well studied. Therefore, we characterize OpenClaw workloads AgentDecarbonizer: Carbon-Aware Execution for AI Agents 70.5 12510 20 2510 20 50 125 Execution Time API Calls 
+
+> 1.1 1.5 1.10
+> Prod.
+> 2.1 2.6 2.12
+> Code
+> 3.1 3.3 3.6
+> Social 4.1 4.6 4.11
+> Search
+> 5.1 5.6 5.11
+> Creative
+> 6.1 6.5 6.10
+> Safety Execution Time (Minutes) API Calls
+
+Fig. 3. Execution time and number of API calls (log scale) for WildClawBench tasks. 1k 5k 10k 50k 100k 500k 1M 5M 10M 025 50 75 100   
+
+> 1.1 1.5 1.10
+> Prod.
+> 2.1 2.6 2.12
+> Code
+> 3.1 3.3 3.6
+> Social 4.1 4.6 4.11
+> Search
+> 5.1 5.6 5.11
+> Creative
+> 6.1 6.5 6.10
+> Safety Output Input Input Cached Cache Hit Rate Tokens per Task Input Cache Hit Rate (%)
+
+Fig. 4. Token consumption (log scale) and cache hit rates of WildClawBench tasks. 
+
+from a carbon emission perspective and summarize the key workload properties that motivate carbon-aware optimizations as takeaways. 
+
+4.1 Characterization Methodology 
+
+We use OpenClaw with GPT-5.4 model API to run representative AI agent tasks and collect their execution statistics for characterization. The workloads are based on WildClawBench [13], a bench-mark suite that contains a total of 60 AI agent tasks spanning 6 categories: productivity flow, code intelligence, social interaction, search and retrieval, creative synthesis, and safety alignment. Table 2 lists the number of tasks in each category together with a few representative tasks. The carbon intensity data covers the four grids in Table 1 with a granularity of 15 min. Note that the character-ization focuses on analyzing the agent workload behaviors; detailed evaluation methodologies are discussed in Section 8.1. 
+
+4.2 Performance Characterization 
+
+We first evaluate the execution time of agent tasks. Figure 3 plots the execution time of all 60 tasks across six categories on the left y-axis using a log scale. Each task is labeled with a unique task ID on the x-axis. We observe that agent tasks differ substantially in execution time. Unlike a single user prompt, an agent task may expand into a variable sequence of model API calls, tool invocations, observations, retries, and validation steps. As a result, more complex and challenging tasks generally take longer to complete. For example, tasks in the code intelligence category are often more complex because they involve repeated testing and validation. To better understand how OpenClaw interacts with the model API, we also plot the number of API calls on the right y-axis using a log scale. Different tasks require substantially different numbers of API calls. For example, some simple tasks in safety alignment, such as tasks 6.4–6.9, require no more than 8 API calls, while others require up to 103 calls (task 2.1 in code intelligence). Despite this variation, execution time is largely consistent with the number of API calls. We next analyze the number of tokens consumed by the agents. Figure 4 presents the input, output, and cached input tokens for all tasks (left y-axis on a log scale) and cache hit rates (right y-axis on a linear scale). We observe that agent tasks are generally input-heavy (i.e., prefill-heavy): input tokens dominate the total token count across tasks (99.1 %), while output tokens account for a much smaller fraction (0.9 %). A large portion of these input tokens (94.6 %) are cached input tokens, indicating frequent context reuse across repeated model API calls in agent workflows. This observation is also consistent with recent studies on AI agents [11, 92, 94]. Overall, token consumption is largely consistent with execution time and the number of API calls. However, it still varies substantially across tasks, ranging from 52k (task 6.5 in safety alignment) to 8.4M (task 2.1 8 Leyi Yan, Shuangning Li, and Sihang Liu 0.001 0.005 0.01 0.05 0.1 0.5 1025 50 75 100   
+
+> 1.1 1.5 1.10
+> Prod.
+> 2.1 2.6 2.12
+> Code
+> 3.1 3.3 3.6
+> Social 4.1 4.6 4.11
+> Search
+> 5.1 5.6 5.11
+> Creative
+> 6.1 6.5 6.10
+> Safety Output Input Input Cached Cache Carbon Savings Carbon Emissions (kgCO ₂e) Cache Carbon Savings (%)
+
+Fig. 5. Carbon emissions (log scale) and savings from cache (linear scale) of WildClawBench tasks. Tasks start in CISO at 00:00 UTC on Feb 24, 2026. AT CISO FI GB 00:00 06:00 12:00 18:00 24:00 
+
+> Start Time (UTC) Grid
+> 952
+> Carbon Emissions (kgCO ₂e)
+
+Fig. 6. Carbon emissions from executing all WildClaw-Bench tasks across regions and start times of Feb 24, 2026. 
+
+in code intelligence) tokens, indicating that agent tasks impose highly diverse demands on model API services. 
+
+Takeaway 1: AI agent resource consumption varies 
+
+Agent tasks vary widely in execution time, model API calls, and token consumption. Because these tasks are usually input-heavy, most input tokens hit the context cache. Carbon-aware optimizations need to account for execution time in order to meet user-specified deadlines. 
+
+4.3 Carbon Emission Characterization 
+
+We further study the carbon emissions of AI agent workloads using the estimated per-token energy consumption described in Section 3.2. Figure 5 shows the corresponding carbon emissions from input, output, and cached input tokens for all tasks, using the left y-axis on a log scale. Because carbon intensity is grid- and time-dependent, we assume that the model is served in the CISO grid on Feb 24, 2026, and that each task starts at 00:00 UTC. Although output tokens have higher per-token carbon emissions, input tokens dominate the overall emissions because these agent tasks are input-heavy. On average, input tokens, including cached input tokens, contribute 72.8 % of carbon emissions, while output tokens contribute 27.2 %. The total carbon emissions from executing the full WildClawBench are 6.6 kgCO 2e. At scale, these emissions are substantial. 
+
+Takeaway 2: AI agents lead to high carbon emissions 
+
+Agent tasks lead to significant carbon emissions. As agent tasks are mainly input-heavy, input tokens account for the majority of carbon emissions. Section 2.4 shows that carbon emissions depend on both grid energy mix and execution time. Therefore, we study carbon emissions when serving AI models across different grids and at different times. Figure 2 shows 24-hour carbon intensity traces for four grids on Feb 24, 2026, whose curves interleave throughout the day. Each grid follows a different carbon intensity trend because of differences in its energy mix. Accordingly, Figure 6 presents a heatmap of the corresponding carbon emissions from executing the full WildClawBench at different times of day across the four grids. Because the carbon intensity curves interleave, the carbon-optimal grid for executing the AI agent workload changes over time. AgentDecarbonizer: Carbon-Aware Execution for AI Agents 9
+
+Takeaway 3: Location and time matter 
+
+Despite the high carbon emissions, the emission numbers are highly dependent on the grid where the AI model is deployed and the time when the task starts. This implies potential carbon mitigation opportunities through geographic and temporal shifting of workloads, subject to task deadlines. Performance characterization in Section 4.2 shows that a large fraction of input tokens benefit from caching. Figure 5 shows the fraction of carbon emissions saved by caching on the right y-axis on a linear scale. Because the carbon-savings percentage is normalized, it does not depend on the grid or execution time. On average, context caching saves 80.7 % of the total carbon emissions, which is consistent with the high input token cache hit rate of 94.6 %. 
+
+Takeaway 4: Context caching is critical 
+
+Context caching is critical to reducing carbon emissions, especially for input-heavy agent tasks. Carbon emission optimizations should therefore consider the impact of caching. 
+
+5 High-Level Ideas 
+
+In this work, we introduce AgentDecarbonizer, a carbon optimizer for AI agent tasks on OpenClaw. Prior work on carbon-aware optimizations commonly reduces emissions by delaying workloads to lower-carbon-intensity periods and/or by shifting them across locations [1, 30, 33, 43, 45, 76, 81]. However, applying carbon-aware workload shifting to autonomous agents introduces two key challenges: (1) agent workloads need to meet user-specified deadlines while deferring execution, and (2) spatial shifting must balance cache overhead against the lower carbon intensity of other grids. 
+
+5.1 Deadline and Progress Awareness 
+
+Challenge. Temporal shifting can reduce emissions by deferring agent workloads to low-carbon-intensity periods. However, the key challenge is determining whether deferred execution can still finish before the user-specified deadline. Such estimates are difficult because agent execution is iterative and highly dynamic. Each model API call or tool query depends on previous results and may change upon planning decisions, tool calls, external observations, and retries, causing substantial variation in execution time and token usage [9, 52, 83, 89]. 
+
+Solution. Agent executions are typically divided into steps, where each step involves remote model API calls, tool usage, and other interactions with the environment [47, 89]. Based on this property, AgentDecarbonizer first generates a conservative initial duration estimate before execution begins using the user’s prompt and factors such as expected steps, step complexity, and model generation speed. As execution proceeds, AgentDecarbonizer refines this estimate in flight by collecting progress observations after each step. These observations reduce uncertainty in the remaining workload and allow AgentDecarbonizer to adapt future execution intervals based on the agent’s progress and carbon intensity forecasts. In this work, an execution interval is defined as a slice of the agent’s computational workload, which we match with the carbon intensity granularity (i.e., 
+
+Δ𝑡 in Section 3.1) when selecting low-carbon execution times. 
+
+5.2 Context Cache Awareness 
+
+Challenge. Context caching reduces repeated computation by reusing previously processed prompt states, which is especially beneficial for long-context and reasoning-heavy requests. However, these cached states can be large as they grow with model size and context length. Therefore, 10 Leyi Yan, Shuangning Li, and Sihang Liu Planner:    
+
+> Deadline Guarantee Cache awareness
+> Execution Controller
+> Execution Time Estimator
+> Estimated Duration
+> Input:
+> Prompt Deadline
+> API Call API Call API Call
+> OpenClaw Agent Tool Use
+> Prompt
+> AgentDecarbonizer
+> Carbon Intensity Predictor
+> Latest Carbon Intensity Latest Energy Mix
+> Wait / Shift Agent trace Periodical update Remaining time estimate Prompt Deadline Update upon new trace
+> Return to User
+> Service Grids
+> Carbon intensity forecast
+> 1234
+
+Fig. 7. AgentDecarbonizer overview. 
+
+serving systems typically keep caches local to a server or cluster rather than sharing them across regions [21–23]; examples include Gemini context caching [28], AWS Bedrock prompt caching [8], and MoonCake [67]. As a result, spatially shifting execution to another grid can introduce cache misses and extra computation, potentially increasing carbon emissions even when the destination grid has lower carbon intensity. 
+
+Solution. AgentDecarbonizer makes cache effects explicit in the planning process rather than assuming that every lower-carbon-intensity grid is beneficial. The planner evaluates each candidate interval with a cache-aware carbon model: continuing in the same grid preserves reusable input context, while switching to another grid adds a cache miss penalty for recomputing previously processed context. AgentDecarbonizer estimates this cache miss penalty using runtime statistics collected from past model API calls, such as the token consumption and cached input token metadata reported by the model API. For each location shift decision, the planner compares the estimated carbon emissions of continuing in the current grid with the overhead of moving to a different grid due to cache misses. A spatial workload shift is selected only when the estimated carbon reduction exceeds the recomputation overhead; otherwise, the planner continues execution or waits in the current grid. 
+
+6 AgentDecarbonizer 
+
+We first present an overview of AgentDecarbonizer and then describe its components in detail. 
+
+6.1 System Overview 
+
+AgentDecarbonizer is a carbon optimizer that works on top of OpenClaw. It jointly considers temporal shifting, deciding which intervals to use for execution or waiting, and spatial shifting, deciding which service grid should handle each selected execution interval, while preserving the original OpenClaw agent execution. Figure 7 provides an overview of AgentDecarbonizer, which runs alongside the OpenClaw agent and periodically updates the execution plan. The Carbon Intensity Predictor forecasts future carbon intensity for each grid using recent carbon intensity and energy mix measurements (step 1). The Execution Time Estimator produces an initial, conservative execution time estimate from the user prompt and refines the remaining time estimate from OpenClaw traces as API calls and tool invocations complete (step 2). The Planner combines the deadline, carbon intensity forecasts, remaining time estimate, and cache miss cost model to choose AgentDecarbonizer: Carbon-Aware Execution for AI Agents 11 Feature Extraction           
+
+> Extracts high-level task characteristics that help predict execution time.
+> Phase Decomposition
+> Breaks the task into a small sequence of execution phases.
+> Phase-Level Duration Estimate
+> Estimates low, typical, and high runtime for each phase.
+> Aggregation
+> Aggregates phase-level estimates into an overall task-duration prediction.
+> User Prompt Retur runtime duratio and tim i
+> Feature Extraction
+> Extract task characteristics
+> Phase Decomposition
+> Break task into phases
+> User Task: … Phase-1 Phase-N …
+> Phase-Level Time Estimate
+> Conservatively estimate each phase
+> Phase-2 T-1 T-N T-2 …
+> Aggregation
+> Sum up estimates
+> Time Estimate
+> Updated from agent: progress, token count, time Current execution
+> Local model
+> Task, complexity, type of work
+> Local model Local model
+> 12345
+
+Fig. 8. Execution time estimator workflow. 
+
+low-carbon-intensity candidate intervals and service grids, including cache-aware shifting decisions (step 3). The Execution Controller applies the resulting plan by waiting for selected intervals or shifting execution to the grid specified by the planner, while collecting progress and cache statistics that trigger later replanning (step 4). 
+
+6.2 Execution Time Estimator 
+
+The estimator is built around a lightweight local LLM, a 4B Gemma 4 model in our implementation (see Section 8.1), that analyzes user requests, extracts task characteristics, and derives time estimates, without actually executing the task. Figure 8 presents the key steps. As introduced in Section 6.1, the estimator first generates an initial estimate using the input prompt, and then refines the estimate during execution by collecting the latest execution statistics from OpenClaw. We next describe the initial estimation pass and then highlight the in-flight estimate update process. 
+
+Estimator Workflow. Step 1: Feature extraction. Motivated by prior characterizations of LLM and AI agent workloads, which identify factors such as context length, token generation, execution steps, and tool interactions as key runtime contributors [3, 87, 99], the estimator extracts runtime-relevant task features from the original task input, metadata, and local signals. The exact features and prompt template are provided in Appendix A.2. Step 2: Phase decomposition. The local LLM uses the extracted task features to split the task into execution phases. This decomposition exposes the primary runtime contributors and uncertainty sources, enabling phase-level duration estimation. Appendix A.3 provides the corresponding prompt template for this phase decomposition step. 
+
+Step 3: Phase-level time estimation. For each phase, the local LLM takes the phase description and runtime-relevant task features as input and predicts a conservative duration estimate e𝑡 𝑖 . We aim to provide a generic method rather than one tailored to the WildClawBench workloads. Therefore, the prediction is guided by heuristic anchors from publicly available studies, including the expected step count ranges summarized in Appendix A.1, for model calls, tool use, generation, validation, latency, and retries. This is motivated by prior AI agent work, where tasks unfold as multi-step reasoning and tool-use trajectories [89, 99]. Step 4: Aggregation. Finally, the estimator sums the conservative phase estimates to obtain the task-level duration e𝑇 = Í𝑖 e𝑡 𝑖 , which is the execution time reserved before the deadline. 
+
+Runtime progress update. Because agent execution is multi-step and highly dynamic, the initial estimate can become inaccurate as execution progresses. Therefore, the estimator periodically updates the remaining duration based on observed execution progress. It compares the original execution plan with runtime signals, including completed phases, executed tool calls, generated tokens, and recent API and message history, to estimate the fraction of planned work completed. The remaining duration is then adjusted based on the observed execution speed. 
+
+6.3 Cache-Aware Carbon Model 
+
+During planning, AgentDecarbonizer models context cache as a location-dependent shifting penalty. If execution stays in the same grid, the plan assumes reusable cached input context remains available; 12 Leyi Yan, Shuangning Li, and Sihang Liu 
+
+if execution shifts to another grid, AgentDecarbonizer uses token consumption and cached-token metadata to estimate the extra computation needed to rebuild the context. This model reflects the LLM inference workflow: during prefill, an LLM processes input tokens and constructs reusable KV-cache state [2, 41]. When shifting to a different grid makes the state unavailable, AgentDecarbonizer approximates the cache miss overhead as the prefill work needed to reprocess the previously cached input tokens. Note that AgentDecarbonizer is a flexible framework which allows for other cache carbon models (discussed in Section 9). 
+
+6.4 Carbon-Aware Planner 
+
+The planner converts duration estimates, carbon intensity forecasts, and cache-aware carbon emissions into a placement plan. By default, AgentDecarbonizer uses EnsembleCI [86] as the local carbon intensity predictor to forecast at a granularity of Δ𝑡 , which is set to 15 min in our implementation, and refreshes the forecasts once per hour during execution. Like the Execution Time Estimator in Section 6.2, the planner also operates in two stages: initial planning before execution and in-flight updates while the agent is running. 
+
+Initial planning. Upon receiving the task, AgentDecarbonizer obtains carbon intensity forecasts for all candidate grids over the user-specified deadline window. Given the initial duration estimate 
+
+e𝑇 from the Execution Time Estimator , the planner converts the required execution time into 𝐾 =
+
+⌈e𝑇 /Δ𝑡 ⌉ execution intervals of length Δ𝑡 and selects the 𝐾 lowest-carbon, non-overlapping candidate intervals before the deadline. Because no execution history exists yet, the initial plan does not include spatial shifting penalties. 
+
+In-flight update. During execution, each planning refresh updates the remaining placement plan. The planner takes updated carbon intensity forecasts, triggers the Execution Time Estimator 
+
+to update the remaining duration from observed progress, and consumes runtime cache signals collected by the controller, such as input and cached token statistics. It then reoptimizes the placement of the unfinished execution over the remaining deadline horizon. In this optimization, the planner uses the cache-aware carbon model in Section 6.3 to balance the lower execution emissions available in other grids against the cache-recomputation carbon emissions caused by shifting away from the current grid. The updated plan records the resulting temporal and spatial workload shifting decisions. At either stage, if the time remaining before the deadline is shorter than the estimated execution time, the planner falls back to the default OpenClaw execution path. Otherwise, it sends the resulting placement plan to the Execution Controller .
+
+6.5 Execution Controller 
+
+The execution controller manages AgentDecarbonizer’s runtime flow according to the execution plan from the Carbon-Aware Planner . It starts execution in the selected candidate interval and grid, pauses between execution intervals when the plan calls for waiting, resumes from the saved execution state, and performs location shifting when the planner selects a different region. Beyond controlling the execution, the controller leverages OpenClaw’s default logging to collect runtime records, including agent messages, detailed token consumption (input, output, and cached input), and tool usage. When an execution interval ends, the controller extracts these records, sends them to the Planner , and waits for the updated plan before starting or resuming the next interval. Currently, we implement AgentDecarbonizer’s spatial-shifting mechanism in a carbon-emissions simulator that assumes remote model requests can be routed to multiple service regions. The main model we evaluate, GPT-5.4, does not provide a user-accessible API to choose among service locations; this feature is only available as a data residency option [58]. However, location shifting AgentDecarbonizer: Carbon-Aware Execution for AI Agents 13 
+
+is a realistic capability because some cloud providers already expose location controls to users. For example, Google Cloud supports location-specific model serving [29]. 
+
+7 Theoretical Analysis 
+
+This section formalizes the mechanisms described in Section 6.4 and Section 6.5. We first for-malize AgentDecarbonizer’s placement objective. We then show that when cache recomputation depends only on whether the service region changes between consecutive execution intervals, this objective admits an exact dynamic-programming algorithm. Finally, we prove that the resulting schedule meets the deadline whenever the conservative duration estimate covers the task’s actual accumulated runtime. 
+
+7.1 Carbon-Aware Execution Placement 
+
+A request arrives at time 𝑎 with deadline 𝑑 and candidate execution regions R. As described in Section 6.4, the carbon-intensity predictor produces forecasts at granularity Δ𝑡 , which is set to 15 min in our implementation. The planner uses the same granularity and treats each forecast time slot as a candidate execution interval. Specifically, it forms candidate intervals 𝐼 𝑡 = [𝑡, 𝑡 + Δ𝑡 ) whose starting timestamps are 𝑡 ∈ H = {𝑎 + 𝑗 Δ𝑡 | 𝑗 = 0, 1, . . . , 𝐻 − 1}, where 𝐻 = ⌊( 𝑑 − 𝑎 )/ Δ𝑡 ⌋. During each interval, AgentDecarbonizer may execute part of the agent task in one candidate region, or leave the interval idle and resume execution later. By construction, every candidate interval ends no later than the deadline. Given the conservative duration estimate e𝑇 from the Execution Time Estimator , AgentDecar-bonizer decomposes the agent task into 𝐾 = ⌈e𝑇 /Δ𝑡 ⌉ ordered execution intervals, each of length Δ𝑡 ,indexed by 𝑘 ∈ { 1, . . . , 𝐾 }. These execution intervals are the consecutive chunks of work that must be allocated to candidate intervals. AgentDecarbonizer preserves the original execution order of the task, but may defer execution mid-task and resume later for lower carbon emissions. A placement plan is a sequence 𝜋 = {( 𝑟 𝑘 , 𝑡 𝑘 )} 𝐾 𝑘 =1, where 𝑟 𝑘 ∈ R denotes the region selected for execution interval 𝑘 , and 𝑡 𝑘 ∈ H denotes the starting timestamp of the candidate interval in which it is placed. Feasibility requires chronological order, 𝑡 1 < 𝑡 2 < · · · < 𝑡 𝐾 . If no feasible placement exists, AgentDecarbonizer falls back to the default OpenClaw execution. Let b𝐸 (𝑘 ) 
+
+> 𝑟,𝑡
+
+be the predicted energy demand of running execution interval 𝑘 in region 𝑟 during interval [𝑡, 𝑡 + Δ𝑡 ), and let c𝐶𝐼 𝑟,𝑡 be the corresponding carbon intensity forecast. The predicted carbon-emission term is b𝐸 (𝑘 ) 
+
+> 𝑟,𝑡
+
+c𝐶𝐼 𝑟,𝑡 , matching the carbon accounting model in Equation (2). Let 𝜋 1: 𝑘 =
+
+{( 𝑟 𝑖 , 𝑡 𝑖 )} 𝑘 𝑖 =1 denote the partial placement up to execution interval 𝑘 . For 𝑘 ≥ 2, let Λ(𝑘 ) (𝜋 1: 𝑘 ) ≥ 0denote the cache-recomputation overhead incurred when running execution interval 𝑘 . This term captures the extra carbon emissions from regenerating context or cache state after a cache miss; in the general formulation, it may depend on the previous placement history. AgentDecarbonizer selects a deadline-feasible sequence of candidate intervals and the serving region for each selected interval. The placement objective is to minimize predicted carbon emissions and cache-recomputation overhead, subject to deadline feasibility and chronological execution order: min  
+
+> 𝜋
+
+𝐽 ord (𝜋 ) =
+
+> 𝐾
+
+∑︁ 
+
+> 𝑘 =1
+
+b𝐸 (𝑘 ) 
+
+> 𝑟 𝑘 ,𝑡 𝑘
+
+c𝐶𝐼 𝑟 𝑘 ,𝑡 𝑘 +
+
+> 𝐾
+
+∑︁ 
+
+> 𝑘 =2
+
+Λ(𝑘 ) (𝜋 1: 𝑘 )
+
+s.t. 𝑟 𝑘 ∈ R , 𝑡 𝑘 ∈ H , 𝑘 = 1, . . . , 𝐾, 𝑡 1 < 𝑡 2 < · · · < 𝑡 𝐾 .
+
+(6) 14 Leyi Yan, Shuangning Li, and Sihang Liu 
+
+Table 3. Notation in the AgentDecarbonizer placement objective in Equation (6). 
+
+Symbol Description 
+
+R Candidate execution regions. 
+
+H Deadline-feasible candidate intervals. 
+
+𝐻 Number of deadline-feasible candidate intervals. 
+
+𝐾 Number of ordered execution intervals induced by e𝑇 .
+
+𝑟 𝑘 Region assigned to execution interval 𝑘 .
+
+𝑡 𝑘 Candidate interval assigned to execution interval 𝑘 .
+
+b𝐸 (𝑘 ) 
+
+> 𝑟,𝑡
+
+Predicted energy for execution interval 𝑘 in region 𝑟 during candidate interval 𝑡 .
+
+c𝐶𝐼 𝑟,𝑡 Predicted carbon intensity for region 𝑟 during candidate interval 𝑡 .
+
+Λ(𝑘 ) (𝜋 1: 𝑘 ) Cache-recomputation carbon emissions incurred during execution interval 𝑘 .
+
+Γ(𝑘 )
+
+> 𝑟,𝑡
+
+Cache-recomputation penalty incurred when execution interval 𝑘 switches to grid 𝑟 
+
+during candidate interval 𝑡 .
+
+7.2 Dynamic Programming Under Cache Recomputation 
+
+In this section, we consider a local cache-recomputation structure and show that, under this structure, a dynamic-programming algorithm solves the placement objective in Equation (6) exactly. 
+
+Assumption 1 (Local cache recomputation) . For every 𝑘 ≥ 2, the cache-recomputation overhead incurred in execution interval 𝑘 depends only on whether the service region changes between execution intervals 𝑘 − 1 and 𝑘 . Intuitively, remaining in the same region preserves the context cache, whereas shifting to a different region causes a cache miss and requires the context to be regenerated. Therefore, the additional carbon overhead in execution interval 𝑘 depends only on the transition from interval 𝑘 − 1 to interval 𝑘 , rather than on the full placement history. Specifically, there exists a nonnegative cache-recomputation carbon penalty Γ(𝑘 ) 
+
+> 𝑟,𝑡
+
+≥ 0 such that, for every partial placement 𝜋 1: 𝑘 ,
+
+Λ(𝑘 ) (𝜋 1: 𝑘 ) = 1{𝑟 𝑘 ≠ 𝑟 𝑘 −1 }Γ(𝑘 )  
+
+> 𝑟 𝑘 ,𝑡 𝑘
+
+. (7) Under Assumption 1, we formulate the following dynamic-programming algorithm. Let 𝐷 (𝑘 ) 
+
+> 𝑟,𝑡
+
+be the minimum cost for the first 𝑘 execution intervals when execution interval 𝑘 runs in region 𝑟 
+
+during candidate interval 𝑡 ; infeasible states have value +∞ . The base case is 𝐷 (1) 
+
+> 𝑟,𝑡
+
+= b𝐸 (1) 
+
+> 𝑟,𝑡
+
+c𝐶𝐼 𝑟,𝑡 . For 
+
+𝑘 ≥ 2, the recurrence is 
+
+𝐷 (𝑘 ) 
+
+> 𝑟,𝑡
+
+= b𝐸 (𝑘 ) 
+
+> 𝑟,𝑡
+
+c𝐶𝐼 𝑟,𝑡 + min    
+
+> 𝑞 ∈ R , 𝑠 ∈ H :𝑠 <𝑡
+
+n
+
+𝐷 (𝑘 −1) 
+
+> 𝑞,𝑠
+
++ 1{𝑞 ≠ 𝑟 }Γ(𝑘 )
+
+> 𝑟,𝑡
+
+o
+
+. (8) The recurrence searches over feasible predecessors: execution interval 𝑘 − 1 must finish in an earlier candidate interval 𝑠 < 𝑡 . The transition cost is zero when the cache is preserved ( 𝑞 = 𝑟 ) and equals the cache-recomputation penalty when AgentDecarbonizer switches regions ( 𝑞 ≠ 𝑟 ). The optimal interval-level carbon estimate is 𝐶 ∗ = min 𝑟 ∈ R , 𝑡 ∈ H 𝐷 (𝐾 ) 
+
+> 𝑟,𝑡
+
+. When computing each minimum, the dynamic-programming algorithm stores a backpointer to the predecessor state (𝑞, 𝑠 ) that attained the minimum. Tracing these backpointers from the optimal final state reconstructs the placement plan {( 𝑟 𝑘 , 𝑡 𝑘 )} 𝐾 𝑘 =1.Theorem 7.1 (AgentDecarbonizer optimality and complexity). Under Assumption 1, the dynamic-programming algorithm returns a minimizer of Equation (6) . The recurrence can be evaluated in 𝑂 (𝐾 |R| 𝐻 ) time and 𝑂 (|R| 𝐻 ) working memory, plus backpointers for reconstructing the placement plan. AgentDecarbonizer: Carbon-Aware Execution for AI Agents 15 
+
+The dynamic-programming algorithm avoids repeatedly searching over all possible placements of the previous execution interval. A naive evaluation checks every possible previous region and earlier candidate interval for every state, requiring 𝑂 (𝐾 |R| 2𝐻 2) time. Under the local cache-recomputation structure, the previous-placement information can be summarized and reused. Specifically, for each current state (𝑟, 𝑡 ) at execution interval 𝑘 , the transition only needs two summaries over placements of execution interval 𝑘 − 1 in earlier candidate intervals 𝑠 < 𝑡 : the best placement that remains in the same region 𝑟 , and the best placement that comes from any different region. The first summary gives the cost of preserving the cache, while the second summary gives the best switching cost before adding the recomputation penalty Γ(𝑘 ) 
+
+> 𝑟,𝑡
+
+. This allows each transition to be evaluated in constant time, reducing the overall complexity to 𝑂 (𝐾 |R| 𝐻 ). The details and proof of Theorem 7.1 are provided in Section A.4. 
+
+7.3 Deadline Guarantee 
+
+Let 𝑇 run denote the actual accumulated runtime of the task, excluding idle waiting between execution intervals. Recall the conservative duration estimate e𝑇 .Theorem 7.2 (Deadline guarantee). Suppose the dynamic-programming algorithm returns a feasible AgentDecarbonizer schedule. If 𝑇 run ≤ e𝑇 , then the schedule completes the task by the deadline 
+
+𝑑 .
+
+Recall that the Execution Time Estimator in Section 6.2 decomposes the task into phases and assigns the 𝑖 -th phase a conservative duration estimate e𝑡 𝑖 , with e𝑇 = Í𝑖 e𝑡 𝑖 . Let 𝑡 run  
+
+> 𝑖
+
+denote the actual execution time spent on the corresponding phase. One sufficient condition for 𝑇 run ≤ e𝑇 is that 
+
+𝑡 run  
+
+> 𝑖
+
+≤ e𝑡 𝑖 for every phase 𝑖 . This motivates accounting for uncertainty during phase-level duration estimation and helps ensure that the reserved execution intervals provide enough time for the task to finish before the deadline. 
+
+8 Evaluation 
+
+In this section, we first describe the evaluation methodology and then report the results. 
+
+8.1 Methodology 
+
+Local Platform. We use a Mac mini with an M4 processor and 16 GB memory as the local platform to host OpenClaw and optimization mechanisms from AgentDecarbonizer. We evaluate the overhead on the local platform in Section 8.5. 
+
+Models. We primarily evaluate GPT-5.4 as the backend model used by OpenClaw through OpenAI’s API. Additionally, we evaluate Gemini 3.1 Pro to compare AgentDecarbonizer’s carbon savings across models in Section 8.3. On the local platform, we use a 4-bit-quantized Gemma 4 E4B model for execution-time estimation [27]; this lightweight model is suitable for mobile and edge devices. The local model is served using Ollama [55], whose built-in prompt and context caching reduce inference time because the estimator prompts share substantial context for task descriptions. In our experiment, the estimator has no prior knowledge of the benchmark to ensure fair evaluation. 
+
+Benchmark and Evaluation Setup. As in Section 4, we evaluate all 60 AI agent tasks in WildClawBench, which span six categories. Because individual benchmark tasks have relatively short execution times, whereas real-world agent workflows are increasingly long-running, we combine shorter tasks within each category into a single workload. This yields six workloads, one per category. Within each task, the backend model maintains a context cache. Because the tasks within a workload are independent, however, the cache is not reused across tasks; we assume a 16 Leyi Yan, Shuangning Li, and Sihang Liu Prod. Code Social Search Creative Safety 020 40 60 Savings (%) 3h 6h 12h 24h Current-Optimal Average 
+
+(a) 3h 6h 12h 24h 020 40 60 80  
+
+> Selected Time (%)  AT CISO FI GB
+
+(b) AT CISO FI GB 080 160 240 320  
+
+> Carbon Intensity (gCO2/kWh)
+> Mean
+
+(c) Fig. 9. (a) Overall carbon savings, (b) grid usage, and (c) carbon intensity distribution. Model is GPT-5.4. 
+
+cache lifetime of 24 hours. For each workload, we record an OpenClaw execution trace. Then, we develop a simulator that replays the traces to reflect different carbon intensity scenarios, and optimization decisions made by AgentDecarbonizer at runtime. We evaluate AgentDecarbonizer under four workload deadlines: 3, 6, 12, and 24 hours. Tighter deadlines reflect more on-demand execution, while longer deadlines reflect more flexible workload scheduling. 
+
+Carbon-Intensity Traces. We use carbon-intensity traces for the four grids introduced in Table 1: CISO data from EIA [14], AT and FI data from ENTSO-E [17], and GB data from NESO [53]. We use two years of traces for training (May 2023–May 2025) and one month of traces (February 2026) for evaluation. We evaluate 24 candidate start times per day over this 1-month testing trace, with one start time per hour, and compute the emissions for each start time. We then average these emissions over the 1-month trace. 
+
+Baselines. Using the carbon emissions calculated as described above, we compare AgentDe-carbonizer against two baselines: (1) Current-optimal: The carbon emissions from the original OpenClaw execution when run on the grid with the lowest carbon intensity at the workload start time. We use this baseline as the primary comparison in this work. (2) Average: The average carbon emissions when running the agent workloads on each grid, which reflects a carbon-agnostic scenario. 
+
+8.2 Overall Carbon Emission Savings 
+
+Carbon Savings. Figure 9a presents the carbon emission savings when using GPT-5.4 as the backend model under different workload deadlines. We observe that as the deadline becomes more flexible, the carbon savings increase, as AgentDecarbonizer has more flexibility to defer and shift the workload to other grids. Compared with the current-optimal and average baselines, AgentDecarbonizer achieves average carbon savings of 3.3–37.5 % and 34.9–57.9 %, respectively. Figure 9b summarizes the fraction of execution time assigned to each grid under different deadlines. The results are consistent with the carbon intensity distributions shown in Figure 9c. Notably, CISO is used most often, and its usage increases as the deadline becomes longer. This is because CISO has a wide daily carbon intensity distribution, with lower carbon intensity values than the other grids. Thus, AgentDecarbonizer uses CISO more often to leverage its low-carbon-intensity periods. 
+
+Timeline Examples. Figure 10 shows examples of agent workload execution on Feb 4, 2026, starting at 16:00 UTC, under four different deadlines. We first observe that, when the deadline is tight, AgentDecarbonizer avoids introducing long waiting periods to meet the deadline. As the deadline becomes more flexible, AgentDecarbonizer spends more time waiting for lower-carbon periods. Second, we find that mid-task migration occurs when there is a major change in carbon intensity, as indicated by the triangle marker. For example, in the 3-hour deadline case, the workload is shifted from CISO to AT at 17:00 UTC due to the predicted increase in CISO’s carbon intensity. Finally, we observe that cross-grid workload shifting is more frequent for long-running tasks, e.g., AgentDecarbonizer: Carbon-Aware Execution for AI Agents 17 080 160 240 gCO2e/kWh 3h Deadline 080 160 240 6h Deadline 080 160 240 12h Deadline 080 160 240 24h Deadline 16:00 17:00 18:00 19:00 UTC time Prod. Code Social Search Creative Safety 16:00 18:00 20:00 22:00 UTC time 16:00 20:00 00:00 04:00 UTC time 16:00 00:00 08:00 16:00 UTC time AT CISO FI GB Lowest grid Wait gap Mid-task grid shifting 
+
+Fig. 10. Example of agent execution optimized by AgentDecarbonizer. Start time Feb 4, 2026 at 16:00 UTC. 110 100 Prod. Code Social Search Creative Safety GPT Gemini Time (min) 
+
+(a) 1K 10K 100K 1M 10M 100M Prod. Code Social Search Creative Safety GPT Gemini Out In Cached Tokens (b) Average Current optimal 3h 6h 12h 24h 0246Total kgCO 2e  
+
+> Agent Decar boni zer GPT Gemini
+
+(c) Fig. 11. (a) Execution time, (b) token usage, and (c) carbon emissions of Gemini 3.1 Pro vs GPT-5.4. 
+
+Code and Creative. Short-running workloads can often wait for a low-carbon period and then complete on a single grid, avoiding cache recomputation. By contrast, long-running workloads may benefit from migrating before completion because more work remains after the shift. 
+
+8.3 Comparison across Models 
+
+We evaluate Gemini 3.1 Pro as a second model API to assess the effectiveness of AgentDecarbonizer across different models. Figures 11a and 11b show the per-workload execution times and token usage, respectively, for both GPT-5.4 and Gemini 3.1 Pro. Gemini 3.1 Pro has shorter execution times and lower token usage than GPT-5.4. Because public data and studies on the energy consumption and carbon emissions of Gemini Pro series models are unavailable, we estimate the energy consumption of input, output, and cached input tokens using the same method as in Section 3.2, based on the relative pricing differences between GPT-5.4 and Gemini 3.1 Pro [26, 59], i.e., Gemini 3.1 Pro costs $2 per million input tokens compared with $2.5 for GPT-5.4. Using this estimate, Figure 11c compares the estimated total carbon emissions of the two models and shows that Gemini 3.1 Pro has lower estimated carbon emissions. However, the carbon saving ratios remain similar: compared with the current-optimal and average baselines, AgentDecarbonizer reduces carbon emissions by 4–35.8 % and 35.2–57.3 %, respectively, under different deadlines. This experiment demonstrates that AgentDecarbonizer can reduce carbon emissions from AI-agent workloads across different backend models. 18 Leyi Yan, Shuangning Li, and Sihang Liu 3h 6h 12h 24h 1.0 1.5 2.0 Carbon Emissions over AgentDecarboni zer  Prod. 3h 6h 12h 24h             
+
+> Code 3h 6h 12h 24h
+> Social 3h 6h 12h 24h
+> Search 3h 6h 12h 24h
+> Creative 3h 6h 12h 24h
+> Safety Deadline Single-grid only: AT CISO FI GB AgentDecarboni zer
+
+Fig. 12. Emissions of single-grid only scenarios compared to AgentDecarbonizer. The model API is GPT-5.4. 
+
+8.4 Ablation Studies 
+
+In this section, we conduct ablation studies to identify the sources of carbon savings. 
+
+8.4.1 Impact of Multi-grid Migration. We first study the impact of shifting across grids by com-paring against a single-grid scenario that only waits for lower-carbon-intensity periods without shifting. Figure 12 presents the average carbon emissions of the single-grid scenario, normalized to AgentDecarbonizer, under different deadlines. We observe that shifting across grids in AgentDecar-bonizer reduces carbon emissions by 34.1–45.7 % on average across workloads, depending on the deadline. For most grids, longer deadlines allow AgentDecarbonizer to save more carbon. The only exception is CISO, whose relative emissions compared with AgentDecarbonizer decrease as the deadline increases. As also shown in Figure 9c, CISO has the highest carbon intensity variation, making it possible to mitigate a significant fraction of emissions by waiting alone. Overall, this experiment shows that shifting agent workloads across grids is a major source of carbon reduction. 
+
+8.4.2 Impact of Carbon Intensity Predictor. We then evaluate the impact of the carbon intensity predictor [86] used by AgentDecarbonizer by comparing it against an ideal scenario that uses ground-truth carbon intensities. In addition, we compare AgentDecarbonizer’s hourly updated dynamic prediction with a static, one-time prediction. Figure 13 compares the carbon emission savings of these predictors over the default current-optimal baseline. We observe that AgentDe-carbonizer achieves carbon savings close to the ideal scenario, while the one-time prediction has lower carbon savings under longer deadlines because it fails to track carbon intensity changes over longer durations. This is because prediction errors grow with the horizon, reaching an average MAPE of 16.3 % at 24 hours, while next-hour predictions have a low MAPE of 3.3 %. By updating predictions hourly, AgentDecarbonizer’s planner benefits from more accurate near-term carbon intensity estimates. This experiment demonstrates that, although carbon intensity prediction is imperfect, AgentDecarbonizer remains robust to prediction errors and substantially outperforms the one-time predictor under longer deadlines. 
+
+8.4.3 Impact of the Execution-Time Estimator. We finally evaluate the impact of the execution time estimator. We introduce an ideal scenario that uses the ground-truth execution time and a worst-case scenario that uses the execution time of the slowest task as a fixed estimate. Figure 14 compares these scenarios by reporting their carbon emission savings over the default current-optimal baseline. Overall, AgentDecarbonizer is close to the ideal scenario. We also compare the actual execution time with AgentDecarbonizer’s conservative estimate in Figure 15. For all workloads, the estimated time is longer than the actual time, demonstrating that the estimate is conservative enough to ensure that workloads complete before their deadlines. Compared to longer-running workloads, shorter workloads have larger slack between the estimated and actual execution times because the AgentDecarbonizer: Carbon-Aware Execution for AI Agents 19 020           
+
+> Prod. Code Social
+> 3h 6h 12h 24h 020
+> Search
+> 3h 6h 12h 24h
+> Creative
+> 3h 6h 12h 24h
+> Safety
+> Carbon Savings (%) Deadline Ideal AgentDecarboni zer One-Time Prediction
+
+Fig. 13. Carbon savings compared to ideal and one-time carbon intensity predictors. Model API: GPT-5.4. 020          
+
+> Prod. Code Social
+> 3h 6h 12h 24h 020
+> Search
+> 3h 6h 12h 24h
+> Creative
+> 3h 6h 12h 24h
+> Safety
+> Carbon Savings (%) Deadline Ideal Worst Case AgentDecarboni zer
+
+Fig. 14. Carbon savings compared to ideal and worst-case execution time estimates. Model API: GPT-5.4. 050 100 150 Prod. Code Social Search Creative Safety 
+
+> Actual
+> Workload Time (min)
+> Agent Decar boni zerEstimate
+
+Fig. 15. AgentDecarbonizer’s es-timate vs. actual time. Model API: GPT-5.4. Prod. Code Social Search Creative Safety 0510 15 Local Device Power (W) Power 0246
+
+> Ag entDecar boni zer
+> Overhead (min)
+> Ag entDecar boni zer Overhead
+
+Fig. 16. Power consumption and AgentDecar-bonizer overhead on local device. Prod. Code Social Search Creative Safety 02.5 57.5 Local Memory Usage (GB) 
+
+Fig. 17. Memory us-age on local device. 
+
+estimator uses a generic and conservative design. In our evaluation, all workloads complete before the user-specified deadlines. 
+
+8.5 AgentDecarbonizer Overhead on Local Device 
+
+In this experiment, we evaluate the overhead of AgentDecarbonizer on the local Mac mini device. We measure the power of the local Mac mini device using powermetrics [7] every 200 ms. Fig-ure 16 presents AgentDecarbonizer’s average power consumption and total execution time. The local Gemma model used for execution-time estimation is the main source of overhead. Overall, AgentDecarbonizer’s execution overhead is only 0 .7–5 .2 min with an average power of 14 .9 W. This overhead is low compared to the long-running agent tasks. Figure 17 further presents the peak memory usage. On average, the memory usage is only 6 .5 GB, mainly from the local Gemma model, which can fit into most PCs and laptops. 
+
+9 Related Work and Discussion 
+
+In this section, we discuss related work. 
+
+Carbon-aware optimizations. Carbon-aware computing systems reduce operational emissions by exploiting variation in grid carbon intensity over time and across locations. Temporal shifting delays flexible workloads until cleaner electricity is available, while spatial shifting moves work to lower-carbon regions [1, 30, 33, 76, 81, 93]. These systems establish the general opportunity for carbon-aware load shifting. While AgentDecarbonizer builds on these directions, it addresses 20 Leyi Yan, Shuangning Li, and Sihang Liu 
+
+new challenges in reducing carbon emissions from AI-agent workloads, including meeting user deadlines during temporal shifting and accounting for context-cache recomputation overhead after spatial shifts. 
+
+Carbon and Energy Analysis for AI Systems. Recent work has studied carbon mitigation, energy modeling, and serving optimization for AI and LLM systems, including model-, token-, and prompt-level energy estimates [19, 45, 54, 71, 74, 77, 93]. These approaches are complementary to AgentDecarbonizer. Rather than changing the serving system, AgentDecarbonizer optimizes agent execution while preserving the original model API and agent behaviors. In this work, we develop our energy estimate using a prior study [38] and vendor pricing. However, AgentDecarbonizer is not tied to a specific energy model; more precise and up-to-date estimates can replace the current values to improve carbon optimization. 
+
+Context Caching. LLM serving systems increasingly rely on prompt and context reuse to accelerate long-context workloads [21, 23, 85, 88, 90]. In the current AgentDecarbonizer implemen-tation, we assume that the context cache is local to a serving backend, e.g., a server or cluster. This assumption is consistent with Gemini’s context cache [25, 28], AWS Bedrock [8], MoonCake [67], and prior studies [21–23]. As a result, shifting agent execution to another grid can lose cache locality and require recomputation, with costs that grow with model size, context length, and generated reasoning history. There have been recent proposals that stream context through the network [48, 49]. AgentDecarbonizer can support these techniques by using a lower shifting penalty in its cache carbon model when the serving system supports cross-region cache transfer. 
+
+AI Agent Execution Time Prediction. Recent studies predict AI agent workloads, resource use, and token consumption to support budgeting, scheduling, and resource control for agent executions [9, 20, 70, 95]. AgentDecarbonizer differs from general prediction work by using conser-vative estimates that are updated in flight to make deadline-aware load-shifting decisions during agent execution. We also implement AgentDecarbonizer’s execution time estimator as a modular component, allowing future predictors to improve the planner and make better shifting decisions. Besides using a more accurate estimator, the existing estimator’s phase categories, step counts, per-step token estimates, and generation speed assumptions can also be customized for specific agent tasks, models, and deployment settings. In this work, we use values from publicly available datasets and research to keep the estimator generic. 
+
+10 Conclusions 
+
+This paper aims to mitigate the carbon emissions of autonomous AI agents. We first characterize OpenClaw workloads using WildClawBench to understand the carbon emissions of AI agents. Based on these characteristics, we present AgentDecarbonizer, a carbon optimizer that shifts agent execution to lower-carbon time periods and grids while meeting user deadlines. AgentDecarbonizer accounts for carbon savings from context caching and avoids spatial shifts when cache recomputa-tion would outweigh the carbon benefit. Our evaluation shows that AgentDecarbonizer reduces carbon emissions from agent workloads by up to 57.9 % while meeting user-specified deadlines. 
+
+References    
+
+> [1] Bilge Acun, Benjamin Lee, Fiodar Kazhamiaka, Kiwan Maeng, Udit Gupta, Manoj Chakkaravarthy, David Brooks, and Carole-Jean Wu. 2023. Carbon Explorer: A Holistic Framework for Designing Carbon Aware Datacenters. In
+> Proceedings of the 28th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) . doi:10.1145/3575693.3575754 [2] Amey Agrawal, Nitin Kedia, Ashish Panwar, Jayashree Mohan, Nipun Kwatra, Bhargav S. Gulavani, Alexey Tumanov, and Ramachandran Ramjee. 2024. Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve. In 18th USENIX Symposium on Operating Systems Design and Implementation (OSDI) . 117–134. https://arxiv.org/abs/2403.02310
+
+AgentDecarbonizer: Carbon-Aware Execution for AI Agents 21 
+
+[3] Wasi Uddin Ahmad, Nikolai Ludwig, Somshubra Majumdar, and Boris Ginsburg. 2026. Open-SWE-Traces: Advancing Dual-Mode Multilingual Distillation for Software Engineering Agents. arXiv:2606.16038 [cs.SE] https://arxiv.org/abs/ 2606.16038 [4] Sam Altman. 2025. The Gentle Singularity. https://blog.samaltman.com/the-gentle-singularity [5] Anthropic. 2026. Claude Code Docs. https://docs.anthropic.com/en/docs/claude-code/overview [6] Anthropic. 2026. Prompt Caching. https://platform.claude.com/docs/en/build-with-claude/prompt-caching [7] Apple Inc. 2026. powermetrics (macOS command-line utility) . Apple Developer. Available at: https://developer.apple. com/. [8] AWS. 2026. Prompt caching for faster model inference. https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html [9] Longju Bai, Zhemin Huang, Xingyao Wang, Jiao Sun, Rada Mihalcea, Erik Brynjolfsson, Alex Pentland, and Jiaxin Pei. 2026. How Do AI Agents Spend Your Money? Analyzing and Predicting Token Consumption in Agentic Coding Tasks. arXiv:2604.22750 [cs.CL] doi:10.48550/arXiv.2604.22750 [10] Paweł Budzianowski, Tsung-Hsien Wen, Bo-Hsiang Tseng, Iñigo Casanueva, Stefan Ultes, Osman Ramadan, and Milica Gašić. 2018. MultiWOZ – A Large-Scale Multi-Domain Wizard-of-Oz Dataset for Task-Oriented Dialogue Modelling. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing . https: //doi.org/10.48550/arXiv.1810.00278 [11] Jinha Chung, Byeongjun Shin, Jiin Kim, and Minsoo Rhu. 2026. Agent-X: Full Pipeline Acceleration of On-device AI Agents. In Proceedings of the 24th Annual International Conference on Mobile Systems, Applications and Services (MobiSys ’26) . Association for Computing Machinery, New York, NY, USA, 144–157. doi:10.1145/3745756.3809195 [12] Xiang Deng, Yu Gu, Boyuan Zheng, Shijie Chen, Samuel Stevens, Boshi Wang, Huan Sun, and Yu Su. 2023. MIND2WEB: towards a generalist agent for the web. In Proceedings of the 37th International Conference on Neural Information Processing Systems (NeurIPS) . https://doi.org/10.48550/arXiv.2306.06070 [13] Shuangrui Ding, Xuanlang Dai, Long Xing, Shengyuan Ding, Ziyu Liu, Yang JingYi, Penghui Yang, Zhixiong Zhang, Xilin Wei, Xinyu Fang, Yubo Ma, Haodong Duan, Jing Shao, Jiaqi Wang, Dahua Lin, Kai Chen, and Yuhang Zang. 2026. WildClawBench: A Benchmark for Real-World, Long-Horizon Agent Evaluation. arXiv:2605.10912 [cs.CL] https://arxiv.org/abs/2605.10912 [14] EIA. 2026. Hourly Electric Grid Monitor. https://www.eia.gov/electricity/gridmonitor/ [15] Electricity Maps. 2026. Electricity Maps. https://www.electricitymap.org/map/. [16] Cooper Elsworth, Keguo Huang, David Patterson, Ian Schneider, Robert Sedivy, Savannah Goodman, Ben Townsend, Parthasarathy Ranganathan, Jeff Dean, Amin Vahdat, Ben Gomes, and James Manyika. 2025. Measuring the Environ-mental Impact of Delivering AI at Google Scale. arXiv:2508.15734 [cs.AI] doi:10.48550/arXiv.2508.15734 [17] ENTSO-E. 2026. Transparency Platform. https://transparency.entsoe.eu/ [18] EPA. 2026. Greenhouse Gas Emissions from a Typical Passenger Vehicle. https://www.epa.gov/greenvehicles/ greenhouse-gas-emissions-typical-passenger-vehicle [19] Ahmad Faiz, Sotaro Kaneda, Ruhan Wang, Rita Osi, Prateek Sharma, Fan Chen, and Lei Jiang. 2024. LLMCarbon: Modeling the end-to-end Carbon Footprint of Large Language Models. arXiv:2309.14393 [cs.CL] https://arxiv.org/abs/ 2309.14393 [20] Zhiyu Fan, Kirill Vasilevski, Dayi Lin, Boyuan Chen, Yihao Chen, Zhiqing Zhong, Jie M. Zhang, Pinjia He, and Ahmed E. Hassan. 2025. SWE-Effi: Re-Evaluating Software AI Agent System Effectiveness Under Resource Constraints. arXiv:2509.09853 [cs.SE] doi:10.48550/arXiv.2509.09853 [21] Bin Gao, Zhuomin He, Puru Sharma, Qingxuan Kang, Djordje Jevdjic, Junbo Deng, Xingkun Yang, Zhou Yu, and Pengfei Zuo. 2024. Cost-Efficient Large Language Model Serving for Multi-turn Conversations with CachedAttention. In USENIX Annual Technical Conference (ATC) . USENIX Association, Santa Clara, CA, 111–126. https://www.usenix. org/conference/atc24/presentation/gao-bin-cost [22] Shiwei Gao, Youmin Chen, and Jiwu Shu. 2025. Fast State Restoration in LLM Serving with HCache. In Proceedings of the Twentieth European Conference on Computer Systems (EuroSys) . Association for Computing Machinery, New York, NY, USA, 128–143. doi:10.1145/3689031.3696072 [23] In Gim, Guojun Chen, Seung-seob Lee, Nikhil Sarda, Anurag Khandelwal, and Lin Zhong. 2024. Prompt Cache: Modular Attention Reuse for Low-Latency Inference. In Proceedings of Machine Learning and Systems , P. Gibbons, G. Pekhimenko, and C. De Sa (Eds.), Vol. 6. 325–338. https://proceedings.mlsys.org/paper_files/paper/2024/file/ a66caa1703fe34705a4368c3014c1966-Paper-Conference.pdf [24] Google. 2026. Antigravity 2.0. https://www.antigravity.google/docs/overview [25] Google. 2026. Context Caching. https://ai.google.dev/gemini-api/docs/caching [26] Google. 2026. Gemini Developer API pricing. https://ai.google.dev/gemini-api/docs/pricing [27] Google. 2026. Gemma 4 Model Card. Google AI for Developers documentation. https://ai.google.dev/gemma/docs/ core/model_card_4 22 Leyi Yan, Shuangning Li, and Sihang Liu 
+
+[28] Google. 2026. Use a context cache. https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/context-cache/context-cache-use [29] Google Cloud. 2026. Vertex AI locations. https://cloud.google.com/vertex-ai/docs/general/locations [30] Viktor Urban Gsteiger, Pin Hong (Daniel) Long, Yiran (Jerry) Sun, Parshan Javanrood, and Mohammad Shahrad. 2024. Caribou: Fine-Grained Geospatial Shifting of Serverless Applications for Sustainability. In Proceedings of the ACM SIGOPS 30th Symposium on Operating Systems Principles (SOSP) . doi:10.1145/3694715.3695954 [31] Yibo Guo and George Porter. 2023. Carbon-aware Inter-datacenter Workload Scheduling and Placement. In Proceedings of the 20th USENIX Symposium on Networked Systems Design and Implementation (NSDI) . USENIX Association, 189–204. [32] Udit Gupta, Mariam Elgamal, Gage Hills, Gu-Yeon Wei, Hsien-Hsin S. Lee, David Brooks, and Carole-Jean Wu. 2022. ACT: designing sustainable computer systems with an architectural carbon modeling tool. In Proceedings of the 49th Annual International Symposium on Computer Architecture (ISCA) . Association for Computing Machinery, New York, NY, USA, 784–799. doi:10.1145/3470496.3527408 [33] Walid A. Hanafy, Qianlin Liang, Noman Bashir, Abel Souza, David Irwin, and Prashant Shenoy. 2024. Going Green for Less Green: Optimizing the Cost of Reducing Cloud Carbon Emissions. In Proceedings of the 29th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 3 (La Jolla, CA, USA) 
+
+(ASPLOS) . 479–496. doi:10.1145/3620666.3651374 [34] Sirui Hong, Yizhang Lin, Bang Liu, Bangbang Liu, Binhao Wu, Ceyao Zhang, Danyang Li, Jiaqi Chen, Jiayi Zhang, Jinlin Wang, Li Zhang, Lingyao Zhang, Min Yang, Mingchen Zhuge, Taicheng Guo, Tuo Zhou, Wei Tao, Robert Tang, Xiangtao Lu, Xiawu Zheng, Xinbing Liang, Yaying Fei, Yuheng Cheng, Yongxin Ni, Zhibin Gou, Zongze Xu, Yuyu Luo, and Chenglin Wu. 2025. Data Interpreter: An LLM Agent for Data Science. In Findings of the Association for Computational Linguistics (ACL) , Wanxiang Che, Joyce Nabende, Ekaterina Shutova, and Mohammad Taher Pilehvar (Eds.). doi:10.18653/v1/2025.findings-acl.1016 [35] Qian Huang, Jian Vora, Percy Liang, and Jure Leskovec. 2024. MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation. In Proceedings of the 41st International Conference on Machine Learning (ICML) .https://proceedings.mlr.press/v235/huang24y.html [36] Yiming Huang, Jianwen Luo, Yang Yu, Yitong Zhang, Fangyu Lei, Yifan Wei, Shizhu He, Lifu Huang, Xiao Liu, Jun Zhao, and Kang Liu. 2024. DA-Code: Agent Data Science Code Generation Benchmark for Large Language Models. 
+
+arXiv preprint arXiv:2410.07331 (2024). doi:10.48550/arXiv.2410.07331 [37] IEA. 2025. Energy and AI . Technical Report. https://www.iea.org/reports/energy-and-ai [38] Nidhal Jegham, Marwan Abdelatti, Chan Young Koh, Lassad Elmoubarki, and Abdeltawab Hendawi. 2025. How Hungry is AI? Benchmarking Energy, Water, and Carbon Footprint of LLM Inference. arXiv:2505.09598 [cs.CY] doi:10.48550/arXiv.2505.09598 [39] Carlos E Jimenez, John Yang, Alexander Wettig, Shunyu Yao, Kexin Pei, Ofir Press, and Karthik R Narasimhan. 2024. SWE-bench: Can Language Models Resolve Real-world Github Issues?. In The Twelfth International Conference on Learning Representations (ICLR) . https://openreview.net/forum?id=VTF8yNQM66 [40] Jing Yu Koh, Robert Lo, Lawrence Jang, Vikram Duvvur, Ming Lim, Po-Yu Huang, Graham Neubig, Shuyan Zhou, Ruslan Salakhutdinov, and Daniel Fried. 2024. VisualWebArena: Evaluating Multimodal Agents on Realistic Visual Web Tasks. arXiv:2401.13649 [cs.AI] https://arxiv.org/abs/2401.13649 [41] Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody Hao Yu, Joseph Gonzalez, Hao Zhang, and Ion Stoica. 2023. Efficient Memory Management for Large Language Model Serving with PagedAttention. In 
+
+Proceedings of the 29th Symposium on Operating Systems Principles (SOSP) . doi:10.1145/3600006.3613165 [42] Olivier Lacombe and Omar Sanseviero. 2026. Gemma 4 with Quantization-Aware Training. https://blog.google/ innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/ [43] Baolin Li, Siddharth Samsi, Vijay Gadepally, and Devesh Tiwari. 2023. Clover: Toward Sustainable AI with Carbon-Aware Machine Learning Inference Service. In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC) . Association for Computing Machinery, New York, NY, USA, Article 20, 15 pages. doi:10.1145/3581784.3607034 [44] Hao Li, Ruoyao Wen, Shanghao Shi, Ning Zhang, Yevgeniy Vorobeychik, and Chaowei Xiao. 2026. AgentDyn: Are Your Agent Security Defenses Deployable in Real-World Dynamic Environments? arXiv:2602.03117 [45] Yueying Li, Zhanqiu Hu, Esha Choukse, Rodrigo Fonseca, G Edward Suh, and Udit Gupta. 2025. Ecoserve: Designing carbon-aware AI inference systems. arXiv preprint arXiv:2502.05043 (2025). [46] Yueying Lisa Li, Leo Han, G Edward Suh, Christina Delimitrou, Fiodar Kazhamiaka, Esha Choukse, Rodrigo Fonseca, Liangcheng Yu, Jonathan Mace, and Udit Gupta. 2025. Fair, Practical, and Efficient Carbon Accounting for LLM Serving. 
+
+SIGMETRICS Perform. Eval. Rev. 53, 2 (Aug. 2025), 99–103. doi:10.1145/3764944.3764967 [47] Xiao Liu, Hao Yu, Hanchen Zhang, Yifan Xu, Xuanyu Lei, Hanyu Lai, Yu Gu, Hangliang Ding, Kaiwen Men, Kejuan Yang, Shudan Zhang, Xiang Deng, Aohan Zeng, Zhengxiao Du, Chenhui Zhang, Sheng Shen, Tianyu Zhang, Yu Su, Huan Sun, Minlie Huang, Yuxiao Dong, and Jie Tang. 2023. AgentBench: Evaluating LLMs as Agents. arXiv preprint AgentDecarbonizer: Carbon-Aware Execution for AI Agents 23 
+
+arXiv:2308.03688. https://arxiv.org/abs/2308.03688 [48] Yuhan Liu, Hanchen Li, Yihua Cheng, Siddhant Ray, Yuyang Huang, Qizheng Zhang, Kuntai Du, Jiayi Yao, Shan Lu, Ganesh Ananthanarayanan, Michael Maire, Henry Hoffmann, Ari Holtzman, and Junchen Jiang. 2024. CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving. In Proceedings of the ACM SIGCOMM 2024 Conference (SIGCOMM) . doi:10.1145/3651890.3672274 [49] LMCache Team. 2025. LMCache. https://lmcache.ai/. [50] Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler Hallinan, Luyu Gao, Sarah Wiegreffe, Uri Alon, Nouha Dziri, Shrimai Prabhumoye, Yiming Yang, Sean Welleck, Bodhisattwa Prasad Majumder, Shashank Gupta, Amir Yazdanbakhsh, and Peter Clark. 2023. Self-Refine: Iterative Refinement with Self-Feedback. arXiv:2303.17651 [cs.CL] https://doi.org/ 10.48550/arXiv.2303.17651 [51] Diptyaroop Maji, Prashant Shenoy, and Ramesh K. Sitaraman. 2022. CarbonCast: Multi-Day Forecasting of Grid Carbon Intensity. In Proceedings of the 9th ACM International Conference on Systems for Energy-Efficient Buildings, Cities, and Transportation . 198–207. [52] Andrew Mitchell, Wheeler Ruml, Fabian Spaniol, Jorg Hoffmann, and Marek Petrik. 2019. Real-Time Planning as Decision-Making under Uncertainty. Proceedings of the AAAI Conference on Artificial Intelligence (2019). doi:10.1609/ aaai.v33i01.33012338 [53] NESO. 2026. National Energy System Operator. https://www.neso.energy/ [54] Sophia Nguyen, Beihao Zhou, Yi Ding, and Sihang Liu. 2024. Towards Sustainable Large Language Model Serving. In 
+
+Proceedings of the 3rd Workshop on Sustainable Computer Systems (HotCarbon) .[55] Ollama. 2026. Ollama Documentation. https://docs.ollama.com/. [56] OpenAI. 2026. Codex. https://openai.com/codex/ [57] OpenAI. 2026. Create a model response. https://platform.openai.com/docs/api-reference/responses/create [58] OpenAI. 2026. Data controls in the OpenAI platform. https://developers.openai.com/api/docs/guides/your-data [59] OpenAI. 2026. Pricing. https://openai.com/business/pricing/#api [60] OpenAI. 2026. Prompt Caching. https://platform.openai.com/docs/guides/prompt-caching [61] OpenAI. 2026. Scheduled Tasks in ChatGPT. https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt. [62] OpenClaw. 2026. Model-Agnostic Architecture. https://openclawdoc.com/docs/models/overview/. [63] OpenClaw. 2026. Welcome to OpenClaw. https://openclawdoc.com/docs/intro/. [64] OpenRouter. 2026. Google Gemini 3.1 Pro Preview. https://openrouter.ai/google/gemini-3.1-pro-preview [65] OpenRouter. 2026. OpenAI GPT-5.4. https://openrouter.ai/openai/gpt-5.4 [66] Pratyush Patel, Esha Choukse, Chaojie Zhang, Íñigo Goiri, Aashaka Shah, Saeed Maleki, and Ricardo Bianchini. 2024. Splitwise improves GPU usage by splitting LLM inference phases. In International Symposium on Computer Architecture (ISCA) .[67] Ruoyu Qin, Zheming Li, Weiran He, Mingxing Zhang, Yongwei Wu, Weimin Zheng, and Xinran Xu. 2024. Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving. arXiv:2407.00079 [cs.DC] https://arxiv.org/abs/2407. 00079 [68] Yujia Qin, Shihao Liang, Yining Ye, Kunlun Zhu, Lan Yan, Yaxi Lu, Yankai Lin, Xin Cong, Xiangru Tang, Bill Qian, Sihan Zhao, Runchu Tian, Ruobing Xie, Jie Zhou, Mark Gerstein, Dahai Li, Zhiyuan Liu, and Maosong Sun. 2024. ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs. In International Conference on Learning Representations . https://openreview.net/pdf?id=dHng2O0Jjr [69] Ana Radovanovic, Ross Koningstein, Ian Schneider, Bokan Chen, Alexandre Duarte, Binz Roy, Diyue Xiao, Maya Haridasan, Patrick Hung, Nick Care, Saurav Talukdar, Eric Mullen, Kendal Smith, MariEllen Cottman, and Walfredo Cirne. 2023. Carbon-Aware Computing for Datacenters. IEEE Transactions on Power Systems 38, 2 (2023), 1277–1290. doi:10.1109/TPWRS.2022.3173250 [70] Mohamad Salim, Jasmine Latendresse, SayedHassan Khatoonabadi, and Emad Shihab. 2026. Tokenomics: Quantifying Where Tokens Are Used in Agentic Software Engineering. arXiv:2601.14470 [cs.SE] doi:10.48550/arXiv.2601.14470 [71] Siddharth Samsi, Dan Zhao, Joseph McDonald, Baolin Li, Adam Michaleas, Michael Jones, William Bergeron, Jeremy Kepner, Devesh Tiwari, and Vijay Gadepally. 2023. From Words to Watts: Benchmarking the Energy Costs of Large Language Model Inference. In IEEE High Performance Extreme Computing Conference (HPEC) . IEEE, Waltham, MA, USA, 1–9. doi:10.1109/HPEC58863.2023.10363447 [72] Timo Schick, Jane Dwivedi-Yu, Roberto Dessì, Roberta Raileanu, Maria Lomeli, Eric Hambro, Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom. 2023. Toolformer: Language Models Can Teach Themselves to Use Tools. In Advances in Neural Information Processing Systems , Vol. 36. [73] SFAI. 2026. OpenClaw Hardware Requirements: Minimum, Recommended, and Production Specs. https://sfailabs. com/guides/openclaw-hardware-requirements [74] Tianyao Shi, Yanran Wu, Sihang Liu, and Yi Ding. 2024. GreenLLM: Disaggregating Large Language Model Serving on Heterogeneous GPUs for Lower Carbon Emissions. arXiv:2412.20322 [cs.AR] https://arxiv.org/abs/2412.20322 24 Leyi Yan, Shuangning Li, and Sihang Liu 
+
+[75] Alex Singla, Alexander Sukharevsky, Bryce Hall, Lareina Yee, Michael Chui, and Tara Balakrishnan. 2025. The State of AI in 2025: Agents, Innovation, and Transformation. https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai [76] Abel Souza, Shruti Jasoria, Basundhara Chakrabarty, Alexander Bridgwater, Axel Lundberg, Filip Skogh, Ahmed Ali-Eldin, David Irwin, and Prashant Shenoy. 2023. CASPER: Carbon-Aware Scheduling and Provisioning for Distributed Web Services. In The 14th International Green and Sustainable Computing Conference (IGSC) . arXiv:2403.14792 doi:10.1145/3634769.3634812 [77] Jovan Stojkovic, Chaojie Zhang, Íñigo Goiri, Josep Torrellas, and Esha Choukse. 2025. DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency. In IEEE International Symposium on High Performance Computer Architecture (HPCA) . 1348–1362. doi:10.1109/HPCA61900.2025.00102 [78] Thanathorn Sukprasert, Abel Souza, Noman Bashir, David Irwin, and Prashant Shenoy. 2023. On the Limitations of Carbon-Aware Temporal and Spatial Workload Shifting in the Cloud. arXiv preprint arXiv:2306.06502 (2023). [79] Lei Wang, Chen Ma, Xueyang Feng, Zeyu Zhang, Hao Yang, Jingsen Zhang, Zhiyuan Chen, Jiakai Tang, Xu Chen, Yankai Lin, Wayne Xin Zhao, Zhewei Wei, and Jirong Wen. 2024. A survey on large language model based autonomous agents. Frontiers of Computer Science 18, 6 (March 2024). doi:10.1007/s11704-024-40231-1 [80] WattTime. 2024. WattTime. https://www.watttime.org/ [81] Philipp Wiesner, Ilja Behnke, Dominik Scheinert, Kordian Gontarska, and Lauritz Thamsen. 2021. Let’s Wait Awhile: How Temporal Workload Shifting Can Reduce Carbon Emissions in the Cloud. In Proceedings of the 22nd International Middleware Conference . Association for Computing Machinery, New York, NY, USA, 260–272. doi:10.1145/3464298. 3493399 [82] Tianbao Xie, Danyang Zhang, Jixuan Chen, Xiaochuan Li, Siheng Zhao, Ruisheng Cao, Jing Hua Toh, Zhoujun Cheng, Dongchan Shin, Fangyu Lei, Yitao Liu, Yiheng Xu, Shuyan Zhou, Silvio Savarese, Caiming Xiong, Victor Zhong, and Tao Yu. 2024. OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments. arXiv:2404.07972 [cs.AI] https://doi.org/10.48550/arXiv.2404.07972 [83] Hanwen Xu, Xuyao Huang, Yuzhe Liu, and Zhijie Deng. 2026. TPS-Bench: Evaluating AI Agents’ Tool Planning & Scheduling Abilities in Compounding Tasks. In Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) . Association for Computational Linguistics, San Diego, California, United States. doi:10.18653/v1/2026.acl-long.1614 [84] Minxian Xu and Rajkumar Buyya. 2020. Managing renewable energy and carbon footprint in multi-cloud computing environments. J. Parallel and Distrib. Comput. 135 (2020), 191–202. doi:10.1016/j.jpdc.2019.09.015 [85] Jianxin Yan, Wangze Ni, Lei Chen, Xuemin Lin, Peng Cheng, Zhan Qin, and Kui Ren. 2025. ContextCache: Context-Aware Semantic Cache for Multi-Turn Queries in Large Language Models. Proc. VLDB Endow. 18, 12 (Aug. 2025), 5391–5394. doi:10.14778/3750601.3750679 [86] Leyi Yan, Linda Wang, Sihang Liu, and Yi Ding. 2025. EnsembleCI: Ensemble Learning for Carbon Intensity Forecasting. In Proceedings of the 16th ACM International Conference on Future and Sustainable Energy Systems . 208–212. [87] John Yang, Carlos E. Jimenez, Alexander Wettig, Kilian Lieret, Shunyu Yao, Karthik Narasimhan, and Ofir Press. 2024. SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering. arXiv:2405.15793 [cs.SE] https://arxiv.org/abs/2405.15793 [88] Jiayi Yao, Hanchen Li, Yuhan Liu, Siddhant Ray, Yihua Cheng, Qizheng Zhang, Kuntai Du, Shan Lu, and Junchen Jiang. 2025. CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion. In Proceedings of the Twentieth European Conference on Computer Systems (EuroSys) . Association for Computing Machinery, New York, NY, USA, 94–109. doi:10.1145/3689031.3696098 [89] Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and Yuan Cao. 2023. ReAct: Synergizing Reasoning and Acting in Language Models. In International Conference on Learning Representations (ICLR) .https://arxiv.org/abs/2210.03629 [90] Chengye Yu, Tianyu Wang, Zili Shao, and Song Jiang. 2025. SmartCache: Context-aware Semantic Cache for Efficient Multi-turn LLM Inference. In Advances in Neural Information Processing Systems (NeurIPS) . https://openreview.net/ forum?id=lMxuq0GNeC [91] Gyeong-In Yu, Joo Seong Jeong, Geon-Woo Kim, Soojeong Kim, and Byung-Gon Chun. 2022. Orca: A Distributed Serving System for Transformer-Based Generative Models. In 16th USENIX Symposium on Operating Systems Design and Implementation (OSDI) . USENIX Association, Carlsbad, CA, 521–538. https://www.usenix.org/conference/osdi22/ presentation/yu [92] Yichao Yuan, Ankita Nayak, Souvik Kundu, and Nishil Talati. 2026. Agentic AI Workload Characteristics. arXiv:2605.26297 [cs.DC] https://arxiv.org/abs/2605.26297 [93] Johnny R. Zhang, Gaoyuan Du, Qianyi Sun, Shiqi Wang, Jiaxuan Li, and Xian Sun. 2026. Carbon-Aware Compute– Power Scheduling for AI Data Centers with Microgrid Prosumer Operations. arXiv:2605.03751 [cs.CE] doi:10.48550/ arXiv.2605.03751 AgentDecarbonizer: Carbon-Aware Execution for AI Agents 25 
+
+[94] Aaron Zhao and Junyi Liu. 2026. Heterogeneous Computing: The Key to Powering the Future of AI Agent Inference. 
+
+Computer 59, 4 (2026), 165–171. doi:10.1109/MC.2026.3659288 [95] Yusheng Zheng, Jiakun Fan, Quanzhi Fu, Yiwei Yang, Wei Zhang, and Andi Quinn. 2026. AgentCgroup: Understanding and Controlling OS Resources of AI Agents. arXiv:2602.09345 [cs.OS] doi:10.48550/arXiv.2602.09345 [96] Yinmin Zhong, Shengyu Liu, Junda Chen, Jianbo Hu, Yibo Zhu, Xuanzhe Liu, Xin Jin, and Hao Zhang. 2024. DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving. In 18th USENIX Symposium on Operating Systems Design and Implementation (OSDI) . USENIX Association, Santa Clara, CA, 193–210. https: //www.usenix.org/conference/osdi24/presentation/zhong-yinmin [97] Jeffrey Zhou, Tianjian Lu, Swaroop Mishra, Siddhartha Brahma, Sujoy Basu, Yi Luan, Denny Zhou, and Le Hou. 2023. Instruction-Following Evaluation for Large Language Models. arXiv preprint arXiv:2311.07911 (2023). doi:10.48550/ arXiv.2311.07911 [98] Shuyan Zhou, Frank F. Xu, Hao Zhu, Xuhui Zhou, Robert Lo, Abishek Sridhar, Xianyi Cheng, Tianyue Ou, Yonatan Bisk, Daniel Fried, Uri Alon, and Graham Neubig. 2024. WebArena: A Realistic Web Environment for Building Autonomous Agents. In International Conference on Learning Representations (ICLR) . https://openreview.net/forum?id=oKn9c6ytLx [99] Kan Zhu, Mathew Jacob, Chenxi Ma, Yi Pan, Stephanie Wang, Arvind Krishnamurthy, and Baris Kasikci. 2026. TraceLab: Characterizing Coding Agent Workloads for LLM Serving. arXiv preprint arXiv:2606.30560 (2026). https: //arxiv.org/abs/2606.30560 
+
+A Appendix A.1 Execution-Time Estimator Calibration Categories 
+
+Table 4 summarizes the heuristic calibration categories used by AgentDecarbonizer’s execution time estimator. For each category, we use the typical step count or range reported in recent studies, as listed in the table. The estimator first adjusts the number of steps relative to this baseline according to the predicted task complexity. It then converts the resulting step count to an approximate wall-clock time using 267.6 tokens per step from Open-SWE-Traces [3]. To estimate API generation time, we use conservative rates derived from OpenRouter’s model-speed statistics: 74 tokens/s for GPT-5.4 and 105 tokens/s for Gemini 3.1 Pro [64, 65]. Because OpenRouter reports real-time statistics that can vary over time, we use conservative rates rather than instantaneous measurements. 
+
+Table 4. Phase categories and number of steps per phase. 
+
+Category Typical steps/range Reference Single-context text transformation 1 IFEval [97] Structured strict-format output 4 ToolLLM [68] External retrieval/browser/API workflow 7.3 Mind2Web [12] Multi-turn communication/coordination 8.93–15.39 MultiWOZ [10] Repository/code/debug workflow 14.71 SWE-agent [87] Multimodal visual/computer-use workflow 15 OSWorld [82] Generation plus refinement workflow 9 Self-Refine [50] Policy/adversarial-instruction workflow 6.3–9.3 AgentDyn [44] Data analysis/computation workflow 5.8–11.6 DA-Code [36] 
+
+Note that Table 4 covers common categories that describe execution phases. We did not profile the benchmark tasks to fine-tune these numbers, in order to present a generic method. However, AgentDecarbonizer’s estimator can incorporate additional categories and customize the number of steps depending on the target tasks. Likewise, the per-step token count and generation time can be customized based on the specific model used by the workload. 
+
+A.2 Feature-Extraction Prompt 
+
+System prompt for the local model to extract features from the task. 26 Leyi Yan, Shuangning Li, and Sihang Liu 
+
+You extract compact facts for execution time prediction. Only agent_prompt_section contains the task input. Model−trace features summarize the target model's trace shape, not the estimator LLM's trace. Do not solve the task. Return only valid minified JSON. No markdown. No comments. Begin with { and ensure that all braces are closed. Use integer seconds. Keep arrays short: at most 6 items, except for the phases array. Use plain labels, not long paragraphs. You may use the 'thought' key to reason before other keys, but do not wrap the other schema keys under thought, analysis, or any helper keys. 
+
+Instruction template. 
+
+Step 1. Return exactly these top−level keys and no others: thought, category, modality, summary, inputs, outputs, tools, external_work, format_strictness, multimodal, safety_traps, complexity, batch_item_count, batch_unit, repeated_work. Fill this JSON schema: {"thought": "", "category": "", "modality": "", "summary": "", "inputs": [], "outputs": [], "tools": [], "external_work": "none|low|medium|high", "format_strictness": "low|medium|high", "multimodal": "none|image|audio|video|mixed", "safety_traps": [], "complexity": "low|medium|high", "batch_item_count": 1, "batch_unit": "", "repeated_work": false }If the task requires doing similar work for many files/items/records/pages/messages, set batch_item_count to the repeated item count and repeated_work to true. {metadata, local_signal_features, model_trace_features, agent_prompt_section} 
+
+A.3 Phase-Decomposition Prompt 
+
+System prompt for the local model to decompose the task. 
+
+You split task work into phases for timing. Use only the provided JSON. Do not solve the task. Return only valid minified JSON. No markdown. No comments. Begin with { and ensure that all braces are closed. Use integer seconds. Keep arrays short: at most 6 items, except for the phases array. Use plain labels, not long paragraphs. You may use the 'thought' key to reason before other keys, but do not wrap the other schema keys under thought, analysis, or any helper keys. 
+
+Instruction template. 
+
+Step 2. Create phases. Return exactly these top−level keys and no others: thought, category, phases, dominant_risks. Fill this JSON schema: {"thought": "", "category": "", "phases": [AgentDecarbonizer: Carbon-Aware Execution for AI Agents 27        
+
+> {"phase": "", "work": "", "driver": "" }], "dominant_risks": [] }TASK_FEATURES: {features from Step 1}
+
+A.4 Proof of Theorem 7.1 
+
+Proof. For each 𝑘 ∈ { 1, . . . , 𝐾 }, region 𝑟 ∈ R , and candidate-interval starting time 𝑡 ∈ H ,define 𝐷 (𝑘 ) 
+
+> 𝑟,𝑡
+
+to be the minimum objective value for the first 𝑘 ordered execution intervals among all feasible partial placements whose 𝑘 -th execution interval runs in region 𝑟 during the candidate interval starting at 𝑡 . If no such partial placement exists, set 𝐷 (𝑘 ) 
+
+> 𝑟,𝑡
+
+= +∞ . Throughout the proof, the minimum over an empty set is defined to be +∞ .We first prove the recurrence by induction on 𝑘 . For 𝑘 = 1, a placement contains one execution interval and has no predecessor, so no cache-recomputation penalty can appear. The only cost is the predicted carbon-emission term b𝐸 (1) 
+
+> 𝑟,𝑡
+
+c𝐶𝐼 𝑟,𝑡 , matching the base case in Section 7.2. Now assume the claim holds for 𝑘 − 1. Consider any feasible placement ending execution interval 𝑘 in region 𝑟 
+
+during the candidate interval starting at 𝑡 . The previous execution interval must use some region 𝑞 
+
+and some earlier candidate-interval starting time 𝑠 < 𝑡 . By the induction hypothesis, the best such predecessor placement ending in region 𝑞 at time 𝑠 has value 𝐷 (𝑘 −1) 
+
+> 𝑞,𝑠
+
+. Under Assumption 1, the transition from 𝑞 to 𝑟 adds no cache-recomputation cost if 𝑞 = 𝑟 and adds Γ(𝑘 ) 
+
+> 𝑟,𝑡
+
+if 𝑞 ≠ 𝑟 . Therefore, the best feasible predecessor has value min    
+
+> 𝑞 ∈ R , 𝑠 ∈ H :𝑠 <𝑡
+
+n
+
+𝐷 (𝑘 −1) 
+
+> 𝑞,𝑠
+
++ 1{𝑞 ≠ 𝑟 }Γ(𝑘 )
+
+> 𝑟,𝑡
+
+o
+
+. (9) Adding the predicted carbon-emission term b𝐸 (𝑘 ) 
+
+> 𝑟,𝑡
+
+c𝐶𝐼 𝑟,𝑡 gives Equation (8). Thus the induction claim holds for 𝑘 .The ordered problem formulation fixes the order of the 𝐾 execution intervals. After 𝐾 layers, every feasible placement has exactly one final state (𝑟, 𝑡 ), and every finite final state corresponds to a feasible placement with strictly increasing candidate-interval starting times. Therefore, minimizing 
+
+𝐷 (𝐾 ) 
+
+> 𝑟,𝑡
+
+over all final states gives the global optimum of Equation (6). The stored backpointers recover a placement plan attaining this optimum. It remains to justify the stated complexity. For a fixed layer 𝑘 ≥ 2, define the prefix predecessor summaries 
+
+𝑃 𝑞 (𝑡 ) = min    
+
+> 𝑠 ∈ H :𝑠 <𝑡
+
+𝐷 (𝑘 −1) 
+
+> 𝑞,𝑠
+
+, 𝑞 ∈ R . (10) For each region 𝑞 , a left-to-right scan over candidate intervals updates 𝑃 𝑞 (𝑡 ) in 𝑂 (𝐻 ) time, so all prefix summaries take 𝑂 (|R| 𝐻 ) time. Using these summaries, the predecessor term in Equation (8) can be written as min 
+
+
+
+𝑃 𝑟 (𝑡 ), Γ(𝑘 ) 
+
+> 𝑟,𝑡
+
++ min    
+
+> 𝑞 ∈ R :𝑞 ≠𝑟
+
+𝑃 𝑞 (𝑡 )
+
+
+
+. (11) For each candidate-interval starting time 𝑡 , store the two smallest region–value pairs among 
+
+{( 𝑞, 𝑃 𝑞 (𝑡 )) : 𝑞 ∈ R} , with the pairs associated with distinct regions and ordered with multiplicity. Thus, if two regions attain the same minimum value, both pairs may store that same value. The quantity min 𝑞 ≠𝑟 𝑃 𝑞 (𝑡 ) is the first stored value when its associated region is not 𝑟 , and otherwise 28 Leyi Yan, Shuangning Li, and Sihang Liu 
+
+it is the second stored value. When |R| = 1, we use the convention min 𝑞 ≠𝑟 𝑃 𝑞 (𝑡 ) = +∞ . Hence every transition value in Equation (8) can be evaluated in constant time after these summaries are available. Filling one layer takes 𝑂 (|R| 𝐻 ) time, and filling all 𝐾 layers takes 𝑂 (𝐾 |R| 𝐻 ) time. Keeping only the previous and current dynamic-programming layers, together with the prefix summaries used to evaluate the recurrence, requires 𝑂 (|R| 𝐻 ) working memory. If all backpointers are stored to recover the placement plan directly, they require an additional 𝑂 (𝐾 |R| 𝐻 ) memory. □
+
+A.5 Proof of Theorem 7.2 
+
+Proof. The returned schedule has finite dynamic-programming value, so it consists of 𝐾 ordered execution intervals placed in deadline-feasible candidate intervals. By construction of the recurrence, each finite value in layer 𝑘 ≥ 2 comes from a finite value in layer 𝑘 − 1 with predecessor starting time 𝑠 < 𝑡 . Because every selected starting time belongs to H = {𝑎 + 𝑗 Δ𝑡 | 𝑗 = 0, 1, . . . , 𝐻 − 1}, the recovered backpointer chain satisfies 
+
+𝑎 ≤ 𝑡 1 < 𝑡 2 < · · · < 𝑡 𝐾 ≤ 𝑎 + ( 𝐻 − 1)Δ𝑡 . (12) Moreover, distinct elements of H differ by at least Δ𝑡 , so 𝑡 𝑘 +1 ≥ 𝑡 𝑘 +Δ𝑡 for every 𝑘 < 𝐾 . Consequently, the selected candidate intervals are non-overlapping and appear in chronological order. The final candidate interval ends at 
+
+𝑡 𝐾 + Δ𝑡 ≤ 𝑎 + 𝐻 Δ𝑡 ≤ 𝑑, (13) where the last inequality follows from 𝐻 = ⌊( 𝑑 − 𝑎 )/ Δ𝑡 ⌋. Thus all reserved execution time lies within [𝑎, 𝑑 ].The number of execution intervals is 𝐾 = ⌈e𝑇 /Δ𝑡 ⌉, so the total reserved execution capacity is 
+
+𝐾 Δ𝑡 =
+
+& e𝑇 
+
+Δ𝑡 
+
+'
+
+Δ𝑡 ≥ e𝑇 . (14) If 𝑇 run ≤ e𝑇 , then the selected intervals provide at least the task’s actual accumulated active runtime, excluding only idle waiting between execution intervals. Under the execution-controller model in Section 6.5, the agent executes during the selected intervals, may be paused at an interval boundary and resumed in a later selected interval, and stops once the task completes. Therefore, the task can consume all of its required active runtime within the reserved intervals. Since the final selected interval ends no later than 𝑑 , the task completes by the deadline. □
