@@ -1,0 +1,377 @@
+{
+  "date": "20260829",
+  "date_label": "",
+  "generated_at": "2026-08-29 22:35:15 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2608.20634v1",
+      "route": "202608/29/2608.20634v1-agentmercury-your-agent-can-synthesize-verifiable-environments-for-business-scenarios-at-scale",
+      "title": "AgentMercury: Your Agent Can Synthesize Verifiable Environments for Business Scenarios at scale",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "可扩展的智能体训练环境合成框架，面向业务场景",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.22035v1",
+      "route": "202608/29/2608.22035v1-ludiscriptscriptstyle-01-an-agentic-system-for-socially-intelligent-robots",
+      "title": "Ludi${}_{\\scriptscriptstyle 0.1}$: An Agentic System for Socially Intelligent Robots",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向社交智能机器人的智能体系统，集成语音、推理、记忆、导航与操作",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.22077v1",
+      "route": "202608/29/2608.22077v1-spine-branch-coordination-for-multi-agent-computer-use",
+      "title": "Spine-Branch Coordination for Multi-agent Computer Use",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "用于协调跨虚拟机多个计算机使用代理的框架",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.22444v1",
+      "route": "202608/29/2608.22444v1-aligned-alone-misaligned-together-forecasting-adversarial-capture-in-llm-agent-populations",
+      "title": "Aligned Alone, Misaligned Together: Forecasting Adversarial Capture in LLM Agent Populations",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "LLM智能体群体中的集体决策行为",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.22974v1",
+      "route": "202608/29/2608.22974v1-toward-effective-and-reliable-llm-agents-via-dynamic-ontology",
+      "title": "Toward Effective and Reliable LLM Agents via Dynamic Ontology",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "用动态本体提升LLM智能体的多步决策",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.24214v1",
+      "route": "202608/29/2608.24214v1-metarag-belief-action-aligned-policy-optimization-for-agentic-rag",
+      "title": "MetaRAG: Belief-Action Aligned Policy Optimization for Agentic RAG",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "智能体RAG中的搜索与回答决策",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.24588v2",
+      "route": "202608/29/2608.24588v2-iapo-influence-aware-policy-optimization-for-credit-assignment-in-multi-turn-service-agents",
+      "title": "IAPO: Influence-Aware Policy Optimization for Credit Assignment in Multi-Turn Service Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向多轮智能体决策的信用分配影响力感知策略优化",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.25690v1",
+      "route": "202608/29/2608.25690v1-trust-aware-sequential-decision-making-and-rollout-planning-for-resilient-multi-robot-systems",
+      "title": "Trust-Aware Sequential Decision Making and Rollout Planning for Resilient Multi-Robot Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向多机器人系统的信任感知序贯决策与滚动规划",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.25794v1",
+      "route": "202608/29/2608.25794v1-cooperative-multi-agent-reinforcement-learning-for-adaptive-aggregation-in-semi-supervised-federated-learning-with-non-iid-data",
+      "title": "Cooperative Multi-Agent Reinforcement Learning for Adaptive Aggregation in Semi-Supervised Federated Learning with non-IID Data",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "合作式多智能体强化学习",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.26442v1",
+      "route": "202608/29/2608.26442v1-dont-overthink-dont-underthink-toward-adaptive-reasoning-in-agentic-ai",
+      "title": "Don't Overthink, Don't Underthink: Toward Adaptive Reasoning in Agentic AI",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向智能体AI的自适应推理方法，避免推理过度或不足",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.26683v1",
+      "route": "202608/29/2608.26683v1-sigma-structured-noise-effect-aware-grouped-multi-agent-aggregation",
+      "title": "SIGMA: Structured Noise-Effect-Aware Grouped Multi-Agent Aggregation",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "结构噪声感知的多智能体强化学习聚合方法",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.27086v1",
+      "route": "202608/29/2608.27086v1-a-contract-centered-architecture-for-scalable-and-manageable-agentic-runtimes",
+      "title": "A Contract-Centered Architecture for Scalable and Manageable Agentic Runtimes",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向智能体运行时的契约为中心架构",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.19653v1",
+      "route": "202608/29/2608.19653v1-deltaml-bench-evaluating-machine-learning-agents-on-real-world-research-repositories",
+      "title": "DeltaML-Bench: Evaluating Machine Learning Agents on Real-World Research Repositories",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向自主机器学习智能体在实际科研仓库中应用的基准评测",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.19794v1",
+      "route": "202608/29/2608.19794v1-towards-general-embodied-intelligence-integrating-large-language-models-knowledge-bases-and-reasoning-capabilities-to-build-the-next-generation-of-ai-agents",
+      "title": "Towards general embodied intelligence: integrating large language models, knowledge bases, and reasoning capabilities to build the next generation of AI agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "综述LLM为中心的智能代理设计，集成知识与推理，并涉及具身智能",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.20518v1",
+      "route": "202608/29/2608.20518v1-fl-maestro-multi-agent-llm-orchestration-for-resource-constrained-federated-learning",
+      "title": "FL-MAESTRO: Multi-Agent LLM Orchestration for Resource-Constrained Federated Learning",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "用多智能体LLM联合决定联邦学习中的拓扑、分配与聚合",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.20906v1",
+      "route": "202608/29/2608.20906v1-a-safety-driven-architectural-framework-for-fail-operational-drone-swarms-in-critical-missions",
+      "title": "A Safety-Driven Architectural Framework for Fail-Operational Drone Swarms in Critical Missions",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "无人机集群多智能体协调与安全架构",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.21031v1",
+      "route": "202608/29/2608.21031v1-physcap-grounding-code-as-policy-agent-with-physics-informed-exploration",
+      "title": "PhysCaP: Grounding Code-as-Policy Agent with Physics-Informed Exploration",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "双智能体规划用于物理信息探索",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.21864v1",
+      "route": "202608/29/2608.21864v1-biomed-agent-rl-a-meta-learning-all-you-need-for-biomedical-applications",
+      "title": "BioMed-Agent-RL: A Meta Learning, All You Need for Biomedical Applications",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "统一医疗智能体结合强化学习",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.22130v1",
+      "route": "202608/29/2608.22130v1-propuq-mas-propagation-aware-uncertainty-quantification-for-llm-multi-agent-systems",
+      "title": "PropUQ-MAS: Propagation-Aware Uncertainty Quantification for LLM Multi-Agent Systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "LLM多智能体系统中消息间的不确定性传播",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.22160v1",
+      "route": "202608/29/2608.22160v1-audita-certified-auditing-and-causal-attribution-of-adverse-outcomes-in-autonomous-multi-agent-systems",
+      "title": "AUDITA: certified auditing and causal attribution of adverse outcomes in autonomous multi-agent systems",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "自主多智能体系统中的审计与因果归因",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.22237v1",
+      "route": "202608/29/2608.22237v1-read-less-solve-more-token-efficient-sparse-reading-for-ai-agents",
+      "title": "Read Less, Solve More: Token-Efficient Sparse Reading for AI Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "智能体读取层架构以实现高效上下文",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.25610v1",
+      "route": "202608/29/2608.25610v1-advantage-driven-explicit-memory-for-social-navigation",
+      "title": "Advantage-Driven Explicit Memory for Social Navigation",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "显式记忆导航智能体应用",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    },
+    {
+      "paper_id": "2608.27266v1",
+      "route": "202608/29/2608.27266v1-naive-prompt-optimization-rethinking-the-need-for-complex-prompt-search",
+      "title": "Naive Prompt Optimization: Rethinking the Need for Complex Prompt Search",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "面向自主智能体改进的轻量提示优化",
+      "first_seen_at": "2026-08-29 22:35:15 UTC",
+      "updated_at": "2026-08-29 22:35:15 UTC"
+    }
+  ]
+}

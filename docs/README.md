@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-28</span>
+      <span class="dpr-home-dashboard-kicker">2026-08-29</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 32 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 23 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>21</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>12</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-28 03:06:22 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-08-29 22:35:15 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,9 +62,7 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日扫描32篇论文，精读21篇，重点聚焦多智能体协作与AI能耗优化。</p>
-<p>最值得关注的是满分论文《The Collaboration Tax》揭示多智能体协调成本，以及9分论文《AgentDecarbonizer》提出的碳感知执行方案。</p>
-<p>建议优先阅读这两篇，理解AI系统的协作代价与绿色运行趋势。</p>
+<p>今日精读12篇、速读11篇，共23篇论文，聚焦AI智能体与机器学习前沿。最值得关注的是两项满分研究：AgentMercury实现业务场景可验证环境规模化合成，Ludi 0.1赋予机器人社会智能。建议普通读者优先浏览DeltaML-Bench等评测工作，了解智能体在真实科研仓库中的表现边界。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -73,12 +71,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">21 篇</strong>
+    <strong class="dpr-home-dashboard-count">12 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="The Collaboration Tax: How Much LLM Multi-Agent Systems Pay to Coordinate">The Collaboration Tax: How Much LLM Multi-Agent Systems Pay to Coordinate</span></li><li><span class="dpr-home-dashboard-paper-title" title="AgentDecarbonizer: Carbon-Aware Execution for AI Agents">AgentDecarbonizer: Carbon-Aware Execution for AI Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="HiDiffTIR: Hierarchical Difficulty-Aware Policy Optimization for Multi-Turn Tool-Integrated Reasoning">HiDiffTIR: Hierarchical Difficulty-Aware Policy Optimization for Multi-Turn Tool-Integrated Reasoning</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="AgentMercury: Your Agent Can Synthesize Verifiable Environments for Business Scenarios at scale">AgentMercury: Your Agent Can Synthesize Verifiable Environments for Business Scenarios at scale</span></li><li><span class="dpr-home-dashboard-paper-title" title="Ludi${}_{\scriptscriptstyle 0.1}$: An Agentic System for Socially Intelligent Robots">Ludi${}_{\scriptscriptstyle 0.1}$: An Agentic System for Socially Intelligent Robots</span></li><li><span class="dpr-home-dashboard-paper-title" title="Spine-Branch Coordination for Multi-agent Computer Use">Spine-Branch Coordination for Multi-agent Computer Use</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>21</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>12</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -89,7 +87,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows">StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows</span></li><li><span class="dpr-home-dashboard-paper-title" title="Adversarial Review: Structured Disagreement for Grounded Agentic Code Review">Adversarial Review: Structured Disagreement for Grounded Agentic Code Review</span></li><li><span class="dpr-home-dashboard-paper-title" title="DocClaw: A Unified Agentic System for Intelligent Document Processing">DocClaw: A Unified Agentic System for Intelligent Document Processing</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="DeltaML-Bench: Evaluating Machine Learning Agents on Real-World Research Repositories">DeltaML-Bench: Evaluating Machine Learning Agents on Real-World Research Repositories</span></li><li><span class="dpr-home-dashboard-paper-title" title="Towards general embodied intelligence: integrating large language models, knowledge bases, and reasoning capabilities to build the next generation of AI agents">Towards general embodied intelligence: integrating large language models, knowledge bases, and reasoning capabilities to build the next generation of AI agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="FL-MAESTRO: Multi-Agent LLM Orchestration for Resource-Constrained Federated Learning">FL-MAESTRO: Multi-Agent LLM Orchestration for Resource-Constrained Federated Learning</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>
