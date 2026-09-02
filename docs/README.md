@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-08-31</span>
+      <span class="dpr-home-dashboard-kicker">2026-09-02</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 25 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 29 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>14</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>18</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-08-31 23:43:44 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-09-02 23:10:44 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,7 +62,7 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日精读25篇论文，聚焦LLM Agent的确定性控制与接口安全，重点涵盖状态化图执行与受控接口干预。最值得关注两篇满分9.0研究：STAGE提出策略作用域下的确定性Agent执行框架，Callability揭示可调用性不等于可操作性。建议优先精读这两篇，可快速掌握Agent系统稳健性与可控性的最新突破。</p>
+<p>今日精读18篇、速读11篇，共扫描29篇论文，聚焦智能体与机器人前沿。最值得关注：面向长周期编码的静态测试框架（9.0）与未知环境地面机器人实时学习（9.0），均获满分推荐。建议优先深入编码智能体方向，结合三篇8分速读拓展机器人学习与自动驾驶规模法。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -71,12 +71,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">14 篇</strong>
+    <strong class="dpr-home-dashboard-count">18 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="STAGE: Stateful Translation to Agentic Graph Execution with Policy-Scoped Context and Deterministic Control">STAGE: Stateful Translation to Agentic Graph Execution with Policy-Scoped Context and Deterministic Control</span></li><li><span class="dpr-home-dashboard-paper-title" title="Callability Is Not Operability: Controlled Interface Interventions for LLM Agents">Callability Is Not Operability: Controlled Interface Interventions for LLM Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="EviGraph: Towards Verifiable Evidence Construction for Information-Seeking Agents">EviGraph: Towards Verifiable Evidence Construction for Information-Seeking Agents</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="openJiuwen: Beyond Static Harnesses for Long-Horizon Coding Agents">openJiuwen: Beyond Static Harnesses for Long-Horizon Coding Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Cognitively-Grounded On-Device Runtime Learning for Ground Robots in Unknown Physical Environments">Cognitively-Grounded On-Device Runtime Learning for Ground Robots in Unknown Physical Environments</span></li><li><span class="dpr-home-dashboard-paper-title" title="The Role of Network Topology and Opponent Information in Shaping Cooperation in Multi-Agent Reinforcement Learning Systems">The Role of Network Topology and Opponent Information in Shaping Cooperation in Multi-Agent Reinforcement Learning Systems</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>14</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>18</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -87,7 +87,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="OptiMAS: Automatically Optimize Multi-Agent System">OptiMAS: Automatically Optimize Multi-Agent System</span></li><li><span class="dpr-home-dashboard-paper-title" title="SSE-Bio: A Structured Self-Evolving Agent with Agentic Retrieval Policy for Multi-Hop Biomedical Reasoning">SSE-Bio: A Structured Self-Evolving Agent with Agentic Retrieval Policy for Multi-Hop Biomedical Reasoning</span></li><li><span class="dpr-home-dashboard-paper-title" title="Disagree to Explore, Agree to Commit: Routing-Guided Test-Time Scaling for Software Agents">Disagree to Explore, Agree to Commit: Routing-Guided Test-Time Scaling for Software Agents</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Small Reasoning Models are Instruction Followers in Function Calling">Small Reasoning Models are Instruction Followers in Function Calling</span></li><li><span class="dpr-home-dashboard-paper-title" title="Scaling Curriculum Learning For Autonomous Driving">Scaling Curriculum Learning For Autonomous Driving</span></li><li><span class="dpr-home-dashboard-paper-title" title="Coalition-Aware Skill Reliability for Self-Evolving Agents">Coalition-Aware Skill Reliability for Self-Evolving Agents</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>
