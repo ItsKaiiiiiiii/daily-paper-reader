@@ -41,17 +41,17 @@
 <section class="dpr-home-dashboard-card dpr-home-report-card">
   <div class="dpr-home-dashboard-header">
     <div>
-      <span class="dpr-home-dashboard-kicker">2026-09-02</span>
+      <span class="dpr-home-dashboard-kicker">2026-09-04</span>
       <h3 class="dpr-home-dashboard-title">今日汇总</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">共 29 篇</strong>
+    <strong class="dpr-home-dashboard-count">共 32 篇</strong>
   </div>
   <dl class="dpr-home-dashboard-stats">
     <div class="dpr-home-dashboard-stat"><dt>累计更新</dt><dd>1 次</dd></div>
-    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>18</dd></div>
+    <div class="dpr-home-dashboard-stat"><dt>精读</dt><dd>21</dd></div>
     <div class="dpr-home-dashboard-stat"><dt>速读</dt><dd>11</dd></div>
   </dl>
-  <p class="dpr-home-dashboard-body">最近更新：2026-09-02 23:10:44 UTC<br>状态：成功</p>
+  <p class="dpr-home-dashboard-body">最近更新：2026-09-04 22:09:00 UTC<br>状态：成功</p>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-brief-card">
   <div class="dpr-home-dashboard-header">
@@ -62,7 +62,7 @@
     <strong class="dpr-home-dashboard-count">AI</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<p>今日精读18篇、速读11篇，共扫描29篇论文，聚焦智能体与机器人前沿。最值得关注：面向长周期编码的静态测试框架（9.0）与未知环境地面机器人实时学习（9.0），均获满分推荐。建议优先深入编码智能体方向，结合三篇8分速读拓展机器人学习与自动驾驶规模法。</p>
+<p>今日从32篇中精读21篇、速读11篇，聚焦多智能体协同与AI智能体协议；最值得看两篇满分工作：移动AIGC网络的任务编排（A-MADiff）与AI智能体自然语言交互协议标准；若时间有限，建议优先了解智能体间语言协定的标准化方向。</p>
   </div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-deep-card">
@@ -71,12 +71,12 @@
       <span class="dpr-home-dashboard-kicker">今日累计</span>
       <h3 class="dpr-home-dashboard-title">精读推荐</h3>
     </div>
-    <strong class="dpr-home-dashboard-count">18 篇</strong>
+    <strong class="dpr-home-dashboard-count">21 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="openJiuwen: Beyond Static Harnesses for Long-Horizon Coding Agents">openJiuwen: Beyond Static Harnesses for Long-Horizon Coding Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="Cognitively-Grounded On-Device Runtime Learning for Ground Robots in Unknown Physical Environments">Cognitively-Grounded On-Device Runtime Learning for Ground Robots in Unknown Physical Environments</span></li><li><span class="dpr-home-dashboard-paper-title" title="The Role of Network Topology and Opponent Information in Shaping Cooperation in Multi-Agent Reinforcement Learning Systems">The Role of Network Topology and Opponent Information in Shaping Cooperation in Multi-Agent Reinforcement Learning Systems</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="A-MADiff: Attention-Guided Multi-Agent DRL with Diffusion Policies for Memory-Aware Task Orchestration in Mobile AIGC Networks">A-MADiff: Attention-Guided Multi-Agent DRL with Diffusion Policies for Memory-Aware Task Orchestration in Mobile AIGC Networks</span></li><li><span class="dpr-home-dashboard-paper-title" title="The Natural Language Interaction Protocol and Standard for AI Agents">The Natural Language Interaction Protocol and Standard for AI Agents</span></li><li><span class="dpr-home-dashboard-paper-title" title="SPA: Securing Persistent LLM Agents Across Queries with Plan-First Information-Flow Control">SPA: Securing Persistent LLM Agents Across Queries with Plan-First Information-Flow Control</span></li></ul>
   </div>
-  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>18</strong></span></div>
+  <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>21</strong></span></div>
 </section>
 <section class="dpr-home-dashboard-card dpr-home-skim-card">
   <div class="dpr-home-dashboard-header">
@@ -87,7 +87,7 @@
     <strong class="dpr-home-dashboard-count">11 篇</strong>
   </div>
   <div class="dpr-home-dashboard-body">
-<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="Small Reasoning Models are Instruction Followers in Function Calling">Small Reasoning Models are Instruction Followers in Function Calling</span></li><li><span class="dpr-home-dashboard-paper-title" title="Scaling Curriculum Learning For Autonomous Driving">Scaling Curriculum Learning For Autonomous Driving</span></li><li><span class="dpr-home-dashboard-paper-title" title="Coalition-Aware Skill Reliability for Self-Evolving Agents">Coalition-Aware Skill Reliability for Self-Evolving Agents</span></li></ul>
+<ul class="dpr-home-dashboard-paper-list"><li><span class="dpr-home-dashboard-paper-title" title="ParallelWorld: Test-Time Scaling for Embodied Reasoning">ParallelWorld: Test-Time Scaling for Embodied Reasoning</span></li><li><span class="dpr-home-dashboard-paper-title" title="Molecular LLM Agents: From Architectural Design to Scientific Autonomy">Molecular LLM Agents: From Architectural Design to Scientific Autonomy</span></li><li><span class="dpr-home-dashboard-paper-title" title="From Natural Language Policies to Executable Obligations: A Verification Harness for Dependable In-Car LLM Agents">From Natural Language Policies to Executable Obligations: A Verification Harness for Dependable In-Car LLM Agents</span></li></ul>
   </div>
   <div class="dpr-home-dashboard-tags"><span class="dpr-home-dashboard-tag">agent <strong>11</strong></span></div>
 </section>

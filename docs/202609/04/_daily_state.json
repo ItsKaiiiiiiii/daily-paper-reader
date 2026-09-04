@@ -1,0 +1,521 @@
+{
+  "date": "20260904",
+  "date_label": "",
+  "generated_at": "2026-09-04 22:09:00 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2608.29255v1",
+      "route": "202609/04/2608.29255v1-a-madiff-attention-guided-multi-agent-drl-with-diffusion-policies-for-memory-aware-task-orchestration-in-mobile-aigc-networks",
+      "title": "A-MADiff: Attention-Guided Multi-Agent DRL with Diffusion Policies for Memory-Aware Task Orchestration in Mobile AIGC Networks",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 10.0,
+      "evidence": "提出了带扩散策略的注意力引导多智能体深度强化学习算法",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2609.04135v1",
+      "route": "202609/04/2609.04135v1-the-natural-language-interaction-protocol-and-standard-for-ai-agents",
+      "title": "The Natural Language Interaction Protocol and Standard for AI Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 10.0,
+      "evidence": "定义了面向AI智能体的应用层标准通信协议NLIP，实现跨框架互操作",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.27234v1",
+      "route": "202609/04/2608.27234v1-spa-securing-persistent-llm-agents-across-queries-with-plan-first-information-flow-control",
+      "title": "SPA: Securing Persistent LLM Agents Across Queries with Plan-First Information-Flow Control",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "适用于持久化LLM智能体的计划优先架构与双格信息流控制设计模式",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.27866v1",
+      "route": "202609/04/2608.27866v1-iron-intent-aligned-and-retrospective-dual-learning-framework-for-enhancing-generalist-virtual-agents",
+      "title": "Iron: Intent-Aligned and Retrospective Dual Learning Framework for Enhancing Generalist Virtual Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向通用虚拟智能体的训练与设计，直接对应智能体设计与应用",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.28704v1",
+      "route": "202609/04/2608.28704v1-orddar-observation-driven-reasoning-for-distortion-resilient-decision-action-and-cognitive-recovery",
+      "title": "ORDDAR: Observation-Driven Reasoning for Distortion-Resilient Decision, Action, and Cognitive Recovery",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向智能体长程决策中的状态扭曲检测与选择性修复，直接应对自主智能体决策可靠性",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.28877v1",
+      "route": "202609/04/2608.28877v1-halo-a-physics-aware-llm-agent-framework-for-nanophotonic-design",
+      "title": "HALO: A Physics-Aware LLM Agent Framework for Nanophotonic Design",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "物理感知的LLM规划器在自主仿真设计回路中实现规划与反馈修正",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.28878v1",
+      "route": "202609/04/2608.28878v1-hybrid-offline-online-multi-agent-decision-transformers-for-wireless-resource-management",
+      "title": "Hybrid Offline-Online Multi-Agent Decision Transformers for Wireless Resource Management",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "无线资源管理中的离线在线混合多智体强化学习方法",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.29363v1",
+      "route": "202609/04/2608.29363v1-tracer-per-tool-context-retention-for-llm-agents-via-consequence-attributed-reinforcement-learning",
+      "title": "TRACER: Per-Tool Context Retention for LLM Agents via Consequence-Attributed Reinforcement Learning",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "用强化学习策略逐工具决策上下文保留，改善LLM智能体的长会话效率",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.29596v1",
+      "route": "202609/04/2608.29596v1-towards-a-systems-foundation-for-agentic-skills-architecture-lifecycle-and-security",
+      "title": "Towards a Systems Foundation for Agentic Skills: Architecture, Lifecycle, and Security",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向智能体技能生态的参考架构与生命周期设计方法",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.30672v1",
+      "route": "202609/04/2608.30672v1-hirs-agent-a-hierarchical-multi-agent-system-for-reliable-long-horizon-remote-sensing-task-solving",
+      "title": "HiRS-Agent: A Hierarchical Multi-Agent System for Reliable Long-Horizon Remote Sensing Task Solving",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "提出管理层与工作层两层的分层多智能体协作架构，对长时程遥感任务进行动态路由与逐步验证",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.30874v1",
+      "route": "202609/04/2608.30874v1-provably-safe-decentralized-contingency-mpc-under-state-only-information-and-limited-sensing-for-nonlinear-multi-agent-systems",
+      "title": "Provably Safe Decentralized Contingency MPC under State-Only Information and Limited Sensing for Nonlinear Multi-agent Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向多智能体安全控制的去中心化应急模型预测控制方法",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2609.01045v1",
+      "route": "202609/04/2609.01045v1-agentfactory-towards-automated-agentic-system-design-and-optimization",
+      "title": "AgentFactory: Towards Automated Agentic System Design and Optimization",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "自动设计并优化Agentic系统的工作流和模型选择，直接对应智能体架构设计模式",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2609.01167v1",
+      "route": "202609/04/2609.01167v1-classic-ai-scaffolding-for-llm-social-agents",
+      "title": "Classic AI Scaffolding for LLM Social Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "将经典AI结构化控制与LLM调用结合的智能体架构设计",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2609.01281v1",
+      "route": "202609/04/2609.01281v1-embodiedskills-a-unified-framework-for-orchestrating-training-and-deploying-vla-agents",
+      "title": "EmbodiedSkills: A Unified Framework for Orchestrating, Training, and Deploying VLA Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "统一智能体框架将技能决策视为可执行提案，通过运行时检查与验证编排感知、规划、执行和恢复，属于架构设计模式",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2609.01394v1",
+      "route": "202609/04/2609.01394v1-autonomous-robotic-bridging-using-distributed-swarm-control-without-inter-agent-communication",
+      "title": "Autonomous robotic bridging using distributed swarm control without inter-agent communication",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "无智能体间通信的分布式集群控制实现多水面机器人自主定位、编队与协作架桥，属多智能体协调应用",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2609.01567v2",
+      "route": "202609/04/2609.01567v2-selective-agent-guidance-via-entropy-learning-autonomous-policies-from-imperfect-vlm-teachers",
+      "title": "Selective Agent Guidance via Entropy: Learning Autonomous Policies from Imperfect VLM Teachers",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "该方法利用熵选择教师指导训练自主策略，与自主智能体决策直接相关",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2609.01677v1",
+      "route": "202609/04/2609.01677v1-skill-as-api-confidential-multi-agent-coordination-for-agentic-software-engineering",
+      "title": "Skill-as-API: Confidential Multi-Agent Coordination for Agentic Software Engineering",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向多智能体软件工程的保密协调通信协议",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2609.02264v1",
+      "route": "202609/04/2609.02264v1-codebook-agent-amortized-topology-design-for-llm-multi-agent-systems",
+      "title": "Codebook Agent: Amortized Topology Design for LLM Multi-Agent Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "面向LLM多智能体系统的通信拓扑优化设计",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2609.02750v1",
+      "route": "202609/04/2609.02750v1-bilevel-coordinated-reflection-a-game-theoretic-approach-to-multi-agent-llm-systems",
+      "title": "Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "用博弈论分析多智能体LLM系统中的协调、记忆改进与验证",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2609.03727v1",
+      "route": "202609/04/2609.03727v1-proactive-service-agents-a-unified-decision-framework-methods-and-evaluation",
+      "title": "Proactive Service Agents: A Unified Decision Framework, Methods, and Evaluation",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "将主动服务智能体决策建模为带主动性和风险约束的POMDP",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2609.03753v1",
+      "route": "202609/04/2609.03753v1-simskill-a-lifelong-learning-ai-agent-for-autonomous-mastery-of-traffic-simulation",
+      "title": "SimSkill: A Lifelong Learning AI Agent for Autonomous Mastery of Traffic Simulation",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "提出面向交通仿真持续自主学习的智能体，兼具智能体设计与应用",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.22971v1",
+      "route": "202609/04/2608.22971v1-parallelworld-test-time-scaling-for-embodied-reasoning",
+      "title": "ParallelWorld: Test-Time Scaling for Embodied Reasoning",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "具身智能体的长时程规划与测试时扩展",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.23104v2",
+      "route": "202609/04/2608.23104v2-molecular-llm-agents-from-architectural-design-to-scientific-autonomy",
+      "title": "Molecular LLM Agents: From Architectural Design to Scientific Autonomy",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向分子LLM智能体的架构设计模式",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.23282v1",
+      "route": "202609/04/2608.23282v1-from-natural-language-policies-to-executable-obligations-a-verification-harness-for-dependable-in-car-llm-agents",
+      "title": "From Natural Language Policies to Executable Obligations: A Verification Harness for Dependable In-Car LLM Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向车载LLM智能体的运行时策略编译与验证控制架构",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.23848v1",
+      "route": "202609/04/2608.23848v1-exploit-more-explore-smarter-for-budget-constrained-agentic-search",
+      "title": "Exploit More, Explore Smarter for Budget-Constrained Agentic Search",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向LLM智能体在预算约束下决策的树搜索策略",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.26950v1",
+      "route": "202609/04/2608.26950v1-from-atomic-to-agentic-towards-interpretable-evaluation-of-llms-agentic-mathematical-capabilities",
+      "title": "From Atomic to Agentic: Towards Interpretable Evaluation of LLMs' Agentic Mathematical Capabilities",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向LLM智能体数学能力的过程级评估基准",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.29305v1",
+      "route": "202609/04/2608.29305v1-learning-simple-test-time-environments-for-llm-web-agents",
+      "title": "Learning Simple Test-Time Environments for LLM Web Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "在测试时分解复杂环境来提升LLM网页智能体决策与任务表现",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.29397v1",
+      "route": "202609/04/2608.29397v1-algoworlds-benchmarking-tool-use-for-global-optimization-in-algorithmic-worlds",
+      "title": "AlgoWorlds: Benchmarking Tool Use for Global Optimization in Algorithmic Worlds",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向智能体工具利用与全局最优决策的基准测试",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.29622v1",
+      "route": "202609/04/2608.29622v1-agenticrag-r1-agentic-reinforcement-learning-with-stack-memory-for-multi-step-reasoning-retrieval-and-memorizing",
+      "title": "AgenticRag-R1: Agentic Reinforcement Learning with Stack Memory for Multi-Step Reasoning, Retrieval and Memorizing",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "结合推理、检索与记忆的智能体决策强化学习",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.28158v1",
+      "route": "202609/04/2608.28158v1-harts-efficient-agentic-reinforcement-learning-for-hybrid-attention-models-over-arbitrary-rollout-trees",
+      "title": "HARTS: Efficient Agentic Reinforcement Learning for Hybrid-Attention Models over Arbitrary Rollout Trees",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "面向树形展开轨迹的智能体强化学习训练系统优化",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.29204v1",
+      "route": "202609/04/2608.29204v1-agentlogs-a-dataset-for-opening-the-black-box-of-githubs-cloud-agent",
+      "title": "AgentLogs: A Dataset for Opening the Black Box of GitHub's Cloud Agent",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "大规模记录云端软件工程智能体行为过程的数据集",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    },
+    {
+      "paper_id": "2608.29388v1",
+      "route": "202609/04/2608.29388v1-fully-distributed-gne-algorithms-for-multi-robot-placement-without-consensus-on-multipliers",
+      "title": "Fully Distributed GNE Algorithms for Multi-Robot Placement without Consensus on Multipliers",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "面向多机器人协作的全分布式广义纳什均衡求解算法",
+      "first_seen_at": "2026-09-04 22:09:00 UTC",
+      "updated_at": "2026-09-04 22:09:00 UTC"
+    }
+  ]
+}
