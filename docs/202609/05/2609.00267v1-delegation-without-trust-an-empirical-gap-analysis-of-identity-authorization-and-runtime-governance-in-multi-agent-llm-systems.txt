@@ -1,0 +1,206 @@
+Title: Delegation Without Trust: An Empirical Gap Analysis of Identity, Authorization, and Runtime Governance in Multi-Agent LLM Systems
+
+URL Source: https://arxiv.org/pdf/2609.00267v1
+
+Published Time: Wed, 02 Sep 2026 00:12:56 GMT
+
+Number of Pages: 14
+
+Markdown Content:
+# Delegation Without Trust: An Empirical Gap Analysis of Identity, Authorization, and Runtime Governance in Multi-Agent LLM Systems 
+
+Panduranga Sai Varma Dantuluri VotalAI 
+
+sai@votal.ai 
+
+ORCID: 0009-0007-3658-3681 Jyotirmoy Sundi VotalAI 
+
+sundi@votal.ai 
+
+August 31, 2026 
+
+Abstract 
+
+Autonomous LLM agents increasingly act on a user’s behalf: they hold credentials, call tools and remote services, and spawn sub-agents that act further on their behalf. This turns a long-standing distributed-systems question – who is authorized to do what, on whose authority – into an urgent and largely unsolved problem, because the component driving each agent is a language model that can be hijacked by adversarial input. We argue that agent security must be evaluated under an untrusted-model assumption: a correct system is one in which a fully prompt-injected agent still cannot exceed the authority explicitly delegated to it. Against this standard we make three contributions. First, we give a threat model for multi-agent delegation centered on four concrete adversaries – confused deputy, token theft and replay, prompt-injection privilege escalation, and compromised sub-agents – and derive eight security requirements a governed agent system must meet. Second, we show the gap is real: a default agent runtime modeling common framework practice (broad bearer credentials, authorization gated inside the model) fails all four threats, and across four widely used frameworks – LangGraph, CrewAI, AutoGen, and the Model Context Protocol (MCP) authorization model – three provide no built-in confinement and one only partial; no existing standard, alone, covers the requirement set. Third, we implement and adversarially evaluate an authorization broker that closes the gap. It blocks all four threats; it resists 11 direct attacks on its own design and accepts 0 of 200,000 forged tokens; it confines a compromised sub-agent to its delegated task (a mean of 1.5 reachable actions versus all 8,100 under bearer delegation, across 2,000 randomized scenarios); and it enforces at microsecond cost ( ∼2.6 μs per decision), negligible against model inference. These principles are additionally realized in a production system, VotalAI’s LLM Shield. 
+
+# 1 Introduction 
+
+An LLM agent is no longer a chatbot; it is a process that holds credentials and takes consequential actions – reading mailboxes, moving money, filing tickets, calling internal APIs – on a human’s behalf. In multi-agent deployments a primary agent further delegates to specialized sub-agents, each of which may hold its own credentials and call its own tools [21, 22]. The security question this raises is ancient and well studied in distributed systems: who is authorized to perform which action, on whose authority, and how is that authority scoped, proven, rotated, and revoked? What is new, and what existing identity infrastructure was never designed for, is that the entity exercising 1arXiv:2609.00267v1 [cs.CR] 31 Aug 2026 the authority is a language model whose behavior an adversary can commandeer through direct or indirect prompt injection [17, 18]. The prevailing engineering posture treats the model as a trusted component: agent frameworks hand long-lived bearer credentials to tools, delegate to sub-agents without narrowing scope, and let the model’s own reasoning gate sensitive actions. We argue this is backwards. Because the model is the most attackable part of the system, it must be treated as untrusted, and the correct evaluation standard is adversarial: 
+
+Untrusted-model property. A multi-agent system is well-governed only if a fully prompt-injected agent – one whose model output is entirely attacker-controlled – still cannot exceed the authority explicitly delegated to it, cannot use a stolen credential off its own workload, and leaves an attributable audit trail. Security that depends on the model not being hijacked is not security. We hold the entire paper to this standard. Our contributions: 1. A threat model for multi-agent delegation (Section 3) centered on four adversaries – confused deputy, token theft/replay, prompt-injection privilege escalation, and compromised sub-agents – under the untrusted-model assumption, and eight derived security requirements (Section 4). 2. A gap analysis (Sections 5, 6): a default agent runtime fails all four threats; across four widely used frameworks, three provide no built-in confinement and one only partial; and no existing standard, alone, covers the requirement set – the primitives have not been composed for agent-to-agent delegation. Concurrent work [33] independently reports the absence of per-call authorization in an overlapping set of frameworks; we situate our analysis against it in Section 12. 3. An implemented, adversarially-evaluated broker (Section 7) that composes the primitives and closes the gap: it blocks all four threats, resists 11 direct attacks on its design and 0 of 200,000 forged tokens, confines a compromised sub-agent to its task, and enforces at microsecond cost. This is a problem-and-solution paper: we demonstrate the gaps rather than asserting them, and we build and attack the defense rather than only sketching it. Our evaluation is built entirely on public frameworks and open standards; Section 8 describes how the same principles are realized in production in VotalAI’s LLM Shield. 
+
+# 2 Background 
+
+Agentic architectures. Modern agent frameworks [21] orchestrate an LLM in a plan–act–observe loop with access to tools. Multi-agent variants add delegation: a primary agent decomposes a task and assigns sub-tasks to other agents, forming a delegation chain rooted, ideally, in a human grant. The Model Context Protocol (MCP) [14, 15] standardizes how agents connect to tools and servers and defines an authorization profile built on OAuth. 
+
+Foundational access-control principles. Least privilege and complete mediation [1] and the capability model’s answer to the confused-deputy problem [2, 3] are the lens we apply: authority should be represented as unforgeable, narrowly scoped, delegable tokens, and every access should be mediated by a reference monitor the subject cannot bypass. 2Identity and delegation standards. OAuth 2.1 [5] and OpenID Connect [6] anchor human identity; OAuth Token Exchange (RFC 8693) [7] expresses on-behalf-of delegation, minting a downstream token that records the delegation chain. SPIFFE/SPIRE [10, 11] provides cryptographic workload identity (an SVID) with automatic rotation. Sender-constraining binds a token to its holder so a stolen token is useless elsewhere, via mutual-TLS (RFC 8705) [8] or DPoP (RFC 9449) [9]. Macaroons [4] and Biscuit [12] are capability tokens that support attenuation: any holder can add caveats that narrow scope, but none can widen it – a natural fit for delegation chains. Zero-trust architecture [13] frames the overall posture. Each primitive is mature; the open question is whether they compose to govern untrusted agents, which Sections 6 and 7 address. 
+
+# 3 Threat Model 
+
+Principals. A human user (the root of authority, authenticated via an OIDC identity provider); a primary agent; one or more sub-agents; tools / MCP servers; and the authorization infrastructure (identity provider, token service, and policy enforcement points, PEPs). 
+
+Trust assumptions. The authorization infrastructure and the PEPs are trusted and correctly implemented, and workload identities are authenticated (e.g., via mutual-TLS / SPIFFE attestation). 
+
+Every agent’s model is untrusted : an adversary may fully control any agent’s model output via direct or indirect prompt injection [17]. A network adversary may observe and replay traffic and may exfiltrate a credential from a compromised agent or tool. We do not assume the adversary breaks cryptography or compromises the infrastructure itself. Section 7 shows this authenticated-identity assumption is load-bearing: sender-constraining is only as strong as workload-identity attestation. 
+
+Security goal. Under these assumptions: (G1) a hijacked agent cannot exercise authority beyond what was explicitly delegated to it; (G2) each delegation hop can only narrow authority; (G3) a stolen credential cannot be used off the workload it was issued to; (G4) a compromised agent’s authority can be promptly revoked; and (G5) every privileged action is attributable to a delegation chain. 
+
+Adversaries. T1 – Confused deputy. 
+
+An agent holding legitimate authority is manipulated, via injected content, into exercising that authority toward the attacker’s goal [2]. The agent is authorized; the use is not intended. 
+
+T2 – Token theft / replay. 
+
+A bearer credential is exfiltrated from an agent or tool and replayed by the attacker from a different context. 
+
+T3 – Prompt-injection privilege escalation. 
+
+Injected content causes an agent to acquire or exercise permissions beyond those its task requires (e.g., requesting a broader scope, invoking an out-of-scope tool). 
+
+T4 – Compromised sub-agent / over-broad scope. 
+
+A sub-agent (or one of its tools) is compromised; because it holds over-broad or non-attenuated delegated authority, its blast radius exceeds its task. 34 Security Requirements 
+
+From the goals we derive the requirements a governed multi-agent system must satisfy. Each names the threats it addresses. 
+
+R1 Delegation-chain integrity / on-behalf-of provenance. 
+
+Every hop’s authority is cryptographically traceable to a human grant. [T1, T4] 
+
+R2 Least-privilege attenuation. 
+
+Each delegation can only narrow scope, never widen it. [T1, T3, T4] 
+
+R3 Sender-constrained credentials. 
+
+Tokens are bound to a workload identity, so exfiltration yields nothing usable. [T2] 
+
+R4 Short-lived issuance. 
+
+Credentials are minted with a minimal lifetime, shrinking the misuse window. [T2, T3] 
+
+R5 Key/secret rotation. 
+
+Workload keys and secrets rotate automatically, bounding long-term compromise. [T2] 
+
+R6 Revocation propagation. 
+
+Authority can be revoked and the revocation reaches PEPs promptly. [T1, T4] 
+
+R7 Complete, tamper-evident audit. 
+
+Every privileged action is attributable to a delegation chain. [detection/forensics, all] 
+
+R8 Model-independent enforcement. 
+
+Authorization decisions are made by infrastructure PEPs, never by the untrusted model. [all – the crux] R8 is the load-bearing requirement: it is what makes the untrusted-model property achievable at all. If the model gates access, a hijacked model grants access. 
+
+# 5 Empirical Gap Analysis 
+
+5.1 A default runtime fails all four threats 
+
+We first establish the baseline. We implement a default runtime modeling common agent-framework practice: a single broad bearer credential is issued to the primary agent and passed unchanged to sub-agents and tools, and whether an action is permitted is decided by the agent’s own reasoning (model-gated), not by an external policy point. Running the four adversaries against this runtime, a hijacked agent succeeds at all four: the confused-deputy misuse, the replayed token, the escalated privilege, and the over-broad sub-agent all go through, because the runtime provides none of R1–R8. Our implementation reproduces this. 
+
+5.2 Four frameworks 
+
+We evaluate four widely used frameworks and record, per threat, whether each framework’s defaults prevent it ( vulnerable = defaults do not prevent it; partial ; mitigated ), and which of R1–R8 the default identity/authorization story provides. Our methods differ by framework and we state them explicitly. For LangGraph we execute the scenario: we drive a real compiled StateGraph with 4Table 1: Threat outcomes by framework (default configuration). Y = vulnerable, ∼ = partial/only with hardening, – = mitigated by default. LangGraph executed; CrewAI/AutoGen inspected; MCP from spec. Framework T1 deputy T2 replay T3 escal. T4 sub-agent LangGraph 1.2.10 Y Y Y YCrewAI 1.15.13 Y Y Y YAutoGen 0.7.5 Y Y Y YMCP (authz 2026-07-28) Y ∼ Y YTable 2: Default requirement coverage per framework. Y = provides by default; ∼ = partial; – = absent. Three frameworks provide none; MCP’s OAuth model gives partial coverage. Framework R1 R2 R3 R4 R5 R6 R7 R8 LangGraph 1.2.10 – – – – – – – –CrewAI 1.15.13 – – – – – – – –AutoGen 0.7.5 – – – – – – – –MCP (authz 2026-07-28) ∼ – ∼ Y ∼ ∼ – ∼
+
+a scripted agent node (isolating the authorization layer from the model, since we test authority confinement rather than model behavior) and observe the tool node. For CrewAI and AutoGen we perform capability inspection of the frameworks’ tool-execution base classes. For MCP we perform 
+
+specification analysis of the authorization profile. This is capability analysis on the same footing as the standards table (Section 6); all four rows are grounded in an execution adapter for LangGraph and an inspection of the CrewAI/AutoGen code rather than asserted. The result: three of the four – LangGraph, CrewAI, and AutoGen – provide no built-in authorization or delegation confinement (none of R1–R8). In their default configuration a hijacked agent’s out-of-scope tool calls execute, and confinement is left to the developer; none claims to be an authorization system, which is precisely the point – the governance layer is simply absent. Concurrent and independent work [33] reaches a convergent conclusion for a partially overlapping framework set (LangChain/LangGraph, LlamaIndex, and the Stripe Agent Toolkit), reporting that none re-authorizes model-emitted calls against concrete argument values by default. We view the agreement as corroboration of the finding; Section 12 details how the two analyses differ in threat model, framework and standards coverage, and evaluation. MCP is the exception: its authorization specification (rev. 2026-07-28) is an OAuth 2.1 resource-server model, giving partial coverage. Its mandatory Resource Indicators (RFC 8707) audience-restrict each token to a specific server, preventing cross-server token reuse (partial coverage for T2 and R3); its resource-server model validates tokens outside the client’s model (R8); and OAuth provides short-lived tokens (R4) and revocation (R6). It provides, however, no per-hop attenuation (R2) and no cross-agent delegation provenance (R1) for agent-to-agent chains. Tables 1 and 2 report the outcomes, with the MCP cells derived from the current MCP authorization specification. 
+
+# 6 Systematization: Standards vs. Requirements 
+
+Table 3 maps each existing standard/primitive to the requirements it can satisfy. Like the per-framework coverage, this is an analytical result: it reflects our reading of each standard’s specification 5Table 3: Which requirement each standard can satisfy. Y = directly provides; ∼ = partial / with profiling; – = out of scope. Derived from the specifications; the mapping reflects the authors’ reading of each standard. Standard / primitive R1 R2 R3 R4 R5 R6 R7 R8 OIDC [6] ∼ – – Y – ∼ ∼ –OAuth 2.1 [5] ∼ ∼ – Y – ∼ ∼ YToken Exchange 8693 [7] Y ∼ – Y – – ∼ –SPIFFE/SPIRE [10, 11] ∼ – Y Y Y ∼ – –mTLS 8705 [8] – – Y – – – – –DPoP 9449 [9] – – Y – – – – –Macaroons [4] Y Y ∼ ∼ – ∼ – YBiscuit [12] Y Y ∼ ∼ – ∼ ∼ YMCP authz [15] ∼ – ∼ Y – – ∼ ∼
+
+rather than measured data, and we invite scrutiny of individual cells. Two observations follow. First, no single standard covers the requirement set: delegation prove-nance (R1) and attenuation (R2) live in token-exchange and capability tokens; sender-constraining (R3) and rotation (R5) live in SPIFFE/mTLS/DPoP; model-independent enforcement (R8) is a deployment property none of them mandates. Second, and more importantly, the primitives have not been composed for the agent-to-agent case: there is today no standard profile that mints, at each delegation hop, a capability token that is simultaneously attenuated (R2), bound to the sub-agent’s workload identity (R3), short-lived (R4), and enforced at a PEP outside the model (R8). Closing that composition is the subject of Section 7. 
+
+# 7 The Broker: Design, Implementation, and Evaluation 
+
+We compose the primitives into an authorization broker / PEP that sits between agents and tools, and we implement and adversarially evaluate it. The broker realizes the untrusted-model property by construction: a fully hijacked agent can exercise only its attenuated, workload-bound grant, and a stolen token is inert off its identity. 
+
+7.1 Design 
+
+(1) Each agent authenticates with a SPIFFE-style workload identity (SVID) (R3, R5). (2) The human grant is a capability token rooted at the OIDC identity (R1). (3) At each delegation hop, the broker performs an issuer-mediated token exchange that mints a new token, attenuated to the sub-task (R2), bound to the receiving agent’s SVID (R3), and short-lived (R4); only the workload a token is bound to may delegate it onward. (4) Every tool call is mediated by the broker, which verifies the token and enforces its caveats independently of the model (R8) and appends the delegation chain to a tamper-evident log (R7). (5) Revocation invalidates a token and propagates down its chain (R6). Figure 1 shows the resulting data flow. 
+
+7.2 Implementation 
+
+We implement the broker in Python ( ∼160 lines, standard library only). Tokens are HMAC-signed in the style of macaroons and OAuth Token Exchange: forgery, caveat removal, and subject re-binding 6Human 
+
+> OIDC identity (root)
+
+Broker / PEP     
+
+> issuer + model-independent enforcement ·audit ·revocation
+
+Tool / MCP server Primary agent 
+
+> SVID 1, cap 1
+
+Sub-agent   
+
+> SVID 2, cap 2⊆cap 1
+> untrusted: model-controlled trusted: no model 1. authenticate 2. mint cap 1
+> 3. delegate 4. tool call (cap 2, SVID 2)5. verify + enforce allow / deny
+
+Figure 1: Data flow through the broker. A human’s OIDC identity roots a capability token; each delegation hop is an issuer-mediated token exchange that mints an attenuated (cap 2 ⊆ cap 1), SVID-bound, short-lived token. Every tool call is routed through the broker, which verifies the token and enforces its caveats outside the model (R8) before allowing the call. Agents run in an untrusted zone; a fully hijacked agent can exercise only its bound, attenuated grant. Table 4: Attack outcome by runtime. The broker blocks every threat the default runtime admits. Threat Default runtime Broker T1 confused deputy succeeds blocked T2 token theft / replay succeeds blocked T3 privilege escalation succeeds blocked T4 compromised sub-agent succeeds blocked require the broker secret and therefore fail verification; caveats are append-only, so authority can only narrow. Enforcement is a signature check, a revocation check, a sender-constraint check, and caveat evaluation – no model call. The default runtime of Section 5 and the broker share a common scenario harness. 
+
+7.3 Evaluation 
+
+We evaluate along four axes; all numbers are from our reference implementation. 
+
+Defense effectiveness. Against the four adversaries, the default runtime fails all four and the broker blocks all four (Table 4). 
+
+Adversarial robustness. Beyond the four scenarios, we run a suite that actively attacks the broker’s own design: forging a token from scratch, forging with a guessed secret, stripping caveats, 7widening a caveat, re-binding a stolen token, replaying as-is, a malformed-caveat fail-closed check, widening scope via exchange, delegating a token one does not hold, using a child of a revoked token, and using an expired token. The broker resists all 11. Fuzzing with random and mutated tokens, it accepts 0 of 200,000. One boundary test succeeds by design: if an attacker can present the victim’s SVID, a stolen token works – confirming that sender-constraining reduces to the strength of workload-identity attestation (mTLS/SPIFFE), the assumption stated in Section 3. We report this as a stated assumption, not a flaw. 
+
+Blast radius. We measure how much a compromised sub-agent can reach, over 2,000 randomized delegation scenarios in a synthetic environment of 8,100 tool/resource actions. Under bearer delegation the compromised sub-agent reaches all 8,100 in every scenario; under the broker it reaches a mean of 1.5 actions – exactly its delegated sub-task. The reduction is not the headline; the invariant is: defended reach is bounded by the task and independent of environment size, whereas undefended reach equals the environment and grows without bound as a deployment scales. 
+
+Overhead. Enforcement costs ∼2.6 μs per authorization ( ∼3.9 ×10 5 decisions/s) and a token exchange ∼5.4 μs, measured over 2 ×10 5 calls each on a laptop. Against model inference measured in hundreds of milliseconds to seconds, the governance layer is effectively free. 
+
+# 8 Real-World Implementation: VotalAI LLM Shield 
+
+The broker of Section 7 is a minimal reference implementation intended to isolate the requirements with the least machinery. Its principles are realized in production in VotalAI’s LLM Shield, a runtime governance layer for agentic LLM deployments. Where the reference implementation uses SPIFFE-style workload identity and macaroon-style attenuation to illustrate R1–R8, Shield satisfies the same requirements through a production identity and policy stack. The empirical results in this paper are from our reference implementation; the architecture below is drawn from publicly presented material, and production figures are labeled as such. VotalAI LLM Shield is a commercial product; the reference implementation evaluated in this paper is a separate, minimal demonstrator built on public primitives and is not released. 
+
+Architecture. Client, RAG, MCP, and agentic applications connect through a single AI Gateway that provides authentication, authorization, routing, rate limiting, and observability, and embeds an MCP gateway (built on components such as Kong, LiteLLM, and Portkey). Agent identity is issued and validated by the VotalAI Agent IDP, which federates with enterprise identity providers (Okta, Auth0, Microsoft Entra, Google) and offers OIDC, SSO, MFA, attribute-based access control (ABAC), and a policy enforcement point; agents authenticate to tools and MCP servers using IDP-issued tokens. Requests traverse guardrail model services containing pre-call and post-call content inspection and — central to this paper — an Agent & Tool Access Control stage performing role-based tool authorization and per-agent permission enforcement. A Redis tier caches tenant policy for fast lookups, and an admin/tenant portal manages policy. The content-inspection layer combines VotalAI’s own guardrail model with NVIDIA’s separate Nemotron 3.5 content-safety model (two distinct models); this layer is complementary to the authorization layer that is the focus of this paper, consistent with our position (Section 9) that content filtering cannot replace authority scoping. 8Mapping to the requirements. Shield realizes the requirements through this stack rather than through the reference primitives. On-behalf-of provenance (R1) and short-lived credential issuance (R4) come from the Agent IDP’s OIDC token service; least-privilege attenuation (R2) is enforced by ABAC and the Agent & Tool Access Control stage’s role-based tool authorization; model-independent enforcement (R8) — the load-bearing requirement — is provided by the gateway and access-control policy enforcement points, which sit outside the model on the request path; and complete audit (R7) is provided by the platform’s audit logs, metrics, and policy-decision records. Sender-constrained credentials (R3), key rotation (R5), and revocation (R6) are inherited from the federated enterprise identity providers. The design follows zero-trust and least-privilege principles with end-to-end encryption throughout. 
+
+Deployment and scale. Shield ships as a container image and scales through container replicas for multi-tenant deployment; the policy tier runs Redis for tenant policy mapping, and the guardrail model services run vLLM inference of VotalAI’s 8B guardrail model (fine-tuned on VotalAI’s adver-sarial dataset) and NVIDIA’s separate Nemotron 3.5 content-safety model on NVIDIA H100/B200 GPUs (80 GB VRAM). As production figures for the content-inspection layer (distinct from, and far larger than, the reference-harness authorization overhead of ∼2.6 μs), pre-call inspection adds on the order of 2 ms and a full guardrail-model check on the order of 190 ms per request. This separation is itself informative: authorization enforcement is comparatively negligible (Section 7), whereas the dominant runtime cost is the content-safety model inference — a complementary layer, not a substitute for authority scoping. 
+
+Continuous red-teaming. Shield includes an attack zone / red-teaming portal that continuously probes protected endpoints, synthesizing adversarial prompts on the fly in single-turn, multi-turn, and combined modes from a catalog of over 100 manipulation strategies — an operational analogue of the adversarial evaluation in Section 7. 
+
+# 9 Discussion 
+
+Why model-side guardrails are not enough. Input/output content filters reduce the rate of successful injection but cannot provide R1–R8; they are probabilistic and sit inside the trust boundary we assume broken. Governance must be enforced by authority scoping outside the model, which content filtering complements but cannot replace. 
+
+Deployment cost. The broker adds a mediation point on the tool-call path and a per-hop token exchange. As Section 7 shows, enforcement is microseconds and token minting a few microseconds – orders of magnitude below the model call it accompanies – so the dominant cost is operational (running a broker and identity plane), not latency. 
+
+# 10 Threats to Validity 
+
+Construct : the blast-radius magnitude depends on the ratio of task scope to environment size; we therefore report absolute reachable counts and the size-independence invariant rather than a single percentage. Internal : our broker enforces an abstract action model (tool/resource tuples); a production PEP must map real tool invocations to this model faithfully. External : the per-framework results are established for specific, pinned framework versions (Tables 1, 2), by execution for LangGraph and by capability inspection of code/spec for CrewAI, AutoGen, and MCP; frameworks 9evolve, and the MCP cells in particular should be re-checked against the current authorization spec. 
+
+Scope : we implement and adversarially evaluate the broker but do not yet integrate it into the evaluated frameworks; that integration, and an end-to-end evaluation with a live model in the loop, are future work. 
+
+# 11 Ethics and Responsible Disclosure 
+
+All demonstrations target public agent frameworks in a test harness under our control; none attack third-party or production systems, and no user data is involved. The demonstrated weaknesses are the absence of authorization primitives in developer frameworks rather than exploitable defects; we nonetheless plan to notify the relevant framework maintainers of the coverage findings through their published channels. The reference implementation described here is not publicly released; this paper contains no proprietary LLM Shield internals or client data, and the production description in Section 8 is limited to details cleared for publication. 
+
+# 12 Related Work 
+
+Attacks and measurement. Prompt injection against LLM-integrated applications and agents is documented by Greshake et al. [17] and, for tool-integrated agents, by InjecAgent [18], and evaluated at scale by AgentDojo [19] and the sandboxed-agent risk study of Ruan et al. [20]. Abdelnabi and Bagdasarian [36] push this further, arguing that agents may always remain susceptible to injection, so that any defense resting on the model’s own compliance is resting on a moving floor. We take that conclusion as our starting premise rather than a result to be re-established: our untrusted-model assumption grants the attacker full control of model output and asks the orthogonal question of whether the identity and authorization layer confines the damage. On the deployment side, Hou et al. [35] give a systematic threat taxonomy for MCP, and Zhou et al. [34] measure authentication in the wild across 7,973 live remote MCP servers, finding that over 40% expose tools with no authentication at all and that every one of the 119 OAuth-enabled servers they tested carried at least one authentication flaw. Their measurement is the field-scale complement to our specification-level analysis of the MCP authorization profile (Section 5.2): they establish that deployed MCP authorization is frequently absent or misconfigured, while we ask what the specification would fail to cover even when implemented correctly. 
+
+Defenses at the content and data-flow layer. A line of work removes or neutralizes the injection vector before the model acts on it. Untrusted Content Masking [16] masks untrusted regions of a web page so the agent never processes injected text, and explicitly notes residual data-flow attacks – where a compromised model is steered by trusted-looking data rather than injected instructions – as outside the scope of control-flow defenses. CaMeL [27] extracts control and data flow from the trusted user query and confines the agent to that plan with capability-tagged data, and FIDES [29] carries confidentiality and integrity labels through the agent’s execution and enforces information-flow policies deterministically outside the model. These bound what an agent may know 
+
+and which data may influence which action. We bound what an agent may do on whose authority. The two axes are complementary and neither subsumes the other: content masking removes the injection vector, information-flow control constrains propagation, and attenuated, model-independent authorization bounds the blast radius of an agent that has already been subverted – precisely the residual case [16] names. 10 Enforcement outside the model. Closest to our position is a growing body of work that moves the authorization decision out of the model and into infrastructure. Progent [28] gives each agent a programmable privilege policy over tool calls and enforces it deterministically, with the property that the permitted action space can only narrow without explicit user approval. FORGE [30] treats policy enforcement as a cross-cutting concern, specifying Datalog policies independently of the agent’s reasoning and consulting a reference monitor at every policy-relevant decision under a formal assume/guarantee contract. PAuth [31] binds authority to the concrete task the user asked for, deriving symbolic slices from the natural-language request so that a server can verify an operand was legitimately produced rather than injected. AC4A [32] observes that agent access to APIs is today all-or-nothing and proposes finer-grained scoping. We share the central commitment of all four – our R8 – and differ on layer and on scope. These systems are policy engines for a single agent’s tool calls: they answer is this call permitted . Our concern is the credential and identity layer underneath that question, across delegation hops: whether the authority a sub-agent presents is cryptographically traceable to a human grant (R1), can only narrow at each hop (R2), is bound to the presenting workload so a stolen token is inert (R3), and can be rotated and revoked (R5, R6). A policy engine that decides correctly on a forged, replayed, or over-broad delegated credential still authorizes the wrong principal. The two compose naturally: a broker of the kind we build supplies the attenuated, sender-constrained authority that a policy engine such as FORGE or Progent then evaluates. 
+
+Concurrent framework audits. Concurrent and independent work by Mellafe Zuvic [33] audits whether LangChain/LangGraph, LlamaIndex, and the Stripe Agent Toolkit re-authorize each model-emitted call with concrete argument values before execution, finds that all three provide capability gating but none provides a deterministic fail-closed per-call authorization gate by default, and proposes ScopeGate, a five-stage policy decision/enforcement point. That work and ours reach the same conclusion about LangChain/LangGraph defaults from different starting points and with different methods, which we regard as mutual corroboration of the central empirical claim rather than a duplication of it. The analyses differ in scope in three ways. First, [33] evaluates the single-agent tool-call path; our threat model (Section 3) is multi-agent delegation, and three of our four adversaries – token theft/replay, privilege escalation across a hop, and compromised sub-agent – have no analogue in a single-hop gate. Second, [33] audits three framework code bases; we cover LangGraph, CrewAI, AutoGen, and the MCP authorization specification, and pair the framework analysis with a systematization of nine identity and delegation standards against a requirements framework (Section 6), which locates the gap in the standards landscape rather than only in framework defaults. Third, ScopeGate’s evaluation measures denial of unauthorized calls; ours additionally measures properties specific to delegated authority – resistance to token forgery across 200,000 attempts, and the blast radius of a compromised sub-agent across randomized delegation scenarios – which are the quantities that distinguish attenuated delegation from a per-call allowlist. 
+
+Governance frameworks and primitives. Community efforts enumerate and govern agentic risk: the OWASP LLM Top 10 [23], and – for autonomous agents specifically – the OWASP Agentic Security Initiative’s Top 10 for Agentic Applications [24], its Agentic AI Threats and Mitigations taxonomy [25], and its State of Agentic AI Security and Governance report [26]. These catalogue risks and frame governance; we complement them with an empirical, standards-grounded gap analysis, a requirements framework, and an implemented, adversarially-evaluated defense. The building blocks – capability security [2, 3, 4, 12], delegation [7], workload identity [10], and sender-constraining [8, 9] 11 – are mature; our contribution is to show they are neither composed nor shipped for untrusted multi-agent delegation, and to compose them in a broker that meets the requirements. 
+
+# 13 Conclusion 
+
+Agent frameworks today trust the least trustworthy component in the system – the model – to gate authority. Evaluated under an untrusted-model standard, a default runtime fails all four core threats of multi-agent delegation; three of four popular frameworks ship no confinement and the fourth only partial; and no existing standard alone closes the gap. The primitives to do better exist; they had simply not been composed for agent-to-agent, on-behalf-of authority. We composed them in a broker, attacked it, and showed it confines a hijacked agent to its delegated task at microsecond cost. We hope “does this hold when the model is hijacked?” becomes the default question asked of every agent deployment. 
+
+# References 
+
+[1] J. Saltzer and M. Schroeder. The Protection of Information in Computer Systems. Proc. IEEE ,63(9):1278–1308, 1975. [2] N. Hardy. The Confused Deputy: (or why capabilities might have been invented). ACM SIGOPS Operating Systems Review , 22(4):36–38, 1988. [3] M. Miller, K.-P. Yee, and J. Shapiro. Capability Myths Demolished. Technical Report SRL2003-02, Systems Research Laboratory, Johns Hopkins University, 2003. [4] A. Birgisson, J. G. Politz, Ú. Erlingsson, A. Taly, M. Vrable, and M. Lentczner. Macaroons: Cookies with Contextual Caveats for Decentralized Authorization in the Cloud. NDSS, 2014. [5] D. Hardt, A. Parecki, and T. Lodderstedt. The OAuth 2.1 Authorization Framework. Internet-Draft draft-ietf-oauth-v2-1-15, IETF, 2026. Work in progress. [6] N. Sakimura, J. Bradley, M. Jones, B. de Medeiros, and C. Mortimore. OpenID Connect Core 1.0. OpenID Foundation, 2014. [7] M. Jones, A. Nadalin, B. Campbell, J. Bradley, and C. Mortimore. OAuth 2.0 Token Exchange. RFC 8693, IETF, 2020. [8] B. Campbell, J. Bradley, N. Sakimura, and T. Lodderstedt. OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens. RFC 8705, IETF, 2020. [9] D. Fett, B. Campbell, J. Bradley, T. Lodderstedt, M. Jones, and D. Waite. OAuth 2.0 Demonstrating Proof of Possession (DPoP). RFC 9449, IETF, 2023. [10] The SPIFFE Project. SPIFFE: Secure Production Identity Framework for Everyone — Specifi-cation. Cloud Native Computing Foundation (graduated project). https://spiffe.io .[11] The SPIFFE Project. SPIRE: The SPIFFE Runtime Environment. Cloud Native Computing Foundation (graduated project), 2022. https://github.com/spiffe/spire .[12] Eclipse Biscuit Project. Biscuit Authorization Token Specification, version 3.3. https:// biscuitsec.org .12 [13] S. Rose, O. Borchert, S. Mitchell, and S. Connelly. Zero Trust Architecture. NIST SP 800-207, 2020. [14] Model Context Protocol. Model Context Protocol Specification, revision 2026-07-28. 2026. 
+
+https://modelcontextprotocol.io .[15] Model Context Protocol. Model Context Protocol Specification, Base Protocol — Autho-rization, revision 2026-07-28. 2026. https://modelcontextprotocol.io/specification/ 2026-07-28/basic/authorization .[16] K. Nikolić, E. Zverev, J. Rando, M. Jagielski, E. Debenedetti, and F. Tramèr. Untrusted Content Masking for Web Agents with Security Guarantees. 2026. arXiv:2607.05277. [17] K. Greshake, S. Abdelnabi, S. Mishra, C. Endres, T. Holz, and M. Fritz. Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection. AISec, 2023. arXiv:2302.12173. [18] Q. Zhan, Z. Liang, Z. Ying, and D. Kang. InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents. ACL Findings, 2024. arXiv:2403.02691. [19] E. Debenedetti, J. Zhang, M. Balunović, L. Beurer-Kellner, M. Fischer, and F. Tramèr. AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents. NeurIPS Datasets and Benchmarks Track, 2024. arXiv:2406.13352. [20] Y. Ruan et al. Identifying the Risks of LM Agents with an LM-Emulated Sandbox. ICLR, 2024. arXiv:2309.15817. [21] Q. Wu et al. AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation. arXiv:2308.08155, 2023. [22] Z. Xi et al. The Rise and Potential of Large Language Model Based Agents: A Survey. arXiv:2309.07864, 2023. [23] OWASP GenAI Security Project. OWASP Top 10 for LLM Applications 2026 , v1.0. August 2026. https://genai.owasp.org .[24] OWASP GenAI Security Project, Agentic Security Initiative. OWASP Top 10 for Agen-tic Applications for 2026 . Released December 2025. https://genai.owasp.org/resource/ owasp-top-10-for-agentic-applications-for-2026/ .[25] OWASP GenAI Security Project, Agentic Security Initiative. Agentic AI —Threats and Mitigations , v1.0. February 2025. https://genai.owasp.org/initiatives/ agentic-security-initiative/ .[26] OWASP GenAI Security Project, Agentic Security Initiative. The State of Agentic AI Security and Governance , v2.01. June 2026. https://genai.owasp.org/resource/ state-of-agentic-ai-security-and-governance/ .[27] E. Debenedetti, I. Shumailov, T. Fan, J. Hayes, N. Carlini, D. Fabian, C. Kern, C. Shi, A. Terzis, and F. Tramèr. Defeating Prompt Injections by Design. 2025. arXiv:2503.18813. [28] T. Shi, J. He, Z. Wang, H. Li, L. Wu, W. Guo, and D. Song. Progent: Securing AI Agents with Privilege Control. 2025. arXiv:2504.11703. 13 [29] M. Costa, B. Köpf, A. Kolluri, A. Paverd, M. Russinovich, A. Salem, S. Tople, L. Wutschitz, and S. Zanella-Béguelin. Securing AI Agents with Information-Flow Control. 2025. arXiv:2505.23643. [30] N. Palumbo, S. Choudhary, J. Choi, G. Amir, P. Chalasani, and S. Jha. Formal Policy Enforcement for Real-World Agentic Systems. 2026. arXiv:2602.16708. [31] R. K. Sharma, L. Jiang, Z. Lin, and S. Chen. PAuth — Precise Task-Scoped Authorization For Agents. 2026. arXiv:2603.17170. [32] R. K. Sharma and D. Grossman. AC4A: Access Control for Agents. 2026. arXiv:2603.20933. [33] D. Mellafe Zuvic. Capability Gates Are Not Authorization: Confused-Deputy Failures in LLM Agent Frameworks. 2026. arXiv:2606.28679. [34] H. Zhou, X. Zhang, H. Zhang, H. Zhang, M. Zhang, and M. Yang. A First Measurement Study on Authentication Security in Real-World Remote MCP Servers. 2026. arXiv:2605.22333. [35] X. Hou, Y. Zhao, S. Wang, and H. Wang. Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions. 2025. arXiv:2503.23278. [36] S. Abdelnabi and E. Bagdasarian. AI Agents May Always Fall for Prompt Injections. 2026. arXiv:2605.17634. 14

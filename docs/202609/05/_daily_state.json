@@ -1,0 +1,281 @@
+{
+  "date": "20260905",
+  "date_label": "",
+  "generated_at": "2026-09-05 22:25:17 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2609.00474v1",
+      "route": "202609/05/2609.00474v1-exploring-collaboration-between-a-language-and-a-non-language-agent",
+      "title": "Exploring Collaboration between a language and a non-language agent",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 9.0,
+      "evidence": "研究非语言智能体与LLM协调者之间文本化通信的瓶颈，属于智能体通信协议问题",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    },
+    {
+      "paper_id": "2608.24076v1",
+      "route": "202609/05/2608.24076v1-agentworld-personality-aware-reliability-evaluation-for-agentic-information-retrieval",
+      "title": "AgentWorld: Personality-Aware Reliability Evaluation for Agentic Information Retrieval",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "智能体信息检索应用，包含可靠性评估框架",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    },
+    {
+      "paper_id": "2608.24275v1",
+      "route": "202609/05/2608.24275v1-repolicy-reinforcement-learning-for-safety-policy-invocation-in-agent-safeguards",
+      "title": "RePolicy: Reinforcement Learning for Safety-Policy Invocation in Agent Safeguards",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向智能体安全防护中策略调用的强化学习设计",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    },
+    {
+      "paper_id": "2608.24747v1",
+      "route": "202609/05/2608.24747v1-skillforge-evolving-verifiable-skills-for-reinforcement-learning-agents",
+      "title": "SkillForge: Evolving Verifiable Skills for Reinforcement Learning Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向RL智能体的技能持续演进框架，通过环境交互验证与改进技能以提升决策能力",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    },
+    {
+      "paper_id": "2608.24794v1",
+      "route": "202609/05/2608.24794v1-cafe-self-improving-search-agents-need-co-evolving-feedback",
+      "title": "CAFE: Self-Improving Search Agents Need Co-Evolving Feedback",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "通过智能体与评论者协同演化提升搜索智能体的自我改进能力",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    },
+    {
+      "paper_id": "2608.25174v1",
+      "route": "202609/05/2608.25174v1-model-based-agentic-software-engineering",
+      "title": "Model-Based Agentic Software Engineering",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "通过显式模型构建可信自主编码智能体的框架",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    },
+    {
+      "paper_id": "2608.25396v1",
+      "route": "202609/05/2608.25396v1-spfr-semantic-potential-field-routing-for-the-distributed-internet-of-agents",
+      "title": "SPFR: Semantic Potential Field Routing for the Distributed Internet of Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向分布式多智能体网络的任务路由的语义势场路由",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    },
+    {
+      "paper_id": "2608.27797v1",
+      "route": "202609/05/2608.27797v1-cedar-automata-as-verifiable-interfaces-for-language-guided-embodied-action",
+      "title": "CEDAR: Automata as Verifiable Interfaces for Language-Guided Embodied Action",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "将具身智能体的自然语言约束落地为自动机，支持可验证的技能组合与规划修复",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    },
+    {
+      "paper_id": "2608.28165v1",
+      "route": "202609/05/2608.28165v1-crabos-an-operating-system-for-human-ai-co-inhabitation",
+      "title": "CrabOS: An Operating System for Human-AI Co-inhabitation",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "为长期运行的AI智能体设计操作系统支持工具调用、记忆与人-机工作状态无缝移交，属于智能体设计应用",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    },
+    {
+      "paper_id": "2609.00267v1",
+      "route": "202609/05/2609.00267v1-delegation-without-trust-an-empirical-gap-analysis-of-identity-authorization-and-runtime-governance-in-multi-agent-llm-systems",
+      "title": "Delegation Without Trust: An Empirical Gap Analysis of Identity, Authorization, and Runtime Governance in Multi-Agent LLM Systems",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "多智能体LLM系统中的委派授权与运行时治理问题，属于智能体综合主题",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    },
+    {
+      "paper_id": "2608.27912v1",
+      "route": "202609/05/2608.27912v1-iter-interaction-aware-retrieval-for-agentic-search",
+      "title": "ITER: Interaction-Aware Retrieval for Agentic Search",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "深度研究智能体自主构造子查询并依据交互轨迹逐步选择证据，涉及智能体自主决策",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    },
+    {
+      "paper_id": "2608.28158v1",
+      "route": "202609/05/2608.28158v1-harts-efficient-agentic-reinforcement-learning-for-hybrid-attention-models-over-arbitrary-rollout-trees",
+      "title": "HARTS: Efficient Agentic Reinforcement Learning for Hybrid-Attention Models over Arbitrary Rollout Trees",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "面向智能体强化学习的系统级优化，服务综合的Agent相关主题，处理任意展开树的训练加速",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    },
+    {
+      "paper_id": "2608.29562v1",
+      "route": "202609/05/2608.29562v1-asynchronous-cooperative-online-learning-for-multi-robot-control-under-computational-delays",
+      "title": "Asynchronous Cooperative Online Learning for Multi-Robot Control under Computational Delays",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "多智能体系统中基于分布式高斯过程推理的多机器人异步协作学习与控制",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    },
+    {
+      "paper_id": "2608.29678v1",
+      "route": "202609/05/2608.29678v1-diachronic-hypergraphs-for-orchestrated-multi-agent-multimodal-memory-curation",
+      "title": "Diachronic Hypergraphs for Orchestrated Multi-Agent Multimodal Memory Curation",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 7.0,
+      "evidence": "超图记忆引擎作为多智能体架构设计的一种模式。",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    },
+    {
+      "paper_id": "2608.29768v1",
+      "route": "202609/05/2608.29768v1-smoothrl-online-reinforcement-learning-during-asynchronous-execution",
+      "title": "SmoothRL: Online Reinforcement Learning During Asynchronous Execution",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "在异步分块执行中结合在线强化学习与平滑控制，涉及自主智能体的运行控制",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    },
+    {
+      "paper_id": "2608.30047v1",
+      "route": "202609/05/2608.30047v1-can-llm-agents-discover-evaluating-creativity-on-ml-engineering-tasks",
+      "title": "Can LLM Agents Discover? Evaluating Creativity on ML Engineering Tasks",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "从综合智能体主题看，该文在ML工程任务上评估多轮LLM智能体的创造力与实用性，涉及决策、设计与应用评测。",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    },
+    {
+      "paper_id": "2608.30091v1",
+      "route": "202609/05/2608.30091v1-vera-authority-preserving-edge-revocation-for-federated-ai-agent-workflows",
+      "title": "VERA: Authority-Preserving Edge Revocation for Federated AI-Agent Workflows",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 6.0,
+      "evidence": "面向联邦智能体工作流的多个代理委托撤销问题，提出验证器可检查的撤销契约和API，维护协调一致性。",
+      "first_seen_at": "2026-09-05 22:25:17 UTC",
+      "updated_at": "2026-09-05 22:25:17 UTC"
+    }
+  ]
+}
