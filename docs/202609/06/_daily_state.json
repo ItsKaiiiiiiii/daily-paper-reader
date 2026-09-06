@@ -1,0 +1,281 @@
+{
+  "date": "20260906",
+  "date_label": "",
+  "generated_at": "2026-09-06 21:29:27 UTC",
+  "recommend_exists": true,
+  "run_count": 1,
+  "papers": [
+    {
+      "paper_id": "2608.25593v1",
+      "route": "202609/06/2608.25593v1-jit-agent-scaling-harness-intelligence-via-just-in-time-harness-evolution",
+      "title": "JIT-Agent: Scaling Harness Intelligence via Just-in-Time Harness Evolution",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向任务自适应的智能体外壳设计，属于智能体架构设计",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    },
+    {
+      "paper_id": "2608.25711v1",
+      "route": "202609/06/2608.25711v1-reassembling-distributed-risk-trajectory-conditioned-action-generation-for-multi-turn-agent-safety",
+      "title": "Reassembling Distributed Risk: Trajectory-Conditioned Action Generation for Multi-Turn Agent Safety",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "轨迹条件动作生成用于智能体安全",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    },
+    {
+      "paper_id": "2608.26081v1",
+      "route": "202609/06/2608.26081v1-swarmworld-stigmergic-technological-evolution-in-societies-of-language-model-agents",
+      "title": "SwarmWorld: Stigmergic technological evolution in societies of language-model agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "语言模型智能体通过滋养型媒介实现去中心化自组织协调",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    },
+    {
+      "paper_id": "2608.26195v1",
+      "route": "202609/06/2608.26195v1-cost-utility-alignment-in-llm-agent-trajectoriesprofilingattributiondiagnosisadaptationand-evaluation",
+      "title": "Cost-Utility Alignment in LLM Agent Trajectories:Profiling,Attribution,Diagnosis,Adaptation,and Evaluation",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "LLM智能体决策轨迹的成本效用对齐分析",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    },
+    {
+      "paper_id": "2608.26530v1",
+      "route": "202609/06/2608.26530v1-pilot-in-the-loop-live-self-improvement-for-long-horizon-agents",
+      "title": "PILOT in the Loop: Live Self-Improvement for Long-Horizon Agents",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "用于实时自改进的监督者-工作者架构",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    },
+    {
+      "paper_id": "2608.26546v1",
+      "route": "202609/06/2608.26546v1-dumatebench-evaluating-autonomous-agents-in-complex-real-world-workflows",
+      "title": "DuMateBench: Evaluating Autonomous Agents in Complex Real-World Workflows",
+      "section": "deep",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "在真实生产工作流中评测自主智能体能力的基准",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    },
+    {
+      "paper_id": "2608.26626v1",
+      "route": "202609/06/2608.26626v1-risks-and-controls-for-multi-agent-systems-an-analytical-framework-for-deployment-of-ai-agents-across-organisational-boundaries",
+      "title": "Risks and Controls for Multi-Agent Systems: an analytical framework for deployment of AI agents across organisational boundaries",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "针对AI代理跨组织边界交互风险与控制的框架",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    },
+    {
+      "paper_id": "2608.26696v1",
+      "route": "202609/06/2608.26696v1-five-primitives-for-governing-autonomous-ai-agents-at-runtime",
+      "title": "Five Primitives for Governing Autonomous AI Agents at Runtime",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "自治AI代理运行时治理架构与控制原语",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    },
+    {
+      "paper_id": "2608.27141v2",
+      "route": "202609/06/2608.27141v2-safety-does-not-compose-non-decaying-loop-state-for-autonomous-llm-agents",
+      "title": "Safety Does Not Compose: Non-Decaying Loop State for Autonomous LLM Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "自主LLM智能体循环中安全状态组合性分析",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    },
+    {
+      "paper_id": "2608.27260v1",
+      "route": "202609/06/2608.27260v1-what-makes-good-agentic-data-an-ace-lens-on-data-generation-for-llm-agents",
+      "title": "What Makes Good Agentic Data? An ACE Lens on Data Generation for LLM Agents",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "为LLM智能体学习提供系统的数据生成分析框架",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    },
+    {
+      "paper_id": "2608.27371v1",
+      "route": "202609/06/2608.27371v1-embodied-scene-rearrangement-planning",
+      "title": "Embodied Scene Rearrangement Planning",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "具身智能体长时程规划基准",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    },
+    {
+      "paper_id": "2608.27439v1",
+      "route": "202609/06/2608.27439v1-redevoagent-automatic-red-teaming-agent-with-experience-driven-skill-evolution",
+      "title": "RedEvoAgent: Automatic Red-Teaming Agent with Experience-Driven Skill Evolution",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "基于经验技能演化的红队智能体，用于LLM智能体安全测试",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    },
+    {
+      "paper_id": "2608.27454v1",
+      "route": "202609/06/2608.27454v1-wikiskill-compiling-agent-experience-into-persistent-knowledge-for-skill-evolution",
+      "title": "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "智能体技能与持久知识库共演的架构设计",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    },
+    {
+      "paper_id": "2608.28122v1",
+      "route": "202609/06/2608.28122v1-agentic-artifact-creation-systems-evaluation-principles-and-opportunities",
+      "title": "Agentic Artifact Creation: Systems, Evaluation, Principles, and Opportunities",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "面向有状态验证的智能体系统与工件创建综述",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    },
+    {
+      "paper_id": "2608.29615v1",
+      "route": "202609/06/2608.29615v1-forward-deployed-full-stack-engineering-for-autonomous-cloud-mlops",
+      "title": "Forward-Deployed Full-Stack Engineering for Autonomous Cloud MLOps",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "基于证据门控的多智能体框架，通过有状态图编排器协调不同类型的专业智能体",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    },
+    {
+      "paper_id": "2608.29665v1",
+      "route": "202609/06/2608.29665v1-evaluating-a-4b-open-weights-local-llm-for-agentic-dft-workflows-a-literature-reproducibility-audit",
+      "title": "Evaluating a 4B open-weights local LLM for agentic DFT workflows: a literature reproducibility audit",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "评估本地开源LLM在材料学自治DFT智能体工作流中的应用表现",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    },
+    {
+      "paper_id": "2608.30038v1",
+      "route": "202609/06/2608.30038v1-actreal-system-level-mobile-agents-challenge-mobile-automation-detection",
+      "title": "ActReal: System-Level Mobile Agents Challenge Mobile Automation Detection",
+      "section": "quick",
+      "tags": [
+        {
+          "kind": "query",
+          "label": "agent"
+        }
+      ],
+      "score": 8.0,
+      "evidence": "系统级移动智能体自主观察、推理与调整动作，提出ActReal将语义动作转为物理信号",
+      "first_seen_at": "2026-09-06 21:29:27 UTC",
+      "updated_at": "2026-09-06 21:29:27 UTC"
+    }
+  ]
+}
